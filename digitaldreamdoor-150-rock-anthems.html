@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>150 Greatest Rock Anthems — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3.5vw,48px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14.5px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1954–2013</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-anthem.html" target="_blank" class="page-title">150 GREATEST ROCK ANTHEMS</a>
+  <p class="page-sub">Queen, The Who, AC/DC, Bruce Springsteen — canciones poderosas y celebratorias con sonido arena-rock y coros imposibles de no cantar · DDD 2023 · Ed. Lew</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="We Will Rock You – Queen">
+    <p class="cover-cap">DDD · 150 ROCK ANTHEMS · 2023</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los 150 Greatest Rock Anthems compilados y rankeados por Digital Dream Door (editor: Lew, última actualización diciembre 2023). Criterio: un rock anthem es una canción de rock poderosa y celebratoria con sonido arena-rock, a menudo con letras que celebran el rock en sí mismo y coros, cánticos o ganchos simples para cantar todos juntos. Las canciones fueron elegidas por popularidad como anthem, música, letra y originalidad.</p>
+    <p class="rtext">Los artistas más representados: AC/DC (7), Queen (5), The Who (3), Van Halen (4), Lynyrd Skynyrd (2), KISS (4), Bruce Springsteen (3), Neil Young (3), The Rolling Stones (3), The Clash (3), Judas Priest (3), Chuck Berry (3), Guns N' Roses (2), Pearl Jam (2). Al #1: We Will Rock You de Queen — el himno de estadio más funcional de la historia.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Los himnos más grandes</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="We Will Rock You">
+    <div class="feat-info">
+      <div class="feat-year">1977</div>
+      <div class="feat-title">We Will Rock You</div>
+      <div class="feat-artist">Queen</div>
+      <p class="feat-rev">El himno de estadio más funcional de la historia — stomping feet, clapping hands, la voz de Freddie. Sin instrumentos durante los primeros compases: solo cuerpos humanos como percusión. Compuesta por Brian May en minutos, es el opening de cada concierto de rock desde 1977.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="We Are the Champions">
+    <div class="feat-info">
+      <div class="feat-year">1977</div>
+      <div class="feat-title">We Are the Champions</div>
+      <div class="feat-artist">Queen</div>
+      <p class="feat-rev">El lado B de We Will Rock You — y el himno de victoria más usado en el deporte global. Freddie Mercury entregando la nota más alta de su carrera en directo mientras el mundo entero canta el coro. Imposible no cantar si la escuchas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="My Generation">
+    <div class="feat-info">
+      <div class="feat-year">1965</div>
+      <div class="feat-title">My Generation</div>
+      <div class="feat-artist">The Who</div>
+      <p class="feat-rev">Roger Daltrey tartamudeando 'Why don't you all f-f-fade away' — el manifiesto más directo del rock de los 60s. Pete Townshend construyó el primer himno generacional del rock con tres acordes y una actitud de confrontación total contra todo lo que los adultos representaban.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Rockin' in the Free World">
+    <div class="feat-info">
+      <div class="feat-year">1989</div>
+      <div class="feat-title">Rockin' in the Free World</div>
+      <div class="feat-artist">Neil Young</div>
+      <p class="feat-rev">El regreso de Neil Young — grabado en vivo en un concierto improvisado con un feedback de guitarra que dura minutos. La letra es una crítica feroz al optimismo de Bush Sr. pero la energía es pura celebración. El riff más poderoso que Young jamás escribió.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="All You Need Is Love">
+    <div class="feat-info">
+      <div class="feat-year">1967</div>
+      <div class="feat-title">All You Need Is Love</div>
+      <div class="feat-artist">The Beatles</div>
+      <p class="feat-rev">Transmitida en vivo a 400 millones de personas en 25 países como parte del primer programa de TV vía satélite global — 'Our World', 1967. Los Beatles eligieron el mensaje más simple posible y lo convirtieron en el himno de paz más conocido del siglo XX.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Born in the U.S.A.">
+    <div class="feat-info">
+      <div class="feat-year">1984</div>
+      <div class="feat-title">Born in the U.S.A.</div>
+      <div class="feat-artist">Bruce Springsteen</div>
+      <p class="feat-rev">La canción más malinterpretada de la historia del rock — el coro suena a celebración pero la letra describe el trauma de un veterano de Vietnam rechazado por el país que lo envió a la guerra. Ronald Reagan la usó en su campaña sin haber escuchado la letra completa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Give Peace A Chance">
+    <div class="feat-info">
+      <div class="feat-year">1969</div>
+      <div class="feat-title">Give Peace A Chance</div>
+      <div class="feat-artist">John Lennon</div>
+      <p class="feat-rev">Grabada en la cama del Hotel Reine Elizabeth de Montreal durante el 'Bed-In for Peace' de Lennon y Yoko. Timothy Leary, Allen Ginsberg y un grupo de hippies cantando el coro más repetitivo del rock. La primera canción de Lennon fuera de los Beatles y su declaración política más directa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Born to Be Wild">
+    <div class="feat-info">
+      <div class="feat-year">1968</div>
+      <div class="feat-title">Born to Be Wild</div>
+      <div class="feat-artist">Steppenwolf</div>
+      <p class="feat-rev">La canción que inventó la expresión 'heavy metal' en el contexto del rock — 'heavy metal thunder' en el segundo verso. Easy Rider la inmortalizó en 1969. El himno de la libertad en carretera, de las motos y de una generación que quería romper con todo lo establecido.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Rock Around The Clock">
+    <div class="feat-info">
+      <div class="feat-year">1954</div>
+      <div class="feat-title">Rock Around The Clock</div>
+      <div class="feat-artist">Bill Haley & His Comets</div>
+      <p class="feat-rev">El primer rock and roll en llegar al #1 del Billboard Hot 100 y el punto de partida oficial del rock como fenómeno comercial masivo. Su uso en la banda sonora de Blackboard Jungle (1955) conectó el rock con la rebeldía juvenil para siempre. Vendió 25 millones de copias.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Highway to Hell">
+    <div class="feat-info">
+      <div class="feat-year">1979</div>
+      <div class="feat-title">Highway to Hell</div>
+      <div class="feat-artist">AC/DC</div>
+      <p class="feat-rev">La última grabación completa con Bon Scott antes de su muerte en febrero de 1980. Malcolm Young con el riff más simple y más poderoso del hard rock australiano, Bon Scott con la voz más desvergonzada del rock de los 70s. El himno de la carretera y de vivir sin frenos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">150 canciones · del #1 al #150</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 150 ROCK ANTHEMS · ED. LEW · 2023</span>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-anthem.html" target="_blank" class="foot-link">Ver original ↗</a>
+</footer>
+
+<script>
+var SONGS=[[1, "Queen", "We Will Rock You", 1977], [2, "Queen", "We Are the Champions", 1977], [3, "The Who", "My Generation", 1965], [4, "Neil Young", "Rockin' in the Free World", 1989], [5, "The Beatles", "All You Need Is Love", 1967], [6, "Bruce Springsteen", "Born in the U.S.A.", 1984], [7, "John Lennon", "Give Peace A Chance", 1969], [8, "Steppenwolf", "Born to Be Wild", 1968], [9, "Bill Haley & His Comets", "Rock Around The Clock", 1954], [10, "Gary Glitter", "Rock and Roll Part 2", 1972], [11, "The Rolling Stones", "It's Only Rock N' Roll (But I Like It)", 1974], [12, "KISS", "Rock N' Roll All Nite", 1975], [13, "Slade", "Cum On Feel The Noize", 1973], [14, "Joan Jett & The Blackhearts", "I Love Rock 'n' Roll", 1981], [15, "Twisted Sister", "We're Not Gonna Take It", 1984], [16, "AC/DC", "Highway to Hell", 1979], [17, "Tears for Fears", "Shout", 1984], [18, "The Who", "Won't Get Fooled Again", 1971], [19, "Pink Floyd", "Another Brick In The Wall, Pt. 2", 1979], [20, "Led Zeppelin", "Rock and Roll", 1971], [21, "Lynyrd Skynyrd", "Sweet Home Alabama", 1974], [22, "Bon Jovi", "Livin' On A Prayer", 1986], [23, "Grand Funk Railroad", "We're An American Band", 1973], [24, "Neil Young", "Hey Hey, My My (Into the Black)", 1979], [25, "Kool & the Gang", "Celebration", 1980], [26, "Don McLean", "American Pie", 1971], [27, "Deep Purple", "Smoke On The Water", 1972], [28, "AC/DC", "For Those About to Rock (We Salute You)", 1981], [29, "Billy Idol", "Rebel Yell", 1983], [30, "John Mellencamp", "R.O.C.K. In The U.S.A.", 1985], [31, "John Fogerty", "Rockin' All Over The World", 1975], [32, "The Who", "Baba O'Riley", 1971], [33, "Bruce Springsteen", "Born to Run", 1975], [34, "Bob Seger", "Old Time Rock n' Roll", 1978], [35, "Sister Sledge", "We Are Family", 1979], [36, "Lynyrd Skynyrd", "Free Bird", 1973], [37, "Free", "All Right Now", 1970], [38, "Chuck Berry", "Johnny B. Goode", 1958], [39, "Aerosmith", "Dream On", 1973], [40, "Boston", "Rock And Roll Band", 1976], [41, "James Brown", "Living in America", 1985], [42, "The Scorpions", "Rock You Like a Hurricane", 1984], [43, "Alice Cooper", "School's Out", 1972], [44, "Huey Piano Smith & the Clowns", "Rockin' Pneumonia and the Boogie Woogie Flu", 1957], [45, "Queen", "Radio Ga Ga", 1984], [46, "The Beatles", "Revolution", 1968], [47, "The Righteous Brothers", "Rock And Roll Heaven", 1974], [48, "Queen", "Another One Bites the Dust", 1980], [49, "AC/DC", "Let There Be Rock", 1977], [50, "AC/DC", "Back in Black", 1980], [51, "Rick Derringer", "Rock & Roll Hoochie Koo", 1973], [52, "Sly & The Family Stone", "Dance To The Music", 1968], [53, "AC/DC", "You Shook Me All Night Long", 1980], [54, "Judas Priest", "You've Got Another Thing Comin'", 1982], [55, "Billy Idol", "Mony Mony", 1987], [56, "The Who", "Long Live Rock", 1979], [57, "Guns N' Roses", "Paradise City", 1987], [58, "Aretha Franklin", "Respect", 1967], [59, "The Rolling Stones", "Start Me Up", 1981], [60, "Van Halen", "Jump", 1984], [61, "Chuck Berry", "Rock 'n' Roll Music", 1957], [62, "fun.", "We Are Young", 2011], [63, "The Ramones", "Blitzkrieg Bop", 1976], [64, "Sammy Hagar", "I Can't Drive 55", 1984], [65, "Bad Company", "Can't Get Enough", 1974], [66, "Survivor", "Eye Of The Tiger", 1982], [67, "KISS", "God Gave Rock 'n' Roll To You II", 1991], [68, "The Rolling Stones", "(I Can't Get No) Satisfaction", 1965], [69, "Danny & the Juniors", "Rock and Roll is Here to Stay", 1957], [70, "Guns N' Roses", "Welcome to the Jungle", 1987], [71, "The Stray Cats", "Rock This Town", 1981], [72, "Alice Cooper", "No More Mr. Nice Guy", 1973], [73, "Tom Petty & The Heartbreakers", "Refugee", 1979], [74, "Bruce Springsteen", "Glory Days", 1984], [75, "The Romantics", "What I Like About You", 1980], [76, "The Kinks", "You Really Got Me", 1964], [77, "Village People", "Y.M.C.A.", 1978], [78, "Thin Lizzy", "The Boys Are Back in Town", 1976], [79, "Uriah Heep", "Easy Livin'", 1972], [80, "Nirvana", "Smells Like Teen Spirit", 1991], [81, "Chuck Berry", "Roll Over, Beethoven", 1956], [82, "The Rolling Stones", "Jumpin' Jack Flash", 1968], [83, "Tina Turner", "The Best", 1989], [84, "Katy Perry", "Roar", 2013], [85, "Loverboy", "Lovin' Every Minute of It", 1985], [86, "Bad Company", "Rock And Roll Fantasy", 1979], [87, "The Kingsmen", "Louie Louie", 1963], [88, "Van Halen", "Ain't Talkin' About Love", 1978], [89, "Cheap Trick", "I Want You to Want Me", 1977], [90, "KISS", "Shout It Out Loud", 1976], [91, "Martha & The Vandellas", "Dancing In the Street", 1964], [92, "George Thorogood", "Bad To The Bone", 1982], [93, "KISS", "Detroit Rock City", 1976], [94, "David Bowie", "Suffragette City", 1972], [95, "The Clash", "London Calling", 1979], [96, "Mötley Crüe", "Girls Girls Girls", 1987], [97, "Great White", "Once Bitten, Twice Shy", 1989], [98, "The Beach Boys", "Fun, Fun, Fun", 1964], [99, "Smashmouth", "All Star", 1999], [100, "The Kinks", "All Day And All Of The Night", 1964], [101, "Pat Benatar", "Invincible", 1985], [102, "AC/DC", "Rock n' Roll Ain't Noise Pollution", 1980], [103, "Gary U.S. Bonds", "Quarter to Three", 1961], [104, "Metallica", "Enter Sandman", 1991], [105, "Van Halen", "Right Now", 1991], [106, "Joe Walsh", "Rocky Mountain Way", 1973], [107, "MC5", "Kick Out The Jams", 1969], [108, "U2", "Desire", 1988], [109, "AC/DC", "It's A Long Way To the Top", 1975], [110, "Jefferson Airplane", "Volunteers", 1969], [111, "David Bowie", "Rebel Rebel", 1974], [112, "The Clash", "Should I Stay Or Should I Go", 1982], [113, "John Fogerty", "Rock And Roll Girls", 1985], [114, "Meat Loaf", "Bat Out of Hell", 1977], [115, "Neil Young", "Cinnamon Girl", 1969], [116, "Sweet", "Ballroom Blitz", 1973], [117, "Bay City Rollers", "Saturday Night", 1974], [118, "Pink", "So What", 2008], [119, "The Human Beinz", "Nobody But Me", 1967], [120, "Cannibal And The Headhunters", "Land of 1000 Dances", 1965], [121, "Jr. Walker & The All Stars", "Shotgun", 1965], [122, "Tina Turner", "We Don't Need Another Hero (Thunderdome)", 1985], [123, "Pearl Jam", "Alive", 1991], [124, "Van Halen", "Panama", 1984], [125, "Montrose", "Rock The Nation", 1973], [126, "Cher", "If I Could Turn Back Time", 1989], [127, "Pat Benatar", "Hit Me With Your Best Shot", 1980], [128, "Whitesnake", "Here I Go Again", 1982], [129, "Judas Priest", "United", 1980], [130, ".38 Special", "Rock And Roll Strategy", 1988], [131, "Sam The Sham & The Pharoahs", "Wooly Bully", 1965], [132, "Starship", "Jane", 1979], [133, "Judas Priest", "Breaking the Law", 1980], [134, "Wishbone Ash", "Blowin' Free", 1972], [135, "Night Ranger", "Sister Christian", 1984], [136, "Elvis Presley", "Hound Dog", 1956], [137, "Lita Ford", "Kiss Me Deadly", 1988], [138, "Pearl Jam", "Corduroy", 1994], [139, "Soundgarden", "Sub-Pop Rock City", 1988], [140, "Jefferson Airplane", "We Can Be Together", 1969], [141, "Blur", "Song 2", 1997], [142, "Iron Maiden", "Run To The Hills", 1982], [143, "The Clash", "Clash City Rockers", 1977], [144, "Nazareth", "Bad Bad Boy", 1973], [145, "Van Halen", "Runnin' With the Devil", 1978], [146, "Mitch Ryder", "Rock And Roll", 1967], [147, "Buffalo Springfield", "Rock and Roll Woman", 1967], [148, "Pat Travers", "Boom, Boom (Out Go The Lights)", 1979], [149, "Bay City Rollers", "Rock 'n Roller", 1974], [150, "Blue Öyster Cult", "Cities On Flame With Rock And Roll", 1972]];
+var FEAT=[["fc-1", "Queen", "We Will Rock You"], ["fc-2", "Queen", "We Are the Champions"], ["fc-3", "The Who", "My Generation"], ["fc-4", "Neil Young", "Rockin' in the Free World"], ["fc-5", "The Beatles", "All You Need Is Love"], ["fc-6", "Bruce Springsteen", "Born in the U.S.A."], ["fc-7", "John Lennon", "Give Peace A Chance"], ["fc-8", "Steppenwolf", "Born to Be Wild"], ["fc-9", "Bill Haley & His Comets", "Rock Around The Clock"], ["fc-10", "AC/DC", "Highway to Hell"]];
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
+      for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
+      if(!m&&res.length)m=res[0];
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
+          for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
+          if(best)setImg(el,best["#text"]);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Queen","We Will Rock You");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*280);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+s[0]+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[1])+"\" data-track=\""+encodeURIComponent(s[2])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+s[2]+"</div><div class=\"track-artist\">"+s[1]+"</div></div>"+
+    "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(s[1])+"\" data-lfm-track=\""+encodeURIComponent(s[2])+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.track));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
+document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfm(){
+  if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
+  var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmTrack||""),k=ar+"|||"+tr;
+  if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
+}
+function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
+document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+</script>
+</body>
+</html>

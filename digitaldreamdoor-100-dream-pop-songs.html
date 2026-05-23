@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Dream Pop Songs — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">1982–2019</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best_songs_dream_pop/" target="_blank" class="page-title">100 GREATEST DREAM POP SONGS</a>
+  <p class="page-sub">De Cocteau Twins y Mazzy Star a Beach House y The xx · Atmósferas etéreas, voces oníricas, pop espectral · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I'm Good (Blue) – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2019</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Las 100 grandes canciones del dream pop compiladas por Digital Dream Door — el subgénero del rock alternativo que construye atmósferas etéreas con voces fluidas, instrumentación espaciosa y un tempo que sugiere el estado entre el sueño y la vigilia. Al #1: Heaven or Las Vegas de Cocteau Twins (1990), el álbum cumbre de Elizabeth Fraser y Robin Guthrie — la voz más incomprensible y más emocionante de la historia del género. Al #2: Fade Into You de Mazzy Star (1993), la balada más lenta y más hipnótica de los 90s. Al #3: Song to the Siren de This Mortal Coil (1983), la versión definitiva de la canción de Tim Buckley convertida en experiencia mística.</p>
+    <p class="rtext">Cocteau Twins dominan con 7 apariciones. Beach House con 5, Galaxie 500 y Yo La Tengo con 3 cada uno. La lista abarca desde el post-punk gótico de los primeros 80s (This Mortal Coil, Cocteau Twins) hasta el dream pop contemporáneo (Cigarettes After Sex, Alvvays). La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Heaven or Las Vegas">
+    <div>
+      <div class="feat-title">Heaven or Las Vegas</div>
+      <div class="feat-artist">Cocteau Twins &middot; 1990</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Ethereal Wave</span></div>
+      <p class="feat-rev">El álbum cumbre de Cocteau Twins — Elizabeth Fraser cantando en su idioma propio, un inglés disuelto en fonemas que no significan nada y lo significan todo. Robin Guthrie y Simon Raymonde construyeron la producción más densa y más luminosa del dream pop. Heaven or Las Vegas es el título de una canción sobre el amor maternal — pero suena a algo que no tiene nombre en ningún idioma existente. El pico absoluto del género.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Fade Into You">
+    <div>
+      <div class="feat-title">Fade Into You</div>
+      <div class="feat-artist">Mazzy Star &middot; 1993</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Slowcore</span></div>
+      <p class="feat-rev">La balada más hipnótica de los años 90. Hope Sandoval y David Roback grabaron esta canción con una lentitud deliberada — el tempo es tan reducido que parece que el tiempo se detiene a mitad de la canción. La guitarra slide de Roback y la voz somnolienta de Sandoval construyen una atmósfera de intimidad absoluta. Fade Into You aparece en más películas y series que cualquier otra canción del género — un shorthand cultural para la melancolía nostálgica.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Song to the Siren">
+    <div>
+      <div class="feat-title">Song to the Siren</div>
+      <div class="feat-artist">This Mortal Coil &middot; 1983</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Ethereal</span></div>
+      <p class="feat-rev">Tim Buckley escribió esta canción en 1967; Ivo Watts-Russell y Elizabeth Fraser la grabaron en 1983 para el proyecto This Mortal Coil y crearon la versión definitiva. La voz de Fraser sobre una guitarra acústica y producción mínima convierte una canción folk en experiencia mística. John Balance de Coil, Robert Smith de The Cure y docenas de artistas la han citado como la canción más emocionalmente devastadora que han escuchado.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Falling">
+    <div>
+      <div class="feat-title">Falling</div>
+      <div class="feat-artist">Julee Cruise &middot; 1989</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Ambient Pop</span></div>
+      <p class="feat-rev">Angelo Badalamenti y David Lynch compusieron esta canción para la serie Twin Peaks — Julee Cruise la grabó con una voz que parece llegar desde otro mundo. Falling es literalmente la canción de los créditos de Twin Peaks, pero también es la definición del dream pop: una melodía simple suspendida en una producción que suena a las 3 AM en un diner vacío al borde de una carretera que no lleva a ningún sitio reconocible.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Dreams">
+    <div>
+      <div class="feat-title">Dreams</div>
+      <div class="feat-artist">The Cranberries &middot; 1993</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Alternative Rock</span></div>
+      <p class="feat-rev">El debut más brillante del dream pop celta: Dolores O'Riordan con su voz melismática sobre el jangle pop de Noel Hogan construyó algo que sonaba completamente nuevo en 1993. Dreams fue el primer single de Everybody Else Is Doing It, So Why Can't We? y llegó al top 40 de múltiples países. La canción que llevó el dream pop irlandés al mainstream internacional — y la que más aparece en películas sobre los 90s treinta años después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Birthday">
+    <div>
+      <div class="feat-title">Birthday</div>
+      <div class="feat-artist">The Sugarcubes &middot; 1987</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Art Pop</span></div>
+      <p class="feat-rev">Björk antes de ser Björk: la cantante islandesa en su única gran banda antes de su carrera solista. Birthday es una canción sobre un niño que tiene una amiga hada — narrada con la naturalidad perturbadora característica de Björk. La producción de Einar Örn y Siggi Baldursson mezcla el post-punk con el pop onírico de una manera que anticipaba el art pop de los 90s. El NME la eligió canción del año 1987.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Sweetness and Light">
+    <div>
+      <div class="feat-title">Sweetness and Light</div>
+      <div class="feat-artist">Lush &middot; 1990</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Shoegaze</span></div>
+      <p class="feat-rev">Miki Berenyi y Emma Anderson construyeron sobre capas de guitarras saturadas y voces en armonía una canción que define el momento exacto en que el dream pop y el shoegaze se fusionaron. Producida por Robin Guthrie de Cocteau Twins — la conexión directa entre las dos corrientes del género. Sweetness and Light es el dream pop en su estado más físico: no solo te hace soñar sino que te aplasta bajo el peso de sus propias texturas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Blue Thunder">
+    <div>
+      <div class="feat-title">Blue Thunder</div>
+      <div class="feat-artist">Galaxie 500 &middot; 1989</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Lo-Fi</span></div>
+      <p class="feat-rev">Dean Wareham, Naomi Yang y Damon Krukowski grabaron este álbum en Boston con un presupuesto mínimo y una producción intencionalmente cruda — el lo-fi como estética deliberada, no como limitación económica. Blue Thunder tiene esa calidad específica del mejor dream pop: suena grabada en otro tiempo, en un estudio que no existe, por personas que no están del todo aquí. La velocidad de tortuga y la reverberación infinita como lenguaje.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Hoppípolla">
+    <div>
+      <div class="feat-title">Hoppípolla</div>
+      <div class="feat-artist">Sigur Rós &middot; 1990</div>
+      <div class="feat-meta"><span class="feat-pill">Post-Rock / Dream Pop</span></div>
+      <p class="feat-rev">Los islandeses Sigur Rós llevan toda su carrera grabando en Hopelandic — su propio idioma inventado de sílabas sin significado concreto, diseñadas para que el oyente proyecte sus propias emociones en la música. Hoppípolla (que significa 'saltando en charcos') es su canción más accesible y más usada en cine y televisión: aparece en Planet Earth, en más de cincuenta trailers de películas, y en cada montaje emocional que un editor de video ha necesitado en los últimos veinte años.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Pearly Dewdrops' Drops">
+    <div>
+      <div class="feat-title">Pearly Dewdrops' Drops</div>
+      <div class="feat-artist">Cocteau Twins &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Pop / Ethereal Wave</span></div>
+      <p class="feat-rev">El primer gran hit de Cocteau Twins — una canción cuya letra nadie ha transcrito correctamente porque Elizabeth Fraser canta en un idioma que ella misma inventa en tiempo real. El single llegó al top 30 del UK chart en 1984 y definió el sonido del 4AD: producción densa, graves profundos, voces imposibles, melodías que no terminan donde el oído espera que terminen. El nacimiento del dream pop como género reconocible.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best_songs_dream_pop/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Heaven or Las Vegas","Cocteau Twins",1990],
+  [2,"Fade Into You","Mazzy Star",1993],
+  [3,"Song to the Siren","This Mortal Coil",1983],
+  [4,"Falling","Julee Cruise",1989],
+  [5,"Dreams","The Cranberries",1993],
+  [6,"Birthday","The Sugarcubes",1987],
+  [7,"Sweetness and Light","Lush",1990],
+  [8,"Blue Thunder","Galaxie 500",1989],
+  [9,"Hoppípolla","Sigur Rós",2005],
+  [10,"Pearly Dewdrops\' Drops","Cocteau Twins",1984],
+  [11,"Kim & Jessie","M83",2008],
+  [12,"Autumn Sweater","Yo La Tengo",1997],
+  [13,"Come On Let\'s Go","Broadcast",2000],
+  [14,"Plainsong","The Cure",1989],
+  [15,"Heart of Chambers","Beach House",2006],
+  [16,"Over the Ocean","Low",1994],
+  [17,"Pearl","Chapterhouse",1991],
+  [18,"My Cabal","School of Seven Bells",2008],
+  [19,"Bright as Yellow","The Innocence Mission",1995],
+  [20,"For Love","Lush",1992],
+  [21,"In the Clouds","All About Eve",1988],
+  [22,"Daniel","Bat for Lashes",2009],
+  [23,"Tugboat","Galaxie 500",1989],
+  [24,"Rockin\' Back Inside My Heart","Julee Cruise",1989],
+  [25,"Intro","The xx",2009],
+  [26,"Lorelei","Cocteau Twins",1984],
+  [27,"Drive That Fast","Kitchens of Distinction",1989],
+  [28,"One of Our Girls Has Gone Missing","A.C. Marias",1988],
+  [29,"Just Like Christmas","Low",1999],
+  [30,"Catch the Breeze","Slowdive",1991],
+  [31,"Special","Mew",2003],
+  [32,"Home","Engineers",2005],
+  [33,"Let\'s Save Tony Orlando\'s House","Yo La Tengo",1997],
+  [34,"Letting Go","Wild Nothing",2010],
+  [35,"Shadow","Chromatics",2012],
+  [36,"Norway","Beach House",2008],
+  [37,"Undertow","Warpaint",2010],
+  [38,"Sweet","Cigarettes After Sex",2017],
+  [39,"Windstorm","School of Seven Bells",2008],
+  [40,"Angels","The xx",2009],
+  [41,"Flowers in December","Mazzy Star",1996],
+  [42,"Love\'s Easy Tears","Cocteau Twins",1986],
+  [43,"Can\'t Be Sure","The Sundays",1989],
+  [44,"A Shoulder to the Wheel","Bel Canto",1990],
+  [45,"Used to Be","Beach House",2010],
+  [46,"Seal My Fate","Belly",1993],
+  [47,"Imagination","Xymox",1985],
+  [48,"Ode to My Family","The Cranberries",1994],
+  [49,"Dreamtime","The Heart Throbs",1990],
+  [50,"Night Cruising","Fishmans",1994],
+  [51,"Nothing Natural","Lush",1991],
+  [52,"Ladies and Gentlemen We Are Floating in Space","Spiritualized",1997],
+  [53,"Iceblink Luck","Cocteau Twins",1990],
+  [54,"Suzanne","Hope Sandoval & The Warm Inventions",2001],
+  [55,"Time Baby III","Medicine",1992],
+  [56,"When You\'re Sad","A.R. Kane",1987],
+  [57,"Another Century","The Church",1988],
+  [58,"Echo\'s Answer","Broadcast",2003],
+  [59,"The Other Side of Mt. Heart Attack","Liars",2006],
+  [60,"Strange","Galaxie 500",1988],
+  [61,"When We Fall","Grouper",2008],
+  [62,"Saltwater","Geowulf",2016],
+  [63,"Mercy","The Innocence Mission",1989],
+  [64,"Heaven\'s on Fire","The Radio Dept.",2003],
+  [65,"We Own the Sky","M83",2007],
+  [66,"Our Way to Fall","Yo La Tengo",2000],
+  [67,"Walkabout","Atlas Sound",2009],
+  [68,"Shadow","Wild Nothing",2016],
+  [69,"Perfume Garden","The Chameleons",1986],
+  [70,"The Zookeeper\'s Boy","Mew",2005],
+  [71,"Ivo","Cocteau Twins",1982],
+  [72,"23","Blonde Redhead",2007],
+  [73,"Words","Low",2001],
+  [74,"Stars","Lisa Germano",1994],
+  [75,"In Every Ford","His Name is Alive",1990],
+  [76,"Love Songs on the Radio","Mojave 3",1995],
+  [77,"Við spilum endalaust","Sigur Rós",2008],
+  [78,"The 3rd Time We Opened the Capsule","Kitchens of Distinction",1994],
+  [79,"Lazuli","Beach House",2012],
+  [80,"Fourth of July","Galaxie 500",1988],
+  [81,"You and Your Sister","This Mortal Coil",1991],
+  [82,"Carolyn\'s Fingers","Cocteau Twins",1988],
+  [83,"Never Known","The Durutti Column",1980],
+  [84,"In Undertow","Alvvays",2017],
+  [85,"Questions in a World of Blue","Julee Cruise",1992],
+  [86,"The Trip","Still Corners",2010],
+  [87,"Reflections After Jane","The Clientele",2005],
+  [88,"Clear To You","The Innocence Mission",2003],
+  [89,"Lark","Au Revoir Simone",2009],
+  [90,"The Page","Chromatics",2012],
+  [91,"We Are The Beautiful","Chapterhouse",1992],
+  [92,"Halah","Mazzy Star",1993],
+  [93,"America\'s Boy","Broadcast",2000],
+  [94,"Cranekiss","Tamaryn",2015],
+  [95,"Drown","The Smashing Pumpkins",1995],
+  [96,"Aikea-Guinea","Cocteau Twins",1985],
+  [97,"Now They\'ll Sleep","Belly",1993],
+  [98,"Zebra","Beach House",2010],
+  [99,"Nocturne","Wild Nothing",2010],
+  [100,"Up","A.R. Kane",1989],
+];
+
+var FEAT = [
+  ["fc-1","Cocteau Twins","Heaven or Las Vegas"],
+  ["fc-2","Mazzy Star","Fade Into You"],
+  ["fc-3","This Mortal Coil","Song to the Siren"],
+  ["fc-4","Julee Cruise","Falling"],
+  ["fc-5","The Cranberries","Dreams"],
+  ["fc-6","The Sugarcubes","Birthday"],
+  ["fc-7","Lush","Sweetness and Light"],
+  ["fc-8","Galaxie 500","Blue Thunder"],
+  ["fc-9","Sigur Ros","Hopipolla"],
+  ["fc-10","Cocteau Twins","Pearly Dewdrops Drops"],
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Cocteau Twins","Heaven or Las Vegas");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

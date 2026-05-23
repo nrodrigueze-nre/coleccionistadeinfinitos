@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The 100 Best Songs of 2024 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2024</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-2024-1235163675/" target="_blank" class="page-title">THE 100 BEST SONGS OF 2024</a>
+  <p class="page-sub">De Chappell Roan y Kendrick a Sabrina Carpenter y Shaboozey · El año del pop sin reglas y el beef del siglo · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Good Luck Babe! – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2024</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Good Luck, Babe! de Chappell Roan al #1 — la artista que empezó el año feliz de haber lanzado su debut y terminó siendo la mayor estrella del planeta. Not Like Us de Kendrick Lamar al #2 — el golpe final del beef del siglo, tocado en el Super Bowl ante 120 millones de personas. Shaboozey con A Bar Song al #3, 19 semanas en el #1 del Hot 100. Espresso de Sabrina Carpenter al #4. Un año donde el country-rap, el folk indie, el New Wave y el hip-hop de West Coast compartieron la cima sin pedir permiso.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &mdash; Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Good Luck Babe!">
+    <div>
+      <div class="feat-title">Good Luck, Babe!</div>
+      <div class="feat-artist">Chappell Roan &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Synth-Pop</span></div>
+      <p class="feat-rev">Comenzó el año como una artista que estaba feliz de haber lanzado su álbum debut. Para mayo era la mayor estrella del mundo. "Good Luck, Babe!" es New Wave de los 80 encontrándose con el soft rock de los 90 en una perfección pop: Roan dedidcó la canción a una amante que tiene miedo de admitir — ante el mundo y ante sí misma — que le gustan las chicas. El puente es el momento icónico del año, el tipo de instante musical destinado a convertirse en leyenda del karaoke durante décadas. Tan adictivo como honesto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Not Like Us">
+    <div>
+      <div class="feat-title">Not Like Us</div>
+      <div class="feat-artist">Kendrick Lamar &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / West Coast</span></div>
+      <p class="feat-rev">El golpe final en el beef más importante del rap en años. Después de semanas de diss tracks entre Kendrick y Drake, "Not Like Us" fue el que impactó la cultura de forma definitiva: una producción de Mustard que suena al LA de los 90s, con un Kendrick que rapea con la frialdad de alguien que sabe que ya ganó. La canción llegó al número uno, fue el single más reproducido del año en Spotify, y Kendrick la tocó en el Super Bowl ante 120 millones de personas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="A Bar Song (Tipsy)">
+    <div>
+      <div class="feat-title">A Bar Song (Tipsy)</div>
+      <div class="feat-artist">Shaboozey &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Country-Rap</span></div>
+      <p class="feat-rev">Un desconocido llamado Shaboozey pasó 19 semanas en el número uno del Billboard Hot 100 — igualando el récord de "Old Town Road". "A Bar Song (Tipsy)" toma el country-rap que Lil Nas X popularizó y lo lleva a un territorio más puro y más honesto: guitarra twang, fiddle borroso, dobles tragos de Jack Daniel's, mujeres bailando sobre las mesas. El himno de bar definitivo, tan perfecto que podría haberse escrito en 1975 o en 2024 y hubiera sonado igual de verdadero.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Espresso">
+    <div>
+      <div class="feat-title">Espresso</div>
+      <div class="feat-artist">Sabrina Carpenter &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Pop</span></div>
+      <p class="feat-rev">¿Quién dijo que la canción del verano tiene que tener sentido? El pop efervescente de Sabrina Carpenter — su rizz rival early Madonna, dice RS — es tan irresistible que te hace creer que tú también eres ese espresso. Sin complicaciones, sin pretensiones: solo un gancho que se queda y una voz que convierte el innuendo romántico en arte menor perfectamente ejecutado. El verano de 2024 tuvo esta canción de fondo en todas partes. La correcta.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Birds of a Feather">
+    <div>
+      <div class="feat-title">Birds of a Feather</div>
+      <div class="feat-artist">Billie Eilish &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / Art Pop</span></div>
+      <p class="feat-rev">Del álbum más valiente de Billie Eilish, "Birds of a Feather" es su declaración de amor más directa: "I want you to stay 'til I'm in the grave." Sin el artificio de sus primeros discos, sin la oscuridad calculada — solo Billie siendo completamente vulnerable sobre querer a alguien para siempre. Ganó el Grammy a la Canción del Año y representó su evolución más clara: de artista de música de miedo adolescente a narradora de la intimidad adulta.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Too Sweet">
+    <div>
+      <div class="feat-title">Too Sweet</div>
+      <div class="feat-artist">Hozier &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Folk-Rock / Blues</span></div>
+      <p class="feat-rev">El primer número uno de Hozier. Después de una década de ser el chico de "Take Me to Church", Hozier llegó al tope del Billboard Hot 100 con una canción sobre ser incompatible románticamente con alguien que es demasiado bueno para el mundo sucio donde él habita. Slide de guitarra, blues de Chicago, melodía que se queda como una marca. El tipo de canción que suena como si hubiera existido siempre — y que dejó claro que Hozier iba a seguir siendo relevante cuando todo el mundo creía haberlo entendido ya.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Nasty">
+    <div>
+      <div class="feat-title">Nasty</div>
+      <div class="feat-artist">Tinashe &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">R&amp;B / Dance</span></div>
+      <p class="feat-rev">La coreografía del año. Tinashe llevó décadas siendo la artista de R&B más subestimada de su generación, y "Nasty" fue su venganza: una canción de baile que Tomó TikTok y lo puso de rodillas. El challenge de la coreografía — esas caderas, ese control — se convirtió en el meme de la temporada. Pero debajo del viral hay una canción de producción impecable sobre reclamar tu propio deseo con una confianza que pocas canciones logran. Bienvenida, finalmente, al primer plano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Pink Skies">
+    <div>
+      <div class="feat-title">Pink Skies</div>
+      <div class="feat-artist">Zach Bryan &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Country / Americana</span></div>
+      <p class="feat-rev">Zach Bryan consolidó en 2024 que es el mayor narrador del country de su generación, y "Pink Skies" es el por qué: una canción sobre el amor y el momento en que todo parece posible, construida sobre una guitarra acústica y una voz que suena como si hubiera vivido el triple de lo que cualquier persona de su edad ha tenido tiempo de vivir. Sencilla en apariencia, devastadora en el fondo. El tipo de canción de country que existirá dentro de treinta años igual que existe hoy.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Girl So Confusing (Remix)">
+    <div>
+      <div class="feat-title">Girl, So Confusing (Remix)</div>
+      <div class="feat-artist">Charli XCX feat. Lorde &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / Hyperpop</span></div>
+      <p class="feat-rev">Charli XCX publicó una nota de voz. Lorde la trabajó. El resultado fue el momento de reconciliación pública más fascinante del pop en años: dos artistas que el mundo creía rivales, y que en realidad sólo se habían perdido de vista, processándolo todo en un banger de dance-pop que contentó a los fans de ambas. Lorde aportando claridad donde el original de Charli era glitch-pop; juntas haciendo algo más grande que cualquiera de las dos solas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Right Back to It">
+    <div>
+      <div class="feat-title">Right Back to It</div>
+      <div class="feat-artist">Waxahatchee feat. MJ Lenderman &middot; 2024</div>
+      <div class="feat-meta"><span class="feat-pill">Americana / Country-Rock</span></div>
+      <p class="feat-rev">El dúo del año en el indie americano: Katie Crutchfield y MJ Lenderman, las dos voces más honestas del country alternativo de 2024, cantando juntos sobre el amor que vuelve sin anunciarse. Simple, perfecto, sin un elemento sobrante. "Right Back to It" tiene la calidad de los clásicos que suenan como si siempre hubieran existido, el tipo de canción que merecera estar en una lista como esta dentro de diez años sin que nadie lo cuestione.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 CANCIONES · 2024</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-2024-1235163675/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Good Luck Babe!","Chappell Roan",2024],
+  [2,"Not Like Us","Kendrick Lamar",2024],
+  [3,"A Bar Song (Tipsy)","Shaboozey",2024],
+  [4,"Espresso","Sabrina Carpenter",2024],
+  [5,"Birds of a Feather","Billie Eilish",2024],
+  [6,"Too Sweet","Hozier",2024],
+  [7,"Nasty","Tinashe",2024],
+  [8,"Pink Skies","Zach Bryan",2024],
+  [9,"Girl So Confusing (Remix)","Charli XCX feat. Lorde",2024],
+  [10,"Right Back to It","Waxahatchee feat. MJ Lenderman",2024],
+  [11,"Ya Ya","Beyonce",2024],
+  [12,"Type Shit","Future Metro Boomin Travis Scott and Playboi Carti",2024],
+  [13,"We Can\'t Be Friends (Wait for Your Love)","Ariana Grande",2024],
+  [14,"Docket","Blondshell feat. Bully",2024],
+  [15,"Euphoria","Kendrick Lamar",2024],
+  [16,"Genesis","Raye",2024],
+  [17,"Disease","Lady Gaga",2024],
+  [18,"Juna","Clairo",2024],
+  [19,"Gata Only","Cris MJ and FloyyMenor",2024],
+  [20,"Taste","Sabrina Carpenter",2024],
+  [21,"APT.","ROSE and Bruno Mars",2024],
+  [22,"Diet Pepsi","Addison Rae",2024],
+  [23,"Angel of My Dreams","Jade",2024],
+  [24,"She\'s Leaving You","MJ Lenderman",2024],
+  [25,"Hiss","Megan Thee Stallion",2024],
+  [26,"Von dutch","Charli XCX",2024],
+  [27,"I Had Some Help","Morgan Wallen",2024],
+  [28,"360 Remix","Charli XCX feat. Lorde",2024],
+  [29,"Bodyguard","Beyonce",2024],
+  [30,"Lunch","Billie Eilish",2024],
+  [31,"Guess","Charli XCX feat. Billie Eilish",2024],
+  [32,"the boy is mine","Ariana Grande",2024],
+  [33,"Sympathy Is a Knife","Charli XCX",2024],
+  [34,"meet the grahams","Kendrick Lamar",2024],
+  [35,"The Smallest Man Who Ever Lived","Taylor Swift",2024],
+  [36,"El Hechizo","Peso Pluma and Anitta",2024],
+  [37,"Texas Hold Em","Beyonce",2024],
+  [38,"Please Please Please","Sabrina Carpenter",2024],
+  [39,"Mamushi","Megan Thee Stallion feat. Nicki Minaj",2024],
+  [40,"Hot to Go!","Chappell Roan",2024],
+  [41,"Did It First","Ice Spice feat. Central Cee",2024],
+  [42,"Agora Hills","Doja Cat",2024],
+  [43,"360","Charli XCX",2024],
+  [44,"Water","Tyla",2024],
+  [45,"I Had Some Help","Post Malone feat. Morgan Wallen",2024],
+  [46,"Obsessed","Olivia Rodrigo",2024],
+  [47,"Driver","Soccer Mommy",2024],
+  [48,"Never Lose Me","Flo Milli feat. Cardi B and SZA",2024],
+  [49,"Austin","Dasha",2024],
+  [50,"Tryin My Hardest","SiR",2024],
+  [51,"Get It Sexyy","Sexyy Red",2024],
+  [52,"Active","Asake feat. Travis Scott",2024],
+  [53,"Cardinal","Kacey Musgraves",2024],
+  [54,"Never Need Me","Rachel Chinouriri",2024],
+  [55,"World on a String","Jessica Pratt",2024],
+  [56,"Como Donde y Cuando","Shakira",2024],
+  [57,"Starburster","Fontaines D.C.",2024],
+  [58,"Get in With Me","BossMan Dlow",2024],
+  [59,"Like I Say (I Runaway)","Nilufer Yanya",2024],
+  [60,"I Love You I\'m Sorry","Gracie Abrams",2024],
+  [61,"215634","Elvie Shane",2024],
+  [62,"Love Me JeJe","Tems",2024],
+  [63,"Family Matters","Drake",2024],
+  [64,"The Lighthouse","Stevie Nicks",2024],
+  [65,"It Was Always You (Siempre Fuiste Tu)","Carin Leon and Leon Bridges",2024],
+  [66,"Soup","Remi Wolf",2024],
+  [67,"Fine Art","Kneecap",2024],
+  [68,"Denial Is a River","Doechii",2024],
+  [69,"Tshwala Bam","TitoM and Yuppe feat. S.N.E and EeQue",2024],
+  [70,"New Woman","Lisa feat. Rosalia",2024],
+  [71,"Beaches","Beabadoobee",2024],
+  [72,"Joyride","Kesha",2024],
+  [73,"Forever","Hovvdy",2024],
+  [74,"Lagos Love Story","Ayra Starr",2024],
+  [75,"Fun!","May Rio",2024],
+  [76,"Wanting and Waiting","Black Crowes",2024],
+  [77,"Carousel Horses","Christian Lee Hutson",2024],
+  [78,"No One Else","Lola Brooke feat. Jeremih",2024],
+  [79,"Training Season","Dua Lipa",2024],
+  [80,"Midas","Wunderhorse",2024],
+  [81,"Those Damn Roches","Linda Thompson and Teddy Thompson",2024],
+  [82,"Piece of My Heart","Wizkid feat. Brent Faiyaz",2024],
+  [83,"Can\'t Be Still","Illuminati Hotties",2024],
+  [84,"Radio Wave","Silverada",2024],
+  [85,"Ajhussi","Flying Lotus",2024],
+  [86,"California Highway 99","The Softies",2024],
+  [87,"Use Me","Zach Top",2024],
+  [88,"Masquerade","Original Cast of Stereophonic",2024],
+  [89,"Milk","Abby Sage",2024],
+  [90,"Dammit Randy","Miranda Lambert",2024],
+  [91,"Kehlani","Jordan Adetunji",2024],
+  [92,"That\'s My Floor","Magdalena Bay",2024],
+  [93,"In Front of Me Now","Nada Surf",2024],
+  [94,"Big Dawgs","Hanumankind feat. Kalmi",2024],
+  [95,"On the Game","The Black Keys",2024],
+  [96,"After Hours","Kehlani",2024],
+  [97,"XO (Only If You Say Yes)","ENHYPEN",2024],
+  [98,"Britpop","A.G. Cook",2024],
+  [99,"Adivino","Myke Towers and Bad Bunny",2024],
+  [100,"Beautiful Things","Benson Boone",2024],
+];
+
+var FEAT = [
+  ["fc-1","Chappell Roan","Good Luck Babe!"],
+  ["fc-2","Kendrick Lamar","Not Like Us"],
+  ["fc-3","Shaboozey","A Bar Song (Tipsy)"],
+  ["fc-4","Sabrina Carpenter","Espresso"],
+  ["fc-5","Billie Eilish","Birds of a Feather"],
+  ["fc-6","Hozier","Too Sweet"],
+  ["fc-7","Tinashe","Nasty"],
+  ["fc-8","Zach Bryan","Pink Skies"],
+  ["fc-9","Charli XCX feat. Lorde","Girl So Confusing (Remix)"],
+  ["fc-10","Waxahatchee feat. MJ Lenderman","Right Back to It"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Chappell Roan", "Good Luck Babe!");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var track  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[key] = count; renderScrobble(el, count);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

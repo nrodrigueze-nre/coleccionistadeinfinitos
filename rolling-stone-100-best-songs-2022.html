@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The 100 Best Songs of 2022 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2022</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-2022-list-1234632381/" target="_blank" class="page-title">THE 100 BEST SONGS OF 2022</a>
+  <p class="page-sub">De Bad Bunny y Beyoncé a Steve Lacy e Ice Spice · El año del verano sin ti y el alma rebelde · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Titi Me Pregunto – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2022</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Titi Me Preguntó de Bad Bunny al #1 — la canción más escuchada del artista más escuchado del mundo. Pero 2022 es también el año de Beyoncé: Cuff It al #2 y Break My Soul al #8, Renaissance coronándola reina del house. Steve Lacy con Bad Habit al #3 grabada en un teléfono, Rosalía con Despecha al #5 demostrando que puede ser tan popular como vanguardista. La lista más global de la era del streaming: reggaetón, afropop, K-pop, country y hyperpop en la misma página, con la misma legitimidad.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &mdash; Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Titi Me Pregunto">
+    <div>
+      <div class="feat-title">Titi Me Preguntó</div>
+      <div class="feat-artist">Bad Bunny &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Reggaetón</span></div>
+      <p class="feat-rev">La canción más escuchada del artista más escuchado del mundo en 2022. "Un Verano Sin Ti" fue el álbum del año en casi todas las listas importantes, y "Titi Me Preguntó" fue su corazón bailable: Benito bailando perreo con una ligereza que oculta la complejidad de un reggaetón construido sobre líneas de bajo de cumbia y samples que van del hip-hop de los 90 a la plena puertorriqueña. La canción sobre el éxito y el deseo que sonaba en cada playa, cada bar y cada playlist del planeta durante el verano de 2022.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Cuff It">
+    <div>
+      <div class="feat-title">Cuff It</div>
+      <div class="feat-artist">Beyoncé &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Dance</span></div>
+      <p class="feat-rev">Del álbum que convirtió a Beyoncé en la reina del house, "Cuff It" es el momento en que Renaissance deja de ser declaración de movimiento y se convierte en pura alegría. Construida sobre un groove de funk y disco que rinde homenaje a Nile Rodgers y a los grandes del baile negro americano, la canción suena como si hubiera sido concebida directamente en una pista de baile de 1979 — pero con la claridad de producción del siglo XXI. La voz de Beyoncé fluye con una ligereza que esconde toda la precisión que implica cantar así.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Bad Habit">
+    <div>
+      <div class="feat-title">Bad Habit</div>
+      <div class="feat-artist">Steve Lacy &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">R&amp;B / Pop</span></div>
+      <p class="feat-rev">Steve Lacy grabó "Bad Habit" con su teléfono. El resultado fue el mayor hit del año en términos críticos — una canción de desamor construida sobre una guitarra acústica lo-fi y una voz que suena a la vez despreocupada y devastada. Lacy dijo que no entendía por qué había tenido tanto éxito: él sólo estaba siendo honesto sobre haber dejado pasar a alguien importante. Esa honestidad, amplificada por TikTok hasta convertirse en meme universal, la puso en el número uno del Billboard Hot 100 y en la nómina del Grammy al Álbum del Año.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Karma">
+    <div>
+      <div class="feat-title">Karma</div>
+      <div class="feat-artist">Taylor Swift &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Pop</span></div>
+      <p class="feat-rev">La venganza más elegante del pop de 2022. Taylor Swift casó sus letras de maestra del wordplay — "Karma is my boyfriend" pasándose de metáfora smug a literalidad amorosa en una sola estrofa — con la producción más flexible de su trabajo con Jack Antonoff. Midnights fue el álbum más vendido del año; "Karma" fue su momento más puro como canción de pop calculado para maxi mizar el placer de tener razón después de haber sido odiada públicamente durante una década entera.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Despecha">
+    <div>
+      <div class="feat-title">Despecha</div>
+      <div class="feat-artist">Rosalía &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / Reggaetón</span></div>
+      <p class="feat-rev">El single de verano más inesperado del año: Rosalía abandonando el flamenco-pop experimental de Motomami para hacer la canción de pista de baile más directa de su carrera. "Despecha" es cumbia, es reggaetón, es una canción de karaoke para borrachos que lloran y rien al mismo tiempo. Rosalía canta sobre el desamor con el mismo virtuosismo técnico con que lo hace todo — pero esta vez enmarcado en algo tan terrenal y accesible que cualquiera puede reconocerse en ello.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Hotel Lobby">
+    <div>
+      <div class="feat-title">Hotel Lobby</div>
+      <div class="feat-artist">Quavo and Takeoff &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Trap</span></div>
+      <p class="feat-rev">El trap más atmosférico del año, y el más emocionalmente devastador en retrospectiva: Takeoff fue asesinado en noviembre de 2022, y "Hotel Lobby" quedó como uno de los mejores momentos de su carrera. El dúo construyó una canción sobre el lujo, la paranoia y la vida en la carretera con una producción que parece flotar entre el sueño y la vigilia. Takeoff rapea con una precisión melódica que siempre lo distinguió del resto de Migos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Cash In Cash Out">
+    <div>
+      <div class="feat-title">Cash In Cash Out</div>
+      <div class="feat-artist">Pharrell feat. 21 Savage and Tyler the Creator &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop</span></div>
+      <p class="feat-rev">El regreso de Pharrell como rapero — no sólo como productor — con la colaboración más interesante del año en el hip-hop. Pharrell, Tyler the Creator y 21 Savage forman un triángulo de personalidades completamente distintas que sin embargo encajan a la perfección sobre un beat que suena como si el futuro del hip-hop y su pasado se hubieran fusionado en un sólo minuto glorioso. La producción de Pharrell sigue siendo incomparable — y aquí él mismo es el que más sorprende como MC.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Break My Soul">
+    <div>
+      <div class="feat-title">Break My Soul</div>
+      <div class="feat-artist">Beyoncé &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">House / Dance</span></div>
+      <p class="feat-rev">El single que anunció Renaissance y redefiniría el verano entero. "Break My Soul" es house de Chicago y gospel de Nueva Orleans fusionados en una declaración de liberación laboral que llegó exactamente cuando el mundo estaba procesando la Gran Resignación post-pandemia. El sample de "Show Me Love" de Robin S. activa la memoria colectiva de la pista de baile; la voz de Beyoncé la eleva a algo nuevo. La primera entrega de una de las obras maestras del año.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="As It Was">
+    <div>
+      <div class="feat-title">As It Was</div>
+      <div class="feat-artist">Harry Styles &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Pop</span></div>
+      <p class="feat-rev">La canción más escuchada de 2022 en Spotify globalmente, y con razón: "As It Was" es pop perfecto en el sentido más literal. El riff de sintetizador de Harry Styles y Kid Harpoon rinde homenaje al mejor Toto, a Peter Gabriel y a los grandes de los 80 sin sonar nunca a pastiche. La letra — una reflexión sobre la imposibilidad de volver a como eran las cosas — captura el mood post-pandemia con una melancolía que el ritmo bailable hace más tolerable. El pop mainstream que funciona exactamente como debería.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="N95">
+    <div>
+      <div class="feat-title">N95</div>
+      <div class="feat-artist">Kendrick Lamar &middot; 2022</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop</span></div>
+      <p class="feat-rev">Kendrick Lamar volvió después de cinco años de silencio con Mr. Morale &amp; the Big Steppers, y "N95" fue su declaración de intenciones más directa: arrancate la máscara. La canción usa la máscara pandemia como metáfora de todas las máscaras que la gente usa en las redes sociales, en sus carreras, en sus relaciones. El beat de Sounwave cambia de tempo en medio de la canción como una traición deliberada, y Kendrick lo navega con la facilidad de alguien que hace más de una década lleva siendo el mejor rapero del mundo.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 CANCIONES · 2022</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-2022-list-1234632381/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Titi Me Pregunto","Bad Bunny",2022],
+  [2,"Cuff It","Beyonce",2022],
+  [3,"Bad Habit","Steve Lacy",2022],
+  [4,"Karma","Taylor Swift",2022],
+  [5,"Despecha","Rosalia",2022],
+  [6,"Hotel Lobby","Quavo and Takeoff",2022],
+  [7,"Cash In Cash Out","Pharrell feat. 21 Savage and Tyler the Creator",2022],
+  [8,"Break My Soul","Beyonce",2022],
+  [9,"As It Was","Harry Styles",2022],
+  [10,"Jimmy Cooks","Drake feat. 21 Savage",2022],
+  [11,"N95","Kendrick Lamar",2022],
+  [12,"Soy El Unico","Yahritza Y Su Esencia",2022],
+  [13,"Dreamin of the Past","Pusha T",2022],
+  [14,"Munch (Feelin U)","Ice Spice",2022],
+  [15,"This Hell","Rina Sawayama",2022],
+  [16,"Last Last","Burna Boy",2022],
+  [17,"Persuasive","Doechii and SZA",2022],
+  [18,"Bonfire at Tina\'s","Ashley McBryde Caylee Hammack Brandy Clark and Pillbox Patti",2022],
+  [19,"Plan B","Megan Thee Stallion",2022],
+  [20,"I Burned LA Down","Noah Cyrus",2022],
+  [21,"Something in the Orange","Zach Bryan",2022],
+  [22,"BZRP Music Sessions 51","Villano Antillano",2022],
+  [23,"The Loneliest Time","Carly Rae Jepsen and Rufus Wainwright",2022],
+  [24,"Hype Boy","NewJeans",2022],
+  [25,"Unholy","Sam Smith and Kim Petras",2022],
+  [26,"The Last Resort","Midland",2022],
+  [27,"Sungba Remix","Asake feat. Burna Boy",2022],
+  [28,"Home By Now","MUNA",2022],
+  [29,"Evergreen","Omar Apollo",2022],
+  [30,"2010","Earl Sweatshirt",2022],
+  [31,"Ku Lo Sa","Oxlade",2022],
+  [32,"Son of a Sinner","Jelly Roll",2022],
+  [33,"Mamiii","Karol G and Becky G",2022],
+  [34,"No Escape From Now","Ozzy Osbourne",2022],
+  [35,"Pink Venom","Blackpink",2022],
+  [36,"Runner","Alex G",2022],
+  [37,"Bad to Me","Wizkid",2022],
+  [38,"Hot","Seventeen",2022],
+  [39,"90 Proof","J. Cole",2022],
+  [40,"FNF Let\'s Go","GloRilla",2022],
+  [41,"Dont Forget","Sky Ferreira",2022],
+  [42,"Still Alive","FKA twigs",2022],
+  [43,"Where She Goes","Bad Bunny",2022],
+  [44,"About Damn Time","Lizzo",2022],
+  [45,"Me Porto Bonito","Bad Bunny feat. Chencho Corleone",2022],
+  [46,"Ojitos Lindos","Bad Bunny feat. Bomba Estereo",2022],
+  [47,"Sun Goes Down","Lil Nas X",2022],
+  [48,"The Heart Part 5","Kendrick Lamar",2022],
+  [49,"Right On Time","Brandi Carlile",2022],
+  [50,"El Apagon","Bad Bunny feat. Li Saumet",2022],
+  [51,"Heart Like a Truck","Lainey Wilson",2022],
+  [52,"Never Give Up","Chronixx",2022],
+  [53,"Problem With It","Plains",2022],
+  [54,"Saga","Hurray for the Riff Raff",2022],
+  [55,"Alaska","Camilo feat. Grupo Firme",2022],
+  [56,"Yearbook","Ingrid Andress",2022],
+  [57,"First Class","Jack Harlow",2022],
+  [58,"That That","Psy feat. Suga",2022],
+  [59,"Reign of Error","Dead Cross",2022],
+  [60,"American Teenager","Ethel Cain",2022],
+  [61,"Nothing","Gladie",2022],
+  [62,"Alex Bell","Guided by Voices",2022],
+  [63,"Nxde","(G)I-dle",2022],
+  [64,"Take My Breath","The Weeknd",2022],
+  [65,"Pop!","Nayeon",2022],
+  [66,"Coyotes","Bill Callahan",2022],
+  [67,"Late at Night","Protoje feat. Lila Ike",2022],
+  [68,"Jesus Freak Lighter","Blood Orange",2022],
+  [69,"Hasta Los Dientes","Camila Cabello feat. Maria Becerra",2022],
+  [70,"Hot in It","Charli XCX and Tiesto",2022],
+  [71,"X Ultima Vez","Daddy Yankee and Bad Bunny",2022],
+  [72,"Part of the Band","The 1975",2022],
+  [73,"Punto 40","Rauw Alejandro and Baby Rasta",2022],
+  [74,"Choreomania","Florence and the Machine",2022],
+  [75,"2012","Saba feat. Day Wave",2022],
+  [76,"Antifragile","Le Sserafim",2022],
+  [77,"Pomeranian Spinster","Alvvays",2022],
+  [78,"Still Life","Big Bang",2022],
+  [79,"Blacktop","Yeah Yeah Yeahs",2022],
+  [80,"2 Baddies","NCT 127",2022],
+  [81,"Mil Y Una Noches","Guitarricadelafuente",2022],
+  [82,"Made You Look","Meghan Trainor",2022],
+  [83,"The Astronaut","Jin",2022],
+  [84,"Circles Around This Town","Maren Morris",2022],
+  [85,"This Is Not America","Residente feat. Ibeyi",2022],
+  [86,"Girls","Aespa",2022],
+  [87,"Jackie Down the Line","Fontaines D.C.",2022],
+  [88,"Iced Tea","Joyce Wrice and Kaytranada",2022],
+  [89,"So Typically Now","U.S. Girls",2022],
+  [90,"Pink Convertible","Marina",2022],
+  [91,"Because I Liked a Boy","Sabrina Carpenter",2022],
+  [92,"Would\'ve Could\'ve Should\'ve","Taylor Swift",2022],
+  [93,"Cracker Island","Gorillaz feat. Thundercat",2022],
+  [94,"Conceited","Flo Milli",2022],
+  [95,"Maniac","Stray Kids",2022],
+  [96,"Eat Pray Drugs","Pillbox Patti",2022],
+  [97,"Let Us Die","King Princess",2022],
+  [98,"After Like","IVE",2022],
+  [99,"Right Track","Syd feat. Smino",2022],
+  [100,"Coming Correct Is Cheaper","Soul Glo",2022],
+];
+
+var FEAT = [
+  ["fc-1","Bad Bunny","Titi Me Pregunto"],
+  ["fc-2","Beyonce","Cuff It"],
+  ["fc-3","Steve Lacy","Bad Habit"],
+  ["fc-4","Taylor Swift","Karma"],
+  ["fc-5","Rosalia","Despecha"],
+  ["fc-6","Quavo and Takeoff","Hotel Lobby"],
+  ["fc-7","Pharrell feat. 21 Savage and Tyler the Creator","Cash In Cash Out"],
+  ["fc-8","Beyonce","Break My Soul"],
+  ["fc-9","Harry Styles","As It Was"],
+  ["fc-10","Kendrick Lamar","N95"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Bad Bunny", "Titi Me Pregunto");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var track  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[key] = count; renderScrobble(el, count);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

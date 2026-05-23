@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest New Wave Songs — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1977–1988</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-newave.html" target="_blank" class="page-title">100 GREATEST NEW WAVE SONGS</a>
+  <p class="page-sub">De Eurythmics y Talking Heads a Pet Shop Boys y Depeche Mode · El sonido que definió los 80s · Editado por Lew · Actualizado 2023</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Sweet Dreams – Eurythmics">
+    <p class="cover-cap">DIGITAL DREAM DOOR · 2023</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest New Wave Songs compilados por Lew para Digital Dream Door, última actualización noviembre de 2023. Criterio: canciones elegidas y rankeadas por su calidad musical, originalidad y popularidad en la era New Wave de aproximadamente 1978 a 1987. El New Wave evolucionó del punk a finales de los 70s siendo menos antisocial y más amigable con la radio y MTV, alcanzando su pico en 1983 y desvaneciéndose hacia 1987. Se puede describir como la mezcla de la energía del punk con elementos de glam, pop, art-rock y dance, con un fuerte apoyo en los sintetizadores. Al #1: Sweet Dreams (Are Made of This) de Eurythmics (1983). Al #2: Don't You (Forget About Me) de Simple Minds (1985). Al #3: Everybody Wants to Rule the World de Tears For Fears (1985).</p>
+    <p class="rtext">Los artistas más representados: Talking Heads (3), Elvis Costello (3), The Cars (3), Simple Minds (2), Eurythmics (2), Frankie Goes to Hollywood (2), Men At Work (2), A Flock of Seagulls (2), Squeeze (2), A-ha (2), OMD (2), Falco (2), Thompson Twins (2), Naked Eyes (2), Culture Club (2). Una lista que captura el momento exacto en que el rock y la electrónica encontraron su equilibrio más comercialmente exitoso — con Pet Shop Boys (#40 con West End Girls), Depeche Mode (#21) y Blue Monday de New Order (#17) como los que mejor sobrevivieron el paso del tiempo.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Sweet Dreams (Are Made of This)">
+    <div>
+      <div class="feat-title">Sweet Dreams (Are Made of This)</div>
+      <div class="feat-artist">Eurythmics &middot; 1983</div>
+      <div class="feat-meta"><span class="feat-pill">Synth-pop / New Wave</span></div>
+      <p class="feat-rev">Annie Lennox y Dave Stewart grabaron Sweet Dreams en un home studio con un sintetizador Roland MC-4 y una caja de ritmos — la canción que los lanzó al mundo y definió el sonido del synth-pop de 1983. El riff de bajo sintetizado es instantáneamente reconocible; la voz andrógina de Lennox con el traje masculino y el pelo naranja fue la imagen del New Wave en MTV. Llegó al #1 en Estados Unidos y Reino Unido simultáneamente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Don't You (Forget About Me)">
+    <div>
+      <div class="feat-title">Don't You (Forget About Me)</div>
+      <div class="feat-artist">Simple Minds &middot; 1985</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Post-punk</span></div>
+      <p class="feat-rev">La canción más icónica del cine de los 80s — el cierre de The Breakfast Club con el puño en alto de Judd Nelson es inseparable del tema de Simple Minds. Jim Kerr inicialmente rechazó grabarla por considerarla demasiado comercial; el grupo la registró casi a regañadientes. Llegó al #1 del Hot 100 y se convirtió en el mayor hit de su carrera. La ironía: la canción que más los define es la que menos querían hacer.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Everybody Wants to Rule the World">
+    <div>
+      <div class="feat-title">Everybody Wants to Rule the World</div>
+      <div class="feat-artist">Tears For Fears &middot; 1985</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Synth-pop</span></div>
+      <p class="feat-rev">Roland Orzabal y Curt Smith llegaron al pico de su carrera con esta canción de apertura de guitarra acústica que se despliega en una producción de sintetizadores exuberante. Llegó al #1 en Estados Unidos y Reino Unido en 1985 y ganó el Brit Award a mejor single británico. La letra — sobre el deseo de poder y control — resonó con la ansiedad política de la era Reagan-Thatcher de una manera que pocas canciones pop lograron.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Relax">
+    <div>
+      <div class="feat-title">Relax</div>
+      <div class="feat-artist">Frankie Goes to Hollywood &middot; 1983</div>
+      <div class="feat-meta"><span class="feat-pill">Hi-NRG / New Wave</span></div>
+      <p class="feat-rev">La canción que la BBC censuró y convirtió en el single más vendido de 1984 en Reino Unido. Trevor Horn la produjo con una opulencia sonora que ningún grupo del New Wave había alcanzado antes — 48 pistas de grabación para una canción de club gay. La prohibición de la BBC fue el mejor marketing posible: pasó 5 semanas en el #1 británico. La camiseta "Frankie Says Relax" fue la prenda más usada de 1984.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="One Way Or Another">
+    <div>
+      <div class="feat-title">One Way Or Another</div>
+      <div class="feat-artist">Blondie &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Punk Pop</span></div>
+      <p class="feat-rev">Debbie Harry escribió la letra sobre un stalker real que la acosaba — la convirtió en el gancho más adictivo del new wave neoyorquino. Blondie fue la bisagra perfecta entre el punk del CBGB y el pop de radio masivo: demasiado underground para el mainstream y demasiado accesible para el punk. One Way Or Another captura ese equilibrio imposible con una energía que cuarenta años no han desgastado.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Burning Down the House">
+    <div>
+      <div class="feat-title">Burning Down the House</div>
+      <div class="feat-artist">Talking Heads &middot; 1983</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Funk Rock</span></div>
+      <p class="feat-rev">David Byrne y los Talking Heads absorbieron el funk de Parliament-Funkadelic y lo filtraron a través del art-rock neoyorquino para producir el groove más físico del new wave. Speaking in Tongues (1983) fue el álbum más accesible de la banda y Burning Down the House su single más irresistible — una canción que sonaba simultáneamente a Manhattan y a Lagos, a cerebro y a cuerpo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Tainted Love">
+    <div>
+      <div class="feat-title">Tainted Love</div>
+      <div class="feat-artist">Soft Cell &middot; 1981</div>
+      <div class="feat-meta"><span class="feat-pill">Synth-pop / New Wave</span></div>
+      <p class="feat-rev">Marc Almond y Dave Ball tomaron un oscuro soul norteño de Gloria Jones (1964) y lo transformaron en el mayor hit del synth-pop británico de 1981 con dos sintetizadores y una caja de ritmos. Pasó 43 semanas consecutivas en el Billboard Hot 100 — un récord en ese momento. La versión de Soft Cell es tan definitiva que la mayoría de oyentes no saben que es un cover.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Down Under">
+    <div>
+      <div class="feat-title">Down Under</div>
+      <div class="feat-artist">Men At Work &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Pop Rock</span></div>
+      <p class="feat-rev">La canción que puso a Australia en el mapa del pop global. Colin Hay mezcló imágenes surrealistas de viaje con un orgullo nacional irónico y una flauta de pan que nadie esperaba en un hit de rock — sample de la canción folclórica Kookaburra Sits in the Old Gum Tree. Llegó al #1 en Estados Unidos, Reino Unido y Australia simultáneamente en 1983.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="I Ran (So Far Away)">
+    <div>
+      <div class="feat-title">I Ran (So Far Away)</div>
+      <div class="feat-artist">A Flock of Seagulls &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Synth-pop / New Wave</span></div>
+      <p class="feat-rev">El peinado más famoso del new wave y la canción más etérea del género. Mike Score construyó sobre capas de sintetizadores un paisaje sonoro de ciencia ficción que anticipó el dream pop — una canción sobre encontrar a un ser sobrenatural y huir de ella, que suena exactamente como esa experiencia debería sonar. El video en MTV fue tan icónico como la canción.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Don't You Want Me">
+    <div>
+      <div class="feat-title">Don't You Want Me</div>
+      <div class="feat-artist">Human League &middot; 1981</div>
+      <div class="feat-meta"><span class="feat-pill">Synth-pop / New Wave</span></div>
+      <p class="feat-rev">Philip Oakey no quería que fuera el single — pensaba que era demasiado simple. Virgin Records lo lanzó de todas formas y pasó 5 semanas en el #1 británico en Navidad de 1981, convirtiéndose en el single más vendido del año. El dueto entre Oakey y Susan Ann Sulley — con sus voces radicalmente diferentes — creó una tensión narrativa que ningún hit de synth-pop había logrado antes.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas por ranking Digital Dream Door</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES · 1977–1988</span>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-newave.html" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"Sweet Dreams (Are Made of This)","Eurythmics",1983],
+  [2,"Don't You (Forget About Me)","Simple Minds",1985],
+  [3,"Everybody Wants to Rule the World","Tears For Fears",1985],
+  [4,"Relax","Frankie Goes to Hollywood",1983],
+  [5,"One Way Or Another","Blondie",1978],
+  [6,"Burning Down the House","Talking Heads",1983],
+  [7,"Tainted Love","Soft Cell",1981],
+  [8,"Down Under","Men At Work",1982],
+  [9,"I Ran (So Far Away)","A Flock of Seagulls",1982],
+  [10,"Don't You Want Me","Human League",1981],
+  [11,"You Might Think","The Cars",1984],
+  [12,"I Melt With You","Modern English",1983],
+  [13,"Take On Me","a-ha",1985],
+  [14,"Hungry Like the Wolf","Duran Duran",1982],
+  [15,"Once in a Lifetime","Talking Heads",1980],
+  [16,"Whip It!","Devo",1980],
+  [17,"Blue Monday","New Order",1983],
+  [18,"(What's So Funny 'Bout) Peace, Love And Understanding?","Elvis Costello",1979],
+  [19,"Don't Stand So Close To Me","The Police",1980],
+  [20,"Shout","Tears For Fears",1985],
+  [21,"People Are People","Depeche Mode",1981],
+  [22,"True","Spandau Ballet",1983],
+  [23,"Brass In Pocket","The Pretenders",1980],
+  [24,"Something About You","Level 42",1986],
+  [25,"Hold Me Now","Thompson Twins",1984],
+  [26,"Turning Japanese","The Vapors",1981],
+  [27,"She Blinded Me With Science","Thomas Dolby",1984],
+  [28,"Psycho Killer","Talking Heads",1977],
+  [29,"Is She Really Going Out with Him?","Joe Jackson",1979],
+  [30,"Poison Arrow","ABC",1982],
+  [31,"Rock Lobster","B-52s",1979],
+  [32,"Need You Tonight","INXS",1987],
+  [33,"Come On Eileen","Dexy's Midnight Runners",1982],
+  [34,"Heart Of Glass","Blondie",1978],
+  [35,"Everyday I Write The Book","Elvis Costello",1983],
+  [36,"Cars","Gary Numan",1980],
+  [37,"Tempted","Squeeze",1981],
+  [38,"Who Can It Be Now?","Men At Work",1982],
+  [39,"It's My Life","Talk Talk",1982],
+  [40,"West End Girls","Pet Shop Boys",1985],
+  [41,"Do You Really Want to Hurt Me","Culture Club",1982],
+  [42,"Pump It Up","Elvis Costello",1978],
+  [43,"Doctor! Doctor!","Thompson Twins",1984],
+  [44,"Promises, Promises","Naked Eyes",1983],
+  [45,"Spirits In The Material World","The Police",1981],
+  [46,"Goody Two Shoes","Adam Ant",1982],
+  [47,"More Than This","Roxy Music",1982],
+  [48,"Pulling Mussels (From the Shell)","Squeeze",1980],
+  [49,"Love My Way","Psychedelic Furs",1982],
+  [50,"Wouldn't It Be Good","Nik Kershaw",1984],
+  [51,"Two Tribes","Frankie Goes to Hollywood",1984],
+  [52,"Senses Working Overtime","XTC",1982],
+  [53,"Obsession","Animotion",1984],
+  [54,"Save It for Later","The English Beat",1982],
+  [55,"Alive and Kicking","Simple Minds",1985],
+  [56,"Saved By Zero","The Fixx",1983],
+  [57,"Here Comes the Rain Again","Eurythmics",1984],
+  [58,"Tenderness","General Public",1984],
+  [59,"Voices Carry","Til Tuesday",1985],
+  [60,"Mexican Radio","Wall of Voodoo",1982],
+  [61,"Beds Are Burning","Midnight Oil",1988],
+  [62,"Send Me An Angel","Real Life",1983],
+  [63,"Always Something There to Remind Me","Naked Eyes",1982],
+  [64,"Steppin' Out","Joe Jackson",1982],
+  [65,"Why Me?","Planet P Project",1983],
+  [66,"No One Is To Blame","Howard Jones",1986],
+  [67,"Shake It Up","The Cars",1982],
+  [68,"The Metro","Berlin",1982],
+  [69,"You Spin Me 'Round (Like a Record)","Dead Or Alive",1985],
+  [70,"The Safety Dance","Men Without Hats",1983],
+  [71,"One Thing Leads to Another","The Fixx",1983],
+  [72,"She's a Beauty","The Tubes",1983],
+  [73,"Rock Me Amadeus","Falco",1986],
+  [74,"In a Big Country","Big Country",1983],
+  [75,"Life In a Northern Town","The Dream Academy",1985],
+  [76,"Major Tom (Coming Home)","Peter Schilling",1983],
+  [77,"Just What I Needed","The Cars",1978],
+  [78,"Time (Clock of the Heart)","Culture Club",1983],
+  [79,"The Sun Always Shines On TV","A-Ha",1985],
+  [80,"Come Back and Stay","Paul Young",1983],
+  [81,"Der Kommissar","Falco",1986],
+  [82,"Video Killed the Radio Star","The Buggles",1979],
+  [83,"Girls on Film","Duran Duran",1981],
+  [84,"Only the Lonely","The Motels",1982],
+  [85,"Wishing (If I Had a Photograph of You)","A Flock of Seagulls",1982],
+  [86,"Avalon","Roxy Music",1982],
+  [87,"I Want Candy","Bow Wow Wow",1982],
+  [88,"Too Shy","Kajagoogoo",1983],
+  [89,"Fade to Grey","Visage",1980],
+  [90,"Dance Hall Days","Wang Chung",1984],
+  [91,"A Little Respect","Erasure",1988],
+  [92,"Our House","Madness",1983],
+  [93,"Reap the Wild Wind","Ultravox",1982],
+  [94,"Destination Unknown","Missing Persons",1982],
+  [95,"I Don't Like Mondays","Boomtown Rats",1979],
+  [96,"Messages","OMD",1980],
+  [97,"Love Plus One","Haircut 100",1982],
+  [98,"I Got You","Split Enz",1980],
+  [99,"So In Love","OMD",1985],
+  [100,"The Killing Moon","Echo & the Bunnymen",1984]
+];
+
+var FEAT=[
+  ["fc-1","Eurythmics","Sweet Dreams Are Made of This"],
+  ["fc-2","Simple Minds","Don't You Forget About Me"],
+  ["fc-3","Tears For Fears","Everybody Wants to Rule the World"],
+  ["fc-4","Frankie Goes to Hollywood","Relax"],
+  ["fc-5","Blondie","One Way Or Another"],
+  ["fc-6","Talking Heads","Burning Down the House"],
+  ["fc-7","Soft Cell","Tainted Love"],
+  ["fc-8","Men At Work","Down Under"],
+  ["fc-9","A Flock of Seagulls","I Ran So Far Away"],
+  ["fc-10","Human League","Don't You Want Me"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Eurythmics","Sweet Dreams Are Made of This");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+</script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Reggae Songs — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1960–1998</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-Reggae.html" target="_blank" class="page-title">100 GREATEST REGGAE SONGS</a>
+  <p class="page-sub">De Bob Marley y Jimmy Cliff a Toots & the Maytals y Burning Spear · Ska, Rocksteady, Reggae y Dancehall · Editado por Lew · 2017</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="No Woman No Cry">
+    <p class="cover-cap">DIGITAL DREAM DOOR · 2017</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los primeros 100 de los 200 Greatest Reggae Songs compilados por Lew para Digital Dream Door, última actualización mayo de 2017. Criterio: canciones clásicas de Ska, Rocksteady, Reggae, Dancehall y Dub de Jamaica junto con canciones de artistas de reggae de Reino Unido, EE.UU. y África — rankeadas por popularidad inicial y duradera, influencia e impacto en la música reggae. Al #1: No Woman, No Cry de Bob Marley (Live at the Lyceum, 1975). Al #2: Israelites de Desmond Dekker (1968), el primer reggae en el top 10 del Billboard Hot 100. Al #3: Stir It Up de Bob Marley.</p>
+    <p class="rtext">La lista cubre el arco completo del reggae jamaicano: el Ska de los 60s (My Boy Lollipop, Monkey Man), el Rocksteady (Rocksteady de Alton Ellis), el Reggae roots de los 70s (Marley, Burning Spear, Peter Tosh, Culture), y el Dancehall de los 80s-90s (Yellowman, Shaggy). Artistas más representados en el top 100: Bob Marley & the Wailers (11), Toots & the Maytals (5), Dennis Brown (5), Jimmy Cliff (4), Desmond Dekker (3). Plays: tus reproducciones de Last.fm.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="No Woman No Cry">
+    <div>
+      <div class="feat-title">No Woman, No Cry</div>
+      <div class="feat-artist">Bob Marley &amp; the Wailers &middot; 1975</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Roots</span></div>
+      <p class="feat-rev">La versión en vivo del Lyceum Theatre de Londres (julio de 1975) es la definitiva. Marley construyendo sobre un groove de reggae lento una canción de consuelo sobre los barrios pobres de Kingston, con el coro de Judy Mowatt, Marcia Griffiths y Rita Marley elevando cada estribillo. No Woman, No Cry no es una canción de desamor sino de solidaridad comunitaria — "no llores" dirigido a las mujeres que esperan a los hombres que no vuelven. El reggae como filosofía de resistencia en su expresión más universal.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Israelites">
+    <div>
+      <div class="feat-title">Israelites</div>
+      <div class="feat-artist">Desmond Dekker &amp; the Aces &middot; 1968</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Rocksteady</span></div>
+      <p class="feat-rev">El primer reggae en llegar al top 10 del Billboard Hot 100 (#9 en 1969) y el primero en alcanzar el #1 en Reino Unido. Desmond Dekker construyó sobre el ritmo del rocksteady una metáfora bíblica sobre la pobreza jamaicana que funcionó como declaración religiosa y protesta social simultáneamente. La voz de Dekker — nasal, urgente, inconfundible — fue la primera voz del reggae que el mundo oyó en la radio mainstream. Todo lo que vino después le debe a este momento.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Stir It Up">
+    <div>
+      <div class="feat-title">Stir It Up</div>
+      <div class="feat-artist">Bob Marley &amp; the Wailers &middot; 1973</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Roots</span></div>
+      <p class="feat-rev">El groove de bajo de Family Man Barrett construyendo el fundamento más hipnótico del catálogo de Marley. Regrabada para Catch a Fire (1973) — el álbum que presentó a Bob Marley al mercado internacional — la producción de Chris Blackwell en Island Records fue el puente entre el reggae jamaicano y el rock de los 70s. Stir It Up fue la canción más directamente sensual del catálogo de Marley, lo que la hizo inmediatamente radio-friendly en los mercados anglosajones.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Pressure Drop">
+    <div>
+      <div class="feat-title">Pressure Drop</div>
+      <div class="feat-artist">Toots &amp; the Maytals &middot; 1969</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Roots</span></div>
+      <p class="feat-rev">Frederick "Toots" Hibbert escribió Pressure Drop mientras estaba en prisión — una advertencia kármica sobre la justicia divina que se convirtió en el himno más poderoso del reggae roots. La voz de Toots, más áspera y más soul que la de Marley, acerca el reggae al R&amp;B americano de manera directa. Versionada por The Clash en 1979, que la introdujo a toda una generación de oyentes de rock y punk — la canción que más directamente conecta el reggae con el ska-punk posterior.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="The Harder They Come">
+    <div>
+      <div class="feat-title">The Harder They Come</div>
+      <div class="feat-artist">Jimmy Cliff &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Roots</span></div>
+      <p class="feat-rev">La canción que abrió el reggae al mundo. La banda sonora de la película homónima de Perry Henzell (1972) fue el primer álbum de reggae que vendió masivamente en Europa y América del Norte. Jimmy Cliff construyó un himno de resistencia y ambición que funcionaba como declaración personal y crítica social al mismo tiempo. "I'd rather be a free man in my grave / than living as a puppet or a slave" — el reggae como filosofía de libertad en su forma más directa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="One Love">
+    <div>
+      <div class="feat-title">One Love</div>
+      <div class="feat-artist">Bob Marley &amp; the Wailers &middot; 1977</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Roots</span></div>
+      <p class="feat-rev">El himno de unidad más conocido del reggae — basado en People Get Ready de Curtis Mayfield (1965), con crédito compartido. One Love / People Get Ready del álbum Exodus (1977) fue el momento en que Marley convirtió el reggae en un mensaje universal de paz que trascendía la religión rastafari y la política jamaicana. La revista Time nombró Exodus como el álbum del siglo XX en 1999 — y One Love es su corazón.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="54-46 That's My Number">
+    <div>
+      <div class="feat-title">54-46 That's My Number</div>
+      <div class="feat-artist">Toots &amp; the Maytals &middot; 1968</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Soul</span></div>
+      <p class="feat-rev">El número de preso de Toots Hibbert en la cárcel donde estuvo recluido — convertido en el riff más reconocible del reggae de los 60s. 54-46 That's My Number es autobiográfico: Toots fue encarcelado por posesión de marihuana y transformó esa experiencia en la canción más energética de su carrera. La fusión de soul americano y ritmo jamaicano que define el sonido de los Maytals y anticipa el reggae roots.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Satta Massagana">
+    <div>
+      <div class="feat-title">Satta Massagana</div>
+      <div class="feat-artist">The Abyssinians &middot; 1969</div>
+      <div class="feat-meta"><span class="feat-pill">Roots Reggae / Nyahbinghi</span></div>
+      <p class="feat-rev">Grabada en 1969 pero publicada en 1971, Satta Massagana es el himno más sagrado del reggae rastafari. El nombre viene del amhárico y significa "dar gracias y alabar" — una canción de adoración que usa el lenguaje de la iglesia Ethiopian Orthodox para crear el reggae más espiritual y más austero del período. Las armonías a tres voces de los Abyssinians sobre un ritmo de Nyahbinghi crearon un estándar de reggae roots que todo el género posterior reconoce como fundacional.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Funky Kingston">
+    <div>
+      <div class="feat-title">Funky Kingston</div>
+      <div class="feat-artist">Toots &amp; the Maytals &middot; 1973</div>
+      <div class="feat-meta"><span class="feat-pill">Reggae / Soul</span></div>
+      <p class="feat-rev">Toots Hibbert celebrando Kingston como ciudad del funk y del ritmo — la conexión más directa entre el reggae jamaicano y el soul americano de James Brown y Otis Redding. Funky Kingston fue el álbum que convenció al mercado anglosajón de que el reggae podía ser tan físico e inmediato como el funk — y la canción del título es su argumento más contundente. Chris Blackwell la incluyó en la banda sonora de The Harder They Come (1973) junto a Jimmy Cliff.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Montego Bay">
+    <div>
+      <div class="feat-title">Montego Bay</div>
+      <div class="feat-artist">Freddie Notes &amp; The Rudies &middot; 1970</div>
+      <div class="feat-meta"><span class="feat-pill">Ska / Reggae</span></div>
+      <p class="feat-rev">La canción que puso a Montego Bay en el mapa del pop internacional — una celebración de la ciudad costera jamaicana con un ritmo de ska que se mueve hacia el reggae temprano. Freddie Notes & The Rudies fueron uno de los grupos jamaicanos radicados en Reino Unido que llevaron el ska y el reggae al mercado europeo antes de que Marley lo hiciera a escala global. Montego Bay fue versionada múltiples veces pero la original captura la alegría despreocupada del ska jamaicano en su momento más puro.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas por ranking Digital Dream Door</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES · 1960–1998</span>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-Reggae.html" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"No Woman, No Cry","Bob Marley & the Wailers",1975],
+  [2,"Israelites","Desmond Dekker & the Aces",1968],
+  [3,"Stir It Up","Bob Marley & the Wailers",1973],
+  [4,"Pressure Drop","Toots & the Maytals",1969],
+  [5,"The Harder They Come","Jimmy Cliff",1972],
+  [6,"One Love","Bob Marley & the Wailers",1977],
+  [7,"54-46 That's My Number","Toots & the Maytals",1968],
+  [8,"Satta Massagana","The Abyssinians",1971],
+  [9,"Funky Kingston","Toots & the Maytals",1973],
+  [10,"Montego Bay","Freddie Notes & The Rudies",1970],
+  [11,"Many Rivers To Cross","Jimmy Cliff",1969],
+  [12,"Marcus Garvey","Burning Spear",1975],
+  [13,"Legalize It","Peter Tosh",1976],
+  [14,"Redemption Song","Bob Marley & the Wailers",1980],
+  [15,"Here I Come","Dennis Brown",1979],
+  [16,"Get Up, Stand Up","Bob Marley & the Wailers",1973],
+  [17,"Rudy Got Soul","Desmond Dekker & The Aces",1967],
+  [18,"The Tide Is High","The Paragons",1966],
+  [19,"Three Little Birds","Bob Marley & the Wailers",1977],
+  [20,"Everything I Own","Ken Boothe",1974],
+  [21,"Night Nurse","Gregory Isaacs",1982],
+  [22,"You Don't Care","The Techniques",1968],
+  [23,"Vietnam","Jimmy Cliff",1969],
+  [24,"Rivers Of Babylon","The Melodians",1970],
+  [25,"Police & Thieves","Junior Murvin",1976],
+  [26,"Buffalo Soldier","Bob Marley & the Wailers",1983],
+  [27,"Red Red Wine","UB40",1983],
+  [28,"Cherry Oh Baby","Eric Donaldson",1971],
+  [29,"(I Am) The Upsetter","Lee Scratch Perry",1969],
+  [30,"Sitting & Watching","Dennis Brown",1973],
+  [31,"Jammin'","Bob Marley & the Wailers",1977],
+  [32,"Wear You To The Ball","U-Roy & The Paragons",1970],
+  [33,"Two Sevens Clash","Culture",1977],
+  [34,"I Shot The Sheriff","Bob Marley & the Wailers",1973],
+  [35,"Armagideon Time","Willie Williams",1979],
+  [36,"007 Shanty Town","Desmond Dekker & The Aces",1967],
+  [37,"A Love I Can Feel","John Holt",1965],
+  [38,"Revolution","Dennis Brown",1972],
+  [39,"Queen Majesty","The Techniques",1967],
+  [40,"Natty Rebel","U-Roy",1976],
+  [41,"Loving Pauper","Dobby Dobson",1967],
+  [42,"Natural Mystic","Bob Marley",1977],
+  [43,"Equal Rights","Peter Tosh",1977],
+  [44,"Rocksteady","Alton Ellis & The Flames",1967],
+  [45,"Do The Reggay","Toots & the Maytals",1968],
+  [46,"Don't Stay Away","Phyllis Dillon",1967],
+  [47,"Baby Why","The Cables",1969],
+  [48,"One Blood","Junior Reid",1988],
+  [49,"Iron Lion Zion","Bob Marley & the Wailers",1992],
+  [50,"Book Of The Rules","The Heptones",1973],
+  [51,"Telephone Love","JC Lodge",1989],
+  [52,"Blackheart Man","Bunny Wailer",1976],
+  [53,"Nanny Goat","Larry & Alvin Marshall",1968],
+  [54,"Unchained","Bob Andy",1969],
+  [55,"Tenement Yard","Jacob Miller",1976],
+  [56,"Ba Ba Boom","The Jamaicans",1967],
+  [57,"I'm Still In Love With You","Alton Ellis",1967],
+  [58,"Pass The Kutchie","The Mighty Diamonds",1981],
+  [59,"Wonderful World, Beautiful People","Jimmy Cliff",1969],
+  [60,"Mama Africa","Peter Tosh",1983],
+  [61,"Fade Away","Jr. Byles",1972],
+  [62,"How Could I Leave","Dennis Brown",1977],
+  [63,"Soon Forward","Gregory Isaacs",1979],
+  [64,"Trenchtown Rock","Bob Marley & the Wailers",1971],
+  [65,"I Can See Clearly Now","Johnny Nash",1972],
+  [66,"You Can Get It If You Really Want","Jimmy Cliff",1970],
+  [67,"Westbound Train","Dennis Brown",1975],
+  [68,"Cool Rasta","The Heptones",1976],
+  [69,"My Conversation","Slim Smith & The Uniques",1967],
+  [70,"Talk About Love","Pat Kelly",1968],
+  [71,"Now That We Found Love","Third World",1978],
+  [72,"1865 (96 Degrees In The Shade)","Third World",1977],
+  [73,"I Need A Roof","The Mighty Diamonds",1977],
+  [74,"War Inna Babylon","Max Romeo",1976],
+  [75,"Declaration of Rights","The Abyssinians",1976],
+  [76,"Waiting In Vain","Bob Marley & the Wailers",1977],
+  [77,"Big Ship","Freddie McGregor",1982],
+  [78,"Guess Who's Coming To Dinner","Black Uhuru",1980],
+  [79,"What One Dance Can Do","Beres Hammond",1987],
+  [80,"Crying Over You","Ken Boothe",1971],
+  [81,"Someone Loves You","JC Lodge",1987],
+  [82,"Sonny's Lettah","Linton Kwesi Johnson",1979],
+  [83,"What Kind Of World","The Cables",1969],
+  [84,"Rain From The Sky","Delroy Wilson",1968],
+  [85,"Everything Crash","The Ethiopians",1968],
+  [86,"Love Me Forever","Carlton & The Shoes",1970],
+  [87,"My Boy Lollipop","Millie Small",1964],
+  [88,"Love Is My Religion","Ziggy Marley",2006],
+  [89,"Monkey Man","Toots & the Maytals",1969],
+  [90,"War","Bob Marley & the Wailers",1976],
+  [91,"Can I Change My Mind","Alton Ellis",1969],
+  [92,"Duppy Gunman","Ernie Smith",1971],
+  [93,"Johnny Too Bad","The Slickers",1970],
+  [94,"Black Cinderella","Errol Dunkley",1967],
+  [95,"Have Mercy","The Mighty Diamonds",1977],
+  [96,"Tumblin Down","Ziggy Marley & The Melody Makers",1988],
+  [97,"Zungguzungguguzungguzeng","Yellowman",1983],
+  [98,"Hold Me Tight","Johnny Nash",1968],
+  [99,"Angel","Shaggy & Rayvon",1998],
+  [100,"Dreadlocks In Moonlight","Lee Scratch Perry",1977]
+];
+
+var FEAT=[
+  ["fc-1","Bob Marley","No Woman No Cry"],
+  ["fc-2","Desmond Dekker","Israelites"],
+  ["fc-3","Bob Marley","Stir It Up"],
+  ["fc-4","Toots and the Maytals","Pressure Drop"],
+  ["fc-5","Jimmy Cliff","The Harder They Come"],
+  ["fc-6","Bob Marley","One Love"],
+  ["fc-7","Toots and the Maytals","54-46 Thats My Number"],
+  ["fc-8","The Abyssinians","Satta Massagana"],
+  ["fc-9","Toots and the Maytals","Funky Kingston"],
+  ["fc-10","Freddie Notes","Montego Bay"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
+      for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
+      if(!m&&res.length)m=res[0];
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
+          for(var i=0;i<imgs.length;i++)if(imgs[i].size==="extralarge"){best=imgs[i];break;}
+          if(!best)for(var j=0;j<imgs.length;j++)if(imgs[j].size==="large"){best=imgs[j];break;}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Bob Marley","No Woman No Cry");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+s[0]+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[2])+"\" data-album=\""+encodeURIComponent(s[1])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+s[1]+"</div><div class=\"track-artist\">"+s[2]+"</div></div>"+
+    "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(s[2])+"\" data-lfm-album=\""+encodeURIComponent(s[1])+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var b=artQ.splice(0,8);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfm(){
+  if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
+  var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+tr;
+  if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
+}
+function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
+document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+</script>
+</body>
+</html>

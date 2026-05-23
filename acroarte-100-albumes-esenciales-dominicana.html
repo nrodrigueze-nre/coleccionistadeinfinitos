@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Álbumes Esenciales de la Música Dominicana — Acroarte</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{display:flex;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 56px 1fr 52px 70px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 56px 1fr 52px 70px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a;transition:background .15s}
+.track-row:last-child{border-bottom:none}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:48px;height:48px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-year{font-size:11px;color:#888;font-weight:300;text-align:right}
+.track-genre{font-size:10px;color:#666;font-weight:300;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa;transition:color .2s}
+.foot-link:hover{color:#c8a86a}
+
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 70px}
+  .track-genre{display:none}
+}
+
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+</style>
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ACROARTE</span>
+    <span class="badge-year">1950 – 2010</span>
+  </div>
+  <span class="page-title">100 ÁLBUMES ESENCIALES DE LA MÚSICA DOMINICANA</span>
+  <p class="page-sub">Selección de la Asociación de Cronistas de Arte · República Dominicana · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Juan Luis Guerra – Bachata Rosa">
+    <p class="cover-cap">ACROARTE · 2013</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">En julio de 2013, la Asociación de Cronistas de Arte de la República Dominicana (Acroarte) culminó más de cuatro meses de trabajo colectivo para entregar al país su primera gran selección discográfica: los 100 álbumes esenciales de la música popular dominicana. El ejercicio, encabezado por su presidente Máximo Jiménez y un panel de críticos y periodistas especializados, rastreó la producción fonográfica nacional desde 1950 —año de la primera edición en formato long play— hasta 2010, abarcando todos los géneros y excluyendo compilaciones de grandes éxitos.</p>
+    <p class="rtext">El resultado es un mapa sonoro extraordinariamente rico y diverso: el merengue típico de Damirón y Chapuseaux y Joseíto Mateo comparte espacio con la bachata primitiva de José Manuel Calderón y la bachata urbana de Aventura; el jazz cosmopolita de Michel Camilo dialoga con las fusiones de Xiomara Fortuna y Convite; y el pop experimental de Negros y el rock de Luis Díaz rompen cualquier tentación de reducir la identidad musical dominicana a un solo ritmo. Con Juan Luis Guerra como figura central —cinco álbumes en la lista— la selección confirma su lugar como el artista más influyente de la segunda mitad del siglo XX en el país.</p>
+  </div>
+</section>
+
+<!-- Lista > 50 → reseñas de los primeros 10 -->
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Reseñas destacadas — Álbumes 1 al 10</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Alex Bueno y Orquesta Liberación &middot; 1993">
+    <div>
+      <div class="feat-title">Alex Bueno y Orquesta Liberación</div>
+      <div class="feat-artist">Alex Bueno y Orquesta Liberación</div>
+      <div class="feat-meta"><span class="feat-pill">1985</span><span class="feat-pill">Merengue</span><span class="feat-pill">Karen Récords</span></div>
+      <p class="feat-rev">Debut discográfico que catapultó a Alex Bueno como una de las voces más poderosas del merengue de los ochenta. El álbum captura la energía y el swing de una orquesta en estado de gracia, con una producción que supo mezclar la tradición bailable con arreglos de gran modernidad para la época. Estableció a Bueno como un nombre imprescindible en el circuito de la música popular dominicana.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Alex Bueno – Ternuras">
+    <div>
+      <div class="feat-title">Ternuras</div>
+      <div class="feat-artist">Alex Bueno</div>
+      <div class="feat-meta"><span class="feat-pill">1992</span><span class="feat-pill">Bachata</span><span class="feat-pill">J&N Récords</span></div>
+      <p class="feat-rev">Álbum que consolidó el salto de Alex Bueno del merengue hacia la bachata con una naturalidad y convicción que pocos artistas de su generación lograron. <em>Ternuras</em> es un documento sobre cómo la bachata encontró su camino hacia el gran público sin perder su esencia barrial, con interpretaciones vocales que equilibran la emoción contenida y el desborde sentimental propios del género.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Anthony Ríos – El sentimental III">
+    <div>
+      <div class="feat-title">El sentimental III</div>
+      <div class="feat-artist">Anthony Ríos</div>
+      <div class="feat-meta"><span class="feat-pill">1973</span><span class="feat-pill">Balada</span><span class="feat-pill">Kubaney</span></div>
+      <p class="feat-rev">Pieza central en la discografía de uno de los cantautores más refinados que ha dado República Dominicana. Anthony Ríos perfeccionó en este volumen su particular forma de habitar la balada romántica: sin excesos, con una dicción impecable y una orquestación que nunca aplasta la voz sino que la enmarca con elegancia. Un álbum que envejeció con dignidad.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Antonio Morel – El merengue por América">
+    <div>
+      <div class="feat-title">El merengue por América</div>
+      <div class="feat-artist">Antonio Morel</div>
+      <div class="feat-meta"><span class="feat-pill">c.1958</span><span class="feat-pill">Merengue</span><span class="feat-pill">Musart</span></div>
+      <p class="feat-rev">Documento histórico fundamental: Antonio Morel llevó el merengue dominicano por toda Latinoamérica en una época en que eso requería coraje e inventiva logística. Este álbum es testimonio de esa aventura continental y de la versatilidad de una orquesta que sabía adaptarse a los gustos de cada público sin traicionar el alma del merengue. Una grabación que merece escucharse como archivo vivo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Antony Santos &middot; 1992 – La chupadera">
+    <div>
+      <div class="feat-title">La chupadera</div>
+      <div class="feat-artist">Antony Santos</div>
+      <div class="feat-meta"><span class="feat-pill">1992</span><span class="feat-pill">Bachata</span><span class="feat-pill">Plátano Récords</span></div>
+      <p class="feat-rev">El álbum que transformó la bachata para siempre. <em>La chupadera</em> llegó en el mismo año en que Juan Luis Guerra ganaba el Grammy con <em>Bachata Rosa</em>, y juntos marcaron el punto de inflexión del género: de música marginal a fenómeno nacional. Santos impuso una sensualidad directa y sin complejos que conectó masivamente con el pueblo, abriendo el camino a todo el boom bachatero de los noventa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Artistas varios – Música raíz Vol.1">
+    <div>
+      <div class="feat-title">Música raíz Vol.1</div>
+      <div class="feat-artist">Artistas varios</div>
+      <div class="feat-meta"><span class="feat-pill">1997</span><span class="feat-pill">Fusiones</span><span class="feat-pill">Bayahonda</span></div>
+      <p class="feat-rev">Compilación histórica que puso en el mismo disco a los guardianes del folclor dominicano más profundo y a los experimentadores de la fusión. La colección sirve de brújula para cualquier oyente que quiera entender de dónde vienen los géneros contemporáneos y qué raíces africanas, taínas y europeas conviven en la música de la isla. Una de las ediciones más importantes de la discografía dominicana de los noventa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Artistas varios – Homenaje a la canción romántica dominicana">
+    <div>
+      <div class="feat-title">Homenaje a la canción romántica dominicana</div>
+      <div class="feat-artist">Artistas varios</div>
+      <div class="feat-meta"><span class="feat-pill">1981</span><span class="feat-pill">Canción</span><span class="feat-pill">Banco de Reservas</span></div>
+      <p class="feat-rev">Proyecto institucional que reunió lo mejor de la canción romántica dominicana en un momento en que el merengue y la salsa acaparaban toda la atención. Esta compilación reivindicó la tradición lírica del país — sus boleros, sus canciones de autor, su vínculo con la trova latinoamericana — y quedó como referencia obligada para entender la dimensión más íntima y reflexiva de la música dominicana.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Artistas varios – Ripiando el perico">
+    <div>
+      <div class="feat-title">Ripiando el perico</div>
+      <div class="feat-artist">Artistas varios</div>
+      <div class="feat-meta"><span class="feat-pill">2005</span><span class="feat-pill">Merengue típico</span><span class="feat-pill">Grupo León Jimenes</span></div>
+      <p class="feat-rev">Celebración del merengue típico o "perico ripiao" en su forma más auténtica y festiva. Esta compilación reunió a los maestros del acordeón, la güira y el tambora para demostrar que la música de las montañas del Cibao sigue tan viva y vigente como en sus orígenes. Un álbum que funciona como manual de campo sobre el género madre de toda la música dominicana.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Aventura – The Last">
+    <div>
+      <div class="feat-title">The Last</div>
+      <div class="feat-artist">Aventura</div>
+      <div class="feat-meta"><span class="feat-pill">2010</span><span class="feat-pill">Bachata</span><span class="feat-pill">Premium Latin Music</span></div>
+      <p class="feat-rev">El último álbum de estudio del grupo que llevó la bachata dominicana al mundo entero es también su más ambicioso. Aventura fusiona bachata, R&B y pop con una naturalidad que revela cuánto creció el género desde los tiempos de Antony Santos. Romeo Santos se despide de la agrupación con una colección de canciones que resumen todo lo que la bachata urbana puede ser: universal sin perder su corazón dominicano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Billos Caracas Boys – Evocación">
+    <div>
+      <div class="feat-title">Evocación</div>
+      <div class="feat-artist">Billos Caracas Boys</div>
+      <div class="feat-meta"><span class="feat-pill">1958</span><span class="feat-pill">Variado</span><span class="feat-pill">Remo Récords</span></div>
+      <p class="feat-rev">La presencia de la famosa orquesta venezolana en esta selección dominicana se explica por su rol como puente y difusor de la música caribeña en general, incluyendo el merengue. <em>Evocación</em> capta a Billos en uno de sus momentos más inspirados, con arreglos que mezclan lo tropical con lo sofisticado en una síntesis que marcó el gusto de toda una generación de oyentes en el Caribe hispanohablante.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ACROARTE · 100 ÁLBUMES · REPÚBLICA DOMINICANA</span>
+  <a href="https://elnacional.com.do/acroarte-selecciona-los-100-albumes-esenciales-de-la-musica-dominicana/" target="_blank" class="foot-link">Ver fuente original ↗</a>
+</footer>
+
+<script>
+const albums = [
+  [1,"Alex Bueno y Orquesta Liberación","Alex Bueno y Orquesta Liberación",1985,"Merengue"],
+  [2,"Ternuras","Alex Bueno",1992,"Bachata"],
+  [3,"El sentimental III","Anthony Ríos",1973,"Balada"],
+  [4,"El merengue por América","Antonio Morel",1958,"Merengue"],
+  [5,"La chupadera","Antony Santos",1992,"Bachata"],
+  [6,"Música raíz Vol.1","Artistas varios",1997,"Fusiones"],
+  [7,"Homenaje a la canción romántica dominicana","Artistas varios",1981,"Canción"],
+  [8,"Ripiando el perico","Artistas varios",2005,"Merengue típico"],
+  [9,"The Last","Aventura",2010,"Bachata"],
+  [10,"Evocación","Billos Caracas Boys",1958,"Variado"],
+  [11,"Noche de Discoteque","Bonny Cepeda",1985,"Merengue"],
+  [12,"Chicán","Las Chicas del Can",1985,"Merengue"],
+  [13,"Pa otro lao","Chichí Peralta",1997,"Son"],
+  [14,"De vuelta al barrio","Chichí Peralta",2000,"Son"],
+  [15,"Los Gigantes (Merengues navideños)","Conjunto Quisqueya",1979,"Merengue"],
+  [16,"Convite convida","Convite",1976,"Fusiones"],
+  [17,"Licuado 2","Crispín Fernández",1997,"Merengue"],
+  [18,"Salsa con coco","Cuco Valoy",1978,"Salsa"],
+  [19,"Merengues de oro","Damirón y Chapuseaux",1950,"Merengue"],
+  [20,"50 años de la bachata","Davisito Paredes",2002,"Bachata"],
+  [21,"Los diseñadores","Dioni Fernández & El Equipo",1984,"Merengue"],
+  [22,"Fiesta y fiesta","Dioni Fernández & El Equipo",1985,"Merengue"],
+  [23,"Retreta para el alma","Fellé Vega y La Orq. de las Danzas M.",2005,"Fusiones"],
+  [24,"El cuarto álbum","Fausto Rey",1973,"Balada"],
+  [25,"Soy como soy","Félix D'Oleo",1996,"Bachata"],
+  [26,"Parrandas Navideñas","Félix del Rosario",1968,"Merengue"],
+  [27,"Merengue con clase","Félix del Rosario",1984,"Merengue"],
+  [28,"Familia André","Fernando Echavarría",1982,"Son"],
+  [29,"El Mayimbe","Fernando Villalona",1982,"Merengue"],
+  [30,"Mal acostumbrado","Fernando Villalona",2002,"Merengue"],
+  [31,"La música de JLG","Filarmónica de Santo Domingo",1992,"Merengue"],
+  [32,"Cuando se quiere se puede","Frank Reyes",2004,"Bachata"],
+  [33,"El hombre más famoso de tierra","Fulanito",1997,"Merengue"],
+  [34,"Mentirosa","La Gran Manzana",1983,"Merengue"],
+  [35,"Merengue Típico Dominicano Vol.2","Guandulito (Dionisio Mejía)",1972,"Merengue típico"],
+  [36,"Acabando!","Los Hermanos Rosario",1987,"Merengue"],
+  [37,"Los dueños del swing","Los Hermanos Rosario",1995,"Merengue"],
+  [38,"Los Hijos del Rey con Fernando Villalona","Los Hijos del Rey",1977,"Merengue"],
+  [39,"Ilegales","Los Ilegales",1995,"Merengue"],
+  [40,"Carta de verano","Joe Veras",2003,"Bachata"],
+  [41,"La Agarradera","Johnny Ventura y su Combo Caribe",1962,"Merengue"],
+  [42,"Salsa pa tu lechón","Johnny Ventura y su Combo Show",1972,"Merengue"],
+  [43,"El sueño","Johnny Ventura y su Combo Show",1982,"Merengue"],
+  [44,"El hombre y su música","Johnny Ventura y su Combo Show",1985,"Merengue"],
+  [45,"Sueño contigo","José Alberto El Canario",1989,"Salsa"],
+  [46,"Herido","José Alberto El Canario",1999,"Salsa"],
+  [47,"Caribbean Gems","José Antonio Molina",2006,"Merengue"],
+  [48,"Condena","José Manuel Calderón",1962,"Bachata"],
+  [49,"El verdadero Rey del Merengue","Joseíto Mateo",1964,"Merengue"],
+  [50,"Caña Brava","Joseíto Mateo",1966,"Merengue típico"],
+  [51,"Boleros, solo boleros","Joseíto Mateo",1958,"Bolero"],
+  [52,"Con el alma de Tavito","Juan Colón & Manuel Tejada",1998,"Merengue"],
+  [53,"Soplando","Juan Luis Guerra",1985,"Merengue"],
+  [54,"Ojalá que llueva café","Juan Luis Guerra",1990,"Merengue"],
+  [55,"Bachata Rosa","Juan Luis Guerra",1991,"Merengue"],
+  [56,"Areíto","Juan Luis Guerra",1992,"Merengue"],
+  [57,"Fogaraté","Juan Luis Guerra",1994,"Merengue"],
+  [58,"La llave de mi corazón","Juan Luis Guerra",2007,"Merengue"],
+  [59,"Algo contigo","Lope Balaguer",1976,"Bolero"],
+  [60,"Luna sobre el Jaragua","Luis Alberti",1955,"Merengue"],
+  [61,"Luis Terror Díaz","Luis Díaz",1984,"Merengue"],
+  [62,"El accidente","Luis Díaz",1998,"Rock"],
+  [63,"Te ofrezco","Maridalia Hernández",1992,"Merengue"],
+  [64,"Amorosa","Maridalia Hernández",1993,"Bolero"],
+  [65,"Spain","Michel Camilo",2000,"Jazz"],
+  [66,"Live at the Blue Note","Michel Camilo",2003,"Jazz"],
+  [67,"Hasta siempre","Milly Quezada",1997,"Merengue"],
+  [68,"Esta noche","Milly, Jocelyn y Los Vecinos",1984,"Merengue"],
+  [69,"Músico, poeta y loco","Milton Peláez",1967,"Rock"],
+  [70,"Confesiones","Monchy & Alexandra",2002,"Bachata"],
+  [71,"Negros","Negros",2003,"Pop"],
+  [72,"The New York Band","The New York Band",1988,"Merengue"],
+  [73,"Este es Nicolás Casimiro","Nicolás Casimiro",1958,"Bolero"],
+  [74,"Por amor","Niní Cáffaro",1969,"Balada"],
+  [75,"La Cocoband","La Cocoband",1989,"Merengue"],
+  [76,"Cabaret Azul","Patricia Pereyra & Juan Francisco O.",2002,"Fusiones"],
+  [77,"Perdidamente enamorado","Rafael Solano",1965,"Variado"],
+  [78,"Weo!","Ramón Orlando y La Internacional",1986,"Merengue"],
+  [79,"Ring ring","Ramón Orlando y La Internacional",1989,"Merengue"],
+  [80,"El sonero que el pueblo prefiere","Raulín Rosendo",1995,"Salsa"],
+  [81,"El Rey","Rey Reyes",1984,"Salsa"],
+  [82,"Buscando tus besos","Rubby Pérez",1986,"Merengue"],
+  [83,"Tumbando puertas","Santiago Cerón",1980,"Salsa"],
+  [84,"Sergio Vargas","Sergio Vargas",1989,"Merengue"],
+  [85,"Yo quiero andar","Sonia Silvestre",1989,"Bachata"],
+  [86,"Sonia canta a los poetas de la Patria","Sonia Silvestre",1978,"Canción"],
+  [87,"Esta es Sonia","Sonia Silvestre",1974,"Canción"],
+  [88,"Alma criolla","Tavito Vásquez",1956,"Merengue"],
+  [89,"Cría cuervos","Toque Profundo",1999,"Rock"],
+  [90,"Raíces","Los Toros Band",1997,"Merengue"],
+  [91,"Buscando una razón","Tribu del sol",1998,"Pop"],
+  [92,"Trío Reynoso con Tatico","Trío Reynoso",1955,"Merengue típico"],
+  [93,"Inspiraciones","Víctor Víctor",1990,"Bachata"],
+  [94,"En son de la felicidad","Víctor Víctor & Francis Santana",1982,"Son"],
+  [95,"Punto y aparte","Wilfrido Vargas",1978,"Merengue"],
+  [96,"El Funcionario","Wilfrido Vargas",1983,"Merengue"],
+  [97,"La medicina","Wilfrido Vargas",1985,"Merengue"],
+  [98,"Kumbajei","Xiomara Fortuna",1999,"Fusiones"],
+  [99,"Mezclanza","Yasser Tejeda & Palotré",2009,"Jazz"],
+  [100,"Dime qué faltó","Zacarías Ferreira",2007,"Bachata"],
+];
+
+var FEAT = [
+  ['fc-1',  'Alex Bueno',          'Alex Bueno merengue 1985'],
+  ['fc-2',  'Alex Bueno',          'Alex Bueno Ternuras'],
+  ['fc-3',  'Anthony Rios',        'Anthony Rios sentimental'],
+  ['fc-4',  'Antonio Morel',       'Antonio Morel merengue'],
+  ['fc-5',  'Antony Santos',       'Antony Santos chupadera'],
+  ['fc-6',  'Various Artists',     'musica raiz dominicana'],
+  ['fc-7',  'Various Artists',     'cancion romantica dominicana'],
+  ['fc-8',  'Various Artists',     'perico ripiao merengue tipico'],
+  ['fc-9',  'Aventura',            'Aventura The Last'],
+  ['fc-10', 'Billos Caracas Boys', 'Billos Caracas Boys']
+];
+
+var LFM_KEY  = 'b25b959554ed76058ac220b7b2e0a026';
+var LFM_USER = 'lartzrodriguez';
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = '1';
+  el.onerror = function() { el.style.opacity = '0.07'; el.onerror = null; };
+}
+
+function loadArt(el, artist, album) {
+  // Last.fm first — better for Dominican music
+  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&format=json')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+      var best = null;
+      for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === 'extralarge') best = imgs[i]; }
+      if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === 'large') best = imgs[j]; }
+      var url = best ? best['#text'] : '';
+      if (url && url.length > 10 && url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0) {
+        setImg(el, url);
+      } else throw new Error('no img');
+    })
+    .catch(function() {
+      // Fallback: iTunes
+      fetch('https://itunes.apple.com/search?term=' + encodeURIComponent(album + ' ' + artist) + '&media=music&entity=album&limit=3')
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var results = d.results || [];
+          if (results.length && results[0].artworkUrl100) {
+            setImg(el, results[0].artworkUrl100.replace('100x100bb','400x400bb'));
+          }
+        }).catch(function() {});
+    });
+}
+
+// Hero
+loadArt(document.getElementById('hero-cover'), 'Juan Luis Guerra', 'Bachata Rosa');
+
+// Featured covers
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() {
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 300);
+});
+
+// Build tracklist
+var container = document.getElementById('tracklist');
+var frag = document.createDocumentFragment();
+albums.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3], genre = item[4];
+  var row = document.createElement('div');
+  row.className = 'track-row';
+  row.innerHTML =
+    '<div class="track-num">' + num + '</div>' +
+    '<img class="track-cover" data-artist="' + encodeURIComponent(artist) + '" data-album="' + encodeURIComponent(title) + '" src="" style="opacity:0" alt="' + title.replace(/"/g,'&quot;') + '">' +
+    '<div style="min-width:0"><div class="track-name">' + title + '</div><div class="track-artist">' + artist + '</div></div>' +
+    '<div class="track-year">' + year + '</div>' +
+    '<div class="track-genre">' + genre + '</div>' +
+    '<div class="track-scrobbles loading" data-lfm-artist="' + encodeURIComponent(artist) + '" data-lfm-album="' + encodeURIComponent(title) + '">—</div>';
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+// Artwork lazy load — batches of 8
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) {
+    loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album));
+  }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) {
+    if (!entries[i].isIntersecting) continue;
+    artObs.unobserve(entries[i].target);
+    artQ.push(entries[i].target);
+  }
+  clearTimeout(artTimer);
+  artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: '800px' });
+var covers = document.querySelectorAll('.track-cover');
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+// Last.fm scrobbles — sums track playcounts
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || '');
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || '');
+  var key = artist + '|||' + album;
+  if (lfmCache[key] !== undefined) {
+    renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return;
+  }
+  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&username=' + LFM_USER + '&format=json')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = '—'; el.classList.remove('loading'); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove('loading');
+  el.textContent = count > 0 ? count.toLocaleString() : '0';
+  if (!count) el.classList.add('zero');
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) {
+    if (!entries[i].isIntersecting) continue;
+    lfmObs.unobserve(entries[i].target);
+    lfmQ.push(entries[i].target);
+    processLfmQ();
+  }
+}, { rootMargin: '400px' });
+var scrobbles = document.querySelectorAll('.track-scrobbles');
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

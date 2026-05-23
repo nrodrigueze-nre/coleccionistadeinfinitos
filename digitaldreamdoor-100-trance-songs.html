@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Trance Songs — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1990–2001</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_dance-tran.html" target="_blank" class="page-title">100 GREATEST TRANCE SONGS</a>
+  <p class="page-sub">Age of Love, Paul Van Dyk, Energy 52, Robert Miles — el trance desde sus raíces en techno y acid hasta el trance melódico · Editado por Jeff B. · 2007</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="The Age of Love – Age of Love">
+    <p class="cover-cap">DIGITAL DREAM DOOR · 2007</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Trance Songs compilados por Jeff B. para Digital Dream Door, última actualización noviembre de 2007. Criterio: impacto, influencia y popularidad. Descripción del género: el trance es un subgénero de la música dance/electrónica caracterizado por melodías hermosas o ritmos hipnóticos y repetitivos — de ahí el nombre. Tiene un sentido ancestral-etéreo-tribal o casi religioso. El trance temprano estuvo estrechamente relacionado con el techno y el acid, pero pronto se volvió más melódico y vocal, usando cuerdas y pianos, con una fórmula de construcción-tensión-liberación. Al #1: The Age of Love (Jam & Spoon remix) de Age of Love (1990). Al #2: We Came in Peace de Dance 2 Trance (1993).</p>
+    <p class="rtext">La lista cubre el arco completo del trance: desde el acid trance alemán de principios de los 90s (Hardfloor, Marmion, Sven Vath) hasta el trance melódico de mediados de la década (Robert Miles, Energy 52, Paul Van Dyk) y el trance progresivo de finales de los 90s (Chicane, Sasha, Underworld). La lista incluye además un Top 10 de Mainstream/Pop Trance (#1 Insomnia de Faithless) y un Top 10 de Influential Records (#1 What Time Is Love? de KLF). Plays: tus reproducciones de Last.fm.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="The Age of Love">
+    <div>
+      <div class="feat-title">The Age of Love (Jam &amp; Spoon Remix)</div>
+      <div class="feat-artist">Age of Love &middot; 1990 / 1992</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Techno</span></div>
+      <p class="feat-rev">El santo grial del trance europeo — grabada en Bélgica en 1990, remezclada por Jam & Spoon en 1992 y convertida en el himno fundacional del género. El sintetizador Juno-106 sobre el que corre la melodía de The Age of Love es el sonido más reconocible de la historia del trance. Charlotte empezó a cantarla en vivo años después de que el remezcla fuera un clásico. La lista completa de DDD la construye como el punto cero de todo lo que viene después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="We Came in Peace">
+    <div>
+      <div class="feat-title">We Came in Peace</div>
+      <div class="feat-artist">Dance 2 Trance &middot; 1993</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Techno</span></div>
+      <p class="feat-rev">Rolf Ellmer y Torsten Fenslau — los arquitectos del trance alemán temprano — construyendo el himno más expansivo del trance de primera generación. Dance 2 Trance usaba samples de discursos sobre la exploración espacial y la paz universal sobre beats de techno que se movían más lento que el rave pero más tenso que la música ambient. We Came in Peace es el trance en su momento más utópico — antes de que se comercializara y se volviera música de compilaciones de aeropuerto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Acperience">
+    <div>
+      <div class="feat-title">Acperience</div>
+      <div class="feat-artist">Hardfloor &middot; 1992</div>
+      <div class="feat-meta"><span class="feat-pill">Acid Trance</span></div>
+      <p class="feat-rev">El Roland TB-303 llevado hasta sus límites más extremos — Hardfloor construyendo una línea de acid sobre un patrón de caja de ritmos que dura nueve minutos sin descanso. Acperience fue el track que demostró que el acid trance podía ser tan hipnótico como el techno más minimalista. Oliver Bondzio y Ramon Zenker definieron el sonido de la scene de Colonia a principios de los 90s. La 303 como instrumento principal del trance europeo temprano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Café Del Mar">
+    <div>
+      <div class="feat-title">Café Del Mar (Three N One Remix)</div>
+      <div class="feat-artist">Energy 52 &middot; 1993 / 1997</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Progressive</span></div>
+      <p class="feat-rev">La melodía de sintetizador más reconocida del trance de los 90s — Café Del Mar en su remezcla de Three N One fue el track que convirtió el trance progresivo en música global. El nombre viene del bar de Ibiza donde los DJs tocaban música ambient al atardecer. Energy 52 es el alias de Torsten Fenslau — el mismo de Dance 2 Trance — que murió en un accidente de coche en 1993 antes de ver el éxito masivo de esta canción.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="For An Angel">
+    <div>
+      <div class="feat-title">For An Angel (PVD's E-Werk Remix)</div>
+      <div class="feat-artist">Paul Van Dyk &middot; 1994 / 1998</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Progressive</span></div>
+      <p class="feat-rev">Paul Van Dyk construyó el arpegio de sintetizador más emocionalmente resonante del trance europeo — For An Angel en el remezcla del E-Werk es la quintaesencia del trance melódico: una progresión de acordes simple, un build que tarda minutos en llegar al drop, y una resolución que justifica cada segundo de espera. PVD fue el DJ más importante del trance alemán y For An Angel su canción más definitoria. Todavía la toca en cada set.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Stella">
+    <div>
+      <div class="feat-title">Stella</div>
+      <div class="feat-artist">Jam &amp; Spoon &middot; 1992</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Techno</span></div>
+      <p class="feat-rev">Markus Löffel (Mark Spoon) y Rolf Ellmer (Jam) como el dúo más prolífico del trance alemán temprano. Stella tiene ese groove techno-trance que caracterizaba al Frankfurt Sound de principios de los 90s: más oscuro y más urgente que el trance melódico que vendría después, con un riff de sintetizador que suena simultáneamente a amenaza y a euforia. Jam & Spoon también remezclaron Age of Love — el remix que está en el #1 de esta lista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Mahadeva">
+    <div>
+      <div class="feat-title">Mahadeva</div>
+      <div class="feat-artist">Astral Projection &middot; 1994</div>
+      <div class="feat-meta"><span class="feat-pill">Psytrance / Goa Trance</span></div>
+      <p class="feat-rev">Avi Nissim y Lior Perlmutter desde Israel construyendo el Goa trance más psicodélico y más espiritual de mediados de los 90s. El nombre viene del hindú: Mahadeva es uno de los nombres de Shiva. Astral Projection tomó las 303s del acid y las armonías del trance europeo y las fusionó con influencias de la música india y la cultura de las playas de Goa, creando un subgénero que llevaría directamente al psytrance moderno.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Children">
+    <div>
+      <div class="feat-title">Children (Dream Version)</div>
+      <div class="feat-artist">Robert Miles &middot; 1995</div>
+      <div class="feat-meta"><span class="feat-pill">Dream Trance / Ambient Trance</span></div>
+      <p class="feat-rev">El trance más vendido de todos los tiempos en términos de singles — Children llegó al #2 del UK Singles Chart y al top 10 en más de quince países en 1996. Robert Miles era un DJ italiano de Ibiza que escribió la melodía de piano más inmediatamente reconocida del trance. La Dream Version es más lenta y más melancólica que la versión de club — la que convirtió el trance en música para las clases medias europeas que nunca pisaban un club nocturno.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="1998">
+    <div>
+      <div class="feat-title">1998 (Paul Van Dyk Remix)</div>
+      <div class="feat-artist">Binary Finary &middot; 1998</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Progressive</span></div>
+      <p class="feat-rev">El track que define el momento exacto en que el trance pasó de ser música de clubs underground a fenómeno global — titulado con el año en que ocurrió esa transición. Paul Van Dyk tomó el original de Binary Finary y añadió la progresión de acordes y el build que convertirían este track en el himno del trance de 1998. La melodía de 1998 suena exactamente como lo que era: la promesa de que algo grande estaba a punto de suceder.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="The First Rebirth">
+    <div>
+      <div class="feat-title">The First Rebirth</div>
+      <div class="feat-artist">Jones &amp; Stephenson &middot; 1993</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Techno</span></div>
+      <p class="feat-rev">Ian Jones y Mike Stephenson grabando en Sheffield el track de trance más cinematográfico del trance europeo temprano — una melodía de sintetizador que suena a ciencia ficción seria, no a la euforia del trance posterior. The First Rebirth fue influenciado por el techno de Detroit que los productores ingleses habían absorbido y combinaron con el synth-pop de su ciudad natal. El track que conecta el industrial de Sheffield con el trance de Frankfurt en un solo arpegio.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas por ranking Digital Dream Door</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES · 1990–2001</span>
+  <a href="https://digitaldreamdoor.com/pages/best_dance-tran.html" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"The Age of Love (Jam & Spoon Remix)","Age of Love",1992],
+  [2,"We Came in Peace","Dance 2 Trance",1993],
+  [3,"Acperience","Hardfloor",1992],
+  [4,"Café Del Mar (Three N One Remix)","Energy 52",1997],
+  [5,"For An Angel (PVD E-Werk Remix)","Paul Van Dyk",1998],
+  [6,"Stella","Jam & Spoon",1992],
+  [7,"Mahadeva","Astral Projection",1994],
+  [8,"Children (Dream Version)","Robert Miles",1995],
+  [9,"1998 (Paul Van Dyk Remix)","Binary Finary",1998],
+  [10,"The First Rebirth","Jones & Stephenson",1993],
+  [11,"Loops and Tings","Jens",1993],
+  [12,"Schoneberg (Marmion Remix)","Marmion",1994],
+  [13,"The House of House","Cherry Moon Trax",1991],
+  [14,"Dreams","Quench",1996],
+  [15,"Love Stimulation (PVD Remix)","Paul Van Dyk pres. Humate",1994],
+  [16,"Two Full Moons and a Trout","Union Jack",1996],
+  [17,"LSD","Hallucinogen",1994],
+  [18,"Beachball","Nalin & Kane",1997],
+  [19,"Offshore","Chicane with Power Circle",1996],
+  [20,"Flaming June (BT and PVD Remix)","BT",1997],
+  [21,"The Orange Theme","Cygnus X",1994],
+  [22,"Are Am Eye","Commander Tom",1992],
+  [23,"Calling Earth","Yves Deruyter",1997],
+  [24,"Out-of-Body Experience","Rabbit in the Moon",1994],
+  [25,"How Much Can You Take?","Visions of Shiva",1993],
+  [26,"Camargue","CJ Bolland",1994],
+  [27,"Pulverturm","Niels van Gogh",1997],
+  [28,"Hello San Francisco","Dance 2 Trance",1993],
+  [29,"Superstring (Rank 1 Remix)","Cygnus X",1997],
+  [30,"Madagasca (Ferry Corsten Remix)","Art of Trance",1998],
+  [31,"Sandstorm","Darude",1999],
+  [32,"9 PM (Till I Come)","ATB",1998],
+  [33,"Not Over Yet","Planet Perfecto pres. Grace",1999],
+  [34,"Silence (DJ Tiesto In Search of Sunrise Remix)","Delerium feat. Sarah McLachlan",1999],
+  [35,"Amphetamine","Drax Ltd.",1994],
+  [36,"Lost In Love","Legend B.",1996],
+  [37,"It's Our Future","AWEX",1994],
+  [38,"Acid Phase","Emmanuel Top",1993],
+  [39,"Techno-Trance","D-Shake",1991],
+  [40,"Turkish Bazaar","Emmanuel Top",1993],
+  [41,"L'Esperanza","Sven Vath",1993],
+  [42,"Loops Of Infinity","Cosmic Baby",1994],
+  [43,"No Fate","Zyon",1994],
+  [44,"Saltwater (Tomski vs Disco Citizens Remix)","Chicane feat. Maire Brennan",1999],
+  [45,"Ready to Flow","Nikolai",1994],
+  [46,"Synaesthesia (Fly Away)","Thrillseekers feat. Sheryl Deane",2001],
+  [47,"Barber's Adagio for Strings (Ferry Corsten Remix)","William Orbit",1999],
+  [48,"Universal Nation","Push",1998],
+  [49,"Anomaly...Calling Your Name","Libra pres. Taylor",1997],
+  [50,"Kernkraft 400","Zombie Nation",1999],
+  [51,"Meet Her At the Love Parade","Da Hool",1997],
+  [52,"Seven Days and One Week","BBE",1996],
+  [53,"Greece 2000","Three Drives on a Vinyl",1997],
+  [54,"Toca's Miracle","Fragma",2000],
+  [55,"Out of the Blue","System F",1999],
+  [56,"El Nino","Agnelli & Nelson",1998],
+  [57,"Gouryella","Gouryella",1999],
+  [58,"Everytime (Nalin & Kane Remix)","Lustral",1997],
+  [59,"Ayla","Ayla",1998],
+  [60,"Carte Blanche","Vera Cocha",1999],
+  [61,"Liberation","Matt Darey pres. Mash-Up feat. Marcella Woods",2000],
+  [62,"Encore Une Fois! (Future Breeze Remix)","Sash!",1997],
+  [63,"Invisible (Lost Tribe Remix)","Tilt",1999],
+  [64,"Everyday (Lange Remix)","Agnelli & Nelson",1999],
+  [65,"Nightmare (Sinister Strings Remix)","Brainbug",1997],
+  [66,"Waterfall","Atlantic Ocean",1994],
+  [67,"Xpander","Sasha",1999],
+  [68,"10 in 01 (PVD's Only Remix)","Members of Mayday",2001],
+  [69,"Gamemaster","Lost Tribe",1999],
+  [70,"The Silence","Mike Koglin",1998],
+  [71,"Cream (Paul Van Dyk Remix)","Blank & Jones",1998],
+  [72,"Das Glockenspiel","Schiller",1999],
+  [73,"Heaven Scent","Bedrock",1999],
+  [74,"Airwave","Rank 1",1999],
+  [75,"Seven Cities (Solar Stone's Atlantis Remix)","Solar Stone",1999],
+  [76,"Suburban Train","DJ Tiesto",2001],
+  [77,"Psycho","Infected Mushroom",1999],
+  [78,"Follow Me","Jam & Spoon",1993],
+  [79,"Teleport","Man with No Name",1996],
+  [80,"Instant Moments","ROOS",1998],
+  [81,"Sonic Empire","Members of Mayday",1992],
+  [82,"Blue Fear","Armin van Buuren",1997],
+  [83,"Finished Symphony (Hybrid's Echoplex Remix)","Hybrid",2000],
+  [84,"Komodo (Save a Soul)","Mauro Picotto",1999],
+  [85,"Someone","Ascension",1997],
+  [86,"Rez","Underworld",1992],
+  [87,"Vernons Wonderland","Vernon",1994],
+  [88,"Paraglide","Paragliders",1994],
+  [89,"The Meltdown","Lunatic Asylum",1995],
+  [90,"Cybertrance","Blue Alphabet",1999],
+  [91,"Dream Universe","CM",1994],
+  [92,"Double Dragons","Doof",1995],
+  [93,"Kinetic","Golden Girls",1994],
+  [94,"Fragile","LSG",1997],
+  [95,"Right in the Night","Jam & Spoon",1993],
+  [96,"X-File","Chakra & Edi Mis",1997],
+  [97,"Don't Give Up","Chicane feat. Bryan Adams",2000],
+  [98,"The Awakening","York",2000],
+  [99,"Southern Sun","Paul Oakenfold",2001],
+  [100,"Touch Me","Rui Da Silva feat. Cassandra",2001]
+];
+
+var FEAT=[
+  ["fc-1","Age of Love","The Age of Love"],
+  ["fc-2","Dance 2 Trance","We Came in Peace"],
+  ["fc-3","Hardfloor","Acperience"],
+  ["fc-4","Energy 52","Cafe Del Mar"],
+  ["fc-5","Paul Van Dyk","For An Angel"],
+  ["fc-6","Jam & Spoon","Stella"],
+  ["fc-7","Astral Projection","Mahadeva"],
+  ["fc-8","Robert Miles","Children"],
+  ["fc-9","Binary Finary","1998"],
+  ["fc-10","Jones and Stephenson","The First Rebirth"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
+      for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
+      if(!m&&res.length)m=res[0];
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
+          for(var i=0;i<imgs.length;i++)if(imgs[i].size==="extralarge"){best=imgs[i];break;}
+          if(!best)for(var j=0;j<imgs.length;j++)if(imgs[j].size==="large"){best=imgs[j];break;}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Age of Love","The Age of Love");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+s[0]+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[2])+"\" data-album=\""+encodeURIComponent(s[1])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+s[1]+"</div><div class=\"track-artist\">"+s[2]+"</div></div>"+
+    "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(s[2])+"\" data-lfm-album=\""+encodeURIComponent(s[1])+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var b=artQ.splice(0,8);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfm(){
+  if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
+  var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+tr;
+  if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
+}
+function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
+document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+</script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The 100 Best Songs of 2023 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2023</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-2023-1234879541/" target="_blank" class="page-title">THE 100 BEST SONGS OF 2023</a>
+  <p class="page-sub">De Peso Pluma y Lana Del Rey a Billie Eilish y Miley Cyrus · El año de la música mexicana, el K-pop y los Beatles · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Ella Baila Sola – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2023</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Ella Baila Sola de Eslabon Armado y Peso Pluma al #1 — el triunfo de la música mexicana como fenómeno global. El sierreño de corrido tumbado llegó al Top 5 del Billboard Hot 100 y coronó el movimiento cultural más importante del año. A&W de Lana Del Rey al #2 — siete minutos de épica californiense. Boy's a Liar Pt. 2 de PinkPantheress e Ice Spice al #3. Y los Beatles cerrando el año con Now and Then al #7 — la última canción completa con los cuatro. Una lista que documenta el mundo sin fronteras del streaming.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &mdash; Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Ella Baila Sola">
+    <div>
+      <div class="feat-title">Ella Baila Sola</div>
+      <div class="feat-artist">Eslabon Armado and Peso Pluma &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Sierreño / Música Mexicana</span></div>
+      <p class="feat-rev">La canción más importante de 2023 fue también la más inesperada: un sierreño de corrido tumbado que dominó Spotify global, llegó al Top 5 del Billboard Hot 100 y convirtió la música mexicana en el movimiento cultural más importante del año. Los primeros rasgueos del requinto abren paso a los trombones y las charchetas, y la voz sedósa de Eslabon Armado contrasta perfectamente con el graspío de Peso Pluma. Una historia de amor que suena a atardecer en el rancho pero conquistó todo el planeta.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="A&W">
+    <div>
+      <div class="feat-title">A&amp;W</div>
+      <div class="feat-artist">Lana Del Rey &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Art Pop / Folk</span></div>
+      <p class="feat-rev">Siete minutos de Lana Del Rey en su estado más ambicioso: un épico que une el folk soleado de California con las producciones hip-hop de su era temprana, envuelto en una narrativa que es a la vez vulnerable y lúrdica, melancólica y absolutamente corrosiva. El nombre del restaurante de root beer como abreviatura de "American Whore" — nadie dobla la iconografía americana a su voluntad como Lana. La canción más compleja y más lograda de Did You Know That There's a Tunnel Under Ocean Blvd.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Boy's a Liar Pt. 2">
+    <div>
+      <div class="feat-title">Boy's a Liar Pt. 2</div>
+      <div class="feat-artist">PinkPantheress feat. Ice Spice &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Hyperpop / Drill</span></div>
+      <p class="feat-rev">Dos de las artistas más interesantes del internet de 2023 se juntan en una canción que suena como si el futuro del pop hubiera llegado de golpe. La voz eterea de PinkPantheress flotando sobre beats de 8 bits, y la seguridad absoluta de Ice Spice añadiendo el filo que la melodía suave necesitaba. Co-producida con Mura Masa, es el documento de un momento único: dos generaciones Z en plena ascensión, redefiniendo lo que una canción pop puede ser con recursos mínimos y impacto máximo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="I Remember Everything">
+    <div>
+      <div class="feat-title">I Remember Everything</div>
+      <div class="feat-artist">Zach Bryan feat. Kacey Musgraves &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Country / Americana</span></div>
+      <p class="feat-rev">El dúo de country más poderoso del año: Zach Bryan con el melodrama, Kacey Musgraves con la reserva contenida. Los detalles hacen la canción — un anillo empeñado, un Ford del 88, el pelo arenoso — pero son las voces complementarias, perfectamente opuestas en personalidad, las que narran mejor la historia de dos amantes que recuerdan un verano lejano con demasiada claridad. "Strange words come on out of a grown man's mouth when his mind's broke" — poesiía country del tipo que solo Zach Bryan puede escribir.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Bzrp Music Sessions Vol. 53">
+    <div>
+      <div class="feat-title">Bzrp Music Sessions Vol. 53</div>
+      <div class="feat-artist">Shakira and Bizarrap &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Electro-Pop / Latin</span></div>
+      <p class="feat-rev">Nadie podía prepararse para la granada que Shakira tiró al mundo en enero de 2023. La colaboración con el productor argentino de 24 años fue la más explosiva de su carrera: letras que apuntan directamente a su ex Gerard Piqué con un placer palpable, sobre un beat electro-pop que Bizarrap construyó especialmente para ella. "Las mujeres ya no lloran, las mujeres facturan" — el mantra feminista accidental del año. Le dio a Shakira su primer Top 10 en el Hot 100 desde 2007.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Super Shy">
+    <div>
+      <div class="feat-title">Super Shy</div>
+      <div class="feat-artist">NewJeans &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">K-Pop / Drum and Bass</span></div>
+      <p class="feat-rev">NewJeans siguió siendo la fuerza creativa más interesante del K-pop con "Super Shy", una cancion que monta una melodía dreamy sobre un beat de drum and bass que llegó al número dos del Billboard Global. La coreografía inspirada en el waacking disco de los 70s y las voces compartidas de las cinco integrantes crean algo que suena a la vez nostalgico y completamente del momento. La canción más pura del pop mundial de 2023 en apenas tres minutos y medio.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Now and Then">
+    <div>
+      <div class="feat-title">Now and Then</div>
+      <div class="feat-artist">The Beatles &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Rock / Pop</span></div>
+      <p class="feat-rev">La última canción completa con participación de los cuatro Beatles llegó 60 años después del primero. Paul McCartney y Ringo Starr grabaron sobre el demo original de Lennon de los 70s y la guitarra que Harrison añadió en los 90s, creando algo que captura el añoramiento de cada Beatle de forma única. "Now and then, I miss you" — se dice todo en el coro. Un cierre bittersweet y hermoso para una de las mayores historias del rock. Imposible no sentirse movido.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="What Was I Made For">
+    <div>
+      <div class="feat-title">What Was I Made For?</div>
+      <div class="feat-artist">Billie Eilish &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Art Pop</span></div>
+      <p class="feat-rev">El capítulo emocional de Barbie — y de Billie Eilish en 2023. Sobre un piano devastadoramente esparso y su voz eterea, Eilish canalizó la crisis existencial de sentirse más como mercancía que como persona en algo que conectó con millones de oyentes que nunca habían visto la película. El Grammy a la Canción del Año fue solo la confirmación formal de lo que ya era obvio desde el primer escucha: pocas canciones del año tocaron algo tan universal y tan personal al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="On My Mama">
+    <div>
+      <div class="feat-title">On My Mama</div>
+      <div class="feat-artist">Victoria Monét &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">R&amp;B / Soul</span></div>
+      <p class="feat-rev">Durante años, Victoria Monét fue la compositora detras de los éxitos de otras. En 2023, demostró que se había guardado los clásicos para si misma. "On My Mama" es atemporal en el sentido más literal: trompetas brillantes, bajo en vivo, el hombro doblado hacia la pausa perfecta del coro. Los versos son más catchys que la mayoría de los coros; el coro tiene esa pequeña pausa que fuerza el dip de hombros involuntario. "I'm so deep in my bag / like a grandma with a peppermint" — una de las mejores líneas del año.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Strike (Holster)">
+    <div>
+      <div class="feat-title">Strike (Holster)</div>
+      <div class="feat-artist">Lil Yachty &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Psychedelic</span></div>
+      <p class="feat-rev">El año de Lil Yachty: álbum de rock psicodelia, hits virales, podcast. Y en el centro de todo, "Strike (Holster)", famosa por el clip de la hermana de Yachty cantando el hook que se hizo viral en TikTok. La canción es una síntesis de las exploraciones de Yachty — su cadencia paciente y enrollada haciendo magia sobre una producción brillante. "Strike like I missed it, strike like I hit the pin / Strike like I'm not goin' to work" — un rapeo que suena como una huelga y como una celebración al mismo tiempo.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 CANCIONES · 2023</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-2023-1234879541/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Ella Baila Sola","Eslabon Armado and Peso Pluma",2023],
+  [2,"A&W","Lana Del Rey",2023],
+  [3,"Boy\'s a Liar Pt. 2","PinkPantheress feat. Ice Spice",2023],
+  [4,"I Remember Everything","Zach Bryan feat. Kacey Musgraves",2023],
+  [5,"Bzrp Music Sessions Vol. 53","Shakira and Bizarrap",2023],
+  [6,"Super Shy","NewJeans",2023],
+  [7,"Now and Then","The Beatles",2023],
+  [8,"What Was I Made For","Billie Eilish",2023],
+  [9,"On My Mama","Victoria Monet",2023],
+  [10,"Strike (Holster)","Lil Yachty",2023],
+  [11,"Get Him Back!","Olivia Rodrigo",2023],
+  [12,"Flowers","Miley Cyrus",2023],
+  [13,"Not Strong Enough","Boygenius",2023],
+  [14,"I Got Heaven","Mannequin Pussy",2023],
+  [15,"Put It on Da Floor Again","Latto feat. Cardi B",2023],
+  [16,"Kill Bill (Remix)","SZA feat. Doja Cat",2023],
+  [17,"Unavailable","Davido feat. Musa Keys and Latto",2023],
+  [18,"Shy Boy","Carly Rae Jepsen",2023],
+  [19,"Paint the Town Red","Doja Cat",2023],
+  [20,"This Is Why","Paramore",2023],
+  [21,"Skeeyee","Sexyy Red",2023],
+  [22,"Sleep on My Side","Megan Moroney",2023],
+  [23,"un x100to","Grupo Frontera and Bad Bunny",2023],
+  [24,"Padam Padam","Kylie Minogue",2023],
+  [25,"Is It Over Now","Taylor Swift",2023],
+  [26,"Red Wine Supernova","Chappell Roan",2023],
+  [27,"TQG","Karol G and Shakira",2023],
+  [28,"Knockin","MJ Lenderman",2023],
+  [29,"Fast Car","Luke Combs",2023],
+  [30,"3 Boys","Omar Apollo",2023],
+  [31,"Tummy Hurts (Remix)","Renee Rapp feat. Coco Jones",2023],
+  [32,"Vampiros","Rosalia and Rauw Alejandro",2023],
+  [33,"Cast Iron Skillet","Jason Isbell and the 400 Unit",2023],
+  [34,"Patty Cake","Quavo feat. Takeoff",2023],
+  [35,"Vampire Empire","Big Thief",2023],
+  [36,"Houdini","Dua Lipa",2023],
+  [37,"Rumble","Skrillex Fred again. and Flowdan",2023],
+  [38,"Sability","Ayra Starr",2023],
+  [39,"Cuff It (Wetter Remix)","Beyonce",2023],
+  [40,"Sprinter","Central Cee and Dave",2023],
+  [41,"Smog","Indigo De Souza",2023],
+  [42,"County Road","Margo Price",2023],
+  [43,"Oh U Went","Young Thug feat. Drake",2023],
+  [44,"Watching the Credits","The Beths",2023],
+  [45,"The Hillbillies","Baby Keem and Kendrick Lamar",2023],
+  [46,"The Returner","Allison Russell",2023],
+  [47,"Super","Seventeen",2023],
+  [48,"Mazel Tron","BLP Kosher and BabyTron",2023],
+  [49,"Cranked","Katie Von Schleicher",2023],
+  [50,"Toxic Trait","Stormzy feat. Fredo",2023],
+  [51,"What It Is","Doechii",2023],
+  [52,"Escapism","Raye",2023],
+  [53,"Genesis","Peso Pluma feat. Eslabon Armado",2023],
+  [54,"Home Maker","Sudan Archives",2023],
+  [55,"Billions","Caroline Polachek",2023],
+  [56,"Princess Diana","Ice Spice feat. Nicki Minaj",2023],
+  [57,"I Ain\'t Got Time","Tyler the Creator feat. Childish Gambino",2023],
+  [58,"Tomorrow","GloRilla feat. Cardi B",2023],
+  [59,"Stick Season","Noah Kahan",2023],
+  [60,"My Love Mine All Mine","Mitski",2023],
+  [61,"Psychos","Jenny Lewis",2023],
+  [62,"Johnny Dang","That Mexican OT with Paul Wall and DRODi",2023],
+  [63,"Fragil","Yahritza y Su Esencia and Grupo Frontera",2023],
+  [64,"Love From the Other Side","Fall Out Boy",2023],
+  [65,"Cries in Spanish","Becky G and DannyLux",2023],
+  [66,"No More Lies","Thundercat and Tame Impala",2023],
+  [67,"Flower","Jisoo",2023],
+  [68,"Water","Tyla",2023],
+  [69,"Take Shape","Code Orange feat. Billy Corgan",2023],
+  [70,"All We Ever Do Is Talk","Del Water Gap",2023],
+  [71,"I Play My Bass Loud","Gina Birch",2023],
+  [72,"The Gods Must Be Crazy","Armand Hammer billy woods ELUCID and EL-P",2023],
+  [73,"White Horse","Chris Stapleton",2023],
+  [74,"To Summer From Cole","Summer Walker feat. J. Cole",2023],
+  [75,"Cupid","Fifty Fifty",2023],
+  [76,"Rich Baby Daddy","Drake feat. Sexyy Red and SZA",2023],
+  [77,"Left Right","XG",2023],
+  [78,"Coco Chanel","Eladio Carrion feat. Bad Bunny",2023],
+  [79,"Me and U","Tems",2023],
+  [80,"Freak","Feeble Little Horse",2023],
+  [81,"Nothing Matters","The Last Dinner Party",2023],
+  [82,"Bogus Operandi","The Hives",2023],
+  [83,"Sweet Sounds of Heaven","The Rolling Stones feat. Lady Gaga and Stevie Wonder",2023],
+  [84,"Have Fun!","CMAT",2023],
+  [85,"I Thought You\'d Change","Hotline TNT",2023],
+  [86,"You\'re Losing Me","Taylor Swift",2023],
+  [87,"Coogie","Dijon",2023],
+  [88,"LALA","Myke Towers",2023],
+  [89,"Here","Soccer Mommy",2023],
+  [90,"Chanel Pit","Tierra Whack",2023],
+  [91,"Borderline","Tove Lo",2023],
+  [92,"Who Told You","J Hus feat. Drake",2023],
+  [93,"Miracle","Ellie Goulding and Calvin Harris",2023],
+  [94,"Charm You","Samia",2023],
+  [95,"Spicy","Aespa",2023],
+  [96,"2 Die 4","Addison Rae feat. Charli XCX",2023],
+  [97,"Mysterious Love","Geese",2023],
+  [98,"Enknee1","Hemlocke Springs",2023],
+  [99,"Seven","Jung Kook feat. Latto",2023],
+  [100,"Under You","Foo Fighters",2023],
+];
+
+var FEAT = [
+  ["fc-1","Eslabon Armado and Peso Pluma","Ella Baila Sola"],
+  ["fc-2","Lana Del Rey","A&W"],
+  ["fc-3","PinkPantheress feat. Ice Spice","Boy\'s a Liar Pt. 2"],
+  ["fc-4","Zach Bryan feat. Kacey Musgraves","I Remember Everything"],
+  ["fc-5","Shakira and Bizarrap","Bzrp Music Sessions Vol. 53"],
+  ["fc-6","NewJeans","Super Shy"],
+  ["fc-7","The Beatles","Now and Then"],
+  ["fc-8","Billie Eilish","What Was I Made For"],
+  ["fc-9","Victoria Monet","On My Mama"],
+  ["fc-10","Lil Yachty","Strike (Holster)"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Eslabon Armado", "Ella Baila Sola");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var track  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[key] = count; renderScrobble(el, count);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

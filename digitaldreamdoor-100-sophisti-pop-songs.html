@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Sophisti-Pop Songs — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1982–2022</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-sophisti-pop.html" target="_blank" class="page-title">100 GREATEST SOPHISTI-POP SONGS</a>
+  <p class="page-sub">Sade, Roxy Music, Pet Shop Boys, The Blue Nile, Prefab Sprout — pop elegante con jazz, soul y world music · Editado por Ryan · Dic 2022</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Smooth Operator – Sade">
+    <p class="cover-cap">DIGITAL DREAM DOOR · 2022</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los primeros 100 de los 200 Greatest Sophisti-Pop Songs compilados por Ryan para Digital Dream Door, última actualización diciembre de 2022. Descripción del género: pop pulido y elegante que surgió en el Reino Unido a mediados de los 80s como derivación del New Wave, combinando pop con jazz suave, soul y world music para crear un estilo de escucha elegante. Criterio: canciones elegidas por popularidad inicial y duradera, impacto musical, influencia y originalidad — no necesariamente sus mayores hits. Al #1: Smooth Operator de Sade (1984).</p>
+    <p class="rtext">Artistas más representados en el top 100: Sade (5 — Smooth Operator, The Sweetest Taboo, No Ordinary Love, Your Love is King, Hang On to Your Love), Prefab Sprout (4), The Blue Nile (4), Scritti Politti (4), Style Council (3), Spandau Ballet (3), Everything But the Girl (3), Annie Lennox (3), Swing Out Sister (3), Pet Shop Boys (1 con Being Boring), Roxy Music/Bryan Ferry (3). La lista extiende el género más allá de los 80s hasta incluir artistas contemporáneos como The 1975, Blood Orange, Men I Trust y Jessie Ware. Plays: tus reproducciones de Last.fm.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Smooth Operator">
+    <div>
+      <div class="feat-title">Smooth Operator</div>
+      <div class="feat-artist">Sade &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Smooth Jazz / Soul</span></div>
+      <p class="feat-rev">Helen Folasade Adu construyó en Smooth Operator el estándar definitivo del sophisti-pop: un groove de jazz de inspiración africana, la producción de Robin Millar que hace que todo suene a las 2 AM en un club de Mayfair, y una voz que no necesita demostrar nada porque ya lo ha dicho todo antes de abrir la boca. Diamond Life (1984) fue el álbum debut más vendido del año en Reino Unido. Sade tiene una presencia que ninguna otra artista del género ha igualado.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="More Than This">
+    <div>
+      <div class="feat-title">More Than This</div>
+      <div class="feat-artist">Roxy Music &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Art Rock</span></div>
+      <p class="feat-rev">Bryan Ferry escribió More Than This como la canción de despedida de Roxy Music — y fue también la canción que estableció el estilo sofisticado del pop británico de los 80s. Avalon (1982) fue el álbum más influyente en la creación del sophisti-pop como categoría: producción etérea, guitarra minimalista, sintetizadores suaves, y la voz de Ferry como instrumento de elegancia artificial. Lost in Translation (2003) la usó como la canción del aislamiento moderno.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Careless Whisper">
+    <div>
+      <div class="feat-title">Careless Whisper</div>
+      <div class="feat-artist">Wham! feat. George Michael &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / R&amp;B / Pop</span></div>
+      <p class="feat-rev">George Michael tenía 17 años cuando escribió Careless Whisper en el autobús de camino al trabajo. El saxofón de Steve Gregory creando la intro más reconocida del sophisti-pop global. Fue el primer single de George Michael como artista en solitario — publicado bajo el nombre de Wham! pero producido y co-compuesto íntegramente por él. 6 semanas en el #1 del Hot 100. La canción que convirtió el pop de saxofón en el sonido de la clase media adulta de los 80s.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Holding Back the Years">
+    <div>
+      <div class="feat-title">Holding Back the Years</div>
+      <div class="feat-artist">Simply Red &middot; 1985</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Blue-eyed Soul</span></div>
+      <p class="feat-rev">Mick Hucknall escribió Holding Back the Years cuando tenía 16 años, procesando el abandono de su madre. Llegó al #1 en Reino Unido y EE.UU. en 1986. La producción de Stewart Levine con esa guitarra acústica sola en la intro y la voz de Hucknall — uno de los mejores tenores blancos del soul británico — convierten la canción en algo más que sophisti-pop: es una confesión autobiográfica envuelta en el empaquetado más elegante posible. Picture Book (1985) fue el álbum que lanzó Simply Red al mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Breakout">
+    <div>
+      <div class="feat-title">Breakout</div>
+      <div class="feat-artist">Swing Out Sister &middot; 1987</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Jazz Pop</span></div>
+      <p class="feat-rev">Corinne Drewery y Andy Connell construyeron el sophisti-pop más accesible de los 80s: una canción que suena al jazz de los años 50 y al pop de 1987 simultáneamente, con el sombrero de Drewery como parte indisoluble de la identidad visual del grupo. Breakout llegó al #6 del Hot 100 — el mayor éxito americano de una banda de sophisti-pop. It's Better to Travel (1987) fue el álbum debut más completo del género en términos de coherencia estética.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="True">
+    <div>
+      <div class="feat-title">True</div>
+      <div class="feat-artist">Spandau Ballet &middot; 1983</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / New Wave / Soul</span></div>
+      <p class="feat-rev">Tony Hadley cantando la más elegante de las canciones de Spandau Ballet — el grupo que más conscientemente transitó del New Romantic al sophisti-pop. True pasó cuatro semanas en el #1 del UK Singles Chart y llegó al #4 del Hot 100. Gary Kemp escribió la letra sobre el amor y el tiempo con la ambición lírica de un poeta sin pretenderlo. El saxofón, el groove slow y la producción de Tony Swain y Steve Jolley establecieron el modelo del sophisti-pop adulto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="When Love Breaks Down">
+    <div>
+      <div class="feat-title">When Love Breaks Down</div>
+      <div class="feat-artist">Prefab Sprout &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Art Pop</span></div>
+      <p class="feat-rev">Paddy McAloon es el compositor más sofisticado del sophisti-pop — y When Love Breaks Down es la canción que mejor lo demuestra. Fue relanzada tres veces antes de llegar al top 25 del UK chart en 1985. Steve McQueen (1985) fue nombrado por los críticos como uno de los mejores álbumes de los 80s — y McAloon comparado con Burt Bacharach y Cole Porter. Una canción sobre el final del amor que suena más triste cuanto más te alegras de haber escapado.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Shattered Dreams">
+    <div>
+      <div class="feat-title">Shattered Dreams</div>
+      <div class="feat-artist">Johnny Hates Jazz &middot; 1987</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Blue-eyed Soul</span></div>
+      <p class="feat-rev">Clark Datchler, Mike Nocito y Calvin Hayes crearon en Shattered Dreams el hit de sophisti-pop más puro de 1987 — llegó al #5 del Hot 100 y #5 del UK chart. La producción de Alan Tarney con esos sintetizadores de cuerda y el piano al frente, y la voz de Datchler navegando entre el soul y el pop con una precisión que la mayoría de sus contemporáneos no tenían. Turn Back the Clock (1988) fue el álbum del momento y luego Datchler se fue en solitario, dejando a la banda sin su mejor activo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="My Ever Changing Moods">
+    <div>
+      <div class="feat-title">My Ever Changing Moods</div>
+      <div class="feat-artist">The Style Council &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Soul / Jazz</span></div>
+      <p class="feat-rev">Paul Weller dejó The Jam en 1982 en el pico de su éxito para formar The Style Council con Mick Talbot — y My Ever Changing Moods fue la declaración de intenciones más clara de esa transición. Del mod punk al sophisti-pop adulto, con la influencia del soul de Motown y el jazz continental mezclada en una producción que suena más parisina que londinense. Llegó al #5 del UK chart y al #29 del Hot 100 en 1984 — el mayor éxito americano de Weller.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="The Downtown Lights">
+    <div>
+      <div class="feat-title">The Downtown Lights</div>
+      <div class="feat-artist">The Blue Nile &middot; 1989</div>
+      <div class="feat-meta"><span class="feat-pill">Sophisti-pop / Art Rock</span></div>
+      <p class="feat-rev">The Blue Nile de Glasgow publicaron Hats (1989) cinco años después de su debut — y fue inmediatamente considerado uno de los mejores álbumes de la década. The Downtown Lights es su canción más cinematográfica: una evocación de ciudad nocturna que suena como si David Lynch hubiera pedido música para una escena que nunca se grabó. Paul Buchanan construyendo con sintetizadores y baterías programadas una atmósfera que ninguna banda de los 80s había alcanzado con tanta economía de medios.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas por ranking Digital Dream Door</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES · 1982–2022</span>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-sophisti-pop.html" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"Smooth Operator","Sade",1984],
+  [2,"More Than This","Roxy Music",1982],
+  [3,"Careless Whisper","Wham! featuring George Michael",1984],
+  [4,"Holding Back the Years","Simply Red",1985],
+  [5,"Breakout","Swing Out Sister",1987],
+  [6,"True","Spandau Ballet",1983],
+  [7,"When Love Breaks Down","Prefab Sprout",1984],
+  [8,"Shattered Dreams","Johnny Hates Jazz",1987],
+  [9,"My Ever Changing Moods","The Style Council",1984],
+  [10,"The Downtown Lights","The Blue Nile",1989],
+  [11,"Wood Beez (Pray Like Aretha Franklin)","Scritti Politti",1984],
+  [12,"Slave to Love","Bryan Ferry",1985],
+  [13,"Digging Your Scene","The Blow Monkeys",1986],
+  [14,"The Sweetest Taboo","Sade",1985],
+  [15,"Something About You","Level 42",1985],
+  [16,"Steppin' Out","Joe Jackson",1982],
+  [17,"Time (Clock of the Heart)","Culture Club",1982],
+  [18,"Mary's Prayer","Danny Wilson",1987],
+  [19,"It's My Life","Talk Talk",1984],
+  [20,"Perfect Way","Scritti Politti",1985],
+  [21,"Everybody Knows","Leonard Cohen",1988],
+  [22,"Appetite","Prefab Sprout",1984],
+  [23,"Tinseltown in the Rain","The Blue Nile",1984],
+  [24,"IGY (What a Beautiful World)","Donald Fagen",1982],
+  [25,"Human","The Human League",1986],
+  [26,"Walking On Broken Glass","Annie Lennox",1992],
+  [27,"Cruising for Bruising","Basia",1987],
+  [28,"Living in a Box","Living in a Box",1987],
+  [29,"Englishman in New York","Sting",1987],
+  [30,"Being Boring","Pet Shop Boys",1990],
+  [31,"No Ordinary Love","Sade",1992],
+  [32,"Misfit","Curiosity Killed the Cat",1986],
+  [33,"Long Hot Summer","The Style Council",1983],
+  [34,"The Captain of Her Heart","Double",1985],
+  [35,"Driving","Everything But the Girl",1990],
+  [36,"Black Man Ray","China Crisis",1985],
+  [37,"Avalon","Roxy Music",1982],
+  [38,"Gold","Spandau Ballet",1983],
+  [39,"Breaking Us in Two","Joe Jackson",1982],
+  [40,"Somewhere In My Heart","Aztec Camera",1988],
+  [41,"Our Lips Are Sealed","Fun Boy Three",1982],
+  [42,"How Can I Fall?","Breathe",1988],
+  [43,"Stay","The Blue Nile",1984],
+  [44,"Somebody Else","The 1975",2016],
+  [45,"Fullgas","Marina Lima",1984],
+  [46,"Get Out of Your Lazy Bed","Matt Bianco",1984],
+  [47,"Loving the Alien","David Bowie",1985],
+  [48,"Come Back and Stay","Paul Young",1983],
+  [49,"Why","Annie Lennox",1992],
+  [50,"The Story of the Blues","Wah!",1982],
+  [51,"(Feels Like) Heaven","Fiction Factory",1984],
+  [52,"Message to My Girl","Split Enz",1984],
+  [53,"The Sun and the Rain","Madness",1983],
+  [54,"First We Take Manhattan","Leonard Cohen",1988],
+  [55,"Fortress Around Your Heart","Sting",1985],
+  [56,"Don't Give Up","Peter Gabriel & Kate Bush",1986],
+  [57,"Real Gone Kid","Deacon Blue",1988],
+  [58,"Twist in My Sobriety","Tanita Takaram",1988],
+  [59,"The King of Rock 'n' Roll","Prefab Sprout",1988],
+  [60,"Song for Whoever","The Beautiful South",1989],
+  [61,"The Sweetest Girl","Scritti Politti",1981],
+  [62,"Wonderful Life","Black",1987],
+  [63,"The First Picture of You","The Lotus Eaters",1983],
+  [64,"Money's Too Tight (To Mention)","Simply Red",1985],
+  [65,"Give It Up","Talk Talk",1986],
+  [66,"Your Love is King","Sade",1984],
+  [67,"Wishing I Was Lucky","Wet Wet Wet",1987],
+  [68,"Twilight World","Swing Out Sister",1987],
+  [69,"Build","The Housemartins",1987],
+  [70,"Hot Water","Level 42",1984],
+  [71,"When Smokey Sings","ABC",1987],
+  [72,"Dignity","Deacon Blue",1987],
+  [73,"Christian","China Crisis",1983],
+  [74,"I'll Sail This Ship Alone","The Beautiful South",1989],
+  [75,"Labour of Love","Hue and Cry",1987],
+  [76,"Love It If We Made It","The 1975",2018],
+  [77,"Boom! There She Was","Scritti Politti",1988],
+  [78,"I've Seen That Face Before (Libertango)","Grace Jones",1981],
+  [79,"Driving Away From Home (Jim's Tune)","It's Immaterial",1986],
+  [80,"Don't Sing","Prefab Sprout",1984],
+  [81,"This is Not America","David Bowie and the Pat Metheny Group",1985],
+  [82,"Each and Every One","Everything But the Girl",1984],
+  [83,"You're the Best Thing","The Style Council",1984],
+  [84,"Hang On to Your Love","Sade",1984],
+  [85,"Crying in Public","Chairlift",2012],
+  [86,"Kiss and Tell","Bryan Ferry",1988],
+  [87,"Headlights on the Parade","The Blue Nile",1989],
+  [88,"I'll Fly for You","Spandau Ballet",1984],
+  [89,"Short Court Style","Natalie Prass",2015],
+  [90,"Jocelyn Square","Love and Money",1988],
+  [91,"Words","The Christians",1987],
+  [92,"Wishful Thinking","China Crisis",1983],
+  [93,"You're Not Good Enough","Blood Orange",2013],
+  [94,"The Honeythief","Hipsway",1986],
+  [95,"Down to Earth","Curiosity Killed the Cat",1986],
+  [96,"Surrender","Swing Out Sister",1987],
+  [97,"Little Bird","Annie Lennox",1992],
+  [98,"Goodbye Lucille #1 (Johnny Johnny)","Prefab Sprout",1985],
+  [99,"Night and Day","Everything but the Girl",1982],
+  [100,"Time and Tide","Basia",1987]
+];
+
+var FEAT=[
+  ["fc-1","Sade","Smooth Operator"],
+  ["fc-2","Roxy Music","More Than This"],
+  ["fc-3","George Michael","Careless Whisper"],
+  ["fc-4","Simply Red","Holding Back the Years"],
+  ["fc-5","Swing Out Sister","Breakout"],
+  ["fc-6","Spandau Ballet","True"],
+  ["fc-7","Prefab Sprout","When Love Breaks Down"],
+  ["fc-8","Johnny Hates Jazz","Shattered Dreams"],
+  ["fc-9","The Style Council","My Ever Changing Moods"],
+  ["fc-10","The Blue Nile","The Downtown Lights"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
+      for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
+      if(!m&&res.length)m=res[0];
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
+          for(var i=0;i<imgs.length;i++)if(imgs[i].size==="extralarge"){best=imgs[i];break;}
+          if(!best)for(var j=0;j<imgs.length;j++)if(imgs[j].size==="large"){best=imgs[j];break;}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Sade","Smooth Operator");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+s[0]+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[2])+"\" data-album=\""+encodeURIComponent(s[1])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+s[1]+"</div><div class=\"track-artist\">"+s[2]+"</div></div>"+
+    "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(s[2])+"\" data-lfm-album=\""+encodeURIComponent(s[1])+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var b=artQ.splice(0,8);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfm(){
+  if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
+  var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+tr;
+  if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
+}
+function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
+document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+</script>
+</body>
+</html>

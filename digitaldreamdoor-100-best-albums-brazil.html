@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Brazilian Albums — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+</style>
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2012</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-eighties-150477/" target="_blank" class="page-title">100 GREATEST BRAZILIAN ALBUMS</a>
+  <p class="page-sub">Del synth pop y el rap al metal y el funk · Seleccionados por los editores de Rolling Stone · 16 de noviembre de 1989 · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Construção – The Clash">
+    <p class="cover-cap">ROLLING STONE · 1989</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">El canon de la música brasileña compilado por Digital Dream Door — 100 álbumes que recorren desde la bossa nova de João Gilberto (Chega de Saudade, 1959) hasta el metal de Sepultura y el rap de los Racionais MC's. Al frente: Construção de Chico Buarque (1971), quizás el álbum conceptual más poderoso de América Latina, grabado bajo la censura de la dictadura militar con letras en espiral que confundían a los censores. Luego Acabou Chorare de Os Novos Baianos (1972) — el álbum más feliz de la historia del MPB, grabado por una comunidad que vivía y tocaba junta en Río. Y Os Mutantes (1968) y Clube da Esquina de Milton Nascimento, los dos pilares de la Tropicália y el MPB experimental de los 70s.</p>
+    <p class="rtext">La lista revela la extraordinaria diversidad de la música brasileña: samba (Jorge Ben, Cartola), bossa nova (João Gilberto, Stan Getz y João Gilberto, Antônio Carlos Jobim), tropicalismo (Os Mutantes, Caetano Veloso, Gal Costa, Gilberto Gil), MPB (Chico Buarque, Elis Regina, Milton Nascimento), rock (Legião Urbana, Titãs, Barão Vermelho), metal (Sepultura, Angra) y rap (Racionais MC's). Jorge Ben aparece tres veces; Os Mutantes cuatro. La columna de scrobbles suma los tracks de cada álbum vía album.getInfo de Last.fm.</p>
+  </div>
+</section>
+
+<!-- > 50 items → reviews of first 10 -->
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Construção">
+    <div>
+      <div class="feat-title">Construção</div>
+      <div class="feat-artist">Chico Buarque &middot; 1971</div>
+      <div class="feat-meta"><span class="feat-pill">MPB</span></div>
+      <p class="feat-rev">El álbum más importante de la música brasileña. Chico Buarque compuso estas canciones sobre figuras del trabajo cotidiano — el constructor, el tipógrafo, el corsario — bajo la censura de la dictadura militar, construyendo una crítica política tan oblicua que los censores no lograron prohibirla. La orquestación de Rogério Duprat y las letras en espiral de Chico crearon algo que no existía antes en el MPB: un álbum conceptual de densidad operística pero con la accesibilidad de una canción popular.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Acabou Chorare">
+    <div>
+      <div class="feat-title">Acabou Chorare</div>
+      <div class="feat-artist">Os Novos Baianos &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">MPB / Rock</span></div>
+      <p class="feat-rev">El álbum más feliz de la historia de la música brasileña. Os Novos Baianos vivían todos juntos en una comunidad en Río, comían en la misma mesa y hacían música todo el día — y Acabou Chorare captura exactamente esa comunidad en estado de gracia. La fusión de samba, choro, rock y forró se siente espontánea porque lo era. Gilberto Gil produjo el disco y llevó a João Gilberto a escuchar una sesión de ensayo: el maestro de la bossa nova lloró.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Os Mutantes">
+    <div>
+      <div class="feat-title">Os Mutantes</div>
+      <div class="feat-artist">Os Mutantes &middot; 1968</div>
+      <div class="feat-meta"><span class="feat-pill">Tropicália / Rock Psicodélico</span></div>
+      <p class="feat-rev">El debut del trío más vanguardista de la Tropicália: efectos de sonido extraños, letras que oscilan entre el absurdo y la política, guitarras distorsionadas sobre arreglos orquestales de Rogério Duprat. Os Mutantes eran Arnaldo Baptista, Sérgio Dias y Rita Lee — tres adolescentes de São Paulo que en 1968 sonaban como si hubieran escuchado al mismo tiempo a Los Beatles, los Beach Boys y John Cage, y hubieran decidido superar a todos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Clube da Esquina">
+    <div>
+      <div class="feat-title">Clube da Esquina</div>
+      <div class="feat-artist">Milton Nascimento e Lô Borges &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">MPB / Rock</span></div>
+      <p class="feat-rev">El doble álbum más ambicioso del MPB: 21 canciones que mezclan el folk de Minas Gerais, el jazz modal de Miles Davis, el rock progresivo y la música sacra latinoamericana en algo completamente sin precedentes. Milton Nascimento y el adolescente Lô Borges co-escribieron la mayoría de los temas durante las conversaciones en el 'clube da esquina' — la esquina del barrio de Belo Horizonte donde se reunían. Una obra de imaginación total.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Chega de Saudade">
+    <div>
+      <div class="feat-title">Chega de Saudade</div>
+      <div class="feat-artist">João Gilberto &middot; 1959</div>
+      <div class="feat-meta"><span class="feat-pill">Bossa Nova</span></div>
+      <p class="feat-rev">El álbum que inventó la bossa nova y cambió la música popular del siglo XX. João Gilberto desarrolló una técnica de guitarra completamente nueva — síncope suave, casi susurrada — y una forma de cantar que era lo opuesto del drama convencional: íntima, contenida, perfecta. Cuando Stan Getz lo escuchó en Nueva York quedó tan impresionado que viajó a Brasil para grabar con él. El resultado fue Getz/Gilberto — que también está en esta lista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Secos & Molhados">
+    <div>
+      <div class="feat-title">Secos & Molhados</div>
+      <div class="feat-artist">Secos & Molhados &middot; 1973</div>
+      <div class="feat-meta"><span class="feat-pill">Glam Rock / MPB</span></div>
+      <p class="feat-rev">El álbum que convirtió el glam rock en fenómeno de masas en Brasil. Ney Matogrosso con maquillaje andrógino, vestuario de plumas y una voz de contratenor que desafiaba todas las convenciones de género del Brasil de la dictadura. Las letras tomaban poemas de García Lorca y de Manuel Bandeira y los convertían en canciones de rock teatral. El álbum vendió un millón de copias en su primer año — un récord para la música brasileña de la época.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="A Tábua de Esmeralda">
+    <div>
+      <div class="feat-title">A Tábua de Esmeralda</div>
+      <div class="feat-artist">Jorge Ben &middot; 1974</div>
+      <div class="feat-meta"><span class="feat-pill">Samba-Rock / Funk</span></div>
+      <p class="feat-rev">Jorge Ben en su momento más místico y más funky: un álbum construido sobre los principios herméticos de la Tabla de Esmeralda del alquimista Hermes Trismegisto, pero con un groove que haría bailar a cualquiera. 'Os Alquimistas Estão Chegando' y 'O Homem da Gravata Florida' son dos de sus canciones más perfectas. Rod Stewart plagio 'Taj Mahal' tan flagrantemente para 'Do Ya Think I'm Sexy?' que tuvo que pagarle regalías a Ben de por vida.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Transa">
+    <div>
+      <div class="feat-title">Transa</div>
+      <div class="feat-artist">Caetano Veloso &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">MPB / Rock</span></div>
+      <p class="feat-rev">Grabado en Londres durante el exilio de Caetano Veloso bajo la dictadura militar. Transa es un álbum bilingüe que mezcla el inglés y el portugués, el folk nordestino y el rock psicodélico, la melancolía del exiliado y la rabia del artista censurado. Las letras en inglés son deliberadamente entrecortadas e imperfectas — el idioma del exilio como extrañeza. Uno de los álbumes más personales y más raros de la música brasileña.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Estudando o Samba">
+    <div>
+      <div class="feat-title">Estudando o Samba</div>
+      <div class="feat-artist">Tom Zé &middot; 1976</div>
+      <div class="feat-meta"><span class="feat-pill">MPB / Experimental</span></div>
+      <p class="feat-rev">Tom Zé fue el miembro más experimental de la Tropicália y el más olvidado — hasta que David Byrne lo redescubrió en los 90 y lo firmó en Luaka Bop. Estudando o Samba es su obra cumbre: un análisis intelectual y al mismo tiempo profundamente musical del samba, con ritmos fracturados, letras conceptuales y una producción que suena como si Zé estuviera estudiando la música mientras la hace. El único álbum de la lista que todavía suena completamente adelantado a su tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Samba Esquema Novo">
+    <div>
+      <div class="feat-title">Samba Esquema Novo</div>
+      <div class="feat-artist">Jorge Ben &middot; 1963</div>
+      <div class="feat-meta"><span class="feat-pill">Samba / Bossa Nova</span></div>
+      <p class="feat-rev">El debut de Jorge Ben a los 22 años: una fusión completamente nueva de samba, bossa nova y rhythm & blues que nadie había hecho antes. 'Mas que Nada' — incluida aquí — se convertiría en la canción brasileña más conocida en el mundo, versionada por Sergio Mendes y Brasil '66 y convertida en estándar internacional. Jorge Ben tenía una voz, una guitarra y un ritmo que no se parecían a nada anterior en la música brasileña. Todo lo que vino después le debe algo.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 ÁLBUMES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-eighties-150477/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var ALBUMS = [
+  [1,"Construção","Chico Buarque",1971],
+  [2,"Acabou Chorare","Os Novos Baianos",1972],
+  [3,"Os Mutantes","Os Mutantes",1968],
+  [4,"Clube da Esquina","Milton Nascimento e Lô Borges",1972],
+  [5,"Chega de Saudade","João Gilberto",1959],
+  [6,"Secos & Molhados","Secos & Molhados",1973],
+  [7,"A Tábua de Esmeralda","Jorge Ben",1974],
+  [8,"Transa","Caetano Veloso",1972],
+  [9,"Estudando o Samba","Tom Zé",1976],
+  [10,"Samba Esquema Novo","Jorge Ben",1963],
+  [11,"Arise","Sepultura",1991],
+  [12,"Gita","Raul Seixas",1974],
+  [13,"Elis & Tom","Elis Regina e Tom Jobim",1974],
+  [14,"Getz/Gilberto","Stan Getz e João Gilberto",1964],
+  [15,"De Lama a Caos","Chico Science & Nação Zumbi",1994],
+  [16,"Mutantes","Os Mutantes",1969],
+  [17,"Fruto Proibido","Rita Lee & Tutti Frutti",1975],
+  [18,"Caetano Veloso","Caetano Veloso",1968],
+  [19,"Cabeça Dinossauro","Titãs",1986],
+  [20,"Racional","Tim Maia",1975],
+  [21,"Dois","Legião Urbana",1986],
+  [22,"Africa Brasil","Jorge Ben",1976],
+  [23,"Cartola","Cartola",1976],
+  [24,"Gal","Gal Costa",1969],
+  [25,"Roberto Carlos","Roberto Carlos",1971],
+  [26,"Gilberto Gil","Gilberto Gil",1968],
+  [27,"Tropicália ou Panis et Circencis","Caetano Veloso, Gilberto Gil e outros",1968],
+  [28,"Paêbirú","Lula Côrtes e Zé Ramalho",1975],
+  [29,"A Divina Comédia ou Ando Meio Desligado","Os Mutantes",1970],
+  [30,"Refazenda","Gilberto Gil",1975],
+  [31,"Afrociberdelia","Chico Science & Nação Zumbi",1996],
+  [32,"Krig-ha, Bandolo!","Raul Seixas",1973],
+  [33,"Drama - Anjo Exterminado","Maria Bethânia",1972],
+  [34,"A Dança da Solidão","Paulinho da Viola",1972],
+  [35,"Nara","Nara Leão",1964],
+  [36,"Os Afro Sambas","Baden Powell e Vinicius de Moraes",1966],
+  [37,"Quarteto Novo","Quarteto Novo",1967],
+  [38,"Canção do Amor Demais","Elizeth Cardoso",1958],
+  [39,"Caymmi e seu Violão","Dorival Caymmi",1959],
+  [40,"Antônio Carlos Jobim","Antônio Carlos Jobim",1963],
+  [41,"Sobrevivendo no Inferno","Racionais MC\'s",1997],
+  [42,"Raimundos","Raimundos",1994],
+  [43,"Todos os Olhos","Tom Zé",1973],
+  [44,"Fa-Tal - Gal a Todo Vapor","Gal Costa",1971],
+  [45,"Chaos A.D.","Sepultura",1993],
+  [46,"Ogum Xangô","Gilberto Gil e Jorge Ben",1975],
+  [47,"Verde, Amarelo, Cor-de-Rosa e Carvão","Marisa Monte",1994],
+  [48,"Os Afro Sambas de Baden e Vinícius","Baden Powell e Vinicius de Moraes",1966],
+  [49,"As Aventuras da Blitz Vol. 1","Blitz",1982],
+  [50,"Sua Majestade, o Rei do Ritmo","Jackson do Pandeiro",1954],
+  [51,"Falso Brilhante","Elis Regina",1976],
+  [52,"Raimundos","Raimundos",1994],
+  [53,"Caymmi e seu Violão","Dorival Caymmi",1959],
+  [54,"As Aventuras da Blitz","Blitz",1982],
+  [55,"Todos os Olhos","Tom Zé",1973],
+  [56,"Nara","Nara Leão",1964],
+  [57,"Quarteto Novo","Quarteto Novo",1967],
+  [58,"Afrociberdelia","Chico Science & Nação Zumbi",1996],
+  [59,"A Dança da Solidão","Paulinho da Viola",1972],
+  [60,"Sobrevivendo no Inferno","Racionais MC\'s",1997],
+  [61,"Sua Majestade, o Rei do Ritmo","Jackson do Pandeiro",1954],
+  [62,"Falso Brilhante","Elis Regina",1976],
+  [63,"Maria Fumaça","Banda Black Rio",1977],
+  [64,"The Astrud Gilberto Album","Astrud Gilberto",1965],
+  [65,"A Bad Donato","João Donato",1970],
+  [66,"Milagre dos Peixes","Milton Nascimento",1973],
+  [67,"Expresso 2222","Gilberto Gil",1972],
+  [68,"Alucinação","Belchior",1976],
+  [69,"Selvagem?","Os Paralamas do Sucesso",1986],
+  [70,"Pérola Negra","Luiz Melodia",1973],
+  [71,"Doces Bárbaros","Doces Bárbaros",1976],
+  [72,"Água Viva","Gal Costa",1978],
+  [73,"Bicho","Caetano Veloso",1977],
+  [74,"Geraes","Milton Nascimento",1976],
+  [75,"Refazenda","Gilberto Gil",1975],
+  [76,"The Astrud Gilberto Album","Astrud Gilberto",1965],
+  [77,"Milagre dos Peixes","Milton Nascimento",1973],
+  [78,"A Bad Donato","João Donato",1970],
+  [79,"Roots","Sepultura",1996],
+  [80,"Legião Urbana","Legião Urbana",1985],
+  [81,"Jardim Elétrico","Os Mutantes",1971],
+  [82,"Depois do Fim","Bacamarte",1983],
+  [83,"Chico Buarque","Chico Buarque",1978],
+  [84,"Revolver","Walter Franco",1976],
+  [85,"Angels Cry","Angra",1993],
+  [86,"Tom Zé","Tom Zé",1968],
+  [87,"A Peleja do Diabo com o Dono do Céu","Zé Ramalho",1979],
+  [88,"Novo Aeon","Raul Seixas",1975],
+  [89,"Força Bruta","Jorge Ben",1970],
+  [90,"Ideologia","Cazuza",1988],
+  [91,"Clara Crocodilo","Arrigo Barnabé",1980],
+  [92,"Nervos de Aço","Paulinho da Viola",1973],
+  [93,"Show Opinião","Nara Leão, Zé Keti e João do Vale",1965],
+  [94,"Cinema Transcendental","Caetano Veloso",1979],
+  [95,"O Passo do Lui","Os Paralamas do Sucesso",1984],
+  [96,"Brasil","Ratos de Porão",1989],
+  [97,"Build Up","Rita Lee",1970],
+  [98,"Criaturas da Noite","O Terço",1975],
+  [99,"Maior Abandonado","Barão Vermelho",1984],
+  [100,"Personalidade","Elis Regina",1987],
+];
+
+var FEAT = [
+  ["fc-1","Chico Buarque","Construção"],
+  ["fc-2","Os Novos Baianos","Acabou Chorare"],
+  ["fc-3","Os Mutantes","Os Mutantes"],
+  ["fc-4","Milton Nascimento e Lô Borges","Clube da Esquina"],
+  ["fc-5","João Gilberto","Chega de Saudade"],
+  ["fc-6","Secos & Molhados","Secos & Molhados"],
+  ["fc-7","Jorge Ben","A Tábua de Esmeralda"],
+  ["fc-8","Caetano Veloso","Transa"],
+  ["fc-9","Tom Zé","Estudando o Samba"],
+  ["fc-10","Jorge Ben","Samba Esquema Novo"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+function setImg(el, url) { el.src = url; el.style.opacity = "1"; el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; }; }
+function loadArt(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) + "&media=music&entity=album&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [], a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0], match = null;
+      for (var i = 0; i < results.length; i++) { if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; } }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb")); else throw new Error("x");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [], best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+loadArt(document.getElementById("hero-cover"), "Chico Buarque", "Construção");
+FEAT.forEach(function(fc, i) { setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300); });
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div"); row.className = "track-row";
+  row.innerHTML = "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ = [], artTimer = null;
+function flushArt() { var batch = artQ.splice(0, 8); for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); } if (artQ.length > 0) artTimer = setTimeout(flushArt, 500); }
+var artObs = new IntersectionObserver(function(entries) { for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); } clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80); }, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover"); for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return; lfmBusy = true;
+  var el = lfmQ.shift(), artist = decodeURIComponent(el.dataset.lfmArtist || ""), album = decodeURIComponent(el.dataset.lfmAlbum || ""), key = artist + "|||" + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      tracks.forEach(function(t) { total += parseInt((t.userplaycount) || 0, 10); });
+      if (total === 0 && d && d.album && d.album.userplaycount) total = parseInt(d.album.userplaycount, 10);
+      lfmCache[key] = total; renderScrobble(el, total);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) { el.classList.remove("loading"); el.textContent = count > 0 ? count.toLocaleString() : "0"; if (!count) el.classList.add("zero"); }
+var lfmObs = new IntersectionObserver(function(entries) { for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); } }, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles"); for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

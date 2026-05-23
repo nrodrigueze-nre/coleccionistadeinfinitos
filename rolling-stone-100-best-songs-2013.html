@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Best Songs of 2013 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2013</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-songs-of-2013-38994/" target="_blank" class="page-title">100 BEST SONGS OF 2013</a>
+  <p class="page-sub">De Daft Punk y Lorde a Kanye West y Drake · El año del disco, el trap y los robots franceses · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Get Lucky – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2013</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Get Lucky de Daft Punk al #1 — el tipo de canción en que todo el mundo puede estar de acuerdo, construida por robots franceses sobre un groove de Nile Rodgers. Royals de Lorde al #2: una adolescente de 16 años de Nueva Zelanda que disseó el bling del hip-hop y hizo cantar al mundo. La lista documenta el año en que el indie-pop alcanzó el mainstream (HAIM, Vampire Weekend), el trap empezó a asomar (Drake, Young Thug), y Beyoncé soltó su álbum visual sin previo aviso redefiniendo el concepto de lanzamiento.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &mdash; Resenas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Get Lucky">
+    <div>
+      <div class="feat-title">Get Lucky</div>
+      <div class="feat-artist">Daft Punk feat. Pharrell Williams and Nile Rodgers &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Pop</span></div>
+      <p class="feat-rev">El tipo de cancion pop en el que todo el mundo puede estar de acuerdo. Encabezó las listas de canciones en 55 paises. Rodgers y Pharrell demostraron ser el Yoda y Obi-Wan de los jams veraniegos. Daft Punk, los tipos detras de las mascaras de robot, lograron la emocion pop completamente humana que habian estado buscando durante 15 anos: una cancion sobre mantenerse fiel a uno mismo, y una carta de amor a esa sensacion de suerte que te invade cuando la bola de espejos empieza a girar. Vintage y futurista al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Royals">
+    <div>
+      <div class="feat-title">Royals</div>
+      <div class="feat-artist">Lorde &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Indie Pop</span></div>
+      <p class="feat-rev">No parecia el tipo de cancion que domina las listas pop: solo una cantante genial, un beat suavemente swagger y unas cantantes de respaldo fraternas. Pero "Royals" toco un nervio al ser a la vez irresistible y radical: el sonido de una adolescente enamorada del hip-hop (pero no de su materialismo) que decide ser reina de su propia escena. Una chica de 16 anos de Nueva Zelanda que disso el bling e hizo cantar a todo el mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Black Skinhead">
+    <div>
+      <div class="feat-title">Black Skinhead</div>
+      <div class="feat-artist">Kanye West &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Industrial</span></div>
+      <p class="feat-rev">El himno que anuncio que el LP Yeezus estaba a pleno funcionamiento para destruir todo. Kanye rapeando rabioso sobre un estampido de glitter-rock industrial bombeado con respiracion pesada y gritos de Tarzan. Una colaboracion con Daft Punk. "La proxima vez que alguien diga que America es post-racial, ponle esto, y observa como se le explota la cabeza," escribio Rolling Stone. El rap de protesta mas furioso del ano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Reflektor">
+    <div>
+      <div class="feat-title">Reflektor</div>
+      <div class="feat-artist">Arcade Fire &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Art Rock / Disco</span></div>
+      <p class="feat-rev">Los redentores canadienses del rock haciendo art-disco epico. Arcade Fire tomo un giro radical hacia la musica de baile con una cancion de nueve minutos sobre reflexiones, espejos y el mito de Orfeo y Euridice, producida con James Murphy de LCD Soundsystem. La apuesta mas arriesgada del ano en rock alternativo, y la que mejores resultados dio. El album del mismo nombre fue elegido Album del Ano por Rolling Stone en 2013.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Drunk in Love">
+    <div>
+      <div class="feat-title">Drunk in Love</div>
+      <div class="feat-artist">Beyonce feat. Jay Z &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">R&amp;B / Pop</span></div>
+      <p class="feat-rev">Del album sorpresa que Beyonce solto sin previo aviso en diciembre de 2013 y redefinio el concepto de lanzamiento discografico en la era digital. "Drunk in Love" es el dueto conyugal mas caliente del ano: Beyonce y Jay Z celebrando su matrimonio con una franqueza sexual que el pop mainstream rara vez permite. El sample de Houston trap, el "surfboard" susurrado, la entrega vocal de Beyonce en su estado mas salvaje y libre.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Do I Wanna Know">
+    <div>
+      <div class="feat-title">Do I Wanna Know?</div>
+      <div class="feat-artist">Arctic Monkeys &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Rock</span></div>
+      <p class="feat-rev">El riff de guitarra mas coolamente amenazante de 2013, y la prueba de que los Arctic Monkeys habian evolucionado de chicos de Sheffield que tocaban covers de White Stripes en el pub a una de las bandas de rock mas importantes del mundo. AM fue el album que los consagro en los estadios; "Do I Wanna Know?" fue el single que lo anuncio. Josh Homme de Queens of the Stone Age coprodujo el album, y su influencia se siente en cada nota pesada y calculada.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Mirrors">
+    <div>
+      <div class="feat-title">Mirrors</div>
+      <div class="feat-artist">Justin Timberlake &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / R&amp;B</span></div>
+      <p class="feat-rev">El mejor Justin Timberlake de 2013, y en 2013 Justin Timberlake fue el artista del ano practicamente sin discusion. "Mirrors" es su balada de amor mas ambiciosa — ocho minutos de pop cinematografico sobre encontrar tu alma gemela. La produccion de Timbaland y el falsetto de JT se fusionan en algo que recuerda a los mejores Michael Jackson sin sonar nunca a imitacion. La cancion que demuestra que Timberlake puede hacer practicamente cualquier cosa dentro del pop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="The Wire">
+    <div>
+      <div class="feat-title">The Wire</div>
+      <div class="feat-artist">HAIM &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / Rock</span></div>
+      <p class="feat-rev">Las hermanas Haim fueron la historia de descubrimiento del ano en el rock: tres chicas de Los Angeles que mezclaron el pop de los 70, el soft rock de los 80 y el R&B contemporaneo en un sonido completamente propio. "The Wire" es su mejor cancion — un desglose de una relacion contado con la claridad y el gancho melodico de los mejores Fleetwood Mac. Danielle, Este y Alana Haim sonaban como si hubieran estado haciendo esto toda la vida. Porque efectivamente habian estado haciendo esto toda la vida.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Started From the Bottom">
+    <div>
+      <div class="feat-title">Started From the Bottom</div>
+      <div class="feat-artist">Drake &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Trap</span></div>
+      <p class="feat-rev">Sobre el papel, la declaracion de orgullo de barrio de un chico que crecio en una casa bonita de Toronto y actuo en un drama adolescente canadiense no deberia funcionar. Pero Drake entrego el himno de superacion personal mas efectivo del ano con un minimalismo trap que no necesitaba nada mas que su conviccion. "Now my whole team here" sigue siendo uno de los momentos mas satisfactorios del rap de los 2010s. Drake definio el tono del hip-hop mainstream durante la proxima decada con esta cancion.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="My Songs Know What You Did in the Dark">
+    <div>
+      <div class="feat-title">My Songs Know What You Did in the Dark</div>
+      <div class="feat-artist">Fall Out Boy &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Pop Punk / Rock</span></div>
+      <p class="feat-rev">El regreso que nadie pensaba que ocurriria nunca, desde que Fall Out Boy se separo... hace dos enteros anos. Asi que tiene sentido que vuelvan con un fantástico stomper sobre ser perseguido por musica y recuerdos que te acechan desde el pasado. La nostalgia de los 2000s llegada por fin — pero soando completamente fresca, como si el emo-pop se hubiera reinventado una vez mas y todavia tuviera cosas que decir. Patrick Stump devuelve cada nota con interes.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 CANCIONES · 2013</span>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-songs-of-2013-38994/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Get Lucky","Daft Punk feat. Pharrell Williams and Nile Rodgers",2013],
+  [2,"Royals","Lorde",2013],
+  [3,"Black Skinhead","Kanye West",2013],
+  [4,"Reflektor","Arcade Fire",2013],
+  [5,"Drunk in Love","Beyonce feat. Jay Z",2013],
+  [6,"Do I Wanna Know","Arctic Monkeys",2013],
+  [7,"Mirrors","Justin Timberlake",2013],
+  [8,"Suit and Tie","Justin Timberlake feat. Jay Z",2013],
+  [9,"Started From the Bottom","Drake",2013],
+  [10,"The Wire","HAIM",2013],
+  [11,"My Songs Know What You Did in the Dark","Fall Out Boy",2013],
+  [12,"Thrift Shop","Macklemore and Ryan Lewis feat. Wanz",2013],
+  [13,"Just Give Me a Reason","Pink feat. Nate Ruess",2013],
+  [14,"Hold On Were Going Home","Drake feat. Majid Jordan",2013],
+  [15,"We Cant Stop","Miley Cyrus",2013],
+  [16,"Still Into You","Paramore",2013],
+  [17,"Same Love","Macklemore and Ryan Lewis feat. Mary Lambert",2013],
+  [18,"Diane Young","Vampire Weekend",2013],
+  [19,"White Noise","Disclosure feat. AlunaGeorge",2013],
+  [20,"Blood on the Leaves","Kanye West",2013],
+  [21,"XO","Beyonce",2013],
+  [22,"Q.U.E.E.N.","Janelle Monae feat. Erykah Badu",2013],
+  [23,"Follow Your Arrow","Kacey Musgraves",2013],
+  [24,"Wrecking Ball","Miley Cyrus",2013],
+  [25,"Team","Lorde",2013],
+  [26,"Numbers on the Boards","Pusha T",2013],
+  [27,"Holy Grail","Jay Z feat. Justin Timberlake",2013],
+  [28,"Clarity","Zedd feat. Foxes",2013],
+  [29,"Roar","Katy Perry",2013],
+  [30,"Applause","Lady Gaga",2013],
+  [31,"Tunnel Vision","Justin Timberlake",2013],
+  [32,"R U Mine","Arctic Monkeys",2013],
+  [33,"Let Her Go","Passenger",2013],
+  [34,"Chandelier","Sia",2013],
+  [35,"Instant Crush","Daft Punk feat. Julian Casablancas",2013],
+  [36,"Holy War","Alicia Keys",2013],
+  [37,"Timber","Pitbull feat. Kesha",2013],
+  [38,"Versace Remix","Migos feat. Drake",2013],
+  [39,"Bad Blood","Taylor Swift",2013],
+  [40,"Whylin","Kevin Gates",2013],
+  [41,"Cry for Love","Iggy Pop",2013],
+  [42,"Tom Ford","Jay Z",2013],
+  [43,"Sea of Love","The National",2013],
+  [44,"Pusha Man","Chance the Rapper feat. Nate Fox and Lili K",2013],
+  [45,"Picachu","Young Thug",2013],
+  [46,"Versace","Migos",2013],
+  [47,"Bubble Butt","Major Lazer feat. Bruno Mars Tyga and Mystic",2013],
+  [48,"Hit Me","Mystikal",2013],
+  [49,"Feds Watching","2 Chainz feat. Pharrell",2013],
+  [50,"Blurred Lines","Robin Thicke feat. T.I. and Pharrell",2013],
+  [51,"High Hopes","Bruce Springsteen",2013],
+  [52,"New","Paul McCartney",2013],
+  [53,"Master Hunter","Laura Marling",2013],
+  [54,"Sacrilege","Yeah Yeah Yeahs",2013],
+  [55,"I Am a God","Kanye West",2013],
+  [56,"White Teeth Teens","Lorde",2013],
+  [57,"Young Legends","Sleigh Bells",2013],
+  [58,"Wrecking Ball","Miley Cyrus",2013],
+  [59,"Mercy","TV on the Radio",2013],
+  [60,"Old Love New Love","Twin Shadow",2013],
+  [61,"Man","Neko Case",2013],
+  [62,"Ditch","Sam Baker",2013],
+  [63,"Tiger Tank","Speedy Ortiz",2013],
+  [64,"St. Justice","Albert Hammond Jr.",2013],
+  [65,"I Am a God","Kanye West",2013],
+  [66,"Chamakay","Blood Orange",2013],
+  [67,"Sirens","Pearl Jam",2013],
+  [68,"Alive","Empire of the Sun",2013],
+  [69,"Versace Remix","Migos feat. Drake",2013],
+  [70,"Victim of Love","Charles Bradley",2013],
+  [71,"Ingenue","Atoms for Peace",2013],
+  [72,"Dream House","Deafheaven",2013],
+  [73,"Everything","Nine Inch Nails",2013],
+  [74,"Pusha Man","Chance the Rapper feat. Nate Fox and Lili K",2013],
+  [75,"Avant-Gardner","Courtney Barnett",2013],
+  [76,"Bubble Butt","Major Lazer feat. Bruno Mars Tyga and Mystic",2013],
+  [77,"Tom Ford","Jay Z",2013],
+  [78,"Shout it Out","Mikal Cronin",2013],
+  [79,"Sirens","Pearl Jam",2013],
+  [80,"Hit Me","Mystikal",2013],
+  [81,"Feds Watching","2 Chainz feat. Pharrell",2013],
+  [82,"Alive","Empire of the Sun",2013],
+  [83,"Victim of Love","Charles Bradley",2013],
+  [84,"Q.U.E.E.N.","Janelle Monae feat. Erykah Badu",2013],
+  [85,"Ingenue","Atoms for Peace",2013],
+  [86,"Dream House","Deafheaven",2013],
+  [87,"Everything","Nine Inch Nails",2013],
+  [88,"Avant-Gardner","Courtney Barnett",2013],
+  [89,"The Outsiders","Eric Church",2013],
+  [90,"Stare at the Sun","Eleanor Friedberger",2013],
+  [91,"Brother Bryan","Waxahatchee",2013],
+  [92,"Trying to Be Cool","Phoenix",2013],
+  [93,"Treason Animals","Franz Ferdinand",2013],
+  [94,"God is Dead","Black Sabbath",2013],
+  [95,"Heavy Metal Heart","Sky Ferreira",2013],
+  [96,"Ohio","Patty Griffin",2013],
+  [97,"Lecce Leaving","Lee Ranaldo and the Dust",2013],
+  [98,"Your Life is a Lie","MGMT",2013],
+  [99,"Wagon Wheel","Darius Rucker",2013],
+  [100,"Shot at the Night","The Killers",2013],
+];
+
+var FEAT = [
+  ["fc-1","Daft Punk feat. Pharrell Williams and Nile Rodgers","Get Lucky"],
+  ["fc-2","Lorde","Royals"],
+  ["fc-3","Kanye West","Black Skinhead"],
+  ["fc-4","Arcade Fire","Reflektor"],
+  ["fc-5","Beyonce feat. Jay Z","Drunk in Love"],
+  ["fc-6","Arctic Monkeys","Do I Wanna Know"],
+  ["fc-7","Justin Timberlake","Mirrors"],
+  ["fc-8","HAIM","The Wire"],
+  ["fc-9","Drake","Started From the Bottom"],
+  ["fc-10","Fall Out Boy","My Songs Know What You Did in the Dark"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Daft Punk feat. Pharrell Williams", "Get Lucky");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var track  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[key] = count; renderScrobble(el, count);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

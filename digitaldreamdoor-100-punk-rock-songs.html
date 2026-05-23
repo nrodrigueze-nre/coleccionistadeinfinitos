@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Punk Rock Songs — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1969–1995</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-punk.html" target="_blank" class="page-title">100 GREATEST PUNK ROCK SONGS</a>
+  <p class="page-sub">De Ramones y Sex Pistols a Fugazi y Bad Brains · El canon completo del punk · Editado por R. Thomas y Lew · 2017</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Blitzkrieg Bop – Ramones">
+    <p class="cover-cap">DIGITAL DREAM DOOR · 2017</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Punk Rock Songs compilados por R. Thomas y Lew para Digital Dream Door, última actualización mayo de 2017. Criterio: canciones rankeadas por su popularidad inicial y duradera, influencia e impacto en la evolución del punk. Al #1: Blitzkrieg Bop de Ramones (1976) — dos minutos y nueve segundos que inventaron el punk tal como el mundo lo conocería. Al #2: Anarchy in the UK de Sex Pistols (1976). Al #3: Complete Control de The Clash (1977) — la respuesta furiosa de Joe Strummer a CBS Records por lanzar Remote Control sin su consentimiento, que terminó siendo producida por Lee "Scratch" Perry en Jamaica.</p>
+    <p class="rtext">La lista va más allá del punk británico de 1977 para cubrir el espectro completo: el proto-punk de MC5, Stooges y Television (1969–1975), el punk neoyorquino de Patti Smith, Talking Heads y New York Dolls, el hardcore americano de Minor Threat, Black Flag, Bad Brains y Fugazi, el punk californiano de Dead Kennedys y el post-punk de Hüsker Dü y The Replacements. Artistas más representados: The Clash (5), Dead Kennedys (6), Ramones (5), Fugazi (4), Bad Brains (3), Misfits (3), Buzzcocks (3), Minor Threat (3), Minutemen (3), The Replacements (3). Plays: tus reproducciones de Last.fm.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Blitzkrieg Bop">
+    <div>
+      <div class="feat-title">Blitzkrieg Bop</div>
+      <div class="feat-artist">Ramones &middot; 1976</div>
+      <div class="feat-meta"><span class="feat-pill">Punk Rock</span></div>
+      <p class="feat-rev">Dos minutos y nueve segundos que inventaron el punk. Tommy Ramone escribió la batería; Johnny Ramone la guitarra; Dee Dee Ramone el "hey-ho, let's go". El álbum debut de los Ramones costó 6.400 dólares grabar en una semana — y cambió la música popular para siempre. Blitzkrieg Bop es el punto de partida de todo: el tempo acelerado, los acordes de power chord, la estructura simplificada al máximo. La pregunta no es por qué es #1 sino cómo algo tan simple pudo ser tan revolucionario.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Anarchy in the UK">
+    <div>
+      <div class="feat-title">Anarchy in the UK</div>
+      <div class="feat-artist">Sex Pistols &middot; 1976</div>
+      <div class="feat-meta"><span class="feat-pill">Punk Rock</span></div>
+      <p class="feat-rev">El primer single de los Sex Pistols fue también el más completamente formado del punk británico. Johnny Rotten escribió la letra sobre anarquía como actitud personal más que como programa político — y esa ambigüedad fue lo que la hizo irresistible. La BBC la prohibió, lo que garantizó que todos la escucharan. Steve Jones en guitarra produciendo el riff más urgente del punk inglés. El punk como escándalo calculado que terminó siendo revolución real.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Complete Control">
+    <div>
+      <div class="feat-title">Complete Control</div>
+      <div class="feat-artist">The Clash &middot; 1977</div>
+      <div class="feat-meta"><span class="feat-pill">Punk Rock / Reggae</span></div>
+      <p class="feat-rev">La respuesta furiosa de Joe Strummer a CBS Records por lanzar Remote Control como single sin su consentimiento — una canción sobre la falta de control de un artista sobre su propio trabajo, producida por Lee "Scratch" Perry en Jamaica. La ironía perfecta: una canción sobre control producida por el hombre que menos se podía controlar. The Clash demostraron que el punk podía ser intelectualmente coherente y físicamente brutal al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Kick Out the Jams">
+    <div>
+      <div class="feat-title">Kick Out the Jams</div>
+      <div class="feat-artist">MC5 &middot; 1969</div>
+      <div class="feat-meta"><span class="feat-pill">Proto-punk / Hard Rock</span></div>
+      <p class="feat-rev">Grabada en vivo en el Grande Ballroom de Detroit en octubre de 1968, siete años antes de que el punk tuviera nombre. Rob Tyner gritando la introducción más electrizante del rock americano y Wayne Kramer con la guitarra más salvaje antes de que nadie supiera que eso se podía hacer. MC5 fueron el puente directo entre el rock de garage de los 60s y el punk de los 70s — y Kick Out the Jams fue su argumento más contundente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Holiday in Cambodia">
+    <div>
+      <div class="feat-title">Holiday in Cambodia</div>
+      <div class="feat-artist">Dead Kennedys &middot; 1980</div>
+      <div class="feat-meta"><span class="feat-pill">Hardcore Punk</span></div>
+      <p class="feat-rev">Jello Biafra escribiendo el texto político más afilado del hardcore americano: una sátira devastadora del liberalismo de clase media que viaja a zonas de conflicto como turista del sufrimiento. La guitarra de East Bay Ray con ese riff de apertura que suena a amenaza directa. Los Dead Kennedys demostraron que el punk podía ser tan inteligente como furioso — y Holiday in Cambodia fue su argumento más perfecto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Waiting Room">
+    <div>
+      <div class="feat-title">Waiting Room</div>
+      <div class="feat-artist">Fugazi &middot; 1988</div>
+      <div class="feat-meta"><span class="feat-pill">Post-hardcore / Punk</span></div>
+      <p class="feat-rev">Ian MacKaye y Guy Picciotto construyeron sobre una línea de bajo hipnótica de Joe Lally el manifiesto más elegante del post-hardcore. Waiting Room abre el primer EP de Fugazi con una declaración de principios: sin alcohol en sus shows, sin sellos grandes, precios de entrada máximos de cinco dólares. Una canción sobre resistencia pasiva que suena a urgencia activa — el punk como ética de vida, no solo como estética musical.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="London Calling">
+    <div>
+      <div class="feat-title">London Calling</div>
+      <div class="feat-artist">The Clash &middot; 1979</div>
+      <div class="feat-meta"><span class="feat-pill">Punk / New Wave</span></div>
+      <p class="feat-rev">The Clash expandiendo el punk hacia el reggae, el rockabilly y el ska en su tercer álbum — el momento en que dejaron de ser una banda de punk para convertirse en la banda más importante del rock de su generación. London Calling fue la respuesta a la amenaza nuclear, al desempleo y a la inundación del Támesis — todo en cuatro minutos. Rolling Stone la tiene en el #15 de los 500 mejores álbumes de todos los tiempos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Search and Destroy">
+    <div>
+      <div class="feat-title">Search and Destroy</div>
+      <div class="feat-artist">The Stooges &middot; 1973</div>
+      <div class="feat-meta"><span class="feat-pill">Proto-punk / Hard Rock</span></div>
+      <p class="feat-rev">Iggy Pop y los Stooges en Raw Power (1973) — producido por David Bowie en su período de mayor influencia. Search and Destroy es el momento en que el proto-punk se volvió realmente peligroso: Iggy describiendo al narrador como "un hombre de calle, un perro callejero", con James Williamson en la guitarra más cruda y directa antes de que nadie llamara eso punk. La canción que conecta los Stooges de 1969 con el punk de 1977.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="God Save the Queen">
+    <div>
+      <div class="feat-title">God Save the Queen</div>
+      <div class="feat-artist">Sex Pistols &middot; 1977</div>
+      <div class="feat-meta"><span class="feat-pill">Punk Rock</span></div>
+      <p class="feat-rev">Lanzada durante el Jubileo de Plata de la reina Elizabeth II en 1977, prohibida por la BBC y virtualmente eliminada de los charts oficiales a pesar de llegar claramente al #1. La teoría más aceptada es que fue manipulada para no superar a Rod Stewart. Johnny Rotten llamando al Reino Unido un "régimen fascista" durante las celebraciones reales fue el acto punk más perfecto jamás ejecutado.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Where Eagles Dare">
+    <div>
+      <div class="feat-title">Where Eagles Dare</div>
+      <div class="feat-artist">Misfits &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Horror Punk</span></div>
+      <p class="feat-rev">Glenn Danzig construyendo el horror punk sobre una melodía pop imposiblemente pegadiza. Los Misfits tomaron la estética de las películas de terror serie B y la inyectaron en el punk con un sentido del humor que sus imitadores nunca entendieron del todo. Where Eagles Dare tiene la línea de intro vocal más reconocible del horror punk — "I ain't no Goddamn son of a bitch" — y una energía que no ha perdido ni un gramo en cuarenta años.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas por ranking Digital Dream Door</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES · 1969–1995</span>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-punk.html" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"Blitzkrieg Bop","Ramones",1976],
+  [2,"Anarchy in the UK","Sex Pistols",1976],
+  [3,"Complete Control","The Clash",1977],
+  [4,"Kick Out the Jams","MC5",1969],
+  [5,"Holiday in Cambodia","Dead Kennedys",1980],
+  [6,"Waiting Room","Fugazi",1988],
+  [7,"London Calling","The Clash",1979],
+  [8,"Search and Destroy","The Stooges",1973],
+  [9,"God Save the Queen","Sex Pistols",1977],
+  [10,"Where Eagles Dare","Misfits",1982],
+  [11,"I Wanna Be Sedated","Ramones",1978],
+  [12,"In the City","The Jam",1977],
+  [13,"Straight Edge","Minor Threat",1981],
+  [14,"Johnny Hit and Run Pauline","X",1980],
+  [15,"Celebrated Summer","Husker Du",1985],
+  [16,"White Man (in Hammersmith Palais)","The Clash",1978],
+  [17,"California Uber Alles","Dead Kennedys",1979],
+  [18,"See No Evil","Television",1977],
+  [19,"Bastards of Young","The Replacements",1985],
+  [20,"Gloria","Patti Smith",1975],
+  [21,"Radio Radio","Elvis Costello",1978],
+  [22,"Ever Fallen in Love","Buzzcocks",1978],
+  [23,"Sonic Reducer","Dead Boys",1977],
+  [24,"Rise Above","Black Flag",1981],
+  [25,"Psycho Killer","Talking Heads",1977],
+  [26,"Viet Nam","Minutemen",1984],
+  [27,"12XU","Wire",1977],
+  [28,"Live Fast Die Young","Circle Jerks",1980],
+  [29,"I Wanna Be Your Dog","The Stooges",1969],
+  [30,"Roadrunner","The Modern Lovers",1972],
+  [31,"Orgasm Addict","Buzzcocks",1977],
+  [32,"Last Caress","Misfits",1980],
+  [33,"Smash it Up","The Damned",1979],
+  [34,"White Riot","The Clash",1977],
+  [35,"Pink Turns to Blue","Husker Du",1984],
+  [36,"Oh Bondage Up Yours","X-Ray Spex",1977],
+  [37,"Free Money","Patti Smith",1975],
+  [38,"Suggestion","Fugazi",1988],
+  [39,"Favorite Thing","The Replacements",1984],
+  [40,"Personality Crisis","New York Dolls",1973],
+  [41,"Blank Generation","Richard Hell and the Voidoids",1976],
+  [42,"X Offender","Blondie",1976],
+  [43,"Death or Glory","The Clash",1979],
+  [44,"In My Eyes","Minor Threat",1981],
+  [45,"Pay To Cum","Bad Brains",1980],
+  [46,"Nazi Punks Fuck Off","Dead Kennedys",1981],
+  [47,"Venus","Television",1977],
+  [48,"Motor City is Burning","MC5",1969],
+  [49,"Hybrid Moments","Misfits",1980],
+  [50,"Banned in D.C.","Bad Brains",1982],
+  [51,"This Aint No Picnic","The Minutemen",1984],
+  [52,"Los Angeles","X",1980],
+  [53,"Pablo Picasso","The Modern Lovers",1976],
+  [54,"I Wanna Be Your Boyfriend","Ramones",1976],
+  [55,"TV Party","Black Flag",1982],
+  [56,"Don't Want to Know if You're Lonely","Husker Du",1986],
+  [57,"Chinese Rocks","Heartbreakers",1977],
+  [58,"Final Solution","Pere Ubu",1976],
+  [59,"Alternative Ulster","Stiff Little Fingers",1978],
+  [60,"Institutionalized","Suicidal Tendencies",1983],
+  [61,"New Rose","The Damned",1976],
+  [62,"Sheena is a Punk Rocker","Ramones",1977],
+  [63,"Mommy's Little Monster","Social Distortion",1983],
+  [64,"Unsatisfied","The Replacements",1984],
+  [65,"Repeater","Fugazi",1990],
+  [66,"Safe European Home","The Clash",1979],
+  [67,"You","Bad Religion",1988],
+  [68,"West Germany","Minutemen",1984],
+  [69,"Weekend","The Dictators",1975],
+  [70,"Doesn't Make it Alright","Stiff Little Fingers",1979],
+  [71,"Welcome to Paradise","Green Day",1992],
+  [72,"(I Want to be an) Angelpoise Lamp","The Soft Boys",1977],
+  [73,"Color Me Impressed","The Replacements",1983],
+  [74,"Angels With Dirty Faces","Sham 69",1978],
+  [75,"Rocket Reducer","MC5",1969],
+  [76,"Knowledge","Operation Ivy",1989],
+  [77,"I Against I","Bad Brains",1986],
+  [78,"Kill The Poor","Dead Kennedys",1980],
+  [79,"New Aryans","Reagan Youth",1984],
+  [80,"In Your Eyes","Circle Jerks",1980],
+  [81,"Give Me The Cure","Fugazi",1988],
+  [82,"Clampdown","The Clash",1979],
+  [83,"Holiday In The Sun","Sex Pistols",1977],
+  [84,"What Do I Get?","Buzzcocks",1978],
+  [85,"Ruby So-Ho","Rancid",1995],
+  [86,"Sailin On","Bad Brains",1982],
+  [87,"Pinhead","Ramones",1977],
+  [88,"Police Truck","Dead Kennedys",1980],
+  [89,"No Class","Reagan Youth",1984],
+  [90,"Fuck Armageddon... This Is Hell","Bad Religion",1982],
+  [91,"Forming","Germs",1977],
+  [92,"Corona","Minutemen",1984],
+  [93,"Pull My Strings","Dead Kennedys",1980],
+  [94,"Longview","Green Day",1994],
+  [95,"Lexicon Devil","Germs",1979],
+  [96,"Rock n Roll High School","Ramones",1979],
+  [97,"Minor Threat","Minor Threat",1981],
+  [98,"American Jesus","Bad Religion",1993],
+  [99,"Chemical Warfare","Dead Kennedys",1980],
+  [100,"Unity","Operation Ivy",1989]
+];
+
+var FEAT=[
+  ["fc-1","Ramones","Blitzkrieg Bop"],
+  ["fc-2","Sex Pistols","Anarchy in the UK"],
+  ["fc-3","The Clash","Complete Control"],
+  ["fc-4","MC5","Kick Out the Jams"],
+  ["fc-5","Dead Kennedys","Holiday in Cambodia"],
+  ["fc-6","Fugazi","Waiting Room"],
+  ["fc-7","The Clash","London Calling"],
+  ["fc-8","The Stooges","Search and Destroy"],
+  ["fc-9","Sex Pistols","God Save the Queen"],
+  ["fc-10","Misfits","Where Eagles Dare"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Ramones","Blitzkrieg Bop");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+</script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Jock Jams of All Time — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">BILLBOARD</span>
+    <span class="badge-year">1962–2013</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-jock-jams-sports-songs-all-time/" target="_blank" class="page-title">100 GREATEST JOCK JAMS OF ALL TIME</a>
+  <p class="page-sub">De Queen y Survivor a Zombie Nation y The White Stripes · Los himnos del estadio que definieron la cultura deportiva americana · 2024</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I'm Good (Blue) – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2019</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Jock Jams of All Time compilados por el staff de Billboard en febrero de 2024. Un jock jam es cualquier canción que ha definido la experiencia dentro de un estadio deportivo americano — canciones que producen respuesta pavloviana de preparación atlética independientemente del contexto. Al #1: We Will Rock You de Queen (1977) — el stomp-stomp-clap más reconocible de la historia del rock. Al #2: Welcome to the Jungle de Guns N'Roses (1987). Al #3: Hip Hop Hooray de Naughty By Nature (1993). La lista fue elaborada con input de directores de entretenimiento de NBA, NFL, MLB y NHL.</p>
+    <p class="rtext">Queen, Guns N'Roses y Beastie Boys aparecen dos veces cada uno. Eminem con 3 entradas (Lose Yourself, Till I Collapse). 2 Unlimited con 2. La lista abarca desde Dick Dale en 1962 hasta Steve Aoki y Taio Cruz en 2013, con el corazón en los 90s del ESPN Jock Jams original. La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="We Will Rock You">
+    <div>
+      <div class="feat-title">We Will Rock You</div>
+      <div class="feat-artist">Queen &middot; 1977</div>
+      <div class="feat-meta"><span class="feat-pill">Rock / Arena Rock</span></div>
+      <p class="feat-rev">El mayor himno deportivo de la historia. Brian May concibió We Will Rock You como una canción que el público pudiera cantar y tocar sin instrumentos — solo pies, manos y voz. Roger Taylor grabó el stomp-stomp-clap en una escalera del estudio para que sonara como miles de personas golpeando el suelo simultáneamente. Es la única canción de la historia que funciona igualmente bien en un estadio de fútbol americano, un estadio de béisbol, un pabellón de baloncesto o un bar con televisión.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Welcome to the Jungle">
+    <div>
+      <div class="feat-title">Welcome to the Jungle</div>
+      <div class="feat-artist">Guns N' Roses &middot; 1987</div>
+      <div class="feat-meta"><span class="feat-pill">Hard Rock</span></div>
+      <p class="feat-rev">La apertura más explosiva de la historia del hard rock: esa guitarra de Slash construyendo tensión durante treinta segundos antes de que Axl Rose grite '¿Do you know where you are?' La canción que los Miami Heat comenzaron a usar en sus intros de arena en los 90s y que se extendió a todos los deportes americanos. El riff inicial — reconocible en los primeros dos segundos — es la señal de que algo importante está a punto de comenzar.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Hip Hop Hooray">
+    <div>
+      <div class="feat-title">Hip Hop Hooray</div>
+      <div class="feat-artist">Naughty By Nature &middot; 1993</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop</span></div>
+      <p class="feat-rev">La primera gran canción de hip-hop que se convirtió en estándar del estadio americano. El movimiento de brazo circular que el video popularizó — el 'hey ho' con el brazo girando — se convirtió en el gesto colectivo más reproducido de los 90s en cualquier pabellón deportivo. Vinnie y Treach de Naughty By Nature construyeron sobre un sample de Was It Something I Said de Reparata algo que funcionaba en la radio, en la pista de baile y en el estadio simultáneamente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Kernkraft 400">
+    <div>
+      <div class="feat-title">Kernkraft 400</div>
+      <div class="feat-artist">Zombie Nation &middot; 1999</div>
+      <div class="feat-meta"><span class="feat-pill">Trance / Electronic</span></div>
+      <p class="feat-rev">Florian Senfter — Zombie Nation — produjo este track instrumental en su dormitorio de Múnich en 1999 sampleando el videojuego Lazy Jones de 1984. Es el único número uno de la carrera de Zombie Nation en cualquier chart. La melodía sintetizada de cuatro notas que define el track es ahora la canción más utilizada en estadios deportivos americanos después de We Will Rock You — tan omnipresente que millones de aficionados la reconocen sin saber el título ni el artista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Seven Nation Army">
+    <div>
+      <div class="feat-title">Seven Nation Army</div>
+      <div class="feat-artist">The White Stripes &middot; 2003</div>
+      <div class="feat-meta"><span class="feat-pill">Alternative Rock / Garage Rock</span></div>
+      <p class="feat-rev">Jack White la escribió con una guitarra Airline conectada a un DigiTech Whammy pedal bajado una octava — lo que suena como un bajo es en realidad una guitarra procesada. El riff que resultó es el más coreado de la historia del rock del siglo XXI: los ultras del Inter de Milán lo adoptaron en 2003, desde donde se extendió a todos los estadios del mundo. En Estados Unidos se convirtió en estándar del estadio gracias a las universidades de Michigan y Ohio State que lo popularizaron en el football americano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Eye of the Tiger">
+    <div>
+      <div class="feat-title">Eye of the Tiger</div>
+      <div class="feat-artist">Survivor &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Hard Rock / AOR</span></div>
+      <p class="feat-rev">Stallone le pidió a Survivor una canción para Rocky III después de que los Rolling Stones le negaran el permiso para usar Start Me Up. El resultado fue el mayor hit de la historia del AOR y la canción de entrenamiento más icónica del siglo XX. Eye of the Tiger es el único tema de entrada de un montaje de entrenamiento de película que se convirtió en estándar real de estadio cuarenta años después de su lanzamiento. Número uno en el Billboard Hot 100 durante seis semanas en 1982.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Jump Around">
+    <div>
+      <div class="feat-title">Jump Around</div>
+      <div class="feat-artist">House of Pain &middot; 1992</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop</span></div>
+      <p class="feat-rev">Everlast, Danny Boy y DJ Lethal samplearon Harlem Shuffle de Bob & Earl para construir la canción de hip-hop que más se parece físicamente a lo que su nombre describe. Jump Around es el único jock jam que funciona como instrucción literal de baile — cuando suena, el estadio literalmente salta. La Universidad de Wisconsin-Madison la usa en el tercer cuarto de cada partido de football americano desde 1998, creando uno de los rituales colectivos más reconocibles del deporte universitario americano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Crazy Train">
+    <div>
+      <div class="feat-title">Crazy Train</div>
+      <div class="feat-artist">Ozzy Osbourne &middot; 1980</div>
+      <div class="feat-meta"><span class="feat-pill">Heavy Metal</span></div>
+      <p class="feat-rev">Randy Rhoads — el guitarrista de 21 años que moriría dos años después — construyó el riff de apertura más reconocible del heavy metal americano de estadio: esas tres notas en staccato que preceden al todo. Crazy Train aparece tanto en el #9 individual como en la referencia a su opening minute — los primeros cuarenta segundos son tan efectivos para estadios que muchas arenas solo tocan esa porción. Ozzy como el artista de metal más representado en la cultura deportiva americana mainstream.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Get Ready for This">
+    <div>
+      <div class="feat-title">Get Ready for This</div>
+      <div class="feat-artist">2 Unlimited &middot; 1991</div>
+      <div class="feat-meta"><span class="feat-pill">Eurodance</span></div>
+      <p class="feat-rev">El dúo holandés Anita Doth y Ray Slijngaard con los productores Jean-Paul De Coster y Phil Wilde crearon la canción de eurodance más usada en la historia del deporte americano. 'Y'all ready for this' — cuatro palabras que funcionan como señal pavloviana para cualquier aficionado americano que haya asistido a un partido de baloncesto en los últimos treinta años. La canción original es apenas recordada; la frase funciona como detonador autónomo de adrenalina deportiva.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Lose Yourself">
+    <div>
+      <div class="feat-title">Lose Yourself</div>
+      <div class="feat-artist">Eminem &middot; 2002</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Rap Rock</span></div>
+      <p class="feat-rev">El mayor hit de la carrera de Eminem — ganador del Oscar a Mejor Canción Original, el primero del hip-hop. Eminem escribió Lose Yourself en el set de 8 Mile narrando el terror escénico en primera persona con una urgencia que ninguna otra canción de hip-hop había capturado con esa precisión. La producción de Luis Resto y Eminem — ese riff de guitarra acústica sobre la caja de ritmos — convirtió una canción de película en el himno de preparación atlética del siglo XXI.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">92 jock jams verificados · ordenados por ranking Billboard</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">BILLBOARD · 92 JOCK JAMS · 2024</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-jock-jams-sports-songs-all-time/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"We Will Rock You","Queen",1977],
+  [2,"Welcome to the Jungle","Guns N\' Roses",1987],
+  [3,"Hip Hop Hooray","Naughty By Nature",1993],
+  [4,"Kernkraft 400","Zombie Nation",1999],
+  [5,"Seven Nation Army","The White Stripes",2003],
+  [6,"Eye of the Tiger","Survivor",1982],
+  [7,"Rock and Roll Part 2","Gary Glitter",1972],
+  [8,"Jump Around","House of Pain",1992],
+  [9,"Crazy Train","Ozzy Osbourne",1980],
+  [10,"Get Ready for This","2 Unlimited",1991],
+  [11,"Lose Yourself","Eminem",2002],
+  [12,"Whoomp! (There It Is)","Tag Team",1993],
+  [13,"Sirius","The Alan Parsons Project",1982],
+  [14,"Sandstorm","Darude",1999],
+  [15,"Who Let the Dogs Out?","Baha Men",2000],
+  [16,"Gonna Make You Sweat (Everybody Dance Now)","C+C Music Factory",1990],
+  [17,"I Gotta Feeling","The Black Eyed Peas",2009],
+  [18,"All I Do Is Win","DJ Khaled feat. Snoop Dogg & T-Pain",2010],
+  [19,"Power","Kanye West",2010],
+  [20,"Rock & Roll","Led Zeppelin",1971],
+  [21,"Strike It Up","Black Box",1991],
+  [22,"Livin\' on a Prayer","Bon Jovi",1986],
+  [23,"It Takes Two","Rob Base & DJ EZ-Rock",1988],
+  [24,"Gonna Fly Now (Theme from Rocky)","Bill Conti",1976],
+  [25,"Jump","Kris Kross",1992],
+  [26,"Let\'s Get Loud","Jennifer Lopez",2000],
+  [27,"Levels","Avicii",2011],
+  [28,"Kickstart My Heart","Mötley Crüe",1989],
+  [29,"Bang the Drum All Day","Todd Rundgren",1983],
+  [30,"The House Is Rockin\'","Stevie Ray Vaughan",1989],
+  [31,"Na Na Hey Hey Kiss Him Goodbye","Steam",1969],
+  [32,"Don\'t Stop Believin\'","Journey",1981],
+  [33,"Remember the Name","Fort Minor",2005],
+  [34,"Apache (Jump on It)","Sugarhill Gang",1981],
+  [35,"Twilight Zone","2 Unlimited",1992],
+  [36,"Fight for Your Right","Beastie Boys",1986],
+  [37,"Dynamite","Taio Cruz",2010],
+  [38,"Let Me Clear My Throat","DJ Kool",1996],
+  [39,"Paradise City","Guns N\' Roses",1987],
+  [40,"Pump Up the Jam","Technotronic feat. Felly",1989],
+  [41,"Sabotage","Beastie Boys",1994],
+  [42,"You Shook Me All Night Long","AC/DC",1980],
+  [43,"All-Star","Smash Mouth",1999],
+  [44,"In the Air Tonight","Phil Collins",1981],
+  [45,"I Like It Like That","The Blackout Allstars",1994],
+  [46,"Good Feeling","Flo Rida",2011],
+  [47,"Public Service Announcement","Jay-Z",2003],
+  [48,"Pour Some Sugar on Me","Def Leppard",1987],
+  [49,"YMCA","Village People",1978],
+  [50,"Cum on Feel the Noize","Quiet Riot",1983],
+  [51,"The Power","SNAP!",1990],
+  [52,"Timber","Pitbull feat. Kesha",2013],
+  [53,"Unbelievable","EMF",1991],
+  [54,"Party Up (Up in Here)","DMX",2000],
+  [55,"R.O.C.K. in the U.S.A.","John Mellencamp",1985],
+  [56,"Low","Flo Rida feat. T-Pain",2007],
+  [57,"Boom","P.O.D.",2002],
+  [58,"Lose Control","Missy Elliott feat. Ciara",2005],
+  [59,"Burn It to the Ground","Nickelback",2008],
+  [60,"Shots","LMFAO",2009],
+  [61,"Misirlou","Dick Dale",1962],
+  [62,"You Dropped a Bomb on Me","The Gap Band",1982],
+  [63,"Right Here, Right Now","Fatboy Slim",1999],
+  [64,"Let\'s Get It Started","Black Eyed Peas",2004],
+  [65,"Cotton Eye Joe","Rednex",1994],
+  [66,"I Can\'t Stop","Flux Pavilion",2010],
+  [67,"Friends in Low Places","Garth Brooks",1990],
+  [68,"A Little Less Conversation","Elvis Presley vs. Junkie XL",2002],
+  [69,"Chelsea Dagger","The Fratellis",2006],
+  [70,"Halftime (Stand Up & Get Crunk!)","Ying Yang Twins",2004],
+  [71,"Don\'t Stop the Party","Pitbull feat. TJR",2012],
+  [72,"Black Betty","Ram Jam",1977],
+  [73,"Machinehead","Bush",1994],
+  [74,"Boneless","Steve Aoki, Chris Lake & Tujamo",2013],
+  [75,"What I Like About You","The Romantics",1980],
+  [76,"Radioactive","Imagine Dragons",2012],
+  [77,"Get Up Offa That Thing","James Brown",1976],
+  [78,"Till I Collapse","Eminem feat. Nate Dogg",2002],
+  [79,"Bro Hymn","Pennywise",1991],
+  [80,"Rock This Party (Everybody Dance Now)","Bob Sinclair",2006],
+  [81,"Let It Rock","Kevin Rudolf feat. Lil Wayne",2008],
+  [82,"Rock and Roll All Nite","KISS",1975],
+  [91,"Joker and the Thief","Wolfmother",2005],
+  [92,"I Like to Move It","Reel 2 Real",1993],
+  [93,"Hall of Fame","The Script feat. Will.i.am",2012],
+  [94,"Ready to Go","Republica",1996],
+  [95,"Joker and the Thief","Wolfmother",2005],
+  [96,"The Bomb (These Sounds Fall into My Mind)","The Bucketheads",1995],
+  [97,"One More Time","Daft Punk",2000],
+  [98,"Coffee Pot (It\'s Time for the Percolator)","Cajmere",1992],
+  [99,"Can\'t Hold Us","Macklemore & Ryan Lewis feat. Ray Dalton",2011],
+  [100,"Jock Jam Megamix","ESPN",1997],
+];
+
+
+var FEAT = [
+  ["fc-1","Queen","We Will Rock You"],
+  ["fc-2","Guns N Roses","Welcome to the Jungle"],
+  ["fc-3","Naughty By Nature","Hip Hop Hooray"],
+  ["fc-4","Zombie Nation","Kernkraft 400"],
+  ["fc-5","The White Stripes","Seven Nation Army"],
+  ["fc-6","Survivor","Eye of the Tiger"],
+  ["fc-7","House of Pain","Jump Around"],
+  ["fc-8","Ozzy Osbourne","Crazy Train"],
+  ["fc-9","2 Unlimited","Get Ready for This"],
+  ["fc-10","Eminem","Lose Yourself"],
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Queen","We Will Rock You");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Rockabilly Songs — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1954–1981</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-rbilly.html" target="_blank" class="page-title">100 GREATEST ROCKABILLY SONGS</a>
+  <p class="page-sub">De Carl Perkins y Elvis Presley a Gene Vincent y Charlie Feathers · El origen del rock en Sun Records · Editado por Bruce · 2007</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Blue Suede Shoes – Carl Perkins">
+    <p class="cover-cap">DIGITAL DREAM DOOR · 2007</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Rockabilly Songs compilados por Bruce para Digital Dream Door (2007). Criterio: canciones que representan mejor el sonido rockabilly — influencia, impacto y popularidad en el género. El rockabilly nació en 1954 cuando Elvis Presley grabó That's All Right, una canción de blues con ritmo country. Los instrumentos: guitarra, contrabajo, batería y a veces piano. La voz: rápida, con hiccups, stutters y swoops del falsete al bajo y de vuelta. Al #1: Blue Suede Shoes de Carl Perkins (1956) — el primer single de Sun Records en llegar al #1 en las listas de pop, country y R&B simultáneamente.</p>
+    <p class="rtext">Artistas más representados: Carl Perkins (8), Johnny Burnette and the Rock 'N' Roll Trio (8), Elvis Presley (7), Charlie Feathers (5), Gene Vincent (5), Wanda Jackson (3), Mac Curtis (3), Billy Riley (2). Una lista dominada por los artistas de Sun Records de Memphis y sus contemporáneos directos — el momento exacto entre 1954 y 1959 en que el rockabilly existió como género puro antes de evolucionar hacia el rock and roll convencional. Plays: tus reproducciones de Last.fm.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Blue Suede Shoes">
+    <div>
+      <div class="feat-title">Blue Suede Shoes</div>
+      <div class="feat-artist">Carl Perkins &middot; 1956</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly</span></div>
+      <p class="feat-rev">Carl Perkins escribió Blue Suede Shoes en una bolsa de papel de estraza después de que Johnny Cash le sugiriera la idea de los zapatos. La versión de Perkins fue el primer single de Sun Records en llegar simultáneamente al #1 en las listas de pop, country y R&B — antes de que ningún artista de rock and roll lo hubiera logrado. Elvis la grabó semanas después y vendió más, pero Perkins recibió las regalías. John Lennon dijo que su mayor sueño de infancia era tocar como Carl Perkins.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Baby Let's Play House">
+    <div>
+      <div class="feat-title">Baby Let's Play House</div>
+      <div class="feat-artist">Elvis Presley &middot; 1955</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly</span></div>
+      <p class="feat-rev">El primer single de Elvis Presley en llegar al top 10 de las listas de country — y la demostración más temprana de lo que el rockabilly podía hacer. La versión de Elvis de una canción de Arthur Gunter acelera el tempo original, añade el slap bass de Bill Black y la guitarra nerviosa de Scotty Moore, y convierte una canción de blues en algo completamente nuevo. Los hiccups vocales de Elvis aquí son los más pronunciados de toda su carrera de Sun Records.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="One Hand Loose">
+    <div>
+      <div class="feat-title">One Hand Loose</div>
+      <div class="feat-artist">Charlie Feathers &middot; 1956</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly</span></div>
+      <p class="feat-rev">Charlie Feathers fue el rockabilly más puro que existió — nunca buscó el éxito mainstream, nunca suavizó el sonido, nunca evolucionó más allá del género. One Hand Loose en King Records es el rockabilly en su estado más destilado: el hiccup vocal más extremo, el slap bass más físico, el tempo más inestable. Feathers influyó en Robert Gordon, los Cramps y toda la escena rockabilly revival de los 80s. La canción que los puristas del género consideran el estándar definitivo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Good Rockin' Tonight">
+    <div>
+      <div class="feat-title">Good Rockin' Tonight</div>
+      <div class="feat-artist">Elvis Presley &middot; 1954</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly / R&amp;B</span></div>
+      <p class="feat-rev">El segundo single de Elvis en Sun Records — una versión de la canción de Wynonie Harris (1948) que Elvis convirtió en rockabilly puro. Sam Phillips grabando en el pequeño estudio de Union Avenue, Scotty Moore con la guitarra más nerviosa del pop americano, Bill Black golpeando el contrabajo. Good Rockin' Tonight es el documento más claro de cómo sonaba el rockabilly en el momento exacto de su invención — antes de que nadie supiera que existía como género.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Matchbox">
+    <div>
+      <div class="feat-title">Matchbox</div>
+      <div class="feat-artist">Carl Perkins &middot; 1957</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly / Blues</span></div>
+      <p class="feat-rev">Carl Perkins tomando un blues de Blind Lemon Jefferson (1927) y transformándolo en rockabilly con el solo de guitarra más limpio de la era de Sun Records. Los Beatles lo versionaron en 1964 con Ringo cantando — el momento en que el rockabilly original fue redescubierto por una generación que no lo había conocido en vivo. La guitarra de Perkins en Matchbox anticipa el country rock que vendría veinte años después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="The Train Kept A-Rollin'">
+    <div>
+      <div class="feat-title">The Train Kept A-Rollin'</div>
+      <div class="feat-artist">Johnny Burnette &amp; the Rock 'N' Roll Trio &middot; 1956</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly</span></div>
+      <p class="feat-rev">La canción más salvaje del rockabilly — Paul Burlison en guitarra eléctrica distorsionada antes de que la distorsión fuera una técnica conocida (el amplificador tenía un tubo suelto que Burlison dejó sin arreglar porque le gustaba el sonido). The Train Kept A-Rollin' fue versionada por los Yardbirds en 1965 y por Aerosmith en 1974, convirtiéndose en un estándar del hard rock. La conexión directa entre el rockabilly de 1956 y el rock de estadios de los 70s.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Bottle To The Baby">
+    <div>
+      <div class="feat-title">Bottle To The Baby</div>
+      <div class="feat-artist">Charlie Feathers &middot; 1956</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly</span></div>
+      <p class="feat-rev">La segunda entrada de Charlie Feathers en el top 10 — confirmando que para los puristas del rockabilly, Feathers es tan importante como Presley. Bottle To The Baby captura el humor irreverente que distinguía al rockabilly del blues más serio — una canción sobre preferir el alcohol al amor, cantada con la actitud de alguien que no está pidiendo permiso a nadie. El spirit of rockabilly como género de rebeldía sin pretensión intelectual.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="That's All Right">
+    <div>
+      <div class="feat-title">That's All Right</div>
+      <div class="feat-artist">Elvis Presley &middot; 1954</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly / Blues</span></div>
+      <p class="feat-rev">El primer single de Elvis Presley y la canción que Sam Phillips había estado buscando — un blanco que cantara como un negro, en las palabras de la época. Elvis, Scotty Moore y Bill Black improvisando durante un descanso en el estudio y Phillips grabando desde la sala de control. Arthur Crudup había escrito la canción en 1946; Elvis la convirtió en el Big Bang del rockabilly. La última canción que Elvis tocó regularmente en concierto antes de su muerte en 1977.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Red Hot">
+    <div>
+      <div class="feat-title">Red Hot</div>
+      <div class="feat-artist">Billy Riley &middot; 1957</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly</span></div>
+      <p class="feat-rev">Billy Riley & His Little Green Men grabando en Sun Records con Jerry Lee Lewis al piano — antes de que Lewis fuera famoso — y produciendo el rockabilly más frenético del catálogo del sello. Red Hot fue un hit regional en el Sur pero nunca llegó al mainstream nacional porque Sam Phillips decidió priorizar los recursos del sello para Jerry Lee Lewis. Riley lo resintió durante décadas. La canción que demuestra que Sun Records tenía más talento del que podía gestionar simultáneamente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Tear It Up">
+    <div>
+      <div class="feat-title">Tear It Up</div>
+      <div class="feat-artist">Johnny Burnette &amp; the Rock 'N' Roll Trio &middot; 1956</div>
+      <div class="feat-meta"><span class="feat-pill">Rockabilly</span></div>
+      <p class="feat-rev">Johnny Burnette y el Rock 'N' Roll Trio con la energía más física del rockabilly de la costa del Atlántico — diferente del sonido de Memphis pero igual de urgente. Tear It Up en Coral Records es el rockabilly más punk que se grabó en los 50s: dos minutos de velocidad, distorsión accidental y un vocal que no controla del todo la melodía porque no tiene tiempo. Los Cramps y toda la escena neo-rockabilly de los 80s los citaban constantemente como influencia primaria.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas por ranking Digital Dream Door</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES · 1954–1981</span>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-rbilly.html" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"Blue Suede Shoes","Carl Perkins",1956],
+  [2,"Baby Let's Play House","Elvis Presley",1955],
+  [3,"One Hand Loose","Charlie Feathers",1956],
+  [4,"Good Rockin' Tonight","Elvis Presley",1954],
+  [5,"Matchbox","Carl Perkins",1957],
+  [6,"The Train Kept A-Rollin'","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [7,"Bottle To The Baby","Charlie Feathers",1956],
+  [8,"That's All Right","Elvis Presley",1954],
+  [9,"Red Hot","Billy Riley",1957],
+  [10,"Tear It Up","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [11,"Race With The Devil","Gene Vincent",1956],
+  [12,"Rock and Roll Ruby","Warren Smith",1956],
+  [13,"Rock Billy Boogie","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [14,"Boppin' The Blues","Carl Perkins",1956],
+  [15,"Ooby Dooby","Roy Orbison",1956],
+  [16,"Flyin' Saucers Rock And Roll","Billy Riley",1956],
+  [17,"Honey Don't","Carl Perkins",1956],
+  [18,"Fujiyama Mama","Wanda Jackson",1958],
+  [19,"Mystery Train","Elvis Presley",1955],
+  [20,"Honey Hush","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [21,"Everybody's Trying To Be My Baby","Carl Perkins",1956],
+  [22,"Blue Moon Of Kentucky","Elvis Presley",1954],
+  [23,"Ubangi Stomp","Warren Smith",1956],
+  [24,"All Mama's Children","Carl Perkins",1956],
+  [25,"Rock This Town","Stray Cats",1981],
+  [26,"Stutterin' Papa","Buck Griffin",1955],
+  [27,"Sag, Drag and Fall","Sid King and the Five Strings",1956],
+  [28,"Rockin' Daddy","Sonny Fisher",1955],
+  [29,"Grandaddy's Rockin'","Mac Curtis",1956],
+  [30,"Dixie Fried","Carl Perkins",1956],
+  [31,"B-I-Bickey-Bi, Bo-Bo-Go","Gene Vincent",1956],
+  [32,"Lonesome Train","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [33,"Hoy Hoy","Collins Kids",1956],
+  [34,"Twenty Flight Rock","Eddie Cochran",1956],
+  [35,"Tongue-Tied Jill","Charlie Feathers",1956],
+  [36,"Flip Flop Mama","Eddie Bond",1956],
+  [37,"Rock Around With Ollie Vee","Buddy Holly",1956],
+  [38,"Sweet Love On My Mind","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [39,"Hip Shakin' Mama","Jack Cochran",1958],
+  [40,"Woman Love","Gene Vincent",1956],
+  [41,"If I Had Me A Woman","Mac Curtis",1956],
+  [42,"Cast Iron Arm","Peanuts Wilson",1957],
+  [43,"Black Slacks","Joe Bennett and the Sparkletones",1957],
+  [44,"Baby She's Gone","Jack Scott",1958],
+  [45,"Drinkin' Wine Spo-Dee-O-Dee","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [46,"Duck Tail","Rudy Grayzell",1956],
+  [47,"Gone, Gone, Gone","Carl Perkins",1955],
+  [48,"Wild Wild Women","Johnny Carroll",1956],
+  [49,"Whole Lotta Shakin' Goin' On","Roy Hall",1955],
+  [50,"I'm Left, You're Right, She's Gone","Elvis Presley",1955],
+  [51,"Red Hot Mama","Wayne Williams",1956],
+  [52,"Everybody's Loving My Baby","Charlie Feathers",1956],
+  [53,"Little Pig","Dale Hawkins",1958],
+  [54,"Rock With Me Baby","Billy Riley",1956],
+  [55,"Hot Rock","Johnny Carroll",1956],
+  [56,"Ruby Pearl","Jackie Lee Cochran",1957],
+  [57,"Drugstore Rock And Roll","Janis Martin",1956],
+  [58,"We Wanna Boogie","Sonny Burgess",1956],
+  [59,"Get With It","Charlie Feathers",1956],
+  [60,"Red Headed Woman","Sonny Burgess",1956],
+  [61,"Three Alley Cats","Roy Hall",1955],
+  [62,"You Ain't Treatin' Me Right","Mac Curtis",1956],
+  [63,"Rockin' Rollin' Stone","Andy Starr",1956],
+  [64,"All The Time","Sleepy LaBeef",1958],
+  [65,"Bluejean Bop","Gene Vincent",1956],
+  [66,"I Need A Man","Barbara Pittman",1956],
+  [67,"Hot Dog! That Made Him Mad","Wanda Jackson",1956],
+  [68,"All By Myself","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [69,"Believe What You Say","Ricky Nelson",1958],
+  [70,"Rock The Joint","Bill Haley with the Saddlemen",1952],
+  [71,"Come On Little Mama","Ray Harris",1956],
+  [72,"Pink Thunderbird","Gene Vincent",1956],
+  [73,"Sittin' On Top Of The World","Curtis Gordon",1956],
+  [74,"That Ain't Nothin' But Right","Mac Curtis",1956],
+  [75,"Skinny Jim","Eddie Cochran",1956],
+  [76,"Pretty Mama","Marty Robbins",1956],
+  [77,"Boppin' High School Baby","Don Willis",1957],
+  [78,"Your Baby Blue Eyes","Johnny Burnette & the Rock 'N' Roll Trio",1956],
+  [79,"Rock It","Thumper Jones",1956],
+  [80,"Lorraine","Buddy Covelle",1957],
+  [81,"Milkcow Blues Boogie","Elvis Presley",1955],
+  [82,"Rakin' And Scrapin'","Dean Beard",1957],
+  [83,"Bang Bang","Janis Martin",1956],
+  [84,"Rock Crazy Baby","Art Adams",1956],
+  [85,"Jungle Rock","Hank Mizell",1957],
+  [86,"Pretty Bad Blues","Ronnie Self",1957],
+  [87,"Long Gone Daddy","Pat Cupp",1956],
+  [88,"Mama's Little Baby","Junior Thompson",1956],
+  [89,"You're My Big Baby Now","Roy Moss",1956],
+  [90,"Slow Down","Jack Earls",1956],
+  [91,"Shirley Lee","Bobby Lee Trammell",1958],
+  [92,"You Told A Fib","Gene Vincent",1956],
+  [93,"Bird Dog","Don Woody",1958],
+  [94,"Everybody's Movin'","Glen Glenn",1958],
+  [95,"If You Can't Rock Me","Strikes",1958],
+  [96,"Honey Bop","Wanda Jackson",1956],
+  [97,"Don't Be Gone Long","Bob Doss",1957],
+  [98,"Hey! Baby","Al Ferrier",1955],
+  [99,"Mercy","Collins Kids",1957],
+  [100,"Sweet Rockin' Mama","Hi-Tombs",1957]
+];
+
+var FEAT=[
+  ["fc-1","Carl Perkins","Blue Suede Shoes"],
+  ["fc-2","Elvis Presley","Baby Lets Play House"],
+  ["fc-3","Charlie Feathers","One Hand Loose"],
+  ["fc-4","Elvis Presley","Good Rockin Tonight"],
+  ["fc-5","Carl Perkins","Matchbox"],
+  ["fc-6","Johnny Burnette","Train Kept A Rollin"],
+  ["fc-7","Charlie Feathers","Bottle to the Baby"],
+  ["fc-8","Elvis Presley","Thats All Right"],
+  ["fc-9","Billy Riley","Red Hot"],
+  ["fc-10","Johnny Burnette","Tear It Up"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
+      for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
+      if(!m&&res.length)m=res[0];
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
+          for(var i=0;i<imgs.length;i++)if(imgs[i].size==="extralarge"){best=imgs[i];break;}
+          if(!best)for(var j=0;j<imgs.length;j++)if(imgs[j].size==="large"){best=imgs[j];break;}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Carl Perkins","Blue Suede Shoes");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+s[0]+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[2])+"\" data-album=\""+encodeURIComponent(s[1])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+s[1]+"</div><div class=\"track-artist\">"+s[2]+"</div></div>"+
+    "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(s[2])+"\" data-lfm-album=\""+encodeURIComponent(s[1])+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var b=artQ.splice(0,8);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfm(){
+  if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
+  var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+tr;
+  if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
+}
+function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
+document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+</script>
+</body>
+</html>

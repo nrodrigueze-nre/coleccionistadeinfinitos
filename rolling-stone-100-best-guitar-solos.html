@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Guitar Solos — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">1958–2024</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-guitar-solos-1235519961/" target="_blank" class="page-title">100 GREATEST GUITAR SOLOS</a>
+  <p class="page-sub">De Prince y Hendrix a Clapton y Stevie Ray Vaughan · Los 100 solos de guitarra más grandes de la historia · 100 solos</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I'm Good (Blue) – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2019</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Guitar Solos compilados por Digital Dream Door — basados en impacto, influencia y popularidad. Solo el top 100 de una lista que DDD extiende hasta 200. Al #1: Get Up (I Feel Like Being a Sex Machine) de James Brown (1970) — la canción más sampledada de la historia del hip-hop, grabada por James Brown con su nueva banda que incluía a Bootsy Collins en bajo. Al #2: Papa's Got a Brand New Bag (1965) — el momento exacto en que James Brown inventó el funk. Al #3: Thank You de Sly &amp; The Family Stone (1970). Al #4: Tear the Roof Off the Sucker de Parliament (1976). Una genealogía musical que conecta el soul de los 60s con el hip-hop de los 90s a través del groove.</p>
+    <p class="rtext">Jimi Hendrix domina con 5 apariciones (Machine Gun, All Along the Watchtower, Little Wing, Purple Haze, Voodoo Child). Led Zeppelin con 5, Rolling Stones con 4, Prince con 2. La lista incluye solos modernos — Mdou Moctar al #53, MJ Lenderman al #81, Geese al #98 — demostrando que el canon ya no es solo rock clásico. La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Purple Rain">
+    <div>
+      <div class="feat-title">Purple Rain</div>
+      <div class="feat-artist">Prince &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Rock / Funk / R&B</span></div>
+      <p class="feat-rev">Rolling Stone coronando a Prince para corregir una deuda histórica: en 2004, RS lo omitió de su lista de mejores guitarristas, y se dice que ese desaire inspiró a Prince a dar su legendaria actuación en el Rock and Roll Hall of Fame ese mismo año — ejecutando el solo más recordado de la ceremonia en la versión de While My Guitar Gently Weeps de los Beatles. Décadas después, RS coloca Purple Rain al #1 y esa misma actuación del Hall of Fame al #15. Un acto de reconocimiento póstomo que llega tarde pero llega con fuerza.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Machine Gun">
+    <div>
+      <div class="feat-title">Machine Gun</div>
+      <div class="feat-artist">Jimi Hendrix &middot; 1970</div>
+      <div class="feat-meta"><span class="feat-pill">Blues / Psychedelic Rock</span></div>
+      <p class="feat-rev">RS lo describe como 'Hendrix en su estado más Hendrix — la expresión más ambiciosa, cruda, generosa y desesperada de su genio musical'. Grabado en directo el 1 de enero de 1970 en el Fillmore East, Machine Gun dura doce minutos en los que Hendrix simula con la guitarra los sonidos de la guerra de Vietnam. El feedback, los dive bombs, las notas que se doblan hasta el límite — todo al servicio de una declaración política tan poderosa como cualquier canción de protesta de la era.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Hotel California">
+    <div>
+      <div class="feat-title">Hotel California</div>
+      <div class="feat-artist">Eagles &middot; 1976</div>
+      <div class="feat-meta"><span class="feat-pill">Rock</span></div>
+      <p class="feat-rev">Los solos entrelazados de Don Felder y Joe Walsh en los últimos cuatro minutos de la canción son una de las construcciones más elaboradas de la historia del rock clásico. Felder escribió la estructura básica de la canción; Walsh añadió el contrapunto que convierte el final en algo más grande que cualquiera de sus partes. Doce notas de Joe Walsh al final del fade — el cierre más reconocible del rock de los 70s. La canción más tocada de la historia de la radio americana.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Comfortably Numb">
+    <div>
+      <div class="feat-title">Comfortably Numb</div>
+      <div class="feat-artist">Pink Floyd &middot; 1979</div>
+      <div class="feat-meta"><span class="feat-pill">Progressive Rock</span></div>
+      <p class="feat-rev">David Gilmour construyó dos solos en Comfortably Numb — el primero breve, casi una pregunta; el segundo una respuesta que dura cuatro minutos y que muchos guitaristas consideran el más emocionante de la historia del rock clásico. The Wall se grabó en cuatro estudios simultáneamente; Roger Waters no quería el segundo solo — pensaba que era demasiado sentimental. Gilmour insistió. El resultado define su carrera y la de Pink Floyd de manera más directa que cualquier otra canción del catálogo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Eruption">
+    <div>
+      <div class="feat-title">Eruption</div>
+      <div class="feat-artist">Van Halen &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">Hard Rock / Metal</span></div>
+      <p class="feat-rev">Un minuto cuarenta y dos segundos que cambiaron para siempre las expectativas sobre lo que una guitarra eléctrica podía hacer. Eddie Van Halen grabó Eruption en una toma, como improvisación caliente entre canciones — la intención era simplemente llenar espacio en el álbum de debut. El tapping bilateral, los artificiales armónicos y la velocidad sin precedentes convirtieron ese relleno en la pieza técnica más influyente del rock desde Jimi Hendrix. Todo lo que vino después — shredding, speed metal, neoclásico — tiene el ADN de Eruption.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Johnny B. Goode">
+    <div>
+      <div class="feat-title">Johnny B. Goode</div>
+      <div class="feat-artist">Chuck Berry &middot; 1958</div>
+      <div class="feat-meta"><span class="feat-pill">Rock and Roll</span></div>
+      <p class="feat-rev">El riff y el solo de Chuck Berry en Johnny B. Goode son el origen de todo el rock and roll de guitarra. Jimmy Page lo ha citado como la primera gran influencia de su vida. John Lennon dijo que si tuvieras que darle otro nombre al rock and roll, lo llamarías Chuck Berry. La introducción de doce compases que abre la canción es el primer gran solo de la historia del género — el momento en que la guitarra eléctrica dejó de ser un instrumento de acompañamiento para convertirse en protagonista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Stairway to Heaven">
+    <div>
+      <div class="feat-title">Stairway to Heaven</div>
+      <div class="feat-artist">Led Zeppelin &middot; 1971</div>
+      <div class="feat-meta"><span class="feat-pill">Rock</span></div>
+      <p class="feat-rev">El solo de Jimmy Page en Stairway to Heaven es el más solicitado en tiendas de instrumentos musicales del mundo desde hace décadas — hasta el punto de que una tienda en Vancouver prohibió tocarlo en sus locales. Page lo grabó con una guitarra Gibson Les Paul a través de un amplificador Supro de 1958. La escala pentatónica menor que construye hasta el clímax sigue siendo el texto de referencia para cualquier guitarrista que aprende a improvisar en rock. El solo más ubicuo de la historia del género.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Kid Charlemagne">
+    <div>
+      <div class="feat-title">Kid Charlemagne</div>
+      <div class="feat-artist">Steely Dan &middot; 1976</div>
+      <div class="feat-meta"><span class="feat-pill">Jazz-Rock / Fusion</span></div>
+      <p class="feat-rev">Larry Carlton grabando lo que muchos consideran el solo de estudio más perfecto de la historia del rock: una demostración de sofisticación jazzística al servicio de una canción pop. Carlton era el guitarrista de sesión más solicitado de Los Ángeles en los 70s; Walter Becker y Donald Fagen lo convocaron específicamente para Steely Dan porque querían algo que ningún guitarrista de rock habitual podría hacer. El resultado — dos minutos de frases jazzísticas precisas y emotivas — redefinió lo que significaba la 'musicalidad' en una canción de rock.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Maggot Brain">
+    <div>
+      <div class="feat-title">Maggot Brain</div>
+      <div class="feat-artist">Funkadelic &middot; 1971</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Psychedelic Rock</span></div>
+      <p class="feat-rev">George Clinton le pidió a Eddie Hazel que tocara como si acabara de recibir la noticia de que su madre había muerto — y luego resultó que no era verdad. El resultado es casi diez minutos de solo de guitarra sin acompañamiento, solo con un eco sutil de fondo: la grabación más emocionalmente devastadora de la historia del funk. El solo completo ocupa prácticamente toda la cara A del single. RS lo coloca al #9 entre todos los solos de la historia — justo después de Stairway to Heaven y antes de While My Guitar Gently Weeps.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="While My Guitar Gently Weeps">
+    <div>
+      <div class="feat-title">While My Guitar Gently Weeps</div>
+      <div class="feat-artist">The Beatles &middot; 1968</div>
+      <div class="feat-meta"><span class="feat-pill">Rock</span></div>
+      <p class="feat-rev">Eric Clapton tocando el solo principal en un álbum de los Beatles — algo prácticamente sin precedentes. George Harrison lo invitó porque quería un sonido más 'grande' de lo que él podía hacer. Clapton aceptó a regañadientes; decía que nadie toca en un disco de los Beatles. El resultado, grabado en una tarde, es uno de los solos más expresivos de la historia del rock: un llanto articulado sobre una canción sobre la incapacidad del mundo para aprender de sus errores. Al #10 en la lista de RS.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-guitar-solos-1235519961/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Purple Rain","Prince",1984],
+  [2,"Machine Gun","Jimi Hendrix",1970],
+  [3,"Hotel California","Eagles",1976],
+  [4,"Comfortably Numb","Pink Floyd",1979],
+  [5,"Eruption","Van Halen",1978],
+  [6,"Johnny B. Goode","Chuck Berry",1958],
+  [7,"Stairway to Heaven","Led Zeppelin",1971],
+  [8,"Kid Charlemagne","Steely Dan",1976],
+  [9,"Maggot Brain","Funkadelic",1971],
+  [10,"While My Guitar Gently Weeps","The Beatles",1968],
+  [11,"All Along the Watchtower","Jimi Hendrix Experience",1968],
+  [12,"Beat It","Michael Jackson",1983],
+  [13,"Blue Sky","Allman Brothers Band",1972],
+  [14,"Bohemian Rhapsody","Queen",1975],
+  [15,"While My Guitar Gently Weeps (live, Rock Hall)","Prince",2004],
+  [16,"St. Stephen","Grateful Dead",1969],
+  [17,"Little Wing","Jimi Hendrix",1967],
+  [18,"Free Bird","Lynyrd Skynyrd",1973],
+  [19,"The Calvary Cross","Richard Thompson",1975],
+  [20,"Layla","Derek and the Dominos",1970],
+  [21,"Television","Marquee Moon",1977],
+  [22,"More Than a Feeling","Boston",1976],
+  [23,"Pride and Joy","Stevie Ray Vaughan",1983],
+  [24,"Cinnamon Girl","Neil Young",1969],
+  [25,"Cause We\'ve Ended as Lovers","Jeff Beck",1975],
+  [26,"Lenny","Stevie Ray Vaughan",1983],
+  [27,"Slow Dancing in a Burning Room","John Mayer",2006],
+  [28,"Reelin\' in the Years","Steely Dan",1972],
+  [29,"Cemetery Gates","Pantera",1990],
+  [30,"Firth of Fifth","Genesis",1973],
+  [31,"Baker Street","Gerry Rafferty",1978],
+  [32,"East-West","Paul Butterfield Blues Band",1966],
+  [33,"Sultans of Swing","Dire Straits",1978],
+  [34,"Smells Like Teen Spirit","Nirvana",1991],
+  [35,"Naki Kyoku","Boris",2003],
+  [36,"Rock and Roll","Velvet Underground",1970],
+  [37,"Sympathy for the Devil","Rolling Stones",1968],
+  [38,"Sweet Home Chicago","Robert Johnson",1937],
+  [39,"Painkiller","Judas Priest",1990],
+  [40,"Since I\'ve Been Loving You","Led Zeppelin",1970],
+  [41,"Eight Miles High","The Byrds",1966],
+  [42,"Cliffs of Dover","Eric Johnson",1990],
+  [43,"Eruption (live)","Van Halen",1977],
+  [44,"Get Yer Ya-Ya\'s Out","Rolling Stones",1970],
+  [45,"Stranglehold","Ted Nugent",1975],
+  [46,"Purple Haze","Jimi Hendrix",1967],
+  [47,"Walk This Way","Aerosmith",1975],
+  [48,"Freebird (outro)","Lynyrd Skynyrd",1973],
+  [49,"Crazy Train","Ozzy Osbourne",1980],
+  [50,"Gimme Shelter","Rolling Stones",1969],
+  [51,"Voodoo Child (Slight Return)","Jimi Hendrix",1968],
+  [52,"Running with the Devil","Van Halen",1978],
+  [53,"Afrique Victime","Mdou Moctar",2021],
+  [54,"Sunny Ti De","King Sunny Ade",1974],
+  [55,"Crossroads (live Cream)","Cream",1968],
+  [56,"I Feel Fine","The Beatles",1964],
+  [57,"Mississippi Queen","Mountain",1970],
+  [58,"Love Hurts","Nazareth",1975],
+  [59,"Sweet Child O\' Mine","Guns N\' Roses",1987],
+  [60,"Jimi","The Police",1986],
+  [61,"For the Love of God","Steve Vai",1990],
+  [62,"Tom Sawyer","Rush",1981],
+  [63,"Whole Lotta Love","Led Zeppelin",1969],
+  [64,"Texas Flood","Stevie Ray Vaughan",1983],
+  [65,"The End","The Doors",1967],
+  [66,"Nels Cline (Impossible Germany)","Wilco",2007],
+  [67,"Tom Morello (Killing in the Name)","Rage Against the Machine",1992],
+  [68,"Complication","Girlschool",1981],
+  [69,"Over the Hills and Far Away","Led Zeppelin",1973],
+  [70,"Steve Hackett (Firth of Fifth)","Genesis",1973],
+  [71,"Revolution","The Beatles",1968],
+  [72,"Slow Blues","Albert King",1967],
+  [73,"Sinner Man","Nina Simone",1965],
+  [74,"Break on Through","The Doors",1967],
+  [75,"Comfortably Numb (live Pulse)","Pink Floyd",1994],
+  [76,"Thru and Thru","Rolling Stones",1994],
+  [77,"My Sharona","The Knack",1979],
+  [78,"Superstition","Stevie Wonder",1972],
+  [79,"One","Metallica",1988],
+  [80,"Sunshine of Your Love","Cream",1967],
+  [81,"Knockin\'","MJ Lenderman",2023],
+  [82,"Jessica","Allman Brothers Band",1973],
+  [83,"November Rain","Guns N\' Roses",1991],
+  [84,"So What","Miles Davis",1959],
+  [85,"Cemetery Gates","Pantera",1990],
+  [86,"Badge","Cream",1969],
+  [87,"Naki Kyoku","Boris",2003],
+  [88,"Touch Me","The Doors",1968],
+  [89,"Sunshine Superman","Donovan",1966],
+  [90,"Cattle and Cane","The Go-Betweens",1983],
+  [91,"Dreams","Fleetwood Mac",1977],
+  [92,"Marquee Moon","Television",1977],
+  [93,"Breathe","Pink Floyd",1973],
+  [94,"Heartbreaker","Led Zeppelin",1969],
+  [95,"Train Kept A-Rollin\'","Yardbirds",1965],
+  [96,"Sweet Home Alabama","Lynyrd Skynyrd",1974],
+  [97,"Slow Hand","Pointer Sisters",1981],
+  [98,"Getting Killed","Geese",2024],
+  [99,"The Thrill Is Gone","B.B. King",1969],
+  [100,"You Shook Me All Night Long","AC/DC",1980],
+];
+
+var FEAT = [
+  ["fc-1","Prince","Purple Rain"],
+  ["fc-2","Jimi Hendrix","Machine Gun"],
+  ["fc-3","Eagles","Hotel California"],
+  ["fc-4","Pink Floyd","Comfortably Numb"],
+  ["fc-5","Van Halen","Eruption"],
+  ["fc-6","Chuck Berry","Johnny B. Goode"],
+  ["fc-7","Led Zeppelin","Stairway to Heaven"],
+  ["fc-8","Steely Dan","Kid Charlemagne"],
+  ["fc-9","Funkadelic","Maggot Brain"],
+  ["fc-10","The Beatles","While My Guitar Gently Weeps"],
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Prince","Purple Rain");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Disco Songs — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">1970–1983</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best_disco-songs/" target="_blank" class="page-title">100 GREATEST DISCO SONGS</a>
+  <p class="page-sub">De Gloria Gaynor y Donna Summer a los Bee Gees y Chic · El sonido de una era: 1970–1983 · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I'm Good (Blue) – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2019</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">El canon definitivo del disco compilado por Digital Dream Door — basado en popularidad inicial, popularidad duradera e impacto en el género. La era disco abarca desde los primeros 70s hasta los primeros 80s. Al #1: I Will Survive de Gloria Gaynor (1978), el himno de supervivencia y resiliencia más poderoso de la historia del pop y el track de disco más escuchado de todos los tiempos. Al #2: Le Freak de Chic (1978), el single más vendido de la historia de Atlantic Records con cuatro millones de copias solo en Estados Unidos. Al #3: Stayin' Alive de los Bee Gees (1977), de la banda sonora de Saturday Night Fever — el álbum que convirtió el disco en fenómeno global.</p>
+    <p class="rtext">Donna Summer lidera con 5 apariciones — la Reina del Disco indiscutida. Trammps con 4, Kool &amp; The Gang y Village People con 2 cada uno. Michael Jackson aparece dos veces (Billie Jean y Don't Stop). La lista cubre desde el funk proto-disco de James Brown (1970) hasta los primeros años 80s con Madonna y Grandmaster Flash. La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="I Will Survive">
+    <div>
+      <div class="feat-title">I Will Survive</div>
+      <div class="feat-artist">Gloria Gaynor &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Dance</span></div>
+      <p class="feat-rev">El mayor himno de supervivencia de la historia del pop. Freddie Perren y Dino Fekaris la escribieron para el lado B de un single — el lado A era Substitute — pero las radios empezaron a tocar I Will Survive y no pararon. Gloria Gaynor estaba recuperándose de una operación de espalda cuando la grabó. La canción se convirtió en himno del movimiento LGBTQ+, del feminismo y de cualquier persona que haya tenido que rehacerse después de una ruptura. Cuarenta y cinco años de radio sin interrupción.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Le Freak">
+    <div>
+      <div class="feat-title">Le Freak</div>
+      <div class="feat-artist">Chic &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Funk</span></div>
+      <p class="feat-rev">El single más vendido de la historia de Atlantic Records: cuatro millones de copias solo en Estados Unidos. Nile Rodgers y Bernard Edwards la escribieron en una noche de Nochevieja después de que los rechazaran en la puerta del Studio 54 — la letra original era 'Fuck off'. La convirtieron en 'Freak out' y crearon el groove de disco más perfecto de la era. El riff de guitarra de Rodgers es la base del dance moderno: lo sampló Madonna, Daft Punk, David Bowie, y sigue sonando en cada pista de baile del mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Stayin' Alive">
+    <div>
+      <div class="feat-title">Stayin' Alive</div>
+      <div class="feat-artist">Bee Gees &middot; 1977</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Pop</span></div>
+      <p class="feat-rev">De la banda sonora de Saturday Night Fever — el álbum que vendió 40 millones de copias y convirtió el disco en fenómeno global. Barry Gibb escribió la canción en el asiento de atrás de un taxi en Manhattan. El ritmo de 103 BPM es literalmente el tempo recomendado para las compresiones de RCP — los hospitales la usan para enseñar reanimación cardiopulmonar. La voz falsete de los Bee Gees sobre ese groove de cuatro cuartos es el sonido definitivo de 1977.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Super Freak">
+    <div>
+      <div class="feat-title">Super Freak</div>
+      <div class="feat-artist">Rick James &middot; 1981</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Disco</span></div>
+      <p class="feat-rev">El funk más sucio y más bailable del final de la era disco. Rick James lo construyó sobre una línea de bajo irresistible y una letra sobre una groupie memorable. La canción define el momento exacto en que el funk y el disco se fusionaron en algo más visceral. MC Hammer la sampló en U Can't Touch This en 1990 — James recibió crédito como co-autor y regalías de por vida. Un sample que generó más dinero que el original.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Funky Town">
+    <div>
+      <div class="feat-title">Funky Town</div>
+      <div class="feat-artist">Lipps Inc. &middot; 1979</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Synth-Pop</span></div>
+      <p class="feat-rev">El puente entre el disco y el synth-pop: el primer gran hit que usaba sintetizadores como instrumento principal en lugar de cuerdas orquestales. Steven Greenberg la produjo en Minneapolis y la grabó con la voz de Cynthia Johnson — una ex-Miss Black Minnesota. Número uno en 28 países. Funky Town es técnicamente una canción sobre mudarse a una ciudad mejor, pero nadie la procesa así — es simplemente el groove más adictivo del final de los 70s.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Disco Inferno">
+    <div>
+      <div class="feat-title">Disco Inferno</div>
+      <div class="feat-artist">Trammps &middot; 1976</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Funk</span></div>
+      <p class="feat-rev">Grabada en 1976 y relanzada en 1977 para Saturday Night Fever — que fue el momento en que el mundo la descubrió. Los Trammps eran una banda de Filadelfia que llevaban años en el circuito de soul y R&B antes de que el disco los convirtiera en estrellas. El coro de 'burn baby burn' sobre esas cuerdas ascendentes es uno de los momentos más reconocibles del género. La versión de Saturday Night Fever dura más de once minutos en el álbum.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="YMCA">
+    <div>
+      <div class="feat-title">YMCA</div>
+      <div class="feat-artist">Village People &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Pop</span></div>
+      <p class="feat-rev">La canción de disco más ubicua de la historia: sigue sonando en estadios, bodas y eventos deportivos cuarenta y cinco años después. El productor francés Jacques Morali reunió a un grupo de hombres gay que representaban arquetipos americanos — el vaquero, el policía, el indio, el soldado, el obrero — y creó un himno de club que el mainstream adoptó sin entender completamente su significado. La coreografía de los brazos formando Y-M-C-A la inventó el DJ de la discoteca durante el primer show.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Born To Be Alive">
+    <div>
+      <div class="feat-title">Born To Be Alive</div>
+      <div class="feat-artist">Patrick Hernandez &middot; 1979</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Eurodisco</span></div>
+      <p class="feat-rev">El cantante francés Patrick Hernandez grabó esta canción con una producción mínima y la vio llegar al número uno en 19 países. Born To Be Alive vendió más de 25 millones de copias en todo el mundo — uno de los singles más vendidos de la historia del eurodisco. La conexión con Madonna: los productores que descubrieron a Hernandez — Jean-Claude Pellerin y Jean Van Lieu — intentaron convertir a Madonna en la cantante de respaldo de Hernandez antes de que ella tuviera su propia carrera.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Billie Jean">
+    <div>
+      <div class="feat-title">Billie Jean</div>
+      <div class="feat-artist">Michael Jackson &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / R&B / Disco</span></div>
+      <p class="feat-rev">Michael Jackson llevó el groove del disco al pop de masas con una precisión que ningún productor anterior había logrado. Quincy Jones quería eliminar Billie Jean del álbum Thriller — Jackson insistió. La canción llegó al número uno en 10 países y el bassline de Louis Johnson se convirtió en el más reconocible del pop. En el especial de Motown 25 en 1983, Jackson ejecutó el moonwalk por primera vez en televisión ante 47 millones de espectadores. El mayor cruce entre disco y pop mainstream de la historia.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Get Up...I Feel Like Being A Sex Machine">
+    <div>
+      <div class="feat-title">Get Up...I Feel Like Being A Sex Machine</div>
+      <div class="feat-artist">James Brown &middot; 1970</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Proto-Disco</span></div>
+      <p class="feat-rev">La canción que inventó el funk moderno y prefiguró el disco por cinco años. James Brown y los JBs construyeron sobre un groove de dos notas algo que ningún músico anterior había intentado: hacer de la repetición una experiencia mística. Sex Machine es el origen de casi todo el dance que vino después — el disco, el hip-hop, el house, el EDM moderno. Todo samplea a James Brown; James Brown no samplea a nadie. El Padrino del Soul como arquitecto invisible de la música popular del siglo XX.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best_disco-songs/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"I Will Survive","Gloria Gaynor",1978],
+  [2,"Le Freak","Chic",1978],
+  [3,"Stayin\' Alive","Bee Gees",1977],
+  [4,"Super Freak","Rick James",1981],
+  [5,"Funky Town","Lipps Inc.",1979],
+  [6,"Disco Inferno","Trammps",1976],
+  [7,"YMCA","Village People",1978],
+  [8,"Born To Be Alive","Patrick Hernandez",1979],
+  [9,"Billie Jean","Michael Jackson",1982],
+  [10,"Get Up...I Feel Like Being A Sex Machine","James Brown",1970],
+  [11,"Mandolay","La Flavour",1980],
+  [12,"I Feel Love","Donna Summer",1977],
+  [13,"Love To Love You Baby","Donna Summer",1975],
+  [14,"Shame","Evelyn \'Champagne\' King",1977],
+  [15,"I\'m So Excited","Pointer Sisters",1982],
+  [16,"Do You Wanna Funk","Sylvester",1982],
+  [17,"Babe We\'re Gonna Love Tonight","Lime",1982],
+  [18,"That\'s The Way I Like It","K.C. & the Sunshine Band",1975],
+  [19,"Knock On Wood","Amii Stewart",1978],
+  [20,"Night Fever","Bee Gees",1977],
+  [21,"Last Dance","Donna Summer",1978],
+  [22,"Don\'t Leave Me This Way","Thelma Houston",1976],
+  [23,"Heaven Must Be Missing An Angel","Tavares",1976],
+  [24,"Take Your Time (Do It Right)","S.O.S. Band",1980],
+  [25,"Double Dutch Bus","Frankie Smith",1981],
+  [26,"Rapper\'s Delight","Sugarhill Gang",1979],
+  [27,"Feels Like I\'m In Love","Kelly Marie",1981],
+  [28,"Celebration","Kool & the Gang",1980],
+  [29,"Don\'t Stop Til You Get Enough","Michael Jackson",1979],
+  [30,"Love Hangover","Diana Ross",1976],
+  [31,"Hot Stuff","Donna Summer",1979],
+  [32,"Heaven Must Have Sent You","Bonnie Pointer",1979],
+  [33,"This Time Baby","Jackie Moore",1979],
+  [34,"Let\'s All Chant","Michael Zager Band",1978],
+  [35,"Boogie Oogie Oogie","A Taste Of Honey",1978],
+  [36,"Get Down Tonight","K.C. & the Sunshine Band",1975],
+  [37,"Spank","Jimmy \'Bo\' Horne",1978],
+  [38,"Bad Girls","Donna Summer",1979],
+  [39,"The Hustle","Van McCoy",1975],
+  [40,"Ladies Night","Kool & the Gang",1979],
+  [41,"Macho Man","Village People",1978],
+  [42,"Turn The Beat Around","Vicki Sue Robinson",1976],
+  [43,"Never Can Say Goodbye","Gloria Gaynor",1974],
+  [44,"White Lines (Don\'t Do It)","Grandmaster Flash",1983],
+  [45,"So Many Men, So Little Time","Miquel Brown",1983],
+  [46,"There But For The Grace Of God","Machine",1979],
+  [47,"The Love I Lost","Harold Melvin & Bluenotes",1973],
+  [48,"Come To Me","France Joli",1979],
+  [49,"I\'ll Always Love My Mama","Intruders",1973],
+  [50,"Can\'t Get Enough Of Your Love","Barry White",1974],
+  [51,"Bad Luck","Harold Melvin & Bluenotes",1975],
+  [52,"I Love The Night Life (Disco \'Round)","Alicia Bridges",1978],
+  [53,"We Are Family","Sister Sledge",1979],
+  [54,"Wishing On A Star","Rose Royce",1978],
+  [55,"It Only Takes A Minute","Tavares",1975],
+  [56,"Soul Makossa","Manu Dibango",1972],
+  [57,"Give It To Me Baby","Rick James",1981],
+  [58,"Holiday","Madonna",1983],
+  [59,"Where Do We Go From Here","Trammps",1974],
+  [60,"Sugar Pie Guy","Joneses",1974],
+  [61,"Heart Of Glass","Blondie",1978],
+  [62,"You\'re The One For Me","\'D\' Train",1981],
+  [63,"Let\'s Start II Dance Again","Bohannon",1981],
+  [64,"Contact","Edwin Starr",1978],
+  [65,"Love Train","O\'Jays",1972],
+  [66,"Zing Went The Strings Of My Heart","Trammps",1972],
+  [67,"Rock Your Baby","George McCrae",1974],
+  [68,"Good Times","Chic",1979],
+  [69,"Date With The Rain","Eddie Kendricks",1972],
+  [70,"Ten Percent","Double Exposure",1976],
+  [71,"More, More, More","Andrea True Connection",1976],
+  [72,"It\'s Raining Men","Weather Girls",1982],
+  [73,"Let\'s Groove","Earth Wind & Fire",1981],
+  [74,"Souvenirs","Voyage",1978],
+  [75,"Devil\'s Gun","C.J. & Co.",1977],
+  [76,"Think (About It)","Lynn Collins",1972],
+  [77,"Rock The Boat","Hues Corporation",1974],
+  [78,"San Francisco (medley)","Village People",1977],
+  [79,"I Love Music","O\'Jays",1975],
+  [80,"Doing It To Death","Fred Wesley & J.B.\'s",1973],
+  [81,"You Make Me Feel (Mighty Real)","Sylvester",1978],
+  [82,"Last Night a D.J. Saved My Life","Indeep",1982],
+  [83,"La La Peace Song","O.C. Smith",1973],
+  [84,"September","Earth, Wind & Fire",1978],
+  [85,"The Boss","Diana Ross",1979],
+  [86,"1999","Prince",1982],
+  [87,"Relight My Fire","Dan Hartman",1979],
+  [88,"Ask Me","Ecstasy, Passion & Pain",1974],
+  [89,"All My Love","L.A.X.",1981],
+  [90,"Brick House","Commodores",1977],
+  [91,"Honey Bee","Gloria Gaynor",1973],
+  [92,"I Found Love","Love & Kisses",1977],
+  [93,"Car Wash","Rose Royce",1976],
+  [94,"TSOP","MFSB featuring the Three Degrees",1974],
+  [95,"That\'s Where The Happy People Go","Trammps",1976],
+  [96,"Ain\'t No Stoppin\' Us Now","McFadden & Whitehead",1979],
+  [97,"Woman","Barrabas",1973],
+  [98,"Get Off","Foxy",1978],
+  [99,"Got To Give It Up (pt. 1)","Marvin Gaye",1977],
+  [100,"Lady (You Bring Me Up)","Commodores",1981],
+];
+
+var FEAT = [
+  ["fc-1","Gloria Gaynor","I Will Survive"],
+  ["fc-2","Chic","Le Freak"],
+  ["fc-3","Bee Gees","Stayin Alive"],
+  ["fc-4","Rick James","Super Freak"],
+  ["fc-5","Lipps Inc","Funky Town"],
+  ["fc-6","Trammps","Disco Inferno"],
+  ["fc-7","Village People","YMCA"],
+  ["fc-8","Patrick Hernandez","Born To Be Alive"],
+  ["fc-9","Michael Jackson","Billie Jean"],
+  ["fc-10","James Brown","Sex Machine"],
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Gloria Gaynor","I Will Survive");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

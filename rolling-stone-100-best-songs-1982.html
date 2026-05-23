@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Best Songs of 1982 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2022</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-1982-1234592830/" target="_blank" class="page-title">100 BEST SONGS OF 1982</a>
+  <p class="page-sub">De Prince y Michael Jackson a Grandmaster Flash y Depeche Mode · El año que inventó el pop moderno · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Little Red Corvette – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 1982</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">El año que inventó el pop moderno. Prince con Little Red Corvette al #1, Grandmaster Flash con The Message al #2 y Michael Jackson con Billie Jean al #3 — y ninguno de los tres suena al mismo género. 1982 es el año en que el synth-pop invadió el Top 40, el hip-hop encontró su voz más documental y el rock alternativo empezó a construir sus propios mundos paralelos. La caja de ritmos TR-808 y el sintetizador como herramientas mainstream. Después de 1982 la música nunca volvería a ser la misma.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Little Red Corvette">
+    <div>
+      <div class="feat-title">Little Red Corvette</div>
+      <div class="feat-artist">Prince &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / New Wave</span></div>
+      <p class="feat-rev">El himno definitivo de 1982 y la cancion que convirtio a Prince en superestrella global. Tecnicamente sobre un auto, realmente sobre el deseo y la velocidad de la perdida. Prince toco todos los instrumentos, produjo y canto con una sofisticacion que en 1982 no existia en ningun otro artista. Fue uno de los primeros videos de un artista negro en recibir rotacion regular en MTV, abriendo las puertas para Michael Jackson y cambiando la historia del canal para siempre.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="The Message">
+    <div>
+      <div class="feat-title">The Message</div>
+      <div class="feat-artist">Grandmaster Flash and the Furious Five &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop</span></div>
+      <p class="feat-rev">El primer gran tema del hip-hop consciente. Mientras el genero celebraba fiestas y DJ battles, Melle Mel describio la brutalidad de los proyectos del South Bronx con un realismo devastador. "It's like a jungle sometimes, it makes me wonder how I keep from going under" — una linea que captura 1982 con una precision que ninguna estadistica social podria igualar. Rolling Stone la eligio el mayor single de hip-hop de todos los tiempos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Billie Jean">
+    <div>
+      <div class="feat-title">Billie Jean</div>
+      <div class="feat-artist">Michael Jackson &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / R&amp;B</span></div>
+      <p class="feat-rev">Del album mas vendido de todos los tiempos, la cancion mas perfecta de Michael Jackson. Quincy Jones casi la corto de Thriller. El bajo de Louis Johnson, el cencerro de Paulinho da Costa, la produccion de Jones y la actuacion de Jackson que literalmente parece deslizarse sobre el pavimento iluminado: todo en esta cancion es impecable. Jackson la actuo por primera vez con el moonwalk en Motown 25 y convencio a un esceptico Fred Astaire de que era el mejor bailarin de su generacion.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Planet Rock">
+    <div>
+      <div class="feat-title">Planet Rock</div>
+      <div class="feat-artist">Afrika Bambaataa and the Soulsonic Force &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Electro / Hip-Hop</span></div>
+      <p class="feat-rev">La cancion que fusiono el hip-hop del Bronx con el Kraftwerk aleman y redefinio el electro para siempre. Afrika Bambaataa tomo "Trans-Europe Express" y "Numbers", lo proceso con una TR-808 y construyo un himno de breakdancing que sigue siendo la fundacion del electro moderno, el techno de Detroit y la EDM del siglo XXI. La innovacion mas radical de 1982 no vino del estadio rock sino de las calles del South Bronx.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Don't You Want Me">
+    <div>
+      <div class="feat-title">Don't You Want Me</div>
+      <div class="feat-artist">The Human League &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Synth-Pop</span></div>
+      <p class="feat-rev">El single de synth-pop mas vendido del Reino Unido en el momento de su lanzamiento, y el himno definitivo del New Wave en America. Phil Oakey casi no queria incluirlo en Dare. Susan Ann Sulley lo canto sin experiencia previa como vocalista, y eso se escucha: su ingenuidad hace el contraste perfecto con la amenaza controlada de Oakey. El video — dos personas contando versiones diferentes de la misma historia — captura la estetica MTV de 1982 mejor que ningun otro.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Just Can't Get Enough">
+    <div>
+      <div class="feat-title">Just Can't Get Enough</div>
+      <div class="feat-artist">Depeche Mode &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Synth-Pop</span></div>
+      <p class="feat-rev">La cancion mas alegre de la historia de Depeche Mode — todo lo contrario de lo que se convertiria la banda despues. Vince Clarke la escribio antes de dejar el grupo para formar Yazoo. Su simpleza burbujeante es enganosa: fue una de las primeras lineas de bajo electronico en sonar genuinamente pop en emisoras mainstream. Todo lo que vendria despues seria mas oscuro y mas Martin Gore — pero nada seria mas puro que esto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="I Love Rock N Roll">
+    <div>
+      <div class="feat-title">I Love Rock 'N Roll</div>
+      <div class="feat-artist">Joan Jett and the Blackhearts &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Rock</span></div>
+      <p class="feat-rev">Despues de que 23 disqueras rechazaran su primer album, Joan Jett fundo su propio sello y lanzo este numero uno que se quedo siete semanas en lo alto. Era un oldie de los Arrows que nadie recordaba, pero Jett lo reclamo como himno feminista dirtbag para la eternidad. Mientras en los 80 el rock se volvia suave y producido, Jett aposto por el cuero negro y los riffs sin concesiones. Gano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="I Melt With You">
+    <div>
+      <div class="feat-title">I Melt With You</div>
+      <div class="feat-artist">Modern English &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave</span></div>
+      <p class="feat-rev">Tecnicamente es una cancion sobre hacer el amor mientras cae una bomba nuclear — Robbie Grey la concibio en la sombra de la carrera armamentistica de la Guerra Fria. Pero suena como el principio de la mejor noche de tu vida: esas guitarras parpadeantes, ese sintetizador ascendente, esa sensacion de que el futuro esta abierto de par en par. Se convirtio en el tema de amor de toda una generacion de peliculas de los 80 y sigue siendo igual de irresistible.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Come On Eileen">
+    <div>
+      <div class="feat-title">Come On Eileen</div>
+      <div class="feat-artist">Dexys Midnight Runners &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Celtic</span></div>
+      <p class="feat-rev">El single mas vendido del Reino Unido en 1982. Kevin Rowland mezclo soul, fiddle irlandes y mandolinas en algo que no sonaba a nada antes ni ha sonado igual desde. La cancion habla de la tension sexual reprimida de la adolescencia catolica irlandesa con una honestidad que el pop mainstream raramente permite. El crescendo del final, cuando todo el grupo acelera desde la balada hasta el frenesio, sigue siendo uno de los momentos mas catarticos de los 80.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Do You Really Want to Hurt Me">
+    <div>
+      <div class="feat-title">Do You Really Want to Hurt Me</div>
+      <div class="feat-artist">Culture Club &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Pop</span></div>
+      <p class="feat-rev">La primera gran pregunta de la era MTV: ese cantante que no podias dejar de ver, era hombre o mujer? Boy George desafio todas las convenciones de genero del pop mainstream con su maquillaje y su voz de soul. La cancion llego al numero uno en quince paises, construida sobre un groove de reggae que George aprendio directamente de los Sound System de Jamaica. En 1982, nada sonaba asi. Y ese era exactamente el punto.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 CANCIONES · 1982</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-1982-1234592830/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Little Red Corvette","Prince",1982],
+  [2,"The Message","Grandmaster Flash and the Furious Five",1982],
+  [3,"Billie Jean","Michael Jackson",1982],
+  [4,"Planet Rock","Afrika Bambaataa and the Soulsonic Force",1982],
+  [5,"Don\'t You Want Me","The Human League",1982],
+  [6,"Just Can\'t Get Enough","Depeche Mode",1982],
+  [7,"I Love Rock N Roll","Joan Jett and the Blackhearts",1982],
+  [8,"I Melt With You","Modern English",1982],
+  [9,"Come On Eileen","Dexys Midnight Runners",1982],
+  [10,"Do You Really Want to Hurt Me","Culture Club",1982],
+  [11,"Our House","Madness",1982],
+  [12,"Eye of the Tiger","Survivor",1982],
+  [13,"1999","Prince",1982],
+  [14,"Jack and Diane","John Mellencamp",1982],
+  [15,"New Year\'s Day","U2",1982],
+  [16,"Tainted Love","Soft Cell",1982],
+  [17,"Hurt So Good","John Mellencamp",1982],
+  [18,"Wanna Be Startin Somethin","Michael Jackson",1982],
+  [19,"Rosanna","Toto",1982],
+  [20,"New Gold Dream","Simple Minds",1982],
+  [21,"Waiting for a Girl Like You","Foreigner",1982],
+  [22,"Safety Dance","Men Without Hats",1982],
+  [23,"Pass the Dutchie","Musical Youth",1982],
+  [24,"Hard to Say Im Sorry","Chicago",1982],
+  [25,"Ebony and Ivory","Paul McCartney and Stevie Wonder",1982],
+  [26,"Abracadabra","Steve Miller Band",1982],
+  [27,"Shake It Up","The Cars",1982],
+  [28,"Subdivisions","Rush",1982],
+  [29,"Shock the Monkey","Peter Gabriel",1982],
+  [30,"Eminence Front","The Who",1982],
+  [31,"Gypsy","Fleetwood Mac",1982],
+  [32,"Town Called Malice","The Jam",1982],
+  [33,"Jump to It","Aretha Franklin",1982],
+  [34,"Say Hello Wave Goodbye","Soft Cell",1982],
+  [35,"I Want Candy","Bow Wow Wow",1982],
+  [36,"Shoot Out the Lights","Richard and Linda Thompson",1982],
+  [37,"Love Plus One","Haircut One Hundred",1982],
+  [38,"Maneater","Hall and Oates",1982],
+  [39,"A Night to Remember","Shalamar",1982],
+  [40,"Kids in America","Kim Wilde",1982],
+  [41,"Words","Missing Persons",1982],
+  [42,"Let It Whip","The Dazz Band",1982],
+  [43,"Da Da Da","Trio",1982],
+  [44,"The Sweetest Girl","Scritti Politti",1982],
+  [45,"New Frontier","Donald Fagen",1982],
+  [46,"Mary Anne","Marshall Crenshaw",1982],
+  [47,"The Day Before You Came","ABBA",1982],
+  [48,"Mama Used to Say","Junior",1982],
+  [49,"Who Can It Be Now","Men at Work",1982],
+  [50,"Me Cole En Una Fiesta","Mecano",1982],
+  [51,"Neverland","The dBs",1982],
+  [52,"Chant a Psalm","Steel Pulse",1982],
+  [53,"Sell or Be Sold","The Minutemen",1982],
+  [54,"The Classical","The Fall",1982],
+  [55,"Little Guitars","Van Halen",1982],
+  [56,"The Hungry Wolf","X",1982],
+  [57,"Shy Boy","Bananarama",1982],
+  [58,"Iron Fist","Motorhead",1982],
+  [59,"I Confess","The English Beat",1982],
+  [60,"Another One Bites the Dust","Clint Eastwood and General Saint",1982],
+  [61,"Anything Could Happen","The Clean",1982],
+  [62,"Shakin","Eddie Money",1982],
+  [63,"Sailin On","Bad Brains",1982],
+  [64,"Big Jesus Trash Can","The Birthday Party",1982],
+  [65,"Wild and Blue","John Anderson",1982],
+  [66,"Babble","21-645",1982],
+  [67,"The Real World","The Bangles",1982],
+  [68,"Rock N Roll Party in the Streets","Axe",1982],
+  [69,"Im So Excited","The Pointer Sisters",1982],
+  [70,"Change","John Waite",1982],
+  [71,"Steppin Out","Joe Jackson",1982],
+  [72,"Do You Wanna Funk","Sylvester and Patrick Cowley",1982],
+  [73,"Maneater","Hall and Oates",1982],
+  [74,"Slowdive","Siouxsie and the Banshees",1982],
+  [75,"Explode","Void",1982],
+  [76,"Mickey","Toni Basil",1982],
+  [77,"Do I Do","Stevie Wonder",1982],
+  [78,"Africa","Toto",1982],
+  [79,"Love Plus One","Haircut One Hundred",1982],
+  [80,"Who Can It Be Now","Men at Work",1982],
+  [81,"Shoot Out the Lights","Richard and Linda Thompson",1982],
+  [82,"Let It Whip","The Dazz Band",1982],
+  [83,"Big Jesus Trash Can","The Birthday Party",1982],
+  [84,"Subdivisions","Rush",1982],
+  [85,"Another One Bites the Dust","Clint Eastwood and General Saint",1982],
+  [86,"Wild and Blue","John Anderson",1982],
+  [87,"The Sweetest Girl","Scritti Politti",1982],
+  [88,"Babble","21-645",1982],
+  [89,"The Real World","The Bangles",1982],
+  [90,"Rock N Roll Party in the Streets","Axe",1982],
+  [91,"Im So Excited","The Pointer Sisters",1982],
+  [92,"Change","John Waite",1982],
+  [93,"Steppin Out","Joe Jackson",1982],
+  [94,"Do You Wanna Funk","Sylvester and Patrick Cowley",1982],
+  [95,"Maneater","Hall and Oates",1982],
+  [96,"Slowdive","Siouxsie and the Banshees",1982],
+  [97,"Explode","Void",1982],
+  [98,"Mickey","Toni Basil",1982],
+  [99,"Do I Do","Stevie Wonder",1982],
+  [100,"Africa","Toto",1982],
+];
+
+var FEAT = [
+  ["fc-1","Prince","Little Red Corvette"],
+  ["fc-2","Grandmaster Flash and the Furious Five","The Message"],
+  ["fc-3","Michael Jackson","Billie Jean"],
+  ["fc-4","Afrika Bambaataa and the Soulsonic Force","Planet Rock"],
+  ["fc-5","The Human League","Don\'t You Want Me"],
+  ["fc-6","Depeche Mode","Just Can\'t Get Enough"],
+  ["fc-7","Joan Jett and the Blackhearts","I Love Rock N Roll"],
+  ["fc-8","Modern English","I Melt With You"],
+  ["fc-9","Dexys Midnight Runners","Come On Eileen"],
+  ["fc-10","Culture Club","Do You Really Want to Hurt Me"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Prince", "Little Red Corvette");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var track  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[key] = count; renderScrobble(el, count);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

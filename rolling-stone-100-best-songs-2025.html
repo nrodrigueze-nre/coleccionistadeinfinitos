@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The 100 Best Songs of 2025 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2025</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-2025-1235468614/" target="_blank" class="page-title">THE 100 BEST SONGS OF 2025</a>
+  <p class="page-sub">De Lady Gaga y Kendrick & SZA a Sabrina Carpenter y YoungBoy · Un tren loco de soul divas, rebeldes del country y más · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Abracadabra – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2025</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Abracadabra de Lady Gaga al #1 — el regreso absoluto al pop de baile, el earworm más inescapable del año. Dancing in the Club de MJ Lenderman al #2, Luther de Kendrick y SZA al #9 — el mismo Kendrick que el año pasado liquidaba a Drake, ahora haciendo el dueto de R&B más cálido del año sobre un sample de Luther Vandross. Baile Inolvidable de Bad Bunny al #4, The Fate of Ophelia de Taylor Swift al #8 (ocho semanas en el #1 del Hot 100). Un año de regresos, reinvenciones y nuevas voces que llegaron para quedarse.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &mdash; Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Abracadabra">
+    <div>
+      <div class="feat-title">Abracadabra</div>
+      <div class="feat-artist">Lady Gaga &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">Disco / Dance-Pop</span></div>
+      <p class="feat-rev">Los sintetizadores que se encenden y apagan como una bola de espejos en cámara lenta, el gancho sincopado del "A-braca-da-braaa", y la forma en que declara "Feel the beat under your feet, the floor's on fiiire" — todo en Abracadabra es magia calculada con precisión de relojero. La canción más inescapable de 2025 fue el regreso mayor de Lady Gaga al pop de baile, un himno de club que llegó al número uno en varios países y recordó por qué nadie hace lo que Gaga hace cuando está en plena forma.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Dancing in the Club">
+    <div>
+      <div class="feat-title">Dancing in the Club</div>
+      <div class="feat-artist">MJ Lenderman and This Is Lorelei &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">Indie Rock / Alt-Country</span></div>
+      <p class="feat-rev">Nate Amos de This Is Lorelei soñó la canción para que otros la cantaran. Se la pasó a MJ Lenderman — el héroe de la guitarra indie del año — y Lenderman la convirtió en un descenso al despecho más hermoso: donde el original era aventura de Auto-Tune en el desamor, esta versión es caída libre en la desesperación. "A loser never wins, and I'm a loser, always been." En un año enorme para Lenderman, esta fue su cumbre.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Golden">
+    <div>
+      <div class="feat-title">Golden</div>
+      <div class="feat-artist">HUNTR/X from KPop Demon Hunters &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">K-Pop / Pop</span></div>
+      <p class="feat-rev">La sorpresa del año: la canción de una película de Netflix sobre cazadores de demonios de K-pop que cruzó del soundtrack de ficción a las listas reales del mundo. "Golden" capturó algo que pocas canciones de K-pop logran — la sensación de que estás escuchando el himno de tu propia vida, no de un personaje. Un éxito global que nadie vio venir y que todos cantaban para diciembre.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Baile Inolvidable">
+    <div>
+      <div class="feat-title">Baile Inolvidable</div>
+      <div class="feat-artist">Bad Bunny &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">Reggaetón / Cumbia</span></div>
+      <p class="feat-rev">Del mismo álbum que abrió 2025 — Debí Tirar Más Fotos, la carta de amor a Puerto Rico que RS nombró mejor álbum del año — "Baile Inolvidable" es el baile imposible de olvidar. Bad Bunny construyó una canción sobre el recuerdo de una noche perfecta con una melodía de cumbia y un ritmo que se instala en el cuerpo y no se va. La prueba de que el Benito de 2025 no caza hits — los cultiva.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Folded">
+    <div>
+      <div class="feat-title">Folded</div>
+      <div class="feat-artist">Kehlani &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">R&amp;B</span></div>
+      <p class="feat-rev">Una canción de R&B de corazón roto tan generosa que Brandy y Ne-Yo quisieron subirse al remix. Kehlani ofreció en "Folded" la emoción más directa y más vulnerable de su carrera — no la sofisticación técnica de sus trabajos anteriores sino algo más simple y más devastador: el sonido de alguien doblada bajo el peso de una pérdida. El éxito que convirtió 2025 en el año de Kehlani.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Manchild">
+    <div>
+      <div class="feat-title">Manchild</div>
+      <div class="feat-artist">Sabrina Carpenter &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">Pop</span></div>
+      <p class="feat-rev">"Why so sexy if so dumb? / And how survive the Earth so long?" — una vista al interior de la mente más afilada del pop mainstream. Sabrina Carpenter demostró con "Manchild" que el éxito de Short n' Sweet no fue accidente: el jam de rodeo ABBA con el innuendo perfecto y la gramática deliberadamente incorrecta es, según su productor Jack Antonoff, la mejor canción que han hecho juntos. Concordamos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Shot Callin">
+    <div>
+      <div class="feat-title">Shot Callin'</div>
+      <div class="feat-artist">YoungBoy Never Broke Again &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Trap</span></div>
+      <p class="feat-rev">YoungBoy sigue siendo uno de los fenómenos más inexplicables del rap: preso, en arresto domiciliario, en conflicto perpetuo con la industria — y aun así produciendo música con una consistencia y una conexión con su base que ningún otro artista de su generación iguala. "Shot Callin'" es su mejor momento de 2025: seguridad total, flow sin esfuerzo, el sonido de alguien que sabe exactamente quién es.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="The Fate of Ophelia">
+    <div>
+      <div class="feat-title">The Fate of Ophelia</div>
+      <div class="feat-artist">Taylor Swift &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">Pop / Art Pop</span></div>
+      <p class="feat-rev">Del álbum The Life of a Showgirl, "The Fate of Ophelia" pasó ocho semanas consecutivas en el número uno del Billboard Hot 100. Taylor Swift tomando la metáfora de Ofelia — la figura shakespeariana del sacrificio femenino — y reescribiéndola desde la posición de quien ya no está dispuesta a ahogarse. Una de sus canciones más ambiciosas líricamente, y la que confirma que su poder sobre el pop sigue siendo absoluto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Luther">
+    <div>
+      <div class="feat-title">Luther</div>
+      <div class="feat-artist">Kendrick Lamar and SZA &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">R&amp;B / Hip-Hop</span></div>
+      <p class="feat-rev">El año pasado Kendrick nos recordó lo divertido que puede ser cuando deja fluir el odio. En 2025, su mayor éxito fue sobre el amor. Él y SZA juntos como un Marvin y Tammi modernos, intercambiando ternuras en armonía sobre un sample sedoso de Luther Vandross. La canción más cálida de ambos, la que demuestra que Kendrick puede hacer cualquier cosa con igual perfección.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="The Subway">
+    <div>
+      <div class="feat-title">The Subway</div>
+      <div class="feat-artist">Chappell Roan &middot; 2025</div>
+      <div class="feat-meta"><span class="feat-pill">New Wave / Indie Pop</span></div>
+      <p class="feat-rev">Algunas de las mejores canciones nacen del escenario. "The Subway" fue el corazón en vivo de Chappell Roan durante más de un año antes de lanzarse oficialmente — y valió la espera. Probablemente el desgarro más devastador sobre estar parado en un andén del metro desde "Black Star" de Radiohead. Las melodías de Cocteau Twins, la melancolía destilada, el single más exitoso de su carrera. Roan lo dijo mejor: "Estoy muy orgullosa de esta canción y del viaje que ha tenido."</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 CANCIONES · 2025</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-2025-1235468614/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Abracadabra","Lady Gaga",2025],
+  [2,"Dancing in the Club","MJ Lenderman and This Is Lorelei",2025],
+  [3,"Golden","HUNTR/X from KPop Demon Hunters",2025],
+  [4,"Baile Inolvidable","Bad Bunny",2025],
+  [5,"Folded","Kehlani",2025],
+  [6,"Manchild","Sabrina Carpenter",2025],
+  [7,"Shot Callin","YoungBoy Never Broke Again",2025],
+  [8,"The Fate of Ophelia","Taylor Swift",2025],
+  [9,"Luther","Kendrick Lamar and SZA",2025],
+  [10,"The Subway","Chappell Roan",2025],
+  [11,"New Threats From the Soul","Ryan Davis and the Roadhouse Band",2025],
+  [12,"Burning Blue","Mariah the Scientist",2025],
+  [13,"Praying for Your Downfall","Jensen McRae",2025],
+  [14,"Berghain","Rosalia feat. Bjork and Yves Tumor",2025],
+  [15,"Man I Need","Olivia Dean",2025],
+  [16,"Eatin Big Time","Tyler Childers",2025],
+  [17,"Mirtazapine","Hayley Williams",2025],
+  [18,"Like Weezy","Playboi Carti",2025],
+  [19,"Sally When the Wine Runs Out","Role Model",2025],
+  [20,"T&A","Blondshell",2025],
+  [21,"High Fashion","Addison Rae",2025],
+  [22,"#Tetas","Ca7riel and Paco Amoroso",2025],
+  [23,"So Be It","Clipse",2025],
+  [24,"Where Is My Husband!","Raye",2025],
+  [25,"Daisies","Justin Bieber",2025],
+  [26,"Whateva","Doja Cat",2025],
+  [27,"For Sale","Saba",2025],
+  [28,"You Could\'ve Had This","Wednesday",2025],
+  [29,"Tonight","PinkPantheress",2025],
+  [30,"Like What","Cardi B",2025],
+  [31,"Strong Woman","Margo Price",2025],
+  [32,"Circadian Rhythm","Drake",2025],
+  [33,"Romantic","Dijon",2025],
+  [34,"My Beloved","Rachel Chinouriri",2025],
+  [35,"G.O.D. Part III","Mobb Deep feat. Nas",2025],
+  [36,"Drive","SZA",2025],
+  [37,"Subway","Chappell Roan",2025],
+  [38,"Timeless","The Weeknd",2025],
+  [39,"IDFG","Jim Legxacy",2025],
+  [40,"Real Woman","PartyNextDoor",2025],
+  [41,"What Was That","Lorde",2025],
+  [42,"Sports Car","Tate McRae",2025],
+  [43,"Striptease","FKA twigs",2025],
+  [44,"Provocame","Rauw Alejandro",2025],
+  [45,"Benin Boys","Rema",2025],
+  [46,"Insecure","Justin Bieber",2025],
+  [47,"Shootin Shots","rob49",2025],
+  [48,"Heart Pt. 7","Kendrick Lamar",2025],
+  [49,"Todo de Ti 2025","Rauw Alejandro",2025],
+  [50,"Forever","NBA YoungBoy",2025],
+  [51,"Incomprehensible","Big Thief",2025],
+  [52,"Shake It to the Max (Remix)","Moliy and Silent Addy feat. Shenseea and Skillibeng",2025],
+  [53,"One of the Greats","Florence and the Machine",2025],
+  [54,"Straight Line Was a Lie","The Beths",2025],
+  [55,"Marlboro Rojo","Fuerza Regida",2025],
+  [56,"Dark Thoughts","Lil Tecca",2025],
+  [57,"Nice","2hollis",2025],
+  [58,"Talk Olympics","Obongjayar feat. Little Simz",2025],
+  [59,"Cuntology 101","Lambrini Girls",2025],
+  [60,"Anxiety","Doechii",2025],
+  [61,"Picture Window","Japanese Breakfast",2025],
+  [62,"Gabriela","Katseye",2025],
+  [63,"Everybody Knows I\'m Sad","Marina",2025],
+  [64,"High on the Hog","Hailey Whitters",2025],
+  [65,"Verano Rosa","Karol G and Feid",2025],
+  [66,"Ladida","Rochelle Jordan",2025],
+  [67,"Mangetout","Wet Leg",2025],
+  [68,"Crush","AJ Tracey feat. Jorja Smith",2025],
+  [69,"L.O.A.T","Veeze",2025],
+  [70,"Bovine Excision","Samia",2025],
+  [71,"Morena","Neton Vega and Peso Pluma",2025],
+  [72,"Julia\'s War","Hotline TNT",2025],
+  [73,"All the Way","BigXthaPlug feat. Bailey Zimmerman",2025],
+  [74,"Rich Sinners","Skrilla feat. Lil Yachty",2025],
+  [75,"A Bug\'s Life","Sudan Archives",2025],
+  [76,"Mourners","Trupa Trupa",2025],
+  [77,"The Trial","Ghostface Killah Raekwon Method Man and GZA",2025],
+  [78,"Wassup","Young Miko",2025],
+  [79,"777","Illuminati Hotties",2025],
+  [80,"Laho","Shallipopi",2025],
+  [81,"You Got Time and I Got Money","Smerz",2025],
+  [82,"This Is Real","Feeble Little Horse",2025],
+  [83,"Sue Me","Audrey Hobert",2025],
+  [84,"Sugar on My Tongue","Tyler the Creator",2025],
+  [85,"Payroll","Muddy feat. Xpert Productions",2025],
+  [86,"Past Lives","Jay Som feat. Hayley Williams",2025],
+  [87,"Luckiest Man Alive","Hardy",2025],
+  [88,"Somebody","Latto",2025],
+  [89,"Bookends","U.S. Girls",2025],
+  [90,"I Sit in Parks","Kelsea Ballerini",2025],
+  [91,"Run It Up","Hanumankind",2025],
+  [92,"Loco","Neton Vega",2025],
+  [93,"Burning Moonlight","Marianne Faithfull",2025],
+  [94,"Westerberg","Blood Orange feat. Eva Tolkin and Liam Benzvi",2025],
+  [95,"Lost in Translation","Carin Leon and Kacey Musgraves",2025],
+  [96,"Understand","Lord Sko feat. Currens$y",2025],
+  [97,"Sugar in the Tank","Julien Baker and Torres",2025],
+  [98,"How Does It Feel","The Kid Laroi",2025],
+  [99,"Into Dust (Still Falling)","Four Tet",2025],
+  [100,"End of the World","Miley Cyrus",2025],
+];
+
+var FEAT = [
+  ["fc-1","Lady Gaga","Abracadabra"],
+  ["fc-2","MJ Lenderman and This Is Lorelei","Dancing in the Club"],
+  ["fc-3","HUNTR/X from KPop Demon Hunters","Golden"],
+  ["fc-4","Bad Bunny","Baile Inolvidable"],
+  ["fc-5","Kehlani","Folded"],
+  ["fc-6","Sabrina Carpenter","Manchild"],
+  ["fc-7","YoungBoy Never Broke Again","Shot Callin"],
+  ["fc-8","Taylor Swift","The Fate of Ophelia"],
+  ["fc-9","Kendrick Lamar and SZA","Luther"],
+  ["fc-10","Chappell Roan","The Subway"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+loadArt(document.getElementById("hero-cover"), "Lady Gaga", "Abracadabra");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var track  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[key] = count; renderScrobble(el, count);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

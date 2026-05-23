@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Hip-Hop Songs — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">1979–2011</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/100-greatest-hip-hop-songs-of-all-time-105784/" target="_blank" class="page-title">100 GREATEST HIP-HOP SONGS</a>
+  <p class="page-sub">De Grandmaster Flash y Sugarhill Gang a Kanye West y Jay-Z · El canon del hip-hop según Rolling Stone · 2012</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I'm Good (Blue) – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2019</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Hip-Hop Songs compilados por Digital Dream Door — basados en impacto, influencia y popularidad. Solo el top 100 de una lista que DDD extiende hasta 200. Al #1: Get Up (I Feel Like Being a Sex Machine) de James Brown (1970) — la canción más sampledada de la historia del hip-hop, grabada por James Brown con su nueva banda que incluía a Bootsy Collins en bajo. Al #2: Papa's Got a Brand New Bag (1965) — el momento exacto en que James Brown inventó el funk. Al #3: Thank You de Sly &amp; The Family Stone (1970). Al #4: Tear the Roof Off the Sucker de Parliament (1976). Una genealogía musical que conecta el soul de los 60s con el hip-hop de los 90s a través del groove.</p>
+    <p class="rtext">Public Enemy y N.W.A. aparecen 3 veces cada uno. Jay-Z lidera con 5 entradas. The Notorious B.I.G. con 4, Eminem con 3, Run-DMC con 3, Outkast con 3. La lista está dominada por la era dorada del hip-hop (1987–1998) — solo dos canciones de 2010 en adelante. La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="The Message">
+    <div>
+      <div class="feat-title">The Message</div>
+      <div class="feat-artist">Grandmaster Flash & The Furious Five &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Electro Funk</span></div>
+      <p class="feat-rev">La primera gran canción de hip-hop sobre la realidad de las ciudades americanas — siete minutos sobre el desempleo, la violencia y la desesperación del South Bronx narrados sobre un groove de P-Funk. Melle Mel y Duke Bootee escribieron las letras; Grandmaster Flash puso los platos. 'Don't push me 'cause I'm close to the edge' se convirtió en la frase más citada del hip-hop de los 80s. RS la coloca al #1 como reconocimiento de que fue la primera canción que demostró que el hip-hop podía hablar de política y realidad social con la misma fuerza que el soul o el blues.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Rapper's Delight">
+    <div>
+      <div class="feat-title">Rapper's Delight</div>
+      <div class="feat-artist">Sugarhill Gang &middot; 1979</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Disco Rap</span></div>
+      <p class="feat-rev">El primer hit de hip-hop en las listas pop — quince minutos de rap sobre el bassline de Good Times de Chic que llevó el género del South Bronx al mainstream americano en 1979. Wonder Mike, Big Bank Hank y Master Gee no eran los MCs más respetados del barrio, pero Sylvia Robinson de Sugar Hill Records los captó en el momento justo. La canción llegó al top 40 en Estados Unidos y al top 10 en varios países europeos — la primera vez que el mundo oyó hablar de hip-hop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Planet Rock">
+    <div>
+      <div class="feat-title">Planet Rock</div>
+      <div class="feat-artist">Afrika Bambaataa & The Soulsonic Force &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Electro / Hip-Hop</span></div>
+      <p class="feat-rev">Afrika Bambaataa tomó el sintetizador de Trans-Europe Express de Kraftwerk y lo fusionó con una caja de ritmos Roland TR-808 y el flow de los MCs del South Bronx — e inventó el electro-funk y en gran medida toda la producción de dance electrónico que vendría después. Planet Rock es la canción puente entre el hip-hop de los orígenes y el dance electrónico moderno. Sin Planet Rock no existe el house, el techno, ni el EDM contemporáneo en su forma actual.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Sucker MCs">
+    <div>
+      <div class="feat-title">Sucker MCs</div>
+      <div class="feat-artist">Run-DMC &middot; 1983</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Rap Rock</span></div>
+      <p class="feat-rev">El momento en que el hip-hop se convirtió en rock. Run-DMC eliminaron los instrumentos en vivo y los samples de soul — solo cajas de ritmos y scratches — y raparon sobre esa base desnuda con una agresividad que no tenía precedentes en el género. Sucker MCs definió el sonido del hip-hop de los 80s y estableció el modelo que docenas de artistas seguirían durante la siguiente década. La primera gran declaración de que el hip-hop no necesitaba al R&B para existir.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Mind Playin' Tricks on Me">
+    <div>
+      <div class="feat-title">Mind Playin' Tricks on Me</div>
+      <div class="feat-artist">Geto Boys &middot; 1991</div>
+      <div class="feat-meta"><span class="feat-pill">Gangsta Rap / Southern Hip-Hop</span></div>
+      <p class="feat-rev">La canción de hip-hop más honesta sobre la salud mental hasta ese momento: Scarface, Willie D y Bushwick Bill describiendo la paranoia, las alucinaciones y la disociación que produce vivir en los barrios violentos de Houston con una precisión clínica y una honestidad que ningún rap anterior había intentado. Mind Playin' Tricks on Me es la canción que convirtió al Sur de Estados Unidos en una voz legítima del hip-hop y que abrió la conversación sobre la salud mental en el género décadas antes de que fuera un tema mainstream.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Nuthin' but a 'G' Thang">
+    <div>
+      <div class="feat-title">Nuthin' but a 'G' Thang</div>
+      <div class="feat-artist">Dr. Dre feat. Snoop Doggy Dogg &middot; 1992</div>
+      <div class="feat-meta"><span class="feat-pill">G-Funk / West Coast Hip-Hop</span></div>
+      <p class="feat-rev">La canción que inventó el G-Funk y convirtió a Snoop Dogg en la mayor estrella del hip-hop de 1992 antes de que tuviera un álbum. El groove de Leon Hazel convertido en el loop más bailable del West Coast — Dre produciendo algo que sonaba completamente nuevo y completamente californiano al mismo tiempo. The Chronic fue el álbum del año; Nuthin' but a 'G' Thang fue su canción definitoria. El modelo de producción que dominó el hip-hop durante los siguientes cinco años.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Fight the Power">
+    <div>
+      <div class="feat-title">Fight the Power</div>
+      <div class="feat-artist">Public Enemy &middot; 1989</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Rap</span></div>
+      <p class="feat-rev">Spike Lee le pidió a Public Enemy una canción para Do the Right Thing que fuera 'demasiado larga, demasiado fuerte y demasiado opinionated'. Chuck D y Flavor Flav le entregaron la declaración política más poderosa de la historia del hip-hop: cuatro minutos de agitación sobre la brutalidad policial, el racismo sistémico y la resistencia negra. La cita a Elvis Presley y John Wayne como 'motherfuckers' fue polémica inmediata. La canción sigue siendo el himno definitivo del hip-hop como herramienta de cambio social.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Juicy">
+    <div>
+      <div class="feat-title">Juicy</div>
+      <div class="feat-artist">The Notorious B.I.G. &middot; 1994</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / East Coast</span></div>
+      <p class="feat-rev">Christopher Wallace narrandose a sí mismo — de crecer en Bed-Stuy en la pobreza a convertirse en la voz más importante del hip-hop de los 90s. Juicy es autobiográfica en el sentido más literal: los nombres reales, los lugares reales, las memorias reales de alguien que pasó de trapichear en la esquina a grabar en los estudios más costosos de Nueva York. La producción de Puffy sobre el sample de Juicy Fruit de Mtume es el groove perfecto para una historia de ascenso que nunca suena arrogante — solo honesta.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Straight Outta Compton">
+    <div>
+      <div class="feat-title">Straight Outta Compton</div>
+      <div class="feat-artist">N.W.A. &middot; 1988</div>
+      <div class="feat-meta"><span class="feat-pill">Gangsta Rap</span></div>
+      <p class="feat-rev">El manifiesto fundacional del gangsta rap: Ice Cube, MC Ren, Eazy-E y Dr. Dre describiendo la vida en Compton con una violencia y una precisión que la radio americana nunca había escuchado. El FBI le envió una carta al sello Ruthless Records expresando su preocupación por la letra. La canción fue prohibida en innumerables estaciones. Vendió tres millones de copias sin airplay commercial. Straight Outta Compton demostró que el hip-hop podía crear mercado propio completamente al margen del establishment mediático.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Paid in Full">
+    <div>
+      <div class="feat-title">Paid in Full</div>
+      <div class="feat-artist">Eric B. & Rakim &middot; 1987</div>
+      <div class="feat-meta"><span class="feat-pill">Hip-Hop / Jazz Rap</span></div>
+      <p class="feat-rev">Rakim Allah redefiniendo lo que significaba ser un MC: flow sincopado, rimas internas complejas, metáforas elaboradas y una presencia vocal fría que contrastaba con el braggadocio exuberante de sus contemporáneos. Paid in Full no era la canción más comercial de 1987 pero era la más técnicamente avanzada — el MF DOOM, el Kendrick Lamar, el Jay-Z del futuro llevan todos el ADN de lo que Rakim hizo en este track. Eric B. construyó el sample de Isley Brothers sobre el que Rakim escribió la nueva gramática del rap.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/100-greatest-hip-hop-songs-of-all-time-105784/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"The Message","Grandmaster Flash & The Furious Five",1982],
+  [2,"Rapper\'s Delight","Sugarhill Gang",1979],
+  [3,"Planet Rock","Afrika Bambaataa & The Soulsonic Force",1982],
+  [4,"Sucker MCs","Run-DMC",1983],
+  [5,"Mind Playin\' Tricks on Me","Geto Boys",1991],
+  [6,"Nuthin\' but a \'G\' Thang","Dr. Dre feat. Snoop Doggy Dogg",1992],
+  [7,"Fight the Power","Public Enemy",1989],
+  [8,"Juicy","The Notorious B.I.G.",1994],
+  [9,"Straight Outta Compton","N.W.A.",1988],
+  [10,"Paid in Full","Eric B. & Rakim",1987],
+  [11,"C.R.E.A.M.","Wu-Tang Clan",1994],
+  [12,"They Reminisce Over You (T.R.O.Y.)","Pete Rock & CL Smooth",1992],
+  [13,"La Di Da Di","Doug E. Fresh & Slick Rick",1985],
+  [14,"Rebel Without a Pause","Public Enemy",1987],
+  [15,"F*** tha Police","N.W.A.",1988],
+  [16,"Big Pimpin\'","Jay-Z feat. UGK",2000],
+  [17,"Peter Piper","Run-DMC",1986],
+  [18,"Dear Mama","2Pac",1995],
+  [19,"Paul Revere","Beastie Boys",1986],
+  [20,"In Da Club","50 Cent",2003],
+  [21,"Rock the Bells","LL Cool J",1985],
+  [22,"Strictly Business","EPMD",1988],
+  [23,"I Know You Got Soul","Eric B. & Rakim",1987],
+  [24,"It Takes Two","Rob Base & DJ E-Z Rock",1988],
+  [25,"Ain\'t No Half-Steppin\'","Big Daddy Kane",1988],
+  [26,"Scenario","A Tribe Called Quest feat. Leaders of the New School",1991],
+  [27,"Flava in Ya Ear (Remix)","Craig Mack feat. Notorious B.I.G., LL Cool J & Busta Rhymes",1994],
+  [28,"Lose Yourself","Eminem",2002],
+  [29,"Mama Said Knock You Out","LL Cool J",1990],
+  [30,"Hypnotize","The Notorious B.I.G.",1997],
+  [31,"New York State of Mind","Nas",1994],
+  [32,"Jesus Walks","Kanye West",2004],
+  [33,"99 Problems","Jay-Z",2004],
+  [34,"PSK - What Does It Mean?","Schoolly D",1985],
+  [35,"Shook Ones, Pt. 2","Mobb Deep",1995],
+  [36,"It Was a Good Day","Ice Cube",1992],
+  [37,"Rosa Parks","Outkast",1998],
+  [38,"Get Ur Freak On","Missy Elliott",2001],
+  [39,"My Name Is","Eminem",1999],
+  [40,"The Breaks","Kurtis Blow",1980],
+  [41,"California Love","2Pac feat. Dr. Dre & Roger Troutman",1996],
+  [42,"South Bronx","Boogie Down Productions",1986],
+  [43,"Top Billin\'","Audio Two",1987],
+  [44,"Me Myself and I","De La Soul",1989],
+  [45,"Lost Ones","Lauryn Hill",1998],
+  [46,"Push It","Salt-N-Pepa",1987],
+  [47,"That\'s the Joint","Funky 4+1",1980],
+  [48,"The Symphony","Marley Marl",1988],
+  [49,"The Adventures of Grandmaster Flash on the Wheels of Steel","Grandmaster Flash & The Furious Five",1981],
+  [50,"B.O.B.","Outkast",2000],
+  [51,"Bring the Noise","Public Enemy",1987],
+  [52,"Big Poppa","The Notorious B.I.G.",1994],
+  [53,"King of Rock","Run-DMC",1985],
+  [54,"Gin & Juice","Snoop Doggy Dogg",1993],
+  [55,"White Lines (Don\'t Don\'t Do It)","Grandmaster Flash & Melle Mel",1983],
+  [56,"Grindin\'","Clipse",2002],
+  [57,"Passin\' Me By","The Pharcyde",1992],
+  [58,"Stan","Eminem feat. Dido",2000],
+  [59,"The Show","Doug E. Fresh & The Get Fresh Crew",1985],
+  [60,"Hold It Now, Hit It","Beastie Boys",1986],
+  [61,"Deep Cover","Dr. Dre feat. Snoop Doggy Dogg",1992],
+  [62,"How I Could Just Kill a Man","Cypress Hill",1991],
+  [63,"The Choice Is Yours (Revisited)","Black Sheep",1991],
+  [64,"Baby Got Back","Sir Mix-A-Lot",1992],
+  [65,"A Milli","Lil Wayne",2008],
+  [66,"6 in the Mornin\'","Ice-T",1986],
+  [67,"What You Know","T.I.",2006],
+  [68,"Hip-Hop","Dead Prez",2000],
+  [69,"Monster","Kanye West feat. Rick Ross, Jay-Z, Nicki Minaj & Bon Iver",2010],
+  [70,"Brooklyn Zoo","Ol\' Dirty Bastard",1995],
+  [71,"N***as in Paris","Jay-Z & Kanye West",2011],
+  [72,"Protect Ya Neck","Wu-Tang Clan",1992],
+  [73,"Ms. Jackson","Outkast",2000],
+  [74,"Mass Appeal","Gang Starr",1994],
+  [75,"Ante Up","M.O.P.",2000],
+  [76,"Children\'s Story","Slick Rick",1988],
+  [77,"Can I Kick It?","A Tribe Called Quest",1991],
+  [78,"Ego Trippin\'","Ultramagnetic MCs",1988],
+  [79,"Beat Bop","Rammellzee and K-Rob",1983],
+  [80,"O.P.P.","Naughty By Nature",1991],
+  [81,"It Ain\'t Hard to Tell","Nas",1994],
+  [82,"Ice Cream","Raekwon",1995],
+  [83,"Freaky Tales","Too $hort",1987],
+  [84,"Roxanne, Roxanne","UTFO",1984],
+  [85,"Roxanne\'s Revenge","Roxanne Shanté",1984],
+  [86,"Money Ain\'t a Thang","Jermaine Dupri feat. Jay-Z",1998],
+  [87,"The Humpty Dance","Digital Underground",1990],
+  [88,"The Bridge","MC Shan",1986],
+  [89,"International Players Anthem (I Choose You)","UGK feat. Outkast",2007],
+  [90,"Just a Friend","Biz Markie",1989],
+  [91,"B.M.F. (Blowin\' Money Fast)","Rick Ross feat. Styles P",2010],
+  [92,"Bling Bling","B.G. feat. Big Tymers & Hot Boyz",1999],
+  [93,"\'93 \'Til Infinity","Souls of Mischief",1993],
+  [94,"The Rain (Supa Dupa Fly)","Missy Elliott",1997],
+  [95,"Tha Crossroads","Bone Thugs-N-Harmony",1996],
+  [96,"Slow Down","Brand Nubian",1990],
+  [97,"Empire State of Mind","Jay-Z feat. Alicia Keys",2009],
+  [98,"Paper Planes","M.I.A.",2007],
+  [99,"Get Low","Lil Jon & The East Side Boyz",2003],
+  [100,"Cars with the Boom","L\'Trimm",1988],
+];
+
+var FEAT = [
+  ["fc-1","Grandmaster Flash Furious Five","The Message"],
+  ["fc-2","Sugarhill Gang","Rapper\'s Delight"],
+  ["fc-3","Afrika Bambaataa Soulsonic Force","Planet Rock"],
+  ["fc-4","Run DMC","Sucker MCs"],
+  ["fc-5","Geto Boys","Mind Playin Tricks on Me"],
+  ["fc-6","Dr Dre Snoop Dogg","Nuthin But A G Thang"],
+  ["fc-7","Public Enemy","Fight the Power"],
+  ["fc-8","The Notorious BIG","Juicy"],
+  ["fc-9","NWA","Straight Outta Compton"],
+  ["fc-10","Eric B Rakim","Paid in Full"],
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Grandmaster Flash Furious Five","The Message");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

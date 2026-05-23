@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Power Pop Songs — Digital Dream Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1963–2003</span>
+  </div>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-Power-Pop.html" target="_blank" class="page-title">100 GREATEST POWER POP SONGS</a>
+  <p class="page-sub">De Badfinger y Big Star a Cheap Trick y Blondie · Guitarra jangly, melodías irresistibles, sin pretensiones · Editado por Brett Alan · 2017</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="No Matter What – Badfinger">
+    <p class="cover-cap">DIGITAL DREAM DOOR · 2017</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Power Pop Songs compilados por Brett Alan para Digital Dream Door, última actualización junio de 2017. Criterio: canciones elegidas por representar mejor el género, junto con su popularidad entre los fans, impacto en el género y calidad general. Definición: el Power Pop hace referencia a canciones pop directas, jangly y basadas en guitarra, con poca pretensión o ironía. El género tiene sus raíces en los 60s pero no fue definido como tal hasta principios de los 70s. Al #1: No Matter What de Badfinger (1970) — la canción que más perfectamente captura todo lo que el power pop puede ser: un riff de guitarra brillante, una melodía que no se puede sacar de la cabeza y una producción tan limpia que parece inevitable.</p>
+    <p class="rtext">Los artistas más representados: Beatles (4 entradas), Raspberries (3), Searchers (3), Bangles (2), Marshall Crenshaw (3), Big Star (2), Who (2), Byrds (2), Cheap Trick (2), Teenage Fanclub (2). Una lista que funciona como arqueología del pop: desde los Searchers y los Byrds en 1964-65 hasta Fountains of Wayne en 2003, pasando por todos los momentos en que el rock decidió que la melodía era suficiente argumento. Plays: tus reproducciones de Last.fm por canción.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="No Matter What">
+    <div>
+      <div class="feat-title">No Matter What</div>
+      <div class="feat-artist">Badfinger &middot; 1970</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop</span></div>
+      <p class="feat-rev">Pete Ham escribió la canción perfecta del power pop: un riff de guitarra que suena a los Beatles sin serlo, una melodía de coro que se instala inmediatamente y una producción de Todd Rundgren tan limpia que parece transparente. Badfinger fue la primera banda firmada por Apple Records después de los propios Beatles — y No Matter What demostró que podían estar a la altura. La tragedia posterior de Ham y Tom Evans (ambos murieron por suicidio) hace la canción todavía más resonante.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="September Gurls">
+    <div>
+      <div class="feat-title">September Gurls</div>
+      <div class="feat-artist">Big Star &middot; 1974</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / Jangle Pop</span></div>
+      <p class="feat-rev">Alex Chilton escribió la canción más influyente que nadie escuchó en su momento. Radio City (1974) vendió casi nada cuando se publicó — pero cada banda de indie pop de los 80s y 90s lo tenía como referencia fundamental. September Gurls es el poder pop en su estado más puro y más melancólico: una guitarra jangly, una melodía de ensueño y una letra sobre el amor perdido que suena al mismo tiempo eufórica y devastada.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Go All The Way">
+    <div>
+      <div class="feat-title">Go All The Way</div>
+      <div class="feat-artist">Raspberries &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / Glam</span></div>
+      <p class="feat-rev">Eric Carmen y los Raspberries construyeron sobre los Beatles más eléctricos el primer gran hit del power pop de los 70s. Go All The Way llegó al #5 del Hot 100 en 1972 — un momento en que el rock era o bien arena rock o bien singer-songwriter, y los Raspberries insistieron en que los tres minutos de melodía pura también eran válidos. Carmen luego haría All By Myself, pero este es su legado real.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Please Please Me">
+    <div>
+      <div class="feat-title">Please Please Me</div>
+      <div class="feat-artist">The Beatles &middot; 1963</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / Beat</span></div>
+      <p class="feat-rev">La canción que inventó el género sin saber que lo estaba inventando. Lennon y McCartney comprimieron toda la energía del rock and roll en dos minutos y catorce segundos con una armónica en la intro que suena a urgencia pura. Please Please Me fue el segundo single de los Beatles en Reino Unido y el primero en llegar al #1 — el momento exacto en que el pop inglés decidió que podía ser más rápido, más eléctrico y más inmediato que cualquier cosa anterior.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="The Kids Are Alright">
+    <div>
+      <div class="feat-title">The Kids Are Alright</div>
+      <div class="feat-artist">The Who &middot; 1965</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / Mod Rock</span></div>
+      <p class="feat-rev">Pete Townshend escribió el primer himno generacional del power pop — una declaración de que los jóvenes están bien, que no necesitan la aprobación de nadie y que tienen sus propias canciones. La guitarra rítmica de Townshend golpeando con esa ferocidad controlada y la voz de Daltrey con convicción total. The Who podían ser ópera rock y podían ser esto — y esto era tan perfecto como aquello.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Starry Eyes">
+    <div>
+      <div class="feat-title">Starry Eyes</div>
+      <div class="feat-artist">Records &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / New Wave</span></div>
+      <p class="feat-rev">Los Records fueron la quintaesencia de la banda de power pop británica del new wave — nunca tuvieron el hit que merecían pero influyeron en todo el género. Starry Eyes captura ese momento de 1978 en que el punk había abierto la puerta y el power pop se coló por ella: guitarras brillantes, armonías vocales perfectas y una melodía de coro que hace que todo parezca fácil cuando no lo es en absoluto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="When You Walk In The Room">
+    <div>
+      <div class="feat-title">When You Walk In The Room</div>
+      <div class="feat-artist">Searchers &middot; 1964</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / Beat</span></div>
+      <p class="feat-rev">Jackie DeShannon escribió la canción y los Searchers la convirtieron en el mejor ejemplo de guitarra jangly de la Invasión Británica. El riff de doce cuerdas de los Searchers fue el sonido que los Byrds adoptarían un año después y que definiría el folk rock americano — pero los Searchers llegaron antes. When You Walk In The Room es el modelo exacto de lo que el power pop intenta hacer: hacer que algo complejo suene inevitable.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="I Am The Cosmos">
+    <div>
+      <div class="feat-title">I Am The Cosmos</div>
+      <div class="feat-artist">Chris Bell &middot; 1977</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / Art Rock</span></div>
+      <p class="feat-rev">Grabada en 1974 pero publicada en 1977, I Am The Cosmos es el testamento póstumo de Chris Bell — el cofundador de Big Star que murió en un accidente de coche en 1978. Una canción sobre búsqueda espiritual y desesperación personal que suena a ambas cosas simultáneamente, con una producción de capas de guitarra que anticipa el dream pop. El poder pop más oscuro y más bello de la lista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="I'll Feel A Whole Lot Better">
+    <div>
+      <div class="feat-title">I'll Feel A Whole Lot Better</div>
+      <div class="feat-artist">Byrds &middot; 1965</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / Folk Rock</span></div>
+      <p class="feat-rev">Gene Clark escribió la mejor canción de los Byrds que no fue un hit — y probablemente la mejor canción de desamor del folk rock americano de los 60s. La guitarra de doce cuerdas de McGuinn sobre el ritmo de Clark, la armonía vocal perfecta y una letra que combina amargura y alivio en proporciones exactas. Tom Petty la versionó en 1989 y dijo que era la canción que más deseaba haber escrito.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Cynical Girl">
+    <div>
+      <div class="feat-title">Cynical Girl</div>
+      <div class="feat-artist">Marshall Crenshaw &middot; 1982</div>
+      <div class="feat-meta"><span class="feat-pill">Power Pop / New Wave</span></div>
+      <p class="feat-rev">Marshall Crenshaw llegó en 1982 con el álbum de power pop más perfecto de la década y nadie lo escuchó suficientemente. Cynical Girl tiene todo lo que el género necesita: una melodía de intro que entra sola, una voz que suena directa sin esfuerzo y una producción tan transparente que desaparece detrás de las canciones. Crenshaw tuvo solo un hit (Someday, Someway) pero su álbum debut es el estándar del power pop de los 80s.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas por ranking Digital Dream Door</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES · 1963–2003</span>
+  <a href="https://digitaldreamdoor.com/pages/best_songs-Power-Pop.html" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"No Matter What","Badfinger",1970],
+  [2,"September Gurls","Big Star",1974],
+  [3,"Go All The Way","Raspberries",1972],
+  [4,"Please Please Me","Beatles",1963],
+  [5,"The Kids Are Alright","Who",1965],
+  [6,"Starry Eyes","Records",1978],
+  [7,"When You Walk In The Room","Searchers",1964],
+  [8,"I Am The Cosmos","Chris Bell",1977],
+  [9,"I'll Feel A Whole Lot Better","Byrds",1965],
+  [10,"Cynical Girl","Marshall Crenshaw",1982],
+  [11,"Love Grows","Edison Lighthouse",1970],
+  [12,"I Wanna Be With You","Raspberries",1972],
+  [13,"Dover Beach","Bangles",1984],
+  [14,"What I Like About You","Romantics",1979],
+  [15,"Lies","Knickerbockers",1965],
+  [16,"Girl Don't Tell Me","Beach Boys",1965],
+  [17,"Friday On My Mind","Easybeats",1966],
+  [18,"Baby Blue","Badfinger",1971],
+  [19,"My Sharona","Knack",1979],
+  [20,"I've Been Waiting","Matthew Sweet",1991],
+  [21,"Cruel To Be Kind","Nick Lowe",1979],
+  [22,"There She Goes","La's",1988],
+  [23,"Needles And Pins","Searchers",1964],
+  [24,"The Breakup Song (They Don't Write Em)","Greg Kihn Band",1981],
+  [25,"Rock And Roll Girl","Paul Collins Beat",1979],
+  [26,"What You Do To Me","Teenage Fanclub",1991],
+  [27,"If I Needed Someone","Beatles",1965],
+  [28,"If We Never Meet Again","Reckless Sleepers",1988],
+  [29,"Red Rubber Ball","Cyrkle",1966],
+  [30,"Southern Girls","Cheap Trick",1977],
+  [31,"The Way","Fastball",1998],
+  [32,"Ever Fallen In Love","Buzzcocks",1978],
+  [33,"Just A Smile","Pilot",1974],
+  [34,"She's Not There","Zombies",1964],
+  [35,"Baby's Coming Back","Jellyfish",1990],
+  [36,"Another Girl, Another Planet","Only Ones",1978],
+  [37,"I Can't Let Go","Hollies",1966],
+  [38,"I Only Want To Be With You","Dusty Springfield",1963],
+  [39,"We Got The Beat","Go-Gos",1981],
+  [40,"Girl Of My Dreams","Bram Tchaikovsky",1979],
+  [41,"The Trains","Nashville Ramblers",1986],
+  [42,"Ballad Of El Goodo","Big Star",1972],
+  [43,"Someday Someway","Marshall Crenshaw",1982],
+  [44,"And Your Bird Can Sing","Beatles",1966],
+  [45,"Baby It's Cold Outside","Pezband",1977],
+  [46,"What Do All The People Know","Monroes",1982],
+  [47,"She May Call You Up Tonight","Left Banke",1967],
+  [48,"Behind The Wall Of Sleep","Smithereens",1986],
+  [49,"Look Through Any Window","Hollies",1965],
+  [50,"Live","Merry-Go-Round",1967],
+  [51,"A Million Miles Away","Plimsouls",1982],
+  [52,"Precious To Me","Phil Seymour",1981],
+  [53,"Tonight","Raspberries",1973],
+  [54,"Seems So","Apples In Stereo",1997],
+  [55,"Making Time","Creation",1966],
+  [56,"Pulling Mussels (From The Shell)","Squeeze",1980],
+  [57,"Goody Goody Gumdrops","1910 Fruitgum Company",1968],
+  [58,"Shake Some Action","Flamin' Groovies",1976],
+  [59,"Solar Sister","Posies",1993],
+  [60,"Fresh As A Daisy","Emitt Rhodes",1970],
+  [61,"Just A Little","Beau Brummels",1964],
+  [62,"That Thing You Do!","Wonders",1996],
+  [63,"Hearts In Her Eyes","Searchers",1979],
+  [64,"Surrender","Cheap Trick",1978],
+  [65,"I Can't Explain","Who",1965],
+  [66,"Whenever You're On My Mind","Marshall Crenshaw",1983],
+  [67,"I Wanna Be Your Boyfriend","Rubinoos",1979],
+  [68,"Senses Working Overtime","XTC",1982],
+  [69,"Don't Worry Baby","Beach Boys",1964],
+  [70,"Rock And Roll Love Letter","Tim Moore",1975],
+  [71,"This Beat Goes On / Switchin' To Glide","Kings",1980],
+  [72,"I'm On Fire","Dwight Twilley Band",1975],
+  [73,"James","Bangles",1984],
+  [74,"Saturday Night","Bay City Rollers",1974],
+  [75,"Dreaming","Blondie",1979],
+  [76,"The Concept","Teenage Fanclub",1991],
+  [77,"I Got You","Split Enz",1980],
+  [78,"Til I Hear It From You","Gin Blossoms",1995],
+  [79,"Couldn't I Just Tell You","Todd Rundgren",1972],
+  [80,"Back Of My Hand","Jags",1979],
+  [81,"Fox On The Run","Sweet",1975],
+  [82,"Girlfriend","Matthew Sweet",1991],
+  [83,"She Don't Care About Time","Byrds",1965],
+  [84,"Hanging On The Telephone","Nerves",1976],
+  [85,"Daydream Believer","Monkees",1967],
+  [86,"Little Mascara","Replacements",1985],
+  [87,"Teenage Kicks","Undertones",1978],
+  [88,"Open My Eyes","Nazz",1968],
+  [89,"Big Brown Eyes","dBs",1982],
+  [90,"Tomorrow Night","Shoes",1979],
+  [91,"Hackensack","Fountains Of Wayne",2003],
+  [92,"Outside Chance","Turtles",1966],
+  [93,"Yellow Pills","20/20",1979],
+  [94,"Get Your Radio","Secrets",1979],
+  [95,"Golden Blunders","Posies",1990],
+  [96,"I'm Into Something Good","Herman's Hermits",1964],
+  [97,"Getting Closer","Wings",1979],
+  [98,"(I'd Go The) Whole Wide World","Wreckless Eric",1977],
+  [99,"Do Anything You Wanna Do","Eddie & The Hot Rods",1977],
+  [100,"Teacher Teacher","Rockpile",1980]
+];
+
+var FEAT=[
+  ["fc-1","Badfinger","No Matter What"],
+  ["fc-2","Big Star","September Gurls"],
+  ["fc-3","Raspberries","Go All The Way"],
+  ["fc-4","Beatles","Please Please Me"],
+  ["fc-5","The Who","The Kids Are Alright"],
+  ["fc-6","Records","Starry Eyes"],
+  ["fc-7","The Searchers","When You Walk In The Room"],
+  ["fc-8","Chris Bell","I Am The Cosmos"],
+  ["fc-9","The Byrds","Ill Feel A Whole Lot Better"],
+  ["fc-10","Marshall Crenshaw","Cynical Girl"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Badfinger","No Matter What");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+</script>
+</body>
+</html>

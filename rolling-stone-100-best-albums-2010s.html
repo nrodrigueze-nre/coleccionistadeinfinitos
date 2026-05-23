@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Best Albums of the 2010s — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2019</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-2010s-ranked-913997/" target="_blank" class="page-title">100 BEST ALBUMS OF THE 2010s</a>
+  <p class="page-sub">De Kanye West y Beyoncé a Kendrick Lamar y Frank Ocean · Pop, hip-hop, country e indie de la década más diversa · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="https://upload.wikimedia.org/wikipedia/en/1/1d/KanyeWest_MyBeautifulDarkTwistedFantasy.jpg" alt="My Beautiful Dark Twisted Fantasy – Kanye West">
+    <p class="cover-cap">ROLLING STONE · 2019</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">En los 2010s, los artistas más grandes fueron también algunos de los mayores innovadores: desde Kanye West creando su monumental opus My Beautiful Dark Twisted Fantasy hasta Beyoncé conectando su historia de vida con la historia de la expresión afroamericana en Lemonade, pasando por Chance the Rapper reventando con un mixtape gratuito lleno de realismo psicodélico y Taylor Swift y Kacey Musgraves y Frank Ocean empujando los límites de los géneros conservadores que eventualmente abandonaron por completo. El country tuvo su década más aventurera, el indie-rock regresó a sus raíces gloriosamente desordenadas y el hip-hop evolucionó más rápido que cualquier otro estilo musical.</p>
+    <p class="rtext">Lo que fue tan divertido de los 2010s fue la manera en que tantos artistas de géneros tan distintos parecían beber del mismo pozo de posibilidad abierta, de descubrimiento ocurriendo en tiempo real. David Bowie había estado haciendo música durante casi 50 años cuando Kendrick Lamar lanzó su trabajo magistral To Pimp a Butterfly, pero Bowie, viviendo eternamente en el momento, todavía tomó gran influencia de Kendrick para crear su increíble álbum de despedida Blackstar. Es una lástima que esos dos nunca hayan podido hacer música juntos en la década que vino después.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="https://upload.wikimedia.org/wikipedia/en/1/1d/KanyeWest_MyBeautifulDarkTwistedFantasy.jpg" alt="My Beautiful Dark Twisted Fantasy">
+    <div>
+      <div class="feat-title">My Beautiful Dark Twisted Fantasy</div>
+      <div class="feat-artist">Kanye West</div>
+      <div class="feat-meta"><span class="feat-pill">2010</span></div>
+      <p class="feat-rev">Aguijoneado por el feroz backlash a su colapso en los VMAs de 2009, Kanye se encerró en Hawaii y emergió con el argumento definitivo para su dualidad genio/idiota. Las sesiones secretas en Avex Honolulu Studios vieron a Nicki Minaj, Rick Ross, Justin Vernon y otros entregando actuaciones de carrera bajo las absurdas pero efectivas reglas de la casa de Kanye ("SIN SOMBREROS HIPSTER"... "SIMPLEMENTE CALLA LA BOCA A VECES"). Presidiendo todo estaba el mayor productor de su generación, construyendo su sinfonía de orgullo herido con más de 40 años de música popular, desde el lush falsetto soul de "Devil in a New Dress" hasta el heavy-metal thunder de "Hell of a Life." El mayor álbum de la década según Rolling Stone.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="https://upload.wikimedia.org/wikipedia/en/1/1f/Beyonce_-_Lemonade_%28album%29.png" alt="Lemonade">
+    <div>
+      <div class="feat-title">Lemonade</div>
+      <div class="feat-artist">Beyoncé</div>
+      <div class="feat-meta"><span class="feat-pill">2016</span></div>
+      <p class="feat-rev">El álbum visual más ambicioso de la historia del pop conectó la historia personal de Beyoncé — infidelidad, dolor, reconciliación — con siglos de expresión afroamericana, desde el blues del Delta hasta el bounce de Nueva Orleans, desde el country de Texas hasta el trap de Atlanta. Lemonade llegó sin previo aviso como un especial de HBO de 65 minutos y redefinió lo que un álbum podía ser en la era del streaming. "Formation" es uno de los mayores actos de afirmación política de la historia del pop mainstream, y el álbum completo es la obra cumbre de la artista más completa de su generación.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png" alt="To Pimp a Butterfly">
+    <div>
+      <div class="feat-title">To Pimp a Butterfly</div>
+      <div class="feat-artist">Kendrick Lamar</div>
+      <div class="feat-meta"><span class="feat-pill">2015</span></div>
+      <p class="feat-rev">El mayor trabajo del mayor rapero de su generación: un retrato desgarrador de América y el peligroso lugar de Kendrick en ella, con una hueste de influencias jazzísticas que iban de Thundercat a George Clinton. To Pimp a Butterfly llegó en el momento en que Black Lives Matter estaba cambiando la conversación sobre raza en Estados Unidos, y Kendrick lo capturó todo con una densidad poética y una ambición musical sin precedentes en el hip-hop. "Alright" se convirtió en el himno de un movimiento; el álbum completo es un documento histórico.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="https://upload.wikimedia.org/wikipedia/en/3/3f/Taylor_Swift_-_Red.png" alt="Red">
+    <div>
+      <div class="feat-title">Red</div>
+      <div class="feat-artist">Taylor Swift</div>
+      <div class="feat-meta"><span class="feat-pill">2012</span></div>
+      <p class="feat-rev">El álbum más ecléctico y más emocionalmente deshonesto de Taylor Swift — ecléctico en el mejor sentido, deshonesto también. Red mezcla country, pop, dubstep, folk y rock de arena en un collage de texturas que refleja perfectamente el caos de un corazón roto. "All Too Well" en su versión de diez minutos es la mejor canción que Swift ha escrito — una disección tan precisa de una relación fallida que el objeto de la canción tuvo que salir a responder públicamente. El álbum que convirtió a Taylor Swift de estrella del country en fenómeno cultural global.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="https://upload.wikimedia.org/wikipedia/en/8/86/David_Bowie_-_Blackstar.png" alt="Blackstar">
+    <div>
+      <div class="feat-title">Blackstar</div>
+      <div class="feat-artist">David Bowie</div>
+      <div class="feat-meta"><span class="feat-pill">2016</span></div>
+      <p class="feat-rev">Lanzado dos días antes de su muerte, Blackstar se convirtió instantáneamente en una de las mayores despedidas de la historia del arte. Bowie había estado escuchando a Kendrick Lamar y a los jóvenes músicos de jazz de Nueva York, y creó con ellos algo completamente nuevo a los 69 años — jazz experimental, art-rock y pop de vanguardia mezclados en un testamento que también era una obra maestra. "Lazarus" — "Look up here, I'm in heaven" — resonó diferente al día siguiente de su muerte, y sigue resonando igual de devastador.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="https://upload.wikimedia.org/wikipedia/en/4/4d/Take_Care_%28mixtape%29.jpg" alt="Take Care">
+    <div>
+      <div class="feat-title">Take Care</div>
+      <div class="feat-artist">Drake</div>
+      <div class="feat-meta"><span class="feat-pill">2011</span></div>
+      <p class="feat-rev">El álbum que convirtió a Drake en el artista que definiría la siguiente década del pop: R&B melancólico, rap introspectivo y producción atmosférica que inventó un nuevo estado de ánimo llamado "nocturno urbano." Take Care estableció el tono de todo lo que vendría — el emo-rap, el trap lujoso, las colaboraciones transatlánticas — y lo hizo con una vulnerabilidad que ningún rapero de su estatura había mostrado antes. "Marvins Room" es la llamada de teléfono borracha más honesta que alguien ha convertido en hit.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="https://upload.wikimedia.org/wikipedia/en/5/5c/Melodrama_%28Lorde_album%29.png" alt="Melodrama">
+    <div>
+      <div class="feat-title">Melodrama</div>
+      <div class="feat-artist">Lorde</div>
+      <div class="feat-meta"><span class="feat-pill">2017</span></div>
+      <p class="feat-rev">A los 20 años, Ella Yelich-O'Connor entregó uno de los grandes álbumes de ruptura de la historia del pop. Producido con Jack Antonoff, Melodrama transforma la agonía de una fiesta en la que no quieres estar pero tampoco puedes irse en una obra de arte de synth-pop que evoca al mejor Springsteen en su audacia emocional. "Green Light" es uno de los grandes aperturas de álbum de la década; "Liability" es uno de los momentos de mayor desnudez emocional que el pop mainstream ha permitido. Un álbum de 40 minutos que parece enorme.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png" alt="21">
+    <div>
+      <div class="feat-title">21</div>
+      <div class="feat-artist">Adele</div>
+      <div class="feat-meta"><span class="feat-pill">2011</span></div>
+      <p class="feat-rev">El álbum más vendido de la década en todo el mundo es también uno de los mejores: un disco de desamor construido sobre la voz más poderosa de su generación y canciones de una honestidad y una accesibilidad que raramente coexisten a ese nivel. "Rolling in the Deep," "Someone Like You" y "Set Fire to the Rain" llegaron al número uno en decenas de países simultáneamente. 21 demostró que el mercado masivo todavía tenía espacio para el soul genuino, la vulnerabilidad real y las notas largas sostenidas durante el tiempo que Adele las quisiera sostener.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Golden Hour">
+    <div>
+      <div class="feat-title">Golden Hour</div>
+      <div class="feat-artist">Kacey Musgraves</div>
+      <div class="feat-meta"><span class="feat-pill">2018</span></div>
+      <p class="feat-rev">El álbum que ganó el Grammy al Álbum del Año en 2019 fue también el que demostró que el country podía ser psicodélico, cosmopolita y queer sin dejar de sonar a sí mismo. Kacey Musgraves mezcló country con disco, synth-pop y folk californiano en un álbum bañado en la luz dorada del título — cálido, generoso, expansivo. "Rainbow," "Golden Hour" y "Happy and Sad" son canciones perfectas en el sentido más literal: no tienen un elemento fuera de lugar. El mayor logro artístico de la historia reciente del country mainstream.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg" alt="Blonde">
+    <div>
+      <div class="feat-title">Blonde</div>
+      <div class="feat-artist">Frank Ocean</div>
+      <div class="feat-meta"><span class="feat-pill">2016</span></div>
+      <p class="feat-rev">Cuatro años de espera después de Channel Orange y Frank Ocean entregó el álbum más esquivo, más personal y más ambicioso de la década. Blonde rechaza la estructura convencional de las canciones en favor de fragmentos de memoria, conversaciones a medias y texturas que se disuelven antes de que puedas asirlas. Es un álbum sobre crecer, sobre la sexualidad, sobre los carros y el tiempo libre de la adolescencia americana — y sobre la imposibilidad de capturar nada de eso una vez que ha pasado. Fue publicado en exclusiva en Apple Music un día antes de que su contrato con Def Jam expirara. La libertad suena así.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 ÁLBUMES · 2010–2019</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-2010s-ranked-913997/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var ALBUMS = [
+  [1,"My Beautiful Dark Twisted Fantasy","Kanye West",2010],
+  [2,"Lemonade","Beyonce",2016],
+  [3,"To Pimp a Butterfly","Kendrick Lamar",2015],
+  [4,"Red","Taylor Swift",2012],
+  [5,"Blackstar","David Bowie",2016],
+  [6,"Take Care","Drake",2011],
+  [7,"Melodrama","Lorde",2017],
+  [8,"21","Adele",2011],
+  [9,"Interstate Gospel","Pistol Annies",2018],
+  [10,"This Is Happening","LCD Soundsystem",2010],
+  [11,"Golden Hour","Kacey Musgraves",2018],
+  [12,"Blonde","Frank Ocean",2016],
+  [13,"Yeezus","Kanye West",2013],
+  [14,"Brothers","The Black Keys",2010],
+  [15,"Vibras","J Balvin",2018],
+  [16,"Light Up Gold","Parquet Courts",2012],
+  [17,"Acid Rap","Chance the Rapper",2013],
+  [18,"So Beautiful or So What","Paul Simon",2011],
+  [19,"1989","Taylor Swift",2014],
+  [20,"A Seat at the Table","Solange",2016],
+  [21,"Sometimes I Sit and Think and Sometimes I Just Sit","Courtney Barnett",2015],
+  [22,"A Moon Shaped Pool","Radiohead",2016],
+  [23,"Body Talk","Robyn",2010],
+  [24,"Modern Vampires of the City","Vampire Weekend",2013],
+  [25,"Beyonce","Beyonce",2013],
+  [26,"ANTI","Rihanna",2016],
+  [27,"DAMN.","Kendrick Lamar",2017],
+  [28,"Dark Matter","Randy Newman",2017],
+  [29,"Channel Orange","Frank Ocean",2012],
+  [30,"El Mal Querer","Rosalia",2018],
+  [31,"Coloring Book","Chance the Rapper",2016],
+  [32,"CTRL","SZA",2017],
+  [33,"A Sailor\'s Guide to Earth","Sturgill Simpson",2016],
+  [34,"Platinum","Miranda Lambert",2014],
+  [35,"Tempest","Bob Dylan",2012],
+  [36,"Days Are Gone","Haim",2013],
+  [37,"Hamilton Original Broadway Cast Recording","Various Artists",2015],
+  [38,"Wrecking Ball","Bruce Springsteen",2012],
+  [39,"22 A Million","Bon Iver",2016],
+  [40,"You Want It Darker","Leonard Cohen",2016],
+  [41,"Watch the Throne","Jay-Z and Kanye West",2011],
+  [42,"Emotion","Carly Rae Jepsen",2015],
+  [43,"The Suburbs","Arcade Fire",2010],
+  [44,"American Teen","Khalid",2017],
+  [45,"The Idler Wheel","Fiona Apple",2012],
+  [46,"Celebration Rock","Japandroids",2012],
+  [47,"Random Access Memories","Daft Punk",2013],
+  [48,"Night Time My Time","Sky Ferreira",2013],
+  [49,"Boys and Girls","Alabama Shakes",2012],
+  [50,"The Weight of These Wings","Miranda Lambert",2016],
+  [51,"Harry Styles","Harry Styles",2017],
+  [52,"The Pinkprint","Nicki Minaj",2014],
+  [53,"Dirty Computer","Janelle Monae",2018],
+  [54,"Are We There","Sharon Van Etten",2014],
+  [55,"Egypt Station","Paul McCartney",2018],
+  [56,"Cerulean Salt","Waxahatchee",2013],
+  [57,"St. Vincent","St. Vincent",2014],
+  [58,"Nostalgia Ultra","Frank Ocean",2011],
+  [59,"X 100Pre","Bad Bunny",2018],
+  [60,"Good Kid maad City","Kendrick Lamar",2012],
+  [61,"How Big How Blue How Beautiful","Florence and the Machine",2015],
+  [62,"Cuz I Love You","Lizzo",2019],
+  [63,"If You\'re Reading This It\'s Too Late","Drake",2015],
+  [64,"Art Angels","Grimes",2015],
+  [65,"Blunderbuss","Jack White",2012],
+  [66,"On the Line","Jenny Lewis",2019],
+  [67,"Daytona","Pusha T",2018],
+  [68,"I Love You Honeybear","Father John Misty",2015],
+  [69,"Clean","Soccer Mommy",2018],
+  [70,"The Highwomen","The Highwomen",2019],
+  [71,"Rainbow","Kesha",2017],
+  [72,"Mirror Traffic","Stephen Malkmus and the Jicks",2011],
+  [73,"By The Way I Forgive You","Brandi Carlile",2018],
+  [74,"The Epic","Kamasi Washington",2015],
+  [75,"Chief","Eric Church",2011],
+  [76,"In Colour","Jamie XX",2015],
+  [77,"Psychedelic Pill","Neil Young and Crazy Horse",2012],
+  [78,"Hardwired to Self-Destruct","Metallica",2016],
+  [79,"My Woman","Angel Olsen",2016],
+  [80,"Ghosteen","Nick Cave and the Bad Seeds",2019],
+  [81,"AM","Arctic Monkeys",2013],
+  [82,"Have One on Me","Joanna Newsom",2010],
+  [83,"Whack World","Tierra Whack",2018],
+  [84,"Father of the Bride","Vampire Weekend",2019],
+  [85,"Songs of Innocence","U2",2014],
+  [86,"Ultraviolence","Lana Del Rey",2014],
+  [87,"The Tree of Forgiveness","John Prine",2018],
+  [88,"Tha Tour Part 1","Rich Gang",2014],
+  [89,"Need to Feel Your Love","Sheer Mag",2017],
+  [90,"Call Me Sylvia","Low Cut Connie",2018],
+  [91,"Monster","Future",2014],
+  [92,"A Deeper Understanding","The War on Drugs",2017],
+  [93,"Nick Cave: Ghosteen","Nick Cave and the Bad Seeds",2019],
+  [94,"Good Kid maad City","Kendrick Lamar",2012],
+  [95,"Nostalgia Ultra","Frank Ocean",2011],
+  [96,"Celebration Rock","Japandroids",2012],
+  [97,"The Idler Wheel","Fiona Apple",2012],
+  [98,"Brandi Carlile: By The Way I Forgive You","Brandi Carlile",2018],
+  [99,"Courtney Barnett: Sometimes I Sit and Think","Courtney Barnett",2015],
+  [100,"The War on Drugs: A Deeper Understanding","The War on Drugs",2017],
+];
+
+var FEAT = [
+  ["fc-1","Kanye West","My Beautiful Dark Twisted Fantasy"],
+  ["fc-2","Beyonce","Lemonade"],
+  ["fc-3","Kendrick Lamar","To Pimp a Butterfly"],
+  ["fc-4","Taylor Swift","Red"],
+  ["fc-5","David Bowie","Blackstar"],
+  ["fc-6","Drake","Take Care"],
+  ["fc-7","Lorde","Melodrama"],
+  ["fc-8","Adele","21"],
+  ["fc-9","Kacey Musgraves","Golden Hour"],
+  ["fc-10","Frank Ocean","Blonde"],
+];
+
+var IMG_URLS = {
+  "Kanye West|||My Beautiful Dark Twisted Fantasy": "https://upload.wikimedia.org/wikipedia/en/1/1d/KanyeWest_MyBeautifulDarkTwistedFantasy.jpg",
+  "Beyonce|||Lemonade": "https://upload.wikimedia.org/wikipedia/en/1/1f/Beyonce_-_Lemonade_%28album%29.png",
+  "Kendrick Lamar|||To Pimp a Butterfly": "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",
+  "Taylor Swift|||Red": "https://upload.wikimedia.org/wikipedia/en/3/3f/Taylor_Swift_-_Red.png",
+  "David Bowie|||Blackstar": "https://upload.wikimedia.org/wikipedia/en/8/86/David_Bowie_-_Blackstar.png",
+  "Drake|||Take Care": "https://upload.wikimedia.org/wikipedia/en/4/4d/Take_Care_%28mixtape%29.jpg",
+  "Lorde|||Melodrama": "https://upload.wikimedia.org/wikipedia/en/5/5c/Melodrama_%28Lorde_album%29.png",
+  "Adele|||21": "https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png",
+  "Kacey Musgraves|||Golden Hour": "https://upload.wikimedia.org/wikipedia/en/7/7e/Kacey_Musgraves_-_Golden_Hour.png",
+  "Frank Ocean|||Blonde": "https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg",
+  "Kanye West|||Yeezus": "https://upload.wikimedia.org/wikipedia/en/1/11/Yeezus_album_cover.png",
+  "The Black Keys|||Brothers": "https://upload.wikimedia.org/wikipedia/en/6/64/Theblackkeys-brothers.jpg",
+  "Parquet Courts|||Light Up Gold": "https://upload.wikimedia.org/wikipedia/en/5/50/Parquet_Courts_-_Light_Up_Gold.jpg",
+  "Chance the Rapper|||Acid Rap": "https://upload.wikimedia.org/wikipedia/en/0/05/Chance_the_Rapper_-_Acid_Rap.png",
+  "Taylor Swift|||1989": "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png",
+  "Solange|||A Seat at the Table": "https://upload.wikimedia.org/wikipedia/en/4/4b/Solange_-_A_Seat_at_the_Table.png",
+  "Radiohead|||A Moon Shaped Pool": "https://upload.wikimedia.org/wikipedia/en/e/e5/Radiohead_-_A_Moon_Shaped_Pool.png",
+  "Robyn|||Body Talk": "https://upload.wikimedia.org/wikipedia/en/8/81/Robyn_-_Body_Talk_%28album%29.jpg",
+  "Vampire Weekend|||Modern Vampires of the City": "https://upload.wikimedia.org/wikipedia/en/1/12/Vampire_Weekend_-_Modern_Vampires_of_the_City.png",
+  "Beyonce|||Beyonce": "https://upload.wikimedia.org/wikipedia/en/1/1f/Beyonce_-_Beyonce_%28album%29.png",
+  "Rihanna|||ANTI": "https://upload.wikimedia.org/wikipedia/en/d/d5/Rihanna_-_Anti_%28album%29.png",
+  "Kendrick Lamar|||DAMN.": "https://upload.wikimedia.org/wikipedia/en/8/82/Kendrick_Lamar_-_Damn.png",
+  "Frank Ocean|||Channel Orange": "https://upload.wikimedia.org/wikipedia/en/2/28/Channel_ORANGE.jpg",
+  "Rosalia|||El Mal Querer": "https://upload.wikimedia.org/wikipedia/en/9/9c/Rosal%C3%ADa_-_El_Mal_Querer.jpg",
+  "Chance the Rapper|||Coloring Book": "https://upload.wikimedia.org/wikipedia/en/f/f6/Chance_the_Rapper_-_Coloring_Book.jpg",
+  "SZA|||CTRL": "https://upload.wikimedia.org/wikipedia/en/a/ab/SZA_-_Ctrl_%28album%29.png",
+  "Frank Ocean|||Nostalgia Ultra": "https://upload.wikimedia.org/wikipedia/en/c/c2/Nostalgia%2C_Ultra_cover.jpg",
+  "Bad Bunny|||X 100Pre": "https://upload.wikimedia.org/wikipedia/en/e/e8/Bad_Bunny_-_X_100Pre.png",
+  "Fiona Apple|||The Idler Wheel": "https://upload.wikimedia.org/wikipedia/en/e/e2/Fiona_Apple_-_The_Idler_Wheel.jpg",
+  "Japandroids|||Celebration Rock": "https://upload.wikimedia.org/wikipedia/en/9/99/Japandroids_-_Celebration_Rock.jpg",
+  "Daft Punk|||Random Access Memories": "https://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg",
+  "Alabama Shakes|||Boys and Girls": "https://upload.wikimedia.org/wikipedia/en/6/64/Alabama_Shakes_-_Boys_%26_Girls.png",
+  "Harry Styles|||Harry Styles": "https://upload.wikimedia.org/wikipedia/en/9/96/Harry_Styles_%28album%29.png",
+  "Janelle Monae|||Dirty Computer": "https://upload.wikimedia.org/wikipedia/en/f/f3/Dirty_Computer.png",
+  "Waxahatchee|||Cerulean Salt": "https://upload.wikimedia.org/wikipedia/en/a/a4/Waxahatchee_-_Cerulean_Salt.jpg",
+  "St. Vincent|||St. Vincent": "https://upload.wikimedia.org/wikipedia/en/e/e2/St._Vincent_-_St._Vincent.png",
+  "Florence and the Machine|||How Big How Blue How Beautiful": "https://upload.wikimedia.org/wikipedia/en/a/a4/Florence_and_the_Machine_-_How_Big%2C_How_Blue%2C_How_Beautiful.png",
+  "Lizzo|||Cuz I Love You": "https://upload.wikimedia.org/wikipedia/en/0/08/Cuz_I_Love_You_%28Super_Deluxe%29.png",
+  "Drake|||If You're Reading This It's Too Late": "https://upload.wikimedia.org/wikipedia/en/c/c1/IfYoureReadingThisItsTooLate.jpg",
+  "Grimes|||Art Angels": "https://upload.wikimedia.org/wikipedia/en/a/a0/Art_Angels.png",
+  "Kesha|||Rainbow": "https://upload.wikimedia.org/wikipedia/en/7/78/Kesha_-_Rainbow.png",
+  "Brandi Carlile|||By The Way I Forgive You": "https://upload.wikimedia.org/wikipedia/en/0/03/Brandi_Carlile_-_By_the_Way%2C_I_Forgive_You.png",
+  "Arcade Fire|||The Suburbs": "https://upload.wikimedia.org/wikipedia/en/e/e4/The_Suburbs_%28album%29.png",
+  "Carly Rae Jepsen|||Emotion": "https://upload.wikimedia.org/wikipedia/en/a/a4/Carly_Rae_Jepsen_-_Emotion.png",
+  "Leonard Cohen|||You Want It Darker": "https://upload.wikimedia.org/wikipedia/en/e/e2/You_Want_It_Darker.png",
+  "Bon Iver|||22 A Million": "https://upload.wikimedia.org/wikipedia/en/2/2d/22%2C_A_Million.png",
+  "Jay-Z and Kanye West|||Watch the Throne": "https://upload.wikimedia.org/wikipedia/en/4/44/Watch_The_Throne.png",
+  "LCD Soundsystem|||This Is Happening": "https://upload.wikimedia.org/wikipedia/en/f/f1/LCD_Soundsystem_-_This_Is_Happening.jpg",
+  "Kendrick Lamar|||Good Kid maad City": "https://upload.wikimedia.org/wikipedia/en/2/23/Good_kid%2C_m.A.A.d_city.jpg",
+  "Arctic Monkeys|||AM": "https://upload.wikimedia.org/wikipedia/en/1/1c/ArcticMonkeys-AM.jpg",
+  "Vampire Weekend|||Father of the Bride": "https://upload.wikimedia.org/wikipedia/en/b/b1/Vampire_Weekend_-_Father_of_the_Bride.png",
+  "Nick Cave and the Bad Seeds|||Ghosteen": "https://upload.wikimedia.org/wikipedia/en/2/2e/Nick_Cave_-_Ghosteen.jpg",
+};
+
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, album) {
+  var key = artist + "|||" + album;
+  var directUrl = IMG_URLS[key];
+  if (directUrl) {
+    el.src = directUrl; el.style.opacity = "1";
+    el.onerror = function() { el.onerror = null; loadArtSearch(el, artist, album); };
+    return;
+  }
+  loadArtSearch(el, artist, album);
+}
+
+function loadArtSearch(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) + "&media=music&entity=album&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+var heroImg = document.getElementById("hero-cover");
+heroImg.src = IMG_URLS["Kanye West|||My Beautiful Dark Twisted Fantasy"];
+heroImg.onerror = function() { heroImg.onerror = null; loadArtSearch(heroImg,"Kanye West","My Beautiful Dark Twisted Fantasy"); };
+
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

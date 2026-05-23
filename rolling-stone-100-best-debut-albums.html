@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Best Debut Albums of All Time — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2022</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-debut-albums-of-all-time-143608/" target="_blank" class="page-title">100 BEST DEBUT ALBUMS OF ALL TIME</a>
+  <p class="page-sub">De The Beatles y Patti Smith a Frank Ocean y Olivia Rodrigo · Los debuts más impactantes de la historia · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="https://upload.wikimedia.org/wikipedia/en/4/4a/PleasePleaseMealbumcover.jpg" alt="Please Please Me – The Beatles">
+    <p class="cover-cap">ROLLING STONE · 2022</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">¿Qué hace a un gran álbum debut? Ante todo, la sensación de que una banda o artista llega completamente formado, listo para cambiar el juego en ese mismo instante. Con eso en mente, los álbumes bajaron algunos puestos si el artista fue a logros mucho mayores después; por el contrario, dimos algo de reconocimiento adicional a debuts tan grandes que casi no se puede culpar al artista por no haber hecho nada igual de bueno en el resto de su carrera. EPs y mixtapes no fueron considerados, y omitimos debuts en solitario de artistas que ya estaban en bandas conocidas — por eso no verás John Lennon/Plastic Ono Band, Paul Simon, o The Chronic.</p>
+    <p class="rtext">Esta lista abarca desde los Beatles redefiniendo el pop en 1963 hasta Olivia Rodrigo destrozando el sistema de streaming en 2021. Hay punk de los años 70 (Ramones, Patti Smith), hip-hop que cambió el mundo (Nas, Kanye, N.W.A.), debuts indie que crearon géneros (Pavement, LCD Soundsystem), voces que nadie esperaba (Frank Ocean, Bad Bunny, Taylor Swift a los 16 años). Todos llegaron listos. Todos lo clavaron en el Día Uno.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="https://upload.wikimedia.org/wikipedia/en/4/4a/PleasePleaseMealbumcover.jpg" alt="Please Please Me">
+    <div>
+      <div class="feat-title">Please Please Me</div>
+      <div class="feat-artist">The Beatles</div>
+      <div class="feat-meta"><span class="feat-pill">1963</span></div>
+      <p class="feat-rev">Grabado en un solo día de sesión en febrero de 1963, el debut de los Beatles establece el estándar definitivo de lo que un álbum debut puede ser: 14 canciones que combinan versiones de R&B americano con composiciones propias de Lennon y McCartney que ya suenan absolutamente terminadas e inimitables. "I Saw Her Standing There," "Love Me Do," "Twist and Shout" — esta última grabada al final del día cuando la garganta de Lennon estaba destrozada, lo que le da esa urgencia feroz. En un solo disco, los Beatles inventaron la mayor parte de lo que el rock pop haría durante la siguiente década.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="https://upload.wikimedia.org/wikipedia/en/5/5e/Are_You_Experienced.jpg" alt="Are You Experienced">
+    <div>
+      <div class="feat-title">Are You Experienced</div>
+      <div class="feat-artist">The Jimi Hendrix Experience</div>
+      <div class="feat-meta"><span class="feat-pill">1967</span></div>
+      <p class="feat-rev">Jimi Hendrix llegó como un guitarrista que nadie había escuchado hacer antes y entregó uno de los debuts más completos de la historia del rock. Are You Experienced no es solo un álbum de guitarrismo virtuoso — es un disco de canciones perfectas: "Purple Haze," "Foxy Lady," "The Wind Cries Mary," "Hey Joe." Hendrix no estaba solo reescribiendo lo que una guitarra podía hacer; estaba reescribiendo lo que el blues, el rock y el psicodelismo podían ser juntos. Ningún debut antes o después ha presentado un artista con tal control absoluto de un sonido completamente nuevo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="https://upload.wikimedia.org/wikipedia/en/1/1c/Patti_Smith_Horses.jpg" alt="Horses">
+    <div>
+      <div class="feat-title">Horses</div>
+      <div class="feat-artist">Patti Smith</div>
+      <div class="feat-meta"><span class="feat-pill">1975</span></div>
+      <p class="feat-rev">Desde su primera línea — "Jesús murió por los pecados de alguien, pero no los míos" — el debut de Patti Smith fue una declaración de motín comprometido, una afirmación de fe en los poderes transfiguradores del rock and roll. Horses la convirtió en la reina del punk, pero Smith se preocupaba más por la poesía en el rock. Buscaba las visiones y pasiones que conectaban a Keith Richards con Rimbaud — y las encontró, con la asistencia intuitiva de una banda demoledora. La fotografía de portada de Robert Mapplethorpe es igual de icónica que la música.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="https://upload.wikimedia.org/wikipedia/en/0/0c/Velvet_Underground_and_Nico.jpg" alt="The Velvet Underground and Nico">
+    <div>
+      <div class="feat-title">The Velvet Underground and Nico</div>
+      <div class="feat-artist">The Velvet Underground</div>
+      <div class="feat-meta"><span class="feat-pill">1967</span></div>
+      <p class="feat-rev">El álbum más influyente que nadie compró: solo vendió 30,000 copias en su primera edición, pero según Brian Eno, cada persona que lo compró formó una banda. Lou Reed y John Cale, con producción de Andy Warhol, crearon un documento de la vida urbana americana — drogas, sexo, violencia, amor — con una honestidad que el rock nunca había intentado antes. "Heroin," "Venus in Furs," "Sunday Morning": canciones que sonaban como si vinieran de un lugar completamente diferente del pop de 1967.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="https://upload.wikimedia.org/wikipedia/en/e/e0/Ramones_-_Ramones.jpg" alt="Ramones">
+    <div>
+      <div class="feat-title">Ramones</div>
+      <div class="feat-artist">Ramones</div>
+      <div class="feat-meta"><span class="feat-pill">1976</span></div>
+      <p class="feat-rev">Grabado en 17 días con $6,400, el debut de los Ramones destripó el rock and roll hasta sus huesos más básicos: tempo rápido, riffs simples, canciones de dos minutos, "1-2-3-4!" El disco que inventó el punk tal como el mundo lo reconocería — no el nihilismo artístico de los Stooges ni la poesía de Patti Smith, sino el pogo, el mohawk y la actitud de "cualquiera puede hacer esto." Joey, Johnny, Dee Dee y Tommy llegaron de Queens y rehicieron la música popular en su propia imagen destartalada y gloriosa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="https://upload.wikimedia.org/wikipedia/en/1/1d/Is_This_It_album_cover.jpg" alt="Is This It">
+    <div>
+      <div class="feat-title">Is This It</div>
+      <div class="feat-artist">The Strokes</div>
+      <div class="feat-meta"><span class="feat-pill">2001</span></div>
+      <p class="feat-rev">El debut de los cinco chicos del downtown de Manhattan llegó con el peso de todo el hype de la prensa musical británica encima y tuvo la elegancia de no achicarse. Is This It es un álbum de canciones perfectas — breves, concisas, construidas sobre guitarras que suenan como si estuvieran a punto de desintegrarse pero nunca lo hacen. Julian Casablancas cantando como si no le importara nada mientras claramente le importa todo. El disco que reinventó el rock de garaje para el siglo XXI en el momento exacto en que el mundo lo necesitaba.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="https://upload.wikimedia.org/wikipedia/en/6/6b/Led_Zeppelin_-_Led_Zeppelin_%281969%29_front_cover.jpg" alt="Led Zeppelin">
+    <div>
+      <div class="feat-title">Led Zeppelin</div>
+      <div class="feat-artist">Led Zeppelin</div>
+      <div class="feat-meta"><span class="feat-pill">1969</span></div>
+      <p class="feat-rev">En su primer álbum, Led Zeppelin todavía estaba en el proceso de inventar su propio sonido, avanzando a partir de los heavy rave-ups de la banda anterior de Jimmy Page. Pero desde el principio, Zeppelin tenía la asombrosa fusión de la guitarra lírica de Page y el aullido de amor de Robert Plant. "Puede que no haya álbumes Zep mejores que Led Zeppelin," dice Rolling Stone, "pero ninguno suena tan gratamente crudo o es tan exhaustivo en la definición de las intenciones de la banda." El plano de todo lo que Zeppelin logró en los años 70 está aquí.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="https://upload.wikimedia.org/wikipedia/en/2/28/Channel_ORANGE.jpg" alt="Channel Orange">
+    <div>
+      <div class="feat-title">Channel Orange</div>
+      <div class="feat-artist">Frank Ocean</div>
+      <div class="feat-meta"><span class="feat-pill">2012</span></div>
+      <p class="feat-rev">Frank Ocean llegó como el cuarto o quinto miembro más famoso del colectivo Odd Future y entregó el debut más ambicioso del R&B en años. Channel Orange mezcla soul, hip-hop, gospel y pop experimental en canciones que se niegan a seguir ninguna estructura convencional — "Thinkin Bout You," "Pyramids," "Bad Religion." Y está la carta abierta que publicó días antes del lanzamiento, viniendo a hablar de su amor por un hombre. Channel Orange es un disco sobre el deseo, la identidad y la libertad que llegó a desafiar todo lo que el R&B mainstream creía sobre sí mismo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="https://upload.wikimedia.org/wikipedia/en/7/72/Illmatic.jpg" alt="Illmatic">
+    <div>
+      <div class="feat-title">Illmatic</div>
+      <div class="feat-artist">Nas</div>
+      <div class="feat-meta"><span class="feat-pill">1994</span></div>
+      <p class="feat-rev">Nas tenía solo 20 años cuando lanzó su debut pero ya era un maestro en el arte de la narrativa. Nadie capturó la amenaza progresiva de la vida en las calles como este prodigio lírico de los proyectos Queensbridge de Nueva York. Con producciones impecables de Large Professor, DJ Premier y Pete Rock, el álbum tiene una concisión sin rodeos que encaja perfectamente con su materia oscura. Solo 40 minutos, solo diez canciones, cero desperdicio. El amanecer de una era dura: el rap dejaba de ser diversión y se convertía en literatura.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg" alt="The College Dropout">
+    <div>
+      <div class="feat-title">The College Dropout</div>
+      <div class="feat-artist">Kanye West</div>
+      <div class="feat-meta"><span class="feat-pill">2004</span></div>
+      <p class="feat-rev">Antes de que Kanye West fuera Kanye West, era un productor de Chicago que soñaba con rapear. The College Dropout es el documento de ese sueño hecho realidad: samples de soul acelerados, letras que mezclaban la inseguridad con la arrogancia de una manera completamente nueva en el hip-hop, y canciones sobre la fe, la familia y la presión de triunfar que resonaron con millones que no se reconocían en el rap de esa época. El álbum que cambió el hip-hop y lanzó la carrera del artista más influyente de su generación.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 DEBUTS · TODOS LOS TIEMPOS</span>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-debut-albums-of-all-time-143608/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var ALBUMS = [
+  [1,"Please Please Me","The Beatles",1963],
+  [2,"Are You Experienced","The Jimi Hendrix Experience",1967],
+  [3,"Horses","Patti Smith",1975],
+  [4,"The Velvet Underground and Nico","The Velvet Underground",1967],
+  [5,"Ramones","Ramones",1976],
+  [6,"Is This It","The Strokes",2001],
+  [7,"Led Zeppelin","Led Zeppelin",1969],
+  [8,"Channel Orange","Frank Ocean",2012],
+  [9,"Illmatic","Nas",1994],
+  [10,"The College Dropout","Kanye West",2004],
+  [11,"Nostalgia Ultra","Frank Ocean",2011],
+  [12,"Appetite for Destruction","Guns N Roses",1987],
+  [13,"Greetings from Asbury Park NJ","Bruce Springsteen",1973],
+  [14,"My Generation","The Who",1965],
+  [15,"Talking Heads 77","Talking Heads",1977],
+  [16,"Dry","PJ Harvey",1992],
+  [17,"Ready to Die","The Notorious B.I.G.",1994],
+  [18,"Taylor Swift","Taylor Swift",2006],
+  [19,"Get Rich or Die Tryin","50 Cent",2003],
+  [20,"Sour","Olivia Rodrigo",2021],
+  [21,"The Cars","The Cars",1978],
+  [22,"Brown Sugar","D\'Angelo",1995],
+  [23,"Slanted and Enchanted","Pavement",1992],
+  [24,"Reasonable Doubt","Jay-Z",1996],
+  [25,"Marquee Moon","Television",1977],
+  [26,"Run-DMC","Run-DMC",1984],
+  [27,"X 100Pre","Bad Bunny",2018],
+  [28,"Van Halen","Van Halen",1978],
+  [29,"3 Feet High and Rising","De La Soul",1989],
+  [30,"The B-52s","The B-52s",1979],
+  [31,"Songs of Leonard Cohen","Leonard Cohen",1967],
+  [32,"Dummy","Portishead",1994],
+  [33,"Songs in A Minor","Alicia Keys",2001],
+  [34,"The Doors","The Doors",1967],
+  [35,"Licensed to Ill","Beastie Boys",1986],
+  [36,"Entertainment!","Gang of Four",1979],
+  [37,"The Last Don","Don Omar",2003],
+  [38,"Homework","Daft Punk",1997],
+  [39,"I Just Can\'t Stop It","The English Beat",1980],
+  [40,"Supa Dupa Fly","Missy Elliott",1997],
+  [41,"The Stooges","The Stooges",1969],
+  [42,"Elvis Presley","Elvis Presley",1956],
+  [43,"Cut","The Slits",1979],
+  [44,"Rage Against the Machine","Rage Against the Machine",1992],
+  [45,"Beauty and the Beat","The Go-Go\'s",1981],
+  [46,"What\'s the 411?","Mary J. Blige",1992],
+  [47,"Pink Flag","Wire",1977],
+  [48,"Straight Outta Compton","N.W.A",1988],
+  [49,"My Aim Is True","Elvis Costello",1977],
+  [50,"Definitely Maybe","Oasis",1994],
+  [51,"Diamond Life","Sade",1984],
+  [52,"Grace","Jeff Buckley",1994],
+  [53,"Endtroducing","DJ Shadow",1996],
+  [54,"Black Sabbath","Black Sabbath",1970],
+  [55,"Psychocandy","The Jesus and Mary Chain",1985],
+  [56,"Ten","Pearl Jam",1991],
+  [57,"LCD Soundsystem","LCD Soundsystem",2005],
+  [58,"The Modern Lovers","The Modern Lovers",1976],
+  [59,"The Piper at the Gates of Dawn","Pink Floyd",1967],
+  [60,"Los Angeles","X",1980],
+  [61,"John Prine","John Prine",1971],
+  [62,"Arular","M.I.A.",2005],
+  [63,"Hard Core","Lil Kim",1996],
+  [64,"The Smiths","The Smiths",1984],
+  [65,"Same Trailer Different Park","Kacey Musgraves",2013],
+  [66,"New York Dolls","New York Dolls",1973],
+  [67,"Weezer Blue Album","Weezer",1994],
+  [68,"Kill Em All","Metallica",1983],
+  [69,"Pretty Hate Machine","Nine Inch Nails",1989],
+  [70,"Roxy Music","Roxy Music",1972],
+  [71,"Hot Fuss","The Killers",2004],
+  [72,"She\'s So Unusual","Cyndi Lauper",1983],
+  [73,"Violent Femmes","Violent Femmes",1983],
+  [74,"Whitney Houston","Whitney Houston",1985],
+  [75,"Thank Me Later","Drake",2010],
+  [76,"Up the Bracket","The Libertines",2002],
+  [77,"Upstairs at Eric\'s","Yazoo",1982],
+  [78,"Settle","Disclosure",2013],
+  [79,"Funeral","Arcade Fire",2004],
+  [80,"The Fame","Lady Gaga",2008],
+  [81,"Bleach","Nirvana",1989],
+  [82,"Whatever People Say I Am That\'s What I\'m Not","Arctic Monkeys",2006],
+  [83,"Q Are We Not Men We Are Devo","Devo",1978],
+  [84,"Number One Record","Big Star",1972],
+  [85,"Pure Heroine","Lorde",2013],
+  [86,"Germfree Adolescents","X-Ray Spex",1978],
+  [87,"Need to Feel Your Love","Sheer Mag",2017],
+  [88,"Call Me Sylvia","Low Cut Connie",2018],
+  [89,"Monster","Future",2014],
+  [90,"Songs of Innocence","U2",2014],
+  [91,"Father of the Bride","Vampire Weekend",2019],
+  [92,"Whack World","Tierra Whack",2018],
+  [93,"Psychedelic Pill","Neil Young and Crazy Horse",2012],
+  [94,"Have One on Me","Joanna Newsom",2010],
+  [95,"AM","Arctic Monkeys",2013],
+  [96,"Ghosteen","Nick Cave and the Bad Seeds",2019],
+  [97,"My Woman","Angel Olsen",2016],
+  [98,"Tha Tour Part 1","Rich Gang",2014],
+  [99,"A Deeper Understanding","The War on Drugs",2017],
+  [100,"Ultraviolence","Lana Del Rey",2014],
+];
+
+var FEAT = [
+  ["fc-1","The Beatles","Please Please Me"],
+  ["fc-2","The Jimi Hendrix Experience","Are You Experienced"],
+  ["fc-3","Patti Smith","Horses"],
+  ["fc-4","The Velvet Underground","The Velvet Underground and Nico"],
+  ["fc-5","Ramones","Ramones"],
+  ["fc-6","The Strokes","Is This It"],
+  ["fc-7","Led Zeppelin","Led Zeppelin"],
+  ["fc-8","Frank Ocean","Channel Orange"],
+  ["fc-9","Nas","Illmatic"],
+  ["fc-10","Kanye West","The College Dropout"],
+];
+
+var IMG_URLS = {
+  "The Beatles|||Please Please Me": "https://upload.wikimedia.org/wikipedia/en/4/4a/PleasePleaseMealbumcover.jpg",
+  "The Jimi Hendrix Experience|||Are You Experienced": "https://upload.wikimedia.org/wikipedia/en/5/5e/Are_You_Experienced.jpg",
+  "Patti Smith|||Horses": "https://upload.wikimedia.org/wikipedia/en/1/1c/Patti_Smith_Horses.jpg",
+  "The Velvet Underground|||The Velvet Underground and Nico": "https://upload.wikimedia.org/wikipedia/en/0/0c/Velvet_Underground_and_Nico.jpg",
+  "Ramones|||Ramones": "https://upload.wikimedia.org/wikipedia/en/e/e0/Ramones_-_Ramones.jpg",
+  "The Strokes|||Is This It": "https://upload.wikimedia.org/wikipedia/en/1/1d/Is_This_It_album_cover.jpg",
+  "Led Zeppelin|||Led Zeppelin": "https://upload.wikimedia.org/wikipedia/en/6/6b/Led_Zeppelin_-_Led_Zeppelin_%281969%29_front_cover.jpg",
+  "Frank Ocean|||Channel Orange": "https://upload.wikimedia.org/wikipedia/en/2/28/Channel_ORANGE.jpg",
+  "Nas|||Illmatic": "https://upload.wikimedia.org/wikipedia/en/7/72/Illmatic.jpg",
+  "Kanye West|||The College Dropout": "https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg",
+  "Frank Ocean|||Nostalgia Ultra": "https://upload.wikimedia.org/wikipedia/en/c/c2/Nostalgia%2C_Ultra_cover.jpg",
+  "Guns N Roses|||Appetite for Destruction": "https://upload.wikimedia.org/wikipedia/en/6/60/GunsnRosesAppetiteforDestructionalbumcover.jpg",
+  "Taylor Swift|||Taylor Swift": "https://upload.wikimedia.org/wikipedia/en/2/2b/Taylor_Swift_-_Taylor_Swift.png",
+  "Olivia Rodrigo|||Sour": "https://upload.wikimedia.org/wikipedia/en/b/b8/Olivia_Rodrigo_-_Sour.png",
+  "D'Angelo|||Brown Sugar": "https://upload.wikimedia.org/wikipedia/en/0/08/D%27Angelo_-_Brown_Sugar.jpg",
+  "Pavement|||Slanted and Enchanted": "https://upload.wikimedia.org/wikipedia/en/b/b1/Pavement_-_Slanted_and_Enchanted.jpg",
+  "Jay-Z|||Reasonable Doubt": "https://upload.wikimedia.org/wikipedia/en/7/7e/Jayz_reasonable_doubt.jpg",
+  "Television|||Marquee Moon": "https://upload.wikimedia.org/wikipedia/en/c/ce/Marquee-Moon.jpg",
+  "Run-DMC|||Run-DMC": "https://upload.wikimedia.org/wikipedia/en/a/a1/Run-DMC_-_Run-DMC_%28album%29.jpg",
+  "Bad Bunny|||X 100Pre": "https://upload.wikimedia.org/wikipedia/en/e/e8/Bad_Bunny_-_X_100Pre.png",
+  "De La Soul|||3 Feet High and Rising": "https://upload.wikimedia.org/wikipedia/en/1/17/De_La_Soul_3feetcover.jpg",
+  "The B-52s|||The B-52s": "https://upload.wikimedia.org/wikipedia/en/5/5b/B52s-1979.jpg",
+  "Leonard Cohen|||Songs of Leonard Cohen": "https://upload.wikimedia.org/wikipedia/en/3/37/Songs_of_leonard_cohen.jpg",
+  "Portishead|||Dummy": "https://upload.wikimedia.org/wikipedia/en/1/1d/Portishead_-_Dummy.jpg",
+  "Alicia Keys|||Songs in A Minor": "https://upload.wikimedia.org/wikipedia/en/6/6e/Alicia-keys-songs-in-a-minor.jpg",
+  "The Doors|||The Doors": "https://upload.wikimedia.org/wikipedia/en/6/6e/The_Doors_-_The_Doors.jpg",
+  "Beastie Boys|||Licensed to Ill": "https://upload.wikimedia.org/wikipedia/en/b/b0/Licensed_To_Ill.jpg",
+  "Daft Punk|||Homework": "https://upload.wikimedia.org/wikipedia/en/6/61/Daft_Punk_Homework.png",
+  "Missy Elliott|||Supa Dupa Fly": "https://upload.wikimedia.org/wikipedia/en/d/d7/Missy_Elliott_-_Supa_Dupa_Fly.png",
+  "N.W.A|||Straight Outta Compton": "https://upload.wikimedia.org/wikipedia/en/1/13/Straight_outta_Compton_N.W.A_album_cover.jpg",
+  "Oasis|||Definitely Maybe": "https://upload.wikimedia.org/wikipedia/en/d/d0/DefinitelyMaybe.jpg",
+  "Sade|||Diamond Life": "https://upload.wikimedia.org/wikipedia/en/e/e6/Sade_-_Diamond_Life.jpg",
+  "Jeff Buckley|||Grace": "https://upload.wikimedia.org/wikipedia/en/a/a0/Jeff_Buckley_-_Grace.jpg",
+  "DJ Shadow|||Endtroducing": "https://upload.wikimedia.org/wikipedia/en/9/9f/Endtroducing.gif",
+  "Black Sabbath|||Black Sabbath": "https://upload.wikimedia.org/wikipedia/en/4/47/Black_Sabbath_-_Black_Sabbath.jpg",
+  "The Jesus and Mary Chain|||Psychocandy": "https://upload.wikimedia.org/wikipedia/en/6/6e/Psychocandy.jpg",
+  "Pearl Jam|||Ten": "https://upload.wikimedia.org/wikipedia/en/5/5a/Pearl_Jam-Ten.jpg",
+  "Pink Floyd|||The Piper at the Gates of Dawn": "https://upload.wikimedia.org/wikipedia/en/0/04/The_Piper_at_the_Gates_of_Dawn.png",
+  "M.I.A.|||Arular": "https://upload.wikimedia.org/wikipedia/en/8/84/MIA-Arular.jpg",
+  "The Smiths|||The Smiths": "https://upload.wikimedia.org/wikipedia/en/3/34/The_Smiths_debut_album_cover.jpg",
+  "Kacey Musgraves|||Same Trailer Different Park": "https://upload.wikimedia.org/wikipedia/en/1/1c/KaceyMusgravesSameTrailerDifferentPark.jpg",
+  "Weezer|||Weezer Blue Album": "https://upload.wikimedia.org/wikipedia/en/3/3c/Weezer_album_cover.jpg",
+  "The Killers|||Hot Fuss": "https://upload.wikimedia.org/wikipedia/en/7/7c/The_Killers_-_Hot_Fuss.jpg",
+  "Cyndi Lauper|||She's So Unusual": "https://upload.wikimedia.org/wikipedia/en/5/5f/CyndiLauper-SheSoUnusual.jpg",
+  "Violent Femmes|||Violent Femmes": "https://upload.wikimedia.org/wikipedia/en/1/14/ViolentFemmesAlbum.jpg",
+  "The Libertines|||Up the Bracket": "https://upload.wikimedia.org/wikipedia/en/a/a8/Libertines-upthebracket.jpg",
+  "Arcade Fire|||Funeral": "https://upload.wikimedia.org/wikipedia/en/d/df/Arcade_Fire_-_Funeral.png",
+  "Lady Gaga|||The Fame": "https://upload.wikimedia.org/wikipedia/en/a/ae/The_Fame.png",
+  "Nirvana|||Bleach": "https://upload.wikimedia.org/wikipedia/en/6/60/NirvanaBleach.jpg",
+  "Arctic Monkeys|||Whatever People Say I Am That's What I'm Not": "https://upload.wikimedia.org/wikipedia/en/a/a6/WhateverPeopleSayIAmThatsWhatImNot.png",
+  "Lorde|||Pure Heroine": "https://upload.wikimedia.org/wikipedia/en/7/79/Lorde_-_Pure_Heroine.png",
+};
+
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, album) {
+  var key = artist + "|||" + album;
+  var directUrl = IMG_URLS[key];
+  if (directUrl) {
+    el.src = directUrl; el.style.opacity = "1";
+    el.onerror = function() { el.onerror = null; loadArtSearch(el, artist, album); };
+    return;
+  }
+  loadArtSearch(el, artist, album);
+}
+
+function loadArtSearch(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) + "&media=music&entity=album&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+var heroEl = document.getElementById("hero-cover");
+heroEl.src = IMG_URLS["The Beatles|||Please Please Me"];
+heroEl.onerror = function() { heroEl.onerror = null; loadArtSearch(heroEl,"The Beatles","Please Please Me"); };
+
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

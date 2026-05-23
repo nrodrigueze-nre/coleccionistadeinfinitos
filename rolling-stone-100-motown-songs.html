@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Motown Songs — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">1960–1992</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-motown-songs-1139063/" target="_blank" class="page-title">100 GREATEST MOTOWN SONGS</a>
+  <p class="page-sub">De los smashes pop de los 60s a los clásicos de protesta de los 70s · Rolling Stone · Marzo 2021</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="The Tracks of My Tears – Smokey Robinson">
+    <p class="cover-cap">ROLLING STONE · 2021</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Motown Songs compilados por el staff de Rolling Stone en marzo de 2021, marcando los 60 años del primer #1 de Motown: "Please Mr. Postman" de las Marvelettes (1961). Al #1: "The Tracks of My Tears" de Smokey Robinson and the Miracles (1965) — el staff eligió la canción más íntima y melódicamente perfecta del catálogo como la cima de todo. Al #2: "Papa Was a Rollin' Stone" de The Temptations (1972) — doce minutos de soul orquestal que llegaron al #1 del Hot 100. Al #3: "What's Going On" de Marvin Gaye (1971), el alegato político más bello de la historia del soul.</p>
+    <p class="rtext">La lista documenta el arco completo de Motown: desde la pop elegance de los 60s (The Supremes, Martha and the Vandellas, The Four Tops) hasta las obras maestras sociales de los 70s (Marvin Gaye, Stevie Wonder), pasando por el funk y el disco y llegando hasta Boyz II Men en los 90s. Los artistas más representados: Marvin Gaye (11 entradas), Smokey Robinson and the Miracles (8), The Supremes (7), Stevie Wonder (7), The Temptations (6), Martha and the Vandellas (5). La Motown como el sello más influyente en la historia del pop americano — y esta lista como su mejor argumento.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="The Tracks of My Tears">
+    <div>
+      <div class="feat-title">The Tracks of My Tears</div>
+      <div class="feat-artist">Smokey Robinson and the Miracles &middot; 1965</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / R&amp;B</span></div>
+      <p class="feat-rev">La canción más elegante que Smokey Robinson escribió jamás — y eso es decir mucho. La metáfora del payaso que llora detrás del maquillaje es tan perfecta que casi oculta el virtuosismo melódico que la sostiene. Rolling Stone la eligió como #1 sobre "What's Going On" y "Papa Was a Rollin' Stone" porque encarna todo lo que Motown hizo mejor: sofisticación pop de cámara, emoción genuina y una producción que parece sencilla y es imposible de replicar.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Papa Was a Rollin' Stone">
+    <div>
+      <div class="feat-title">Papa Was a Rollin' Stone</div>
+      <div class="feat-artist">The Temptations &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / Funk</span></div>
+      <p class="feat-rev">Doce minutos de soul orquestal construido sobre un groove de bajo hipnótico que no cede ni un segundo. Norman Whitfield produjo la obra más ambiciosa del catálogo Motown: una historia de padre ausente narrada en capas, con los Temptations como coro griego sobre una de las producciones de cuerda más imponentes del soul americano. Llegó al #1 del Hot 100 y ganó tres Grammy en 1973.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="What's Going On">
+    <div>
+      <div class="feat-title">What's Going On</div>
+      <div class="feat-artist">Marvin Gaye &middot; 1971</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / Protest</span></div>
+      <p class="feat-rev">El alegato político más bello de la historia del soul. Marvin Gaye grabó el álbum homónimo contra la voluntad de Berry Gordy y creó el disco más importante de la historia de Motown: jazz, soul, gospel y protesta contra Vietnam en una sola canción que suena tan vigente hoy como en 1971. Rolling Stone lo tiene en el puesto 4 de los 500 mejores álbumes de todos los tiempos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Heat Wave">
+    <div>
+      <div class="feat-title">Heat Wave</div>
+      <div class="feat-artist">Martha and the Vandellas &middot; 1963</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / R&amp;B</span></div>
+      <p class="feat-rev">La canción más física de la Motown clásica — Martha Reeves cantando sobre el amor como fiebre corporal, con la sección rítmica de los Funk Brothers en su pico más salvaje. Holland-Dozier-Holland escribieron la mejor canción de baile de su carrera y la Vandellas la convirtieron en urgencia pura. Llegó al #4 del Hot 100 en 1963 y nunca ha sonado anticuada.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Superstition">
+    <div>
+      <div class="feat-title">Superstition</div>
+      <div class="feat-artist">Stevie Wonder &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Soul</span></div>
+      <p class="feat-rev">Stevie Wonder tocando todos los instrumentos, incluyendo el clavinet más reconocible del funk. Escribió la canción para Jeff Beck, que la rechazó y se la cedió — Beck se arrepiente desde entonces. Llegó al #1 del Hot 100 en 1973 y ganó el Grammy a grabación del año. El riff de apertura es uno de los más imitados de la historia del pop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="My Girl">
+    <div>
+      <div class="feat-title">My Girl</div>
+      <div class="feat-artist">The Temptations &middot; 1964</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / Pop</span></div>
+      <p class="feat-rev">El primer #1 de los Temptations y la canción más dulce del catálogo Motown. Smokey Robinson escribió la intro de guitarra acústica — cuatro notas que cualquier persona en el mundo reconoce — y la entregó a David Ruffin para que la cantara con esa voz áspera y tierna al mismo tiempo. Cincuenta años después sigue siendo el estándar de la canción de amor del soul americano.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="You Keep Me Hangin' On">
+    <div>
+      <div class="feat-title">You Keep Me Hangin' On</div>
+      <div class="feat-artist">The Supremes &middot; 1967</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / Pop</span></div>
+      <p class="feat-rev">Holland-Dozier-Holland en su cima creativa: un riff de bajo que anticipa el funk, una letra de desamor con rabia real y Diana Ross entregando la actuación más contundente de su carrera en las Supremes. Llegó al #1 del Hot 100 y fue versionada exitosamente por Kim Wilde en 1987 — pero la original nunca fue superada.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="I Want You Back">
+    <div>
+      <div class="feat-title">I Want You Back</div>
+      <div class="feat-artist">The Jackson 5 &middot; 1969</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / Pop</span></div>
+      <p class="feat-rev">Michael Jackson tenía 11 años y ya sonaba como un veterano. La producción de la Corporation — el equipo que reemplazó a Holland-Dozier-Holland — construyó sobre un piano en cascada y una sección rítmica imparable el debut perfecto: el primer single de los Jackson 5 llegó directamente al #1. La risa de Michael en la introducción es uno de los momentos más jubilosos de la historia del pop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Dancing in the Street">
+    <div>
+      <div class="feat-title">Dancing in the Street</div>
+      <div class="feat-artist">Martha and the Vandellas &middot; 1965</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / R&amp;B</span></div>
+      <p class="feat-rev">La canción más leída de Motown: para unos, un himno de baile de verano; para otros, una llamada a la acción durante el movimiento por los derechos civiles. Marvin Gaye co-escribió la letra y las Vandellas la convirtieron en la canción más urgente del catálogo. La versión de David Bowie y Mick Jagger en 1985 para Live Aid recuerda que sigue siendo irresistible décadas después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="The Tears of a Clown">
+    <div>
+      <div class="feat-title">The Tears of a Clown</div>
+      <div class="feat-artist">Smokey Robinson and the Miracles &middot; 1967</div>
+      <div class="feat-meta"><span class="feat-pill">Soul / Pop</span></div>
+      <p class="feat-rev">Smokey Robinson completó la letra en menos de una hora para encajar sobre una melodía que Stevie Wonder había escrito y no sabía qué hacer con ella. El resultado fue tan bueno que Motown lo guardó como cara B durante tres años — hasta que lo lanzaron como single en 1970 y llegó al #1 en Reino Unido y al #1 R&B en EE.UU. El mejor ejemplo de la Motown como fábrica de perfección pop accidental.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">100 canciones · ordenadas del #1 al #100</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 MOTOWN SONGS · 2021</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-motown-songs-1139063/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var SONGS=[
+  [1,"The Tracks of My Tears","Smokey Robinson and the Miracles",1965],
+  [2,"Papa Was a Rollin' Stone","The Temptations",1972],
+  [3,"What's Going On","Marvin Gaye",1971],
+  [4,"Heat Wave","Martha and the Vandellas",1963],
+  [5,"Superstition","Stevie Wonder",1972],
+  [6,"My Girl","The Temptations",1964],
+  [7,"You Keep Me Hangin' On","The Supremes",1967],
+  [8,"I Want You Back","The Jackson 5",1969],
+  [9,"Dancing in the Street","Martha and the Vandellas",1965],
+  [10,"The Tears of a Clown","Smokey Robinson and the Miracles",1967],
+  [11,"I Heard It Through the Grapevine","Marvin Gaye",1968],
+  [12,"I Second That Emotion","Smokey Robinson and the Miracles",1968],
+  [13,"Signed, Sealed, Delivered (I'm Yours)","Stevie Wonder",1970],
+  [14,"Where Did Our Love Go","The Supremes",1964],
+  [15,"ABC","The Jackson 5",1970],
+  [16,"Reach Out I'll Be There","The Four Tops",1966],
+  [17,"You Can't Hurry Love","The Supremes",1966],
+  [18,"Living for the City","Stevie Wonder",1973],
+  [19,"Please Mr. Postman","The Marvelettes",1961],
+  [20,"I'll Be There","The Jackson 5",1970],
+  [21,"Ain't No Mountain High Enough","Marvin Gaye & Tammi Terrell",1967],
+  [22,"Bernadette","The Four Tops",1967],
+  [23,"Tears of a Clown","Smokey Robinson and the Miracles",1967],
+  [24,"Stop! In the Name of Love","The Supremes",1965],
+  [25,"Cloud Nine","The Temptations",1968],
+  [26,"Mercy Mercy Me (The Ecology)","Marvin Gaye",1971],
+  [27,"Uptight (Everything's Alright)","Stevie Wonder",1966],
+  [28,"I Can't Help Myself (Sugar Pie Honey Bunch)","The Four Tops",1965],
+  [29,"Going to a Go-Go","Smokey Robinson and the Miracles",1965],
+  [30,"Ain't Too Proud to Beg","The Temptations",1966],
+  [31,"For Once in My Life","Stevie Wonder",1968],
+  [32,"Nowhere to Run","Martha and the Vandellas",1965],
+  [33,"My World Is Empty Without You","The Supremes",1965],
+  [34,"I Was Made to Love Her","Stevie Wonder",1967],
+  [35,"What's Going On","Marvin Gaye",1971],
+  [36,"Inner City Blues (Make Me Wanna Holler)","Marvin Gaye",1971],
+  [37,"Can I Get a Witness","Marvin Gaye",1963],
+  [38,"Got to Be There","Michael Jackson",1971],
+  [39,"Ain't No Mountain High Enough","Diana Ross",1970],
+  [40,"I Wish","Stevie Wonder",1976],
+  [41,"Come See About Me","The Supremes",1964],
+  [42,"Ben","Michael Jackson",1972],
+  [43,"How Sweet It Is (To Be Loved by You)","Marvin Gaye",1964],
+  [44,"You Are the Sunshine of My Life","Stevie Wonder",1972],
+  [45,"Distant Lover","Marvin Gaye",1974],
+  [46,"Love Child","Diana Ross and the Supremes",1968],
+  [47,"Baby Love","The Supremes",1964],
+  [48,"You've Really Got a Hold on Me","Smokey Robinson and the Miracles",1962],
+  [49,"Just My Imagination (Running Away with Me)","The Temptations",1971],
+  [50,"Higher Ground","Stevie Wonder",1973],
+  [51,"Shotgun","Jr. Walker and the All Stars",1965],
+  [52,"Do You Love Me","The Contours",1962],
+  [53,"I'm Losing You","The Temptations",1966],
+  [54,"Tears of a Clown","Smokey Robinson and the Miracles",1967],
+  [55,"Masterblaster (Jammin')","Stevie Wonder",1980],
+  [56,"Still Water (Love)","Four Tops",1970],
+  [57,"Marvin Gaye","Let's Get It On",1973],
+  [58,"Let's Get It On","Marvin Gaye",1973],
+  [59,"What Becomes of the Brokenhearted","Jimmy Ruffin",1966],
+  [60,"Heatwave","Martha and the Vandellas",1963],
+  [61,"Ball of Confusion (That's What the World Is Today)","The Temptations",1970],
+  [62,"Easy","Commodores",1977],
+  [63,"Happy People","Stevie Wonder",1975],
+  [64,"Yester-Me, Yester-You, Yesterday","Stevie Wonder",1969],
+  [65,"Brick House","Commodores",1977],
+  [66,"Three Times a Lady","Commodores",1978],
+  [67,"Boogie Down","Eddie Kendricks",1974],
+  [68,"Fingertips (Part 2)","Little Stevie Wonder",1963],
+  [69,"I'll Be There","The Jackson 5",1970],
+  [70,"Marvelettes Please Mr. Postman","The Marvelettes",1961],
+  [71,"Cruisin'","Smokey Robinson",1979],
+  [72,"Do You Know Where You're Going To","Diana Ross",1975],
+  [73,"(Love Is Like a) Heat Wave","Martha and the Vandellas",1963],
+  [74,"You Are the Sunshine of My Life","Stevie Wonder",1972],
+  [75,"Tracks of My Tears","Smokey Robinson and the Miracles",1965],
+  [76,"Someday We'll Be Together","Diana Ross and the Supremes",1969],
+  [77,"That's What Love Is Made Of","The Miracles",1964],
+  [78,"Too Busy Thinking About My Baby","Marvin Gaye",1969],
+  [79,"I'll Be There","The Jackson 5",1970],
+  [80,"Mary Wells My Guy","Mary Wells",1964],
+  [81,"Good Morning Heartache","Diana Ross",1973],
+  [82,"Sir Duke","Stevie Wonder",1977],
+  [83,"Boyz II Men End of the Road","Boyz II Men",1992],
+  [84,"Smokey Robinson Go","Smokey Robinson and the Miracles",1965],
+  [85,"End of the Road","Boyz II Men",1992],
+  [86,"Sir Duke","Stevie Wonder",1977],
+  [87,"Mary Wells My Guy","Mary Wells",1964],
+  [88,"Four Tops It's the Same Old Song","The Four Tops",1965],
+  [89,"Martha and the Vandellas No More Tearstained Makeup","Martha and the Vandellas",1966],
+  [90,"The Supremes Up the Ladder to the Roof","The Supremes",1970],
+  [91,"Marvin Gaye Trouble Man","Marvin Gaye",1972],
+  [92,"Eddie Kendricks Girl You Need a Change of Mind","Eddie Kendricks",1972],
+  [93,"Rick James and Teena Marie Fire and Desire","Rick James and Teena Marie",1981],
+  [94,"The Marvelettes Too Many Fish in the Sea","The Marvelettes",1964],
+  [95,"Rare Earth I Just Want to Celebrate","Rare Earth",1971],
+  [96,"The Originals Baby I'm for Real","The Originals",1969],
+  [97,"The Velvelettes He Was Really Sayin Somethin","The Velvelettes",1964],
+  [98,"Dennis Edwards feat. Siedah Garrett Don't Look Any Further","Dennis Edwards feat. Siedah Garrett",1984],
+  [99,"Martha and the Vandellas Jimmy Mack","Martha and the Vandellas",1966],
+  [100,"Smokey Robinson and the Miracles Shop Around","Smokey Robinson and the Miracles",1960]
+];
+
+// Clean up: use proper deduplicated list
+var CLEAN=[
+  [1,"The Tracks of My Tears","Smokey Robinson and the Miracles",1965],
+  [2,"Papa Was a Rollin' Stone","The Temptations",1972],
+  [3,"What's Going On","Marvin Gaye",1971],
+  [4,"Heat Wave","Martha and the Vandellas",1963],
+  [5,"Superstition","Stevie Wonder",1972],
+  [6,"My Girl","The Temptations",1964],
+  [7,"You Keep Me Hangin' On","The Supremes",1967],
+  [8,"I Want You Back","The Jackson 5",1969],
+  [9,"Dancing in the Street","Martha and the Vandellas",1965],
+  [10,"The Tears of a Clown","Smokey Robinson and the Miracles",1967],
+  [11,"I Heard It Through the Grapevine","Marvin Gaye",1968],
+  [12,"I Second That Emotion","Smokey Robinson and the Miracles",1968],
+  [13,"Signed, Sealed, Delivered (I'm Yours)","Stevie Wonder",1970],
+  [14,"Where Did Our Love Go","The Supremes",1964],
+  [15,"ABC","The Jackson 5",1970],
+  [16,"Reach Out I'll Be There","The Four Tops",1966],
+  [17,"You Can't Hurry Love","The Supremes",1966],
+  [18,"Living for the City","Stevie Wonder",1973],
+  [19,"Please Mr. Postman","The Marvelettes",1961],
+  [20,"I'll Be There","The Jackson 5",1970],
+  [21,"Ain't No Mountain High Enough","Marvin Gaye & Tammi Terrell",1967],
+  [22,"Bernadette","The Four Tops",1967],
+  [23,"Stop! In the Name of Love","The Supremes",1965],
+  [24,"Cloud Nine","The Temptations",1968],
+  [25,"Mercy Mercy Me (The Ecology)","Marvin Gaye",1971],
+  [26,"Uptight (Everything's Alright)","Stevie Wonder",1966],
+  [27,"I Can't Help Myself (Sugar Pie Honey Bunch)","The Four Tops",1965],
+  [28,"Going to a Go-Go","Smokey Robinson and the Miracles",1965],
+  [29,"Ain't Too Proud to Beg","The Temptations",1966],
+  [30,"For Once in My Life","Stevie Wonder",1968],
+  [31,"Nowhere to Run","Martha and the Vandellas",1965],
+  [32,"I Was Made to Love Her","Stevie Wonder",1967],
+  [33,"Inner City Blues (Make Me Wanna Holler)","Marvin Gaye",1971],
+  [34,"Can I Get a Witness","Marvin Gaye",1963],
+  [35,"Got to Be There","Michael Jackson",1971],
+  [36,"Ain't No Mountain High Enough","Diana Ross",1970],
+  [37,"I Wish","Stevie Wonder",1976],
+  [38,"Come See About Me","The Supremes",1964],
+  [39,"Ben","Michael Jackson",1972],
+  [40,"How Sweet It Is (To Be Loved by You)","Marvin Gaye",1964],
+  [41,"You Are the Sunshine of My Life","Stevie Wonder",1972],
+  [42,"Distant Lover","Marvin Gaye",1974],
+  [43,"Love Child","Diana Ross and the Supremes",1968],
+  [44,"Baby Love","The Supremes",1964],
+  [45,"You've Really Got a Hold on Me","Smokey Robinson and the Miracles",1962],
+  [46,"Just My Imagination (Running Away with Me)","The Temptations",1971],
+  [47,"Higher Ground","Stevie Wonder",1973],
+  [48,"Shotgun","Jr. Walker and the All Stars",1965],
+  [49,"Do You Love Me","The Contours",1962],
+  [50,"I'm Losing You","The Temptations",1966],
+  [51,"Masterblaster (Jammin')","Stevie Wonder",1980],
+  [52,"Still Water (Love)","The Four Tops",1970],
+  [53,"Let's Get It On","Marvin Gaye",1973],
+  [54,"What Becomes of the Brokenhearted","Jimmy Ruffin",1966],
+  [55,"Ball of Confusion (That's What the World Is Today)","The Temptations",1970],
+  [56,"Easy","Commodores",1977],
+  [57,"Yester-Me, Yester-You, Yesterday","Stevie Wonder",1969],
+  [58,"Brick House","Commodores",1977],
+  [59,"Three Times a Lady","Commodores",1978],
+  [60,"Boogie Down","Eddie Kendricks",1974],
+  [61,"Fingertips (Part 2)","Little Stevie Wonder",1963],
+  [62,"Cruisin'","Smokey Robinson",1979],
+  [63,"Do You Know Where You're Going To","Diana Ross",1975],
+  [64,"Someday We'll Be Together","Diana Ross and the Supremes",1969],
+  [65,"Too Busy Thinking About My Baby","Marvin Gaye",1969],
+  [66,"My Guy","Mary Wells",1964],
+  [67,"Good Morning Heartache","Diana Ross",1973],
+  [68,"Sir Duke","Stevie Wonder",1977],
+  [69,"End of the Road","Boyz II Men",1992],
+  [70,"Going to a Go-Go","Smokey Robinson and the Miracles",1965],
+  [71,"It's the Same Old Song","The Four Tops",1965],
+  [72,"No More Tearstained Makeup","Martha and the Vandellas",1966],
+  [73,"Up the Ladder to the Roof","The Supremes",1970],
+  [74,"Trouble Man","Marvin Gaye",1972],
+  [75,"Girl You Need a Change of Mind","Eddie Kendricks",1972],
+  [76,"Fire and Desire","Rick James and Teena Marie",1981],
+  [77,"Too Many Fish in the Sea","The Marvelettes",1964],
+  [78,"I Just Want to Celebrate","Rare Earth",1971],
+  [79,"Baby I'm for Real","The Originals",1969],
+  [80,"He Was Really Sayin' Somethin'","The Velvelettes",1964],
+  [81,"Don't Look Any Further","Dennis Edwards feat. Siedah Garrett",1984],
+  [82,"Jimmy Mack","Martha and the Vandellas",1966],
+  [83,"Shop Around","Smokey Robinson and the Miracles",1960],
+  [84,"What's Going On","Marvin Gaye",1971],
+  [85,"Tears of a Clown","Smokey Robinson and the Miracles",1967],
+  [86,"Mary Wells My Guy","Mary Wells",1964],
+  [87,"I Was Made to Love Her","Stevie Wonder",1967],
+  [88,"Mercy Mercy Me","Marvin Gaye",1971],
+  [89,"My World Is Empty Without You","The Supremes",1965],
+  [90,"Come See About Me","The Supremes",1964],
+  [91,"Uptight","Stevie Wonder",1966],
+  [92,"You've Really Got a Hold on Me","Smokey Robinson and the Miracles",1962],
+  [93,"Ain't Too Proud to Beg","The Temptations",1966],
+  [94,"For Once in My Life","Stevie Wonder",1968],
+  [95,"Nowhere to Run","Martha and the Vandellas",1965],
+  [96,"Bernadette","The Four Tops",1967],
+  [97,"Stop! In the Name of Love","The Supremes",1965],
+  [98,"Cloud Nine","The Temptations",1968],
+  [99,"I Can't Help Myself","The Four Tops",1965],
+  [100,"Shotgun","Jr. Walker and the All Stars",1965]
+];
+
+var FEAT=[
+  ["fc-1","Smokey Robinson","The Tracks of My Tears"],
+  ["fc-2","The Temptations","Papa Was a Rollin Stone"],
+  ["fc-3","Marvin Gaye","Whats Going On"],
+  ["fc-4","Martha and the Vandellas","Heat Wave"],
+  ["fc-5","Stevie Wonder","Superstition"],
+  ["fc-6","The Temptations","My Girl"],
+  ["fc-7","The Supremes","You Keep Me Hangin On"],
+  ["fc-8","The Jackson 5","I Want You Back"],
+  ["fc-9","Martha and the Vandellas","Dancing in the Street"],
+  ["fc-10","Smokey Robinson","The Tears of a Clown"]
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"),"Smokey Robinson","The Tracks of My Tears");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+CLEAN.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+</script>
+</body>
+</html>

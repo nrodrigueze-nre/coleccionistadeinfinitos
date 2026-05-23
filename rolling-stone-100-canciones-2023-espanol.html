@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Canciones que Marcaron el 2023 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2023</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/#/" target="_blank" class="page-title">100 CANCIONES QUE MARCARON EL 2023</a>
+  <p class="page-sub">De Tainy y Peso Pluma a Shakira y Mon Laferte · La música en español que definió el año · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Paranormal – Sam Cooke">
+    <p class="cover-cap">CANALVIVA · 2013</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">La selección de Rolling Stone en Español de las 100 canciones de habla hispana que marcaron 2023. Una lista que mira hacia adentro — hacia el reggaetón colombiano y el corrido tumbado mexicano, el rap iberoamericano, el pop alternativo latinoamericano — sin jerarquías de género ni geografía. Al #1: Paranormal de Tainy y Álvaro Díaz, definida como el sonido del futuro del urbano. Al #7: Ella baila sola de Eslabón Armado y Peso Pluma, con casi 500 millones de vistas en YouTube. Y en el top 10: la sesión de Shakira y Bizarrap, el debut de unx100to de Grupo Frontera y Bad Bunny, Mon Laferte, Carin León y Silvana Estrada. El año más diverso del pop en español.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Paranormal">
+    <div>
+      <div class="feat-title">Paranormal</div>
+      <div class="feat-artist">Tainy y Álvaro Díaz &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Urbano / Avant-garde</span></div>
+      <p class="feat-rev">Una canción que define el sonido del género en los próximos años. La historia de un amor imposible que aterriza en un beat avant-garde con filigrana atmosférica que funcionaría como banda sonora de una película de Michael Mann. Álvaro Díaz aporta frescura y un enfoque artístico sin precedentes dentro del género urbano — no hay MC con mayores habilidades actualmente. La letra sencilla y actual no presume millones de dólares sino que reflexiona en las propias inseguridades: "Diciéndote en canciones lo que no puedo de frente."</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Primera cita">
+    <div>
+      <div class="feat-title">Primera cita</div>
+      <div class="feat-artist">Carin León &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Regional Mexicano / Soul</span></div>
+      <p class="feat-rev">El cantautor sonorense fusiona lo mejor de las sonoridades mexicanas con tintes de soul en una historia sobre amor y libertad. "No se creó con ninguna otra pretensión más que la de hacer música que a mí me gusta; se hizo de corazón. Me volvió a recalcar que a la música hay que entregarle amor para que te lo devuelva." Carin León fue uno de los nombres más importantes de 2023 en la música latina — esta canción es la prueba de por qué.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Tenochtitlán">
+    <div>
+      <div class="feat-title">Tenochtitlán</div>
+      <div class="feat-artist">Mon Laferte &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Rock / Pop</span></div>
+      <p class="feat-rev">El tema habla del juicio social al que todos hemos sido sujetos sin importar de dónde venimos. "¿Cuánto le costó / ¿Quién se la cogió / Si es una puta sudaca tercermundista", canta Mon Laferte al inicio — una apertura que golpea antes de que el oído pueda prepararse. La canción pertenece a su álbum Autopoiética y representa a la Mon Laferte más valiente: la que no pide permiso para decir exactamente lo que piensa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Qué Problema">
+    <div>
+      <div class="feat-title">Qué Problema</div>
+      <div class="feat-artist">Silvana Estrada &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Folk / Canción de Autor</span></div>
+      <p class="feat-rev">La cantautora mexicana retrata "cuando dos personas se quieren pero solo una tiene la voluntad de probar" en una carta al amor no correspondido. "Creo que es una situación difícil de manejar, las personas no somos claras, vamos y venimos. Nos hacemos mucho problema por no decir las cosas. Este fue mi intento por decirlas." Una de las voces más honestas del folk latinoamericano actual en su momento más vulnerable y más perfecto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Oliveira Dos Cen Anos">
+    <div>
+      <div class="feat-title">Oliveira Dos Cen Anos</div>
+      <div class="feat-artist">C. Tangana &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Folk / Fútbol</span></div>
+      <p class="feat-rev">Aunque C. Tangana no estuvo muy activo este año, llegó con esta canción llena de folclore y tradición que fungió como himno del centenario del Real Club Celta de Vigo. La canción emocionó al público amante del fútbol y al de la música por igual — Tangana demostrando que puede hacer lo mismo con un estadio de fútbol que con una sala de conciertos: convertirlo en un espacio de emoción genuina.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="La reina de la selva">
+    <div>
+      <div class="feat-title">La reina de la selva</div>
+      <div class="feat-artist">Villano Antillano y Pedro Capó &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Tropical / Reguetón</span></div>
+      <p class="feat-rev">Con beats tropicales y una letra sobre una mujer intimidante que no teme enfrentarse a nadie. Pedro Capó en el coro, Villano Antillano rapeando con su habitual audacia. "Terror de los cazadores, la miran y tiemblan / Hablan y hablan, pero no hacen na'." Una de las colaboraciones más interesantes del año en la música urbana latina: dos voces completamente distintas que juntas crean algo más grande que cada una por separado.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Ella baila sola">
+    <div>
+      <div class="feat-title">Ella baila sola</div>
+      <div class="feat-artist">Eslabón Armado y Peso Pluma &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Sierreño / Corrido Tumbado</span></div>
+      <p class="feat-rev">Una de las canciones más escuchadas en el mundo en 2023 y una gran parte del ascenso meteórico de Peso Pluma. Al momento de publicación de esta lista: casi 500 millones de vistas en YouTube y más de mil millones de reproducciones en Spotify. El corrido tumbado como fenómeno global en tiempo real — la música mexicana cruzando fronteras que ningún crítico había predicho que cruzaría tan rápido y tan completamente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Canción desaparecida">
+    <div>
+      <div class="feat-title">Canción desaparecida</div>
+      <div class="feat-artist">Juanes y Mabiland &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Rock / Pop</span></div>
+      <p class="feat-rev">La Comisión de la Verdad informa que entre 1985 y 2016 más de 120 mil personas fueron reportadas desaparecidas en Colombia. En su primera colaboración, Juanes y Mabiland expresan sus inquietudes sobre el tema para generar conciencia. "Las canciones van y vienen. Muchas veces llega una necesidad de decir lo que sientes." Una de las canciones más importantes y más incómodas del año — exactamente el tipo de incomodidad que el pop necesita más.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Mis compas tan aquí">
+    <div>
+      <div class="feat-title">Mis compas tan aquí</div>
+      <div class="feat-artist">Kevin Kaarl &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Regional Mexicano</span></div>
+      <p class="feat-rev">El mexicano ganador a Promesa del Año en los Premios Rolling Stone en Español aprovechó su presentación en el evento para tocar esta canción que es un homenaje a la amistad. Kevin Kaarl fue una de las revelaciones más genuinas del año en la música regional mexicana — una voz que no necesita del artificio del género para emocionar, solo necesita decir la verdad sobre las personas que quiere.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Bzrp Music Sessions Vol. 53">
+    <div>
+      <div class="feat-title">Bzrp Music Sessions Vol. 53</div>
+      <div class="feat-artist">Shakira y Bizarrap &middot; 2023</div>
+      <div class="feat-meta"><span class="feat-pill">Electro-Pop / Latin</span></div>
+      <p class="feat-rev">Una de las sesiones de Bizarrap que más dio de qué hablar en 2023. Shakira usó la sesión #53 para buscar catarsis hacia temas de su vida personal que resonaron recientemente. "Del amor al odio hay un paso. Por acá no vuelvas, hazme caso, cero rencor bebé. Yo te deseo que te vaya bien con mi supuesto reemplazo." La canción que convirtió el desamor de Shakira en el hit más viral del año en español — y lo hizo con una precisión quirúrgica que pocas artistas podrían lograr.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">CANALVIVA COLOMBIA · 100 CANCIONES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/#/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Paranormal","Tainy y Álvaro Díaz",2023],
+  [2,"Primera cita","Carin León",2023],
+  [3,"Tenochtitlán","Mon Laferte",2023],
+  [4,"Qué Problema","Silvana Estrada",2023],
+  [5,"Oliveira Dos Cen Anos","C. Tangana",2023],
+  [6,"La reina de la selva","Villano Antillano y Pedro Capó",2023],
+  [7,"Ella baila sola","Eslabón Armado y Peso Pluma",2023],
+  [8,"Canción desaparecida","Juanes y Mabiland",2023],
+  [9,"Mis compas tan aquí","Kevin Kaarl",2023],
+  [10,"Bzrp Music Sessions Vol. 53","Shakira y Bizarrap",2023],
+  [11,"Sacrificio","Tainy y Xantos",2023],
+  [12,"unx100to","Grupo Frontera y Bad Bunny",2023],
+  [13,"Según quién","Carin León y Maluma",2023],
+  [14,"SUKI","Álvaro Díaz y RaiNao",2023],
+  [15,"Vagabundo","Sebastián Yatra, Manuel Turizo y Beéle",2023],
+  [16,"TQG","Karol G y Shakira",2023],
+  [17,"Pacto","Jay Wheeler, Dei V, Hades66 y Luar La L",2023],
+  [18,"Patadas de ahogado","Latin Mafia y Humbe",2023],
+  [19,"LALA","Myke Towers",2023],
+  [20,"1.200 kilómetros","Santiago Cruz",2023],
+  [21,"Classy 101","Feid y Young Miko",2023],
+  [22,"AQYNE","Aitana y Danna Paola",2023],
+  [23,"Coco Chanel","Eladio Carrión y Bad Bunny",2023],
+  [24,"Si me voy","Cuco y The Marias",2023],
+  [25,"Podemos Repetirlo","Don Omar y Chencho Corleone",2023],
+  [26,"Vampiros","Rosalía y Rauw Alejandro",2023],
+  [27,"Tenemos que hablar","Danna Paola",2023],
+  [28,"El Correcto","Reik y Carin León",2023],
+  [29,"Estrella Solitaria","Triángulo de amor bizarro",2023],
+  [30,"LADY GAGA","Peso Pluma, Gabito Ballesteros y Junior H",2023],
+  [31,"Romancera","Guitarricadelafuente",2023],
+  [32,"Esencia","Humbe",2023],
+  [33,"Problema Cabrón","Residente y WOS",2023],
+  [34,"Disculpa Amiga","Elena Rose",2023],
+  [35,"Si Tú Me Quieres","Fonseca y Juan Luis Guerra",2023],
+  [36,"BZRP Music Sessions #57","Bizarrap y Milo J",2023],
+  [37,"Los Ángeles","Aitana",2023],
+  [38,"En La Oscuridad","Monsieur Periné y Bandalos Chinos",2023],
+  [39,"lo que hay x aquí","Rels B",2023],
+  [40,"No te enamores de él","Danny Ocean",2023],
+  [41,"Nada por Hecho","Siddhartha y Leiva",2023],
+  [42,"2NDO CHANCE","Becky G y Ivan Cornejo",2023],
+  [43,"Bendecidos","Canserbero, Kase O, Akapellah y más",2023],
+  [44,"Money In The Bank","Molotov y WOS",2023],
+  [45,"Te lo agradezco","Kany García y Carin León",2023],
+  [46,"Julietota","Latin Mafia",2023],
+  [47,"A Todos los Rumberos","Los Ángeles Azules, Panteón Rococó y Santana",2023],
+  [48,"PAENAMORAR","Paula Cendejas",2023],
+  [49,"Blue Jeans Y Un Crop Top","Sen Senra",2023],
+  [50,"La receta","Tego Calderón",2023],
+  [51,"Medalla de oro","Él mató a un policía motorizado",2023],
+  [52,"Mi Bello Ángel","Natanael Cano",2023],
+  [53,"Como Te Quiero Yo","Kali Uchis",2023],
+  [54,"Un Trambo","Cabra y De la Ghetto",2023],
+  [55,"MILAMORES","Sofía Reyes y Gera MX",2023],
+  [56,"Medellificación","Alcolirykoz y Jerónimo",2023],
+  [57,"Mi Droga Favorita","Isla de caras y Little Jesus",2023],
+  [58,"Mística","Bandalos Chinos y Esteman",2023],
+  [59,"Dime","Cuco y Conexión Divina",2023],
+  [60,"Quizás Sí, Quizás No","Álvaro Díaz y Quevedo",2023],
+  [61,"Niña bonita","Feid y Sean Paul",2023],
+  [62,"1000CANCIONES","Álvaro Díaz y Sen Senra",2023],
+  [63,"Y lloro","Junior H",2023],
+  [64,"½ Día","Diles que no me maten",2023],
+  [65,"Blam Blam","Vico C y Al2 el Aldeano",2023],
+  [66,"Cuero","Villano Antillano",2023],
+  [67,"A ciegas","Paula Arenas",2023],
+  [68,"Lovelanguage","NSQK",2023],
+  [69,"Continental","Bratty, NSQK y Mené",2023],
+  [70,"Nada Para Ti","Francisca Valenzuela y Ximena Sariñana",2023],
+  [71,"Frágil","Yahritza Y Su Esencia y Grupo Frontera",2023],
+  [72,"Remember Me","Duki, Bizarrap y KHEA",2023],
+  [73,"Blanca Mujer","Draco Rosa y Natalia Lafourcade",2023],
+  [74,"Besos y Pendientes","Daniela Spalla y Esteman",2023],
+  [75,"La Salvación","Arde Bogotá",2023],
+  [76,"Jamaica","Manuel Turizo y Beéle",2023],
+  [77,"Where She Goes","Bad Bunny",2023],
+  [78,"Fantasmas","Humbe",2023],
+  [79,"El camino","DELLAFUENTE, Ralphie Choo y Rusowsky",2023],
+  [80,"América","Los Auténticos Decadentes y Systema Solar",2023],
+  [81,"Futbol Rock","CLUBZ y Little Jesus",2023],
+  [82,"Yo no soy un ángel","Mala Rodríguez y Omar Montes",2023],
+  [83,"Las Flores Sangran","Usted Señálemelo",2023],
+  [84,"Dame una oportunidad","Julieta Venegas",2023],
+  [85,"PARA AMARTE A TI","KHEA y Tiago PZK",2023],
+  [86,"Aquí te espero","Ivan Cornejo",2023],
+  [87,"Estrecho / Alvarado","C. Tangana y pablopablo",2023],
+  [88,"PERRO NEGRO","Bad Bunny y Feid",2023],
+  [89,"Nada es seguro","Yadam y Zoe Gotusso",2023],
+  [90,"Traición","Miranda!, Emmanuel Horvilleur y Juan Ingaramo",2023],
+  [91,"Melancolía","Hello Seahorse!",2023],
+  [92,"Binikini","Rawayana y Danny Ocean",2023],
+  [93,"LuXxX","Lit Killah, Tiago PZK y Big One",2023],
+  [94,"Tajada","Babasónicos",2023],
+  [95,"DISPARA","Nicki Nicole y Milo J",2023],
+  [96,"Si volviera a conocerte","Loyal lobos",2023],
+  [97,"Por Mi México Remix","Lefty Sm, Santa Fe Klan, Dharius y más",2023],
+  [98,"Relajao","Ptazeta",2023],
+  [99,"Mi vida en llamas","Alex Anwandter y Buscabulla",2023],
+  [100,"Persona Favorita","Diamante Eléctrico y Conociendo Rusia",2023],
+];
+
+var FEAT = [
+  ["fc-1","Tainy y Álvaro Díaz","Paranormal"],
+  ["fc-2","Carin León","Primera cita"],
+  ["fc-3","Mon Laferte","Tenochtitlán"],
+  ["fc-4","Silvana Estrada","Qué Problema"],
+  ["fc-5","C. Tangana","Oliveira Dos Cen Anos"],
+  ["fc-6","Villano Antillano y Pedro Capó","La reina de la selva"],
+  ["fc-7","Eslabón Armado y Peso Pluma","Ella baila sola"],
+  ["fc-8","Juanes y Mabiland","Canción desaparecida"],
+  ["fc-9","Kevin Kaarl","Mis compas tan aquí"],
+  ["fc-10","Shakira y Bizarrap","Bzrp Music Sessions Vol. 53"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+function setImg(el, url) { el.src = url; el.style.opacity = "1"; el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; }; }
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [], a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0], match = null;
+      for (var i = 0; i < results.length; i++) { if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; } }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb")); else throw new Error("x");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [], best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+loadArt(document.getElementById("hero-cover"), "Tainy Alvaro Diaz", "Paranormal");
+FEAT.forEach(function(fc, i) { setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300); });
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div"); row.className = "track-row";
+  row.innerHTML = "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ = [], artTimer = null;
+function flushArt() { var batch = artQ.splice(0, 8); for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); } if (artQ.length > 0) artTimer = setTimeout(flushArt, 500); }
+var artObs = new IntersectionObserver(function(entries) { for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); } clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80); }, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover"); for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return; lfmBusy = true;
+  var el = lfmQ.shift(), artist = decodeURIComponent(el.dataset.lfmArtist || ""), track = decodeURIComponent(el.dataset.lfmAlbum || ""), key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) { var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10); lfmCache[key] = count; renderScrobble(el, count); })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) { el.classList.remove("loading"); el.textContent = count > 0 ? count.toLocaleString() : "0"; if (!count) el.classList.add("zero"); }
+var lfmObs = new IntersectionObserver(function(entries) { for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); } }, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles"); for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

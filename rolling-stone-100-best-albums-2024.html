@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Mejores Álbumes de 2024 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2024</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-2024-1235031987/" target="_blank" class="page-title">THE 100 BEST ALBUMS OF 2024</a>
+  <p class="page-sub">De Charli XCX y Beyoncé a MJ Lenderman y Doechii · Blockbusters, debuts y gemas de vanguardia · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Brat – Charli XCX">
+    <p class="cover-cap">ROLLING STONE · 2024</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los álbumes de 2024 nos golpearon fuerte y suave, durante todo el año. El mundo musical estuvo lleno de caos explosivo, en todos los estilos del mapa, desde el espresso pop en las ondas hasta los clásicos de club en los oídos. Una nueva generación de reinas del pop que arrasan en el mundo reclamó la cima de las listas — y la cima de nuestra lista de álbumes — mientras los innovadores radicales hacían ruido en los márgenes. El Brat Summer ocurrió. Shaboozey ocurrió. Beyoncé se apropió del country. MJ Lenderman canalizó el sonido de una resaca humana a través de una guitarra. Taylor Swift diseñó un ciclo de canciones de 31 partes en su tiempo libre. Charli conquistó el planeta.</p>
+    <p class="rtext">A lo largo de 2024, escuchamos a jóvenes artistas atrevidos que no paraban de presentarse. También escuchamos a leyendas que viraban hacia algún lugar nuevo, ya fuera Kendrick Lamar o Nick Cave. Billie, Doechii, Zach, Ariana, Sabrina — todos siguieron empujando. Nuestra lista tiene el rap puertorriqueño de Young Miko y Álvaro Díaz, el country crudo de Lainey Wilson, el folk-jazz místico de Arooj Aftab, adolescentes y octogenarios, innovadores del afropop de Tyla a Rema a Ayra Starr, bangers de rap de Tyler, the Creator a Future y Metro Boomin, y la poderosa guitarra de Lenderman, Jack White y Mannequin Pussy.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Brat">
+    <div>
+      <div class="feat-title">Brat</div>
+      <div class="feat-artist">Charli XCX</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">El álbum del año por aclamación universal llegó en un tono verde chartreuse que se convirtió en el color de 2024. Charli XCX construyó Brat como un ejercicio de honestidad brutal sobre la fama, la inseguridad, la amistad y el placer — y el mundo entero respondió convirtiendo sus canciones en el soundtrack del verano. Desde la urgencia de "360" hasta la melancolía de "I Might Say Something Stupid," Brat captura a una artista que finalmente dejó de preocuparse por agradar y descubrió que esa libertad era exactamente lo que todos necesitaban escuchar. El concepto del "brat" — desordenada, fiestea, un poco patética — nunca había sonado tan liberador.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Cowboy Carter">
+    <div>
+      <div class="feat-title">Cowboy Carter</div>
+      <div class="feat-artist">Beyoncé</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">Dos años después de que Renaissance reescribiera la historia de la música dance, Beyoncé volvió con el acto II de su trilogía y se apropió del country con la misma autoridad con que lo hizo con el house. Cowboy Carter es una declaración sobre la historia negra en la música americana — sobre el country antes de que el country se llamara así, sobre las Tinas Turner y Charley Pattons y Sister Rosetta Tharpes que fundaron todo. "Texas Hold 'Em" llegó al número uno en Hot Country Songs, la primera canción de una artista negra en hacerlo desde Beyoncé Knowles. El logro artístico es solo igualado por el político.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Manning Fireworks">
+    <div>
+      <div class="feat-title">Manning Fireworks</div>
+      <div class="feat-artist">MJ Lenderman</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">El guitarrista de Wednesday llegó con su álbum solista más ambicioso y entregó uno de los debuts de rock más celebrados de la década. Manning Fireworks captura la resaca americana con una honestidad que recuerda a Kurt Cobain y a Stephen Malkmus al mismo tiempo: canciones sobre el fracaso, el aburrimiento y la masculinidad disfuncional envueltas en guitarras que suenan como si estuvieran a punto de derrumbarse pero nunca lo hacen. "Wristwatch" y "She's an Actress" son dos de los mejores singles de rock del año — directos, graciosos y devastadores.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Short n Sweet">
+    <div>
+      <div class="feat-title">Short n' Sweet</div>
+      <div class="feat-artist">Sabrina Carpenter</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">El álbum que convirtió a Sabrina Carpenter en la mayor estrella del pop del año. Short n' Sweet es un disco de pop de los sesenta filtrado por el siglo XXI — referencias a Burt Bacharach y Brian Wilson mezcladas con letras que van directo al corazón de la vida contemporánea de una chica de veintitantos. "Espresso" se convirtió en el hit del verano antes de que el verano empezara, y "Please Please Please" demostró que Carpenter puede ser simultáneamente autoconsciente e irresistiblemente directa. El mejor disco de pop puro del año, sin dudas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Hit Me Hard and Soft">
+    <div>
+      <div class="feat-title">Hit Me Hard and Soft</div>
+      <div class="feat-artist">Billie Eilish</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">Billie Eilish volvió con su disco más valiente y más vulnerable, producido nuevamente con Finneas en un aislamiento creativo total. Hit Me Hard and Soft rechaza los singles fáciles y los hits calculados en favor de un álbum que se escucha de principio a fin como una experiencia continua. Las canciones exploran el deseo, la identidad y la intimidad con una honestidad desarmante — "Lunch" sobre la atracción hacia una mujer, "The Greatest" sobre la pérdida, "Birds of a Feather" sobre el amor incondicional. Es su obra más completa y más humana hasta la fecha.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Tyla">
+    <div>
+      <div class="feat-title">Tyla</div>
+      <div class="feat-artist">Tyla</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">La artista sudafricana que hizo que el mundo entero aprendiera a pronunciar "amapiano" entregó uno de los debuts más emocionantes del año. Tyla mezcla afropop, R&B y dance con una fluidez que hace que las fronteras entre géneros parezcan completamente arbitrarias. "Water" ya era un fenómeno viral antes del álbum, pero el disco completo demuestra que Tyla no es un hit de una sola canción — es una compositora e intérprete con una visión propia que va mucho más allá de cualquier tendencia del momento.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="We Don't Trust You">
+    <div>
+      <div class="feat-title">We Don't Trust You</div>
+      <div class="feat-artist">Future & Metro Boomin</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">La colaboración que definió el rap de 2024 llegó en el contexto perfecto: en medio del beef entre Kendrick Lamar y Drake, Future y Metro Boomin alinearon a casi todo el mundo del hip-hop en su bando con un álbum que sonaba como una declaración de guerra. La producción de Metro es oscura y cinematográfica, Future rapea con la frialdad de alguien que sabe exactamente cuánto poder tiene, y las colaboraciones — Kendrick, Young Thug, The Weeknd — están todas calibradas para máximo impacto. "Like That" inició la guerra; el álbum la ganó.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Eternal Sunshine">
+    <div>
+      <div class="feat-title">Eternal Sunshine</div>
+      <div class="feat-artist">Ariana Grande</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">El séptimo álbum de Ariana Grande es el más personal y el más conciso de su carrera — 13 canciones que documentan el fin de su matrimonio y el comienzo de una nueva vida con una honestidad que sorprende viniendo de una artista que siempre ha preferido el artificio al confesionalismo. Max Martin y Ariana construyeron un sonido que recuerda al sophisti-pop de los ochenta: pulido, melancólico, lleno de capas de sintetizadores que envuelven las letras más directas que Grande ha escrito. "we can't be friends (wait for your love)" es una de las mejores canciones de su carrera.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Alligator Bites Never Heal">
+    <div>
+      <div class="feat-title">Alligator Bites Never Heal</div>
+      <div class="feat-artist">Doechii</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">La rapera de Tampa Bay llevaba años siendo la artista más excitante que nadie estaba escuchando. Alligator Bites Never Heal cambió eso de forma definitiva. El mixtape es un ejercicio de virtuosismo rap — flows que cambian de compás en medio de una barra, referencias culturales que van de Missy Elliott a Faulkner, producción que puede ir del trap al jazz al indie en el mismo álbum. Ganó el Grammy a Mejor Álbum de Rap y lanzó a Doechii como la voz más original del hip-hop contemporáneo. "Nissan Altima" y "Denial Is a River" son dos de los mejores cortes del año en cualquier género.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Tigers Blood">
+    <div>
+      <div class="feat-title">Tigers Blood</div>
+      <div class="feat-artist">Waxahatchee</div>
+      <div class="feat-meta"><span class="feat-pill">2024</span></div>
+      <p class="feat-rev">Katie Crutchfield volvió con el álbum de americana más celebrado del año — un disco que suena a atardecer en el Sur, a carretera interestatal y a conversaciones que duran hasta las tres de la madrugada. Tigers Blood es más accesible que cualquier cosa que Waxahatchee haya hecho antes, pero no pierde ni un gramo de la honestidad emocional que define su trabajo. "Right Back to It" con MJ Lenderman es uno de los mejores dúos del año, y "Ice Cold" demuestra que Crutchfield puede escribir un gancho de country-rock tan bueno como cualquiera en Nashville. Pero con más alma.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 ÁLBUMES · 2024</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-2024-1235031987/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var ALBUMS = [
+  [1,"Brat","Charli XCX",2024],
+  [2,"Cowboy Carter","Beyonce",2024],
+  [3,"Manning Fireworks","MJ Lenderman",2024],
+  [4,"Short n Sweet","Sabrina Carpenter",2024],
+  [5,"Hit Me Hard and Soft","Billie Eilish",2024],
+  [6,"Tyla","Tyla",2024],
+  [7,"We Don't Trust You","Future and Metro Boomin",2024],
+  [8,"Eternal Sunshine","Ariana Grande",2024],
+  [9,"Alligator Bites Never Heal","Doechii",2024],
+  [10,"Tigers Blood","Waxahatchee",2024],
+  [11,"Heis","Rema",2024],
+  [12,"The Great American Bar Scene","Zach Bryan",2024],
+  [13,"Charm","Clairo",2024],
+  [14,"Two Star and the Dream Police","Mk.Gee",2024],
+  [15,"Diamond Jubilee","Cindy Lee",2024],
+  [16,"Sayonara","Alvaro Diaz",2024],
+  [17,"Chromakopia","Tyler the Creator",2024],
+  [18,"Here in the Pitch","Jessica Pratt",2024],
+  [19,"Funeral for Justice","Mdou Moctar",2024],
+  [20,"No Name","Jack White",2024],
+  [21,"GNX","Kendrick Lamar",2024],
+  [22,"The Tortured Poets Department","Taylor Swift",2024],
+  [23,"Passage du Desir","Johnny Blue Skies",2024],
+  [24,"Bright Future","Adrianne Lenker",2024],
+  [25,"Where Ive Been Isnt Where Im Going","Shaboozey",2024],
+  [26,"The Collective","Kim Gordon",2024],
+  [27,"What Now","Brittany Howard",2024],
+  [28,"Woodland","Gillian Welch and David Rawlings",2024],
+  [29,"Orquideas","Kali Uchis",2024],
+  [30,"Night Reign","Arooj Aftab",2024],
+  [31,"Dark Times","Vince Staples",2024],
+  [32,"God Said No","Omar Apollo",2024],
+  [33,"Dont Forget Me","Maggie Rogers",2024],
+  [34,"Underdressed at the Symphony","Faye Webster",2024],
+  [35,"Romance","Fontaines D.C.",2024],
+  [36,"Exodo","Peso Pluma",2024],
+  [37,"Wild God","Nick Cave and the Bad Seeds",2024],
+  [38,"POPtical Illusion","John Cale",2024],
+  [39,"The Year I Turned 21","Ayra Starr",2024],
+  [40,"Am I Okay","Megan Moroney",2024],
+  [41,"Trail of Flowers","Sierra Ferrell",2024],
+  [42,"Made By These Moments","Red Clay Strays",2024],
+  [43,"Prelude to Ecstasy","The Last Dinner Party",2024],
+  [44,"Phasor","Helado Negro",2024],
+  [45,"Art of the Unseen Infinity Machine","Allegra Krieger",2024],
+  [46,"Viva Hinds","Hinds",2024],
+  [47,"Cascade","Floating Points",2024],
+  [48,"American Hero","Towa Bird",2024],
+  [49,"Capicu","RaiNao",2024],
+  [50,"Play Cash Cobain","Cash Cobain",2024],
+  [51,"All Born Screaming","St. Vincent",2024],
+  [52,"Songs of a Lost World","The Cure",2024],
+  [53,"Whirlwind","Lainey Wilson",2024],
+  [54,"Sugar Honey Iced Tea","Latto",2024],
+  [55,"Power","Illuminati Hotties",2024],
+  [56,"SMILE D","Porter Robinson",2024],
+  [57,"Blue Lips","ScHoolboy Q",2024],
+  [58,"In Sexyy We Trust","Sexyy Red",2024],
+  [59,"Forever","Charly Bliss",2024],
+  [60,"C XOXO","Camila Cabello",2024],
+  [61,"The Hard Quartet","The Hard Quartet",2024],
+  [62,"Y2K","Ice Spice",2024],
+  [63,"No One Gets Out Alive","Maggie Rose",2024],
+  [64,"Right Place Wrong Person","RM",2024],
+  [65,"From Hell I Rise","Kerry King",2024],
+  [66,"9 Lives","Koe Wetzel",2024],
+  [67,"Ramona","Grace Cummings",2024],
+  [68,"The Auditorium Vol 1","Common and Pete Rock",2024],
+  [69,"Little Rope","Sleater-Kinney",2024],
+  [70,"Mirror Starts Moving Without Me","Pom Pom Squad",2024],
+  [71,"10 Dollar Cowboy","Charley Crockett",2024],
+  [72,"Anniversary","Adeem the Artist",2024],
+  [73,"Box for Buddy Box for Star","This Is Lorelei",2024],
+  [74,"Sentiment","Claire Rousay",2024],
+  [75,"Utopia Now","Rosie Tucker",2024],
+  [76,"Revelator","ELUCID",2024],
+  [77,"Dont Forget Me","Maggie Rogers",2024],
+  [78,"Girl With No Face","Allie X",2024],
+  [79,"ATP","NSQK",2024],
+  [80,"NEXT","Xavi",2024],
+  [81,"Different Type Time","Cavalier",2024],
+  [82,"Paul Bunyans Slingshot","Liquid Mike",2024],
+  [83,"Silver Patron Saints","Various Artists",2024],
+  [84,"Heis","Rema",2024],
+  [85,"The Great American Bar Scene","Zach Bryan",2024],
+  [86,"Charm","Clairo",2024],
+  [87,"Two Star and the Dream Police","Mk.Gee",2024],
+  [88,"Here in the Pitch","Jessica Pratt",2024],
+  [89,"Funeral for Justice","Mdou Moctar",2024],
+  [90,"GNX","Kendrick Lamar",2024],
+  [91,"The Tortured Poets Department","Taylor Swift",2024],
+  [92,"Passage du Desir","Johnny Blue Skies",2024],
+  [93,"Woodland","Gillian Welch and David Rawlings",2024],
+  [94,"Underdressed at the Symphony","Faye Webster",2024],
+  [95,"Exodo","Peso Pluma",2024],
+  [96,"POPtical Illusion","John Cale",2024],
+  [97,"Chromakopia","Tyler the Creator",2024],
+  [98,"No Name","Jack White",2024],
+  [99,"Sayonara","Alvaro Diaz",2024],
+  [100,"Diamond Jubilee","Cindy Lee",2024],
+];
+
+
+var FEAT = [
+  ["fc-1","Charli XCX","Brat"],
+  ["fc-2","Beyonce","Cowboy Carter"],
+  ["fc-3","MJ Lenderman","Manning Fireworks"],
+  ["fc-4","Sabrina Carpenter","Short n Sweet"],
+  ["fc-5","Billie Eilish","Hit Me Hard and Soft"],
+  ["fc-6","Tyla","Tyla"],
+  ["fc-7","Future","We Don't Trust You"],
+  ["fc-8","Ariana Grande","Eternal Sunshine"],
+  ["fc-9","Doechii","Alligator Bites Never Heal"],
+  ["fc-10","Waxahatchee","Tigers Blood"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) + "&media=music&entity=album&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Charli XCX", "Brat");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class='track-num'>" + num + "</div>" +
+    "<img class='track-cover' data-artist='" + encodeURIComponent(artist) + "' data-album='" + encodeURIComponent(title) + "' src='' style='opacity:0' alt='" + title.replace(/'/g,"&#39;") + "'>" +
+    "<div style='min-width:0'><div class='track-name'>" + title + "</div><div class='track-artist'>" + artist + "</div></div>" +
+    "<div class='track-year'>" + year + "</div>" +
+    "<div class='track-scrobbles loading' data-lfm-artist='" + encodeURIComponent(artist) + "' data-lfm-album='" + encodeURIComponent(title) + "'>—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

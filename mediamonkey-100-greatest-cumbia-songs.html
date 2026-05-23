@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Cumbia Songs — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">Personal</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/#/" target="_blank" class="page-title">100 GREATEST CUMBIA SONGS</a>
+  <p class="page-sub">Ordenadas por impacto comercial y crítico · Selena, La Sonora Dinamita, Gilda, Los Ángeles Azules · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Amor Prohibido – Sam Cooke">
+    <p class="cover-cap">CANALVIVA · 2013</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">100 canciones de cumbia — colombiana, mexicana, peruana y argentina — reordenadas por impacto comercial y reconocimiento crítico. Al #1: Amor Prohibido de Selena (1994), #1 en Billboard Latin Tracks y obra cumbre de la cumbia tejana. Al #2: Bidi Bidi Bom Bom, su canción más versionada y más icónica globalmente. Al #3: Cómo Te Voy a Olvidar de Los Ángeles Azules (1996), el hit del Grupo México DF que fue versionado por decenas de artistas internacionales. Al #4: Se Me Perdió la Cadenita de La Sonora Dinamita, su hit más reconocido a nivel mundial. Una colección que cruza cuatro países y seis décadas de cumbia continental.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 por impacto comercial &amp; crítico — Reseñas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Amor Prohibido">
+    <div>
+      <div class="feat-title">Amor Prohibido</div>
+      <div class="feat-artist">Selena &middot; 1994</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Tejana</span></div>
+      <p class="feat-rev">El mayor éxito de Selena Quintanilla y uno de los singles latinos más importantes de los años 90: #1 en Billboard Latin Tracks durante varios meses, disco de platino en Estados Unidos y México. Una historia de amor imposible entre clases sociales narrada con el ritmo de la cumbia tejana — el género que Selena elevó al mainstream americano desde Corpus Christi, Texas, antes de su asesinato en 1995.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Bidi Bidi Bom Bom">
+    <div>
+      <div class="feat-title">Bidi Bidi Bom Bom</div>
+      <div class="feat-artist">Selena &middot; 1994</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Tejana</span></div>
+      <p class="feat-rev">La canción más versionada de Selena y la más reconocible globalmente: ese ritmo de corazón que late antes de que empiece el verso, la onomatopeya perfecta de enamorarse. Incluida en el álbum Amor Prohibido de 1994, fue el tema principal de la película biográfica protagonizada por Jennifer Lopez en 1997. Cardi B, Becky G y decenas de artistas la han referenciado o versionado en las últimas décadas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Cómo Te Voy a Olvidar">
+    <div>
+      <div class="feat-title">Cómo Te Voy a Olvidar</div>
+      <div class="feat-artist">Los Ángeles Azules &middot; 1996</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Sonidera</span></div>
+      <p class="feat-rev">El hit que convirtió a Los Ángeles Azules en leyenda de la cumbia mexicana. Nacidos en Iztapalapa, el barrio periférico del DF, el conjunto de los hermanos Mejía Avante llevó décadas tocando para los barrios populares antes de que su fusión de cumbia con banda y sintetizadores se volviera fenómeno masivo. 'Cómo Te Voy a Olvidar' fue versionada por J Balvin, Selena Gómez y Laura Pausini, entre muchos otros.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Se Me Perdio la Cadenita">
+    <div>
+      <div class="feat-title">Se Me Perdio la Cadenita</div>
+      <div class="feat-artist">La Sonora Dinamita &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Colombiana</span></div>
+      <p class="feat-rev">El hit más conocido internacionalmente de La Sonora Dinamita, la agrupación colombiana que llevó la cumbia a todos los rincones del mundo hispanohablante. Grabada en 1978 con la voz de Lucho Argaín, se convirtió en estándar de fiestas, carnavales y quinceañeras en toda América Latina. La Sonora Dinamita fue fundada en 1960 en Barranquilla y sigue activa — un récord de longevidad en la música tropical latinoamericana.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Techno Cumbia">
+    <div>
+      <div class="feat-title">Techno Cumbia</div>
+      <div class="feat-artist">Selena &middot; 1994</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Tejana / Dance</span></div>
+      <p class="feat-rev">Selena abrazando el futuro: una fusión de cumbia con electrónica de los 90 que sonaba como el pop latino que vendría décadas después. Incluida en el mismo álbum Amor Prohibido, demostró que la cumbia tejana podía incorporar sintetizadores y drum machines sin perder su esencia bailable. Una prueba más de la visión artística de Selena más allá de lo que el género tenía permitido hasta entonces.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="No Me Arrepiento de Este Amor">
+    <div>
+      <div class="feat-title">No Me Arrepiento de Este Amor</div>
+      <div class="feat-artist">Gilda &middot; 2013</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia</span></div>
+      <p class="feat-rev">El himno póstumo de Gilda — Miriam Alejandra Bianchi — la artista argentina que murió en un accidente de tránsito en 1996 y se convirtió en ícono popular y religiosa. Sus seguidores la visitan como a una santa en el lugar del accidente en Entre Ríos. 'No Me Arrepiento de Este Amor' fue la canción que lanzó su carrera a principios de los 90 y se convirtió en estandarte de la cumbia romántica argentina.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Se Te Ve la Tanga">
+    <div>
+      <div class="feat-title">Se Te Ve la Tanga</div>
+      <div class="feat-artist">Damas Gratis &middot; 2000</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Villera</span></div>
+      <p class="feat-rev">El hit fundacional del movimiento cumbiavillera argentino. Pablo Lescano y Damas Gratis crearon un género en los barrios populares del Gran Buenos Aires de los 90 — cumbia acelerada, letras directas sin eufemismos, estética de barrio periférico sin pretensiones. 'Se Te Ve la Tanga' fue la canción que llevó la cumbiavillera del under a la radio y generó la discusión más larga del periodismo musical argentino sobre clase, gusto y legitimidad cultural.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Soy Provinciano">
+    <div>
+      <div class="feat-title">Soy Provinciano</div>
+      <div class="feat-artist">Chacalón y la Nueva Crema &middot; 1979</div>
+      <div class="feat-meta"><span class="feat-pill">Chicha / Cumbia Andina</span></div>
+      <p class="feat-rev">El himno de la migración interna peruana. Lorenzo Palacios Quispe — Chacalón — era hijo de migrantes andinos en Lima y cantó la experiencia de millones de peruanos que llegaban a la capital a construir una nueva vida. 'Soy Provinciano' mezcla la cumbia colombiana con los ritmos andinos peruanos en lo que se llamaría 'chicha' — la cumbia de los pueblos jóvenes, despreciada por la élite limeña y amada por el Perú profundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="SHHH!">
+    <div>
+      <div class="feat-title">SHHH!</div>
+      <div class="feat-artist">Kumbia Kings &middot; 2000</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Pop</span></div>
+      <p class="feat-rev">AB Quintanilla III — hermano de Selena — fundó Kumbia Kings para llevar la cumbia al mainstream del pop latino del nuevo milenio. 'SHHH!' fue su hit más bailado: producción de vanguardia, estética MTV y el ritmo de la cumbia tejana que AB heredó de su hermana. Kumbia Kings ganó un Grammy Latino y abrió la puerta para que la cumbia entrara definitivamente en el repertorio del pop latino de estadio.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Cumbia Campesina">
+    <div>
+      <div class="feat-title">Cumbia Campesina</div>
+      <div class="feat-artist">Los Corraleros de Majagual &middot; 1965</div>
+      <div class="feat-meta"><span class="feat-pill">Cumbia Colombiana</span></div>
+      <p class="feat-rev">Los Corraleros de Majagual fueron el conjunto más importante de la cumbia colombiana clásica — intérpretes masivos, colaboradores de docenas de artistas, y el sonido de referencia de la cumbia costeña de los años 60. 'Cumbia Campesina' es uno de sus temas más celebrados: gaitas, tambores, acordeón y la energía festiva del Caribe colombiano en su estado más puro, antes de que los sintetizadores y las guitarras eléctricas transformaran el género.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">CANALVIVA COLOMBIA · 100 CANCIONES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/#/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Amor Prohibido","Selena",1994],
+  [2,"Bidi Bidi Bom Bom","Selena",1994],
+  [3,"Cómo Te Voy a Olvidar","Los Ángeles Azules",1996],
+  [4,"Se Me Perdio la Cadenita","La Sonora Dinamita",1978],
+  [5,"Techno Cumbia","Selena",1994],
+  [6,"No Me Arrepiento de Este Amor","Gilda",2013],
+  [7,"Se Te Ve la Tanga","Damas Gratis",2000],
+  [8,"Soy Provinciano","Chacalón y la Nueva Crema",2021],
+  [9,"SHHH!","Kumbia Kings",2000],
+  [10,"Cumbia Campesina","Los Corraleros de Majagual",1965],
+  [11,"Ya Se Ha Muerto Mi Abuelo","Juaneco y su Combo",2014],
+  [12,"Las Velas Encendidas","La Sonora Dinamita",1982],
+  [13,"Mi Najayita","Los Bukis",1970],
+  [14,"A Patricia","Los Destellos",2007],
+  [15,"Tabaco y Ron","Rodolfo Aicardi",1979],
+  [16,"Cumbia en la India","Andrés Landero",1966],
+  [17,"Mi Matamoros Querido","Rigo Tovar",2019],
+  [18,"Ritmo de Tambo","La Sonora Dinamita; Lucho Argaín",1965],
+  [19,"Motor y Motivo","Grupo 5",2010],
+  [20,"Navidad Negra","Pedro Laza y sus Pelayeros",1960],
+  [21,"Caliventura","Afrosound",1973],
+  [22,"Cumbia del Amor","Lisandro Meza",1981],
+  [23,"Charanga Campesina","Los Corraleros de Majagual",2012],
+  [24,"La Sirenita","Rigo Tovar",2012],
+  [25,"Los Sabanales","Los Corraleros de Majagual",1967],
+  [26,"Nunca Pensé en Llorar","Rossy War",2000],
+  [27,"Cumbia Candela","Aniceto Molina",2011],
+  [28,"Salsipuedes","Lucho Bermúdez",1954],
+  [29,"Los Cien Años de Macondo","Rodolfo Aicardi",1986],
+  [30,"Cumbia Cienaguera","Conjunto Típico Vallenato",2014],
+  [31,"Te Aprovechas","Grupo Límite",2022],
+  [32,"La Yerbita","Los Corraleros de Majagual",1967],
+  [33,"Loquito por Ti","Armando Hernández",2000],
+  [34,"La Subienda","Gabriel Romero",1980],
+  [35,"Tolu","Lucho Bermúdez",2000],
+  [36,"Pibe Cantina","Yerba Brava",2007],
+  [37,"Noche de Estrellas","La Sonora del Caribe; Lucho Argaín",2014],
+  [38,"La Zenaida","Armando Hernández",1984],
+  [39,"Otro Ocupa Mi Lugar","Grupo Bryndis",2011],
+  [40,"Cumbia en Do Menor","Lito Barrientos y Su Orquesta",1965],
+  [41,"Un Año Mas","Los Vikings 5",0],
+  [42,"Pequeña","Los Temerarios",2021],
+  [43,"Que No Quede Huella","Bronco",2010],
+  [44,"A Mi Que Me Quedo","Los Invasores de Nuevo León; El Gran Silencio",2020],
+  [45,"Que Bello","Sonora Tropicana",1989],
+  [46,"Cangrejito Playero","Acapulco Tropical",2011],
+  [47,"Loco","Pesado",2009],
+  [48,"La Piojosa","La Sonora Cienaguera",1963],
+  [49,"Fandango en Percusion","Pedro Laza y sus Pelayeros",1965],
+  [50,"La Maestranza","Los Graduados",1969],
+  [51,"La Piragua","Gabriel Romero",1969],
+  [52,"Amaneciendo","Adolfo Echeverría",1977],
+  [53,"El Pescador de Barú","Los Warahuaco",1982],
+  [54,"Golpe Con Golpe","Pastor López",1982],
+  [55,"La Medallita","Los Corraleros de Majagual",1982],
+  [56,"El Canoero","Los Warahuaco",1983],
+  [57,"El Solitario","Alfredo Gutiérrez",1992],
+  [58,"La Casa en el Aire","Gabriel Romero",1992],
+  [59,"Cumbia Que Te Vas de Ronda","Carmen Rivero",1994],
+  [60,"Diario de un Borracho","Alfredo Gutiérrez",1994],
+  [61,"La Danza de Los Mirlos","Los Mirlos",1996],
+  [62,"El Campanero","Aniceto Molina",1999],
+  [63,"Fantasia Nocturna (Lucerito)","Los Teen Agers",1999],
+  [64,"La Burrita","Los Corraleros de Majagual",1999],
+  [65,"Esperma y Ron","Los Guacharacos de Colombia",2000],
+  [66,"Fiesta de Los Negritos","Lucho Bermúdez",2000],
+  [67,"Gaita de Flores","Lucho Bermúdez",2000],
+  [68,"Y Ahora Te Vas","La Nueva Luna",2000],
+  [69,"Cumbia sobre el río","Celso Piña",2001],
+  [70,"Guaracha Sabrosona","Alberto Pedraza",2003],
+  [71,"El Hijo Ausente","Pastor López",2005],
+  [72,"El Pescador","Los Wawanco",2006],
+  [73,"La Luna y Tu","Ráfaga",2006],
+  [74,"Déjenme Si Estoy Llorando (Chuntaro Style)","El Gran Silencio",2007],
+  [75,"La Abusadora","Laura León",2008],
+  [76,"Quien Pompo","Chico Che",2008],
+  [77,"Fuego","Bomba Estéreo",2009],
+  [78,"Fiesta en Mi Pueblo","Rodolfo Aicardi; Los Hispanos",2010],
+  [79,"Rio Mamore","El Cuarteto Imperial",2010],
+  [80,"Adios Paloma","Cuarteto Continental",2014],
+  [81,"Cumbia Sampuesana (Ya No Más)","Conjunto Típico Vallenato",2014],
+  [82,"Caramelo de Menta","Los Pakines",2015],
+  [83,"Cumbia Francesa","Xavier Pasos",2015],
+  [84,"Elsa","Los Destellos; Enrique Delgado",2015],
+  [85,"La Pollera Colorá","Los Inmortales",2015],
+  [86,"La Ventanita","Grupo Sombras",2015],
+  [87,"Los Domingos (La Peineta)","Sonora Palacios",2015],
+  [88,"El Aguajal","Los Shapis",2016],
+  [89,"Cariñito","Los Hijos del Sol",2017],
+  [90,"Colegiala","Los Ilusionistas",2017],
+  [91,"Soledad","Combo Los Galleros; Lucy González",2017],
+  [92,"Cumbia del Monte","Pedro Laza y sus Pelayeros",2018],
+  [93,"Ese Muerto No Lo Cargo Yo","Gustavo Quintero",2018],
+  [94,"Cumbia Con la Luna","Grupo Control",2020],
+  [95,"La Banda Borracha","Mike Laure",2020],
+  [96,"Winona","Fito Olivares",2020],
+  [97,"Así Se Baila la Cumbia","Policarpo Calle",2021],
+  [98,"El Arbolito","Grupo Nectar",2021],
+  [99,"Te Amo","Los Mier",2022],
+  [100,"Cumbia Piquetona","Victor M Leiva",0],
+];
+
+var FEAT = [
+  ["fc-1","Selena","Amor Prohibido"],
+  ["fc-2","Selena","Bidi Bidi Bom Bom"],
+  ["fc-3","Los Ángeles Azules","Cómo Te Voy a Olvidar"],
+  ["fc-4","La Sonora Dinamita","Se Me Perdio la Cadenita"],
+  ["fc-5","Selena","Techno Cumbia"],
+  ["fc-6","Gilda","No Me Arrepiento de Este Amor"],
+  ["fc-7","Damas Gratis","Se Te Ve la Tanga"],
+  ["fc-8","Chacalón y la Nueva Crema","Soy Provinciano"],
+  ["fc-9","Kumbia Kings","SHHH!"],
+  ["fc-10","Los Corraleros de Majagual","Cumbia Campesina"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+function setImg(el, url) { el.src = url; el.style.opacity = "1"; el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; }; }
+function loadArt(el, artist, track) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [], a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0], match = null;
+      for (var i = 0; i < results.length; i++) { if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; } }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb")); else throw new Error("x");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [], best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+loadArt(document.getElementById("hero-cover"), "Selena", "Amor Prohibido");
+FEAT.forEach(function(fc, i) { setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300); });
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div"); row.className = "track-row";
+  row.innerHTML = "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + (year || "—") + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ = [], artTimer = null;
+function flushArt() { var batch = artQ.splice(0, 8); for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); } if (artQ.length > 0) artTimer = setTimeout(flushArt, 500); }
+var artObs = new IntersectionObserver(function(entries) { for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); } clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80); }, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover"); for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return; lfmBusy = true;
+  var el = lfmQ.shift(), artist = decodeURIComponent(el.dataset.lfmArtist || ""), track = decodeURIComponent(el.dataset.lfmAlbum || ""), key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) { var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10); lfmCache[key] = count; renderScrobble(el, count); })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) { el.classList.remove("loading"); el.textContent = count > 0 ? count.toLocaleString() : "0"; if (!count) el.classList.add("zero"); }
+var lfmObs = new IntersectionObserver(function(entries) { for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); } }, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles"); for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

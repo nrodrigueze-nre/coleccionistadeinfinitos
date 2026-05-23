@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Funk Songs — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1964–1987</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best_rb-funk/" target="_blank" class="page-title">100 GREATEST FUNK SONGS</a>
+  <p class="page-sub">De James Brown a Parliament, Prince y Stevie Wonder · El groove que lo inventó todo · 100 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I'm Good (Blue) – Sam Cooke">
+    <p class="cover-cap">ROLLING STONE · 2019</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Funk Songs compilados por Digital Dream Door — basados en impacto, influencia y popularidad. Solo el top 100 de una lista que DDD extiende hasta 200. Al #1: Get Up (I Feel Like Being a Sex Machine) de James Brown (1970) — la canción más sampledada de la historia del hip-hop, grabada por James Brown con su nueva banda que incluía a Bootsy Collins en bajo. Al #2: Papa's Got a Brand New Bag (1965) — el momento exacto en que James Brown inventó el funk. Al #3: Thank You de Sly &amp; The Family Stone (1970). Al #4: Tear the Roof Off the Sucker de Parliament (1976). Una genealogía musical que conecta el soul de los 60s con el hip-hop de los 90s a través del groove.</p>
+    <p class="rtext">James Brown domina con 11 apariciones en el top 100 — el Padrino del Soul como arquitecto indiscutible del género. Parliament/Funkadelic aparecen 5 veces combinados. Stevie Wonder, Prince, Isley Brothers y Kool &amp; The Gang con 3 cada uno. La lista cubre de 1964 a 1987 — de la proto-funk de Out of Sight al funk electrónico de Word Up de Cameo. La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Get Up (I Feel Like Being a Sex Machine) Part I">
+    <div>
+      <div class="feat-title">Get Up (I Feel Like Being a Sex Machine) Part I</div>
+      <div class="feat-artist">James Brown &middot; 1970</div>
+      <div class="feat-meta"><span class="feat-pill">Funk</span></div>
+      <p class="feat-rev">La canción más sampledada de la historia del hip-hop. James Brown reclutó a Bootsy Collins — dieciséis años — como bajista después de que su banda anterior renunciara por un desacuerdo salarial. La primera sesión con la nueva banda produjo este track: el groove más poderoso de la historia de la música popular americana. Kool DJ Herc usó el breakbeat de Sex Machine en el Bronx en 1973 para crear el hip-hop. Todo lo que vino después — disco, electro, house, trap — tiene el ADN de esta canción.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Papa's Got a Brand New Bag">
+    <div>
+      <div class="feat-title">Papa's Got a Brand New Bag</div>
+      <div class="feat-artist">James Brown & The Famous Flames &middot; 1965</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / R&B</span></div>
+      <p class="feat-rev">El momento exacto en que James Brown inventó el funk. En 1965, todos los artistas de soul construían sus canciones sobre la melodía; Brown decidió construirlas sobre el ritmo — el acento en el primer tiempo en lugar del segundo y el cuarto. Papa's Got a Brand New Bag fue grabada en una sola toma en Charlotte, Carolina del Norte. El primer Top 10 pop de Brown. La fundación de todo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Thank You (Falletinme Be Mice Elf Agin)">
+    <div>
+      <div class="feat-title">Thank You (Falletinme Be Mice Elf Agin)</div>
+      <div class="feat-artist">Sly & The Family Stone &middot; 1970</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Soul</span></div>
+      <p class="feat-rev">Sly Stone llevando el funk a su momento más político y más oscuro. Grabada en 1970 cuando el optimismo psicodélico del Summer of Love ya se había disuelto en la violencia de Vietnam y los asesinatos de MLK y RFK. La letra — deliberadamente ilegible, escrita en argot — es la respuesta de Sly a un mundo que había dejado de creer en las promesas. El groove más pesado de su carrera.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Tear the Roof Off the Sucker (Give Up the Funk)">
+    <div>
+      <div class="feat-title">Tear the Roof Off the Sucker (Give Up the Funk)</div>
+      <div class="feat-artist">Parliament &middot; 1976</div>
+      <div class="feat-meta"><span class="feat-pill">P-Funk</span></div>
+      <p class="feat-rev">George Clinton, Bootsy Collins y Bernie Worrell construyendo la catedral del P-Funk: una canción sobre la función de la música de baile como acto político y comunitario. 'We want the funk / Give up the funk' — no es una petición sino una exigencia. El primer gran crossover de Parliament en el pop chart americano. El hip-hop samplea este track más que cualquier otro de la historia del P-Funk.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Theme from 'Shaft'">
+    <div>
+      <div class="feat-title">Theme from 'Shaft'</div>
+      <div class="feat-artist">Isaac Hayes &middot; 1971</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Soul / Jazz</span></div>
+      <p class="feat-rev">Isaac Hayes compuso la banda sonora de Shaft en dos semanas y creó el blaxploitation soundtrack definitivo. El wah-wah de guitar, las cuerdas ascendentes, la línea de bajo de Bobby Manuel — y la voz de Hayes narrando al detective John Shaft con una ironía afectuosa. Ganó el Oscar a Mejor Canción Original en 1972. El primer Black American en ganar un Oscar que no fuera de la categoría de interpretación. Un hito cultural triple: musical, político y cinematográfico.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Superfly">
+    <div>
+      <div class="feat-title">Superfly</div>
+      <div class="feat-artist">Curtis Mayfield &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Soul</span></div>
+      <p class="feat-rev">Curtis Mayfield escribió toda la banda sonora de Superfly desde la perspectiva del camello de cocaína — no para glorificarlo sino para mostrar la lógica interna de un sistema que no deja otras opciones. La producción de string-funk, la guitarra en afinación abierta, la voz en falsete de Mayfield sobre el tema más oscuro del blaxploitation: el resultado es el más complejo y más honesto de todos los soundtracks de la era.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Superstition">
+    <div>
+      <div class="feat-title">Superstition</div>
+      <div class="feat-artist">Stevie Wonder &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Soul</span></div>
+      <p class="feat-rev">Stevie Wonder la escribió en el estudio después de que Jeff Beck le pidiera un tema para su álbum — y luego decidió quedársela. El riff de clavinet que abre la canción es el más reconocible del funk de los 70s. Producida por el propio Wonder en Muscle Shoals con una sección rítmica que empuja sin parar. Número uno en el pop chart, número uno en el R&B chart. El mayor hit de la era de oro de Stevie Wonder.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Papa Was a Rollin' Stone">
+    <div>
+      <div class="feat-title">Papa Was a Rollin' Stone</div>
+      <div class="feat-artist">The Temptations &middot; 1972</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Soul</span></div>
+      <p class="feat-rev">Doce minutos en la versión de álbum. Norman Whitfield y Barrett Strong compusieron sobre los Temptations algo que normalmente no se asocia con el Motown: funk oscuro, lento, casi amenazante. El productor Whitfield tomó a los Temptations — el grupo vocal más elegante del sello — y los puso sobre un groove que sonaba a las 3 AM en un barrio que no tiene nombre. Tres Grammys. El pico de los Temptations psicodélicos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="When Doves Cry">
+    <div>
+      <div class="feat-title">When Doves Cry</div>
+      <div class="feat-artist">Prince & The Revolution &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Funk / Pop</span></div>
+      <p class="feat-rev">La canción más rara en el catálogo de Prince: sin línea de bajo. El productor y músico más prolífico de su generación decidió que la canción funcionaría mejor sin el instrumento que define el funk. Número uno durante cinco semanas en el Billboard Hot 100. Del álbum Purple Rain — el soundtrack de la película que convirtió a Prince en el mayor artista del pop de los 80s. El funk más peculiar y más brillante de la lista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="One Nation Under a Groove">
+    <div>
+      <div class="feat-title">One Nation Under a Groove</div>
+      <div class="feat-artist">Funkadelic &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">P-Funk / Funk Rock</span></div>
+      <p class="feat-rev">George Clinton unificando el funk, el rock y la filosofía afrofuturista en siete minutos de groove colectivo. La letra propone la música como religión alternativa — 'One nation under a groove / Getting down just for the funk of it'. El mayor hit de Funkadelic, número uno en el R&B chart durante seis semanas. La declaración más completa del universo P-Funk como visión política y estética.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 100 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 CANCIONES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best_rb-funk/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var SONGS = [
+  [1,"Get Up (I Feel Like Being a Sex Machine) Part I","James Brown",1970],
+  [2,"Papa\'s Got a Brand New Bag","James Brown & The Famous Flames",1965],
+  [3,"Thank You (Falletinme Be Mice Elf Agin)","Sly & The Family Stone",1970],
+  [4,"Tear the Roof Off the Sucker (Give Up the Funk)","Parliament",1976],
+  [5,"Theme from \'Shaft\'","Isaac Hayes",1971],
+  [6,"Superfly","Curtis Mayfield",1972],
+  [7,"Superstition","Stevie Wonder",1972],
+  [8,"Papa Was a Rollin\' Stone","The Temptations",1972],
+  [9,"When Doves Cry","Prince & The Revolution",1984],
+  [10,"One Nation Under a Groove","Funkadelic",1978],
+  [11,"Cold Sweat Part I","James Brown & The Famous Flames",1967],
+  [12,"Out of Sight","James Brown & The Famous Flames",1964],
+  [13,"Funky Broadway","Dyke & The Blazers",1967],
+  [14,"Cissy Strut","Meters",1969],
+  [15,"Chameleon","Herbie Hancock",1973],
+  [16,"It\'s Your Thing","Isley Brothers",1969],
+  [17,"Flash Light","Parliament",1977],
+  [18,"War","Edwin Starr",1970],
+  [19,"Super Freak Part I","Rick James",1981],
+  [20,"Little Red Corvette","Prince & The Revolution",1983],
+  [21,"Don\'t Stop (\'Til You Get Enough)","Michael Jackson",1979],
+  [22,"Family Affair","Sly & The Family Stone",1971],
+  [23,"Living for the City","Stevie Wonder",1974],
+  [24,"I\'ll Take You There","Staple Singers",1972],
+  [25,"That Lady Part I","Isley Brothers",1973],
+  [26,"Mr. Big Stuff","Jean Knight",1971],
+  [27,"Tell Me Something Good","Rufus",1974],
+  [28,"Kiss","Prince & The Revolution",1986],
+  [29,"Higher Ground","Stevie Wonder",1973],
+  [30,"Play That Funky Music (White Boy)","Wild Cherry",1976],
+  [31,"Car Wash","Rose Royce",1976],
+  [32,"Brick House","Commodores",1977],
+  [33,"Fire","Ohio Players",1974],
+  [34,"Low Rider","War",1975],
+  [35,"Pick Up the Pieces","Average White Band",1974],
+  [36,"Got to Give It Up Part I","Marvin Gaye",1977],
+  [37,"More Bounce to the Ounce Part I","Zapp & Roger",1980],
+  [38,"Jungle Boogie","Kool & The Gang",1973],
+  [39,"Funky Drummer Parts I and II","James Brown",1970],
+  [40,"Amen, Brother","The Winstons",1969],
+  [41,"Apache","Incredible Bongo Band",1973],
+  [42,"The Payback","James Brown",1973],
+  [43,"Think (About It)","Lyn Collins",1972],
+  [44,"Word Up","Cameo",1986],
+  [45,"Express Yourself","Charles Wright & The Watts 103rd Street Rhythm Band",1970],
+  [46,"Atomic Dog","George Clinton",1982],
+  [47,"You Sexy Thing","Hot Chocolate",1975],
+  [48,"Funky Stuff","Kool & The Gang",1973],
+  [49,"Dazz","Brick",1976],
+  [50,"Shining Star","Earth, Wind & Fire",1975],
+  [51,"Hollywood Swinging","Kool & The Gang",1974],
+  [52,"Do It (\'Til You\'re Satisfied)","B.T. Express",1974],
+  [53,"For the Love of Money","O\'Jays",1974],
+  [54,"Give It to Me Baby","Rick James",1981],
+  [55,"Clean Up Woman","Betty Wright",1971],
+  [56,"Groove Me","King Floyd",1970],
+  [57,"Ain\'t Nobody","Rufus & Chaka Khan",1983],
+  [58,"Rock Steady","Aretha Franklin",1971],
+  [59,"What is Hip?","Tower of Power",1973],
+  [60,"You Dropped a Bomb on Me","Gap Band",1982],
+  [61,"I Can\'t Stand the Rain","Ann Peebles",1973],
+  [62,"Genius of Love","Tom Tom Club",1981],
+  [63,"(Not Just) Knee Deep Part I","Funkadelic",1979],
+  [64,"Get Down On It","Kool & The Gang",1981],
+  [65,"Love Rollercoaster","Ohio Players",1975],
+  [66,"It\'s Just Begun","Jimmy Castor Bunch",1972],
+  [67,"Slide","Slave",1977],
+  [68,"P-Funk (Wants to Get Funked Up)","Parliament",1975],
+  [69,"I Don\'t Believe You Want To Get Up and Dance (Oops)","Gap Band",1980],
+  [70,"Keep on Truckin\' Part I","Eddie Kendricks",1973],
+  [71,"Fight the Power Parts I and II","Isley Brothers",1975],
+  [72,"Say It Loud - I\'m Black and Proud Part I","James Brown",1968],
+  [73,"Give It Up or Turnit a Loose (In the Jungle Groove remix)","James Brown",1969],
+  [74,"Kung Fu Fighting","Carl Douglas",1974],
+  [75,"Bustin\' Loose","Chuck Brown & The Soul Searchers",1978],
+  [76,"Hot Fun in the Summertime","Sly & The Family Stone",1969],
+  [77,"Ffun","Con Funk Shun",1977],
+  [78,"Serpentine Fire","Earth, Wind & Fire",1977],
+  [79,"Sign \'O\' the Times","Prince",1987],
+  [80,"I Found Lovin\'","The Fatback Band",1975],
+  [81,"Cloud Nine","The Temptations",1968],
+  [82,"Freddie\'s Dead (Theme from Superfly)","Curtis Mayfield",1972],
+  [83,"Bootzilla","Bootsy\'s Rubber Band",1978],
+  [84,"Across 110th Street","Bobby Womack",1972],
+  [85,"Too Hot to Stop","Bar-Kays",1976],
+  [86,"Movin\'","Brass Construction",1976],
+  [87,"Funky Sensation","Gwen McCrae",1981],
+  [88,"Fencewalk","Mandrill",1973],
+  [89,"Got To Be Real","Cheryl Lynn",1978],
+  [90,"Rock Creek Park","Blackbyrds",1975],
+  [91,"Backstabbers","O\'Jays",1972],
+  [92,"Let\'s Stay Together","Al Green",1971],
+  [93,"Ffun Part I","Con Funk Shun",1977],
+  [94,"Right Place, Wrong Time","Dr. John",1973],
+  [95,"Computer Love","Zapp & Roger",1981],
+  [96,"Fantastic Voyage","Lakeside",1980],
+  [97,"Let it Whip","Dazz Band",1982],
+  [98,"I Got My Mind Made Up (You Can Get It Girl)","Instant Funk",1978],
+  [99,"No Parking (On the Dancefloor)","Midnight Star",1983],
+  [100,"Get on the Good Foot","James Brown",1972],
+];
+
+var FEAT = [
+  ["fc-1","James Brown","Get Up Sex Machine"],
+  ["fc-2","James Brown","Papa\'s Got a Brand New Bag"],
+  ["fc-3","Sly The Family Stone","Thank You Falletinme"],
+  ["fc-4","Parliament","Tear the Roof Off the Sucker"],
+  ["fc-5","Isaac Hayes","Theme from Shaft"],
+  ["fc-6","Curtis Mayfield","Superfly"],
+  ["fc-7","Stevie Wonder","Superstition"],
+  ["fc-8","The Temptations","Papa Was a Rollin Stone"],
+  ["fc-9","Prince The Revolution","When Doves Cry"],
+  ["fc-10","Funkadelic","One Nation Under a Groove"],
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"James Brown","Get Up Sex Machine");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

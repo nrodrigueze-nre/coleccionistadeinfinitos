@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Greatest Latin American Albums — MediaMonkey</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+</style>
+<style>
+:root { color-scheme: dark !important; }
+html { background: #0c0c0c !important; }
+body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+@media (prefers-color-scheme: light) {
+  html { background: #0c0c0c !important; }
+  body { background: #0c0c0c !important; color: #e0dbd0 !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">DIGITAL DREAM DOOR</span>
+    <span class="badge-year">1954–2007</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-eighties-150477/" target="_blank" class="page-title">100 GREATEST BRAZILIAN ALBUMS</a>
+  <p class="page-sub">Del synth pop y el rap al metal y el funk · Seleccionados por los editores de Rolling Stone · 16 de noviembre de 1989 · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Construção – The Clash">
+    <p class="cover-cap">ROLLING STONE · 1989</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los 100 Greatest Latin American Albums ordenados por impacto — criterios: alcance comercial regional e internacional, aclamación crítica, influencia sobre artistas posteriores, importancia histórica en su género y longevidad. Fuente base: listado sin orden de MediaMonkey, clasificado editorialmente. Al #1: Siembra de Willie Colón y Rubén Blades (1978) — el disco de salsa más vendido de la historia. Al #2: Abraxas de Santana (1970) — el álbum que llevó los ritmos afrocubanos al mainstream americano. Al #3: Canción Animal de Soda Stereo (1990) — el parámetro del rock en español de los 90s.</p>
+    <p class="rtext">Charly García lidera con 8 álbumes — el artista latinoamericano con mayor presencia. Soda Stereo con 7, Café Tacvba con 4, Willie Colón con 4, Silvio Rodríguez con 3. Argentina domina con ~35 álbumes, México con ~25, Cuba con ~15, Chile con ~12. Los géneros van del son cubano y el tango al rock alternativo y la world music. La columna de scrobbles muestra tus reproducciones de Last.fm por álbum (vía album.getInfo).</p>
+  </div>
+</section>
+
+<!-- > 50 items → reviews of first 10 -->
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Siembra">
+    <div>
+      <div class="feat-title">Siembra</div>
+      <div class="feat-artist">Willie Colón & Rubén Blades &middot; 1978</div>
+      <div class="feat-meta"><span class="feat-pill">Salsa · Fania Records</span></div>
+      <p class="feat-rev">El álbum de salsa más importante de la historia — el disco que convirtió el género en fuerza política y literaria. Rubén Blades escribió Plástico y Pedro Navaja, dos de las letras más complejas que la música popular latinoamericana ha producido. Willie Colón produjo el sonido más denso y urbano del catálogo de Fania. Siembra vendió más de dos millones de copias — el disco de salsa más vendido de todos los tiempos — y definió el modelo del álbum de salsa como obra conceptual con pretensiones artísticas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Abraxas">
+    <div>
+      <div class="feat-title">Abraxas</div>
+      <div class="feat-artist">Santana &middot; 1970</div>
+      <div class="feat-meta"><span class="feat-pill">Latin Rock · Columbia Records</span></div>
+      <p class="feat-rev">El segundo álbum de Santana — el que consolidó el latin rock como género y llevó la guitarra eléctrica y los ritmos afrocubanos al mainstream americano definitivamente. Oye Como Va de Tito Puente reinterpretada para el rock, Black Magic Woman de Fleetwood Mac convertida en el mayor hit de la carrera de Santana. Abraxas llegó al #1 del Billboard 200 y vendió más de siete millones de copias solo en Estados Unidos. El punto de partida del crossover latino en el rock.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Canción Animal">
+    <div>
+      <div class="feat-title">Canción Animal</div>
+      <div class="feat-artist">Soda Stereo &middot; 1990</div>
+      <div class="feat-meta"><span class="feat-pill">Rock en Español · CBS Records</span></div>
+      <p class="feat-rev">El álbum que consolidó a Gustavo Cerati, Zeta Bosio y Charly Alberti como la banda de rock en español más importante de la historia. De la Tierra al Cielo, Un Millón de Años Luz y la canción titular son el pico de la producción de Soda Stereo — rockero, sensorial, completamente argentino y completamente universal. Canción Animal se convirtió en el parámetro de referencia del rock en español en todo el continente, el álbum que todas las bandas jóvenes de los 90s querían superar.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Buena Vista Social Club">
+    <div>
+      <div class="feat-title">Buena Vista Social Club</div>
+      <div class="feat-artist">Buena Vista Social Club &middot; 1997</div>
+      <div class="feat-meta"><span class="feat-pill">Son Cubano · World Circuit/Nonesuch</span></div>
+      <p class="feat-rev">Ry Cooder viajó a La Habana en 1996 y rescató del olvido a Ibrahim Ferrer, Compay Segundo, Rubén González y Omara Portuondo. El álbum ganó el Grammy al Mejor Álbum de World Music en 1998 y vendió más de ocho millones de copias. El documental de Wim Wenders (1999) lo convirtió en fenómeno global. Buena Vista Social Club es la operación de rescate cultural más exitosa de la historia de la música: devolvió el son cubano al mapa mundial cuarenta años después de su apogeo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Clandestino">
+    <div>
+      <div class="feat-title">Clandestino</div>
+      <div class="feat-artist">Manu Chao &middot; 1998</div>
+      <div class="feat-meta"><span class="feat-pill">World Music · Virgin Records</span></div>
+      <p class="feat-rev">El álbum más vendido en la historia de la música francesa y uno de los más influyentes del mundo hispanohablante. Manu Chao mezcló español, francés, inglés y árabe sobre ritmos de ska, cumbia, reggae y rumba gitana en un álbum que capturaba simultáneamente la globalización y la resistencia a ella. Clandestino se convirtió en el himno de la emigración latinoamericana, el álbum de una época sin pertenecer a ningún género, país ni mercado específico.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Re">
+    <div>
+      <div class="feat-title">Re</div>
+      <div class="feat-artist">Café Tacvba &middot; 1994</div>
+      <div class="feat-meta"><span class="feat-pill">Rock Alternativo · WEA Latina</span></div>
+      <p class="feat-rev">El álbum de rock alternativo en español más ambicioso del siglo XX mexicano. Café Tacvba fusionaron en 19 canciones el cumbia, el bolero, la música prehispánica, el punk, el ambient y el folklore, creando algo que no existía en ningún otro lugar del mundo. Re fue producido por Gustavo Santaolalla en Buenos Aires y ganó el Grammy Latino al Mejor Álbum de Rock en 2001. La canción Las Flores es la más influyente del catálogo y el punto de partida de dos décadas de música alternativa mexicana.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Clics Modernos">
+    <div>
+      <div class="feat-title">Clics Modernos</div>
+      <div class="feat-artist">Charly García &middot; 1983</div>
+      <div class="feat-meta"><span class="feat-pill">Rock / New Wave · CBS Records</span></div>
+      <p class="feat-rev">El álbum de rock argentino que más claramente dialogó con la new wave internacional — Charly García absorbiendo a Bowie, a Roxy Music y a los Talking Heads y construyendo algo propio con esas influencias. Grabado en Nueva York en el peor momento de la dictadura argentina, Clics Modernos es un disco político disfrazado de pop elegante. No Solo el Blues, Nos Siguen Pegando Abajo y Bancate ese Defecto son tres canciones que definen el sonido del rock rioplatense de los 80s.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Libertango">
+    <div>
+      <div class="feat-title">Libertango</div>
+      <div class="feat-artist">Astor Piazzolla &middot; 1977</div>
+      <div class="feat-meta"><span class="feat-pill">Tango Nuevo · Pema/Amadeo Records</span></div>
+      <p class="feat-rev">Astor Piazzolla grabó Libertango en Milán con músicos de cámara europeos — la fusión definitiva del tango rioplatense con la música contemporánea. El tema titular se convirtió en la canción de tango más interpretada de la historia, con miles de versiones registradas en todos los géneros musicales. Piazzolla fue rechazado por el establishment del tango durante décadas por 'desvirtuar' el género; Libertango es su vindicación: el tango que el mundo entero reconoció como arte universal.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="¿Dónde Están los Ladrones?">
+    <div>
+      <div class="feat-title">¿Dónde Están los Ladrones?</div>
+      <div class="feat-artist">Shakira &middot; 1998</div>
+      <div class="feat-meta"><span class="feat-pill">Pop/Rock · Sony Music</span></div>
+      <p class="feat-rev">El álbum que convirtió a Shakira de artista local colombiana a estrella latinoamericana. Grabado con el productor Emilio Estefan, ¿Dónde Están los Ladrones? vendió cuatro millones de copias y lanzó los singles Ciega, Sordomuda y Ojos Así. El álbum estableció el modelo del pop rock femenino latinoamericano de los 90s y fue el punto de partida del crossover internacional de Shakira que culminaría con Laundry Service en 2001.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="La Voz de los 80">
+    <div>
+      <div class="feat-title">La Voz de los 80</div>
+      <div class="feat-artist">Los Prisioneros &middot; 1984</div>
+      <div class="feat-meta"><span class="feat-pill">Rock/Punk · Fusión Records</span></div>
+      <p class="feat-rev">El debut de Los Prisioneros es el manifiesto más furioso del rock latinoamericano de los 80s: Jorge González, Claudio Narea y Miguel Tapia documentando la Chile de Pinochet con guitarras de punk, sintetizadores baratos y letras de rabia cristalina. El Blues de los 80s y Latin Lover son dos canciones que capturan la alienación juvenil de una dictadura con precisión sociológica. La Voz de los 80 se grabó con una inversión mínima y se convirtió en el disco de rock chileno más influyente de la historia.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">DIGITAL DREAM DOOR · 100 ÁLBUMES</span>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-eighties-150477/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var ALBUMS = [
+  [1,"Siembra","Willie Colón & Rubén Blades",1978],
+  [2,"Abraxas","Santana",1970],
+  [3,"Canción Animal","Soda Stereo",1990],
+  [4,"Buena Vista Social Club","Buena Vista Social Club",1997],
+  [5,"Clandestino","Manu Chao",1998],
+  [6,"Re","Café Tacvba",1994],
+  [7,"Clics Modernos","Charly García",1983],
+  [8,"Libertango","Astor Piazzolla",1977],
+  [9,"¿Dónde Están los Ladrones?","Shakira",1998],
+  [10,"La Voz de los 80","Los Prisioneros",1984],
+  [11,"Buscando América","Rubén Blades & Seis del Solar",1984],
+  [12,"Las Últimas Composiciones de Violeta Parra","Violeta Parra",1966],
+  [13,"Artaud","Pescado Rabioso",1973],
+  [14,"El Nervio del Volcán","Caifanes",1994],
+  [15,"Peperina","Serú Girán",1981],
+  [16,"Bachata Rosa","Juan Luis Guerra 4.40",1990],
+  [17,"Unicornio","Silvio Rodríguez",1982],
+  [18,"El Amor Después del Amor","Fito Páez",1992],
+  [19,"Oktubre","Patricio Rey y sus Redonditos de Ricota",1986],
+  [20,"Fabulosos Calavera","Los Fabulosos Cadillacs",1997],
+  [21,"El Derecho de Vivir en Paz","Víctor Jara",1971],
+  [22,"Piano Bar","Charly García",1984],
+  [23,"Adiós Nonino","Astor Piazzolla",1960],
+  [24,"Dance Mania","Tito Puente",1958],
+  [25,"El Malo","Willie Colón & Héctor Lavoe",1967],
+  [26,"Bocanada","Gustavo Cerati",1999],
+  [27,"Pequeñas Anécdotas Sobre las Instituciones","Sui Generis",1974],
+  [28,"Café Tacuba","Café Tacvba",1992],
+  [29,"Mundo","Rubén Blades",2002],
+  [30,"Pateando Piedras","Los Prisioneros",1986],
+  [31,"Almendra","Almendra",1969],
+  [32,"Rodrigo y Gabriela","Rodrigo y Gabriela",2006],
+  [33,"Anoche","Babasónicos",2007],
+  [34,"Serú Girán","Serú Girán",1978],
+  [35,"Prez","Pérez Prado",1955],
+  [36,"Puta\'s Fever","Mano Negra",1989],
+  [37,"Cuatro Caminos","Café Tacvba",2003],
+  [38,"El Silencio","Caifanes",1992],
+  [39,"Cosa Nuestra","Willie Colón & Héctor Lavoe",1969],
+  [40,"Alturas de Macchu Picchu","Los Jaivas",1981],
+  [41,"La Máquina de Hacer Pájaros","La Máquina de Hacer Pájaros",1976],
+  [42,"Alta Suciedad","Andrés Calamaro",1997],
+  [43,"Yendo de la Cama al Living","Charly García",1982],
+  [44,"Casa Babylon","Mano Negra",1994],
+  [45,"La Voz","Héctor Lavoe",1975],
+  [46,"Only They Could Have Made This Album","Celia Cruz & Willie Colón",1977],
+  [47,"Cantata Santa María de Iquique","Quilapayún",1970],
+  [48,"Al Final de Este Viaje","Silvio Rodríguez",1978],
+  [49,"Honestidad Brutal","Andrés Calamaro",1999],
+  [50,"Manal","Manal",1970],
+  [51,"Parte de la Religión","Charly García",1987],
+  [52,"La Espada & La Pared","Los Tres",1995],
+  [53,"Próxima Estación: Esperanza","Manu Chao",2001],
+  [54,"El Jardín de los Presentes","Invisible",1975],
+  [55,"Signos","Soda Stereo",1986],
+  [56,"Nada Personal","Soda Stereo",1985],
+  [57,"La Marcha del Golazo Solitario","Los Fabulosos Cadillacs",1994],
+  [58,"Lágrimas Negras","Bebo Valdés & Diego el Cigala",2003],
+  [59,"La Biblia","Vox Dei",1971],
+  [60,"La Hija de la Lágrima","Charly García",1994],
+  [61,"Héroes","Estrellas de Areito",1979],
+  [62,"Doble Vida","Soda Stereo",1988],
+  [63,"Acid","Ray Barretto",1968],
+  [64,"Comedia","Héctor Lavoe",1978],
+  [65,"Revés / Yo Soy","Café Tacvba",1999],
+  [66,"Almendra 2","Almendra",1970],
+  [67,"Sueño Stereo","Soda Stereo",1995],
+  [68,"¿Dónde Jugarán las Niñas?","Molotov",1997],
+  [69,"Mujeres","Silvio Rodríguez",1978],
+  [70,"La Población","Víctor Jara",1972],
+  [71,"Contrabando y Traición","Los Tigres del Norte",1972],
+  [72,"Gozo Poderoso","Aterciopelados",2000],
+  [73,"Amor Chiquito","Fobia",1992],
+  [74,"Películas","La Máquina de Hacer Pájaros",1977],
+  [75,"Introducing… Rubén González","Rubén González",1997],
+  [76,"Magos, Espadas y Rosas","Rata Blanca",1993],
+  [77,"MTV Unplugged: Comfort y Música para Volar","Soda Stereo",1996],
+  [78,"El Diablito","Caifanes",1990],
+  [79,"Nuevo Tango: Hora Zero","Astor Piazzolla",1970],
+  [80,"Mambo!","Yma Sumac",1954],
+  [81,"El Circo","Maldita Vecindad y Los Hijos del Quinto Patio",1991],
+  [82,"Cuban Carnival","Tito Puente",1955],
+  [83,"Buena Vista Social Club Presents Ibrahim Ferrer","Ibrahim Ferrer",1999],
+  [84,"Hello! MTV Unplugged","Charly García",1995],
+  [85,"Los Jaivas","Los Jaivas",1975],
+  [86,"Fundamental","Puya",1999],
+  [87,"El Alma Joven","Juan Gabriel",1971],
+  [88,"Palabras Más, Palabras Menos","Los Rodríguez",1995],
+  [89,"Pongo en Tus Manos Abiertas…","Víctor Jara",1969],
+  [90,"Anabelas","Bubu",1978],
+  [91,"Tarimba Negra","Chabuca Granda",1976],
+  [92,"Smog","Los Dug Dug\'s",1972],
+  [93,"La Llorona","Lhasa",1997],
+  [94,"Todos Juntos","Los Jaivas",1972],
+  [95,"Rock con Los Locos del Ritmo","Los Locos del Ritmo",1960],
+  [96,"El Ritual","El Ritual",1971],
+  [97,"Virgin","Traffic Sound",1969],
+  [98,"El Topo","Alejandro Jodorowsky",1970],
+  [99,"Latin-Esque","Esquivel and His Orchestra",1962],
+  [100,"Dynamo","Soda Stereo",1992],
+];
+
+var FEAT = [
+  ["fc-1","Willie Colón Rubén Blades","Siembra"],
+  ["fc-2","Santana","Abraxas"],
+  ["fc-3","Soda Stereo","Canción Animal"],
+  ["fc-4","Buena Vista Social Club","Buena Vista Social Club"],
+  ["fc-5","Manu Chao","Clandestino"],
+  ["fc-6","Café Tacvba","Re"],
+  ["fc-7","Charly García","Clics Modernos"],
+  ["fc-8","Astor Piazzolla","Libertango"],
+  ["fc-9","Shakira","Donde Estan los Ladrones"],
+  ["fc-10","Los Prisioneros","La Voz de los 80"],
+];
+
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,album){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(album+" "+artist)+"&media=music&entity=album&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.album&&d.album.image)?d.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Willie Colón Rubén Blades","Siembra");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+ALBUMS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\">"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),album=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+album;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.album&&d.album.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>
