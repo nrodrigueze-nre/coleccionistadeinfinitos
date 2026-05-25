@@ -1429,6 +1429,18 @@ const LISTS = [
     _title: "The Piper at the Gates of Dawn"
   },
   {
+    file: "rolling-stone-esp-25-mejores-albumes-pop-punk.html",
+    title: "25 Mejores Albums de Pop Punk",
+    source: "Rolling Stone en Espanol",
+    year: "1982-2007",
+    type: "albumes",
+    count: "25",
+    desc: "Blink-182, Green Day, Paramore, MCR, Avril Lavigne — saca tus zapatos a cuadros y revive los 2000 · RS ESP Oct 2022.",
+    url: "https://es.rollingstone.com/los-25-mejores-albumes-de-pop-punk/",
+    _artist: "Blink-182",
+    _title: "Enema of the State"
+  },
+  {
     file: "rolling-stone-esp-25-discos-rock-progresivo.html",
     title: "25 Discos Esenciales del Rock Progresivo Britanico",
     source: "Rolling Stone en Espanol",
@@ -2323,6 +2335,7 @@ const SECTIONS = {
   "rolling-stone-esp-20-albumes-espanoles-voz-mujer.html": "albums-latin",
   "rolling-stone-esp-25-discos-punk-iberoamericano.html": "albums-latin",
   "rolling-stone-esp-25-discos-rock-psicodelico.html": "genres",
+  "rolling-stone-esp-25-mejores-albumes-pop-punk.html": "genres",
   "rolling-stone-esp-25-discos-rock-progresivo.html": "genres",
   "rolling-stone-esp-20-mejores-albumes-heavy-metal.html": "genres",
   "rolling-stone-esp-200-mejores-canciones-pop-rock-espanol.html": "super",
@@ -2343,11 +2356,11 @@ const SECTIONS = {
 };
 
 var LAST5 = [
+  "rolling-stone-esp-25-mejores-albumes-pop-punk.html",
   "rolling-stone-esp-25-himnos-rock-mexicano.html",
   "rolling-stone-col-25-grandes-discos-colombianos.html",
   "rolling-stone-esp-25-discos-punk-iberoamericano.html",
-  "infolaso-25-discos-mas-vendidos.html",
-  "rolling-stone-esp-25-discos-rock-psicodelico.html"
+  "infolaso-25-discos-mas-vendidos.html"
 ];
 
 
@@ -2423,7 +2436,19 @@ function filterAll() {
       var s = SECTIONS[l.file] || 'personal';
       if (s !== sec) return false;
       if (!q) return true;
-      return (l.title + ' ' + l.source + ' ' + l.year + ' ' + l.type).toLowerCase().indexOf(q) >= 0;
+      // Search title, source, year, type
+      var meta = (l.title + ' ' + l.source + ' ' + l.year + ' ' + l.type + ' ' + (l.desc||'')).toLowerCase();
+      if (meta.indexOf(q) >= 0) return true;
+      // Search artists and tracks inside ALL_LISTS_DATA
+      var data = ALL_LISTS_DATA[l.file];
+      if (data) {
+        for (var i = 0; i < data.length; i++) {
+          var entry = data[i];
+          if (entry[0] && entry[0].toLowerCase().indexOf(q) >= 0) return true;
+          if (entry[1] && entry[1].toLowerCase().indexOf(q) >= 0) return true;
+        }
+      }
+      return false;
     });
     grid.innerHTML = '';
     if (items.length === 0) {
@@ -2566,7 +2591,8 @@ var ALL_LISTS_DATA = {
   "infolaso-25-discos-mas-vendidos.html": [["Thriller", "Michael Jackson"], ["Back in Black", "AC/DC"], ["The Dark Side of the Moon", "Pink Floyd"], ["The Bodyguard (OST)", "Various Artists"], ["Their Greatest Hits (1971-1975)", "Eagles"], ["Hotel California", "Eagles"], ["Come On Over", "Shania Twain"], ["Rumours", "Fleetwood Mac"], ["Led Zeppelin IV", "Led Zeppelin"], ["Bad", "Michael Jackson"], ["Jagged Little Pill", "Alanis Morissette"], ["Dirty Dancing (OST)", "Various Artists"], ["Falling into You", "Celine Dion"], ["Dangerous", "Michael Jackson"], ["21", "Adele"], ["1", "The Beatles"], ["Metallica (The Black Album)", "Metallica"], ["Come Away with Me", "Norah Jones"], ["Grease (OST)", "Various Artists"], ["Music Box", "Mariah Carey"], ["The Eminem Show", "Eminem"], ["Titanic (OST)", "James Horner"], ["Unplugged", "Eric Clapton"], ["Greatest Hits Vol. 1", "Queen"], ["...Baby One More Time", "Britney Spears"]],
   "rolling-stone-esp-25-discos-punk-iberoamericano.html": [["Anti Todo", "Eskorbuto"], ["Ay de mi!", "El Ultimo Ke Zierre"], ["Botas fuzis e capacetes", "Olho Seco"], ["Con el corazon en la mano", "Aterciopelados"], ["Crucificados pelo sistema", "Ratos de Porao"], ["Cuando se come aqui?", "Siniestro Total"], ["Dangerous Rhythm", "Dangerous Rhythm"], ["Descontrolados", "Descontrolados"], ["Desplazados", "Fertil Miseria"], ["Dulce Navidad", "Ataque 77"], ["Epidemia de Infexion Respiratoria Aguda", "I.R.A."], ["Fiskales Ad Hok", "Fiskales Ad Hok"], ["Kortatu", "Kortatu"], ["La muerte un compromiso de todos", "La Pestilencia"], ["Leusemia", "Leusemia"], ["Libertad y desorden", "Polikarpa y sus Viciosas"], ["Los Peores de Chile", "Los Peores de Chile"], ["No hay opcion", "Parabellum"], ["Salve", "La Polla Records"], ["Si el placer es un pecado", "Flema"], ["Tango que me hiciste mal", "Los Estomagos"], ["Todos Tus Muertos", "Todos Tus Muertos"], ["Valentin Alsina", "2 Minutos"], ["Y ahora que pasa eh?", "Los Violadores"], ["Yo fui una adolescente terrosatanica", "Las Ultrasonicas"]],
   "rolling-stone-col-25-grandes-discos-colombianos.html": [["El Dorado", "Aterciopelados"], ["La muerte un compromiso de todos", "La Pestilencia"], ["La tierra del olvido", "Carlos Vives"], ["Kraken II", "Kraken"], ["El ataque del metano", "La Etnnia"], ["Hablame de horror", "1280 Almas"], ["Contacto", "Compania Ilimitada"], ["Rodrigo D. No Futuro (BSO)", "Various Artists"], ["Estados Alterados", "Estados Alterados"], ["Tripping Tropicana", "Superlitio"], ["Estalla", "Bomba Estereo"], ["Ultrageno", "Ultrageno"], ["More Grip", "Sidestepper"], ["Con el corazon en la mano", "Aterciopelados"], ["The Speakers en el maravilloso mundo de Ingeson", "The Speakers"], ["Nino gigante", "Ekhymosis"], ["Orden publico", "Hora Local"], ["Pies descalzos", "Shakira"], ["Un dia normal", "Juanes"], ["Bombea", "Dr. Krapula"], ["Bloque de Busqueda", "Bloque de Busqueda"], ["Genesis", "Genesis"], ["La Derecha", "La Derecha"], ["Somos Pacifico", "Chocquibtown"], ["REQVIEM", "Masacre"]],
-  "rolling-stone-esp-25-himnos-rock-mexicano.html": [["Azul casi morado", "Santa Sabina"], ["Afuera", "Caifanes"], ["Sone", "Zoe"], ["Vivo", "Fobia"], ["Gimme tha Power", "Molotov"], ["Las Piedras rodantes", "El Tri"], ["El baile y el salon", "Cafe Tacvba"], ["Pachuco", "Maldita Vecindad y los Hijos del 5to Patio"], ["No tengo tiempo de cambiar mi vida", "Rockdrigo Gonzalez"], ["Bestia", "Hello Seahorse!"], ["Abre los ojos", "Zurdok"], ["Que Grosero", "Las Ultrasonicas"], ["La dosis perfecta", "Panteon Rococo"], ["De mis pasos", "Julieta Venegas"], ["La balada", "Cuca"], ["El Esqueleto", "Victimas del Doctor Cerebro"], ["Tornasol (vuelves a ser)", "La Gusana Ciega"], ["Prendedor", "Cecilia Toussaint"], ["Dulce soledad", "Enjambre"], ["Mr. P-Mosh", "Plastilina Mosh"], ["Espiral", "Porter"], ["Alarmala de tos", "Botellita de Jerez"], ["Fotografia", "Jumbo"], ["Viento", "Caifanes"], ["Chilanga banda", "Cafe Tacvba"]]
+  "rolling-stone-esp-25-himnos-rock-mexicano.html": [["Azul casi morado", "Santa Sabina"], ["Afuera", "Caifanes"], ["Sone", "Zoe"], ["Vivo", "Fobia"], ["Gimme tha Power", "Molotov"], ["Las Piedras rodantes", "El Tri"], ["El baile y el salon", "Cafe Tacvba"], ["Pachuco", "Maldita Vecindad y los Hijos del 5to Patio"], ["No tengo tiempo de cambiar mi vida", "Rockdrigo Gonzalez"], ["Bestia", "Hello Seahorse!"], ["Abre los ojos", "Zurdok"], ["Que Grosero", "Las Ultrasonicas"], ["La dosis perfecta", "Panteon Rococo"], ["De mis pasos", "Julieta Venegas"], ["La balada", "Cuca"], ["El Esqueleto", "Victimas del Doctor Cerebro"], ["Tornasol (vuelves a ser)", "La Gusana Ciega"], ["Prendedor", "Cecilia Toussaint"], ["Dulce soledad", "Enjambre"], ["Mr. P-Mosh", "Plastilina Mosh"], ["Espiral", "Porter"], ["Alarmala de tos", "Botellita de Jerez"], ["Fotografia", "Jumbo"], ["Viento", "Caifanes"], ["Chilanga banda", "Cafe Tacvba"]],
+  "rolling-stone-esp-25-mejores-albumes-pop-punk.html": [["Enema of the State", "Blink-182"], ["American Idiot", "Green Day"], ["Riot!", "Paramore"], ["Dookie", "Green Day"], ["Three Cheers for Sweet Revenge", "My Chemical Romance"], ["Conspiracy of One", "The Offspring"], ["Blink-182", "Blink-182"], ["Let Go", "Avril Lavigne"], ["All Killer No Filler", "Sum 41"], ["No Pads No Helmets Just Balls", "Simple Plan"], ["From Under the Cork Tree", "Fall Out Boy"], ["Punk in Drublic", "NOFX"], ["Pennybridge Pioneers", "Millencolin"], ["Weezer (Blue Album)", "Weezer"], ["Goldfinger", "Goldfinger"], ["The Chronicles of Life and Death", "Good Charlotte"], ["A Fever You Cant Sweat Out", "Panic! At the Disco"], ["Milo Goes to College", "Descendents"], ["The Black Parade", "My Chemical Romance"], ["Bleed American", "Jimmy Eat World"], ["Still Not Getting Any", "Simple Plan"], ["Take This to Your Grave", "Fall Out Boy"], ["New Found Glory", "New Found Glory"], ["Through Being Cool", "Saves the Day"], ["Ocean Avenue", "Yellowcard"]]
 };
 
 // ── Cálculo dinámico de menciones ────────────────────────────────────
@@ -2640,7 +2666,7 @@ var ALL_LISTS_DATA = {
   }
 
   // Top artists — recalculado
-  var topArtists = [{"name": "The Beatles", "sub": "66 menciones", "artist": "The Beatles", "track": "Ticket to Ride"}, {"name": "Led Zeppelin", "sub": "50 menciones", "artist": "Led Zeppelin", "track": "Rock & Roll"}, {"name": "Drake", "sub": "48 menciones", "artist": "Drake", "track": "In My Feelings"}, {"name": "Elvis Presley", "sub": "44 menciones", "artist": "Elvis Presley", "track": "A Little Less Conversation"}, {"name": "Prince", "sub": "39 menciones", "artist": "Prince", "track": "1999"}];
+  var topArtists = [{"name": "The Beatles", "sub": "67 menciones", "artist": "The Beatles", "track": "Ticket to Ride"}, {"name": "Led Zeppelin", "sub": "51 menciones", "artist": "Led Zeppelin", "track": "Rock & Roll"}, {"name": "Drake", "sub": "48 menciones", "artist": "Drake", "track": "In My Feelings"}, {"name": "Elvis Presley", "sub": "44 menciones", "artist": "Elvis Presley", "track": "A Little Less Conversation"}, {"name": "Michael Jackson", "sub": "40 menciones", "artist": "Michael Jackson", "track": "Billie Jean"}];
   renderCol('hall-artists', topArtists);
 
   // Top songs — recalculado
@@ -2649,7 +2675,7 @@ var ALL_LISTS_DATA = {
 
 
   // Top albums — recalculado
-  var topAlbums = [{"name": "London Calling", "sub": "The Clash · 5 menciones", "artist": "The Clash", "track": "London Calling"}, {"name": "Purple Rain", "sub": "Prince · 4 menciones", "artist": "Prince", "track": "Purple Rain"}, {"name": "Graceland", "sub": "Paul Simon · 4 menciones", "artist": "Paul Simon", "track": "Graceland"}, {"name": "Thriller", "sub": "Michael Jackson · 4 menciones", "artist": "Michael Jackson", "track": "Thriller"}, {"name": "It Takes a Nation of Millions to Hold Us Back", "sub": "Public Enemy · 4 menciones", "artist": "Public Enemy", "track": "It Takes a Nation of Millions to Hold Us Back"}];
+  var topAlbums = [{"name": "London Calling", "sub": "The Clash · 5 menciones", "artist": "The Clash", "track": "London Calling"}, {"name": "Thriller", "sub": "Michael Jackson · 5 menciones", "artist": "Michael Jackson", "track": "Thriller"}, {"name": "The Dark Side Of The Moon", "sub": "Pink Floyd · 5 menciones", "artist": "Pink Floyd", "track": "The Dark Side Of The Moon"}, {"name": "Purple Rain", "sub": "Prince · 4 menciones", "artist": "Prince", "track": "Purple Rain"}, {"name": "Graceland", "sub": "Paul Simon · 4 menciones", "artist": "Paul Simon", "track": "Graceland"}];
   renderCol('hall-personal', topAlbums);
 })();
 
