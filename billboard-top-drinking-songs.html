@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Top Drinking Songs - Billboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3.5vw,48px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}</style>
+<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">BILLBOARD</span>
+    <span class="badge-year">1958&#8211;2024</span>
+  </div>
+  <a href="https://www.billboard.com/lists/top-drinking-songs-alcohol/" target="_blank" class="page-title">TOP DRINKING SONGS OF ALL TIME</a>
+  <p class="page-sub">Shaboozey, Snoop Dogg, Kendrick Lamar, Beyonce, Brad Paisley &#183; country, hip-hop, pop, reggae — todos los generos se han puesto a beber &#183; Billboard &#183; 30 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Shaboozey A Bar Song">
+    <p class="cover-cap">BILLBOARD &#183; 30 CANCIONES &#183; ALCOHOL</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las 30 mejores canciones sobre beber de todos los tiempos segun Billboard — desde Tequila de The Champs en 1958 hasta A Bar Song (Tipsy) de Shaboozey en 2024. Country, hip-hop, pop, R&amp;B, rock y reggae: todos los generos han encontrado inspiracion en el alcohol, ya sea como celebracion, como consuelo o como metafora del amor.</p>
+    <p class="rtext">La lista tiene un fuerte sesgo reciente y country: 8 de las 10 primeras canciones son de 2004 en adelante, y 7 tienen raices en el country o country-crossover. La mas antigua: Tequila de The Champs (#25, 1958). La cancion de beber mas inteligente: Swimming Pools de Kendrick Lamar (#16) — deconstruccion de la presion social de beber. La mas narrativa: Escape (The Pina Colada Song) de Rupert Holmes (#20, 1979) — cancion de adulterio accidental. Al #1: Shaboozey con 19 semanas en el Hot 100.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">5 destacados &#183; Los tragos mas memorables</div>
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2024</div>
+      <div class="feat-title">A Bar Song (Tipsy)</div>
+      <div class="feat-artist">Shaboozey</div>
+      <p class="feat-rev">19 semanas en el #1 del Billboard Hot 100 — el record mas largo para una cancion de country en ese chart. Shaboozey mezclando country y hip-hop con naturalidad total sobre una melodia de bar que nadie puede sacarse de la cabeza. 'I pour me a drink to get the feeling' como el verso de copa mas irresistible del ano. La cancion que definio 2024 en la radio americana.</p>
+    </div>
+  </div>
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994</div>
+      <div class="feat-title">Gin and Juice</div>
+      <div class="feat-artist">Snoop Dogg</div>
+      <p class="feat-rev">Producida por Dr. Dre, el himno G-funk de la cultura de beber del hip-hop de los 90s. Snoop Dogg cantando sobre tomar ginebra y jugo de fruta con la relajacion total del West Coast rap. Una de las primeras canciones en hacer del alcohol un elemento aspiracional del hip-hop — antes de que existiera el rap de botella de champan, existia esta.</p>
+    </div>
+  </div>
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1979</div>
+      <div class="feat-title">Escape (The Pina Colada Song)</div>
+      <div class="feat-artist">Rupert Holmes</div>
+      <p class="feat-rev">La ultima cancion numero 1 del Billboard Hot 100 de los 70s. Un hombre aburrido de su relacion responde un aviso personal — y descubre que es el aviso de su propia esposa. Una cancion de adulterio disfrazada de tropical vacation hit que involuntariamente se convirtio en el soundtrack de generaciones de fiestas de piscina.</p>
+    </div>
+  </div>
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2012</div>
+      <div class="feat-title">Swimming Pools (Drank)</div>
+      <div class="feat-artist">Kendrick Lamar</div>
+      <p class="feat-rev">La cancion de beber mas inteligente del siglo XXI — Kendrick deconstruyendo la presion social de beber desde adentro de una fiesta. La voz duplicada en el chorus representa dos versiones de Kendrick: el que sucumbe a la presion y el que la resiste. Peak en el #17 del Hot 100 como single de su debut en major label.</p>
+    </div>
+  </div>
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2005</div>
+      <div class="feat-title">Alcohol</div>
+      <div class="feat-artist">Brad Paisley</div>
+      <p class="feat-rev">Country meta-drinking song — narrada desde el punto de vista del alcohol mismo. 'I can make anybody pretty / I can make you believe any lie' como dos de las mejores lineas sobre el poder del alcohol. Brad Paisley escribiendo desde dentro de la botella con suficiente humor y honestidad para que funcione como celebracion y advertencia simultaneamente.</p>
+    </div>
+  </div>
+</section></section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">30 canciones &#183; del #1 al #30</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Cancion / Artista</span>
+    <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">BILLBOARD &#183; TOP DRINKING SONGS &#183; 30 CANCIONES</span>
+  <a href="https://www.billboard.com/lists/top-drinking-songs-alcohol/" target="_blank" class="foot-link">Ver en Billboard &#8599;</a>
+</footer>
+
+<script>
+var SONGS=[[1, "Shaboozey", "A Bar Song (Tipsy)", 2024], [2, "Drake", "Shot for Me", 2011], [3, "Brad Paisley", "Alcohol", 2005], [4, "Dan and Shay", "Tequila", 2018], [5, "Moneybagg Yo feat. Morgan Wallen", "Whiskey Whiskey", 2023], [6, "Chappell Roan", "Red Wine Supernova", 2023], [7, "Little Big Town", "Wine Beer Whiskey", 2020], [8, "Morgan Wallen feat. Eric Church", "Man Made a Bar", 2023], [9, "Dierks Bentley", "Drunk on a Plane", 2014], [10, "Noah Kahan feat. Post Malone", "Dial Drunk", 2023], [11, "Trey Songz feat. Nicki Minaj", "Bottoms Up", 2010], [12, "Jamie Foxx feat. T-Pain", "Blame It (On the Alcohol)", 2009], [13, "Kesha", "TiK ToK", 2009], [14, "T-Pain feat. Yung Joc", "Buy U a Drank (Shawty Snappin')", 2007], [15, "J-Kwon", "Tipsy", 2004], [16, "Kendrick Lamar", "Swimming Pools (Drank)", 2012], [17, "Snoop Dogg", "Gin and Juice", 1994], [18, "Beyonce feat. Jay-Z", "Drunk in Love", 2013], [19, "Eminem, Dr. Dre and 50 Cent", "Crack a Bottle", 2009], [20, "Rupert Holmes", "Escape (The Pina Colada Song)", 1979], [21, "Rihanna", "Cheers (Drink to That)", 2011], [22, "LMFAO feat. Lil Jon", "Shots", 2009], [23, "Post Malone", "Wow.", 2019], [24, "Metallica", "Whiskey in the Jar", 1998], [25, "The Champs", "Tequila", 1958], [26, "Luke Combs", "Beer Never Broke My Heart", 2019], [27, "Eric Burdon and War", "Spill the Wine", 1970], [28, "Chumbawamba", "Tubthumping", 1997], [29, "UB40", "Red Red Wine", 1983], [30, "Toby Keith", "Red Solo Cup", 2011]];
+var FEAT=[["fc-1","Shaboozey","A Bar Song (Tipsy)"],["fc-2","Snoop Dogg","Gin and Juice"],["fc-3","Rupert Holmes","Escape (The Pina Colada Song)"],["fc-4","Kendrick Lamar","Swimming Pools (Drank)"],["fc-5","Brad Paisley","Alcohol"]];
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
+      for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
+      if(!m&&res.length)m=res[0];
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+    }).catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
+          for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
+          if(best)setImg(el,best["#text"]);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Shaboozey","A Bar Song Tipsy");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*280);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+s[0]+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[1])+"\" data-track=\""+encodeURIComponent(s[2])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+s[2]+"</div><div class=\"track-artist\">"+s[1]+"</div></div>"+
+    "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(s[1])+"\" data-lfm-track=\""+encodeURIComponent(s[2])+"\">&#8212;</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+var artQ=[],artTimer=null;
+function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.track));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
+document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfm(){
+  if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
+  var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmTrack||""),k=ar+"|||"+tr;
+  if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+    .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
+    .catch(function(){el.textContent="&#8212;";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
+}
+function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
+document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+</script>
+</body>
+</html>
