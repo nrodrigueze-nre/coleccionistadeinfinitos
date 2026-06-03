@@ -227,10 +227,10 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="intro-review">
       <div class="sec-label" style="margin-bottom:1rem">La Colección</div>
-      <p>106 listas. Más de 8.000 entradas entre álbumes y canciones. Una colección que empieza donde empiezan todas las grandes colecciones — en lo personal y lo irracional — y termina convirtiéndose en un mapa.</p>
-      <p>El núcleo son las grandes listas de Rolling Stone: los 100 mejores álbumes de los 80s, los 90s, los 2000s y los 2010s, más los anuales de 2022 a 2025 y los mejores del año en Latin. A su lado, listas temáticas — guitar solos, hip-hop, heavy metal, protest songs, vocal performances — y los libros de referencia: 1001 Discos que Hay que Escuchar Antes de Morir, 101 Albums That Changed Popular Music, y las superlistas DDD de 1000 canciones de rock.</p>
-      <p>La colección cruza el Atlántico con Digital Dream Door por décadas, Rock Argentino de Rolling Stone y MTV, Canal Viva colombiana, y los tributos y covers iberoamericanos de RS en Español. Los géneros tienen canon propio: synth-pop, EDM, dance/electrónica, rock colombiano, salsa, cumbia y reggaetón. Las listas anuales de Billboard Dance de 2021 y 2023 completan el panorama electrónico.</p>
-      <p>Cada canción registrada en Last.fm. Cada lista navegable. El ranking de Más Aclamados se recalcula automáticamente con cada lista nueva — 27 de álbumes, 76 de canciones, 3 de artistas. Un archivo vivo.</p>
+      <p>160 listas. 12.852 entradas — 10.245 únicas — entre álbumes y canciones de 1920 a 2025. El 60% son canciones, el 40% álbumes. Rolling Stone aporta 87 listas, Digital Dream Door 42, Billboard 12. Ocho secciones: Anuales, Géneros, Décadas, Temáticas, Superlistas, Latin Álbumes, Latin Canciones, Global.</p>
+      <p>La columna vertebral es Rolling Stone: 100 mejores álbumes por década (80s, 90s, 2000s, 2010s), anuales del año completos de 2011 a 2025, y las grandes listas temáticas — guitar solos, hip-hop, heavy metal, protest songs, 200 canciones de baile, 250 mejores álbumes del siglo XXI. Las superlistas anclan el canon: 1001 Discos, 1001 Songs, DDD 1000 canciones de rock, Apple Music Top 500, RRHOF 200 álbumes definitivos.</p>
+      <p>Digital Dream Door cubre el mapa por géneros y décadas: 100 canciones por cada década de los 50s a los 2010s, más house, disco, funk, reggae, trance, dream pop, new wave, punk, power pop, freestyle, calypso y rockabilly. El frente latinoamericano tiene peso propio: RS Argentina, RS Colombia, RS España, Canal Viva, Acroarte dominicano, RYM Iberoamérica, MediaMonkey y 18 listas de latin anuales y de géneros. Los géneros tienen canon propio — britpop, goth, pop metal 80s, new wave argentina, rock psicodélico, progresivo.</p>
+      <p>Cada entrada enlazada a Last.fm. El ranking de Más Aclamados se recalcula con cada lista nueva. Los Beatles lideran con 68 menciones; Thriller de Michael Jackson y Marquee Moon de Television empatan en álbumes con 6 cada uno; My Generation de The Who encabeza canciones con 7. Un archivo vivo.</p>
     </div>
   </div>
 </section>
@@ -974,7 +974,7 @@ const LISTS = [
     _title: "Tropicália"
   },
   {
-    file: "rolling-stone-100-greatest-motown-songs.html",
+    file: "rolling-stone-100-motown-songs.html",
     title: "100 Greatest Motown Songs",
     source: "Rolling Stone",
     year: "1960–1992",
@@ -1008,6 +1008,42 @@ const LISTS = [
     url: "https://www.vh1.com/news/mc6nph/40-greatest-rb-songs-of-the-90s",
     _artist: "Bell Biv DeVoe",
     _title: "Poison"
+  },
+  {
+    file: "rolling-stone-50-best-goth-songs.html",
+    title: "50 Best Goth Songs of All Time",
+    source: "Rolling Stone",
+    year: "1967-2012",
+    type: "canciones",
+    count: "47",
+    desc: "Bauhaus, Joy Division, Siouxsie, The Cure, Sisters of Mercy — del post-punk al dance-pop al blues al country · Por Harriman · RS Oct 2022.",
+    url: "https://www.rollingstone.com/music/music-lists/the-50-best-goth-songs-of-all-time-1234614460/",
+    _artist: "Bauhaus",
+    _title: "Bela Lugosi's Dead"
+  },
+  {
+    file: "rolling-stone-50-best-road-trip-songs.html",
+    title: "50 Best Road-Trip Songs",
+    source: "Rolling Stone",
+    year: "1964-2024",
+    type: "canciones",
+    count: "48",
+    desc: "Bruce Springsteen, Jimi Hendrix, Adele, Tracy Chapman, AC/DC — de canciones clasicas a hip-hop a pop de precision · Por Edwards · RS Mar 2025.",
+    url: "https://www.rollingstone.com/music/music-lists/best-road-trip-songs-1235290679/",
+    _artist: "Bruce Springsteen",
+    _title: "Born to Run"
+  },
+  {
+    file: "rolling-stone-50-best-one-hit-wonders-2000s.html",
+    title: "50 Best One-Hit Wonders of the 2000s",
+    source: "Rolling Stone",
+    year: "2000-2009",
+    type: "canciones",
+    count: "50",
+    desc: "Crazy Town, Baha Men, Tweet, Daniel Powter, La Roux — dancehall, R&B, nu-metal y crunk · Por Maura Johnston · RS May 2025.",
+    url: "https://www.rollingstone.com/music/music-lists/2000s-one-hit-wonders-1235342230/",
+    _artist: "Outkast",
+    _title: "Hey Ya!"
   },
   {
     file: "rolling-stone-25-songs-terrifying.html",
@@ -1535,6 +1571,18 @@ const LISTS = [
     url: "https://www.headphonesty.com/2025/09/albums-everyone-listen-life-audiophiles/",
     _artist: "Pink Floyd",
     _title: "The Dark Side of the Moon"
+  },
+  {
+    file: "pitchfork-50-best-britpop-albums.html",
+    title: "50 Best Britpop Albums",
+    source: "Pitchfork",
+    year: "1990-1998",
+    type: "albumes",
+    count: "50",
+    desc: "Pulp, Blur, Radiohead, Oasis, Suede, Elastica — los mis-shapes que hicieron grande al movimiento · Pitchfork 2016.",
+    url: "https://pitchfork.com/features/lists-and-guides/10045-the-50-best-britpop-albums/",
+    _artist: "Pulp",
+    _title: "Different Class"
   },
   {
     file: "rolling-stone-40-greatest-punk-albums.html",
@@ -2097,6 +2145,18 @@ const LISTS = [
     _title: "DAMN."
   },
   {
+    file: "rolling-stone-50-best-songs-2016.html",
+    title: "50 Best Songs of 2016",
+    source: "Rolling Stone",
+    year: "2016",
+    type: "canciones",
+    count: "50",
+    desc: "Beyonce, Frank Ocean, Drake, David Bowie, Kanye West — Formation como la declaracion mas militante de Beyonce, No Plan como el ultimo adios de Bowie · Por Sheffield · RS Nov 2016.",
+    url: "https://www.rollingstone.com/music/music-lists/50-best-songs-of-2016-121196/",
+    _artist: "Beyonce",
+    _title: "Formation"
+  },
+  {
     file: "rolling-stone-50-best-albums-2016.html",
     title: "50 Best Albums of 2016",
     source: "Rolling Stone",
@@ -2109,6 +2169,18 @@ const LISTS = [
     _title: "Lemonade"
   },
   {
+    file: "rolling-stone-50-best-songs-2015.html",
+    title: "50 Best Songs of 2015",
+    source: "Rolling Stone",
+    year: "2015",
+    type: "canciones",
+    count: "50",
+    desc: "The Weeknd, Fetty Wap, Drake, Courtney Barnett, Adele — Can't Feel My Face como el momento donde The Weeknd se convirtio en superstar pop · RS Dic 2015.",
+    url: "https://www.rollingstone.com/music/music-lists/50-best-songs-of-2015-144910/",
+    _artist: "The Weeknd",
+    _title: "Can't Feel My Face"
+  },
+  {
     file: "rolling-stone-50-best-albums-2015.html",
     title: "50 Best Albums of 2015",
     source: "Rolling Stone",
@@ -2119,6 +2191,18 @@ const LISTS = [
     url: "https://www.rollingstone.com/music/music-lists/50-best-albums-of-2015-146153/",
     _artist: "Kendrick Lamar",
     _title: "To Pimp a Butterfly"
+  },
+  {
+    file: "rolling-stone-50-best-songs-2014.html",
+    title: "50 Best Songs of 2014",
+    source: "Rolling Stone",
+    year: "2014",
+    type: "canciones",
+    count: "50",
+    desc: "Beyonce, DJ Snake, Taylor Swift, Future Islands, Sia — Beyonce hizo el mejor drunken-hookup song jamas grabado · RS Dic 2014.",
+    url: "https://www.rollingstone.com/music/music-lists/50-best-songs-of-2014-142329/",
+    _artist: "Beyonce",
+    _title: "Drunk in Love"
   },
   {
     file: "rolling-stone-50-best-albums-2014.html",
@@ -2145,6 +2229,18 @@ const LISTS = [
     _title: "Yeezus"
   },
   {
+    file: "rolling-stone-50-best-songs-2012.html",
+    title: "50 Best Songs of 2012",
+    source: "Rolling Stone",
+    year: "2012",
+    type: "canciones",
+    count: "48",
+    desc: "Alabama Shakes, Taylor Swift, Frank Ocean, Kendrick Lamar, Grimes — Alabama Shakes resucitando el soul, Taylor armando pop de armas de destruccion masiva · RS Dic 2012.",
+    url: "https://www.rollingstone.com/music/music-lists/50-best-songs-of-2012-152157/",
+    _artist: "Alabama Shakes",
+    _title: "Hold On"
+  },
+  {
     file: "rolling-stone-50-best-albums-2012.html",
     title: "50 Best Albums of 2012",
     source: "Rolling Stone",
@@ -2155,6 +2251,18 @@ const LISTS = [
     url: "https://www.rollingstone.com/music/music-lists/50-best-albums-of-2012-152493/",
     _artist: "Frank Ocean",
     _title: "Channel Orange"
+  },
+  {
+    file: "rolling-stone-50-best-singles-2011.html",
+    title: "50 Best Singles of 2011",
+    source: "Rolling Stone",
+    year: "2011",
+    type: "canciones",
+    count: "50",
+    desc: "Adele, Beyonce, Jay-Z y Kanye, Lady Gaga, Radiohead — Adele con el breakup scorcher definitivo, Lana Del Rey llegando desde ninguna parte · RS Dic 2011.",
+    url: "https://www.rollingstone.com/music/music-lists/50-best-singles-of-2011-154693/",
+    _artist: "Adele",
+    _title: "Rolling in the Deep"
   },
   {
     file: "rolling-stone-50-best-albums-2011.html",
@@ -2205,7 +2313,7 @@ const LISTS = [
     _title: "The Clash"
   },
   {
-    file: "rolling-stone-best-songs-2022.html",
+    file: "rolling-stone-100-best-songs-2022.html",
     title: "Best Songs of 2022",
     source: "Rolling Stone",
     year: "2022",
@@ -2217,7 +2325,7 @@ const LISTS = [
     _title: "Break My Soul"
   },
   {
-    file: "rolling-stone-best-songs-2023.html",
+    file: "rolling-stone-100-best-songs-2023.html",
     title: "Best Songs of 2023",
     source: "Rolling Stone",
     year: "2023",
@@ -2229,7 +2337,7 @@ const LISTS = [
     _title: "vampire"
   },
   {
-    file: "rolling-stone-best-songs-2024.html",
+    file: "rolling-stone-100-best-songs-2024.html",
     title: "Best Songs of 2024",
     source: "Rolling Stone",
     year: "2024",
@@ -2241,7 +2349,7 @@ const LISTS = [
     _title: "360"
   },
   {
-    file: "rolling-stone-best-songs-2025.html",
+    file: "rolling-stone-100-best-songs-2025.html",
     title: "Best Songs of 2025",
     source: "Rolling Stone",
     year: "2025",
@@ -2337,6 +2445,42 @@ const LISTS = [
     _title: "Re"
   },
   {
+    file: "rolling-stone-50-best-latin-american-rock-albums.html",
+    title: "50 Best Latin-American Rock Albums",
+    source: "Rolling Stone",
+    year: "1967-2021",
+    type: "albumes",
+    count: "46",
+    desc: "Cafe Tacvba, Soda Stereo, Charly Garcia, Caifanes, Santana — seis decadas del rock latinoamericano en su momento mas ambicioso · Por Lechner · RS Sep 2023.",
+    url: "https://www.rollingstone.com/music/music-lists/best-latin-american-rock-albums-1234818717/",
+    _artist: "Cafe Tacvba",
+    _title: "Re"
+  },
+  {
+    file: "rolling-stone-50-best-latin-albums-2025.html",
+    title: "50 Best Latin and Spanish-Language Albums of 2025",
+    source: "Rolling Stone",
+    year: "2025",
+    type: "albumes",
+    count: "50",
+    desc: "Bad Bunny, Silvana Estrada, Karol G, Milo J, Natalia Lafourcade — el ano de la cancionera y las raices boricuas · RS Dic 2025.",
+    url: "https://www.rollingstone.com/music/music-lists/best-latin-albums-2025-1235470004/",
+    _artist: "Bad Bunny",
+    _title: "Debi Tirar Mas Fotos"
+  },
+  {
+    file: "rolling-stone-50-best-latin-albums-2024.html",
+    title: "50 Best Latin Albums of 2024",
+    source: "Rolling Stone",
+    year: "2024",
+    type: "albumes",
+    count: "47",
+    desc: "Alvaro Diaz, Dillom, Nathy Peluso, Latin Mafia, Kali Uchis — visiones futuristas y maximalismo sin disculpas · RS Dic 2024.",
+    url: "https://www.rollingstone.com/music/music-lists/best-latin-albums-2024-1235191400/",
+    _artist: "Alvaro Diaz",
+    _title: "Sayonara"
+  },
+  {
     file: "rolling-stone-best-spanish-albums-2021.html",
     title: "35 Best Spanish-Language and Bilingual Albums of 2021",
     source: "Rolling Stone",
@@ -2361,7 +2505,7 @@ const LISTS = [
     _title: "El Madrileño"
   },
   {
-    file: "rolling-stone-best-albums-2022.html",
+    file: "rolling-stone-100-best-albums-2022.html",
     title: "Best Albums of 2022",
     source: "Rolling Stone",
     year: "2022",
@@ -2373,7 +2517,7 @@ const LISTS = [
     _title: "Renaissance"
   },
   {
-    file: "rolling-stone-best-albums-2023.html",
+    file: "rolling-stone-100-best-albums-2023.html",
     title: "Best Albums of 2023",
     source: "Rolling Stone",
     year: "2023",
@@ -2385,7 +2529,7 @@ const LISTS = [
     _title: "GUTS"
   },
   {
-    file: "rolling-stone-best-albums-2024.html",
+    file: "rolling-stone-100-best-albums-2024.html",
     title: "Best Albums of 2024",
     source: "Rolling Stone",
     year: "2024",
@@ -2397,7 +2541,7 @@ const LISTS = [
     _title: "BRAT"
   },
   {
-    file: "rolling-stone-best-albums-2025.html",
+    file: "rolling-stone-100-best-albums-2025.html",
     title: "Best Albums of 2025",
     source: "Rolling Stone",
     year: "2025",
@@ -2409,7 +2553,7 @@ const LISTS = [
     _title: "GNX"
   },
   {
-    file: "rolling-stone-best-songs-1982.html",
+    file: "rolling-stone-100-best-songs-1982.html",
     title: "Best Songs of 1982",
     source: "Rolling Stone",
     year: "1982",
@@ -2421,7 +2565,7 @@ const LISTS = [
     _title: "Billie Jean"
   },
   {
-    file: "rolling-stone-best-songs-2013.html",
+    file: "rolling-stone-100-best-songs-2013.html",
     title: "Best Songs of 2013",
     source: "Rolling Stone",
     year: "2013",
@@ -2481,7 +2625,7 @@ const LISTS = [
     _title: "Gimme tha Power"
   },
   {
-    file: "rolling-stone-latin-best-2015.html",
+    file: "rolling-stone-10-best-latin-2015.html",
     title: "Mejores Canciones Latinas 2015",
     source: "Rolling Stone",
     year: "2015",
@@ -2493,7 +2637,7 @@ const LISTS = [
     _title: "Ay Vamos"
   },
   {
-    file: "rolling-stone-latin-best-2016.html",
+    file: "rolling-stone-10-best-latin-2016.html",
     title: "Mejores Canciones Latinas 2016",
     source: "Rolling Stone",
     year: "2016",
@@ -2527,7 +2671,7 @@ const LISTS = [
     _title: "Despacito"
   },
   {
-    file: "rolling-stone-latin-best-2017.html",
+    file: "rolling-stone-10-best-latin-2017.html",
     title: "Mejores Canciones Latinas 2017",
     source: "Rolling Stone",
     year: "2017",
@@ -2539,7 +2683,7 @@ const LISTS = [
     _title: "Despacito"
   },
   {
-    file: "rolling-stone-latin-best-2018.html",
+    file: "rolling-stone-10-best-latin-2018.html",
     title: "Mejores Canciones Latinas 2018",
     source: "Rolling Stone",
     year: "2018",
@@ -2620,52 +2764,63 @@ const SECTIONS = {
   "digitaldreamdoor-100-dance-songs-2010s.html": "decades",
   "digitaldreamdoor-100-dance-songs-2020s.html": "decades",
   "digitaldreamdoor-100-edm-2000s-songs.html": "decades",
-  "rolling-stone-best-songs-2022.html": "annual",
-  "rolling-stone-best-songs-2023.html": "annual",
-  "rolling-stone-best-songs-2024.html": "annual",
-  "rolling-stone-best-songs-2025.html": "annual",
+  "rolling-stone-100-best-songs-2022.html": "annual",
+  "rolling-stone-100-best-songs-2023.html": "annual",
+  "rolling-stone-100-best-songs-2024.html": "annual",
+  "rolling-stone-100-best-songs-2025.html": "annual",
   "billboard-25-best-latin-albums-2020.html": "annual",
   "rolling-stone-25-best-latin-albums-2019.html": "annual",
   "rolling-stone-esp-22-discos-espanol-2022.html": "annual",
+  "rolling-stone-50-best-latin-american-rock-albums.html": "genres",
+  "rolling-stone-50-best-latin-albums-2025.html": "annual",
+  "rolling-stone-50-best-latin-albums-2024.html": "annual",
   "rolling-stone-best-spanish-albums-2021.html": "annual",
   "rolling-stone-esp-21-discos-iberoamericanos-2021.html": "annual",
-  "rolling-stone-best-albums-2022.html": "annual",
+  "rolling-stone-100-best-albums-2022.html": "annual",
   "billboard-40-best-dance-songs-2021.html": "annual",
   "rolling-stone-50-best-albums-2021.html": "annual",
   "rolling-stone-50-best-albums-2020.html": "annual",
   "rolling-stone-50-best-albums-2019.html": "annual",
   "rolling-stone-50-best-albums-2018.html": "annual",
   "rolling-stone-50-best-albums-2017.html": "annual",
+  "rolling-stone-50-best-songs-2016.html": "annual",
   "rolling-stone-50-best-albums-2016.html": "annual",
+  "rolling-stone-50-best-songs-2015.html": "annual",
   "rolling-stone-50-best-albums-2015.html": "annual",
+  "rolling-stone-50-best-songs-2014.html": "annual",
   "rolling-stone-50-best-albums-2014.html": "annual",
   "rolling-stone-50-best-albums-2013.html": "annual",
+  "rolling-stone-50-best-songs-2012.html": "annual",
   "rolling-stone-50-best-albums-2012.html": "annual",
+  "rolling-stone-50-best-singles-2011.html": "annual",
   "rolling-stone-50-best-albums-2011.html": "annual",
   "billboard-20-best-dance-albums-2021.html": "annual",
   "billboard-15-best-dance-albums-2023.html": "annual",
-  "rolling-stone-best-albums-2023.html": "annual",
-  "rolling-stone-best-albums-2024.html": "annual",
-  "rolling-stone-best-albums-2025.html": "annual",
-  "rolling-stone-best-songs-1982.html": "annual",
-  "rolling-stone-best-songs-2013.html": "annual",
+  "rolling-stone-100-best-albums-2023.html": "annual",
+  "rolling-stone-100-best-albums-2024.html": "annual",
+  "rolling-stone-100-best-albums-2025.html": "annual",
+  "rolling-stone-100-best-songs-1982.html": "annual",
+  "rolling-stone-100-best-songs-2013.html": "annual",
   "billboard-25-obras-maestras-rock-espanol-2020.html": "songs-latin",
   "rolling-stone-esp-25-himnos-rock-mexicano.html": "songs-latin",
-  "rolling-stone-latin-best-2015.html": "annual",
-  "rolling-stone-latin-best-2016.html": "annual",
+  "rolling-stone-10-best-latin-2015.html": "annual",
+  "rolling-stone-10-best-latin-2016.html": "annual",
   "billboard-20-best-latin-songs-2018.html": "annual",
   "billboard-20-best-latin-songs-2017.html": "annual",
-  "rolling-stone-latin-best-2017.html": "annual",
-  "rolling-stone-latin-best-2018.html": "annual",
+  "rolling-stone-10-best-latin-2017.html": "annual",
+  "rolling-stone-10-best-latin-2018.html": "annual",
   "rolling-stone-100-canciones-2023-espanol.html": "annual",
   "rolling-stone-100-best-protest-songs.html": "thematic",
   "digitaldreamdoor-100-rock-bass-performances.html": "thematic",
   "digitaldreamdoor-100-rock-drum-performances.html": "thematic",
   "digitaldreamdoor-150-rock-anthems.html": "thematic",
   "digitaldreamdoor-100-rock-vocal-performances.html": "thematic",
-  "rolling-stone-100-greatest-motown-songs.html": "thematic",
+  "rolling-stone-100-motown-songs.html": "thematic",
   "rolling-stone-100-rnb-songs-21st-century.html": "genres",
   "vh1-40-greatest-rb-songs-90s.html": "genres",
+  "rolling-stone-50-best-goth-songs.html": "genres",
+  "rolling-stone-50-best-road-trip-songs.html": "thematic",
+  "rolling-stone-50-best-one-hit-wonders-2000s.html": "thematic",
   "rolling-stone-25-songs-terrifying.html": "thematic",
   "rolling-stone-100-best-guitar-solos.html": "thematic",
   "rolling-stone-100-best-hip-hop-songs.html": "genres",
@@ -2699,6 +2854,7 @@ const SECTIONS = {
   "rolling-stone-arg-40-discos-esenciales-new-wave.html": "genres",
   "stereogum-36-essential-80s-pop-metal.html": "genres",
   "headphonesty-50-audiophile-albums.html": "thematic",
+  "pitchfork-50-best-britpop-albums.html": "genres",
   "rolling-stone-40-greatest-punk-albums.html": "genres",
   "rolling-stone-esp-20-mejores-albumes-heavy-metal.html": "genres",
   "rolling-stone-esp-200-mejores-canciones-pop-rock-espanol.html": "super",
@@ -2720,11 +2876,11 @@ const SECTIONS = {
 };
 
 var LAST5 = [
-  "rolling-stone-50-best-albums-2021.html",
-  "rolling-stone-50-best-albums-2020.html",
-  "rolling-stone-50-best-albums-2019.html",
-  "rolling-stone-50-best-albums-2018.html",
-  "rolling-stone-50-best-albums-2017.html"
+  "rolling-stone-50-best-songs-2016.html",
+  "rolling-stone-50-best-songs-2015.html",
+  "rolling-stone-50-best-songs-2014.html",
+  "rolling-stone-50-best-songs-2012.html",
+  "rolling-stone-50-best-singles-2011.html"
 ];
 
 
@@ -2983,7 +3139,19 @@ var ALL_LISTS_DATA = {
   "rolling-stone-50-best-albums-2018.html": [["Golden Hour", "Kacey Musgraves"], ["Invasion of Privacy", "Cardi B"], ["Sweetener", "Ariana Grande"], ["Daytona", "Pusha T"], ["Camila", "Camila Cabello"], ["Swimming", "Mac Miller"], ["Whack World", "Tierra Whack"], ["A Star Is Born Soundtrack", "Lady Gaga and Bradley Cooper"], ["Scorpion", "Drake"], ["Bottle It In", "Kurt Vile"], ["Egypt Station", "Paul McCartney"], ["By the Way I Forgive You", "Brandi Carlile"], ["Dirty Computer", "Janelle Monae"], ["Be the Cowboy", "Mitski"], ["Vibras", "J Balvin"], ["Clean", "Soccer Mommy"], ["Historian", "Lucy Dacus"], ["FM!", "Vince Staples"], ["Bark Your Head Off Dog", "Hop Along"], ["Future Me Hates Me", "The Beths"], ["7", "Beach House"], ["The Tree of Forgiveness", "John Prine"], ["Room 25", "Noname"], ["Lush", "Snail Mail"], ["SR3MM", "Rae Sremmurd"], ["Isolation", "Kali Uchis"], ["In a Poem Unlimited", "U.S. Girls"], ["High as Hope", "Florence and the Machine"], ["What a Time to Be Alive", "Superchunk"], ["The Bluest Star", "Free Cake for Every Creature"], ["El Mal Querer", "Rosalia"], ["American Utopia", "David Byrne"], ["Hell-On", "Neko Case"], ["Tell Me How You Really Feel", "Courtney Barnett"], ["Look Now", "Elvis Costello"], ["Sparkle Hard", "Stephen Malkmus and the Jicks"], ["Desperate Man", "Eric Church"], ["Bad Witch", "Nine Inch Nails"], ["Wide Awake", "Parquet Courts"], ["To the Sunset", "Amanda Shires"], ["Girl Going Nowhere", "Ashley McBryde"], ["Tha Carter V", "Lil Wayne"], ["Warm", "Jeff Tweedy"], ["Honey", "Robyn"], ["The Sciences", "Sleep"], ["God's Favorite Customer", "Father John Misty"], ["Everything Is Love", "The Carters"], ["12 Little Spells", "Esperanza Spalding"], ["Ephorize", "Cupcakke"], ["X 100PRE", "Bad Bunny"]],
   "rolling-stone-50-best-albums-2019.html": [["Norman Fucking Rockwell!", "Lana Del Rey"], ["When We All Fall Asleep Where Do We Go?", "Billie Eilish"], ["Cuz I Love You", "Lizzo"], ["Lover", "Taylor Swift"], ["Father of the Bride", "Vampire Weekend"], ["Igor", "Tyler the Creator"], ["Titanic Rising", "Weyes Blood"], ["When I Get Home", "Solange"], ["Wildcard", "Miranda Lambert"], ["Baby on Baby", "DaBaby"], ["On the Line", "Jenny Lewis"], ["All Mirrors", "Angel Olsen"], ["Jaime", "Brittany Howard"], ["Sound and Fury", "Sturgill Simpson"], ["Two Hands", "Big Thief"], ["So Much Fun", "Young Thug"], ["1000 Gecs", "100 Gecs"], ["Die a Legend", "Polo G"], ["i i", "Bon Iver"], ["Western Stars", "Bruce Springsteen"], ["Fine Line", "Harry Styles"], ["While I'm Livin'", "Tanya Tucker"], ["Legacy! Legacy!", "Jamila Woods"], ["Ode to Joy", "Wilco"], ["Remind Me Tomorrow", "Sharon Van Etten"], ["Everyday Life", "Coldplay"], ["The Center Won't Hold", "Sleater-Kinney"], ["I Am Easy to Find", "The National"], ["Fever", "Megan Thee Stallion"], ["A Distant Call", "Sheer Mag"], ["Oasis", "J Balvin and Bad Bunny"], ["Lux Prima", "Karen O and Danger Mouse"], ["Ginger", "Brockhampton"], ["Magdalene", "FKA Twigs"], ["Purple Mountains", "Purple Mountains"], ["Over It", "Summer Walker"], ["Death Race to Love", "Juice WRLD"], ["Hyperspace", "Beck"], ["Heard It in a Past Life", "Maggie Rogers"], ["Eve", "Rapsody"], ["Let's Rock", "The Black Keys"], ["Cash Cabin Sessions Vol 3", "Todd Snider"], ["African Giant", "Burna Boy"], ["Anger Management", "Rico Nasty and Kenny Beats"], ["Hollywood's Bleeding", "Post Malone"], ["Walk Through Fire", "Yola"], ["The Seduction of Kansas", "Priests"], ["Crux", "Moon Tooth"], ["Thank U Next", "Ariana Grande"], ["UFOF", "Big Thief"]],
   "rolling-stone-50-best-albums-2020.html": [["Folklore", "Taylor Swift"], ["Rough and Rowdy Ways", "Bob Dylan"], ["YHLQMDLG", "Bad Bunny"], ["Punisher", "Phoebe Bridgers"], ["RTJ4", "Run the Jewels"], ["Future Nostalgia", "Dua Lipa"], ["Fetch the Bolt Cutters", "Fiona Apple"], ["Saint Cloud", "Waxahatchee"], ["Eternal Atake", "Lil Uzi Vert"], ["What's Your Pleasure?", "Jessie Ware"], ["Evermore", "Taylor Swift"], ["Set My Heart on Fire Immediately", "Perfume Genius"], ["Grae", "Moses Sumney"], ["Ashore", "Adrianne Lenker"], ["Heaven to a Tortured Mind", "Yves Tumor"], ["Mordechai", "Khruangbin"], ["Chromatica", "Lady Gaga"], ["The Goat", "Polo G"], ["It Is What It Is", "Thundercat"], ["Jaime Live Session", "Brittany Howard"], ["Alfredo", "Freddie Gibbs and the Alchemist"], ["The Ascension", "Sufjan Stevens"], ["Plastic Hearts", "Miley Cyrus"], ["Rare", "Selena Gomez"], ["Manic", "Halsey"], ["To Love Is to Live", "Jehnny Beth"], ["Good News", "Megan Thee Stallion"], ["Reunions", "Jason Isbell and the 400 Unit"], ["Shamir", "Shamir"], ["Sixteen Oceans", "Four Tet"], ["Petals for Armor", "Hayley Williams"], ["After Hours", "The Weeknd"], ["A Hero's Death", "Fontaines D.C."], ["Private Lives", "Low Cut Connie"], ["Got to Be Tough", "Toots and the Maytals"], ["Traditional Techniques", "Stephen Malkmus"], ["Color Theory", "Soccer Mommy"], ["Inner Song", "Kelly Lee Owens"], ["Fake It Flowers", "Beabadoobee"], ["McCartney III", "Paul McCartney"], ["Haunted Painting", "Sad13"], ["Alphabetland", "X"], ["Aftermath", "Elizabeth Cook"], ["Starting Over", "Chris Stapleton"], ["Power Up", "AC/DC"], ["The Price of Tea in China", "Boldy James and the Alchemist"], ["Good Souls Better Angels", "Lucinda Williams"], ["Growth", "Kareem Ali"], ["Love Is the King", "Jeff Tweedy"], ["Live Forever", "Bartees Strange"]],
-  "rolling-stone-50-best-albums-2021.html": [["Sour", "Olivia Rodrigo"], ["Call Me If You Get Lost", "Tyler the Creator"], ["30", "Adele"], ["Jubilee", "Japanese Breakfast"], ["Montero", "Lil Nas X"], ["Home Video", "Lucy Dacus"], ["Heaux Tales", "Jazmine Sullivan"], ["Reckless", "Morgan Wade"], ["Hall of Fame", "Polo G"], ["Happier Than Ever", "Billie Eilish"], ["Hey What", "Low"], ["If Orange Was a Place", "Tems"], ["If I Can't Have Love I Want Power", "Halsey"], ["Collapsed in Sunbeams", "Arlo Parks"], ["Gold-Diggers Sound", "Leon Bridges"], ["Planet Her", "Doja Cat"], ["Second Line", "Dawn Richard"], ["El Alimento", "Cimafunk"], ["New Long Leg", "Dry Cleaning"], ["Ignorance", "The Weather Station"], ["Ninxs Rotxs", "Mabiland"], ["Punk", "Young Thug"], ["When Smoke Rises", "Mustafa"], ["Sound Ancestors", "Madlib"], ["Valentine", "Snail Mail"], ["Still Over It", "Summer Walker"], ["Driver", "Adult Mom"], ["An Evening With Silk Sonic", "Silk Sonic"], ["Afrique Victime", "Mdou Moctar"], ["29", "Carly Pearce"], ["Sometimes I Might Be Introvert", "Little Simz"], ["Shiesty Season", "Pooh Shiesty"], ["Stand for Myself", "Yola"], ["Don't Go Tellin' Your Momma", "Topaz Jones"], ["Medicine at Midnight", "Foo Fighters"], ["Remember Her Name", "Mickey Guyton"], ["Lyke Mike", "Myke Towers"], ["Let Me Do One More", "Illuminati Hotties"], ["Senjutsu", "Iron Maiden"], ["Bo Jackson", "Boldy James and the Alchemist"], ["The Chaos Chapter Fight or Escape", "Tomorrow X Together"], ["Timelezz", "Jhay Cortez"], ["Certified Lover Boy", "Drake"], ["The Horses and the Hounds", "James McMurtry"], ["Daddy's Home", "St. Vincent"], ["Vice Versa", "Rauw Alejandro"], ["El Madrileño", "C. Tangana"], ["To Hell With It", "Pinkpantheress"], ["Twice as Tall", "Burna Boy"]]
+  "rolling-stone-50-best-albums-2021.html": [["Sour", "Olivia Rodrigo"], ["Call Me If You Get Lost", "Tyler the Creator"], ["30", "Adele"], ["Jubilee", "Japanese Breakfast"], ["Montero", "Lil Nas X"], ["Home Video", "Lucy Dacus"], ["Heaux Tales", "Jazmine Sullivan"], ["Reckless", "Morgan Wade"], ["Hall of Fame", "Polo G"], ["Happier Than Ever", "Billie Eilish"], ["Hey What", "Low"], ["If Orange Was a Place", "Tems"], ["If I Can't Have Love I Want Power", "Halsey"], ["Collapsed in Sunbeams", "Arlo Parks"], ["Gold-Diggers Sound", "Leon Bridges"], ["Planet Her", "Doja Cat"], ["Second Line", "Dawn Richard"], ["El Alimento", "Cimafunk"], ["New Long Leg", "Dry Cleaning"], ["Ignorance", "The Weather Station"], ["Ninxs Rotxs", "Mabiland"], ["Punk", "Young Thug"], ["When Smoke Rises", "Mustafa"], ["Sound Ancestors", "Madlib"], ["Valentine", "Snail Mail"], ["Still Over It", "Summer Walker"], ["Driver", "Adult Mom"], ["An Evening With Silk Sonic", "Silk Sonic"], ["Afrique Victime", "Mdou Moctar"], ["29", "Carly Pearce"], ["Sometimes I Might Be Introvert", "Little Simz"], ["Shiesty Season", "Pooh Shiesty"], ["Stand for Myself", "Yola"], ["Don't Go Tellin' Your Momma", "Topaz Jones"], ["Medicine at Midnight", "Foo Fighters"], ["Remember Her Name", "Mickey Guyton"], ["Lyke Mike", "Myke Towers"], ["Let Me Do One More", "Illuminati Hotties"], ["Senjutsu", "Iron Maiden"], ["Bo Jackson", "Boldy James and the Alchemist"], ["The Chaos Chapter Fight or Escape", "Tomorrow X Together"], ["Timelezz", "Jhay Cortez"], ["Certified Lover Boy", "Drake"], ["The Horses and the Hounds", "James McMurtry"], ["Daddy's Home", "St. Vincent"], ["Vice Versa", "Rauw Alejandro"], ["El Madrileño", "C. Tangana"], ["To Hell With It", "Pinkpantheress"], ["Twice as Tall", "Burna Boy"]],
+  "pitchfork-50-best-britpop-albums.html": [["Different Class", "Pulp"], ["Parklife", "Blur"], ["The Bends", "Radiohead"], ["(What's the Story) Morning Glory?", "Oasis"], ["Dog Man Star", "Suede"], ["Elastica", "Elastica"], ["This Is Hardcore", "Pulp"], ["Blur", "Blur"], ["Definitely Maybe", "Oasis"], ["Urban Hymns", "The Verve"], ["His N Hers", "Pulp"], ["I Should Coco", "Supergrass"], ["Suede", "Suede"], ["The La's", "The La's"], ["When I Was Born for the 7th Time", "Cornershop"], ["Your Arsenal", "Morrissey"], ["We Are Shampoo", "Shampoo"], ["Modern Life Is Rubbish", "Blur"], ["Lovelife", "Lush"], ["New Wave", "The Auteurs"], ["Olympian", "Gene"], ["So Tough", "Saint Etienne"], ["At the Club", "Kenickie"], ["In It for the Money", "Supergrass"], ["Breaking God's Heart", "Hefner"], ["A Northern Soul", "The Verve"], ["Fuzzy Logic", "Super Furry Animals"], ["Vauxhall and I", "Morrissey"], ["Tellin' Stories", "The Charlatans"], ["Sci-Fi Lullabies", "Suede"], ["Foxbase Alpha", "Saint Etienne"], ["Everything Must Go", "Manic Street Preachers"], ["England Made Me", "Black Box Recorder"], ["1977", "Ash"], ["It's Great When You're Straight Yeah", "Black Grape"], ["Grand Prix", "Teenage Fanclub"], ["The It Girl", "Sleeper"], ["The Sound of McAlmont and Butler", "McAlmont and Butler"], ["Radiator", "Super Furry Animals"], ["Giant Steps", "The Boo Radleys"], ["International Velvet", "Catatonia"], ["Everyone's Got One", "Echobelly"], ["Nuisance", "Menswear"], ["The Sun Is Often Out", "Longpigs"], ["Further", "Geneva"], ["Nuisance", "Menswe@r"], ["Free Peace Sweet", "Dodgy"], ["Powder", "Powder"], ["Northern Uproar", "Northern Uproar"], ["Expecting to Fly", "Bluetones"]],
+  "rolling-stone-50-best-goth-songs.html": [["Bela Lugosi's Dead", "Bauhaus"], ["She's Lost Control", "Joy Division"], ["Spellbound", "Siouxsie and the Banshees"], ["A Forest", "The Cure"], ["Temple of Love", "Sisters of Mercy"], ["Rock 'n' Roll Suicide", "David Bowie"], ["The Mercy Seat", "Nick Cave and the Bad Seeds"], ["Lovesong", "The Cure"], ["Atmosphere", "Joy Division"], ["In the Flat Field", "Bauhaus"], ["Cities in Dust", "Siouxsie and the Banshees"], ["Something I Can Never Have", "Nine Inch Nails"], ["Disintegration", "The Cure"], ["Personal Jesus", "Depeche Mode"], ["Lucretia My Reflection", "Sisters of Mercy"], ["Red Right Hand", "Nick Cave and the Bad Seeds"], ["The Hanging Garden", "The Cure"], ["Heroes", "David Bowie"], ["Sacrifice", "London After Midnight"], ["Kiss Kiss Bang Bang", "Specimen"], ["Black Planet", "Sisters of Mercy"], ["Not in Love", "Crystal Castles feat. Robert Smith"], ["Venus in Furs", "The Velvet Underground"], ["Love Like Blood", "Killing Joke"], ["Christian Says", "Tones on Tail"], ["Shadow of Love", "The Damned"], ["Qual", "X-Mal Deutschland"], ["Pornography", "The Cure"], ["Sixteen Days Gathering Dust", "This Mortal Coil"], ["R.I.P.", "Alien Sex Fiend"], ["Wasteland", "The Mission"], ["Stigmata Martyr", "Bauhaus"], ["Black Celebration", "Depeche Mode"], ["Hurt", "Johnny Cash"], ["Dark Allies", "Light Asylum"], ["Kasvetli Kutlama", "She Past Away"], ["Dead Souls", "Nine Inch Nails"], ["Pandora", "Cocteau Twins"], ["Lady Shave", "Fad Gadget"], ["Giving Ground", "The Sisterhood"], ["Jasmine and Rose", "Clan of Xymox"], ["Ghost Rider", "Suicide"], ["Heroes", "Paralisis Permanente"], ["All My Colours (Zimbo)", "Echo and the Bunnymen"], ["Love You to Death", "Type O Negative"], ["Helena", "My Chemical Romance"], ["Tear You Apart", "She Wants Revenge"], ["Double Barrel Prayer", "Diamanda Galas"], ["Silver and Cold", "AFI"], ["Since Yesterday", "Strawberry Switchblade"]],
+  "rolling-stone-50-best-latin-albums-2024.html": [["Sayonara", "Alvaro Diaz"], ["Por Cesarea", "Dillom"], ["Grasa", "Nathy Peluso"], ["Todos Los Dias Todo El Dia", "Latin Mafia"], ["Apoya Mi Cabeza", "Angelica Garcia"], ["Cosa Nuestra", "Rauw Alejandro"], ["Debí Tirar Más Fotos", "Bad Bunny"], ["De Todas Las Flores (Live)", "Natalia Lafourcade"], ["Alkemi", "Dayme Arocena"], ["Bodhiria", "Judeline"], ["Toda Epoca Tiene Su Encanto", "PJ Sin Suela"], ["Orquideas", "Kali Uchis"], ["Vida", "Ana Tijoux"], ["El Ultimo Baile", "Trueno"], ["Kema", "Sinaka"], ["Las Mujeres Ya No Lloran", "Shakira"], ["ATP", "NSQK"], ["Murio La Musica", "AgusFortnite2008 and Stiffy"], ["Mirada", "Ivan Cornejo"], ["Malhablado", "Diamante Electrico"], ["Capicu", "RaiNao"], ["Epistolares", "AKRIILA"], ["La Nube En El Jardin", "Ed Maverick"], ["Soul", "Yendruy Aquinx"], ["Buenas Noches", "Quevedo"], ["Att.", "Young Miko"], ["Next", "Xavi"], ["Las Letras Ya No Importan", "Residente"], ["Palacio", "Elsa y Elmar"], ["Hotel Caracas", "Mau y Ricky"], ["Bexaco y rico", "Mediopicky"], ["Corridos Belicos Vol. IV", "Luis R. Conriquez"], ["Phasor", "Helado Negro"], ["Nerostars", "El Malilla"], ["La Dosis Maxima", "Felipe Orjuela and Gato e Monte"], ["Matense Por La Corona", "J Noa"], ["Weyes", "Luisa Almaguer"], ["Primera Musa", "Omar Courtz"], ["Chupetones", "Meth Math"], ["Los Tres Golpes", "El Kalvo"], ["Exodo", "Peso Pluma"], ["Toda La Verdad Sobre Area", "Dame Area"], ["Deathwork", "Kamixlo"], ["Mazorkeo.com", "Jowell and Randy"], ["Heraldica", "Saramalacara"], ["Fruta Prohibida", "Los Rarxs"], ["El Precio de la Yuca", "Mediopicky"]],
+  "rolling-stone-50-best-latin-albums-2025.html": [["Debí Tirar Más Fotos", "Bad Bunny"], ["Vendran Suaves Lluvias", "Silvana Estrada"], ["111xPantia", "Fuerza Regida"], ["La Vida Era Mas Corta", "Milo J"], ["Eterna", "Mula"], ["Doga", "Juana Molina"], ["Spanish Leather", "Guitarricadelafuente"], ["Daisy", "Rusowsky"], ["Anonimo", "Juana Aguirre"], ["Cancionera", "Natalia Lafourcade"], ["Como Las Canto Yo", "iLe"], ["Pacifico Maravilla", "Nidia Gongora"], ["Ultra Sodade", "Kevin Kaarl"], ["Dia", "Ela Minus"], ["Se Amaba Asi", "Buscabulla"], ["Tropicoqueta", "Karol G"], ["Latinaje", "Cazzu"], ["Femme Fatale", "Mon Laferte"], ["Dueno Del Cielo", "Humbe"], ["Cosa Nuestra Capitulo 0", "Rauw Alejandro"], ["Astropical", "Astropical"], ["Para Quien Trabajas Vol. I", "Marilina Bertoldi"], ["Al Romper La Burbuja", "Joaquina"], ["Do Not Disturb", "Young Miko"], ["Leyenda", "DannyLux"], ["Preguntas a las 11:11", "Ela Taubert"], ["Dreamer", "Ben Carrillo"], ["Quimera", "Maria Becerra"], ["Mija No Te Asustes", "Clave Especial"], ["Tanya", "Juana Rozas"], ["La Montana Encendida", "Meme Del Real"], ["Bendito Verano", "Elena Rose"], ["Heliade", "Javiera Electra"], ["Flavio", "Mengers"], ["Better Late Than Never", "Romeo Santos and Prince Royce"], ["Amor de Encava", "Weed420"], ["Nada Personal", "Joyce Santana"], ["Hagen", "Titanic"], ["Delirium", "Neton Vega"], ["Ferxxo Vol X: Sagrado", "Feid"], ["Boleros Psicodelicos II", "Adrian Quesada"], ["Novela", "Fito Paez"], ["Nuevo Caribe", "Enyel C"], ["Don Kbrn", "Eladio Carrion"], ["Punito de Yocahu", "Vicente Garcia"], ["Ul", "Mawiza"], ["All I Dream", "Pink Pablo"], ["La Traicion y el Contrabando", "Estevie"], ["CDMXXXXXXX", "Blue Rojo"], ["Heraldica II", "Saramalacara"]],
+  "rolling-stone-50-best-latin-american-rock-albums.html": [["Re", "Cafe Tacvba"], ["Bocanada", "Gustavo Cerati"], ["Jessico", "Babasonicos"], ["El Circo", "Maldita Vecindad y los Hijos del Quinto Patio"], ["Clics Modernos", "Charly Garcia"], ["Bueninvento", "Julieta Venegas"], ["Abraxas", "Santana"], ["El Silencio", "Caifanes"], ["Artaud", "Pescado Rabioso"], ["The New Sound of the Venezuelan Gozadera", "Los Amigos Invisibles"], ["Hasta la Raiz", "Natalia Lafourcade"], ["Cancion Animal", "Soda Stereo"], ["Karnak", "Karnak"], ["Llegando los Monos", "Sumo"], ["Em Ritmo de Aventura", "Roberto Carlos"], ["Treinta Minutos de Vida", "Moris"], ["Tribalistas", "Tribalistas"], ["El Amor Despues Del Amor", "Fito Paez"], ["Corazones", "Los Prisioneros"], ["El Salmon", "Andres Calamaro"], ["Donde Jugaran Las Ninas", "Molotov"], ["El Rock de mi Pueblo", "Carlos Vives"], ["Totem", "Totem"], ["Vol. 1", "Mon Laferte"], ["Ventura", "Los Hermanos"], ["Santa Sabina", "Santa Sabina"], ["Mateo Solo Bien Se Lame", "Eduardo Mateo"], ["Fome", "Los Tres"], ["Este Fuerte Viento Que Sopla", "No Te Va Gustar"], ["Selvagem?", "Os Paralamas do Sucesso"], ["La Sintesis O'Konor", "El Mato a un Policia Motorizado"], ["La Gran Feria", "Banda Nueva"], ["Chuntaros Radio Poder", "El Gran Silencio"], ["Virgin", "Traffic Sound"], ["Fundamental", "Puya"], ["Memo Rex Commander", "Zoe"], ["Fruto Proibido", "Rita Lee and Tutti Frutti"], ["Un Dia Normal", "Juanes"], ["Krig-ha Bandolo!", "Raul Seixas"], ["Genesis", "Genesis Colombia"], ["Vida de Perros", "Los Bunkers"], ["Los Van Van", "Los Van Van"], ["Alturas De Macchu Picchu", "Los Jaivas"], ["Revolucion de Emiliano Zapata", "La Revolucion de Emiliano Zapata"], ["Mira Lo Que Me Hiciste Hacer", "Diamante Electrico"], ["La Conferencia Secreta Del Toto's Bar", "Los Shakers"]],
+  "rolling-stone-50-best-one-hit-wonders-2000s.html": [["Hey Ya!", "Outkast"], ["All the Things She Said", "t.A.T.u."], ["Dilemma", "Nelly feat. Kelly Rowland"], ["Because I Got High", "Afroman"], ["Mickey", "Toni Basil"], ["Macarena", "Los Del Rio"], ["MMMBop", "Hanson"], ["Tubthumping", "Chumbawamba"], ["My Neck My Back (Lick It)", "Khia"], ["Butterfly", "Crazy Town"], ["Hit Em Up Style (Oops!)", "Blu Cantrell"], ["Never Leave You (Uh Oooh Uh Oooh)", "Lumidee"], ["Just the Girl", "The Click Five"], ["Addictive", "Truth Hurts feat. Rakim"], ["Who Let the Dogs Out", "Baha Men"], ["Flavor of the Weak", "American Hi-Fi"], ["Oops (Oh My)", "Tweet feat. Missy Elliott"], ["Bulletproof", "La Roux"], ["Move Ya Body", "Nina Sky feat. Jabba"], ["Laffy Taffy", "D4L"], ["Get Over Yourself", "Eden's Crush"], ["Absolutely (Story of a Girl)", "Nine Days"], ["I Believe in a Thing Called Love", "The Darkness"], ["This Is Why I'm Hot", "MIMS"], ["My Baby", "Lil Romeo"], ["Turn Me On", "Kevin Lyttle feat. Spragga Benz"], ["Wherever You Will Go", "The Calling"], ["Combination Pizza Hut and Taco Bell", "Das Racist"], ["Don't Think I'm Not", "Kandi"], ["Get Free", "The Vines"], ["Do It to It", "Cherish feat. Sean Paul"], ["I Love College", "Asher Roth"], ["Another Dumb Blonde", "Hoku"], ["Young Folks", "Peter Bjorn and John"], ["What Would You Do?", "City High"], ["Walk It Out", "Unk"], ["Shake It", "Metro Station"], ["Fuck It (I Don't Want You Back)", "Eamon"], ["Jerk It Out", "Caesars"], ["Whine Up", "Kat DeLuna feat. Elephant Man"], ["Heaven", "Los Lonely Boys"], ["According to You", "Orianthi"], ["Headstrong", "Trapt"], ["I Do!!", "Toya"], ["Girlfight", "Brooke Valentine"], ["Handlebars", "Flobots"], ["Delirious", "Vistoso Bosses"], ["Chicken Noodle Soup", "Webstar and Young B"], ["A Bay Bay", "Hurricane Chris"], ["Bad Day", "Daniel Powter"]],
+  "rolling-stone-50-best-road-trip-songs.html": [["Born to Run", "Bruce Springsteen"], ["Purple Haze", "Jimi Hendrix"], ["Get Ur Freak On", "Missy Elliott"], ["Rolling in the Deep", "Adele"], ["Drive My Car", "The Beatles"], ["Never Let Me Down Again", "Depeche Mode"], ["No Particular Place to Go", "Chuck Berry"], ["Fast Car", "Tracy Chapman"], ["Bad Idea Right?", "Olivia Rodrigo"], ["i", "Kendrick Lamar"], ["Highway to Hell", "AC/DC"], ["Adore", "Prince"], ["Panama", "Van Halen"], ["Relax", "Frankie Goes to Hollywood"], ["Running Down a Dream", "Tom Petty"], ["Gin and Juice", "Snoop Dogg"], ["Fun Fun Fun", "The Beach Boys"], ["Dead Fox", "Courtney Barnett"], ["Born to Be Wild", "Steppenwolf"], ["Be Thankful for What You Got", "William DeVaughn"], ["Drive All Night", "Bruce Springsteen"], ["Police on My Back", "The Clash"], ["Roundabout", "Yes"], ["Von Dutch", "Charli XCX"], ["Fantastic Voyage", "Coolio"], ["Scorpio", "Dennis Coffey and the Detroit Guitar Band"], ["The Passenger", "Iggy Pop"], ["New Body Rhumba", "LCD Soundsystem"], ["Cero y Uno", "Cafe Tacuba"], ["The Humpty Dance", "Digital Underground"], ["I Feel Love", "Donna Summer"], ["Take Your Time (Do It Right)", "The S.O.S. Band"], ["Blue Highway", "Billy Idol"], ["Not Strong Enough", "Boygenius"], ["Ride Wit Me", "Nelly"], ["Life Is a Highway", "Tom Cochrane"], ["Cruise", "Florida Georgia Line"], ["Radiation Vibe", "Fountains of Wayne"], ["Ella Baila Sola", "Eslabon Armado and Peso Pluma"], ["Driver's Seat", "Sniff n the Tears"], ["Autobahn", "Kraftwerk"], ["Convoy", "CW McCall"], ["Cosmic Cars", "Cybertronic"], ["Roadhouse Blues", "The Doors"], ["Nothing But a Heartache", "The Flirtations"], ["The Rain (Supa Dupa Fly)", "Missy Elliott"], ["Badge", "Cream"], ["Burn Rubber (Why You Wanna Hurt Me)", "The Gap Band"]],
+  "rolling-stone-50-best-singles-2011.html": [["Rolling in the Deep", "Adele"], ["Niggas in Paris", "Jay-Z and Kanye West"], ["Till the World Ends", "Britney Spears"], ["These Days", "Foo Fighters"], ["Rewrite", "Paul Simon"], ["Lotus Flower", "Radiohead"], ["Edge of Glory", "Lady Gaga"], ["Countdown", "Beyonce"], ["Six Foot Seven Foot", "Lil Wayne feat. Cory Gunz"], ["Don't Carry It All", "The Decemberists"], ["Pumped Up Kicks", "Foster the People"], ["Dedication to My Ex (Miss That)", "Lloyd feat. Andre 3000 and Lil Wayne"], ["Little Black Submarines", "The Black Keys"], ["Blessed", "Lucinda Williams"], ["Welcome to the Jungle", "Jay-Z and Kanye West"], ["The Afterlife", "Paul Simon"], ["Youth Knows No Pain", "Lykke Li"], ["Mama's Broken Heart", "Miranda Lambert"], ["You and I", "Lady Gaga"], ["Million Dollar Bill", "Dawes"], ["Rumour Has It", "Adele"], ["Ric Flair", "Killer Mike"], ["Bizness", "Tune-Yards"], ["Don't Play No Games That I Can't Win", "Beastie Boys feat. Santigold"], ["Girl", "Das Racist"], ["We All Go Back to Where We Belong", "R.E.M."], ["Satisfied", "Tom Waits"], ["Nasty", "Nas"], ["Blue Eyes", "Middle Brother"], ["California", "EMA"], ["Vomit", "Girls"], ["Paradise", "Coldplay"], ["My Mistakes", "Eleanor Friedberger"], ["Springsteen", "Eric Church"], ["KMAG YOYO", "Hayes Carll"], ["The Everchanging Spectrum of a Lie", "The Joy Formidable"], ["The Same Thing", "Cass McCombs"], ["The Last Huzzah", "Mr. Muthafuckin' eXquire feat. Das Racist"], ["Mona Lisa", "Atlas Sound"], ["The Death of You and Me", "Noel Gallagher's High Flying Birds"], ["Heart in Your Heartbreak", "Pains of Being Pure at Heart"], ["Adventures of Raindance Maggie", "Red Hot Chili Peppers"], ["Holocene", "Bon Iver"], ["Weekend", "Smith Westerns"], ["Yonkers", "Tyler the Creator"], ["Novacane", "Frank Ocean"], ["The Bad in Each Other", "Feist"], ["Jesus Fever", "Kurt Vile"], ["The Wilhelm Scream", "James Blake"], ["Burn Rubber", "The Gap Band"]],
+  "rolling-stone-50-best-songs-2012.html": [["Hold On", "Alabama Shakes"], ["We Are Never Ever Getting Back Together", "Taylor Swift"], ["Take a Walk", "Passion Pit"], ["Thinkin Bout You", "Frank Ocean"], ["Ramada Inn", "Neil Young and Crazy Horse"], ["Mercy", "Kanye West feat. Big Sean Pusha T and 2 Chainz"], ["Rocky Ground", "Bruce Springsteen"], ["Sixteen Saltines", "Jack White"], ["Pay in Blood", "Bob Dylan"], ["Emmylou", "First Aid Kit"], ["Some Nights", "fun."], ["Hot Knife", "Fiona Apple"], ["I Will Wait", "Mumford and Sons"], ["Teenage Icon", "The Vaccines"], ["Climax", "Usher"], ["Stay Frosty", "Van Halen"], ["Okay Cupid", "Kitty Pryde"], ["Doom and Gloom", "The Rolling Stones"], ["Other People", "Beach House"], ["Going Home", "Leonard Cohen"], ["Weather in My Head", "Donald Fagen"], ["Bangarang", "Skrillex feat. Sirah"], ["I'm Dreaming", "Randy Newman"], ["The House That Heaven Built", "Japandroids"], ["Gangnam Style", "Psy"], ["Ho Hey", "The Lumineers"], ["Goldie", "A$AP Rocky"], ["Oblivion", "Grimes"], ["Yet Again", "Grizzly Bear"], ["That's Why God Made the Radio", "The Beach Boys"], ["Boozophilia", "Low Cut Connie"], ["We Take Care of Our Own", "Bruce Springsteen"], ["Adorn", "Miguel"], ["Swimming Pools (Drank)", "Kendrick Lamar"], ["I Love It", "Icona Pop"], ["Womyn", "Himanshu"], ["Madness", "Muse"], ["Better", "Teen"], ["A Heart Like Mine", "Dwight Yoakam"], ["Rented Room", "Craig Finn"], ["Grown Up", "Danny Brown"], ["Bear Hug", "The 2 Bears"], ["All of Me", "Tanlines"], ["Glad You Came", "The Wanted"], ["Die in Your Arms", "Justin Bieber"], ["Payphone", "Maroon 5 feat. Wiz Khalifa"], ["This Summer", "Superchunk"], ["The Veldt", "Deadmau5"], ["Merry Go Round", "Kacey Musgraves"], ["Call Me Maybe", "Carly Rae Jepsen"]],
+  "rolling-stone-50-best-songs-2014.html": [["Drunk in Love", "Beyonce feat. Jay Z"], ["Turn Down for What", "DJ Snake feat. Lil Jon"], ["Every Breaking Wave", "U2"], ["Move That Dope", "Future feat. Pusha T Pharrell and Casino"], ["Just One of the Guys", "Jenny Lewis"], ["Blank Space", "Taylor Swift"], ["Frankie Fell in Love", "Bruce Springsteen"], ["Every Time the Sun Comes Up", "Sharon Van Etten"], ["Seasons (Waiting On You)", "Future Islands"], ["i", "Kendrick Lamar"], ["Archie Marry Me", "Alvvays"], ["Stay With Me", "Sam Smith"], ["Outside", "Foo Fighters"], ["Go", "Grimes"], ["Chandelier", "Sia"], ["Blue Moon", "Beck"], ["No Flex Zone", "Rae Sremmurd"], ["I Wanna Get Better", "Bleachers"], ["Fancy", "Iggy Azalea feat. Charli XCX"], ["Sweet Amarillo", "Old Crow Medicine Show"], ["Back to the Shack", "Weezer"], ["Brooklyn Baby", "Lana Del Rey"], ["Habits (Stay High)", "Tove Lo"], ["Gotta Get Away", "The Black Keys"], ["Can't Do Without You", "Caribou"], ["0 to 100 / The Catch Up", "Drake"], ["Grace Lake", "Thurston Moore"], ["This Could Be Us", "Prince"], ["Smokin' and Drinkin'", "Miranda Lambert"], ["Magic", "Coldplay"], ["So Blonde", "EMA"], ["Animals", "Maroon 5"], ["The Birds of St. Marks", "Jackson Browne"], ["Coffee", "Sylvan Esso"], ["Master Pretender", "First Aid Kit"], ["Honey Do", "Beverly"], ["Faultlines", "Tom Petty and the Heartbreakers"], ["My Hitta", "YG feat. Jeezy and Rich Homie Quan"], ["Doctor", "Priests"], ["Bury Our Friends", "Sleater-Kinney"], ["Habit", "Ought"], ["Two Weeks", "FKA Twigs"], ["Brill Bruisers", "The New Pornographers"], ["Prince Johnny", "St. Vincent"], ["I Miss Your Bones", "Hospitality"], ["5 AM", "Katy B"], ["Talking Backwards", "Real Estate"], ["Harvey", "Alex G"], ["Longer Than You've Been Alive", "Old 97s"], ["Dislocation", "Counting Crows"]],
+  "rolling-stone-50-best-songs-2015.html": [["Can't Feel My Face", "The Weeknd"], ["Trap Queen", "Fetty Wap"], ["Hotline Bling", "Drake"], ["Pedestrian at Best", "Courtney Barnett"], ["I Know There's Gonna Be (Good Times)", "Jamie xx feat. Young Thug and Popcaan"], ["Hello", "Adele"], ["King Kunta", "Kendrick Lamar"], ["Fuck Up Some Commas", "Future"], ["How Could You Babe", "Tobias Jesso Jr."], ["Where Are U Now", "Jack U feat. Justin Bieber"], ["The Hills", "The Weeknd"], ["What Went Down", "Foals"], ["Trying", "Bully"], ["Stay in My Corner", "The Arcs"], ["Flesh Without Blood", "Grimes"], ["Ghosttown", "Madonna"], ["Let It Happen", "Tame Impala"], ["High by the Beach", "Lana Del Rey"], ["S.O.B.", "Nathaniel Rateliff and the Night Sweats"], ["Don't Wanna Fight", "Alabama Shakes"], ["Here", "Alessia Cara"], ["Sunday Candy", "Donnie Trumpet and the Social Experiment"], ["Dreams", "Beck"], ["Leave a Trace", "Chvrches"], ["All Your Favorite Bands", "Dawes"], ["Ship to Wreck", "Florence and the Machine"], ["Coffee", "Miguel"], ["Mr. Misunderstood", "Eric Church"], ["Know Yourself", "Drake"], ["Good for You", "Selena Gomez"], ["Pretty Pimpin'", "Kurt Vile"], ["Magnets", "Disclosure feat. Lorde"], ["Return to the Moon", "EL VY"], ["Let the Good Times Roll", "JD McPherson"], ["Something Soon", "Car Seat Headrest"], ["FourFiveSeconds", "Rihanna, Kanye West and Paul McCartney"], ["Ong Ong", "Blur"], ["Everyday", "A$AP Rocky feat. Rod Stewart and Miguel"], ["Earned It", "The Weeknd"], ["Can't Keep Checking My Phone", "Unknown Mortal Orchestra"], ["Adventure of a Lifetime", "Coldplay"], ["Fan the Flames", "Sheer Mag"], ["The Wolf", "Mumford and Sons"], ["Lisbon", "Wolf Alice"], ["Bitch Better Have My Money", "Rihanna"], ["Biscuits", "Kacey Musgraves"], ["Trouble", "Cage the Elephant"], ["Lean On", "Major Lazer feat. Mo and DJ Snake"], ["Run Away With Me", "Carly Rae Jepsen"], ["Dimed Out", "Titus Andronicus"]],
+  "rolling-stone-50-best-songs-2016.html": [["Formation", "Beyonce"], ["Ivy", "Frank Ocean"], ["One Dance", "Drake feat. Wizkid and Kyla"], ["No Plan", "David Bowie"], ["Ultralight Beam", "Kanye West"], ["Projection", "Pwr Bttm"], ["Cranes in the Sky", "Solange"], ["Work From Home", "Fifth Harmony feat. Ty Dolla Sign"], ["Pain", "Lvl Up"], ["Black Beatles", "Rae Sremmurd feat. Gucci Mane"], ["Me and Magdalena", "The Monkees"], ["Angels", "Chance the Rapper feat. Saba"], ["Untitled 05 09.21.2014.", "Kendrick Lamar"], ["Romantic", "Mannequin Pussy"], ["If I Ever Was a Child", "Wilco"], ["Dark Necessities", "Red Hot Chili Peppers"], ["Ooouuu", "Young M.A"], ["I Don't Wanna Be Funny Anymore", "Lucy Dacus"], ["Beast Whip", "Cobalt"], ["The Space Program", "A Tribe Called Quest"], ["Perfect Illusion", "Lady Gaga"], ["Sister", "Angel Olsen"], ["War Ready", "Vince Staples"], ["Treaty", "Leonard Cohen"], ["Three Packs a Day", "Courtney Barnett"], ["Better Man", "Little Big Town"], ["Side to Side", "Ariana Grande feat. Nicki Minaj"], ["X", "21 Savage and Metro Boomin feat. Future"], ["That Old Black Magic", "Bob Dylan"], ["Really Doe", "Danny Brown feat. Kendrick Lamar Ab-Soul and Earl Sweatshirt"], ["Vice", "Miranda Lambert"], ["Everything 1K", "Kodak Black"], ["Your Best American Girl", "Mitski"], ["Clumsy", "Britney Spears"], ["Everybody Wants to Love You", "Japanese Breakfast"], ["Ever South", "Drive-By Truckers"], ["Night Swimming", "Tacocat"], ["80s Mercedes", "Maren Morris"], ["Cool Papa Bell", "Paul Simon"], ["Original Uzi (4 of Us)", "Lil Uzi Vert"], ["The Moon Hangs in the Sky Like Nothing Hangs in the Sky", "Yohuna"], ["Voices in My Head", "Bob Mould"], ["All You Gotta Be When You're 23 Is Yourself", "Free Cake for Every Creature"], ["Tiimmy Turner", "Desiigner"], ["Drunk Drivers / Killer Whales", "Car Seat Headrest"], ["Runaround", "Helado Negro"], ["Broccoli", "D.R.A.M. feat. Lil Yachty"], ["Keep It Between the Lines", "Sturgill Simpson"], ["Black Barbies", "Nicki Minaj"], ["Going Down to Bangor", "Van Morrison"]]
 };
 
 // ── Cálculo dinámico de menciones ────────────────────────────────────
@@ -3057,16 +3225,16 @@ var ALL_LISTS_DATA = {
   }
 
   // Top artists — recalculado
-  var topArtists = [{"name": "The Beatles", "sub": "68 menciones", "artist": "The Beatles", "track": "Ticket to Ride"}, {"name": "Drake", "sub": "55 menciones", "artist": "Drake", "track": "In My Feelings"}, {"name": "Taylor Swift", "sub": "53 menciones", "artist": "Taylor Swift", "track": "Lover"}, {"name": "Led Zeppelin", "sub": "51 menciones", "artist": "Led Zeppelin", "track": "Rock & Roll"}, {"name": "Kanye West", "sub": "48 menciones", "artist": "Kanye West", "track": "Ultralight Beam"}];
+  var topArtists = [{"name": "The Beatles", "sub": "68 menciones", "artist": "The Beatles", "track": "Ticket to Ride"}, {"name": "Taylor Swift", "sub": "54 menciones", "artist": "Taylor Swift", "track": "Lover"}, {"name": "Led Zeppelin", "sub": "53 menciones", "artist": "Led Zeppelin", "track": "Rock & Roll"}, {"name": "Kanye West", "sub": "43 menciones", "artist": "Kanye West", "track": "Ultralight Beam"}, {"name": "Drake", "sub": "43 menciones", "artist": "Drake", "track": "In My Feelings"}];
   renderCol('hall-artists', topArtists);
 
   // Top songs — recalculado
-  var topSongs = [{"name": "Yeah!", "sub": "Usher · 7 menciones", "artist": "Usher", "track": "Yeah!"}, {"name": "My Generation", "sub": "The Who · 7 menciones", "artist": "The Who", "track": "My Generation"}, {"name": "Won't Get Fooled Again", "sub": "The Who · 7 menciones", "artist": "The Who", "track": "Won't Get Fooled Again"}, {"name": "One", "sub": "Metallica · 7 menciones", "artist": "Metallica", "track": "One"}, {"name": "Respect", "sub": "Aretha Franklin · 6 menciones", "artist": "Aretha Franklin", "track": "Respect"}];
+  var topSongs = [{"name": "My Generation", "sub": "The Who · 7 menciones", "artist": "The Who", "track": "My Generation"}, {"name": "Won't Get Fooled Again", "sub": "The Who · 7 menciones", "artist": "The Who", "track": "Won't Get Fooled Again"}, {"name": "Respect", "sub": "Aretha Franklin · 6 menciones", "artist": "Aretha Franklin", "track": "Respect"}, {"name": "Superstition", "sub": "Stevie Wonder · 6 menciones", "artist": "Stevie Wonder", "track": "Superstition"}, {"name": "Billie Jean", "sub": "Michael Jackson · 6 menciones", "artist": "Michael Jackson", "track": "Billie Jean"}];
   renderCol('hall-songs', topSongs);
 
 
   // Top albums — recalculado
-  var topAlbums = [{"name": "London Calling", "sub": "The Clash · 5 menciones", "artist": "The Clash", "track": "London Calling"}, {"name": "Thriller", "sub": "Michael Jackson · 5 menciones", "artist": "Michael Jackson", "track": "Thriller"}, {"name": "The Marshall Mathers LP", "sub": "Eminem · 5 menciones", "artist": "Eminem", "track": "The Marshall Mathers LP"}, {"name": "The Blueprint", "sub": "Jay-Z · 5 menciones", "artist": "Jay-Z", "track": "The Blueprint"}, {"name": "The Dark Side Of The Moon", "sub": "Pink Floyd · 5 menciones", "artist": "Pink Floyd", "track": "The Dark Side Of The Moon"}];
+  var topAlbums = [{"name": "Thriller", "sub": "Michael Jackson · 6 menciones", "artist": "Michael Jackson", "track": "Thriller"}, {"name": "Marquee Moon", "sub": "Television · 6 menciones", "artist": "Television", "track": "Marquee Moon"}, {"name": "Nevermind", "sub": "Nirvana · 5 menciones", "artist": "Nirvana", "track": "Nevermind"}, {"name": "The Marshall Mathers LP", "sub": "Eminem · 5 menciones", "artist": "Eminem", "track": "The Marshall Mathers LP"}, {"name": "The Blueprint", "sub": "Jay-Z · 5 menciones", "artist": "Jay-Z", "track": "The Blueprint"}];
   renderCol('hall-personal', topAlbums);
 })();
 
