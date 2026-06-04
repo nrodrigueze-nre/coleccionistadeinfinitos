@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Mejores Álbumes de 2025 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2025</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-of-2025-1235466292/" target="_blank" class="page-title">100 MEJORES ÁLBUMES DE 2025</a>
+  <p class="page-sub">De Bad Bunny y Lady Gaga a Tyler Childers y Rosalía · Blockbusters, statements de vuelta y debuts brillantes · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Debí Tirar Más Fotos – Bad Bunny">
+    <p class="cover-cap">ROLLING STONE · 2025</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">El mundo musical se negó a quedarse quieto en 2025. No fue un año para jugar sobre seguro. Por todo el mundo y en todos los estilos del mapa, la música siguió mutando de las formas más raras y salvajes. Los artistas detrás de los mejores álbumes del año apostaron fuerte, sin repetir éxitos pasados. Lady Gaga trajo el caos para su disco más ambicioso en años. Rosalía hizo su declaración profundamente personal sobre la trascendencia sexual y espiritual. Bad Bunny viajó por el tiempo y el espacio, de San Juan a Nuevayol. Las visionarias del pop como FKA Twigs y Taylor Swift hicieron movimientos nuevos y audaces.</p>
+    <p class="rtext">Nuestra lista tiene de todo: desde country emergente hasta afropop, desde shoegaze hasta flamenco. Tenemos bandas indie atrevidas como Geese y Lifeguard; narración de rock valiente de Wednesday y Craig Finn; la poesía rap underground de Billy Woods y los beats radicales del clubland de PinkPantheress. Hay leyendas junto a debutantes — la reina soul de 86 años Mavis Staples convive con el ímpetu adolescente de Sombr. Comeback kids como Justin Bieber que recuperó su swag. Hayley Williams hizo su movida en solitario, Clipse demostró que el hardcore no muere, Tyler Childers desató el infierno.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Debí Tirar Más Fotos">
+    <div>
+      <div class="feat-title">Debí Tirar Más Fotos</div>
+      <div class="feat-artist">Bad Bunny</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">Lanzado la víspera del Día de Reyes, el album más íntimo de Bad Bunny es una carta de amor a Puerto Rico que se convirtió en un fenómeno cultural global. Debí Tirar Más Fotos rechaza los bangers del reggaetón mainstream en favor de bombas, plenas, boleros y merengues que trazan la historia musical de la isla. Benito canta sobre la gentrificación de San Juan, sobre los amigos que se fueron, sobre la memoria como acto de resistencia. "DtMF" — la canción que da título al álbum — es una de las más hermosas que ha escrito: un recordatorio de que los momentos especiales son fugaces y hay que capturarlos mientras duran. El disco lo lanzó al Super Bowl y le valió cinco Latin Grammys, incluido el de Álbum del Año.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Mayhem">
+    <div>
+      <div class="feat-title">Mayhem</div>
+      <div class="feat-artist">Lady Gaga</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">Lady Gaga abrazó el caos en su séptimo álbum y el mundo respondió. Mayhem es el regreso que los Little Monsters llevaban años esperando: synth-pop industrial, pop-rock y electrónica mezclados con la audacia y el compromiso que distinguen el mejor trabajo de Gaga. "Abracadabra" se convirtió en el número uno de canciones del año según Rolling Stone y conquistó las pistas de baile del planeta. El álbum demuestra que Gaga no está intentando recrear sus éxitos pasados sino empujar hacia adelante — el resultado es un trabajo que suena completamente contemporáneo y completamente suyo al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Lux">
+    <div>
+      <div class="feat-title">Lux</div>
+      <div class="feat-artist">Rosalía</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">Tres años después de Motomami, Rosalía regresó con su obra más ambiciosa y más personal — un álbum de ópera-pop que explora la trascendencia sexual y espiritual con una producción orquestal que no tiene precedentes en su carrera. Lux fue reconocido inmediatamente como el disco más arriesgado del año: Rosalía cantando en registros que no había explorado antes, trabajando con Björk y Yves Tumor en "Berghain", construyendo un mundo sonoro que mezcla el flamenco con la electrónica avant-garde y las grandes tradiciones operísticas europeas. Es el mayor salto artístico de su carrera.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Baby">
+    <div>
+      <div class="feat-title">Baby</div>
+      <div class="feat-artist">Dijon</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">El cantautor de Los Ángeles entregó el disco de soul más íntimo y más devastador del año. Baby es un álbum de desamor construido sobre guitarras acústicas y arreglos mínimos que dejan toda la atención en la voz de Dijon — una de las más expresivas de su generación. Las canciones son pequeñas, perfectas, sin un solo elemento de más. En un año de albums maximalistas, Baby demostró que la contención puede ser el acto más radical — y el más conmovedor.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Getting Killed">
+    <div>
+      <div class="feat-title">Getting Killed</div>
+      <div class="feat-artist">Geese</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">El quinteto de Brooklyn llegó a su tercer álbum con una madurez que sorprende viniendo de una banda tan joven. Getting Killed es un disco de art-rock con influencias que van de Talking Heads a Radiohead, construido sobre arreglos que crecen y se transforman dentro de cada canción. Es el mayor logro compositivo de Geese hasta la fecha — el tipo de álbum que hace que Rolling Stone los ponga en el top 5 de un año dominado por megaestrellas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Let God Sort Em Out">
+    <div>
+      <div class="feat-title">Let God Sort Em Out</div>
+      <div class="feat-artist">Clipse</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">El regreso de Pusha T y No Malice después de 17 años fue uno de los eventos más esperados del rap en años. Let God Sort Em Out no decepciona: es un álbum hardcore que demuestra que los hermanos Thornton no han perdido ni un gramo de ferocidad ni de precisión lírica. Pusha rapea sobre el tráfico de drogas y el lujo con la misma frialdad calculada de siempre; No Malice aporta la perspectiva espiritual que ha definido su redención pública. Juntos son uno de los dúos más devastadores de la historia del rap, y este álbum lo confirma.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Snipe Hunter">
+    <div>
+      <div class="feat-title">Snipe Hunter</div>
+      <div class="feat-artist">Tyler Childers</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">El mayor artista de country alternativo de su generación entregó su álbum más ambicioso — un disco que mezcla el country de las montañas de Appalachia con el rock psicodélico y la narrativa bíblica con una habilidad que no tiene par en la música americana contemporánea. Tyler Childers finalmente recibe el reconocimiento crítico masivo que su obra lleva años mereciendo, y Snipe Hunter es la razón: canciones sobre la violencia, la fe, el amor y la redención que suenan como si las hubiera escrito siempre.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Bleeds">
+    <div>
+      <div class="feat-title">Bleeds</div>
+      <div class="feat-artist">Wednesday</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">La banda de Asheville, Carolina del Norte, sigue siendo la fuerza más emocionante del indie rock americano. Bleeds lleva el sonido de Wednesday — country-shoegaze distorsionado, letras de una honestidad brutal, la voz de Karly Hartzman flotando sobre un mar de ruido — a un nuevo nivel de ambición y coherencia. Es el mejor álbum de su carrera y uno de los documentos más auténticos del descontento americano contemporáneo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Ego Death at a Bachelorette Party">
+    <div>
+      <div class="feat-title">Ego Death at a Bachelorette Party</div>
+      <div class="feat-artist">Hayley Williams</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">La vocalista de Paramore hizo su debut en solitario más audaz — un álbum que toma la energía de su banda pero la lleva hacia territorios de art-pop y electrónica que Paramore nunca habría explorado. Ego Death at a Bachelorette Party es un disco sobre la identidad femenina, la liberación y los límites del yo, construido sobre producción que suena simultáneamente íntima y enorme. "Mirtazapine" fue elegida como una de las mejores canciones del año, y el álbum completo confirma que Williams tiene una carrera solista igual de potente que la de su banda.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Music">
+    <div>
+      <div class="feat-title">Music</div>
+      <div class="feat-artist">Playboi Carti</div>
+      <div class="feat-meta"><span class="feat-pill">2025</span></div>
+      <p class="feat-rev">El seguidor de Whole Lotta Red llegó finalmente y demostró que el caos era el punto. Music es un álbum de rap que rechaza la narrativa y la coherencia en favor de la pura textura y el mood — un ejercicio de producción experimental que Carti y sus colaboradores llevan años prometiendo. Es bloated, impredecible y difícil de escuchar de corrido, todo lo cual es exactamente la intención. Para sus seguidores más devotos, es una obra maestra; para el resto del mundo, es fascinante como experimento aunque frustrante como álbum.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 ÁLBUMES · 2025</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-of-2025-1235466292/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var ALBUMS = [
+  [1,"Debí Tirar Más Fotos","Bad Bunny",2025],
+  [2,"Mayhem","Lady Gaga",2025],
+  [3,"Lux","Rosalía",2025],
+  [4,"Baby","Dijon",2025],
+  [5,"Getting Killed","Geese",2025],
+  [6,"Let God Sort Em Out","Clipse",2025],
+  [7,"Snipe Hunter","Tyler Childers",2025],
+  [8,"Bleeds","Wednesday",2025],
+  [9,"Ego Death at a Bachelorette Party","Hayley Williams",2025],
+  [10,"Music","Playboi Carti",2025],
+  [11,"EUSEXUA","FKA twigs",2025],
+  [12,"Addison","Addison Rae",2025],
+  [13,"Man\'s Best Friend","Sabrina Carpenter",2025],
+  [14,"Live Laugh Love","Earl Sweatshirt",2025],
+  [15,"The Life of a Showgirl","Taylor Swift",2025],
+  [16,"Vendrán Suaves Lluvias","Silvana Estrada",2025],
+  [17,"Golliwog","billy woods",2025],
+  [18,"Cherry Valley","Carter Faith",2025],
+  [19,"The Art of Loving","Olivia Dean",2025],
+  [20,"Swag","Justin Bieber",2025],
+  [21,"Ripped and Torn","Lifeguard",2025],
+  [22,"That\'s Showbiz Baby!","Jade",2025],
+  [23,"Fancy That","PinkPantheress",2025],
+  [24,"Escape Room","Teyana Taylor",2025],
+  [25,"Evangeline vs. the Machine","Florence and the Machine",2025],
+  [26,"I Quit","Haim",2025],
+  [27,"Twilight Override","Sarz",2025],
+  [28,"Virgin","Lorde",2025],
+  [29,"West End Girl","Lily Allen",2025],
+  [30,"Sable Fable","Bon Iver",2025],
+  [31,"Returning to Myself","Brandi Carlile",2025],
+  [32,"Private Music","Deftones",2025],
+  [33,"Always Been","Craig Finn",2025],
+  [34,"Headlights","Alex G",2025],
+  [35,"Moisturizer","Wet Leg",2025],
+  [36,"Bite Me","Renee Rapp",2025],
+  [37,"Ain\'t No Damn Way!","Kaytranada",2025],
+  [38,"Can\'t Rush Greatness","Central Cee",2025],
+  [39,"So Close to What","Tate McRae",2025],
+  [40,"Tall Tales","Thom Yorke and Mark Pritchard",2025],
+  [41,"Beloved","Giveon",2025],
+  [42,"Showbiz!","Mike",2025],
+  [43,"It\'s a Beautiful Place","Water From Your Eyes",2025],
+  [44,"Don\'t Know How But They Found Me","Jensen McRae",2025],
+  [45,"With All Due Respect","Kwn",2025],
+  [46,"Am I the Drama?","Cardi B",2025],
+  [47,"I Said I Love You First","Selena Gomez and Benny Blanco",2025],
+  [48,"The Clearing","Wolf Alice",2025],
+  [49,"Sad and Beautiful World","Mavis Staples",2025],
+  [50,"Jump Out","Osamason",2025],
+  [51,"Sweetness","Girlpuppy",2025],
+  [52,"Who Did the Body","Monaleo",2025],
+  [53,"Every Ghost","Kelsey Waldon",2025],
+  [54,"No Hard Feelings","The Beaches",2025],
+  [55,"La Vida Es Más Corta","Milo J",2025],
+  [56,"5ive","Davido",2025],
+  [57,"Pretty Idea","Amber Mark",2025],
+  [58,"Lil Fantasy Vol. 1","Chaeyoung",2025],
+  [59,"The Misunderstood EP","Hannah Bahng",2025],
+  [60,"Catharsis","Fola",2025],
+  [61,"Here We Go Crazy","Bob Mould",2025],
+  [62,"Some Sexy Songs 4 U","PARTYNEXTDOOR and Drake",2025],
+  [63,"LOTTO","They Are Gutting a Body of Water",2025],
+  [64,"Earthstar Mountain","Hannah Cohen",2025],
+  [65,"Infinite","Mobb Deep",2025],
+  [66,"Euro-Country","CMAT",2025],
+  [67,"Welcome to My Blue Sky","Momma",2025],
+  [68,"Neighborhood Gods Unlimited","Open Mike Eagle",2025],
+  [69,"Ridin\'","Cuco",2025],
+  [70,"Clams Casino","Brian Dunne",2025],
+  [71,"Alfredo 2","Freddie Gibbs",2025],
+  [72,"Some Like It Hot","Bar Italia",2025],
+  [73,"If You Asked for a Picture","Blondshell",2025],
+  [74,"Forever Is a Feeling","Lucy Dacus",2025],
+  [75,"Star Line","Chance the Rapper",2025],
+  [76,"My Face Hurts From Smiling","Lizzo",2025],
+  [77,"It\'s Not That Deep","Demi Lovato",2025],
+  [78,"Fck U Skrillex You Think Ur Andy Warhol But Ur Not","Skrillex",2025],
+  [79,"I Barely Know Her","Sombr",2025],
+  [80,"Mobb Deep Infinite","Mobb Deep",2024],
+  [81,"Euro-Country","CMAT",2025],
+  [82,"The Clearing","Wolf Alice",2025],
+  [83,"Sad and Beautiful World","Mavis Staples",2025],
+  [84,"Sweetness","Girlpuppy",2025],
+  [85,"Who Did the Body","Monaleo",2025],
+  [86,"Every Ghost","Kelsey Waldon",2025],
+  [87,"No Hard Feelings","The Beaches",2025],
+  [88,"La Vida Es Más Corta","Milo J",2025],
+  [89,"5ive","Davido",2025],
+  [90,"Pretty Idea","Amber Mark",2025],
+  [91,"Lil Fantasy Vol. 1","Chaeyoung",2025],
+  [92,"Here We Go Crazy","Bob Mould",2025],
+  [93,"Some Sexy Songs 4 U","PARTYNEXTDOOR and Drake",2025],
+  [94,"Earthstar Mountain","Hannah Cohen",2025],
+  [95,"Neighborhood Gods Unlimited","Open Mike Eagle",2025],
+  [96,"Ridin\'","Cuco",2025],
+  [97,"Alfredo 2","Freddie Gibbs",2025],
+  [98,"Forever Is a Feeling","Lucy Dacus",2025],
+  [99,"Star Line","Chance the Rapper",2025],
+  [100,"I Said I Love You First","Selena Gomez and Benny Blanco",2025],
+];
+
+var FEAT = [
+  ["fc-1","Bad Bunny","Debi Tirar Mas Fotos"],
+  ["fc-2","Lady Gaga","Mayhem"],
+  ["fc-3","Rosalia","Lux"],
+  ["fc-4","Dijon","Baby"],
+  ["fc-5","Geese","Getting Killed"],
+  ["fc-6","Clipse","Let God Sort Em Out"],
+  ["fc-7","Tyler Childers","Snipe Hunter"],
+  ["fc-8","Wednesday","Bleeds"],
+  ["fc-9","Hayley Williams","Ego Death at a Bachelorette Party"],
+  ["fc-10","Playboi Carti","Music"],
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) + "&media=music&entity=album&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Bad Bunny", "Debi Tirar Mas Fotos");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

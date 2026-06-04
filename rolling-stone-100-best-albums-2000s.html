@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Best Albums of the 2000s — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2011</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-2000s-153375/" target="_blank" class="page-title">100 BEST ALBUMS OF THE 2000s</a>
+  <p class="page-sub">De Radiohead y The Strokes a Kanye West y Arcade Fire · Rock, hip-hop, electrónica e indie del nuevo milenio · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="https://upload.wikimedia.org/wikipedia/en/b/b5/Radiohead.kid_a.albumart.jpg" alt="Kid A – Radiohead">
+    <p class="cover-cap">ROLLING STONE · 2011</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">A lo largo de la última década, mucha gente insistía en que el álbum había muerto, víctima del MP3, el iPod y las descargas à la carte. Pero eso nunca ocurrió. Si acaso, los artistas apostaron aún más por el formato, resultando en un renacimiento de declaraciones artísticas de largo aliento de una amplia gama de artistas. Esta lista incluye el trabajo de revivalistas del rock (The Strokes, The White Stripes), visionarios de la pista de baile (M.I.A., LCD Soundsystem), íconos del hip-hop (Jay-Z, Eminem, Kanye West) y veteranos como Bruce Springsteen, Bob Dylan y U2, que reinventaron su sonido sin perder de vista lo que los convirtió en leyendas vivas.</p>
+    <p class="rtext">Esta lista no es solo un argumento a favor del perdurable atractivo del formato álbum, sino un caso convincente de que algunos de los mejores discos de todos los tiempos se publicaron entre 2000 y 2009. Kid A de Radiohead, elegido el mejor álbum de la década, marcó el comienzo de una era en que la ambición artística y el éxito comercial podían coexistir en los márgenes del mainstream. Desde el garage-punk de Brooklyn de The Strokes hasta la introspección producida en Wisconsin de Bon Iver, la década demostró que la fragmentación del mercado musical podía ser una fortaleza, no una debilidad.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="https://upload.wikimedia.org/wikipedia/en/b/b5/Radiohead.kid_a.albumart.jpg" alt="Kid A">
+    <div>
+      <div class="feat-title">Kid A</div>
+      <div class="feat-artist">Radiohead</div>
+      <div class="feat-meta"><span class="feat-pill">2000</span></div>
+      <p class="feat-rev">Dos años después de que OK Computer los coronara como el grupo más importante del rock alternativo, Radiohead publicó Kid A y desapareció en el bosque. Sin guitarras, sin melodías obvias, sin concesiones: solo samplers, bajos electrónicos, cuerdas procesadas y la voz de Thom Yorke flotando sobre paisajes sonoros de ciencia ficción. El disco que definió la ambición del rock en los 2000 fue también el que demostró que los grandes artistas no deben nada a su audiencia salvo honestidad. Kid A perdió la mitad de los fans de OK Computer y ganó el doble a largo plazo. El álbum de la década por consenso de críticos y músicos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="https://upload.wikimedia.org/wikipedia/en/1/1d/Is_This_It_album_cover.jpg" alt="Is This It">
+    <div>
+      <div class="feat-title">Is This It</div>
+      <div class="feat-artist">The Strokes</div>
+      <div class="feat-meta"><span class="feat-pill">2001</span></div>
+      <p class="feat-rev">El debut de los cinco chicos del downtown de Manhattan llegó con el peso de todo el hype de la prensa musical británica encima y tuvo la elegancia de no achicarse. Is This It es un álbum de canciones perfectas — breves, concisas, construidas sobre guitarras que suenan como si estuvieran a punto de desintegrarse pero nunca lo hacen. Julian Casablancas cantando como si no le importara nada mientras claramente le importa todo. El disco que reinventó el rock de garaje para el siglo XXI y lanzó una era de revivalismo que duró una década entera.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="https://upload.wikimedia.org/wikipedia/en/a/ab/Yankeehotelfoxtrot.jpg" alt="Yankee Hotel Foxtrot">
+    <div>
+      <div class="feat-title">Yankee Hotel Foxtrot</div>
+      <div class="feat-artist">Wilco</div>
+      <div class="feat-meta"><span class="feat-pill">2002</span></div>
+      <p class="feat-rev">La historia detrás de Yankee Hotel Foxtrot es casi tan legendaria como el disco mismo: Reprise lo rechazó, Wilco lo publicó gratis en internet, se convirtió en el álbum más descargado del año y luego Nonesuch lo reeditó en CD con éxito comercial masivo. Todo eso antes de que nadie hablara de "streaming." Jeff Tweedy y Jim O'Rourke construyeron un álbum de country-rock alternativo que usaba el ruido, el silencio y la disonancia como herramientas emocionales — una obra que sonaba a lo que pasaría si Brian Wilson hubiera crecido en Illinois.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="https://upload.wikimedia.org/wikipedia/en/d/d1/JayZ-Blueprint.jpg" alt="The Blueprint">
+    <div>
+      <div class="feat-title">The Blueprint</div>
+      <div class="feat-artist">Jay-Z</div>
+      <div class="feat-meta"><span class="feat-pill">2001</span></div>
+      <p class="feat-rev">Publicado el 11 de septiembre de 2001, The Blueprint tuvo la mala suerte de lanzarse el día más catastrófico de la historia reciente de Estados Unidos y la buena suerte de ser tan bueno que superó cualquier obstáculo de contexto. Jay-Z trabajando con un jovencísimo Kanye West en la producción — "Izzo (H.O.V.A.)" y "Girls Girls Girls" — sobre samples de soul de los 70s, con la confianza de un hombre que sabe exactamente cuán bueno es. El primer gran álbum de hip-hop del nuevo milenio y el comienzo de una sociedad artística que definiría la siguiente década.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="https://upload.wikimedia.org/wikipedia/en/8/89/TheWhiteStripesElephant.jpg" alt="Elephant">
+    <div>
+      <div class="feat-title">Elephant</div>
+      <div class="feat-artist">The White Stripes</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span></div>
+      <p class="feat-rev">Jack y Meg White grabaron Elephant en ocho días con equipo analógico de los 60s, sin bajo y sin ordenadores. El resultado es el álbum de blues-rock más urgente y más irresistible de la década: "Seven Nation Army" se convirtió en el riff más reconocible de los 2000s, un tema de estadio construido sobre una sola nota repetida. Elephant demostró que los excesos de la producción moderna no eran necesarios — que dos personas, una guitarra y una batería podían hacer el ruido más grande del mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="https://upload.wikimedia.org/wikipedia/en/d/df/Arcade_Fire_-_Funeral.png" alt="Funeral">
+    <div>
+      <div class="feat-title">Funeral</div>
+      <div class="feat-artist">Arcade Fire</div>
+      <div class="feat-meta"><span class="feat-pill">2004</span></div>
+      <p class="feat-rev">El debut del colectivo de Montreal llegó cuando nadie esperaba que un álbum de indie-rock épico y orquestal pudiera convertirse en el disco más importante del año. Arcade Fire escribió canciones sobre la muerte, la infancia perdida y la resistencia comunitaria con una urgencia y una grandeza que recordaban a los mejores Springsteen — pero sin el presupuesto ni el catálogo. "Rebellion (Lies)," "Wake Up" y "Neighborhood #1 (Tunnels)" se convirtieron en himnos para toda una generación de oyentes que querían que su música indie sonara tan grande como se sentía por dentro.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="https://upload.wikimedia.org/wikipedia/en/a/ae/The_Marshall_Mathers_LP.jpg" alt="The Marshall Mathers LP">
+    <div>
+      <div class="feat-title">The Marshall Mathers LP</div>
+      <div class="feat-artist">Eminem</div>
+      <div class="feat-meta"><span class="feat-pill">2000</span></div>
+      <p class="feat-rev">El álbum que convirtió a Slim Shady en el artista más controvertido y más vendido del planeta. The Marshall Mathers LP es un ejercicio de virtuosismo rap — flows velocísimos, cambios de perspectiva que confunden deliberadamente al oyente sobre qué es real y qué es personaje, y una habilidad para la provocación que resulta genuinamente desconcertante. Dr. Dre produce la mitad del disco con una precisión brutal. Eminem usa la otra mitad para explorar la fama, la misoginia, la homofobia y su propia mente con una honestidad que desafía a cualquiera a mirar para otro lado.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="https://upload.wikimedia.org/wikipedia/en/6/6e/BobDylanModernTimesalbumcover.jpg" alt="Modern Times">
+    <div>
+      <div class="feat-title">Modern Times</div>
+      <div class="feat-artist">Bob Dylan</div>
+      <div class="feat-meta"><span class="feat-pill">2006</span></div>
+      <p class="feat-rev">A los 65 años, Bob Dylan publicó su mejor álbum desde Blood on the Tracks — un disco de blues, rockabilly y baladas que destilaba toda la historia de la música americana popular a través del filtro de un hombre que la ha vivido entera. Modern Times llegó al número uno en Estados Unidos por primera vez desde 1976 y ganó el Grammy al Álbum del Año. Dylan canta sobre el amor, la muerte y el tiempo con la economía de palabras de alguien que ya no necesita demostrar nada a nadie — y eso es exactamente lo que lo hace irresistible.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="https://upload.wikimedia.org/wikipedia/en/0/04/MIAKala.jpg" alt="Kala">
+    <div>
+      <div class="feat-title">Kala</div>
+      <div class="feat-artist">M.I.A.</div>
+      <div class="feat-meta"><span class="feat-pill">2007</span></div>
+      <p class="feat-rev">Maya Arulpragasam tomó el sonido de las calles de Liberia, Trinidad, Australia y el South Bronx y los mezcló con hip-hop, electrónica y baile en un álbum que sonaba como la primera música verdaderamente global de la era de internet. "Paper Planes" — construida sobre un sample de The Clash — se convirtió en el single del año y apareció en trailers de película, spots publicitarios y listas de fin de año de todo el mundo. Kala demostró que la globalización no tenía que ser homogeneizadora — que podía generar algo más extraño, más rico y más urgente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg" alt="The College Dropout">
+    <div>
+      <div class="feat-title">The College Dropout</div>
+      <div class="feat-artist">Kanye West</div>
+      <div class="feat-meta"><span class="feat-pill">2004</span></div>
+      <p class="feat-rev">Antes de que Kanye West fuera Kanye West — la figura polarizante, el egomaníaco declarado, el candidato presidencial — era un productor de Chicago que soñaba con rapear. The College Dropout es el documento de ese sueño hecho realidad: samples de soul acelerados, letras que mezclaban la inseguridad con la arrogancia de una manera que resultaba completamente nueva en el hip-hop, y canciones sobre la fe, la familia y la presión de triunfar que resonaron con millones de personas que no se reconocían en el rap de esa época. El álbum que cambió el hip-hop.</p>
+    </div>
+  </div></section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 ÁLBUMES · 2000–2009</span>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-2000s-153375/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+var ALBUMS = [
+  [1,"Kid A","Radiohead",2000],
+  [2,"Is This It","The Strokes",2001],
+  [3,"Yankee Hotel Foxtrot","Wilco",2002],
+  [4,"The Blueprint","Jay-Z",2001],
+  [5,"Elephant","The White Stripes",2003],
+  [6,"Funeral","Arcade Fire",2004],
+  [7,"The Marshall Mathers LP","Eminem",2000],
+  [8,"Modern Times","Bob Dylan",2006],
+  [9,"Kala","M.I.A.",2007],
+  [10,"The College Dropout","Kanye West",2004],
+  [11,"Love and Theft","Bob Dylan",2001],
+  [12,"Sound of Silver","LCD Soundsystem",2007],
+  [13,"All That You Can\'t Leave Behind","U2",2000],
+  [14,"The Black Album","Jay-Z",2003],
+  [15,"The Rising","Bruce Springsteen",2002],
+  [16,"Stankonia","OutKast",2000],
+  [17,"Sea Change","Beck",2002],
+  [18,"Oracular Spectacular","MGMT",2007],
+  [19,"Back to Black","Amy Winehouse",2006],
+  [20,"White Blood Cells","The White Stripes",2001],
+  [21,"A Rush of Blood to the Head","Coldplay",2002],
+  [22,"American Idiot","Green Day",2004],
+  [23,"Voodoo","D\'Angelo",2000],
+  [24,"Magic","Bruce Springsteen",2007],
+  [25,"Amnesiac","Radiohead",2001],
+  [26,"The Greatest","Cat Power",2006],
+  [27,"Yoshimi Battles the Pink Robots","The Flaming Lips",2002],
+  [28,"Fever to Tell","Yeah Yeah Yeahs",2003],
+  [29,"Agaetis Byrjun","Sigur Ros",1999],
+  [30,"In Rainbows","Radiohead",2007],
+  [31,"Turn on the Bright Lights","Interpol",2002],
+  [32,"Wolfgang Amadeus Phoenix","Phoenix",2009],
+  [33,"Oh Inverted World","The Shins",2001],
+  [34,"808s and Heartbreak","Kanye West",2008],
+  [35,"American III Solitary Man","Johnny Cash",2000],
+  [36,"The Woods","Sleater-Kinney",2005],
+  [37,"Parachutes","Coldplay",2000],
+  [38,"Franz Ferdinand","Franz Ferdinand",2004],
+  [39,"Stadium Arcadium","Red Hot Chili Peppers",2006],
+  [40,"Neon Bible","Arcade Fire",2007],
+  [41,"And Then Nothing Turned Itself Inside Out","Yo La Tengo",2000],
+  [42,"Illinois","Sufjan Stevens",2005],
+  [43,"Vespertine","Bjork",2001],
+  [44,"I Am a Bird Now","Antony and the Johnsons",2005],
+  [45,"Proxima Estacion Esperanza","Manu Chao",2001],
+  [46,"Time the Revelator","Gillian Welch",2001],
+  [47,"How to Dismantle an Atomic Bomb","U2",2004],
+  [48,"Under Construction","Missy Elliott",2002],
+  [49,"Unearthed","Johnny Cash",2003],
+  [50,"For Emma Forever Ago","Bon Iver",2007],
+  [51,"Veni Vidi Vicious","The Hives",2000],
+  [52,"Dimanche a Bamako","Amadou and Miriam",2005],
+  [53,"Hail to the Thief","Radiohead",2003],
+  [54,"Smile","Brian Wilson",2004],
+  [55,"St. Elsewhere","Gnarls Barkley",2006],
+  [56,"Give Up","The Postal Service",2003],
+  [57,"Viva La Vida","Coldplay",2008],
+  [58,"The Eminem Show","Eminem",2002],
+  [59,"Attack and Release","The Black Keys",2008],
+  [60,"Rated R","Queens of the Stone Age",2000],
+  [61,"Gold","Ryan Adams",2001],
+  [62,"Youth and Young Manhood","Kings of Leon",2003],
+  [63,"Electric Version","The New Pornographers",2003],
+  [64,"Up the Bracket","The Libertines",2002],
+  [65,"Songs in A Minor","Alicia Keys",2001],
+  [66,"Original Pirate Material","The Streets",2002],
+  [67,"Sky Blue Sky","Wilco",2007],
+  [68,"Return to Cookie Mountain","TV on the Radio",2006],
+  [69,"Almost Killed Me","The Hold Steady",2004],
+  [70,"Ten New Songs","Leonard Cohen",2001],
+  [71,"Lifted","Bright Eyes",2002],
+  [72,"Late Registration","Kanye West",2005],
+  [73,"Speakerboxxx The Love Below","OutKast",2003],
+  [74,"Tha Carter III","Lil Wayne",2008],
+  [75,"Get Rich or Die Tryin","50 Cent",2003],
+  [76,"Graduation","Kanye West",2007],
+  [77,"Z","My Morning Jacket",2005],
+  [78,"Agaetis Byrjun","Sigur Ros",1999],
+  [79,"Sea Change","Beck",2002],
+  [80,"Oracular Spectacular","MGMT",2007],
+  [81,"Magic","Bruce Springsteen",2007],
+  [82,"The Greatest","Cat Power",2006],
+  [83,"Yoshimi Battles the Pink Robots","The Flaming Lips",2002],
+  [84,"Fever to Tell","Yeah Yeah Yeahs",2003],
+  [85,"Amnesiac","Radiohead",2001],
+  [86,"Voodoo","D\'Angelo",2000],
+  [87,"White Blood Cells","The White Stripes",2001],
+  [88,"Back to Black","Amy Winehouse",2006],
+  [89,"Kala","M.I.A.",2007],
+  [90,"Sound of Silver","LCD Soundsystem",2007],
+  [91,"Love and Theft","Bob Dylan",2001],
+  [92,"The Black Album","Jay-Z",2003],
+  [93,"The Rising","Bruce Springsteen",2002],
+  [94,"Stankonia","OutKast",2000],
+  [95,"A Rush of Blood to the Head","Coldplay",2002],
+  [96,"American Idiot","Green Day",2004],
+  [97,"All That You Can\'t Leave Behind","U2",2000],
+  [98,"Modern Times","Bob Dylan",2006],
+  [99,"The College Dropout","Kanye West",2004],
+  [100,"The Marshall Mathers LP","Eminem",2000],
+];
+
+var FEAT = [
+  ["fc-1","Radiohead","Kid A"],
+  ["fc-2","The Strokes","Is This It"],
+  ["fc-3","Wilco","Yankee Hotel Foxtrot"],
+  ["fc-4","Jay-Z","The Blueprint"],
+  ["fc-5","The White Stripes","Elephant"],
+  ["fc-6","Arcade Fire","Funeral"],
+  ["fc-7","Eminem","The Marshall Mathers LP"],
+  ["fc-8","Bob Dylan","Modern Times"],
+  ["fc-9","M.I.A.","Kala"],
+  ["fc-10","Kanye West","The College Dropout"],
+];
+
+var IMG_URLS = {
+  "Radiohead|||Kid A": "https://upload.wikimedia.org/wikipedia/en/b/b5/Radiohead.kid_a.albumart.jpg",
+  "The Strokes|||Is This It": "https://upload.wikimedia.org/wikipedia/en/1/1d/Is_This_It_album_cover.jpg",
+  "Wilco|||Yankee Hotel Foxtrot": "https://upload.wikimedia.org/wikipedia/en/a/ab/Yankeehotelfoxtrot.jpg",
+  "Jay-Z|||The Blueprint": "https://upload.wikimedia.org/wikipedia/en/d/d1/JayZ-Blueprint.jpg",
+  "The White Stripes|||Elephant": "https://upload.wikimedia.org/wikipedia/en/8/89/TheWhiteStripesElephant.jpg",
+  "Arcade Fire|||Funeral": "https://upload.wikimedia.org/wikipedia/en/d/df/Arcade_Fire_-_Funeral.png",
+  "Eminem|||The Marshall Mathers LP": "https://upload.wikimedia.org/wikipedia/en/a/ae/The_Marshall_Mathers_LP.jpg",
+  "Bob Dylan|||Modern Times": "https://upload.wikimedia.org/wikipedia/en/6/6e/BobDylanModernTimesalbumcover.jpg",
+  "M.I.A.|||Kala": "https://upload.wikimedia.org/wikipedia/en/0/04/MIAKala.jpg",
+  "Kanye West|||The College Dropout": "https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg",
+  "LCD Soundsystem|||Sound of Silver": "https://upload.wikimedia.org/wikipedia/en/3/3c/Sound_of_Silver.jpg",
+  "Coldplay|||A Rush of Blood to the Head": "https://upload.wikimedia.org/wikipedia/en/1/10/ARushOfBloodToTheHead.jpg",
+  "Green Day|||American Idiot": "https://upload.wikimedia.org/wikipedia/en/e/e4/American_Idiot_album_cover.jpg",
+  "Amy Winehouse|||Back to Black": "https://upload.wikimedia.org/wikipedia/en/1/1f/BacktoBlackAlbum.png",
+  "Radiohead|||Amnesiac": "https://upload.wikimedia.org/wikipedia/en/1/18/Radioheadamnesiac.png",
+  "Radiohead|||In Rainbows": "https://upload.wikimedia.org/wikipedia/en/3/3b/In_Rainbows_Official_Cover.jpg",
+  "The Flaming Lips|||Yoshimi Battles the Pink Robots": "https://upload.wikimedia.org/wikipedia/en/3/3e/Flaming_Lips_-_Yoshimi.jpg",
+  "Yeah Yeah Yeahs|||Fever to Tell": "https://upload.wikimedia.org/wikipedia/en/8/80/Yeahyeahyeahsfever.jpg",
+  "OutKast|||Stankonia": "https://upload.wikimedia.org/wikipedia/en/7/77/OutkastStankonia.jpg",
+  "U2|||All That You Can't Leave Behind": "https://upload.wikimedia.org/wikipedia/en/1/12/All_that_you_can%27t_leave_behind.jpg",
+  "Bruce Springsteen|||The Rising": "https://upload.wikimedia.org/wikipedia/en/4/41/RisingalbumSpringsteen.jpg",
+  "Jay-Z|||The Black Album": "https://upload.wikimedia.org/wikipedia/en/9/98/Jay-Z_-_The_Black_Album.png",
+  "Interpol|||Turn on the Bright Lights": "https://upload.wikimedia.org/wikipedia/en/6/69/Interpol_-_Turn_On_the_Bright_Lights.jpg",
+  "The Shins|||Oh Inverted World": "https://upload.wikimedia.org/wikipedia/en/1/1b/Ohih.jpg",
+  "Kanye West|||808s and Heartbreak": "https://upload.wikimedia.org/wikipedia/en/a/a2/808s_%26_Heartbreak.png",
+  "Sleater-Kinney|||The Woods": "https://upload.wikimedia.org/wikipedia/en/a/a3/Sleater-kinney-the-woods.jpg",
+  "Franz Ferdinand|||Franz Ferdinand": "https://upload.wikimedia.org/wikipedia/en/4/45/FranzFerdinand-FranzFerdinand.jpg",
+  "Red Hot Chili Peppers|||Stadium Arcadium": "https://upload.wikimedia.org/wikipedia/en/2/26/Stadium_Arcadium.jpg",
+  "Arcade Fire|||Neon Bible": "https://upload.wikimedia.org/wikipedia/en/9/9c/Neon_Bible_cover.jpg",
+  "Sufjan Stevens|||Illinois": "https://upload.wikimedia.org/wikipedia/en/a/ab/Sufjanillinoisalbumcover.jpg",
+  "Bjork|||Vespertine": "https://upload.wikimedia.org/wikipedia/en/2/21/Vespertine.png",
+  "Coldplay|||Parachutes": "https://upload.wikimedia.org/wikipedia/en/e/e0/Coldplay_Parachutes.jpg",
+  "Gnarls Barkley|||St. Elsewhere": "https://upload.wikimedia.org/wikipedia/en/b/b4/Gnarlsbarkleystelsewhere.jpg",
+  "The Postal Service|||Give Up": "https://upload.wikimedia.org/wikipedia/en/a/a5/ThePostalServiceGiveUp.jpg",
+  "Coldplay|||Viva La Vida": "https://upload.wikimedia.org/wikipedia/en/b/b0/Vivalavida.jpg",
+  "Bon Iver|||For Emma Forever Ago": "https://upload.wikimedia.org/wikipedia/en/4/4a/For_Emma%2C_Forever_Ago.png",
+  "The White Stripes|||White Blood Cells": "https://upload.wikimedia.org/wikipedia/en/4/48/White_Blood_Cells_album_cover.jpg",
+  "D'Angelo|||Voodoo": "https://upload.wikimedia.org/wikipedia/en/f/f9/D%27Angelo-Voodoo.jpg",
+  "Beck|||Sea Change": "https://upload.wikimedia.org/wikipedia/en/8/84/Beck-SeaChange.jpg",
+  "MGMT|||Oracular Spectacular": "https://upload.wikimedia.org/wikipedia/en/a/af/MGMT_Oracular_Spectacular.jpg",
+  "Cat Power|||The Greatest": "https://upload.wikimedia.org/wikipedia/en/2/2f/CatPowerTheGreatest.jpg",
+  "Kanye West|||Late Registration": "https://upload.wikimedia.org/wikipedia/en/1/1e/Late_Registration.jpg",
+  "Kanye West|||Graduation": "https://upload.wikimedia.org/wikipedia/en/7/70/Graduation_%28album%29.jpg",
+  "Lil Wayne|||Tha Carter III": "https://upload.wikimedia.org/wikipedia/en/a/ac/LilWayneCarter3.jpg",
+  "My Morning Jacket|||Z": "https://upload.wikimedia.org/wikipedia/en/a/ac/MMJ-Z.jpg",
+  "Gillian Welch|||Time the Revelator": "https://upload.wikimedia.org/wikipedia/en/8/82/GillianWelch-TimetheRevelator.jpg",
+  "The Black Keys|||Attack and Release": "https://upload.wikimedia.org/wikipedia/en/a/af/AttackAndRelease.jpg",
+};
+
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, album) {
+  var key = artist + "|||" + album;
+  var directUrl = IMG_URLS[key];
+  if (directUrl) {
+    el.src = directUrl; el.style.opacity = "1";
+    el.onerror = function() { el.onerror = null; loadArtSearch(el, artist, album); };
+    return;
+  }
+  loadArtSearch(el, artist, album);
+}
+
+function loadArtSearch(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) + "&media=music&entity=album&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Radiohead", "Kid A");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&username=" + LFM_USER + "&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+</script>
+</body>
+</html>

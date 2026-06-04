@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Best Albums of the '90s — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2011</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-90s-152425/" target="_blank" class="page-title">100 BEST ALBUMS OF THE '90s  </a>
+  <p class="page-sub">De Nirvana y Radiohead al hip-hop de Dr. Dre y The Notorious B.I.G. · Publicada originalmente en el libro The '90s: The Inside Stories From the Decade that Rocked · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Nevermind – Nirvana">
+    <p class="cover-cap">ROLLING STONE · 2011</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Los noventa como era musical empezaron tarde y terminaron temprano: iniciados por los acordes rasposos de "Smells Like Teen Spirit" y clausurados por el intro de piano de "…Baby One More Time." Anti-pop derrotado por el pop — círculo completo, con todas las disculpas del caso. Pero los noventa reales fueron más ricos, más divertidos y más extraños que ese relato. Bandas grunge falsas escribiendo mejores canciones que algunas de las auténticas; rezagados de los ochenta como U2 y R.E.M. alcanzando cimas creativas con Achtung Baby y Automatic for the People; Metallica y los Black Crowes coexistiendo en MTV; Phish cuidando a la nación deadhead tras la muerte de Jerry García.</p>
+    <p class="rtext">Y Vanilla Ice y MC Hammer cediendo sus tronos pop en pocos años a Dr. Dre, Snoop y Eminem. La lista refleja todo eso: es una de las décadas más diversas y disputadas de la historia del rock, con el grunge en el trono, el hip-hop revolucionando todo desde abajo, el Britpop reconquistando el orgullo anglosajón, el trip-hop inventando nuevos lenguajes nocturnos y actos como Radiohead, Björk y Portishead empujando los límites de lo que la música popular podía ser. Una década sin revolución única — precisamente porque había demasiadas ocurriendo a la vez.</p>
+  </div>
+</section>
+
+<!-- > 50 álbumes → reseñas de los primeros 10 -->
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Nevermind">
+    <div>
+      <div class="feat-title">Nevermind</div>
+      <div class="feat-artist">Nirvana</div>
+      <div class="feat-meta"><span class="feat-pill">1991</span></div>
+      <p class="feat-rev">El genio especial de Cobain — y el de Dave Grohl y Krist Novoselic — estaba en el humor acerado y en el clasicismo amplificado de los Sex Pistols, Cheap Trick y AC/DC. Nevermind extrajo el disco de fiesta más importante de la década del descontento de toda una generación, demostrando que el rock and roll, en su desordenada madurez, todavía podía destruir las cosas gloriosamente. Derrocó a Michael Jackson del número uno de las listas y envió a los ejecutivos discográficos a fichar a todos los imitadores que pudieran encontrar. Más de treinta años después, sigue sonando como el comienzo del mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="The Chronic">
+    <div>
+      <div class="feat-title">The Chronic</div>
+      <div class="feat-artist">Dr. Dre</div>
+      <div class="feat-meta"><span class="feat-pill">1992</span></div>
+      <p class="feat-rev">Si Nevermind transformó el rock, The Chronic transformó el hip-hop — y con él, la cultura popular entera. Dr. Dre inventó el G-funk: beats suntuosos construidos sobre samples de Parliament-Funkadelic, líneas de bajo lentas y sensuales, y teclados que sonaban como el sol sobre South Central L.A. Con Snoop Dogg en el micrófono y una producción que hacía que hasta las amenazas sonaran lujosas, The Chronic redefinió lo que significaba hacer rap en California y estableció Death Row Records como el sello más poderoso de la década.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="OK Computer">
+    <div>
+      <div class="feat-title">OK Computer</div>
+      <div class="feat-artist">Radiohead</div>
+      <div class="feat-meta"><span class="feat-pill">1997</span></div>
+      <p class="feat-rev">El progreso es un fastidio, pero no dejes que las máquinas — ni sus amos — te aplanen: ese es el mensaje simple codificado en el deslumbramiento art-rock de OK Computer. Antes de su lanzamiento, muchos consideraban a Radiohead un grupo de un solo hit. Lo que llegó fue un disco que redefinió la ambición del rock alternativo: guitarras que destilaban ansiedad tecnológica, la voz de Thom Yorke flotando sobre paisajes sonoros de pesadilla y canciones como "Karma Police," "Paranoid Android" y "No Surprises" que todavía suenan como transmisiones de un futuro que ya llegó.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Achtung Baby">
+    <div>
+      <div class="feat-title">Achtung Baby</div>
+      <div class="feat-artist">U2</div>
+      <div class="feat-meta"><span class="feat-pill">1991</span></div>
+      <p class="feat-rev">U2, los bardos irlandeses de la guitarra catedral y el sermón de taberna, se despidieron de los ochenta y de la marea sofocante de su propia sinceridad instalando su equipo de grabación en el Berlín postsovético y abrazando dos íes: ironía y dance music industrial. La música — más lenta que The Joshua Tree — es funk corrosivo, ciudad arrasada mezclada con risas locas y paranoia reptante. Pero el crujido y el eco de pasillo vacío de Achtung Baby son en realidad una armadura protectora para el corazón desafiante de las letras de Bono: "One," "Ultra Violet," "Who's Gonna Ride Your Wild Horses." El mayor reinvento de carrera de la historia del rock moderno.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="The Miseducation of Lauryn Hill">
+    <div>
+      <div class="feat-title">The Miseducation of Lauryn Hill</div>
+      <div class="feat-artist">Lauryn Hill</div>
+      <div class="feat-meta"><span class="feat-pill">1998</span></div>
+      <p class="feat-rev">En un año en que los álbumes formulaicos de Master P y Puff Daddy copaban las listas, Lauryn Hill entregó el testamento definitivo del neo-soul: un disco que combinaba rap, reggae, soul y gospel con una habilidad compositiva y una honestidad emocional sin parangón en la música popular de los noventa. Ganó cinco Grammys, incluyendo Álbum del Año — la primera mujer de rap en lograrlo — y sus canciones sobre amor, maternidad, espiritualidad y autodescubrimiento todavía resuenan con una urgencia que trasciende su época. Una obra maestra que sigue sin par.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="Ten">
+    <div>
+      <div class="feat-title">Ten</div>
+      <div class="feat-artist">Pearl Jam</div>
+      <div class="feat-meta"><span class="feat-pill">1991</span></div>
+      <p class="feat-rev">Pocas semanas antes de que Nevermind llegara a las tiendas en septiembre de 1991, Pearl Jam lanzó Ten. Los videos de "Jeremy," "Even Flow" y "Alive" entraron rápidamente en rotación constante en MTV, y Kurt Cobain no estaba contento con la competencia — lo llamó "una fusión corporativa de alternative y cock-rock." Pero la historia juzgó diferente: Ten es un disco de arena rock que tocó algo real en la generación del descontento, con la voz de Eddie Vedder proyectando una grandeza épica que el grunge raramente permitía. Vendió más de 13 millones de copias solo en Estados Unidos.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="In Utero">
+    <div>
+      <div class="feat-title">In Utero</div>
+      <div class="feat-artist">Nirvana</div>
+      <div class="feat-meta"><span class="feat-pill">1993</span></div>
+      <p class="feat-rev">Las pistas básicas se grabaron en dos semanas; casi todas las voces de Kurt Cobain se fijaron en cinta en siete horas. Producido por Steve Albini con una ferocidad deliberada — como respuesta directa al pulido comercial de Nevermind — In Utero es más ruidoso, más abrasivo y más honesto. "Rape Me" es una canción sobre la fama y la violación tanto como sobre cualquier otra cosa. "Heart-Shaped Box" y "All Apologies" revelan al compositor más vulnerable y más devastador que Cobain llegaría a ser. El último gran salto antes del silencio definitivo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Ready to Die">
+    <div>
+      <div class="feat-title">Ready to Die</div>
+      <div class="feat-artist">The Notorious B.I.G.</div>
+      <div class="feat-meta"><span class="feat-pill">1994</span></div>
+      <p class="feat-rev">Biggie irrumpió como el tipo más rudo, el que fumaba crónico, comía Oreos, bebía jugo de pepinillos y era el amo del bloque — y tenía razón. Ready to Die trazó el mapa de los sonidos del cool de los noventa: la visión es sombría, de "Suicidal Thoughts" a la canción de amor que pivota en la línea "Espero que nos muramos juntos." Pero la voz de Biggie está también llena de alegría desbordante, devolviendo el principio del placer al hip-hop de Nueva York después de años de dominio de la Costa Oeste. El disco que revitalizó el rap del East Coast.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Odelay">
+    <div>
+      <div class="feat-title">Odelay</div>
+      <div class="feat-artist">Beck</div>
+      <div class="feat-meta"><span class="feat-pill">1996</span></div>
+      <p class="feat-rev">Odelay es el álbum más feliz y más extravagante de los noventa: Beck mezclando country, folk, hip-hop, blues, noise y psicodelia con los productores Dust Brothers en un collage que debería ser un caos pero resulta una de las colecciones más cohesivas y plenamente realizadas de la década. "Where It's At," "Devils Haircut" y "New Pollution" capturan a un artista operando con una libertad y una inventiva que pocas veces se ve — el disco de un hombre que encontró su propio planeta y decidió invitar a todos a visitarlo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Crooked Rain, Crooked Rain">
+    <div>
+      <div class="feat-title">Crooked Rain, Crooked Rain</div>
+      <div class="feat-artist">Pavement</div>
+      <div class="feat-meta"><span class="feat-pill">1994</span></div>
+      <p class="feat-rev">Si Nevermind era el grito de la generación, Crooked Rain, Crooked Rain era su conversación al día siguiente — más lúcida, más irónica, infinitamente más divertida. Stephen Malkmus y Pavement tomaron el legado del rock indie de los ochenta y lo transformaron en algo más suelto y más inteligente: canciones que caen hacia adelante de maneras impredecibles, con letras que se burlan de todo incluida la propia indie credibility. "Cut Your Hair" es quizás el mejor single de indie rock de los noventa, y el álbum completo suena como un manifesto de que se puede ser sofisticado y seguir siendo absolutamente genial.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 ÁLBUMES · LOS NOVENTA</span>
+  <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-90s-152425/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+
+
+
+
+
+var ALBUMS = [
+  [1,"Nevermind","Nirvana",1991],
+  [2,"The Chronic","Dr. Dre",1992],
+  [3,"OK Computer","Radiohead",1997],
+  [4,"Achtung Baby","U2",1991],
+  [5,"The Miseducation of Lauryn Hill","Lauryn Hill",1998],
+  [6,"Ten","Pearl Jam",1991],
+  [7,"In Utero","Nirvana",1993],
+  [8,"Ready to Die","The Notorious B.I.G.",1994],
+  [9,"Odelay","Beck",1996],
+  [10,"Crooked Rain Crooked Rain","Pavement",1994],
+  [11,"Aquemini","OutKast",1998],
+  [12,"Wildflowers","Tom Petty",1994],
+  [13,"Automatic for the People","R.E.M.",1992],
+  [14,"Rid of Me","PJ Harvey",1993],
+  [15,"Siamese Dream","The Smashing Pumpkins",1993],
+  [16,"Dummy","Portishead",1994],
+  [17,"The Score","Fugees",1996],
+  [18,"Doggystyle","Snoop Dogg",1993],
+  [19,"Enter the Wu-Tang 36 Chambers","Wu-Tang Clan",1993],
+  [20,"Illmatic","Nas",1994],
+  [21,"Urban Hymns","The Verve",1997],
+  [22,"What's the Story Morning Glory","Oasis",1995],
+  [23,"Vs.","Pearl Jam",1993],
+  [24,"Exile in Guyville","Liz Phair",1993],
+  [25,"The Marshall Mathers LP","Eminem",2000],
+  [26,"Debut","Bjork",1993],
+  [27,"Superunknown","Soundgarden",1994],
+  [28,"Dirt","Alice in Chains",1992],
+  [29,"Screamadelica","Primal Scream",1991],
+  [30,"The Low End Theory","A Tribe Called Quest",1991],
+  [31,"Grace","Jeff Buckley",1994],
+  [32,"Weezer Blue Album","Weezer",1994],
+  [33,"Reasonable Doubt","Jay-Z",1996],
+  [34,"The Bends","Radiohead",1995],
+  [35,"Use Your Illusion II","Guns N Roses",1991],
+  [36,"Being There","Wilco",1996],
+  [37,"American Recordings","Johnny Cash",1994],
+  [38,"Loveless","My Bloody Valentine",1991],
+  [39,"Harvest Moon","Neil Young",1992],
+  [40,"Use Your Illusion I","Guns N Roses",1991],
+  [41,"CrazySexyCool","TLC",1994],
+  [42,"Jagged Little Pill","Alanis Morissette",1995],
+  [43,"Vol. 2 Hard Knock Life","Jay-Z",1998],
+  [44,"Pinkerton","Weezer",1996],
+  [45,"Call the Doctor","Sleater-Kinney",1996],
+  [46,"All Eyez on Me","2Pac",1996],
+  [47,"Protection","Massive Attack",1994],
+  [48,"Vitalogy","Pearl Jam",1994],
+  [49,"Bone Machine","Tom Waits",1992],
+  [50,"The Ghost of Tom Joad","Bruce Springsteen",1995],
+  [51,"Ritual de lo Habitual","Jane's Addiction",1990],
+  [52,"Mama Said Knock You Out","LL Cool J",1990],
+  [53,"Violator","Depeche Mode",1990],
+  [54,"Janet.","Janet Jackson",1993],
+  [55,"Cypress Hill","Cypress Hill",1991],
+  [56,"Funky Divas","En Vogue",1992],
+  [57,"Zooropa","U2",1993],
+  [58,"Only Built 4 Cuban Linx","Raekwon",1995],
+  [59,"My Life","Mary J. Blige",1994],
+  [60,"I Do Not Want What I Haven't Got","Sinead O Connor",1990],
+  [61,"Baduizm","Erykah Badu",1997],
+  [62,"Life After Death","The Notorious B.I.G.",1997],
+  [63,"August and Everything After","Counting Crows",1993],
+  [64,"Out of Time","R.E.M.",1991],
+  [65,"The Carnival","Wyclef Jean",1997],
+  [66,"Maxinquaye","Tricky",1995],
+  [67,"Endtroducing","DJ Shadow",1996],
+  [68,"Dig Your Own Hole","The Chemical Brothers",1997],
+  [69,"Supa Dupa Fly","Missy Elliott",1997],
+  [70,"The Battle of Los Angeles","Rage Against the Machine",1999],
+  [71,"If You're Feeling Sinister","Belle and Sebastian",1996],
+  [72,"Bridges to Babylon","The Rolling Stones",1997],
+  [73,"Ragged Glory","Neil Young and Crazy Horse",1990],
+  [74,"Into the Great Wide Open","Tom Petty and the Heartbreakers",1991],
+  [75,"De La Soul Is Dead","De La Soul",1991],
+  [76,"I Can Hear the Heart Beating as One","Yo La Tengo",1997],
+  [77,"Moon Safari","Air",1998],
+  [78,"Selected Ambient Works Volume II","Aphex Twin",1994],
+  [79,"MTV Unplugged in New York","Nirvana",1994],
+  [80,"Mermaid Avenue","Billy Bragg and Wilco",1998],
+  [81,"69 Love Songs","The Magnetic Fields",1999],
+  [82,"Buena Vista Social Club","Buena Vista Social Club",1997],
+  [83,"Penthouse","Luna",1995],
+  [84,"Everything Is Wrong","Moby",1995],
+  [85,"R. Kelly","R. Kelly",1995],
+  [86,"Last Splash","The Breeders",1993],
+  [87,"Bee Thousand","Guided by Voices",1994],
+  [88,"Definitely Maybe","Oasis",1994],
+  [89,"One in a Million","Aaliyah",1996],
+  [90,"Bossanova","Pixies",1990],
+  [91,"The Soft Bulletin","The Flaming Lips",1999],
+  [92,"Post","Bjork",1995],
+  [93,"Tidal","Fiona Apple",1996],
+  [94,"Mellon Collie and the Infinite Sadness","The Smashing Pumpkins",1995],
+  [95,"Different Class","Pulp",1995],
+  [96,"Antichrist Superstar","Marilyn Manson",1996],
+  [97,"If You're Feeling Sinister","Belle and Sebastian",1996],
+  [98,"De La Soul Is Dead","De La Soul",1991],
+  [99,"MTV Unplugged in New York","Nirvana",1994],
+  [100,"Everything Is Wrong","Moby",1995]
+];
+
+var FEAT = [
+  ('fc-1','Nirvana','Nevermind'),
+  ('fc-2','Dr Dre','The Chronic'),
+  ('fc-3','Radiohead','OK Computer'),
+  ('fc-4','U2','Achtung Baby'),
+  ('fc-5','Lauryn Hill','The Miseducation of Lauryn Hill'),
+  ('fc-6','Pearl Jam','Ten'),
+  ('fc-7','Nirvana','In Utero'),
+  ('fc-8','The Notorious B.I.G.','Ready to Die'),
+  ('fc-9','Beck','Odelay'),
+  ('fc-10','Pavement','Crooked Rain Crooked Rain')
+];
+
+var LFM_KEY  = 'b25b959554ed76058ac220b7b2e0a026';
+var LFM_USER = 'lartzrodriguez';
+
+var IMG_URLS = {
+  "Nirvana|||Nevermind": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
+  "Dr. Dre|||The Chronic": "https://upload.wikimedia.org/wikipedia/en/1/19/Dr.DreTheChronic.jpg",
+  "Radiohead|||OK Computer": "https://upload.wikimedia.org/wikipedia/en/b/ba/Radioheadokcomputer.png",
+  "U2|||Achtung Baby": "https://upload.wikimedia.org/wikipedia/en/3/3b/Achtung_baby_cover.jpg",
+  "Lauryn Hill|||The Miseducation of Lauryn Hill": "https://upload.wikimedia.org/wikipedia/en/a/a0/The_Miseducation_of_Lauryn_Hill.png",
+  "Pearl Jam|||Ten": "https://upload.wikimedia.org/wikipedia/en/5/5a/Pearl_Jam-Ten.jpg",
+  "Nirvana|||In Utero": "https://upload.wikimedia.org/wikipedia/en/3/3b/In_Utero_%28Nirvana%29_album_cover.jpg",
+  "The Notorious B.I.G.|||Ready to Die": "https://upload.wikimedia.org/wikipedia/en/8/8d/Biggie_Ready_to_Die.png",
+  "Beck|||Odelay": "https://upload.wikimedia.org/wikipedia/en/9/93/Beck_Odelay_cover.jpg",
+  "Pavement|||Crooked Rain Crooked Rain": "https://upload.wikimedia.org/wikipedia/en/7/76/Pavement_-_Crooked_Rain%2C_Crooked_Rain.jpg",
+  "OutKast|||Aquemini": "https://upload.wikimedia.org/wikipedia/en/a/a5/Aqueminioutkast.jpg",
+  "Tom Petty|||Wildflowers": "https://upload.wikimedia.org/wikipedia/en/c/c3/Tom_Petty_-_Wildflowers.jpg",
+  "R.E.M.|||Automatic for the People": "https://upload.wikimedia.org/wikipedia/en/f/f8/AutomaticforThePeople.jpg",
+  "PJ Harvey|||Rid of Me": "https://upload.wikimedia.org/wikipedia/en/a/a2/PJ_Harvey_-_Rid_of_Me.png",
+  "The Smashing Pumpkins|||Siamese Dream": "https://upload.wikimedia.org/wikipedia/en/9/93/Siamese_Dream_cover.jpg",
+  "Portishead|||Dummy": "https://upload.wikimedia.org/wikipedia/en/1/1d/Portishead_-_Dummy.jpg",
+  "Fugees|||The Score": "https://upload.wikimedia.org/wikipedia/en/6/60/Fugees_-_The_Score_CD_cover.jpg",
+  "Snoop Dogg|||Doggystyle": "https://upload.wikimedia.org/wikipedia/en/6/63/SnoopDoggDoggystylealbumcover.jpg",
+  "Wu-Tang Clan|||Enter the Wu-Tang 36 Chambers": "https://upload.wikimedia.org/wikipedia/en/8/89/Wu-TangClanEntertheWu-Tangalbumcover.jpg",
+  "Nas|||Illmatic": "https://upload.wikimedia.org/wikipedia/en/7/72/Illmatic.jpg",
+  "The Verve|||Urban Hymns": "https://upload.wikimedia.org/wikipedia/en/c/c8/UrbanHymns.jpg",
+  "Oasis|||What's the Story Morning Glory": "https://upload.wikimedia.org/wikipedia/en/3/30/Oasis_-_Whats_the_Story_Morning_Glory_-_CD_album_cover.jpg",
+  "Pearl Jam|||Vs.": "https://upload.wikimedia.org/wikipedia/en/e/ea/Pearl_Jam-Vs.jpg",
+  "Liz Phair|||Exile in Guyville": "https://upload.wikimedia.org/wikipedia/en/8/8d/Exile_in_Guyville.jpg",
+  "Eminem|||The Marshall Mathers LP": "https://upload.wikimedia.org/wikipedia/en/a/ae/The_Marshall_Mathers_LP.jpg",
+  "Bjork|||Debut": "https://upload.wikimedia.org/wikipedia/en/5/5b/Bjork-Debut-1993-album-cover.jpg",
+  "Soundgarden|||Superunknown": "https://upload.wikimedia.org/wikipedia/en/0/0a/SuperunknownCover.jpg",
+  "Alice in Chains|||Dirt": "https://upload.wikimedia.org/wikipedia/en/d/dc/Alice_in_Chains_-_Dirt.jpg",
+  "Primal Scream|||Screamadelica": "https://upload.wikimedia.org/wikipedia/en/5/5b/Screamadelica.png",
+  "A Tribe Called Quest|||The Low End Theory": "https://upload.wikimedia.org/wikipedia/en/e/e2/Atcq_lowend.jpg",
+  "Jeff Buckley|||Grace": "https://upload.wikimedia.org/wikipedia/en/a/a0/Jeff_Buckley_-_Grace.jpg",
+  "Weezer|||Weezer Blue Album": "https://upload.wikimedia.org/wikipedia/en/3/3c/Weezer_album_cover.jpg",
+  "Jay-Z|||Reasonable Doubt": "https://upload.wikimedia.org/wikipedia/en/7/7e/Jayz_reasonable_doubt.jpg",
+  "Radiohead|||The Bends": "https://upload.wikimedia.org/wikipedia/en/7/7a/TheBends.jpg",
+  "Wilco|||Being There": "https://upload.wikimedia.org/wikipedia/en/3/3d/BeingThere.jpg",
+  "Johnny Cash|||American Recordings": "https://upload.wikimedia.org/wikipedia/en/8/87/JohnnyCashAmericanRecordingsalbumcover.jpg",
+  "My Bloody Valentine|||Loveless": "https://upload.wikimedia.org/wikipedia/en/0/08/My_Bloody_Valentine_-_Loveless.png",
+  "Neil Young|||Harvest Moon": "https://upload.wikimedia.org/wikipedia/en/1/18/HarvestMoon.jpg",
+  "TLC|||CrazySexyCool": "https://upload.wikimedia.org/wikipedia/en/a/a2/TLC_-_CrazySexyCool.png",
+  "Alanis Morissette|||Jagged Little Pill": "https://upload.wikimedia.org/wikipedia/en/b/b1/Alanis_Morissette_-_Jagged_Little_Pill.jpg",
+  "2Pac|||All Eyez on Me": "https://upload.wikimedia.org/wikipedia/en/7/7f/Alleyezonme.jpg",
+  "Massive Attack|||Protection": "https://upload.wikimedia.org/wikipedia/en/b/b3/Massive_Attack_-_Protection.png",
+  "Pearl Jam|||Vitalogy": "https://upload.wikimedia.org/wikipedia/en/8/87/Pearl-jam-vitalogy.jpg",
+  "Tom Waits|||Bone Machine": "https://upload.wikimedia.org/wikipedia/en/3/35/BoneMachine.jpg",
+  "Bruce Springsteen|||The Ghost of Tom Joad": "https://upload.wikimedia.org/wikipedia/en/5/50/Ghost_of_Tom_Joad.jpg",
+  "Jane's Addiction|||Ritual de lo Habitual": "https://upload.wikimedia.org/wikipedia/en/0/0e/Janes_Addiction_Ritual.jpg",
+  "LL Cool J|||Mama Said Knock You Out": "https://upload.wikimedia.org/wikipedia/en/6/63/LL_Cool_J_-_Mama_Said_Knock_You_Out.jpg",
+  "Depeche Mode|||Violator": "https://upload.wikimedia.org/wikipedia/en/a/a4/Depeche_Mode_-_Violator.jpg",
+  "Janet Jackson|||Janet.": "https://upload.wikimedia.org/wikipedia/en/4/4a/Janet_-_janet._cover.png",
+  "Cypress Hill|||Cypress Hill": "https://upload.wikimedia.org/wikipedia/en/b/b8/Cypress_Hill_-_Cypress_Hill.jpg",
+  "En Vogue|||Funky Divas": "https://upload.wikimedia.org/wikipedia/en/e/e4/EnVogueFunkyDivas.jpg",
+  "U2|||Zooropa": "https://upload.wikimedia.org/wikipedia/en/e/ef/Zooropa_cover.jpg",
+  "Raekwon|||Only Built 4 Cuban Linx": "https://upload.wikimedia.org/wikipedia/en/0/02/OnlyBuilt4CubanLinx.jpg",
+  "Mary J. Blige|||My Life": "https://upload.wikimedia.org/wikipedia/en/2/26/Mary_J._Blige_My_Life_Album.jpg",
+  "Sinead O Connor|||I Do Not Want What I Haven't Got": "https://upload.wikimedia.org/wikipedia/en/d/df/Sinead-o-connor-I-do-not-want-what-I-haven%27t-got-album-cover.jpg",
+  "Erykah Badu|||Baduizm": "https://upload.wikimedia.org/wikipedia/en/5/5c/Baduizm.jpg",
+  "The Notorious B.I.G.|||Life After Death": "https://upload.wikimedia.org/wikipedia/en/8/88/LifeAfterDeath.jpg",
+  "Counting Crows|||August and Everything After": "https://upload.wikimedia.org/wikipedia/en/0/08/Counting_Crows_-_August_and_Everything_After.jpg",
+  "R.E.M.|||Out of Time": "https://upload.wikimedia.org/wikipedia/en/f/f3/REM-outoftime.jpg",
+  "Wyclef Jean|||The Carnival": "https://upload.wikimedia.org/wikipedia/en/e/e4/TheCarnivalWyclefJean.jpg",
+  "Tricky|||Maxinquaye": "https://upload.wikimedia.org/wikipedia/en/8/82/Maxinquaye.jpg",
+  "DJ Shadow|||Endtroducing": "https://upload.wikimedia.org/wikipedia/en/9/9f/Endtroducing.gif",
+  "The Chemical Brothers|||Dig Your Own Hole": "https://upload.wikimedia.org/wikipedia/en/c/ca/The_Chemical_Brothers_-_Dig_Your_Own_Hole.jpg",
+  "Missy Elliott|||Supa Dupa Fly": "https://upload.wikimedia.org/wikipedia/en/d/d7/Missy_Elliott_-_Supa_Dupa_Fly.png",
+  "Rage Against the Machine|||The Battle of Los Angeles": "https://upload.wikimedia.org/wikipedia/en/a/a7/The_Battle_of_Los_Angeles.jpg",
+  "Belle and Sebastian|||If You're Feeling Sinister": "https://upload.wikimedia.org/wikipedia/en/9/9b/IfYoureFeelingSinister.jpg",
+  "The Rolling Stones|||Bridges to Babylon": "https://upload.wikimedia.org/wikipedia/en/7/7c/Bridges_to_babylon.jpg",
+  "Neil Young and Crazy Horse|||Ragged Glory": "https://upload.wikimedia.org/wikipedia/en/5/54/Ragged_Glory.jpg",
+  "Tom Petty and the Heartbreakers|||Into the Great Wide Open": "https://upload.wikimedia.org/wikipedia/en/8/82/TomPettyIntoGreatWideOpen.jpg",
+  "De La Soul|||De La Soul Is Dead": "https://upload.wikimedia.org/wikipedia/en/2/21/DeLaSoulIsDead.jpg",
+  "Yo La Tengo|||I Can Hear the Heart Beating as One": "https://upload.wikimedia.org/wikipedia/en/f/f8/YLT-ICanHearHeart.jpg",
+  "Air|||Moon Safari": "https://upload.wikimedia.org/wikipedia/en/3/thirty/Air_-_Moon_Safari.jpg",
+  "Aphex Twin|||Selected Ambient Works Volume II": "https://upload.wikimedia.org/wikipedia/en/7/7f/Aphex_Twin_-_Selected_Ambient_Works_Volume_II.png",
+  "Nirvana|||MTV Unplugged in New York": "https://upload.wikimedia.org/wikipedia/en/7/73/MTV_Unplugged_in_New_York_%28Nirvana%29.jpg",
+  "Billy Bragg and Wilco|||Mermaid Avenue": "https://upload.wikimedia.org/wikipedia/en/3/3a/MermaidAvenue.jpg",
+  "The Magnetic Fields|||69 Love Songs": "https://upload.wikimedia.org/wikipedia/en/0/0b/Themf69lovesongs.jpg",
+  "Buena Vista Social Club|||Buena Vista Social Club": "https://upload.wikimedia.org/wikipedia/en/b/b3/BuenaVistaSocialClub.jpg",
+  "Luna|||Penthouse": "https://upload.wikimedia.org/wikipedia/en/8/8c/LunaPenthouse.jpg",
+  "Moby|||Everything Is Wrong": "https://upload.wikimedia.org/wikipedia/en/4/4f/Moby_EverythingIsWrong.jpg",
+  "Weezer|||Pinkerton": "https://upload.wikimedia.org/wikipedia/en/2/2d/Pinkerton_%28album%29_cover.jpg",
+  "Oasis|||Definitely Maybe": "https://upload.wikimedia.org/wikipedia/en/d/d0/DefinitelyMaybe.jpg",
+  "Bjork|||Post": "https://upload.wikimedia.org/wikipedia/en/7/75/Post_%28Bj%C3%B6rk_album_-_cover_art%29.jpg",
+  "The Flaming Lips|||The Soft Bulletin": "https://upload.wikimedia.org/wikipedia/en/3/38/TheSoftBulletin.jpg",
+  "Pixies|||Bossanova": "https://upload.wikimedia.org/wikipedia/en/0/0b/Pixies-Bossanova.jpg",
+  "Aaliyah|||One in a Million": "https://upload.wikimedia.org/wikipedia/en/8/8d/Aaliyah-OneInAMillion.jpg",
+  "The Breeders|||Last Splash": "https://upload.wikimedia.org/wikipedia/en/8/8c/The_Breeders_-_Last_Splash.jpg",
+  "Guided by Voices|||Bee Thousand": "https://upload.wikimedia.org/wikipedia/en/8/87/BeethousandGBV.jpg",
+  "Fiona Apple|||Tidal": "https://upload.wikimedia.org/wikipedia/en/4/4c/Fiona_Apple_-_Tidal.jpg",
+  "The Smashing Pumpkins|||Mellon Collie and the Infinite Sadness": "https://upload.wikimedia.org/wikipedia/en/0/0d/Mellon_Collie_and_the_Infinite_Sadness.jpg",
+  "Pulp|||Different Class": "https://upload.wikimedia.org/wikipedia/en/8/83/Pulp_different_class.jpg",
+  "Marilyn Manson|||Antichrist Superstar": "https://upload.wikimedia.org/wikipedia/en/a/ac/Marilyn_Manson_-_Antichrist_Superstar.jpg",
+};
+
+function loadArt(el, artist, album) {
+  var key = artist + '|||' + album;
+  var directUrl = IMG_URLS[key];
+  if (directUrl) {
+    el.src = directUrl;
+    el.style.opacity = '1';
+    el.onerror = function() {
+      el.onerror = null;
+      loadArtSearch(el, artist, album);
+    };
+    return;
+  }
+  loadArtSearch(el, artist, album);
+}
+
+function loadArtSearch(el, artist, album) {
+  fetch('https://itunes.apple.com/search?term=' + encodeURIComponent(album + ' ' + artist) + '&media=music&entity=album&limit=5&country=us')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g,' ').trim().split(' ')[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace('100x100bb','600x600bb'));
+      else throw new Error('no artwork');
+    })
+    .catch(function() {
+      fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&format=json')
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === 'extralarge') { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === 'large') { best = imgs[j]; break; } }
+          var u = best ? best['#text'] : '';
+          if (u && u.length > 10 && u.indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+
+
+
+
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = '1';
+  el.onerror = function() { el.style.opacity = '0.07'; el.onerror = null; };
+}
+
+
+
+
+
+loadArt(document.getElementById('hero-cover'), 'Nirvana', 'Nevermind');
+
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById('tracklist');
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement('div');
+  row.className = 'track-row';
+  row.innerHTML =
+    '<div class="track-num">' + num + '</div>' +
+    '<img class="track-cover" data-artist="' + encodeURIComponent(artist) + '" data-album="' + encodeURIComponent(title) + '" src="" style="opacity:0" alt="' + title.replace(/"/g,'&quot;') + '">' +
+    '<div style="min-width:0"><div class="track-name">' + title + '</div><div class="track-artist">' + artist + '</div></div>' +
+    '<div class="track-year">' + year + '</div>' +
+    '<div class="track-scrobbles loading" data-lfm-artist="' + encodeURIComponent(artist) + '" data-lfm-album="' + encodeURIComponent(title) + '">—</div>';
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: '800px' });
+var covers = document.querySelectorAll('.track-cover');
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || '');
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || '');
+  var key = artist + '|||' + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&username=' + LFM_USER + '&format=json')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = '—'; el.classList.remove('loading'); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove('loading');
+  el.textContent = count > 0 ? count.toLocaleString() : '0';
+  if (!count) el.classList.add('zero');
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: '400px' });
+var scrobbles = document.querySelectorAll('.track-scrobbles');
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+
+
+
+
+</script>
+</body>
+</html>

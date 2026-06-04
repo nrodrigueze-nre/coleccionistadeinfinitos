@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 Mejores Álbumes de 2022 — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,58px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #1a1a1a}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#555;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:13px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300}
+.track-year{font-size:12px;color:#888;font-weight:300;text-align:right}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr}
+}
+
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#2a2a2a}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2022</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-2022-list-1234632387/" target="_blank" class="page-title">100 MEJORES ÁLBUMES DE 2022</a>
+  <p class="page-sub">De Beyoncé y Bad Bunny a Kendrick Lamar y Rosalía · La lista más diversa de la historia de la revista · 100 álbumes</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Renaissance – Beyoncé">
+    <p class="cover-cap">ROLLING STONE · 2022</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Cada año parece que una superestrella tras otra nos deja boquiabiertos con un lanzamiento que marca época. En 2022, Beyoncé puso fin a seis años de silencio solista con una magistral reinvención de la música dance; Bad Bunny celebró otro año como el artista más escuchado del mundo con su último smash arrasador de records; Taylor Swift dejó la cabaña; Harry Styles nos invitó a su casa; Drake lanzó no uno sino dos blockbusters; Pusha T nos recordó que nadie rapea sobre sus temas favoritos tan bien como él. Fue un año muy grande para álbumes muy grandes.</p>
+    <p class="rtext">Pero también fue un tiempo para que artistas emergentes dieran saltos de fe impresionantes. Rosalía, King Princess, Omar Apollo y Bartees Strange son solo algunos de los que nos ganaron la atención como actos nuevos en los últimos años y luego hicieron cosas verdaderamente asombrosas con el foco que habían ganado. El resultado es la lista de fin de año más diversa en la historia de Rolling Stone — un panorama que va del pop de estadio al afrobeats, del hip-hop del South Side de Chicago al flamenco posmoderno, del country texano al R&B de vanguardia, pasando por K-pop, reggaetón y rock de garaje.</p>
+  </div>
+</section>
+
+<!-- > 50 álbumes → reseñas de los primeros 10 -->
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Renaissance">
+    <div>
+      <div class="feat-title">Renaissance</div>
+      <div class="feat-artist">Beyoncé</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">El regreso solista más impactante del año fue también una declaración de amor a la música dance en toda su genealogía: del house de Chicago al ballroom de Nueva York, del disco al afrobeats, pasando por el dance-hall y el club europeo. Beyoncé construyó Renaissance como un tributo a las comunidades negras y queer que inventaron estas formas musicales, y al mismo tiempo entregó su primer hit número uno en solitario en más de una década con "Break My Soul." La alineación de la aclamación crítica universal con el éxito comercial masivo fue el acontecimiento musical del año — el momento en que el mundo anglosajón finalmente reconoció lo que Beyoncé lleva décadas construyendo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Un Verano Sin Ti">
+    <div>
+      <div class="feat-title">Un Verano Sin Ti</div>
+      <div class="feat-artist">Bad Bunny</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">Cuando Bad Bunny hacía <em>Un Verano Sin Ti</em> quería capturar sus recuerdos de los veranos calurosos en Puerto Rico y traducir esa nostalgia — y su profundo amor por la isla — en canción. Lo logró con creces: hay atardeceres cálidos en la melodía soñadora de "Otro Atardecer" y hay juerga post-playa en las líneas de mambo de "Después de la Playa." Pero ni él esperaba cuánto cambiaría este álbum arriesgado y políticamente cargado la historia de la música: <em>Un Verano Sin Ti</em> se convirtió en el álbum más escuchado globalmente en 2022 y en el primer LP en español nominado al Grammy al Álbum del Año.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Midnights">
+    <div>
+      <div class="feat-title">Midnights</div>
+      <div class="feat-artist">Taylor Swift</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">Taylor Swift dejó la cabaña del folklore y el evermore y volvió a los sintetizadores — pero no al pop de arena de <em>1989</em>, sino a algo más oscuro, más íntimo y más lúcido. <em>Midnights</em> es un álbum de insomnio, de las tres de la madrugada, de los pensamientos que nadie quisiera tener pero todos reconocen. Producido con Jack Antonoff, es el disco más vulnerable y más honesto de Swift, y también el más exitoso: los diez primeros puestos del Billboard Hot 100 en su semana de lanzamiento, un hito sin precedentes en la historia de la música.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Motomami">
+    <div>
+      <div class="feat-title">Motomami</div>
+      <div class="feat-artist">Rosalía</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">Tres años después de que <em>El Mal Querer</em> le abriera las puertas del mundo, Rosalía regresó con un álbum que tomó todo lo que esa obra prometía y lo multiplicó por diez. <em>Motomami</em> es un collage caótico y brillante de reggaetón, bulerias, corridos, R&B y electronica experimental cosido con una habilidad compositiva y una inventiva sonora que no tiene parangón en el pop contemporáneo. Ganó el Latin Grammy al Álbum del Año y fue universalmente reconocido como el disco más ambicioso e irreducible del año — un objeto artístico que desafía todas las categorías existentes.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Harry's House">
+    <div>
+      <div class="feat-title">Harry's House</div>
+      <div class="feat-artist">Harry Styles</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">Harry Styles tomó el pop de baile y el soft rock de los setenta y los mezcló en un álbum que suena como una casa abierta un domingo por la tarde: cálido, generoso, ligeramente ebrio de buena voluntad. <em>Harry's House</em> es el disco más cohesivo de su carrera solista, impulsado por "As It Was" — uno de los singles más omnipresentes del año — y lleno de momentos de una ternura y una gracilidad que pocos artistas de su magnitud se permiten. Demuestra que la simplicidad, ejecutada con suficiente maestría y amor, puede ser el acto más radical.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="It's Almost Dry">
+    <div>
+      <div class="feat-title">It's Almost Dry</div>
+      <div class="feat-artist">Pusha T</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">Nadie rapea sobre sus temas favoritos tan bien como Pusha T rapea sobre los suyos — y en <em>It's Almost Dry</em> está en el pico de sus poderes. Producido enteramente por Pharrell Williams y Kanye West en alternancia (cada uno hace la mitad del disco), el álbum es un ejercicio de economía brutal: sin una sola nota de más, sin un verso desperdiciado, con una precisión lírica que hace que cada metáfora sobre el crack y el lujo suene como poesía clásica. Es su mejor trabajo desde <em>My Name Is My Name</em> — y para muchos críticos, el mejor rap puro del año.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Hold on Baby">
+    <div>
+      <div class="feat-title">Hold on Baby</div>
+      <div class="feat-artist">King Princess</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">Mikaela Straus tomó los dos años que separaron este álbum de su debut y los usó para construir algo verdaderamente suyo: un disco de rock alternativo que bebe del glam, del britpop y del dream-pop sin sonar a ninguno de ellos exactamente. <em>Hold on Baby</em> es un álbum de ruptura — no solo temáticamente, sino estéticamente — en el que King Princess encuentra una voz que es inconfundiblemente la suya. La guitarra afilada, las letras que mezclan humor negro y vulnerabilidad a partes iguales, y la producción de Mark Ronson crean un conjunto de una madurez artística que superó todas las expectativas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Caprisongs">
+    <div>
+      <div class="feat-title">Caprisongs</div>
+      <div class="feat-artist">FKA Twigs</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">FKA Twigs sorprendió a todo el mundo en enero de 2022 con un mixtape de danza y afrobeats que no se parecía a nada que hubiera hecho antes — y que resultó ser uno de los proyectos más frescos y más alegres del año. <em>Caprisongs</em> es una colección de canciones de club y de paseo nocturno, construidas sobre ritmos de Jersey club y amapiano, con colaboraciones de Pa Salieu, Daniel Caesar y The Weeknd. Es el disco más accesible de Twigs sin dejar de ser completamente experimental — la prueba de que puede hacer cualquier cosa que se proponga.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Jack in the Box">
+    <div>
+      <div class="feat-title">Jack in the Box</div>
+      <div class="feat-artist">J-Hope</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">El primero de los miembros de BTS en lanzar un álbum solista de estudio entregó algo que nadie esperaba de Jung Hoseok: un disco oscuro, distorsionado y desafiante que tomaba influencias del rock alternativo y el punk para explorar la ansiedad, la ambición y la sombra detrás de la figura pública del "sunshine" de BTS. <em>Jack in the Box</em> es la declaración de independencia artística más audaz que ningún idol del K-pop había hecho hasta ese momento, y su actuación en el festival Lollapalooza como primer acto coreano en encabezar el festival lo consagró como una figura global por derecho propio.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Wet Leg">
+    <div>
+      <div class="feat-title">Wet Leg</div>
+      <div class="feat-artist">Wet Leg</div>
+      <div class="feat-meta"><span class="feat-pill">2022</span></div>
+      <p class="feat-rev">El dúo de la Isla de Wight apareció de la nada en 2021 con "Chaise Longue," una canción de post-punk llena de humor seco y guitarras afiladas, y en 2022 convirtió ese impulso en uno de los debuts más celebrados de la década. <em>Wet Leg</em> captura la ennui de la veintena con una precisión y una ligereza que recuerda a los mejores Pulp — canciones sobre la incomodidad social, el deseo y el aburrimiento envueltas en riffs que engancha desde el primer segundo. Ganó el Grammy al Mejor Álbum Alternativo y se convirtió en uno de los nombres del año de manera completamente merecida.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Los 100 álbumes</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 100 ÁLBUMES · 2022</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-albums-2022-list-1234632387/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>
+var ALBUMS = [
+  [1,"Renaissance","Beyoncé",2022],
+  [2,"Un Verano Sin Ti","Bad Bunny",2022],
+  [3,"Midnights","Taylor Swift",2022],
+  [4,"Motomami","Rosalía",2022],
+  [5,"Harrys House","Harry Styles",2022],
+  [6,"Its Almost Dry","Pusha T",2022],
+  [7,"Hold on Baby","King Princess",2022],
+  [8,"Caprisongs","FKA Twigs",2022],
+  [9,"Jack in the Box","J-Hope",2022],
+  [10,"Wet Leg","Wet Leg",2022],
+  [11,"Mr. Morale and the Big Steppers","Kendrick Lamar",2022],
+  [12,"Blue Rev","Alvvays",2022],
+  [13,"Lucifer on the Sofa","Spoon",2022],
+  [14,"Gemini Rights","Steve Lacy",2022],
+  [15,"Ivory","Omar Apollo",2022],
+  [16,"Farm to Table","Bartees Strange",2022],
+  [17,"Traumazine","Megan Thee Stallion",2022],
+  [18,"Big Time","Angel Olsen",2022],
+  [19,"Ramona Park Broke My Heart","Vince Staples",2022],
+  [20,"The Hardest Part","Noah Cyrus",2022],
+  [21,"Palomino","Miranda Lambert",2022],
+  [22,"Honestly Nevermind","Drake",2022],
+  [23,"Crash","Charli XCX",2022],
+  [24,"Legendaddy","Daddy Yankee",2022],
+  [25,"Born Pink","Blackpink",2022],
+  [26,"More Love Less Ego","Wizkid",2022],
+  [27,"God Save the Animals","Alex G",2022],
+  [28,"Dirt Femme","Tove Lo",2022],
+  [29,"SICK!","Earl Sweatshirt",2022],
+  [30,"Broken Hearts Club","Syd",2022],
+  [31,"Versions of Me","Anitta",2022],
+  [32,"Wasteland","Brent Faiyaz",2022],
+  [33,"American Heartbreak","Zach Bryan",2022],
+  [34,"Skinty Fia","Fontaines D.C.",2022],
+  [35,"Dragon New Warm Mountain I Believe in You","Big Thief",2022],
+  [36,"Familia","Camila Cabello",2022],
+  [37,"Dawn FM","The Weeknd",2022],
+  [38,"Gifted","Koffee",2022],
+  [39,"Mr. Money With the Vibe","Asake",2022],
+  [40,"Subaru Boys","Cruel Santino",2022],
+  [41,"Headful of Sugar","Sunflower Bean",2022],
+  [42,"Sometimes Forever","Soccer Mommy",2022],
+  [43,"Bien o Mal","Trueno",2022],
+  [44,"Emails I Cant Send","Sabrina Carpenter",2022],
+  [45,"MUNA","MUNA",2022],
+  [46,"New Jeans","NewJeans",2022],
+  [47,"Laughing So Hard It Hurts","Mavi",2022],
+  [48,"Cruel Country","Wilco",2022],
+  [49,"Surrender","Maggie Rogers",2022],
+  [50,"Squeeze","Sasami",2022],
+  [51,"Formula Vol. 3","Romeo Santos",2022],
+  [52,"Watch My Moves","Kurt Vile",2022],
+  [53,"Only Built for Infinity Links","Quavo and Takeoff",2022],
+  [54,"Cool It Down","Yeah Yeah Yeahs",2022],
+  [55,"Llego El Domi","Kiko El Crazy",2022],
+  [56,"Versions of Modern Performance","Horsegirl",2022],
+  [57,"The Parts I Dread","Pictoria Vark",2022],
+  [58,"Age Sex Location","Ari Lennox",2022],
+  [59,"Saturno","Rauw Alejandro",2022],
+  [60,"Laurel Hell","Mitski",2022],
+  [61,"7220","Lil Durk",2022],
+  [62,"Tinta y Tiempo","Jorge Drexler",2022],
+  [63,"Girls Night Out","Babyface",2022],
+  [64,"Ay!","Lucretia Dalt",2022],
+  [65,"A Light for Attracting Attention","The Smile",2022],
+  [66,"Her Loss","Drake",2022],
+  [67,"Expert in a Dying Field","The Beths",2022],
+  [68,"Marchita","Silvana Estrada",2022],
+  [69,"Esquemas","Becky G",2022],
+  [70,"Lindeville","Ashley McBryde",2022],
+  [71,"Hit With the Most","Ribbon Stage",2022],
+  [72,"I Never Liked You","Future",2022],
+  [73,"Bell Bottom Country","Lainey Wilson",2022],
+  [74,"Few Good Things","Saba",2022],
+  [75,"Hold the Girl","Rina Sawayama",2022],
+  [76,"777","Latto",2022],
+  [77,"Old-Time Folks","Lee Bains",2022],
+  [78,"Give or Take","Giveon",2022],
+  [79,"A Legacy of Rentals","Craig Finn",2022],
+  [80,"Forgiveness","Girlpool",2022],
+  [81,"Superache","Conan Gray",2022],
+  [82,"The Forever Story","JID",2022],
+  [83,"Multitude","Stromae",2022],
+  [84,"Ashas Awakening","Raveena",2022],
+  [85,"Lighten Up","Erin Rae",2022],
+  [86,"Z1","Zora Jones",2022],
+  [87,"Before You Go","Blxst",2022],
+  [88,"Loose Future","Courtney Marie Andrews",2022],
+  [89,"En Letra de Otro","Goyo",2022],
+  [90,"Third Times the Charm","Protoje",2022],
+  [91,"Special","Lizzo",2022],
+  [92,"Good Person","Ingrid Andress",2022],
+  [93,"Visitor","Empath",2022],
+  [94,"OUT SIDE","Runkus",2022],
+  [95,"De Todas las Flores","Natalia Lafourcade",2022],
+  [96,"Back Home","Big Joanie",2022],
+  [97,"Reason in Decline","Archers of Loaf",2022],
+  [98,"Boat Songs","MJ Lenderman",2022],
+  [99,"Loose Future","Courtney Marie Andrews",2022],
+  [100,"Unlimited Love","Red Hot Chili Peppers",2022]
+];
+
+var FEAT = [
+  ['fc-1','Beyoncé','Renaissance'],
+  ['fc-2','Bad Bunny','Un Verano Sin Ti'],
+  ['fc-3','Taylor Swift','Midnights'],
+  ['fc-4','Rosalía','Motomami'],
+  ['fc-5','Harry Styles','Harrys House'],
+  ['fc-6','Pusha T','Its Almost Dry'],
+  ['fc-7','King Princess','Hold on Baby'],
+  ['fc-8','FKA Twigs','Caprisongs'],
+  ['fc-9','J-Hope','Jack in the Box'],
+  ['fc-10','Wet Leg','Wet Leg']
+];
+
+var LFM_KEY  = 'b25b959554ed76058ac220b7b2e0a026';
+var LFM_USER = 'lartzrodriguez';
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = '1';
+  el.onerror = function() { el.style.opacity = '0.07'; el.onerror = null; };
+}
+
+function loadArt(el, artist, album) {
+  fetch('https://itunes.apple.com/search?term=' + encodeURIComponent(album + ' ' + artist) + '&media=music&entity=album&limit=5&country=us')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g,' ').trim().split(' ')[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) { setImg(el, match.artworkUrl100.replace('100x100bb','400x400bb')); }
+      else throw new Error('no result');
+    })
+    .catch(function() {
+      fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&format=json')
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.album && d.album.image) ? d.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === 'extralarge') best = imgs[i]; }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === 'large') best = imgs[j]; }
+          var imgUrl = best ? best['#text'] : '';
+          if (imgUrl && imgUrl.length > 10 && imgUrl.indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0) setImg(el, imgUrl);
+        }).catch(function() {});
+    });
+}
+
+loadArt(document.getElementById('hero-cover'), 'Beyoncé', 'Renaissance');
+
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+
+var container = document.getElementById('tracklist');
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement('div');
+  row.className = 'track-row';
+  row.innerHTML =
+    '<div class="track-num">' + num + '</div>' +
+    '<img class="track-cover" data-artist="' + encodeURIComponent(artist) + '" data-album="' + encodeURIComponent(title) + '" src="" style="opacity:0" alt="' + title.replace(/"/g,'&quot;') + '">' +
+    '<div style="min-width:0"><div class="track-name">' + title + '</div><div class="track-artist">' + artist + '</div></div>' +
+    '<div class="track-year">' + year + '</div>' +
+    '<div class="track-scrobbles loading" data-lfm-artist="' + encodeURIComponent(artist) + '" data-lfm-album="' + encodeURIComponent(title) + '">—</div>';
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: '800px' });
+var covers = document.querySelectorAll('.track-cover');
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || '');
+  var album  = decodeURIComponent(el.dataset.lfmAlbum  || '');
+  var key = artist + '|||' + album;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&username=' + LFM_USER + '&format=json')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
+      if (!Array.isArray(tracks)) tracks = [tracks];
+      var total = 0;
+      for (var i = 0; i < tracks.length; i++) total += parseInt(tracks[i].userplaycount || 0, 10);
+      var fallback = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[key] = total > 0 ? total : fallback;
+      renderScrobble(el, lfmCache[key]);
+    })
+    .catch(function() { el.textContent = '—'; el.classList.remove('loading'); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove('loading');
+  el.textContent = count > 0 ? count.toLocaleString() : '0';
+  if (!count) el.classList.add('zero');
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: '400px' });
+var scrobbles = document.querySelectorAll('.track-scrobbles');
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+</script>
+</body>
+</html>
