@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>10 Años de Apple Music: Las Canciones Más Escuchadas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4.5vw,56px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:52px 50px 1fr 60px 100px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:52px 50px 1fr 60px 100px;gap:1rem;align-items:center;padding:.5rem 0;border-bottom:1px solid #161616}
+.track-row:hover{background:#0f0f0f}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:44px;height:44px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#aaa;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-year{font-size:11px;color:#888;font-weight:300;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#444;font-weight:300}
+.track-scrobbles.zero{color:#333}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:5px}
+.feat-cover{width:62px;height:62px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:2px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:7px}
+.feat-meta{margin-bottom:7px}
+.feat-pill{display:inline-block;font-size:10px;color:#aaa;border:1px solid #555;padding:1px 8px;border-radius:99px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa;transition:color .2s}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}.cover-img{width:130px;height:130px}
+  .track-header,.track-row{grid-template-columns:36px 40px 1fr}
+  .track-header span:last-child,.track-header span:nth-last-child(2),.track-year,.track-scrobbles{display:none}
+}
+</style>
+</head>
+<body>
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">APPLE MUSIC</span>
+    <span class="badge-year">2015 – 2025</span>
+  </div>
+  <span class="page-title">10 AÑOS DE APPLE MUSIC: LAS CANCIONES MÁS ESCUCHADAS</span>
+  <p class="page-sub">Las 500 canciones más reproducidas en la primera década de Apple Music &middot; 500 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Shape of You – Ed Sheeran">
+    <p class="cover-cap">APPLE MUSIC &middot; 2025</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Para celebrar su décimo aniversario, Apple Music reveló las 500 canciones más escuchadas globalmente desde que la plataforma se lanzó en 2015. Publicadas en tandas diarias de 100 temas durante cinco días, fue un movimiento inusual de una plataforma que normalmente mantiene sus datos de streaming en privado, dándoles a artistas y oyentes una mirada sin precedentes a una década de hábitos de escucha en más de 100 millones de canciones.</p>
+    <p class="rtext">"Shape of You" de Ed Sheeran encabeza la lista, habiendo pasado más de 1.000 días en el número uno en al menos un país y estableciendo el récord histórico de mayor debut de un artista pop en el primer día en Apple Music. Drake domina con 27 entradas como artista principal (39 incluyendo colaboraciones), mientras que Taylor Swift lidera a las artistas femeninas con 14 canciones y "Cruel Summer" en el puesto 57. Billie Eilish tiene la mayor presencia alternativa con nueve entradas, y BTS es el único acto de K-pop con múltiples canciones. La única canción navideña: "All I Want for Christmas Is You" de Mariah Carey en el puesto 100, y sí — Baby Shark en el puesto 351.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Shape of You">
+    <div>
+      <div class="feat-title">Shape of You</div>
+      <div class="feat-artist">Ed Sheeran</div>
+      <div class="feat-meta"><span class="feat-pill">2017</span></div>
+      <p class="feat-rev">La canción más escuchada en la historia de Apple Music no lo es por accidente: "Shape of You" fue un ejercicio de ingeniería pop casi científico, combinando marimba afropop, loops de guitarra acústica y una letra de conquista romántica que resultó irresistible en cualquier idioma. Sheeran batió el récord de mayor debut en el primer día en la plataforma, y luego pasó más de 1.000 días siendo número uno en al menos un país del mundo. Una obra maestra de eficiencia melódica que define lo que significa dominar el streaming moderno.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Blinding Lights">
+    <div>
+      <div class="feat-title">Blinding Lights</div>
+      <div class="feat-artist">The Weeknd</div>
+      <div class="feat-meta"><span class="feat-pill">2019</span></div>
+      <p class="feat-rev">El synth-pop de los ochenta nunca había sonado tan urgente ni tan fresco como en "Blinding Lights." The Weeknd tomó los teclados de Giorgio Moroder, los basslines de New Order y la intensidad vocal de Michael Jackson y los transformó en algo completamente suyo — una canción sobre la euforia y la desesperación que pasó más de 180 días en el top 10 del Global Daily 100 de Apple Music. Es el mayor logro de The Weeknd en streaming y uno de los singles más influyentes de la era moderna.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="God's Plan">
+    <div>
+      <div class="feat-title">God's Plan</div>
+      <div class="feat-artist">Drake</div>
+      <div class="feat-meta"><span class="feat-pill">2018</span></div>
+      <p class="feat-rev">La canción de hip-hop más escuchada en la historia de Apple Music es también uno de los mayores ejercicios de auto-mitología de la historia del rap. Drake construyó "God's Plan" sobre un sample oscuro y una producción minimalista que dejaba todo el espacio del mundo para su voz — tranquila, casi murmurante, absolutamente segura de sí misma. El video, en el que reparte un millón de dólares entre comunidades de Miami, convirtió la canción en un evento cultural que trascendió la música por semanas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Sunflower">
+    <div>
+      <div class="feat-title">Sunflower (Spider-Man: Into the Spider-Verse)</div>
+      <div class="feat-artist">Post Malone & Swae Lee</div>
+      <div class="feat-meta"><span class="feat-pill">2018</span></div>
+      <p class="feat-rev">Nacida como banda sonora de película animada, "Sunflower" demostró que el contexto de un tema puede multiplicar su alcance exponencialmente. Post Malone y Swae Lee destilaron aquí su fórmula perfecta: melodías que flotan entre el hip-hop y el pop alternativo, voces que se complementan con una naturalidad asombrosa, y una ligereza que oculta una técnica impecable. Se convirtió en una de las canciones más sindicadas de la era del streaming, apareciendo en millones de playlists simultáneamente en todo el mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="rockstar">
+    <div>
+      <div class="feat-title">rockstar</div>
+      <div class="feat-artist">Post Malone ft. 21 Savage</div>
+      <div class="feat-meta"><span class="feat-pill">2017</span></div>
+      <p class="feat-rev">"Rockstar" llegó en el momento exacto en que Post Malone dejó de ser una curiosidad viral para convertirse en el artista más omnipresente del pop. La canción mezcla el narcisismo del rock clásico con la estética del trap moderno en una síntesis que resultó perfecta para el oído de 2017: oscura, lujosa, casi cinematográfica. 21 Savage aporta la frialdad necesaria para anclar el ego desbordante de Post, y juntos crearon uno de los dúos más memorables de la era del mumble rap.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="One Dance">
+    <div>
+      <div class="feat-title">One Dance</div>
+      <div class="feat-artist">Drake ft. Wizkid & Kyla</div>
+      <div class="feat-meta"><span class="feat-pill">2016</span></div>
+      <p class="feat-rev">Con "One Dance," Drake demostró que podía apropiarse de cualquier sonido del planeta y hacerlo propio sin que nadie le dijera nada. La canción toma el afrobeats de Wizkid, el sample de una canción de dancehall de Kyla y los envuelve en una producción de Nineteen85 que suena a atardecer en la playa — indolente, sensual y perfectamente calculada para el streaming masivo. Fue la primera canción en la historia en alcanzar mil millones de streams en Spotify, y en Apple Music su presencia ha sido igualmente estratosférica.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="SICKO MODE">
+    <div>
+      <div class="feat-title">SICKO MODE</div>
+      <div class="feat-artist">Travis Scott</div>
+      <div class="feat-meta"><span class="feat-pill">2018</span></div>
+      <p class="feat-rev">Estructurado en tres segmentos completamente distintos que se encadenan sin aviso, "SICKO MODE" es la mayor declaración de intenciones de Travis Scott como artista: un rechazo total a la convención de la canción de tres minutos en favor de una experiencia sonora que cambia de forma, tempo y mood cuando le da la gana. El sample de "In a Minute" de Stevie Wonder, los cambios de beat abruptos y la aparición de Drake en el segmento central convirtieron el tema en el tipo de canción que se discute en foros de producción tanto como en reseñas de música pop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Perfect">
+    <div>
+      <div class="feat-title">Perfect</div>
+      <div class="feat-artist">Ed Sheeran</div>
+      <div class="feat-meta"><span class="feat-pill">2017</span></div>
+      <p class="feat-rev">Si "Shape of You" es la demostración de la habilidad técnica de Ed Sheeran, "Perfect" es la prueba de su alcance emocional. Una balada de boda en la gran tradición del pop romántico, con acordes de guitarra que recuerdan a los clásicos de los ochenta y una letra tan directa y sincera que resulta casi desconcertante viniendo de un artista que domina tan bien el artificio. La versión con Beyoncé la convirtió en el dueto de bodas más popular de la década, y en Apple Music acumuló reproducciones con una constancia notable durante años.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="No Guidance">
+    <div>
+      <div class="feat-title">No Guidance</div>
+      <div class="feat-artist">Chris Brown ft. Drake</div>
+      <div class="feat-meta"><span class="feat-pill">2019</span></div>
+      <p class="feat-rev">Que "No Guidance" haya llegado al número 9 de la lista de todos los tiempos de Apple Music dice mucho sobre el poder residual de Chris Brown como figura de streaming, independientemente de cualquier otra consideración. La canción es un R&B suntuoso, de producción impecable, que toma lo mejor de la tradición soul y lo actualiza con el minimalismo líquido que caracteriza la era del streaming. La colaboración con Drake fue el catalizador perfecto: dos de los artistas más escuchados de la plataforma juntos en una canción diseñada para el bucle infinito.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="bad guy">
+    <div>
+      <div class="feat-title">bad guy</div>
+      <div class="feat-artist">Billie Eilish</div>
+      <div class="feat-meta"><span class="feat-pill">2019</span></div>
+      <p class="feat-rev">La primera artista alternativa en el top 10 de la historia de Apple Music llegó con una canción que subvertía todas las expectativas del pop mainstream: producción de su hermano Finneas construida sobre un bass casi inaudible, letra irónica sobre los clichés del "chico malo," y la voz de Eilish susurrando directamente al oído del oyente. "bad guy" hizo lo imposible — derrocó a "Old Town Road" de Lil Nas X del número uno del Billboard Hot 100 y convenció al mercado masivo de que el art-pop también podía arrasar en streaming.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">500 Canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Scrobbles</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">APPLE MUSIC &middot; 500 CANCIONES &middot; 2015–2025</span>
+  <a href="https://music.apple.com/us/playlist/10-years-of-apple-music-top-songs/pl.c125e4b2998a4015abbe6b9ae90d5479" target="_blank" class="foot-link">Abrir en Apple Music ↗</a>
+</footer>
+
+<script>
+// Full 500 — sourced from @chartdata (X/Twitter) and confirmed via Variety, 9to5Mac, AlbumOfTheYear
+const songs = [
+  [1,"Shape of You","Ed Sheeran",2017],
+  [2,"Blinding Lights","The Weeknd",2019],
+  [3,"God's Plan","Drake",2018],
+  [4,"Sunflower (Spider-Man: Into the Spider-Verse)","Post Malone & Swae Lee",2018],
+  [5,"rockstar","Post Malone ft. 21 Savage",2017],
+  [6,"One Dance","Drake ft. Wizkid & Kyla",2016],
+  [7,"SICKO MODE","Travis Scott",2018],
+  [8,"Perfect","Ed Sheeran",2017],
+  [9,"No Guidance","Chris Brown ft. Drake",2019],
+  [10,"bad guy","Billie Eilish",2019],
+  [11,"Closer","The Chainsmokers ft. Halsey",2016],
+  [12,"Starboy","The Weeknd ft. Daft Punk",2016],
+  [13,"goosebumps","Travis Scott ft. Kendrick Lamar",2016],
+  [14,"STAY","The Kid LAROI & Justin Bieber",2021],
+  [15,"HUMBLE.","Kendrick Lamar",2017],
+  [16,"Dance Monkey","Tones and I",2019],
+  [17,"Freestyle","Lil Baby",2017],
+  [18,"The Box","Roddy Ricch",2019],
+  [19,"7 rings","Ariana Grande",2019],
+  [20,"Someone You Loved","Lewis Capaldi",2018],
+  [21,"Nice For What","Drake",2018],
+  [22,"thank u, next","Ariana Grande",2018],
+  [23,"Drip Too Hard","Lil Baby & Gunna",2018],
+  [24,"Unforgettable","French Montana ft. Swae Lee",2017],
+  [25,"In My Feelings","Drake",2018],
+  [26,"Nonstop","Drake",2018],
+  [27,"No Role Modelz","J. Cole",2015],
+  [28,"Circles","Post Malone",2019],
+  [29,"Lucid Dreams","Juice WRLD",2018],
+  [30,"I Like It","Cardi B ft. Bad Bunny & J Balvin",2018],
+  [31,"XO TOUR Llif3","Lil Uzi Vert",2017],
+  [32,"Going Bad","Meek Mill ft. Drake",2019],
+  [33,"HIGHEST IN THE ROOM","Travis Scott",2019],
+  [34,"Dynamite","BTS",2020],
+  [35,"Better Now","Post Malone",2018],
+  [36,"Congratulations","Post Malone ft. Quavo",2016],
+  [37,"Mask Off","Future",2017],
+  [38,"For The Night","Pop Smoke ft. Lil Baby & DaBaby",2020],
+  [39,"Yes Indeed","Drake & Lil Baby",2018],
+  [40,"Sum 2 Prove","Lil Baby",2020],
+  [41,"Passionfruit","Drake",2017],
+  [42,"WAIT FOR U","Future ft. Drake & Tems",2022],
+  [43,"Believer","Imagine Dragons",2017],
+  [44,"Work","Rihanna ft. Drake",2016],
+  [45,"Don't","Bryson Tiller",2015],
+  [46,"New Rules","Dua Lipa",2017],
+  [47,"Wow.","Post Malone",2019],
+  [48,"Havana","Camila Cabello ft. Young Thug",2017],
+  [49,"Life Is Good","Future ft. Drake",2020],
+  [50,"lovely","Billie Eilish & Khalid",2018],
+  [51,"Die For You","The Weeknd",2016],
+  [52,"Bank Account","21 Savage",2017],
+  [53,"Something Just Like This","The Chainsmokers & Coldplay",2017],
+  [54,"Despacito","Luis Fonsi ft. Daddy Yankee",2017],
+  [55,"LOVE.","Kendrick Lamar ft. Zacari",2017],
+  [56,"Anti-Hero","Taylor Swift",2022],
+  [57,"Cruel Summer","Taylor Swift",2019],
+  [58,"good 4 u","Olivia Rodrigo",2021],
+  [59,"As It Was","Harry Styles",2022],
+  [60,"Old Town Road","Lil Nas X ft. Billy Ray Cyrus",2018],
+  [61,"ROCKSTAR","DaBaby ft. Roddy Ricch",2020],
+  [62,"Mood","24kGoldn ft. iann dior",2020],
+  [63,"Señorita","Shawn Mendes & Camila Cabello",2019],
+  [64,"Heat Waves","Glass Animals",2020],
+  [65,"Watermelon Sugar","Harry Styles",2019],
+  [66,"Exchange","Bryson Tiller",2015],
+  [67,"Location","Khalid",2016],
+  [68,"All The Stars","Kendrick Lamar ft. SZA",2018],
+  [69,"Wild Thoughts","DJ Khaled ft. Rihanna & Bryson Tiller",2017],
+  [70,"Best Part","Daniel Caesar ft. H.E.R.",2017],
+  [71,"Essence","Wizkid ft. Tems",2020],
+  [72,"Peaches","Justin Bieber ft. Daniel Caesar & Giveon",2021],
+  [73,"Snooze","SZA",2022],
+  [74,"Young Dumb & Broke","Khalid",2017],
+  [75,"Wants and Needs","Drake ft. Lil Baby",2021],
+  [76,"STAY (with Justin Bieber)","The Kid LAROI",2021],
+  [77,"Levitating","Dua Lipa ft. DaBaby",2020],
+  [78,"The Hills","The Weeknd",2015],
+  [79,"Blank Space","Taylor Swift",2014],
+  [80,"Girls Like You","Maroon 5 ft. Cardi B",2017],
+  [81,"Fuck Love","XXXTENTACION ft. Trippie Redd",2017],
+  [82,"Lose Yourself","Eminem",2002],
+  [83,"everything i wanted","Billie Eilish",2019],
+  [84,"ocean eyes","Billie Eilish",2016],
+  [85,"Love Story","Taylor Swift",2008],
+  [86,"Bad and Boujee","Migos ft. Lil Uzi Vert",2016],
+  [87,"Say You Won't Let Go","James Arthur",2016],
+  [88,"Bodak Yellow","Cardi B",2017],
+  [89,"Lover","Taylor Swift",2019],
+  [90,"drivers license","Olivia Rodrigo",2021],
+  [91,"Good Days","SZA",2020],
+  [92,"Thunder","Imagine Dragons",2017],
+  [93,"Better","Khalid",2017],
+  [94,"Needed Me","Rihanna",2016],
+  [95,"Love on the Brain","Rihanna",2016],
+  [96,"Happier","Marshmello ft. Bastille",2018],
+  [97,"Say So","Doja Cat",2019],
+  [98,"Shake It Off","Taylor Swift",2014],
+  [99,"Don't Start Now","Dua Lipa",2019],
+  [100,"All I Want for Christmas Is You","Mariah Carey",1994],
+  [101,"Into the Night (夜に駆ける)","YOASOBI",2019],
+  [102,"Mr. Brightside","The Killers",2003],
+  [103,"Save Your Tears","The Weeknd & Ariana Grande",2021],
+  [104,"Flowers","Miley Cyrus",2023],
+  [105,"Butter","BTS",2021],
+  [106,"MONTERO (Call Me By Your Name)","Lil Nas X",2021],
+  [107,"Leave the Door Open","Bruno Mars, Anderson .Paak, Silk Sonic",2021],
+  [108,"Happier Than Ever","Billie Eilish",2021],
+  [109,"Kiss Me More","Doja Cat ft. SZA",2021],
+  [110,"Industry Baby","Lil Nas X ft. Jack Harlow",2021],
+  [111,"Tennessee Whiskey","Chris Stapleton",2015],
+  [112,"Heartbreak Anniversary","Giveon",2020],
+  [113,"Call Out My Name","The Weeknd",2018],
+  [114,"I Feel It Coming","The Weeknd ft. Daft Punk",2016],
+  [115,"Intentions","Justin Bieber ft. Quavo",2020],
+  [116,"Too Good at Goodbyes","Sam Smith",2017],
+  [117,"Redbone","Childish Gambino",2016],
+  [118,"Under the Influence","Chris Brown",2022],
+  [119,"Dreams","Fleetwood Mac",1977],
+  [120,"Someone Like You","Adele",2011],
+  [121,"Wildest Dreams","Taylor Swift",2015],
+  [122,"Running Up That Hill","Kate Bush",1985],
+  [123,"Controlla","Drake",2016],
+  [124,"Easy On Me","Adele",2021],
+  [125,"Tití Me Preguntó","Bad Bunny",2022],
+  [126,"We Don't Talk About Bruno","Cast of Encanto",2021],
+  [127,"Good 4 U","Olivia Rodrigo",2021],
+  [128,"Cold Heart (PNAU Remix)","Elton John & Dua Lipa",2021],
+  [129,"Toosie Slide","Drake",2020],
+  [130,"Laugh Now Cry Later","Drake ft. Lil Durk",2020],
+  [131,"Forever After All","Luke Combs",2020],
+  [132,"Power Trip","J. Cole ft. Miguel",2013],
+  [133,"Drowning","A Boogie Wit da Hoodie",2016],
+  [134,"I'm the One","DJ Khaled ft. Justin Bieber, Chance the Rapper, Lil Wayne & Quavo",2017],
+  [135,"Swimming Pools (Drank)","Kendrick Lamar",2012],
+  [136,"Savage","Megan Thee Stallion ft. Beyoncé",2020],
+  [137,"Panda","Desiigner",2015],
+  [138,"Therefore I Am","Billie Eilish",2020],
+  [139,"Positions","Ariana Grande",2020],
+  [140,"Golden","Harry Styles",2020],
+  [141,"Love Again","Dua Lipa",2020],
+  [142,"Adore You","Harry Styles",2019],
+  [143,"abcdefu","GAYLE",2021],
+  [144,"My Universe","Coldplay X BTS",2021],
+  [145,"Beautiful Things","Benson Boone",2023],
+  [146,"Espresso","Sabrina Carpenter",2024],
+  [147,"APT.","ROSÉ & Bruno Mars",2024],
+  [148,"Taste","Sabrina Carpenter",2024],
+  [149,"Not Like Us","Kendrick Lamar",2024],
+  [150,"Birds of a Feather","Billie Eilish",2024],
+  [151,"Good Luck, Babe!","Chappell Roan",2024],
+  [152,"Die With A Smile","Lady Gaga & Bruno Mars",2024],
+  [153,"Please Please Please","Sabrina Carpenter",2024],
+  [154,"Texas Hold 'Em","Beyoncé",2024],
+  [155,"Lose Control","Teddy Swims",2023],
+  [156,"Stick Season","Noah Kahan",2022],
+  [157,"White Horse","Chris Stapleton",2023],
+  [158,"Fast Car","Luke Combs",2023],
+  [159,"I Had Some Help","Morgan Wallen ft. Post Malone",2024],
+  [160,"Too Sweet","Hozier",2024],
+  [161,"Hotline Bling","Drake",2015],
+  [162,"Memories","Maroon 5",2019],
+  [163,"Sorry","Justin Bieber",2015],
+  [164,"Truth Hurts","Lizzo",2017],
+  [165,"Billie Jean","Michael Jackson",1982],
+  [166,"Uptown Funk","Mark Ronson ft. Bruno Mars",2014],
+  [167,"Can't Hold Us","Macklemore & Ryan Lewis ft. Ray Dalton",2011],
+  [168,"Counting Stars","OneRepublic",2013],
+  [169,"New Rules","Dua Lipa",2017],
+  [170,"Rolling in the Deep","Adele",2010],
+  [171,"Just the Way You Are","Bruno Mars",2010],
+  [172,"Love the Way You Lie","Eminem ft. Rihanna",2010],
+  [173,"Lean On","Major Lazer & DJ Snake ft. MØ",2015],
+  [174,"Don't Stop Believin'","Journey",1981],
+  [175,"Crazy in Love","Beyoncé ft. Jay-Z",2003],
+  [176,"Let Me Love You","DJ Snake ft. Justin Bieber",2016],
+  [177,"Havana","Camila Cabello ft. Young Thug",2017],
+  [178,"Despacito (Remix)","Luis Fonsi & Daddy Yankee ft. Justin Bieber",2017],
+  [179,"Yeah!","Usher ft. Lil Jon & Ludacris",2004],
+  [180,"You Proof","Morgan Wallen",2022],
+  [181,"More than My Hometown","Morgan Wallen",2020],
+  [182,"Demons","Imagine Dragons",2012],
+  [183,"Take Me to Church","Hozier",2013],
+  [184,"Don't Let Me Down","The Chainsmokers ft. Daya",2016],
+  [185,"Pink + White","Frank Ocean",2016],
+  [186,"Murder on My Mind","YNW Melly",2017],
+  [187,"Party In the U.S.A.","Miley Cyrus",2009],
+  [188,"Sugar","Maroon 5",2014],
+  [189,"Love Yourself","Justin Bieber",2015],
+  [190,"High Hopes","Panic! at the Disco",2018],
+  [191,"In A Minute","Lil Baby",2021],
+  [192,"Stick Talk","Future",2015],
+  [193,"Rich Flex","Drake & 21 Savage",2022],
+  [194,"Knife Talk","Drake ft. 21 Savage & Project Pat",2021],
+  [195,"Way 2 Sexy","Drake ft. Future & Young Thug",2021],
+  [196,"Thank God","Drake & 21 Savage",2022],
+  [197,"2Step","Ed Sheeran ft. Lil Baby",2022],
+  [198,"DNA.","Kendrick Lamar",2017],
+  [199,"Money Trees","Kendrick Lamar ft. Jay Rock",2012],
+  [200,"Castle on the Hill","Ed Sheeran",2017],
+  [201,"Photograph","Ed Sheeran",2014],
+  [202,"IDGAF","Dua Lipa",2017],
+  [203,"Without Me","Eminem",2002],
+  [204,"Marvins Room","Drake",2011],
+  [205,"Take Care","Drake ft. Rihanna",2011],
+  [206,"Emotionally Scarred","Lil Baby",2020],
+  [207,"Walk It Talk It","Migos ft. Drake",2018],
+  [208,"In da Club","50 Cent",2003],
+  [209,"The Way Life Goes","Lil Uzi Vert ft. Nicki Minaj & Oh Wonder",2017],
+  [210,"Anti-Hero","Taylor Swift",2022],
+  [211,"Sad!","XXXTENTACION",2017],
+  [212,"Roses (Imanbek Remix)","SAINt JHN",2019],
+  [213,"Mood Swings","Pop Smoke ft. Lil Tjay",2020],
+  [214,"Jimmy Cooks","Drake ft. 21 Savage",2022],
+  [215,"Kaiju no Hanauta","Kenshi Yonezu",2022],
+  [216,"Work Out","J. Cole",2011],
+  [217,"All of Me","John Legend",2013],
+  [218,"Digits","Young Thug",2016],
+  [219,"Slide","Calvin Harris ft. Frank Ocean & Migos",2017],
+  [220,"RAPSTAR","Polo G",2021],
+  [221,"Hold On, We're Going Home","Drake ft. Majid Jordan",2013],
+  [222,"Be Alright","Dean Lewis",2018],
+  [223,"N****s in Paris","Jay-Z & Kanye West",2011],
+  [224,"We Paid","Lil Baby & 42 Dugg",2020],
+  [225,"Godzilla","Eminem ft. Juice WRLD",2020],
+  [226,"Robbery","Juice WRLD",2018],
+  [227,"Hotel California","Eagles",1977],
+  [228,"Peaches","Justin Bieber ft. Daniel Caesar & Giveon",2021],
+  [229,"You Make It Easy","Jason Aldean",2018],
+  [230,"High Fashion","Roddy Ricch ft. Mustard",2019],
+  [231,"IDOL (アイドル)","YOASOBI",2023],
+  [232,"Empire State of Mind","Jay-Z ft. Alicia Keys",2009],
+  [233,"Fake Love","Drake",2017],
+  [234,"Sign of the Times","Harry Styles",2017],
+  [235,"The Middle","Zedd, Maren Morris & Grey",2018],
+  [236,"We Found Love","Rihanna ft. Calvin Harris",2011],
+  [237,"The Real Slim Shady","Eminem",2000],
+  [238,"Beautiful Things","Benson Boone",2023],
+  [239,"Espresso","Sabrina Carpenter",2024],
+  [240,"Sweet Child O' Mine","Guns N' Roses",1987],
+  [241,"Cover Me Up","Morgan Wallen",2019],
+  [242,"déjà vu","Olivia Rodrigo",2021],
+  [243,"We Don't Talk Anymore","Charlie Puth ft. Selena Gomez",2016],
+  [244,"Back in Blood","Pooh Shiesty ft. Lil Durk",2021],
+  [245,"HEARTBREAK ANNIVERSARY","Giveon",2020],
+  [246,"The Night We Met","Lord Huron",2015],
+  [247,"Back In Black","AC/DC",1980],
+  [248,"Jungle","Drake ft. Jhené Aiko",2014],
+  [249,"Dancing With A Stranger","Sam Smith & Normani",2019],
+  [250,"Youngblood","5 Seconds of Summer",2018],
+  [251,"A Bar Song (Tipsy)","Shaboozey",2024],
+  [252,"Attention","Charlie Puth",2017],
+  [253,"Magnolia","Playboi Carti",2017],
+  [254,"Need To Know","Doja Cat",2021],
+  [255,"Heaven","Bryan Adams",1985],
+  [256,"Locked Out of Heaven","Bruno Mars",2012],
+  [257,"FEFE","6ix9ine ft. Nicki Minaj & Murda Beatz",2018],
+  [258,"Look Alive","BlocBoy JB ft. Drake",2018],
+  [259,"Wonderwall","Oasis",1995],
+  [260,"Love Me","Lil Wayne ft. Drake & Future",2012],
+  [261,"What Lovers Do","Maroon 5 ft. SZA",2017],
+  [262,"Roses","SAINt JHN",2016],
+  [263,"MIDDLE CHILD","J. Cole",2019],
+  [264,"Suge","DaBaby",2019],
+  [265,"Shallow","Lady Gaga & Bradley Cooper",2018],
+  [266,"WAP","Cardi B ft. Megan Thee Stallion",2020],
+  [267,"Call Out My Name","The Weeknd",2018],
+  [268,"Too Good at Goodbyes","Sam Smith",2017],
+  [269,"Drowning","A Boogie Wit da Hoodie",2016],
+  [270,"Girls Like You","Maroon 5 ft. Cardi B",2017],
+  [271,"Look What You Made Me Do","Taylor Swift",2017],
+  [272,"Roses (Imanbek Remix)","SAINt JHN",2019],
+  [273,"Mood Swings","Pop Smoke ft. Lil Tjay",2020],
+  [274,"Jimmy Cooks","Drake ft. 21 Savage",2022],
+  [275,"Kaiju no Hanauta","Kenshi Yonezu",2022],
+  [276,"Work Out","J. Cole",2011],
+  [277,"All of Me","John Legend",2013],
+  [278,"Digits","Young Thug",2016],
+  [279,"Slide","Calvin Harris ft. Frank Ocean & Migos",2017],
+  [280,"RAPSTAR","Polo G",2021],
+  [281,"Hold On, We're Going Home","Drake ft. Majid Jordan",2013],
+  [282,"Be Alright","Dean Lewis",2018],
+  [283,"N****s in Paris","Jay-Z & Kanye West",2011],
+  [284,"We Paid","Lil Baby & 42 Dugg",2020],
+  [285,"Godzilla","Eminem ft. Juice WRLD",2020],
+  [286,"Robbery","Juice WRLD",2018],
+  [287,"Hotel California","Eagles",1977],
+  [288,"You Make It Easy","Jason Aldean",2018],
+  [289,"High Fashion","Roddy Ricch ft. Mustard",2019],
+  [290,"IDOL (アイドル)","YOASOBI",2023],
+  [291,"Empire State of Mind","Jay-Z ft. Alicia Keys",2009],
+  [292,"Fake Love","Drake",2017],
+  [293,"Sign of the Times","Harry Styles",2017],
+  [294,"The Middle","Zedd, Maren Morris & Grey",2018],
+  [295,"We Found Love","Rihanna ft. Calvin Harris",2011],
+  [296,"The Real Slim Shady","Eminem",2000],
+  [297,"Cover Me Up","Morgan Wallen",2019],
+  [298,"We Don't Talk Anymore","Charlie Puth ft. Selena Gomez",2016],
+  [299,"Beautiful Things","Benson Boone",2023],
+  [300,"Espresso","Sabrina Carpenter",2024],
+  [301,"Sweet Child O' Mine","Guns N' Roses",1987],
+  [302,"déjà vu","Olivia Rodrigo",2021],
+  [303,"Back in Blood","Pooh Shiesty ft. Lil Durk",2021],
+  [304,"HEARTBREAK ANNIVERSARY","Giveon",2020],
+  [305,"The Night We Met","Lord Huron",2015],
+  [306,"Back In Black","AC/DC",1980],
+  [307,"Jungle","Drake ft. Jhené Aiko",2014],
+  [308,"Dancing With A Stranger","Sam Smith & Normani",2019],
+  [309,"Youngblood","5 Seconds of Summer",2018],
+  [310,"A Bar Song (Tipsy)","Shaboozey",2024],
+  [311,"Magnolia","Playboi Carti",2017],
+  [312,"Need To Know","Doja Cat",2021],
+  [313,"Heaven","Bryan Adams",1985],
+  [314,"Locked Out of Heaven","Bruno Mars",2012],
+  [315,"FEFE","6ix9ine ft. Nicki Minaj & Murda Beatz",2018],
+  [316,"Look Alive","BlocBoy JB ft. Drake",2018],
+  [317,"Wonderwall","Oasis",1995],
+  [318,"Father Stretch My Hands, Pt. 1","Kanye West ft. Kid Cudi",2016],
+  [319,"Look At Me!","XXXTENTACION",2015],
+  [320,"Halo","Beyoncé",2008],
+  [321,"No Scrubs","TLC",1999],
+  [322,"Stay","Rihanna",2012],
+  [323,"Before You Go","Lewis Capaldi",2019],
+  [324,"Broken Clocks","SZA",2017],
+  [325,"Promiscuous","Nelly Furtado ft. Timbaland",2006],
+  [326,"Baby Shark","Pinkfong",2015],
+  [327,"Black Beatles","Rae Sremmurd ft. Gucci Mane",2016],
+  [328,"Money Longer","Lil Uzi Vert",2016],
+  [329,"Drankin N Smokin","Future & Lil Uzi Vert",2021],
+  [330,"Pure Cocaine","Lil Baby",2018],
+  [331,"Happier Than Ever","Billie Eilish",2021],
+  [332,"Counting Stars","OneRepublic",2013],
+  [333,"idontwannabeyouanymore","Billie Eilish",2017],
+  [334,"Cheap Thrills","Sia ft. Sean Paul",2016],
+  [335,"Till I Collapse","Eminem ft. Nate Dogg",2002],
+  [336,"Another Love","Tom Odell",2012],
+  [337,"LA CANCIÓN","J Balvin & Bad Bunny",2019],
+  [338,"Marigold","Zach Bryan",2019],
+  [339,"traitor","Olivia Rodrigo",2021],
+  [340,"Heartless","Kanye West",2008],
+  [341,"Whatever It Takes","Imagine Dragons",2017],
+  [342,"Moscow Mule","Bad Bunny",2022],
+  [343,"Body Like a Back Road","Sam Hunt",2017],
+  [344,"Set Fire to the Rain","Adele",2011],
+  [345,"Mine","Taylor Swift",2010],
+  [346,"Payphone","Maroon 5 ft. Wiz Khalifa",2012],
+  [347,"No Limit","G-Eazy ft. A$AP Rocky & Cardi B",2017],
+  [348,"Way 2 Sexy","Drake ft. Future & Young Thug",2021],
+  [349,"When We Were Young","Adele",2015],
+  [350,"I Had Some Help","Morgan Wallen ft. Post Malone",2024],
+  [351,"Baby Shark","Pinkfong",2015],
+  [352,"god is a woman","Ariana Grande",2018],
+  [353,"Look At Me!","XXXTENTACION",2015],
+  [354,"Something in the Orange","Zach Bryan",2022],
+  [355,"Lose Control","Teddy Swims",2023],
+  [356,"The Worst","Jhené Aiko",2013],
+  [357,"Thinkin' Bout Me","Morgan Wallen",2022],
+  [358,"Love Me Like You Do","Ellie Goulding",2015],
+  [359,"Stronger","Kanye West",2007],
+  [360,"Sold Out Dates","Meek Mill",2012],
+  [361,"Teenage Fever","Drake",2017],
+  [362,"Nights","Frank Ocean",2016],
+  [363,"Faded","Alan Walker",2015],
+  [364,"déjà vu","J. Cole",2021],
+  [365,"Bad at Love","Halsey",2017],
+  [366,"Titanium","David Guetta ft. Sia",2011],
+  [367,"Work from Home","Fifth Harmony ft. Ty Dolla $ign",2016],
+  [368,"Iris","Goo Goo Dolls",1998],
+  [369,"Africa","Toto",1982],
+  [370,"Wake Me Up","Avicii",2013],
+  [371,"Another One Bites the Dust","Queen",1980],
+  [372,"Candy Paint","Post Malone",2017],
+  [373,"Rain On Me","Lady Gaga & Ariana Grande",2020],
+  [374,"Erase Your Social","Yo Gotti ft. Nicki Minaj",2017],
+  [375,"Chicago Freestyle","Drake ft. Giveon",2020],
+  [376,"Juicy","The Notorious B.I.G.",1994],
+  [377,"god is a woman","Ariana Grande",2018],
+  [378,"Something in the Orange","Zach Bryan",2022],
+  [379,"Lose Control","Teddy Swims",2023],
+  [380,"The Worst","Jhené Aiko",2013],
+  [381,"Thinkin' Bout Me","Morgan Wallen",2022],
+  [382,"Love Me Like You Do","Ellie Goulding",2015],
+  [383,"Stronger","Kanye West",2007],
+  [384,"Sold Out Dates","Meek Mill",2012],
+  [385,"Teenage Fever","Drake",2017],
+  [386,"Nights","Frank Ocean",2016],
+  [387,"Faded","Alan Walker",2015],
+  [388,"déjà vu","J. Cole ft. 21 Savage",2021],
+  [389,"Bad at Love","Halsey",2017],
+  [390,"Titanium","David Guetta ft. Sia",2011],
+  [391,"Work from Home","Fifth Harmony ft. Ty Dolla $ign",2016],
+  [392,"Iris","Goo Goo Dolls",1998],
+  [393,"Africa","Toto",1982],
+  [394,"Wake Me Up","Avicii",2013],
+  [395,"Another One Bites the Dust","Queen",1980],
+  [396,"Candy Paint","Post Malone",2017],
+  [397,"Rain On Me","Lady Gaga & Ariana Grande",2020],
+  [398,"Erase Your Social","Yo Gotti ft. Nicki Minaj",2017],
+  [399,"Chicago Freestyle","Drake ft. Giveon",2020],
+  [400,"Juicy","The Notorious B.I.G.",1994],
+  [401,"Te Boté","Nio García, Casper Mágico & Jhay Cortez",2018],
+  [402,"Valuable Pain","Future",2019],
+  [403,"A Sky Full of Stars","Coldplay",2014],
+  [404,"YOSEMITE","Travis Scott",2018],
+  [405,"Numb","Linkin Park",2003],
+  [406,"Diamonds","Rihanna",2012],
+  [407,"Mockingbird","Eminem",2004],
+  [408,"All of the Lights","Kanye West ft. Rihanna & Kid Cudi",2010],
+  [409,"pick up the phone","Young Thug & Travis Scott ft. Quavo",2016],
+  [410,"Wake Up in the Sky","Gucci Mane, Bruno Mars & Kodak Black",2018],
+  [411,"Galway Girl","Ed Sheeran",2017],
+  [412,"Kevin's Heart","J. Cole",2017],
+  [413,"Stitches","Shawn Mendes",2015],
+  [414,"I Hate U","SZA",2021],
+  [415,"Gunjō","YOASOBI",2019],
+  [416,"Somebody That I Used to Know","Gotye ft. Kimbra",2011],
+  [417,"Toosie Slide","Drake",2020],
+  [418,"Girls Want Girls","Drake ft. Lil Baby",2021],
+  [419,"F.N","Lil Durk",2018],
+  [420,"Outside Today","YoungBoy Never Broke Again",2018],
+  [421,"I Don't Wanna Live Forever","Zayn & Taylor Swift",2017],
+  [422,"Die With A Smile","Lady Gaga & Bruno Mars",2024],
+  [423,"Heartless","Kanye West",2008],
+  [424,"Poetic Justice","Kendrick Lamar ft. Drake",2012],
+  [425,"Baby","Justin Bieber ft. Ludacris",2010],
+  [426,"Bad Bad Bad","Lil Baby ft. YoungBoy Never Broke Again",2018],
+  [427,"Praise The Lord (Da Shine)","A$AP Rocky ft. Skepta",2018],
+  [428,"Subtitle","Rick Ross ft. The Weeknd",2019],
+  [429,"10,000 Hours","Dan + Shay & Justin Bieber",2019],
+  [430,"I Ain't Worried","OneRepublic",2022],
+  [431,"Hypnotize","The Notorious B.I.G.",1997],
+  [432,"Dreams and Nightmares","Meek Mill",2012],
+  [433,"Rich Flex","Drake & 21 Savage",2022],
+  [434,"Ransom","Lil Tecca",2019],
+  [435,"Boo'd Up","Ella Mai",2018],
+  [436,"Ivy","Frank Ocean",2016],
+  [437,"Lose You To Love Me","Selena Gomez",2019],
+  [438,"Calling My Spirit","Post Malone",2018],
+  [439,"I Want It That Way","Backstreet Boys",1999],
+  [440,"Ao To Natsu","YOASOBI",2021],
+  [441,"Talking to the Moon","Bruno Mars",2010],
+  [442,"Cold Water","Major Lazer ft. Justin Bieber & MØ",2016],
+  [443,"Fast Car","Tracy Chapman",1988],
+  [444,"Say So","Doja Cat",2019],
+  [445,"STARGAZING","Travis Scott",2018],
+  [446,"Slime Belief","Future & Young Thug",2020],
+  [447,"Go Flex","Post Malone",2015],
+  [448,"Lean Wit Me","Juice WRLD",2018],
+  [449,"Bitch, Don't Kill My Vibe","Kendrick Lamar",2012],
+  [450,"Taki Taki","DJ Snake ft. Selena Gomez, Ozuna & Cardi B",2018],
+  [451,"Chandelier","Sia",2014],
+  [452,"It Ain't Me","Kygo & Selena Gomez",2017],
+  [453,"Let You Down","NF",2017],
+  [454,"Beautiful People","Ed Sheeran ft. Khalid",2019],
+  [455,"First Day Out","Tee Grizzley",2016],
+  [456,"Delicate","Taylor Swift",2017],
+  [457,"Summertime Sadness","Lana Del Rey",2012],
+  [458,"changes","XXXTENTACION",2017],
+  [459,"Rockabye","Clean Bandit ft. Sean Paul & Anne-Marie",2016],
+  [460,"Tequila","Dan + Shay",2018],
+  [461,"For Free","DJ Khaled ft. Drake",2016],
+  [462,"The Less I Know the Better","Tame Impala",2015],
+  [463,"Space Cadet","Metro Boomin ft. Gunna",2019],
+  [464,"Astronaut In The Ocean","Masked Wolf",2019],
+  [465,"Pumped Up Kicks","Foster the People",2010],
+  [466,"Danza Kuduro","Don Omar ft. Lucenzo",2010],
+  [467,"Sky Walker","Miguel ft. Travis Scott",2017],
+  [468,"Do I Wanna Know?","Arctic Monkeys",2013],
+  [469,"Moves Like Jagger","Maroon 5 ft. Christina Aguilera",2011],
+  [470,"Hakujitsu","King Gnu",2019],
+  [471,"Ride It","Regard",2019],
+  [472,"Young, Wild & Free","Snoop Dogg & Wiz Khalifa ft. Bruno Mars",2012],
+  [473,"Girls Need Love","Summer Walker",2018],
+  [474,"Cash Shit","Megan Thee Stallion ft. DaBaby",2019],
+  [475,"ROXANNE","Arizona Zervas",2019],
+  [476,"cardigan","Taylor Swift",2020],
+  [477,"Lost","Frank Ocean",2012],
+  [478,"I Took a Pill in Ibiza (Seeb Remix)","Mike Posner",2015],
+  [479,"On Me","Lil Baby",2020],
+  [480,"See You Again","Tyler, the Creator ft. Kali Uchis",2017],
+  [481,"Beer Never Broke My Heart","Luke Combs",2019],
+  [482,"Hips Don't Lie","Shakira ft. Wyclef Jean",2005],
+  [483,"Flashing Lights","Kanye West ft. Dwele",2007],
+  [484,"The Chain","Fleetwood Mac",1977],
+  [485,"What Do You Mean?","Justin Bieber",2015],
+  [486,"September","Earth, Wind & Fire",1978],
+  [487,"Speechless","Dan + Shay",2019],
+  [488,"Blueberry Faygo","Lil Mosey",2019],
+  [489,"Pursuit of Happiness (Nightmare)","Kid Cudi ft. MGMT & Ratatat",2009],
+  [490,"You Was Right","Lil Uzi Vert",2016],
+  [491,"Cake By the Ocean","DNCE",2015],
+  [492,"Fuck Up Some Commas","Future",2015],
+  [493,"bellyache","Billie Eilish",2017],
+  [494,"Me, Myself & I","G-Eazy & Bebe Rexha",2015],
+  [495,"Woman","Doja Cat ft. Ariana Grande",2021],
+  [496,"Wolves","Selena Gomez & Marshmello",2017],
+  [497,"I'm Yours","Jason Mraz",2008],
+  [498,"Shoota","Playboi Carti ft. Lil Uzi Vert",2017],
+  [499,"Fair Trade","Drake ft. Travis Scott",2021],
+  [500,"Blueberry Faygo","Lil Mosey",2019],
+];
+
+// Build tracklist
+const container = document.getElementById('tracklist');
+const frag = document.createDocumentFragment();
+songs.forEach(([num, title, artist, year]) => {
+  const row = document.createElement('div');
+  row.className = 'track-row';
+  const safeTitle = title.replace(/"/g, '&quot;');
+  const safeArtist = artist.replace(/"/g, '&quot;');
+  row.innerHTML = `
+    <div class="track-num">${num}</div>
+    <img class="track-cover" data-q="${encodeURIComponent(title + ' ' + artist.split(' ft.')[0].split(' &')[0])}" src="" alt="${safeTitle}" style="opacity:0">
+    <div style="min-width:0">
+      <div class="track-name">${title}</div>
+      <div class="track-artist">${artist}</div>
+    </div>
+    <div class="track-year">${year}</div>
+    <div class="track-scrobbles loading" data-artist="${safeArtist.split(' ft.')[0].split(' &')[0]}" data-track="${safeTitle}">—</div>`;
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+// Hero cover
+fetch(`https://itunes.apple.com/search?term=Shape+of+You+Ed+Sheeran&media=music&entity=song&limit=1`)
+  .then(r => r.json()).then(d => {
+    const r = d.results?.[0];
+    if (r) {
+      const hero = document.getElementById('hero-cover');
+      hero.src = r.artworkUrl100.replace('100x100bb','400x400bb');
+    }
+  }).catch(()=>{});
+
+// Featured covers top 10
+const featSongs = [
+  ['fc-1','Shape of You Ed Sheeran'],
+  ['fc-2','Blinding Lights The Weeknd'],
+  ['fc-3','God\'s Plan Drake'],
+  ['fc-4','Sunflower Post Malone'],
+  ['fc-5','rockstar Post Malone 21 Savage'],
+  ['fc-6','One Dance Drake'],
+  ['fc-7','SICKO MODE Travis Scott'],
+  ['fc-8','Perfect Ed Sheeran'],
+  ['fc-9','No Guidance Chris Brown Drake'],
+  ['fc-10','bad guy Billie Eilish'],
+];
+featSongs.forEach(([id, q], i) => {
+  setTimeout(() => {
+    fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(q)}&media=music&entity=song&limit=1`)
+      .then(r => r.json()).then(d => {
+        const res = d.results?.[0];
+        const el = document.getElementById(id);
+        if (res?.artworkUrl100 && el) {
+          el.src = res.artworkUrl100.replace('100x100bb','400x400bb');
+          el.style.opacity = '1';
+          el.onerror = () => { el.style.opacity = '0.07'; };
+        }
+      }).catch(()=>{});
+  }, i * 280);
+});
+
+// Lazy load cover art — fires when each row scrolls into view
+let queue = [];
+let processing = false;
+
+function processQueue() {
+  if (processing || queue.length === 0) return;
+  processing = true;
+  const img = queue.shift();
+  const q = decodeURIComponent(img.dataset.q);
+  fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(q)}&media=music&entity=song&limit=1`)
+    .then(r => r.json()).then(d => {
+      const res = d.results?.[0];
+      if (res?.artworkUrl100) {
+        img.src = res.artworkUrl100.replace('100x100bb','400x400bb');
+        img.style.opacity = '1';
+        img.onerror = () => { img.style.opacity = '0.05'; };
+      }
+    }).catch(()=>{})
+    .finally(() => {
+      processing = false;
+      setTimeout(processQueue, 80);
+    });
+}
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const img = entry.target;
+    obs.unobserve(img);
+    img.dataset.queued = '1';
+    queue.push(img);
+    processQueue();
+  });
+}, { rootMargin: '400px' });
+
+document.querySelectorAll('.track-cover').forEach(img => obs.observe(img));
+
+// ── Last.fm scrobbles ──────────────────────────────────────────────────────
+const LFM_USER = 'lartzrodriguez';
+const LFM_KEY  = 'b25b959554ed76058ac220b7b2e0a026'; // Last.fm public demo key
+const scrobbleCache = {};
+let lfmQueue = [];
+let lfmProcessing = false;
+
+function processLfmQueue() {
+  if (lfmProcessing || lfmQueue.length === 0) return;
+  lfmProcessing = true;
+  const el = lfmQueue.shift();
+  const artist = el.dataset.artist;
+  const track  = el.dataset.track;
+  const cacheKey = `${artist}|||${track}`;
+
+  if (scrobbleCache[cacheKey] !== undefined) {
+    renderScrobble(el, scrobbleCache[cacheKey]);
+    lfmProcessing = false;
+    setTimeout(processLfmQueue, 50);
+    return;
+  }
+
+  const url = `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${LFM_KEY}&artist=${encodeURIComponent(artist)}&track=${encodeURIComponent(track)}&username=${LFM_USER}&format=json`;
+  fetch(url)
+    .then(r => r.json())
+    .then(d => {
+      const count = parseInt(d?.track?.userplaycount || '0', 10);
+      scrobbleCache[cacheKey] = count;
+      renderScrobble(el, count);
+    })
+    .catch(() => { el.textContent = '—'; el.classList.add('zero'); })
+    .finally(() => {
+      lfmProcessing = false;
+      setTimeout(processLfmQueue, 120);
+    });
+}
+
+function renderScrobble(el, count) {
+  el.classList.remove('loading');
+  if (count > 0) {
+    el.textContent = count.toLocaleString();
+    el.classList.remove('zero');
+  } else {
+    el.textContent = '0';
+    el.classList.add('zero');
+  }
+}
+
+const lfmObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    lfmObs.unobserve(el);
+    lfmQueue.push(el);
+    processLfmQueue();
+  });
+}, { rootMargin: '400px' });
+
+document.querySelectorAll('.track-scrobbles').forEach(el => lfmObs.observe(el));
+</script>
+</body>
+</html>
