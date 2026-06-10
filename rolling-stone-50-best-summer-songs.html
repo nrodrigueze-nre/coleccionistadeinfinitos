@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>50 Best Summer Songs of All Time - Rolling Stone 2022</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">1958&#8211;2022</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-summer-songs-of-all-time-43407/" target="_blank" class="page-title">THE BEST SUMMER SONGS OF ALL TIME</a>
+  <p class="page-sub">Chic, Martha &amp; The Vandellas, Prince, Public Enemy, The Beach Boys &#183; de rock a hip-hop, de Chubby Checker a Cardi B &#8212; las canciones mas ardientes del verano &#183; Rolling Stone &#183; Jun 2022</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Good Times - Chic">
+    <p class="cover-cap">ROLLING STONE &#183; 50 CANCIONES &#183; SUMMER SONGS</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los 50 mejores temas veraniegos de todos los tiempos segun Rolling Stone, publicados en junio de 2022 (version actualizada de la lista original de 2013). Desde el rock clasico hasta el hip-hop, desde el surf hasta el reggaeton — las canciones que han definido cada verano.</p>
+    <p class="rtext">Chic encabeza con Good Times (1979), la cancion que domino el verano de ese año y que ademas es el sample original de Rapper's Delight de Sugarhill Gang — literalmente la madre de todos los summer jams del hip-hop. El top 5 incluye a Martha &amp; The Vandellas, Marvin Gaye, Public Enemy y The Beach Boys. Colombia y Latin America representadas por Despacito (#25), I Like It de Cardi B, Bad Bunny y J Balvin (#11), y Todo de Ti de Rauw Alejandro (#13). La lista abarca seis decadas de hits veraniego, del rockabilly de 1958 al reggaeton de 2021.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Ordenados por impacto</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1979</div>
+      <div class="feat-title">Good Times</div>
+      <div class="feat-artist">Chic</div>
+      <p class="feat-rev">No parece una cancion estacional a primera vista, pero este clasico del disco domino el verano de 1979 y ha sido pilar de cada verano desde entonces. Como la cancion que le presto el groove al primer hit del hip-hop — Rapper's Delight de Sugarhill Gang — es el orgulloso padre de mas summer jams que cualquier otra cancion en la historia.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1965</div>
+      <div class="feat-title">Dancing in the Street</div>
+      <div class="feat-artist">Martha &amp; The Vandellas</div>
+      <p class="feat-rev">La invitacion definitiva a salir y soltarse. Reinventa el mundo como una fiesta callejera de verano. Co-escrita por Marvin Gaye, tiene la mejor letra de fiesta jamas escrita — y los tambores golpean como un disparo. Durante los disturbios de los 60s se convirtio en himno de los derechos civiles: Martha Reeves suena como si no solo estuviera iniciando una fiesta, sino una revolucion.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1977</div>
+      <div class="feat-title">Got to Give It Up (Pt. 1 &amp; 2)</div>
+      <div class="feat-artist">Marvin Gaye</div>
+      <p class="feat-rev">El principe atormentado del soul se va al disco logrando hacer el funk pesado ligero de pies. Es imposible no moverse a este tema de 1977, especialmente porque trata de un tipo timido que le teme al mundo hasta que llega a la pista de baile. Perfecto para cualquier asado en el jardin — y obviamente cambio la vida de Michael Jackson, sin mencionar la de Pharrell y Robin Thicke.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1989</div>
+      <div class="feat-title">Fight the Power</div>
+      <div class="feat-artist">Public Enemy</div>
+      <p class="feat-rev">Comisionada para la pelicula Do the Right Thing de Spike Lee, esta llamada al activismo del hip-hop es un trepidante revoltijo de samples que chocan en el groove. Chuck D grita: Diecinueve ochenta y NUEVE, el numero, otro VERANO. Su llamado a la conciencia activista fue el Dancing in the Street de la generacion hip-hop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1965</div>
+      <div class="feat-title">California Girls</div>
+      <div class="feat-artist">The Beach Boys</div>
+      <p class="feat-rev">Brian Wilson escribio la melodia la primera vez que tomo acido y los acordes de piano arremolinados en la apertura le dan a la simple fantasia adolescente una grandeza onirica. La letra, escrita por Mike Love, fue inspirada por la afirmacion de Wilson de que todo el mundo ama a las chicas. Con disculpas a los otros cuarenta y nueve estados.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">50 canciones &#183; ordenadas por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Cancion / Artista</span>
+    <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE &#183; 50 BEST SUMMER SONGS &#183; JUN 2022</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-summer-songs-of-all-time-43407/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "Chic",                                    "Good Times",                    1979],
+  [2,  "Martha and The Vandellas",                "Dancing in the Street",         1965],
+  [3,  "Marvin Gaye",                             "Got to Give It Up",             1977],
+  [4,  "Public Enemy",                            "Fight the Power",               1989],
+  [5,  "The Beach Boys",                          "California Girls",              1965],
+  [6,  "Alice Cooper",                            "School's Out",                  1972],
+  [7,  "Prince",                                  "When Doves Cry",                1984],
+  [8,  "The Go-Gos",                              "Vacation",                      1982],
+  [9,  "Wizkid feat. Tems",                       "Essence",                       2020],
+  [10, "Cardi B Bad Bunny and J Balvin",          "I Like It",                     2018],
+  [11, "Rauw Alejandro",                          "Todo de Ti",                    2021],
+  [12, "Bananarama",                              "Cruel Summer",                  1983],
+  [13, "BTS and Megan Thee Stallion",             "Butter (Remix)",                2021],
+  [14, "LFO",                                     "Summer Girls",                  1999],
+  [15, "Ramones",                                 "Rockaway Beach",                1977],
+  [16, "Eric Church",                             "Springsteen",                   2011],
+  [17, "Len",                                     "Steal My Sunshine",             1999],
+  [18, "Seals and Crofts",                        "Summer Breeze",                 1972],
+  [19, "Eddie Cochran",                           "Summertime Blues",              1958],
+  [20, "Lil Nas X",                               "Old Town Road",                 2019],
+  [21, "Pavement",                                "Summer Babe (Winter Version)",  1992],
+  [22, "Grateful Dead",                           "Scarlet Begonias",              1974],
+  [23, "Sam Cooke",                               "Summertime",                    1958],
+  [24, "Drake",                                   "In My Feelings",                2018],
+  [25, "Luis Fonsi feat. Daddy Yankee",           "Despacito",                     2017],
+  [26, "Snoop Doggy Dogg",                        "Gin and Juice",                 1993],
+  [27, "The Lovin' Spoonful",                     "Summer In the City",            1966],
+  [28, "Ginuwine",                                "Pony",                          1996],
+  [29, "Harry Styles",                            "As It Was",                     2022],
+  [30, "Cardi B and Megan Thee Stallion",         "WAP",                           2020],
+  [31, "Dick Dale",                               "Miserlou",                      1962],
+  [32, "Koffee",                                  "Toast",                         2019],
+  [33, "Snail Mail",                              "Heat Wave",                     2018],
+  [34, "Chubby Checker",                          "Let's Twist Again",             1961],
+  [35, "Donna Summer",                            "Hot Stuff",                     1979],
+  [36, "Taylor Swift",                            "Cruel Summer",                  2019],
+  [37, "Rob Base and DJ E-Z Rock",               "It Takes Two",                  1988],
+  [38, "Jan and Dean",                            "Surf City",                     1963],
+  [39, "Santo and Johnny",                        "Sleepwalk",                     1959],
+  [40, "Led Zeppelin",                            "Dancing Days",                  1973],
+  [41, "Superchunk",                              "This Summer",                   2012],
+  [42, "Chicago",                                 "Saturday in the Park",          1972],
+  [43, "Eric Burdon and War",                     "Spill the Wine",                1970],
+  [44, "The B-52s",                               "Rock Lobster",                  1978],
+  [45, "Chicago",                                 "Saturday in the Park",          1972],
+  [46, "Wilco",                                   "Heavy Metal Drummer",           2001],
+  [47, "The Drifters",                            "Under The Boardwalk",           1964],
+  [48, "The Hold Steady",                         "Constructive Summer",           2008],
+  [49, "Nelly",                                   "Hot in Herre",                  2002],
+  [50, "Jonathan Richman",                        "That Summer Feeling",           1983]
+];
+
+var FEAT = [
+  ["fc-1", "Chic",                     "Good Times"],
+  ["fc-2", "Martha and The Vandellas", "Dancing in the Street"],
+  ["fc-3", "Marvin Gaye",              "Got to Give It Up"],
+  ["fc-4", "Public Enemy",             "Fight the Power"],
+  ["fc-5", "The Beach Boys",           "California Girls"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length - 1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Chic", "Good Times");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div");
+  row.className = "track-row";
+  var num = document.createElement("div");
+  num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img");
+  img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0, 6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm, 30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin: "400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

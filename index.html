@@ -233,7 +233,7 @@ a{color:inherit;text-decoration:none}
       <p>160 listas. 12.852 entradas — 10.245 únicas — entre álbumes y canciones de 1920 a 2025. El 60% son canciones, el 40% álbumes. Rolling Stone aporta 87 listas, Digital Dream Door 42, Billboard 12. Ocho secciones: Anuales, Géneros, Décadas, Temáticas, Superlistas, Latin Álbumes, Latin Canciones, Global.</p>
       <p>La columna vertebral es Rolling Stone: 100 mejores álbumes por década (80s, 90s, 2000s, 2010s), anuales del año completos de 2011 a 2025, y las grandes listas temáticas — guitar solos, hip-hop, heavy metal, protest songs, 200 canciones de baile, 250 mejores álbumes del siglo XXI. Las superlistas anclan el canon: 1001 Discos, 1001 Songs, DDD 1000 canciones de rock, Apple Music Top 500, RRHOF 200 álbumes definitivos.</p>
       <p>Digital Dream Door cubre el mapa por géneros y décadas: 100 canciones por cada década de los 50s a los 2010s, más house, disco, funk, reggae, trance, dream pop, new wave, punk, power pop, freestyle, calypso y rockabilly. El frente latinoamericano tiene peso propio: RS Argentina, RS Colombia, RS España, Canal Viva, Acroarte dominicano, RYM Iberoamérica, MediaMonkey y 18 listas de latin anuales y de géneros. Los géneros tienen canon propio — britpop, goth, pop metal 80s, new wave argentina, rock psicodélico, progresivo.</p>
-      <p>Cada entrada enlazada a Last.fm. El ranking de Más Aclamados se recalcula con cada lista nueva. Los Beatles lideran con 68 menciones; Thriller de Michael Jackson y Marquee Moon de Television empatan en álbumes con 6 cada uno; My Generation de The Who encabeza canciones con 7. Un archivo vivo.</p>
+      <p>Cada entrada enlazada a Last.fm. El ranking de Más Aclamados se recalcula con cada lista nueva. Los Beatles lideran con 84 menciones; Thriller de Michael Jackson, Unknown Pleasures de Joy Division, Marquee Moon de Television y Nevermind de Nirvana empatan en álbumes con 7 cada uno; Won't Get Fooled Again de The Who encabeza canciones con 8 menciones. Un archivo vivo.</p>
     </div>
   </div>
 </section>
@@ -1348,6 +1348,44 @@ const LISTS = [
     url: "https://www.billboard.com/lists/lgbtq-anthems-queer-pride-songs/",
     _artist: "Lady Gaga",
     _title: "Born This Way"
+  },
+  {
+    file: "rolling-stone-50-best-summer-songs.html",
+    title: "The Best Summer Songs of All Time",
+    source: "Rolling Stone",
+    year: "1958–2022",
+    type: "canciones",
+    count: "50",
+    desc: "Los 50 mejores temas del verano segun Rolling Stone · de Chic a Cardi B · de surf a reggaeton · RS Jun 2022.",
+    url: "https://www.rollingstone.com/music/music-lists/best-summer-songs-of-all-time-43407/",
+    feat: [
+      {pos:1, artist:"Chic",                    title:"Good Times",              review:"El disco clasico que domino el verano de 1979 y es padre de mas summer jams que cualquier otra cancion — proveyendo el groove original de Rapper's Delight de Sugarhill Gang."},
+      {pos:2, artist:"Martha and The Vandellas", title:"Dancing in the Street",  review:"La invitacion definitiva a salir y soltarse. Co-escrita por Marvin Gaye, con los tambores golpeando como un disparo — durante los disturbios de los 60s se convirtio en himno de los derechos civiles."},
+      {pos:3, artist:"Marvin Gaye",             title:"Got to Give It Up",       review:"El principe del soul se va al disco logrando hacer el funk pesado ligero de pies. Imposible no moverse — y obviamente cambio la vida de Michael Jackson, Pharrell y Robin Thicke."},
+      {pos:4, artist:"Public Enemy",            title:"Fight the Power",         review:"Comisionada para Do the Right Thing de Spike Lee. Chuck D grita: Diecinueve ochenta y NUEVE, el numero, otro VERANO. El Dancing in the Street de la generacion hip-hop."},
+      {pos:5, artist:"The Beach Boys",          title:"California Girls",        review:"Brian Wilson escribio la melodia la primera vez que tomo acido. Los acordes de piano en la apertura le dan a la simple fantasia adolescente una grandeza onirica inigualable."}
+    ],
+    _artist:"Chic",
+    _title:"Good Times"
+  },
+  {
+    file: "thump-vice-99-best-dance-albums.html",
+    title: "Los 99 Mejores Discos de Música Dance de Todos los Tiempos",
+    source: "VICE / THUMP",
+    year: "1976–2014",
+    type: "álbumes",
+    count: "99",
+    desc: "Los 99 LPs que han dejado marca en la pista de baile · de Daft Punk a Kraftwerk · THUMP/VICE 2015 · house, techno, EDM, disco, dubstep.",
+    url: "https://www.vice.com/es/article/los-99-mejores-discos-de-musica-dance-de-todos-los-tiempos/",
+    feat: [
+      {pos:1,  artist:"Daft Punk",    title:"Discovery",                    review:"El fosil mas importante del siglo 21 de la musica dance. One More Time, Harder Better Faster Stronger y Digital Love como partes de un opus de la pista de baile. Daft Punk trajo la electronica al frente de la cultura pop moderna."},
+      {pos:3,  artist:"Madonna",      title:"Confessions on a Dance Floor",  review:"Un album perfecto de principio a fin, cada tema mezclado entre si, inspirado en la escena disco. La Reina del Pop reclamando el trono de los clubes por enésima vez."},
+      {pos:5,  artist:"Underworld",   title:"dubnobasswithmyheadman",         review:"Pocos albumes han cambiado la historia musical como este. El movimiento consciente del synth-pop al futuro del techno. Borracho o sobrio, una hermosa sinfonia de techno."},
+      {pos:11, artist:"Depeche Mode", title:"Violator",                      review:"Personal Jesus, Enjoy the Silence y Policy of Truth los catapultaron del underground al mainstream global. A sus años sigue siendo suficientemente sensual y extraño para atraer nuevas generaciones."},
+      {pos:13, artist:"Michael Jackson", title:"Off the Wall",               review:"El bassline con que abre Don't Stop Til You Get Enough es una premonicion. El Rey del Pop con el falsetto de un joven Michael y los toques disco en su estado mas fino."}
+    ],
+    _artist:"Daft Punk",
+    _title:"Discovery"
   },
   {
     file: "billboard-100-jock-jams.html",
@@ -3206,6 +3244,8 @@ const SECTIONS = {
   "billboard-top-drinking-songs.html": "thematic",
   "billboard-best-birthday-songs.html": "thematic",
   "billboard-100-lgbtq-anthems.html": "thematic",
+  "rolling-stone-50-best-summer-songs.html": "thematic",
+  "thump-vice-99-best-dance-albums.html": "thematic",
   "billboard-100-jock-jams.html": "thematic",
   "mediamonkey-100-canciones-electropop.html": "genres",
   "mediamonkey-100-canciones-frikis.html": "thematic",
@@ -3241,11 +3281,11 @@ const SECTIONS = {
 };
 
 var LAST5 = [
+  "rolling-stone-50-best-summer-songs.html",
+  "thump-vice-99-best-dance-albums.html",
   "libro-666-songs-bang-your-head.html",
   "los-600-discos-latinoamerica.html",
-  "nelson-rodriguez-500-mejores-canciones-salsa.html",
-  "digitaldreamdoor-500-greatest-electronic-dance-songs.html",
-  "rolling-stone-500-greatest-albums.html"
+  "nelson-rodriguez-500-mejores-canciones-salsa.html"
 ];
 
 
@@ -3395,6 +3435,8 @@ var ALL_LISTS_DATA = {
   "digitaldreamdoor-100-freestyle-songs.html": [["Let the Music Play", "Shannon"], ["I Wonder If I Take You Home", "Lisa Lisa & The Cult Jam with Full Force"], ["When I Hear Music (It Makes Me Dance)", "Debbie Deb"], ["Don't Stop the Rock", "Freestyle"], ["Fantasy Girl", "Johnny O."], ["Spring Love (Come Back to Me)", "Stevie B."], ["Change on Me", "Cynthia"], ["Take Me in Your Arms", "Lil' Suzy"], ["Together Forever", "Lisette Melendez"], ["Show Me (The Next remix)", "The Cover Girls"], ["Come Go with Me", "Exposé"], ["Point of No Return", "Exposé"], ["Fascinated (By Your Love)", "Company B"], ["Lookout Weekend", "Debbie Deb"], ["Silent Morning", "Noel"], ["Bad of the Heart", "George Lamond"], ["Temptation", "Corina"], ["I'll Be Loving You", "Collage"], ["I Can't Wait", "Nu Shooz"], ["Please Don't Go", "Nayobe"], ["I'll Be All You Ever Need", "Trinere"], ["Come Into My Arms", "Judy Torres"], ["One Way Love", "T.K.A."], ["Boy, I've Been Told", "Sa-Fire"], ["I Won't Stop Loving You", "C-Bank feat. Diamond Eyes"], ["I Wanna Be the One", "Stevie B."], ["Tell it to My Heart", "Taylor Dayne"], ["Give Me Tonight", "Shannon"], ["Party Your Body", "Stevie B."], ["(You Are My) All N All", "Joyce Sims"], ["Funky Little Beat", "Connie"], ["Diamond Girl", "Nice & Wild"], ["Crying Over You", "Soave"], ["Clave Rocks", "Amoretto"], ["Summertime Summertime", "Nocera"], ["Dreamboy/Dreamgirl", "Cynthia and Johnny O."], ["Two of Hearts", "Stacey Q."], ["No Reason To Cry", "Judy Torres"], ["Do You Miss Me?", "Jocelyn Enriquez"], ["Dreaming of Love", "Stevie B."], ["Sending All My Love", "Linear"], ["I Remember What You Like", "Jenny Burton"], ["Sincerely Yours", "Sweet Sensation"], ["Baby Talk", "Alisha"], ["Can You Feel the Beat?", "Lisa Lisa & The Cult Jam"], ["Set You Free", "Planet Soul feat. Nadine Renee"], ["Release Me", "Angelina"], ["In a Dream (My Love)", "Jossette"], ["Feels So Good (Show Me Your Love)", "DJ Juanito w/ Lina Santiago"], ["Give Me (A Reason)", "Buffy"], ["Don't Take Your Love (Away From Me)", "Lydia Lee Love"], ["Don't Make Me Wait", "Bomb the Bass feat. Lorraine"], ["The Mexican", "Jellybean feat. Jenny 'Janita' Haan"], ["It's Automatic", "Freestyle"], ["Party Has Begun", "Freestyle"], ["Catch Me (I'm Falling)", "Pretty Poison"], ["Take It While It's Hot", "Sweet Sensation"], ["If You Leave Me Now", "Jaya and Stevie B."], ["Head to Toe", "Lisa Lisa & The Cult Jam"], ["Say It's Gonna Rain", "Will to Power"], ["Don't Break My Heart", "Sa-Fire"], ["Maria", "T.K.A."], ["Let Me Love You For Tonight", "Kariya"], ["(You're My One and Only) True Love", "Seduction"], ["Running (The Nest remix)", "Information Society"], ["Hungry for Your Love", "Hanson & Davis"], ["Dancing on the Fire", "Jellybean feat. India"], ["Where Are You Tonight?", "Coro"], ["Yo Little Brother", "Nolan Thomas"], ["For Tonight", "Nancy Martinez"], ["Jump Back (Set Me Free)", "Dhar Braxton"], ["Jam the Box", "'Pretty Tony' Butler"], ["Touch Me (All Night Long)", "Wish feat. Fonda Rae"], ["Yo No Se", "Pajama Party"], ["You Don't Have to Worry", "Rhythmcentric"], ["I Can't Live Without You", "Angelique"], ["Show Me How You Love Me", "Elissa"], ["Then Came You", "T.P.E. feat. Denine"], ["Forever Amo'r", "D'Zyre"], ["Treasure of My Heart", "SF Spanish Fly"], ["Can't We Try", "Rockell feat. Collage"], ["Love Letter", "Giggles"], ["Sidewalk Talk", "Jellybean feat. Madonna"], ["If You Should Ever Be Lonely", "Val Young"], ["Baby Love", "Regina"], ["On the Upside", "Xena"], ["Summer Girls", "Dino"], ["You'll Never Find Another Love Like Mine", "Phyllis Nelson"], ["Honey to a Bee", "Tina B."], ["Arabian Knights", "Latin Rascals"], ["Sayin' Sorry (Don't Make It Right)", "Denise Lopez"], ["Who's Got Your Love?", "Nyasia"], ["Bleeding Heart", "Bardeux"], ["Stay in Love", "Kromozone Project feat. Mon A Q."], ["Real Love", "Lil' Johanna"], ["Why Do You Treat Me Badly?", "Leticia"], ["Passion", "K5 feat. Tammy Wright"], ["Never Gonna Let You Go", "Tamara"], ["Endless Night", "Cynthia"], ["Highways of Love", "Johnny O."]],
   "digitaldreamdoor-100-funk-songs.html": [["Get Up (I Feel Like Being a Sex Machine) Part I", "James Brown"], ["Papa's Got a Brand New Bag", "James Brown & The Famous Flames"], ["Thank You (Falletinme Be Mice Elf Agin)", "Sly & The Family Stone"], ["Tear the Roof Off the Sucker (Give Up the Funk)", "Parliament"], ["Theme from 'Shaft'", "Isaac Hayes"], ["Superfly", "Curtis Mayfield"], ["Superstition", "Stevie Wonder"], ["Papa Was a Rollin' Stone", "The Temptations"], ["When Doves Cry", "Prince & The Revolution"], ["One Nation Under a Groove", "Funkadelic"], ["Cold Sweat Part I", "James Brown & The Famous Flames"], ["Out of Sight", "James Brown & The Famous Flames"], ["Funky Broadway", "Dyke & The Blazers"], ["Cissy Strut", "Meters"], ["Chameleon", "Herbie Hancock"], ["It's Your Thing", "Isley Brothers"], ["Flash Light", "Parliament"], ["War", "Edwin Starr"], ["Super Freak Part I", "Rick James"], ["Little Red Corvette", "Prince & The Revolution"], ["Don't Stop ('Til You Get Enough)", "Michael Jackson"], ["Family Affair", "Sly & The Family Stone"], ["Living for the City", "Stevie Wonder"], ["I'll Take You There", "Staple Singers"], ["That Lady Part I", "Isley Brothers"], ["Mr. Big Stuff", "Jean Knight"], ["Tell Me Something Good", "Rufus"], ["Kiss", "Prince & The Revolution"], ["Higher Ground", "Stevie Wonder"], ["Play That Funky Music (White Boy)", "Wild Cherry"], ["Car Wash", "Rose Royce"], ["Brick House", "Commodores"], ["Fire", "Ohio Players"], ["Low Rider", "War"], ["Pick Up the Pieces", "Average White Band"], ["Got to Give It Up Part I", "Marvin Gaye"], ["More Bounce to the Ounce Part I", "Zapp & Roger"], ["Jungle Boogie", "Kool & The Gang"], ["Funky Drummer Parts I and II", "James Brown"], ["Amen, Brother", "The Winstons"], ["Apache", "Incredible Bongo Band"], ["The Payback", "James Brown"], ["Think (About It)", "Lyn Collins"], ["Word Up", "Cameo"], ["Express Yourself", "Charles Wright & The Watts 103rd Street Rhythm Band"], ["Atomic Dog", "George Clinton"], ["You Sexy Thing", "Hot Chocolate"], ["Funky Stuff", "Kool & The Gang"], ["Dazz", "Brick"], ["Shining Star", "Earth, Wind & Fire"], ["Hollywood Swinging", "Kool & The Gang"], ["Do It ('Til You're Satisfied)", "B.T. Express"], ["For the Love of Money", "O'Jays"], ["Give It to Me Baby", "Rick James"], ["Clean Up Woman", "Betty Wright"], ["Groove Me", "King Floyd"], ["Ain't Nobody", "Rufus & Chaka Khan"], ["Rock Steady", "Aretha Franklin"], ["What is Hip?", "Tower of Power"], ["You Dropped a Bomb on Me", "Gap Band"], ["I Can't Stand the Rain", "Ann Peebles"], ["Genius of Love", "Tom Tom Club"], ["(Not Just) Knee Deep Part I", "Funkadelic"], ["Get Down On It", "Kool & The Gang"], ["Love Rollercoaster", "Ohio Players"], ["It's Just Begun", "Jimmy Castor Bunch"], ["Slide", "Slave"], ["P-Funk (Wants to Get Funked Up)", "Parliament"], ["I Don't Believe You Want To Get Up and Dance (Oops)", "Gap Band"], ["Keep on Truckin' Part I", "Eddie Kendricks"], ["Fight the Power Parts I and II", "Isley Brothers"], ["Say It Loud - I'm Black and Proud Part I", "James Brown"], ["Give It Up or Turnit a Loose (In the Jungle Groove remix)", "James Brown"], ["Kung Fu Fighting", "Carl Douglas"], ["Bustin' Loose", "Chuck Brown & The Soul Searchers"], ["Hot Fun in the Summertime", "Sly & The Family Stone"], ["Ffun", "Con Funk Shun"], ["Serpentine Fire", "Earth, Wind & Fire"], ["Sign 'O' the Times", "Prince"], ["I Found Lovin'", "The Fatback Band"], ["Cloud Nine", "The Temptations"], ["Freddie's Dead (Theme from Superfly)", "Curtis Mayfield"], ["Bootzilla", "Bootsy's Rubber Band"], ["Across 110th Street", "Bobby Womack"], ["Too Hot to Stop", "Bar-Kays"], ["Movin'", "Brass Construction"], ["Funky Sensation", "Gwen McCrae"], ["Fencewalk", "Mandrill"], ["Got To Be Real", "Cheryl Lynn"], ["Rock Creek Park", "Blackbyrds"], ["Backstabbers", "O'Jays"], ["Let's Stay Together", "Al Green"], ["Ffun Part I", "Con Funk Shun"], ["Right Place, Wrong Time", "Dr. John"], ["Computer Love", "Zapp & Roger"], ["Fantastic Voyage", "Lakeside"], ["Let it Whip", "Dazz Band"], ["I Got My Mind Made Up (You Can Get It Girl)", "Instant Funk"], ["No Parking (On the Dancefloor)", "Midnight Star"], ["Get on the Good Foot", "James Brown"]],
   "digitaldreamdoor-100-house-songs.html": [["Move Your Body (The House Music Anthem)", "Frankie Knuckles / Marshall Jefferson"], ["Can You Feel It?", "Mr. Fingers a.k.a. Larry Heard and Robert Owens"], ["Acid Trax", "Phuture"], ["Love Can't Turn Around", "Farley Jackmaster Funk with Darryl Pandy"], ["Jack Your Body", "Steve Silk Hurley"], ["Pump Up the Volume", "M/A/R/R/S"], ["On and On", "Jesse Saunders"], ["Voodoo Ray", "A Guy Called Gerald"], ["French Kiss", "Lil' Louis & The World"], ["Mystery of Love", "Fingers Inc."], ["Music Sounds Better with You", "Stardust"], ["Gypsy Woman (She's Homeless)", "Crystal Waters"], ["That's the Way Love Is", "Ten City"], ["You Used to Hold Me", "Ralphi Rosario feat. Xaviera Gold"], ["No Way Back", "Adonis"], ["Tears", "Frankie Knuckles pres. Satoshi Tomiie feat. Robert Owens"], ["Baby Wants to Ride", "Frankie Knuckles with Jamie Principle"], ["It's Alright", "Sterling Void feat. Paris Brightledge"], ["Your Love", "Frankie Knuckles with Jamie Principle"], ["Weekend", "Todd Terry"], ["Music Is the Key", "J. M. Silk"], ["Break 4 Luv", "Raze"], ["Where Love Lives (Come on Down)", "Alison Limerick"], ["Passion (Do You Want It Right Now?)", "Gat Decor"], ["Hideaway (Deep Dish remix)", "De'Lacy"], ["To Be in Love", "Masters at Work feat. India"], ["You Got the Love", "The Source feat. Candi Staton"], ["Theme from S'Express", "S'Express"], ["I'll House You", "The Jungle Brothers"], ["Promised Land", "Joe Smooth feat. Anthony Thomas"], ["House Nation", "The House Master Boyzz & Rude Boy O"], ["Washing Machine", "Mr. Fingers"], ["Not Forgotten", "Leftfield"], ["Da Funk", "Daft Punk"], ["Beat Dis", "Bomb Da Bass"], ["Pacific", "808 State"], ["Witch Doktor", "Armand Van Helden"], ["Can't Get Enough", "Liz Torres"], ["Land of Confusion", "Armando"], ["It's House", "Chip E."], ["Trapped", "Colonel Abrams"], ["Follow Me", "Aly-Us"], ["The Bomb (These Sounds Fall into My Mind)", "The Bucketheads"], ["Groovejet (If This Ain't Love)", "DJ Spiller feat. Sophie Ellis-Bextor"], ["Red Alert", "Basement Jaxx"], ["Push the Feeling On", "The Nightcrawlers"], ["Big Love", "Pete Heller"], ["This Is Acid (A New Dance Craze)", "Maurice"], ["I've Lost Control", "Sleazy D."], ["Can You Party?", "Royal House"], ["Do It Properly", "Adonis"], ["House of God", "DHS"], ["Around the World", "Daft Punk"], ["A Deeper Love", "Clivilles & Cole"], ["Free (Mood II Swing mix)", "Ultra Naté"], ["I Can't Forget", "Mr. Lee"], ["Sueño Latino", "Sueño Latino feat. Carolina Dumas"], ["Carino", "T-Coy"], ["Like This", "Chip E. feat. K. Joy"], ["Give It Up (Batucada Refrescante)", "The Good Men"], ["It's Like That '98", "Run-D.M.C. vs Jason Nevins"], ["Professional Widow (Armand Van Helden remix)", "Tori Amos"], ["U Don't Know Me", "Armand Van Helden feat. Duane Harden"], ["Sugar Is Sweeter (Armand Van Helden remix)", "CJ Bolland"], ["(I Wanna Give You) Devotion", "Nomad feat. MC Mikee Freedom"], ["Your Loving Arms", "Billie Ray Martin"], ["Spin Spin Sugar (Armand Van Helden remix)", "Sneaker Pimps"], ["Sing It Back", "Moloko"], ["Killer", "Adamski feat. Seal"], ["Needin' U", "David Morales pres. The Face"], ["Magic Carpet Ride", "Mighty Dub Katz"], ["In De Ghetto", "David Morales & The Badyard Club feat. Crystal Waters"], ["The Funk Phenomena", "Armand Van Helden pres. Old School Junkies"], ["Sexual (Thunderpuss 2000 remix)", "Amber"], ["Lady (Hear Me Tonight)", "Modjo"], ["Everybody Be Somebody", "Ruffneck feat. Yavahn"], ["If You Could Read My Mind", "Stars on 54"], ["Disco's Revenge (Mole Hole mix)", "Gusto"], ["Flawless", "The Ones"], ["One More Try", "Kristine W."], ["Finally", "Kings of Tomorrow feat. Julie McKnight"], ["Yo Yo Get Funky", "Fast Eddie"], ["Bring Down the Walls", "Robert Owens"], ["The Real Thing", "Screamin Rachel"], ["Turn Around", "Phats N Small feat. Toney Lee"], ["Escravos de Jo", "Kerri Chandler & Joe Claussell"], ["Gabriel", "Roy Davis Jr. feat. Peven Everett"], ["Rose Rouge", "St. Germain"], ["Never Gonna Let You Go '97", "Tina Moore"], ["Boom Boom Boom", "The Outhere Brothers"], ["Rip Groove", "Double 99 feat. Top Cat"], ["Horny '98", "Mouse T. vs Hot N Juicy"], ["Dirty Cash (Money Talks)", "Adventures of Stevie V."], ["We Call It Aciied", "D-Mob feat. Gary Haisman"], ["The Real Life", "Corporation of One"], ["Percolator", "Cajmere"], ["One More Time", "Daft Punk"], ["The Freaks Come Out", "Cevin Fisher's Big Break"], ["The Underground", "Celeda"], ["Open Up", "Leftfield feat. John Lydon"]],
+  "rolling-stone-50-best-summer-songs.html": [["Good Times","Chic"],["Dancing in the Street","Martha and The Vandellas"],["Got to Give It Up","Marvin Gaye"],["Fight the Power","Public Enemy"],["California Girls","The Beach Boys"],["School's Out","Alice Cooper"],["When Doves Cry","Prince"],["Vacation","The Go-Gos"],["Essence","Wizkid"],["I Like It","Cardi B"],["Todo de Ti","Rauw Alejandro"],["Cruel Summer","Bananarama"],["Butter","BTS"],["Summer Girls","LFO"],["Rockaway Beach","Ramones"],["Springsteen","Eric Church"],["Steal My Sunshine","Len"],["Summer Breeze","Seals and Crofts"],["Summertime Blues","Eddie Cochran"],["Old Town Road","Lil Nas X"],["Summer Babe","Pavement"],["Scarlet Begonias","Grateful Dead"],["Summertime","Sam Cooke"],["In My Feelings","Drake"],["Despacito","Luis Fonsi"],["Gin and Juice","Snoop Doggy Dogg"],["Summer In the City","The Lovin Spoonful"],["Pony","Ginuwine"],["As It Was","Harry Styles"],["WAP","Cardi B"],["Miserlou","Dick Dale"],["Toast","Koffee"],["Heat Wave","Snail Mail"],["Let's Twist Again","Chubby Checker"],["Hot Stuff","Donna Summer"],["Cruel Summer","Taylor Swift"],["It Takes Two","Rob Base and DJ E-Z Rock"],["Surf City","Jan and Dean"],["Sleepwalk","Santo and Johnny"],["Dancing Days","Led Zeppelin"],["This Summer","Superchunk"],["Saturday in the Park","Chicago"],["Spill the Wine","Eric Burdon and War"],["Rock Lobster","The B-52s"],["Saturday in the Park","Chicago"],["Heavy Metal Drummer","Wilco"],["Under The Boardwalk","The Drifters"],["Constructive Summer","The Hold Steady"],["Hot in Herre","Nelly"],["That Summer Feeling","Jonathan Richman"]],
+  "thump-vice-99-best-dance-albums.html": [["Discovery","Daft Punk"],["Landcruising","Carl Craig"],["Confessions on a Dance Floor","Madonna"],["You've Come a Long Way Baby","Fatboy Slim"],["dubnobasswithmyheadman","Underworld"],["Dig Your Own Hole","Chemical Brothers"],["Settle","Disclosure"],["Body Talk","Robyn"],["Rooty","Basement Jaxx"],["Aphrodite","Kylie Minogue"],["Violator","Depeche Mode"],["Scary Monsters and Nice Sprites","Skrillex"],["Off the Wall","Michael Jackson"],["Cross","Justice"],["Sheet One","Plastikman"],["Bad Girls","Donna Summer"],["Trans-Europe Express","Kraftwerk"],["Soundboy Rock","Groove Armada"],["From Here to Eternity","Giorgio Moroder"],["Homework","Daft Punk"],["The Innocents","Erasure"],["Everything is Wrong","Moby"],["Ready for the Weekend","Calvin Harris"],["Strobelite Seduction","Kaskade"],["The Fat of The Land","The Prodigy"],["Madonna","Madonna"],["LCD Soundsystem","LCD Soundsystem"],["Just Be","Tiesto"],["Come With Us","Chemical Brothers"],["Miss E So Addictive","Missy Elliott"],["Power Corruption and Lies","New Order"],["Walking Wounded","Everything But The Girl"],["Actually","Pet Shop Boys"],["Fever","Kylie Minogue"],["Timeless","Goldie"],["Kish Kash","Basement Jaxx"],["Logozo","Angelique Kidjo"],["Kala","M.I.A."],["Hercules and Love Affair","Hercules and Love Affair"],["Imagine","Armin van Buuren"],["George Is On","Deep Dish"],["Sexor","Tiga"],["Gonna Make You Sweat","C+C Music Factory"],["Supernature","Goldfrapp"],["Skream!","Skream"],["Computer World","Kraftwerk"],["The Fame Monster","Lady Gaga"],["Alcachofa","Ricardo Villalobos"],["The Audience's Listening","Cut Chemist"],["Random Album Title","Deadmau5"],["Metro Area","Metro Area"],["Bunkka","Paul Oakenfold"],["Welcome Reality","Nero"],["Tongue n Cheek","Dizzee Rascal"],["Debut","Bjork"],["Endtroducing","DJ Shadow"],["In The Zone","Britney Spears"],["Until Now","Swedish House Mafia"],["Pop-up","Yelle"],["Demon Days","Gorillaz"],["Untrue","Burial"],["1999","Cassius"],["Since I Left You","Avalanches"],["Vertigo","Groove Armada"],["Arrival","ABBA"],["This is Happening","LCD Soundsystem"],["Ultraviolet","Kid Sister"],["Play","Moby"],["Echoes","The Rapture"],["Pop Life","David Guetta"],["The Middle of Nowhere","Orbital"],["First Floor","Theo Parrish"],["Overpowered","Roisin Murphy"],["E2-E4","Manuel Gottsching"],["Shoki Shoki","Femi Kuti"],["Love Angel Music Baby","Gwen Stefani"],["World Clique","Deee-Lite"],["Sirens","Gorgon City"],["Fancy Footwork","Chromeo"],["Halfway Between the Gutter and the Stars","Fatboy Slim"],["My Way","Akufen"],["Made in the Dark","Hot Chip"],["I Created Disco","Calvin Harris"],["Hanging Gardens","Classixx"],["Nanda Collection","Kyary Pamyu Pamyu"],["Attack Sustain Decay Release","Simian Mobile Disco"],["Hot Fuss","The Killers"],["For Lack of a Better Name","Deadmau5"],["Guns Don't Kill People Lazers Do","Major Lazer"],["New Eyes","Clean Bandit"],["Neptune's Lair","Drexciya"],["Bangarang","Skrillex"],["Oi Oi Oi","Boys Noize"],["When the Music's Loud","Colette"],["Apocalypso","The Presets"],["Orchestra of Bubbles","Ellen Allien and Apparat"],["Darkdancer","Les Rythmes Digitales"],["Odyssey","Fischerspooner"],["Racine Carree","Stromae"]],
   "billboard-100-jock-jams.html": [["We Will Rock You", "Queen"], ["Welcome to the Jungle", "Guns N' Roses"], ["Hip Hop Hooray", "Naughty By Nature"], ["Kernkraft 400", "Zombie Nation"], ["Seven Nation Army", "The White Stripes"], ["Eye of the Tiger", "Survivor"], ["Rock and Roll Part 2", "Gary Glitter"], ["Jump Around", "House of Pain"], ["Crazy Train", "Ozzy Osbourne"], ["Get Ready for This", "2 Unlimited"], ["Lose Yourself", "Eminem"], ["Whoomp! (There It Is)", "Tag Team"], ["Sirius", "The Alan Parsons Project"], ["Sandstorm", "Darude"], ["Who Let the Dogs Out?", "Baha Men"], ["Gonna Make You Sweat (Everybody Dance Now)", "C+C Music Factory"], ["I Gotta Feeling", "The Black Eyed Peas"], ["All I Do Is Win", "DJ Khaled feat. Snoop Dogg & T-Pain"], ["Power", "Kanye West"], ["Rock & Roll", "Led Zeppelin"], ["Strike It Up", "Black Box"], ["Livin' on a Prayer", "Bon Jovi"], ["It Takes Two", "Rob Base & DJ EZ-Rock"], ["Gonna Fly Now (Theme from Rocky)", "Bill Conti"], ["Jump", "Kris Kross"], ["Let's Get Loud", "Jennifer Lopez"], ["Levels", "Avicii"], ["Kickstart My Heart", "Mötley Crüe"], ["Bang the Drum All Day", "Todd Rundgren"], ["The House Is Rockin'", "Stevie Ray Vaughan"], ["Na Na Hey Hey Kiss Him Goodbye", "Steam"], ["Don't Stop Believin'", "Journey"], ["Remember the Name", "Fort Minor"], ["Apache (Jump on It)", "Sugarhill Gang"], ["Twilight Zone", "2 Unlimited"], ["Fight for Your Right", "Beastie Boys"], ["Dynamite", "Taio Cruz"], ["Let Me Clear My Throat", "DJ Kool"], ["Paradise City", "Guns N' Roses"], ["Pump Up the Jam", "Technotronic feat. Felly"], ["Sabotage", "Beastie Boys"], ["You Shook Me All Night Long", "AC/DC"], ["All-Star", "Smash Mouth"], ["In the Air Tonight", "Phil Collins"], ["I Like It Like That", "The Blackout Allstars"], ["Good Feeling", "Flo Rida"], ["Public Service Announcement", "Jay-Z"], ["Pour Some Sugar on Me", "Def Leppard"], ["YMCA", "Village People"], ["Cum on Feel the Noize", "Quiet Riot"], ["The Power", "SNAP!"], ["Timber", "Pitbull feat. Kesha"], ["Unbelievable", "EMF"], ["Party Up (Up in Here)", "DMX"], ["R.O.C.K. in the U.S.A.", "John Mellencamp"], ["Low", "Flo Rida feat. T-Pain"], ["Boom", "P.O.D."], ["Lose Control", "Missy Elliott feat. Ciara"], ["Burn It to the Ground", "Nickelback"], ["Shots", "LMFAO"], ["Misirlou", "Dick Dale"], ["You Dropped a Bomb on Me", "The Gap Band"], ["Right Here, Right Now", "Fatboy Slim"], ["Let's Get It Started", "Black Eyed Peas"], ["Cotton Eye Joe", "Rednex"], ["I Can't Stop", "Flux Pavilion"], ["Friends in Low Places", "Garth Brooks"], ["A Little Less Conversation", "Elvis Presley vs. Junkie XL"], ["Chelsea Dagger", "The Fratellis"], ["Halftime (Stand Up & Get Crunk!)", "Ying Yang Twins"], ["Don't Stop the Party", "Pitbull feat. TJR"], ["Black Betty", "Ram Jam"], ["Machinehead", "Bush"], ["Boneless", "Steve Aoki, Chris Lake & Tujamo"], ["What I Like About You", "The Romantics"], ["Radioactive", "Imagine Dragons"], ["Get Up Offa That Thing", "James Brown"], ["Till I Collapse", "Eminem feat. Nate Dogg"], ["Bro Hymn", "Pennywise"], ["Rock This Party (Everybody Dance Now)", "Bob Sinclair"], ["Let It Rock", "Kevin Rudolf feat. Lil Wayne"], ["Rock and Roll All Nite", "KISS"], ["Joker and the Thief", "Wolfmother"], ["I Like to Move It", "Reel 2 Real"], ["Hall of Fame", "The Script feat. Will.i.am"], ["Ready to Go", "Republica"], ["The Bomb (These Sounds Fall into My Mind)", "The Bucketheads"], ["One More Time", "Daft Punk"], ["Coffee Pot (It's Time for the Percolator)", "Cajmere"], ["Can't Hold Us", "Macklemore & Ryan Lewis feat. Ray Dalton"], ["Jock Jam Megamix", "ESPN"]],
   "canalviva-100-canciones-colombianas.html": [["A Quien Enganas Abuelo", "Silva y Villalba"], ["Al Sur", "Silva y Villalba"], ["Alicia Adorada", "Alejandro Durán"], ["Amarte Más No Pude", "Diomedes Díaz; Juancho Rois"], ["Antioqueñita", "Briceño y Añez"], ["Arbolito de Navidad", "José Barros; Los Trovadores de Barú"], ["Ay Hombre", "Jorge Celedón; Jimmy Zambrano"], ["Ay Mi Llanura", "Arnulfo Briceño"], ["Ay Si ,Si", "Luis Ariel Rey"], ["Besame Morenita", "Carlos Julio Ramírez"], ["Bolero Falaz", "Aterciopelados"], ["Bonita", "Diomedes Díaz; Colacho Mendoza"], ["Bunde Tolimense", "Los Tolimenses"], ["Cachipay", "Jaime Llano González"], ["Cali Pachanguero", "Grupo Niche"], ["Campesina Santandereana", "Silva y Villalba"], ["Carmen De Bolivar", "Lucho Bermúdez"], ["Carmentea", "Luis Ariel Rey"], ["Cero Treinta y Nueve", "Alejandro Durán"], ["Colombia Caribe", "Francisco Zumaqué"], ["Colombia Tierra Querida", "Lucho Bermúdez"], ["Como Decirte", "Génesis"], ["Coroncoro", "La Niña Emilia; Los Cumbiamberos de Gamero"], ["Decimo Grado", "Ana y Jaime"], ["El año Viejo", "Tony Camargo"], ["El Ausente", "Fruko y sus Tesos"], ["El Cafetero", "Jaime Llano González"], ["El Caminante", "Fruko y sus Tesos"], ["El Camino de la Vida", "Arboleda y Valencia"], ["El Enterrador", "Pelon y Marin"], ["El Mejoral", "Alejandro Durán"], ["El Merecumbe", "Los Melódicos"], ["El Pajaro Amarillo", "Bovea y sus Vallenatos"], ["El Pescador", "Totó la Momposina"], ["El preso", "Fruko y sus Tesos; Wilson Saoko Manyoma"], ["El Sanjuanero", "Los Tolimenses"], ["En Barranquilla Me Quedo", "Joe Arroyo"], ["Espumas", "Garzón y Collazos"], ["Feria de Manizales", "Banda El Empastre"], ["Guabina Chiquinquierña", "Garzón y Collazos"], ["La bicicleta", "Carlos Vives; Shakira"], ["La Burrita de Eliseo", "Los Corraleros de Majagual"], ["La Casa en el Aire", "Bovea y sus Vallenatos"], ["La Colegiala", "Rodolfo Aicardi; Los Hispanos"], ["La Creciente", "Binomio de Oro de América"], ["La Cucharita", "Los Carrangueros de Ráquira"], ["La Cuchilla", "Las Hermanas Calle"], ["La Diosa Coronada", "Leandro Díaz"], ["La Estereofonica", "Manuel Villanueva"], ["La Gata Golosa", "Oriol Rangel"], ["La Gota Fría", "Carlos Vives"], ["La Guaneña", "Chimizapagua"], ["La Mucura", "Lucho Bermúdez"], ["La Negra Celina", "Cristóbal Pérez y su Conjunto"], ["La Noche", "Joe Arroyo"], ["La Piragua", "Los Black Stars"], ["La Pollera Colorá", "Pedro Salcedo Y Su Orquesta; Wilson Choperena"], ["La Ruana", "Obdulio y Julian"], ["La Tierra", "Ekhymosis"], ["La Tierra del Olvido", "Carlos Vives"], ["Las Caleñas Son Como Las Flores", "The Latin Brothers"], ["Las Pilanderas", "Los Trovadores de Barú"], ["Las Tapas", "Lisandro Meza"], ["Llamarada", "Garzón y Collazos"], ["Los Cucaracheros", "Cantares de Colombia"], ["Los Guaduales", "Silva y Villalba"], ["Los Sabanales", "Calixto Ochoa"], ["Mapale", "Cumbia Soledeña"], ["Matilde Lina", "Leandro Díaz"], ["Me Bebi Tu Recuerdo", "Galy Galiano"], ["Mi Buenaventura", "Peregoyo y su Combo Vacaná"], ["Momposina", "Nelson Pinedo"], ["Nadie Es Eterno", "Darío Gómez"], ["Navidad Negra", "Lucho Bermúdez"], ["No Me Estas Haciendo Falta", "Jaime R. Echavarría"], ["Nuestro Sueño", "Grupo Niche"], ["Oiga, Mire, Vea", "Guayacán Orquesta"], ["Ojos Indios", "Alfredo Gutiérrez"], ["Olvidala", "Binomio de Oro de América"], ["Oropel", "Garzón y Collazos"], ["Pachito E'che", "Benny Moré"], ["Pa'l Bailador", "Joe Arroyo"], ["Pescador Lucero y Rio", "Garzón y Collazos"], ["Predestinacion", "Aries Vigoth"], ["Prende la Vela", "Totó la Momposina"], ["Pueblito Viejo", "Garzón y Collazos"], ["Quiero Amanece", "Pacho Galán"], ["San Fernando", "Lucho Bermúdez"], ["Se Va el Caimán", "Alondra; Pacho Galán"], ["Señor", "Helenita Vargas"], ["Sin Medir Distancias", "Diomedes Díaz; Colacho Mendoza"], ["Solo Para Ti", "Binomio de Oro de América"], ["Soy Colombiano", "Garzón y Collazos"], ["Tolu", "Lucho Bermúdez"], ["Traicionera", "Alci Acosta"], ["Tú Eres la Reina", "Diomedes Díaz; Juancho Rois"], ["Una Aventura", "Grupo Niche"], ["Vestido de Cristal", "Kraken"], ["Vispera de Año Nuevo", "Guillermo Buitrago"], ["Yo Me Llamo Cumbia", "Leonor González Mina"]],
   "digitaldreamdoor-100-alt-rock-songs.html": [["Smells Like Teen Spirit", "Nirvana"], ["Love Will Tear Us Apart", "Joy Division"], ["Radio Free Europe", "R.E.M."], ["Blue Monday", "New Order"], ["How Soon Is Now?", "The Smiths"], ["Once in a Lifetime", "Talking Heads"], ["Teen Age Riot", "Sonic Youth"], ["Blister in the Sun", "Violent Femmes"], ["Jeremy", "Pearl Jam"], ["Monkey Gone to Heaven", "Pixies"], ["Under the Bridge", "Red Hot Chili Peppers"], ["Black Hole Sun", "Soundgarden"], ["Closer", "Nine Inch Nails"], ["Losing My Religion", "R.E.M."], ["Wonderwall", "Oasis"], ["Just Like Heaven", "The Cure"], ["Cannonball", "The Breeders"], ["Come As You Are", "Nirvana"], ["Loser", "Beck"], ["Creep", "Radiohead"], ["Bela Lugosi's Dead", "Bauhaus"], ["Personal Jesus", "Depeche Mode"], ["Song 2", "Blur"], ["The Killing Moon", "Echo and the Bunnymen"], ["Sunday Bloody Sunday", "U2"], ["Common People", "Pulp"], ["There Is a Light That Never Goes Out", "The Smiths"], ["Where Is My Mind?", "Pixies"], ["Everlong", "Foo Fighters"], ["With or Without You", "U2"], ["Lithium", "Nirvana"], ["One", "U2"], ["Bullet with Butterfly Wings", "The Smashing Pumpkins"], ["Girls & Boys", "Blur"], ["Zombie", "The Cranberries"], ["Friday I'm in Love", "The Cure"], ["Alive", "Pearl Jam"], ["Paranoid Android", "Radiohead"], ["Sabotage", "Beastie Boys"], ["Maps", "Yeah Yeah Yeahs"], ["Buddy Holly", "Weezer"], ["Self Esteem", "The Offspring"], ["All My Friends", "LCD Soundsystem"], ["1979", "The Smashing Pumpkins"], ["Disintegration", "The Cure"], ["Glycerine", "Bush"], ["Bizarre Love Triangle", "New Order"], ["Fake Plastic Trees", "Radiohead"], ["Debaser", "Pixies"], ["Heart-Shaped Box", "Nirvana"], ["Today", "The Smashing Pumpkins"], ["Academy Fight Song", "Mission of Burma"], ["Hallelujah", "Jeff Buckley"], ["Better Man", "Pearl Jam"], ["Float On", "Modest Mouse"], ["Celebrated Summer", "Hüsker Dü"], ["Loaded", "Primal Scream"], ["Birdhouse in Your Soul", "They Might Be Giants"], ["So Alive", "Love and Rockets"], ["Shine", "Collective Soul"], ["Bitter Sweet Symphony", "The Verve"], ["When I Come Around", "Green Day"], ["She's Lost Control", "Joy Division"], ["Only Shallow", "My Bloody Valentine"], ["True Faith", "New Order"], ["I Melt With You", "Modern English"], ["I Still Haven't Found What I'm Looking For", "U2"], ["Left of the Dial", "The Replacements"], ["That's Entertainment", "The Jam"], ["Epic", "Faith No More"], ["Man in the Box", "Alice in Chains"], ["Bulls on Parade", "Rage Against the Machine"], ["Alison", "Elvis Costello"], ["Last Nite", "The Strokes"], ["Seven Nation Army", "The White Stripes"], ["D.A.N.C.E.", "Justice"], ["Dancing in the Dark", "Arcade Fire"], ["No Cars Go", "Arcade Fire"], ["What Do I Get?", "Buzzcocks"], ["Rocks", "Primal Scream"], ["Fell in Love with a Girl", "The White Stripes"], ["Mr. Brightside", "The Killers"], ["Bad", "U2"], ["Connection", "Elastica"], ["New Slang", "The Shins"], ["Fluorescent Adolescent", "Arctic Monkeys"], ["Rebellion (Lies)", "Arcade Fire"], ["Disorder", "Joy Division"], ["Pretty in Pink", "Psychedelic Furs"], ["West End Girls", "Pet Shop Boys"], ["Transmission", "Joy Division"], ["Basket Case", "Green Day"], ["Dancing Barefoot", "Patti Smith"], ["Gigantic", "Pixies"], ["Dragula", "Rob Zombie"], ["I Am the Resurrection", "The Stone Roses"], ["Lovesong", "The Cure"], ["Hand in Glove", "The Smiths"], ["Take Me Out", "Franz Ferdinand"]],
@@ -3624,16 +3666,16 @@ var ALL_LISTS_DATA = {
   }
 
   // Top artists — recalculado
-  var topArtists = [{"name":"The Beatles","sub":"73 menciones","artist":"The Beatles"},{"name":"Taylor Swift","sub":"61 menciones","artist":"Taylor Swift"},{"name":"Led Zeppelin","sub":"54 menciones","artist":"Led Zeppelin"},{"name":"Drake","sub":"49 menciones","artist":"Drake"},{"name":"Kendrick Lamar","sub":"47 menciones","artist":"Kendrick Lamar"}];
+  var topArtists = [{"name":"The Beatles","sub":"84 menciones","artist":"The Beatles"},{"name":"Led Zeppelin","sub":"69 menciones","artist":"Led Zeppelin"},{"name":"Taylor Swift","sub":"67 menciones","artist":"Taylor Swift"},{"name":"Metallica","sub":"52 menciones","artist":"Metallica"},{"name":"Drake","sub":"51 menciones","artist":"Drake"}];
   renderCol('hall-artists', topArtists);
 
   // Top songs — recalculado
-  var topSongs = [{"name":"Billie Jean","sub":"Michael Jackson · 5 listas","artist":"Michael Jackson","track":"Billie Jean"},{"name":"Tainted Love","sub":"Soft Cell · 5 listas","artist":"Soft Cell","track":"Tainted Love"},{"name":"1999","sub":"Prince · 5 listas","artist":"Prince","track":"1999"},{"name":"Push It","sub":"Salt-N-Pepa · 5 listas","artist":"Salt-N-Pepa","track":"Push It"},{"name":"Blue Monday","sub":"New Order · 5 listas","artist":"New Order","track":"Blue Monday"}];
+  var topSongs = [{"name":"Won't Get Fooled Again","sub":"The Who · 8 listas","artist":"The Who","track":"Won't Get Fooled Again"},{"name":"My Generation","sub":"The Who · 7 listas","artist":"The Who","track":"My Generation"},{"name":"Whole Lotta Love","sub":"Led Zeppelin · 7 listas","artist":"Led Zeppelin","track":"Whole Lotta Love"},{"name":"Billie Jean","sub":"Michael Jackson · 6 listas","artist":"Michael Jackson","track":"Billie Jean"},{"name":"Smells Like Teen Spirit","sub":"Nirvana · 6 listas","artist":"Nirvana","track":"Smells Like Teen Spirit"}];
   renderCol('hall-songs', topSongs);
 
 
   // Top albums — recalculado
-  var topAlbums = [{"name":"Marquee Moon","sub":"Television · 7 listas","artist":"Television"},{"name":"What\'s Going On","sub":"Marvin Gaye · 6 listas","artist":"Marvin Gaye"},{"name":"Thriller","sub":"Michael Jackson · 6 listas","artist":"Michael Jackson"},{"name":"Nevermind","sub":"Nirvana · 6 listas","artist":"Nirvana"},{"name":"The Dark Side of the Moon","sub":"Pink Floyd · 6 listas","artist":"Pink Floyd"}];
+  var topAlbums = [{"name":"Thriller","sub":"Michael Jackson · 7 listas","artist":"Michael Jackson"},{"name":"Unknown Pleasures","sub":"Joy Division · 7 listas","artist":"Joy Division"},{"name":"Marquee Moon","sub":"Television · 7 listas","artist":"Television"},{"name":"Nevermind","sub":"Nirvana · 7 listas","artist":"Nirvana"},{"name":"The Dark Side of the Moon","sub":"Pink Floyd · 7 listas","artist":"Pink Floyd"}];
   renderCol('hall-personal', topAlbums);
 })();
 
@@ -3803,17 +3845,59 @@ filterAll();
     if (!result) result = text.substring(0, maxLen || 160);
     return result.length > (maxLen || 160) ? result.substring(0, maxLen || 160).trim() + '…' : result;
   }
-  function itunesArt(query, imgId) {
-    fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(query) +
-          "&media=music&entity=song&limit=5&country=us")
+  // ── Helpers iTunes por tipo ──────────────────────────────────────
+  function bestLfmImg(imgs) {
+    for (var i = imgs.length - 1; i >= 0; i--) {
+      if (imgs[i]['#text'] && imgs[i]['#text'].length > 10 &&
+          imgs[i]['#text'].indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0)
+        return imgs[i]['#text'];
+    }
+    return '';
+  }
+
+  function itunesAlbum(album, artist, imgId) {
+    fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + ' ' + artist) +
+          "&media=music&entity=album&limit=5&country=us")
       .then(function(r) { return r.json(); })
       .then(function(d) {
-        var res = d.results && d.results[0];
-        if (res && res.artworkUrl100) setImg(imgId, res.artworkUrl100.replace('100x100bb','300x300bb'));
+        var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+        for (var i = 0; i < res.length; i++) {
+          if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+        }
+        if (!m && res.length) m = res[0];
+        if (m && m.artworkUrl100) setImg(imgId, m.artworkUrl100.replace('100x100bb','300x300bb'));
       }).catch(function() {});
   }
 
-  // ── Top Artist ──
+  function itunesArtist(name, imgId) {
+    fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(name) +
+          "&media=music&entity=album&limit=5&country=us")
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        var res = d.results || [], a0 = name.toLowerCase().split(' ')[0], m = null;
+        for (var i = 0; i < res.length; i++) {
+          if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+        }
+        if (!m && res.length) m = res[0];
+        if (m && m.artworkUrl100) setImg(imgId, m.artworkUrl100.replace('100x100bb','300x300bb'));
+      }).catch(function() {});
+  }
+
+  function itunesTrack(track, artist, imgId) {
+    fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + ' ' + artist) +
+          "&media=music&entity=song&limit=5&country=us")
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+        for (var i = 0; i < res.length; i++) {
+          if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+        }
+        if (!m && res.length) m = res[0];
+        if (m && m.artworkUrl100) setImg(imgId, m.artworkUrl100.replace('100x100bb','300x300bb'));
+      }).catch(function() {});
+  }
+
+  // ── Top Artist ──────────────────────────────────────────────────
   fetch(BASE + "&method=user.gettopartists&period=1month&limit=1")
     .then(function(r) { return r.json(); })
     .then(function(d) {
@@ -3821,28 +3905,18 @@ filterAll();
       if (!a) return;
       set('lfm-artist-name', a.name);
       set('lfm-artist-plays', playsLine(a.playcount));
-      // Get bio from artist.getInfo
       fetch("https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
             encodeURIComponent(a.name) + "&lang=es&api_key=" + KEY + "&format=json")
         .then(function(r) { return r.json(); })
         .then(function(d2) {
           var bio = d2.artist && d2.artist.bio && d2.artist.bio.summary || '';
           set('lfm-artist-bio', cleanBio(bio, 160));
-          // Try artist image from Last.fm (often blank now) then iTunes
-          var imgs = d2.artist && d2.artist.image || [];
-          var url = '';
-          for (var i = imgs.length - 1; i >= 0; i--) {
-            if (imgs[i]['#text'] && imgs[i]['#text'].length > 10 &&
-                imgs[i]['#text'].indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0) {
-              url = imgs[i]['#text']; break;
-            }
-          }
-          if (url) setImg('lfm-artist-img', url);
-          else itunesArt(a.name, 'lfm-artist-img');
-        }).catch(function() { itunesArt(a.name, 'lfm-artist-img'); });
+          // Last.fm no sirve imágenes de artistas desde 2019 — ir directo a iTunes
+          itunesArtist(a.name, 'lfm-artist-img');
+        }).catch(function() { itunesArtist(a.name, 'lfm-artist-img'); });
     }).catch(function() {});
 
-  // ── Top Album ──
+  // ── Top Album ───────────────────────────────────────────────────
   fetch(BASE + "&method=user.gettopalbums&period=1month&limit=1")
     .then(function(r) { return r.json(); })
     .then(function(d) {
@@ -3851,39 +3925,20 @@ filterAll();
       var artistName = a.artist && a.artist.name || '';
       set('lfm-album-name', a.name + ' — ' + artistName);
       set('lfm-album-plays', playsLine(a.playcount));
-      // Cover: Last.fm image
-      var imgs = a.image || [], url = '';
-      for (var i = imgs.length - 1; i >= 0; i--) {
-        if (imgs[i]['#text'] && imgs[i]['#text'].length > 10 &&
-            imgs[i]['#text'].indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0) {
-          url = imgs[i]['#text']; break;
-        }
-      }
-      if (url) setImg('lfm-album-img', url);
-      // Bio from album.getInfo
       fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=" +
             encodeURIComponent(artistName) + "&album=" + encodeURIComponent(a.name) +
             "&lang=es&api_key=" + KEY + "&format=json")
         .then(function(r) { return r.json(); })
         .then(function(d2) {
           var wiki = d2.album && d2.album.wiki && d2.album.wiki.summary || '';
-          var bioText = cleanBio(wiki, 160);
-          if (!bioText) bioText = 'El álbum más escuchado de ' + artistName + ' en tu colección este mes.';
-          set('lfm-album-bio', bioText);
-          if (!url) {
-            var imgs2 = d2.album && d2.album.image || [];
-            for (var j = imgs2.length - 1; j >= 0; j--) {
-              if (imgs2[j]['#text'] && imgs2[j]['#text'].length > 10 &&
-                  imgs2[j]['#text'].indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0) {
-                setImg('lfm-album-img', imgs2[j]['#text']); break;
-              }
-            }
-          }
-          if (!url) itunesArt(a.name + ' ' + artistName, 'lfm-album-img');
-        }).catch(function() { if (!url) itunesArt(a.name + ' ' + artistName, 'lfm-album-img'); });
+          set('lfm-album-bio', cleanBio(wiki, 160) || ('Álbum más escuchado de ' + artistName + ' este mes.'));
+          var url = bestLfmImg(d2.album && d2.album.image || []);
+          if (url) setImg('lfm-album-img', url);
+          else itunesAlbum(a.name, artistName, 'lfm-album-img');
+        }).catch(function() { itunesAlbum(a.name, artistName, 'lfm-album-img'); });
     }).catch(function() {});
 
-  // ── Top Track ──
+  // ── Top Track ───────────────────────────────────────────────────
   fetch(BASE + "&method=user.gettoptracks&period=1month&limit=1")
     .then(function(r) { return r.json(); })
     .then(function(d) {
@@ -3892,43 +3947,19 @@ filterAll();
       var artistName = t.artist && t.artist.name || '';
       set('lfm-track-name', t.name + ' — ' + artistName);
       set('lfm-track-plays', playsLine(t.playcount));
-      // Bio from track.getInfo
       fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&artist=" +
             encodeURIComponent(artistName) + "&track=" + encodeURIComponent(t.name) +
             "&lang=es&api_key=" + KEY + "&format=json")
         .then(function(r) { return r.json(); })
         .then(function(d2) {
           var wiki = d2.track && d2.track.wiki && d2.track.wiki.summary || '';
-          // Fallback bio from album if no track wiki
-          if (!wiki) wiki = d2.track && d2.track.album && d2.track.album.title ?
-            'Del álbum ' + d2.track.album.title + ' · ' + artistName + '.' : '';
-          set('lfm-track-bio', wiki ? cleanBio(wiki, 160) :
-            'La canción más escuchada de ' + artistName + ' en tu colección este mes.');
-          // Cover art
-          var imgs = d2.track && d2.track.album && d2.track.album.image || [];
-          var url = '';
-          for (var i = imgs.length - 1; i >= 0; i--) {
-            if (imgs[i]['#text'] && imgs[i]['#text'].length > 10 &&
-                imgs[i]['#text'].indexOf('2a96cbd8b46e442fc41c2b86b821562f') < 0) {
-              url = imgs[i]['#text']; break;
-            }
-          }
+          if (!wiki && d2.track && d2.track.album && d2.track.album.title)
+            wiki = 'Del álbum ' + d2.track.album.title + ' · ' + artistName + '.';
+          set('lfm-track-bio', cleanBio(wiki, 160) || ('Canción más escuchada de ' + artistName + ' este mes.'));
+          var url = bestLfmImg(d2.track && d2.track.album && d2.track.album.image || []);
           if (url) setImg('lfm-track-img', url);
-          else {
-            fetch("https://itunes.apple.com/search?term=" +
-                  encodeURIComponent(t.name + ' ' + artistName) +
-                  "&media=music&entity=song&limit=5&country=us")
-              .then(function(r) { return r.json(); })
-              .then(function(di) {
-                var res = di.results || [], art = artistName.toLowerCase().split(' ')[0], m = null;
-                for (var j = 0; j < res.length; j++) {
-                  if (res[j].artistName && res[j].artistName.toLowerCase().indexOf(art) >= 0) { m = res[j]; break; }
-                }
-                if (!m && res.length) m = res[0];
-                if (m && m.artworkUrl100) setImg('lfm-track-img', m.artworkUrl100.replace('100x100bb','300x300bb'));
-              }).catch(function() {});
-          }
-        }).catch(function() { itunesArt(t.name + ' ' + artistName, 'lfm-track-img'); });
+          else itunesTrack(t.name, artistName, 'lfm-track-img');
+        }).catch(function() { itunesTrack(t.name, artistName, 'lfm-track-img'); });
     }).catch(function() {});
 })();
 
