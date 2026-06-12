@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grandes Hits del Pop Español del Siglo XXI - Rolling Stone en Español 2024</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE EN ESPAÑOL</span>
+    <span class="badge-year">2000&#8211;2024</span>
+  </div>
+  <a href="https://es.rollingstone.com/grandes-hits-del-pop-espanol-del-siglo-xxi/" target="_blank" class="page-title">GRANDES HITS DEL POP ESPAÑOL DEL SIGLO XXI</a>
+  <p class="page-sub">Rosalía, Alejandro Sanz, Aserejé, Pablo Alborán, Aitana &#183; 59 canciones &#183; 2000&#8211;2024 &#183; un viaje por el pop español desde el nuevo milenio &#183; RS en Español &#183; Jun 2024</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Malamente - Rosalía">
+    <p class="cover-cap">RS EN ESPAÑOL &#183; 59 CANCIONES &#183; POP ESPAÑOL S.XXI</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los grandes hits del pop español del siglo XXI según Rolling Stone en Español, publicados en junio de 2024. Un viaje en el tiempo por algunas de las canciones más memorables que han dejado los artistas españoles desde el año 2000 hasta hoy — organizado originalmente en orden cronológico, aquí presentado por impacto.</p>
+    <p class="rtext">La lista abarca 24 años de pop español: desde Alejandro Sanz y La Oreja de Van Gogh a inicios del milenio hasta Judeline, Sen Senra y Rels B en 2024. Alejandro Sanz aparece tres veces, Andy y Lucas dos, David Bisbal dos, Amaral dos, La Oreja de Van Gogh dos, Dani Martín dos y Pablo Alborán dos. El momento bisagra de la década: Antes de morirme de C. Tangana con Rosalía (2016) y Malamente de Rosalía (2018) — dos canciones que cambiaron el rumbo de la música española.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los más impactantes del siglo</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2018 · FLAMENCO POP · ESPAÑA</div>
+      <div class="feat-title">Malamente</div>
+      <div class="feat-artist">Rosalía</div>
+      <p class="feat-rev">El sencillo que anunció el cambio más radical en la música española del siglo XXI. Malamente ganó el Latin Grammy a Mejor Fusión / Interpretación Urbana en 2018 y convirtió a Rosalía en un fenómeno global antes de El mal querer. Una canción de flamenco vanguardista que demostró que España podía liderar la conversación musical internacional — no solo participar en ella.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2002 · POP · ESPAÑA</div>
+      <div class="feat-title">Aserejé</div>
+      <div class="feat-artist">Las Ketchup</div>
+      <p class="feat-rev">El fenómeno pop español más global del siglo XXI en sus primeros años. Aserejé llegó al número 1 en más de 20 países y fue el single más vendido en Europa en 2002 — un hit viral avant la lettre que hizo bailar al mundo entero antes de que existieran las redes sociales. La canción más reconocible del pop español fuera de las fronteras del país en toda su historia reciente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2003 · POP ROCK · ESPAÑA</div>
+      <div class="feat-title">Rosas</div>
+      <div class="feat-artist">La Oreja de Van Gogh</div>
+      <p class="feat-rev">La canción más querida del pop español de los 2000s — una balada perfecta sobre el amor no correspondido que conectó con generaciones enteras. La Oreja de Van Gogh con Amaia Montero al frente en su momento cumbre, creando uno de los himnos más recordados de la música pop en español del nuevo milenio. Treinta años después sigue sonando con la misma fuerza.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2011 · POP · ESPAÑA</div>
+      <div class="feat-title">Solamente tú</div>
+      <div class="feat-artist">Pablo Alborán</div>
+      <p class="feat-rev">El debut más impactante del pop español de la década de 2010. Solamente tú convirtió a Pablo Alborán en el artista revelación más importante de España en años — vendió más de un millón de copias y lanzó una carrera que lo llevaría a ser el cantautor pop español más exitoso de su generación, con millones de seguidores en todo el mundo hispanohablante.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2016 · TRAP / FLAMENCO · ESPAÑA</div>
+      <div class="feat-title">Antes de morirme</div>
+      <div class="feat-artist">C. Tangana feat. Rosalía</div>
+      <p class="feat-rev">La canción que anticipó la revolución. Antes de morirme unió el trap urbano de C. Tangana con el flamenco de una Rosalía que estaba a punto de explotar — un encuentro generacional que señaló el camino hacia lo que vendría. Una pieza bisagra que cambió la conversación sobre lo que podía ser el pop español del siglo XXI.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">59 canciones &#183; ordenadas por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE EN ESPAÑOL &#183; HITS POP ESPAÑOL SIGLO XXI &#183; JUN 2024</span>
+  <a href="https://es.rollingstone.com/grandes-hits-del-pop-espanol-del-siglo-xxi/" target="_blank" class="foot-link">Ver artículo &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "Rosalía",                          "Malamente",                      2018],
+  [2,  "Las Ketchup",                      "Aserejé",                        2002],
+  [3,  "La Oreja de Van Gogh",             "Rosas",                          2003],
+  [4,  "Pablo Alborán",                    "Solamente tú",                   2011],
+  [5,  "C. Tangana feat. Rosalía",         "Antes de morirme",               2016],
+  [6,  "Alejandro Sanz feat. Shakira",     "Te lo agradezco pero no",        2006],
+  [7,  "Alejandro Sanz",                   "Cuando nadie me ve",             2000],
+  [8,  "David Bisbal",                     "Ave María",                      2002],
+  [9,  "David Bisbal feat. Sebastián Yatra","A partir de hoy",               2020],
+  [10, "Aitana",                           "Los Ángeles",                    2023],
+  [11, "Ana Mena feat. Rocco Hunt",        "A un paso de la luna",           2020],
+  [12, "Amaral",                           "El universo sobre mí",           2005],
+  [13, "Manuel Carrasco",                  "Ya no",                          2015],
+  [14, "Alejandro Sanz feat. Camila Cabello","Mi persona favorita",          2019],
+  [15, "Ana Mena",                         "Música ligera",                  2021],
+  [16, "Pablo Alborán",                    "Saturno",                        2017],
+  [17, "Álvaro Soler",                     "Sofia",                          2016],
+  [18, "La Quinta Estación",               "El sol no regresa",              2004],
+  [19, "Rozalén",                          "Comiéndote a besos",             2013],
+  [20, "David Bisbal",                     "Bulería",                        2004],
+  [21, "Amaral",                           "Cómo hablar",                    2000],
+  [22, "Amaia Montero",                    "Quiero ser",                     2008],
+  [23, "La Oreja de Van Gogh",             "El último vals",                 2008],
+  [24, "Álex Ubago feat. Amaia Montero",   "Sin miedo a nada",               2001],
+  [25, "Estopa",                           "Fuego",                          2019],
+  [26, "Pastora Soler",                    "Quédate conmigo",                2012],
+  [27, "Melendi",                          "Tocado y hundido",               2014],
+  [28, "Beret",                            "Si por mí fuera",                2019],
+  [29, "Dani Martín",                      "Mira la vida",                   2010],
+  [30, "Dvicio",                           "Enamórate",                      2014],
+  [31, "Natalia Jiménez",                  "Creo en mí",                     2015],
+  [32, "Enrique Iglesias",                 "Dímelo",                         2007],
+  [33, "Andy y Lucas",                     "Tanto la quería",                2001],
+  [34, "Andy y Lucas",                     "Son de amores",                  2003],
+  [35, "Vicco",                            "Nochentera",                     2023],
+  [36, "Lola Índigo feat. Luis Fonsi",     "Corazones rotos",                2023],
+  [37, "Sen Senra feat. Aitana",           "Hermosa casualidad",             2024],
+  [38, "Judeline",                         "Mangata",                        2024],
+  [39, "Rels B",                           "Ni 1 complejo",                  2024],
+  [40, "Dani Fernández",                   "Te esperaré toda la vida",       2018],
+  [41, "India Martínez feat. Melendi",     "Si ella supiera",                2022],
+  [42, "Dani Martín",                      "Cero",                           2013],
+  [43, "Nena Daconte",                     "En qué estrella estará",         2006],
+  [44, "Marlena",                          "Me sabe mal",                    2021],
+  [45, "Marc Seguí feat. Pol Granch",      "Tiroteo",                        2021],
+  [46, "Cariño",                           "Si quieres",                     2022],
+  [47, "Fangoria",                         "Dramas y comedias",              2013],
+  [48, "Dorian",                           "La tormenta de arena",           2009],
+  [49, "Efecto Mariposa",                  "Por quererte",                   2009],
+  [50, "Malú",                             "Blanco y negro",                 2010],
+  [51, "Manolo García",                    "Un giro teatral",                2011],
+  [52, "Pol 3.14",                         "Jóvenes eternamente",            2012],
+  [53, "Miguel Bosé feat. Ximena Sariñana","Aire soy",                       2012],
+  [54, "La Casa Azul",                     "La revolución sexual",           2007],
+  [55, "Merche",                           "Eras tú",                        2005],
+  [56, "Elefantes",                        "Azul",                           2000],
+  [57, "Álex Ubago",                       "Aunque no te pueda ver",         2004],
+  [58, "Sofía Ellar",                      "Amor de anticuario",             2017],
+  [59, "Maldita Nerea",                    "Bailarina",                      2017]
+];
+
+var FEAT = [
+  ["fc-1", "Rosalía",          "Malamente"],
+  ["fc-2", "Las Ketchup",      "Aserejé"],
+  ["fc-3", "La Oreja de Van Gogh","Rosas"],
+  ["fc-4", "Pablo Alborán",    "Solamente tú"],
+  ["fc-5", "C. Tangana",       "Antes de morirme"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Rosalía", "Malamente");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colección Putumayo World Music</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">COLECCIÓN NELSON RODRÍGUEZ</span>
+    <span class="badge-year">1993&#8211;2020s</span>
+  </div>
+  <span class="page-title">COLECCIÓN PUTUMAYO WORLD MUSIC</span>
+  <p class="page-sub">211 compilaciones · África, Brasil, Colombia, Cuba, Caribe, Jazz, Reggae, Flamenco, Celta · el sello más importante de world music independiente · desde 1993</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Africa - Putumayo">
+    <p class="cover-cap">PUTUMAYO &#183; 211 ÁLBUMES &#183; WORLD MUSIC</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Putumayo World Music es el sello discográfico independiente más importante de world music, fundado en 1993 por Dan Storper en Nueva York. Su catálogo de más de 200 compilaciones cubre prácticamente cada tradición musical del planeta — África subsahariana, Brasil, Cuba, el Caribe, India, el Mediterráneo, el mundo celta, Nueva Orleans y América Latina en toda su diversidad.</p>
+    <p class="rtext">La misión de Putumayo ha sido siempre la misma desde su inicio: presentar música del mundo de manera accesible y auténtica, con curaduría experta y un diseño visual inconfundible. Sus compilaciones han introducido a millones de oyentes en todo el mundo a géneros como el afrobeat, la bossa nova, el calipso, el flamenco, el klezmer y la salsa. Esta colección reúne la discografía completa del sello presente en la biblioteca de Nelson Rodríguez.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Los más representativos del sello</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · TODA ÁFRICA</div>
+      <div class="feat-title">Putumayo Presents: Africa</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">La compilación fundacional de Putumayo y una de las más vendidas del sello — una introducción esencial a la música del continente africano que abarca desde el Sahel hasta el África austral. Artistas de Mali, Senegal, Guinea, Tanzania y Sudáfrica conviven en un disco que captura la inmensidad y diversidad de la música africana contemporánea. El punto de partida perfecto para cualquier exploración del sello.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · BRASIL</div>
+      <div class="feat-title">Putumayo Presents: Brazil: Samba, Bossa and Beyond!</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">La gran panorámica de la música brasileña según Putumayo — samba, bossa nova, MPB, forró y baião reunidos en una sola compilación que traza el mapa completo de la música popular brasileña. Una de las compilaciones más completas y mejor curadas del catálogo, que funcionó durante años como la tarjeta de presentación de Brasil para oyentes del mundo entero.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · CUBA</div>
+      <div class="feat-title">Putumayo Presents: Cuba</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">La isla más musical del Caribe en su expresión más rica y diversa — son, rumba, mambo, chachachá, bolero y timba reunidos por Putumayo en una de las compilaciones latinas más influyentes del sello. Salió en plena fiebre del Buena Vista Social Club y capturó a la perfección ese momento de redescubrimiento de la música cubana clásica por parte del mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · COLOMBIA</div>
+      <div class="feat-title">Putumayo Presents: Colombia</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">La única compilación del sello dedicada exclusivamente a Colombia — cumbia, vallenato, porro, currulao y música andina reunidos en un disco que presentó la riqueza de la música colombiana a audiencias internacionales. Una pieza especialmente valiosa para este coleccionista, que documenta la diversidad de la música del país desde sus raíces indígenas, africanas y europeas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · JAMAICA / GLOBAL</div>
+      <div class="feat-title">Putumayo Presents: Reggae Around the World</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">El reggae como fenómeno global — artistas de Jamaica, África, Europa, Asia y América Latina interpretando el idioma musical de Bob Marley en sus propias lenguas y tradiciones. Una de las compilaciones más originales del catálogo, que demuestra cómo el reggae se ha convertido en el esperanto musical del mundo y en el vehículo de mensajes sociales en todos los continentes.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · JAZZ GLOBAL</div>
+      <div class="feat-title">Putumayo Presents: Jazz Around the World</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">El jazz como lenguaje universal que absorbe y transforma las músicas locales de cada región donde llega. Esta compilación muestra el jazz siendo reinterpretado desde Brasil, Cuba, África, Europa del Este y el mundo árabe — una demostración del poder del género americano para fusionarse con cualquier tradición musical sin perder su identidad esencial.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · MALI / MEMPHIS</div>
+      <div class="feat-title">Putumayo Presents: Mali to Memphis</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">Una de las compilaciones conceptualmente más ambiciosas del sello — trazando el camino musical del blues desde sus raíces en Mali hasta Memphis, Tennessee. Esta odisea afroamericana demuestra que el blues no nació en el delta del Mississippi sino que viajó desde el África occidental a través de la esclavitud, construyendo uno de los puentes musicales más poderosos de la historia.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · CARIBE LATINO</div>
+      <div class="feat-title">Putumayo Presents: Salsa Around the World</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">La salsa como idioma global — desde su epicentro en Nueva York y el Caribe hasta sus expresiones en Japón, Francia, África Occidental y Colombia. Una compilación que muestra cómo el ritmo caribeño conquistó el planeta sin perder su fuego original, con artistas que mezclan el son cubano con las tradiciones locales de cada región donde echó raíces.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · NUEVA ORLEANS</div>
+      <div class="feat-title">Putumayo Presents: New Orleans</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">Nueva Orleans como la ciudad más musical de Estados Unidos — zydeco, jazz, R&amp;B, funk, gospel y second line reunidos en una celebración de la ciudad más cosmopolita y creativa del sur americano. Putumayo captura la esencia del Crescent City con una selección que muestra por qué Nueva Orleans es considerada la cuna de la música popular americana.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">WORLD MUSIC · FLAMENCO</div>
+      <div class="feat-title">Putumayo Presents: Rumba Flamenco</div>
+      <div class="feat-artist">Putumayo World Music</div>
+      <p class="feat-rev">El flamenco en su expresión más festiva y global — la rumba flamenca que conecta Andalucía con el mundo gitano y las tradiciones del Caribe en una síntesis de tres culturas. Una compilación que va más allá del flamenco clásico para mostrar sus variantes más rítmicas y accesibles, desde la rumba catalana hasta las fusiones contemporáneas con pop y jazz latino.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">211 álbumes &#183; catálogo completo del sello</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Sello</span>
+    <span style="text-align:right"></span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">PUTUMAYO WORLD MUSIC &#183; 211 ÁLBUMES &#183; COLECCIÓN NELSON RODRÍGUEZ</span>
+  <a href="https://www.putumayo.com" target="_blank" class="foot-link">putumayo.com &#8599;</a>
+</footer>
+
+<script>
+var ALBUMS = [
+  [1, "Putumayo World Music", "10th Anniversary Collection"],
+  [2, "Putumayo World Music", "A Putumayo Blend: Music From the Coffee Lands"],
+  [3, "Putumayo World Music", "A Putumayo World Christmas"],
+  [4, "Putumayo World Music", "Fiesta Putumayo"],
+  [5, "Putumayo World Music", "Gardens of Eden"],
+  [6, "Putumayo World Music", "Islands"],
+  [7, "Putumayo World Music", "One World"],
+  [8, "Putumayo World Music", "Party With Putumayo"],
+  [9, "Putumayo World Music", "Putumayo Grooves"],
+  [10, "Putumayo World Music", "Putumayo Kids Presents: Acoustic Dreamland"],
+  [11, "Putumayo World Music", "Putumayo Kids Presents: African Dreamland"],
+  [12, "Putumayo World Music", "Putumayo Kids Presents: African Playground"],
+  [13, "Putumayo World Music", "Putumayo Kids Presents: Animal Playground"],
+  [14, "Putumayo World Music", "Putumayo Kids Presents: Asian Dreamland"],
+  [15, "Putumayo World Music", "Putumayo Kids Presents: Brazilian Playground"],
+  [16, "Putumayo World Music", "Putumayo Kids Presents: Caribbean Playground"],
+  [17, "Putumayo World Music", "Putumayo Kids Presents: Celtic Dreamland"],
+  [18, "Putumayo World Music", "Putumayo Kids Presents: Cowboy Playground"],
+  [19, "Putumayo World Music", "Putumayo Kids Presents: Dreamland - World Lullabies"],
+  [20, "Putumayo World Music", "Putumayo Kids Presents: European Playground"],
+  [21, "Putumayo World Music", "Putumayo Kids Presents: Folk Playground"],
+  [22, "Putumayo World Music", "Putumayo Kids Presents: French Playground"],
+  [23, "Putumayo World Music", "Putumayo Kids Presents: Hawaiian Playground"],
+  [24, "Putumayo World Music", "Putumayo Kids Presents: Instrumental Dreamland"],
+  [25, "Putumayo World Music", "Putumayo Kids Presents: Kids World Party"],
+  [26, "Putumayo World Music", "Putumayo Kids Presents: Latin Playground"],
+  [27, "Putumayo World Music", "Putumayo Kids Presents: New Orleans Playground"],
+  [28, "Putumayo World Music", "Putumayo Kids Presents: Picnic Playground"],
+  [29, "Putumayo World Music", "Putumayo Kids Presents: Reggae Playground"],
+  [30, "Putumayo World Music", "Putumayo Kids Presents: Rock & Roll Playground"],
+  [31, "Putumayo World Music", "Putumayo Kids Presents: Sesame Street Playground"],
+  [32, "Putumayo World Music", "Putumayo Kids Presents: Sing Along With Putumayo"],
+  [33, "Putumayo World Music", "Putumayo Kids Presents: World Playground"],
+  [34, "Putumayo World Music", "Putumayo Kids Presents: World Playground 2"],
+  [35, "Putumayo World Music", "Putumayo Kids: Pesmi za otroke: Odkrivamo svet"],
+  [36, "Putumayo World Music", "Putumayo Presents Calypso: Vintage Songs from the Caribbean"],
+  [37, "Putumayo World Music", "Putumayo Presents: Baila! A Latin Dance Party"],
+  [38, "Putumayo World Music", "Putumayo Presents: Latino! Latino!"],
+  [39, "Putumayo World Music", "Putumayo Presents: Mo Vida!"],
+  [40, "Putumayo World Music", "Putumayo Presents: A Celtic Collection"],
+  [41, "Putumayo World Music", "Putumayo Presents: A Jazz & Blues Christmas"],
+  [42, "Putumayo World Music", "Putumayo Presents: A Jewish Odyssey"],
+  [43, "Putumayo World Music", "Putumayo Presents: A Mediterranean Odyssey - Athens to Andalucia"],
+  [44, "Putumayo World Music", "Putumayo Presents: A Native American Odyssey: Inuit to Inca"],
+  [45, "Putumayo World Music", "Putumayo Presents: A New Groove"],
+  [46, "Putumayo World Music", "Putumayo Presents: A World Instrumental Collection"],
+  [47, "Putumayo World Music", "Putumayo Presents: Acoustic Africa"],
+  [48, "Putumayo World Music", "Putumayo Presents: Acoustic America"],
+  [49, "Putumayo World Music", "Putumayo Presents: Acoustic Arabia"],
+  [50, "Putumayo World Music", "Putumayo Presents: Acoustic Brazil"],
+  [51, "Putumayo World Music", "Putumayo Presents: Acoustic Cafe"],
+  [52, "Putumayo World Music", "Putumayo Presents: Acoustic Christmas"],
+  [53, "Putumayo World Music", "Putumayo Presents: Acoustic France"],
+  [54, "Putumayo World Music", "Putumayo Presents: Acoustic Yoga"],
+  [55, "Putumayo World Music", "Putumayo Presents: Africa"],
+  [56, "Putumayo World Music", "Putumayo Presents: African Beat"],
+  [57, "Putumayo World Music", "Putumayo Presents: African Groove"],
+  [58, "Putumayo World Music", "Putumayo Presents: African Odyssey"],
+  [59, "Putumayo World Music", "Putumayo Presents: African Party"],
+  [60, "Putumayo World Music", "Putumayo Presents: African Reggae"],
+  [61, "Putumayo World Music", "Putumayo Presents: African Rumba"],
+  [62, "Putumayo World Music", "Putumayo Presents: Afro-Latin Party"],
+  [63, "Putumayo World Music", "Putumayo Presents: Afro-Latino"],
+  [64, "Putumayo World Music", "Putumayo Presents: American Blues"],
+  [65, "Putumayo World Music", "Putumayo Presents: American Folk"],
+  [66, "Putumayo World Music", "Putumayo Presents: Americana"],
+  [67, "Putumayo World Music", "Putumayo Presents: An Afro-Portuguese Odyssey"],
+  [68, "Putumayo World Music", "Putumayo Presents: Arabic Beat"],
+  [69, "Putumayo World Music", "Putumayo Presents: Arabic Groove"],
+  [70, "Putumayo World Music", "Putumayo Presents: Asian Groove"],
+  [71, "Putumayo World Music", "Putumayo Presents: Asian Lounge"],
+  [72, "Putumayo World Music", "Putumayo Presents: Australia"],
+  [73, "Putumayo World Music", "Putumayo Presents: Bluegrass"],
+  [74, "Putumayo World Music", "Putumayo Presents: Blues Around the World"],
+  [75, "Putumayo World Music", "Putumayo Presents: Blues Christmas"],
+  [76, "Putumayo World Music", "Putumayo Presents: Blues Lounge"],
+  [77, "Putumayo World Music", "Putumayo Presents: Blues Party"],
+  [78, "Putumayo World Music", "Putumayo Presents: Bossa Nova Around the World"],
+  [79, "Putumayo World Music", "Putumayo Presents: Brasileiro"],
+  [80, "Putumayo World Music", "Putumayo Presents: Brazil: Samba, Bossa and Beyond!"],
+  [81, "Putumayo World Music", "Putumayo Presents: Brazilian Beat"],
+  [82, "Putumayo World Music", "Putumayo Presents: Brazilian Groove"],
+  [83, "Putumayo World Music", "Putumayo Presents: Brazilian Lounge"],
+  [84, "Putumayo World Music", "Putumayo Presents: Broadway Jazz"],
+  [85, "Putumayo World Music", "Putumayo Presents: Cafe Cubano"],
+  [86, "Putumayo World Music", "Putumayo Presents: Cafe del Mundo"],
+  [87, "Putumayo World Music", "Putumayo Presents: Cairo to Casablanca: An Arabic Musical Odyssey"],
+  [88, "Putumayo World Music", "Putumayo Presents: Cajun"],
+  [89, "Putumayo World Music", "Putumayo Presents: Cape Verde"],
+  [90, "Putumayo World Music", "Putumayo Presents: Caribbean Party"],
+  [91, "Putumayo World Music", "Putumayo Presents: Caribe! Caribe!"],
+  [92, "Putumayo World Music", "Putumayo Presents: Carnival"],
+  [93, "Putumayo World Music", "Putumayo Presents: Celtic Cafe"],
+  [94, "Putumayo World Music", "Putumayo Presents: Celtic Crossroads"],
+  [95, "Putumayo World Music", "Putumayo Presents: Celtic Tides: A Musical Odyssey"],
+  [96, "Putumayo World Music", "Putumayo Presents: Christmas Around the World"],
+  [97, "Putumayo World Music", "Putumayo Presents: Colombia"],
+  [98, "Putumayo World Music", "Putumayo Presents: Congo to Cuba"],
+  [99, "Putumayo World Music", "Putumayo Presents: Cover the World"],
+  [100, "Putumayo World Music", "Putumayo Presents: Cuba"],
+  [101, "Putumayo World Music", "Putumayo Presents: Dublin to Dakar: A Celtic Odyssey"],
+  [102, "Putumayo World Music", "Putumayo Presents: Espana"],
+  [103, "Putumayo World Music", "Putumayo Presents: Euro Groove"],
+  [104, "Putumayo World Music", "Putumayo Presents: Euro Lounge"],
+  [105, "Putumayo World Music", "Putumayo Presents: Festa Brasil"],
+  [106, "Putumayo World Music", "Putumayo Presents: French Cafe"],
+  [107, "Putumayo World Music", "Putumayo Presents: French Caribbean"],
+  [108, "Putumayo World Music", "Putumayo Presents: French Christmas"],
+  [109, "Putumayo World Music", "Putumayo Presents: Global Soul"],
+  [110, "Putumayo World Music", "Putumayo Presents: Greece: A Musical Odyssey"],
+  [111, "Putumayo World Music", "Putumayo Presents: Gypsy Caravan"],
+  [112, "Putumayo World Music", "Putumayo Presents: Gypsy Groove"],
+  [113, "Putumayo World Music", "Putumayo Presents: India"],
+  [114, "Putumayo World Music", "Putumayo Presents: Indian Groove"],
+  [115, "Putumayo World Music", "Putumayo Presents: Israel"],
+  [116, "Putumayo World Music", "Putumayo Presents: Italian Cafe"],
+  [117, "Putumayo World Music", "Putumayo Presents: Italian Musical Odyssey"],
+  [118, "Putumayo World Music", "Putumayo Presents: Jamaica"],
+  [119, "Putumayo World Music", "Putumayo Presents: Jazz"],
+  [120, "Putumayo World Music", "Putumayo Presents: Jazz Around the World"],
+  [121, "Putumayo World Music", "Putumayo Presents: Jazz Cafe"],
+  [122, "Putumayo World Music", "Putumayo Presents: Jazz Christmas"],
+  [123, "Putumayo World Music", "Putumayo Presents: Joy to the World, a Christmas Celebration"],
+  [124, "Putumayo World Music", "Putumayo Presents: Kermit Ruffins"],
+  [125, "Putumayo World Music", "Putumayo Presents: Latin Beat"],
+  [126, "Putumayo World Music", "Putumayo Presents: Latin Christmas"],
+  [127, "Putumayo World Music", "Putumayo Presents: Latin Groove"],
+  [128, "Putumayo World Music", "Putumayo Presents: Latin Jazz"],
+  [129, "Putumayo World Music", "Putumayo Presents: Latin Lounge"],
+  [130, "Putumayo World Music", "Putumayo Presents: Latin Reggae"],
+  [131, "Putumayo World Music", "Putumayo Presents: Louisiana Gumbo"],
+  [132, "Putumayo World Music", "Putumayo Presents: Mali"],
+  [133, "Putumayo World Music", "Putumayo Presents: Mali to Memphis: An African-American Odyssey"],
+  [134, "Putumayo World Music", "Putumayo Presents: Mexico"],
+  [135, "Putumayo World Music", "Putumayo Presents: Mississippi Blues"],
+  [136, "Putumayo World Music", "Putumayo Presents: Music From the Chocolate Lands"],
+  [137, "Putumayo World Music", "Putumayo Presents: Music From The Coffee Lands II"],
+  [138, "Putumayo World Music", "Putumayo Presents: Music From the Tea Lands"],
+  [139, "Putumayo World Music", "Putumayo Presents: Music From the Wine Lands"],
+  [140, "Putumayo World Music", "Putumayo Presents: Music of the Andes"],
+  [141, "Putumayo World Music", "Putumayo Presents: Native America"],
+  [142, "Putumayo World Music", "Putumayo Presents: New Orleans"],
+  [143, "Putumayo World Music", "Putumayo Presents: New Orleans Brass"],
+  [144, "Putumayo World Music", "Putumayo Presents: New Orleans Christmas"],
+  [145, "Putumayo World Music", "Putumayo Presents: New Orleans Mambo: Cuba to NOLA"],
+  [146, "Putumayo World Music", "Putumayo Presents: New Orleans Party"],
+  [147, "Putumayo World Music", "Putumayo Presents: New World Party"],
+  [148, "Putumayo World Music", "Putumayo Presents: North African Groove"],
+  [149, "Putumayo World Music", "Putumayo Presents: Nuevo latino"],
+  [150, "Putumayo World Music", "Putumayo Presents: One World, Many Cultures"],
+  [151, "Putumayo World Music", "Putumayo Presents: Paris"],
+  [152, "Putumayo World Music", "Putumayo Presents: Puerto Rico"],
+  [153, "Putumayo World Music", "Putumayo Presents: Quebec"],
+  [154, "Putumayo World Music", "Putumayo Presents: Radio Latino"],
+  [155, "Putumayo World Music", "Putumayo Presents: Reggae Around the World"],
+  [156, "Putumayo World Music", "Putumayo Presents: Republica Dominicana"],
+  [157, "Putumayo World Music", "Putumayo Presents: Rhythm & Blues"],
+  [158, "Putumayo World Music", "Putumayo Presents: Romantica, Great Love Songs From Around the World"],
+  [159, "Putumayo World Music", "Putumayo Presents: Rumba Flamenco"],
+  [160, "Putumayo World Music", "Putumayo Presents: Rumba, Mambo, Cha Cha Cha"],
+  [161, "Putumayo World Music", "Putumayo Presents: Sahara Lounge"],
+  [162, "Putumayo World Music", "Putumayo Presents: Salsa Around the World"],
+  [163, "Putumayo World Music", "Putumayo Presents: Samba Bossa Nova"],
+  [164, "Putumayo World Music", "Putumayo Presents: Ska Around the World"],
+  [165, "Putumayo World Music", "Putumayo Presents: South African Legends"],
+  [166, "Putumayo World Music", "Putumayo Presents: South Pacific Islands"],
+  [167, "Putumayo World Music", "Putumayo Presents: Swing Around the World"],
+  [168, "Putumayo World Music", "Putumayo Presents: Tango Around the World"],
+  [169, "Putumayo World Music", "Putumayo Presents: The Best of Folk Music"],
+  [170, "Putumayo World Music", "Putumayo Presents: The Best of World Music, Volume 1: World Vocal"],
+  [171, "Putumayo World Music", "Putumayo Presents: The Best of World Music, Volume 2: Instrumental"],
+  [172, "Putumayo World Music", "Putumayo Presents: The Best of World Music: African"],
+  [173, "Putumayo World Music", "Putumayo Presents: The Best of World Music: Reggae"],
+  [174, "Putumayo World Music", "Putumayo Presents: The Best of World Music: World Dance Party"],
+  [175, "Putumayo World Music", "Putumayo Presents: The Caribbean"],
+  [176, "Putumayo World Music", "Putumayo Presents: The Dalom Kids & Splash Collection"],
+  [177, "Putumayo World Music", "Putumayo Presents: The Dougie MacLean Collection"],
+  [178, "Putumayo World Music", "Putumayo Presents: The Laura Love Collection"],
+  [179, "Putumayo World Music", "Putumayo Presents: The Super Sawale Collection"],
+  [180, "Putumayo World Music", "Putumayo Presents: The Toure Kunda Collection"],
+  [181, "Putumayo World Music", "Putumayo Presents: Tribute to a Reggae Legend"],
+  [182, "Putumayo World Music", "Putumayo Presents: Turkish Groove"],
+  [183, "Putumayo World Music", "Putumayo Presents: Vintage France"],
+  [184, "Putumayo World Music", "Putumayo Presents: Vintage Italia"],
+  [185, "Putumayo World Music", "Putumayo Presents: Vintage Latino"],
+  [186, "Putumayo World Music", "Putumayo Presents: Women of Africa"],
+  [187, "Putumayo World Music", "Putumayo Presents: Women of Jazz"],
+  [188, "Putumayo World Music", "Putumayo Presents: Women of Latin America"],
+  [189, "Putumayo World Music", "Putumayo Presents: Women of Spirit"],
+  [190, "Putumayo World Music", "Putumayo Presents: Women of the World: Acoustic"],
+  [191, "Putumayo World Music", "Putumayo Presents: Women of the World: Celtic"],
+  [192, "Putumayo World Music", "Putumayo Presents: Women of the World: Celtic II"],
+  [193, "Putumayo World Music", "Putumayo Presents: Women of the World: International"],
+  [194, "Putumayo World Music", "Putumayo Presents: Women's Work"],
+  [195, "Putumayo World Music", "Putumayo Presents: World Groove"],
+  [196, "Putumayo World Music", "Putumayo Presents: World Hits"],
+  [197, "Putumayo World Music", "Putumayo Presents: World Lounge"],
+  [198, "Putumayo World Music", "Putumayo Presents: World Party"],
+  [199, "Putumayo World Music", "Putumayo Presents: World Peace"],
+  [200, "Putumayo World Music", "Putumayo Presents: World Reggae"],
+  [201, "Putumayo World Music", "Putumayo Presents: World Yoga"],
+  [202, "Putumayo World Music", "Putumayo Presents: Yoga"],
+  [203, "Putumayo World Music", "Putumayo Presents: Yoga Lounge"],
+  [204, "Putumayo World Music", "Putumayo Presents: Zydeco"],
+  [205, "Putumayo World Music", "Putumayo Summer Party Sampler"],
+  [206, "Putumayo World Music", "Putumayo World Cafe"],
+  [207, "Putumayo World Music", "Putumayo: One World, One Kid"],
+  [208, "Putumayo World Music", "Shelter the Best of Contemporary Singer-Songwriters"],
+  [209, "Putumayo World Music", "Travel the World With Putumayo"],
+  [210, "Putumayo World Music", "World Music Sampler"],
+  [211, "Putumayo World Music", "Putumayo Presents: Mo Vida!"]
+];
+
+var FEAT = [
+  ["fc-1",  "Putumayo World Music", "Africa"],
+  ["fc-2",  "Putumayo World Music", "Brazil Samba Bossa"],
+  ["fc-3",  "Putumayo World Music", "Cuba"],
+  ["fc-4",  "Putumayo World Music", "Colombia"],
+  ["fc-5",  "Putumayo World Music", "Reggae Around the World"],
+  ["fc-6",  "Putumayo World Music", "Jazz Around the World"],
+  ["fc-7",  "Putumayo World Music", "Mali to Memphis"],
+  ["fc-8",  "Putumayo World Music", "Salsa Around the World"],
+  ["fc-9",  "Putumayo World Music", "New Orleans"],
+  ["fc-10", "Putumayo World Music", "Rumba Flamenco"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) +
+        "&media=music&entity=album&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].collectionName && res[i].collectionName.toLowerCase().indexOf(album.toLowerCase().split(' ')[0]) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.album && d.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Putumayo World Music", "Africa");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 300);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,4);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 800);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&album=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 350); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

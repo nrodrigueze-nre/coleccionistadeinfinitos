@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Top 60 EDM Love Songs of All Time - Billboard 2023</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">BILLBOARD</span>
+    <span class="badge-year">1998&#8211;2022</span>
+  </div>
+  <a href="https://www.billboard.com/lists/top-dance-love-songs-edm-all-time/" target="_blank" class="page-title">TOP 60 EDM LOVE SONGS OF ALL TIME</a>
+  <p class="page-sub">Daft Punk, Deadmau5 &amp; Kaskade, Disclosure, Zedd, Rihanna &amp; Calvin Harris &#183; del house al dubstep, del trance al tropical &#8212; el amor en la pista de baile &#183; Billboard &#183; Feb 2023</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Digital Love - Daft Punk">
+    <p class="cover-cap">BILLBOARD &#183; 60 CANCIONES &#183; EDM LOVE SONGS</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las 60 mejores canciones de amor del EDM de todos los tiempos segun Billboard, publicadas en febrero de 2023. El EDM tiene fama de drops pesados y beats adictivos, pero tambien tiene un corpus de canciones de amor profundas y emocionales. Cuando las letras y los pulsos caracteristicos del genero se unen, el amor es el tema mas popular.</p>
+    <p class="rtext">Digital Love de Daft Punk encabeza — un clasico inmortal sobre el amor sonado y el anhelo. El top 5 incluye a Deadmau5 y Kaskade con I Remember (2008), Disclosure y Sam Smith con Latch, Zedd y Foxes con Clarity, y Steve Angello con Show Me Love. Rihanna y Calvin Harris aparecen en el puesto #8 con We Found Love. La lista abarca 25 anos de electronica, desde Praise You de Fatboy Slim (1999) hasta I Love U de The Chainsmokers (2022).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Ordenados por impacto</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2001</div>
+      <div class="feat-title">Digital Love</div>
+      <div class="feat-artist">Daft Punk</div>
+      <p class="feat-rev">Un clasico inmortal sobre el amor sonado y el anhelo, del album Discovery. Los robots franceses entregan musings vococodificados sobre un sueno de amor que desean se haga realidad. Solo es justo que los pioneros franceses encabecen esta lista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2008</div>
+      <div class="feat-title">I Remember</div>
+      <div class="feat-artist">Deadmau5 and Kaskade</div>
+      <p class="feat-rev">Definida por una progresion de acordes perdurable e inconfundible, I Remember encuentra a los dos artistas en su momento mas maduro y memorable. Una de las colaboraciones mas celebradas de la historia del EDM.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2012</div>
+      <div class="feat-title">Latch</div>
+      <div class="feat-artist">Disclosure feat. Sam Smith</div>
+      <p class="feat-rev">Esta cancion de amor sincera lanzo dos carreras de primer nivel y robo corazones en todo el mundo desde la primera escucha. Disclosure en su esencia mas pura, con Sam Smith entregando una actuacion vocal que define una generacion.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2012</div>
+      <div class="feat-title">Clarity</div>
+      <div class="feat-artist">Zedd feat. Foxes</div>
+      <p class="feat-rev">Letras evocadoras pero accesibles y produccion de primer nivel convirtieron a Clarity en un peso pesado de la radio. La progresion de acordes de Zedd captura la tension, imprevisibilidad y lo desconocido del amor — y Foxes lo entrega todo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2009</div>
+      <div class="feat-title">Show Me Love</div>
+      <div class="feat-artist">Steve Angello and Laidback Luke feat. Robin S.</div>
+      <p class="feat-rev">Gracias a su narrativa atemporal de golpeada pero inquebrantable, la clasica de Robin S. puede que haya sido remezclada y rehecha mas que cualquier otra cancion de house. Una de las frases mas reconocibles de la historia de la musica electronica.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">60 canciones &#183; ordenadas por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Cancion / Artista</span>
+    <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">BILLBOARD &#183; TOP 60 EDM LOVE SONGS &#183; FEB 2023</span>
+  <a href="https://www.billboard.com/lists/top-dance-love-songs-edm-all-time/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "Daft Punk",                                       "Digital Love",                      2001],
+  [2,  "Deadmau5 and Kaskade",                            "I Remember",                        2008],
+  [3,  "Disclosure feat. Sam Smith",                      "Latch",                             2012],
+  [4,  "Zedd feat. Foxes",                                "Clarity",                           2012],
+  [5,  "Steve Angello and Laidback Luke feat. Robin S.",  "Show Me Love",                      2009],
+  [6,  "OneRepublic vs. Alesso",                          "If I Lose Myself",                  2013],
+  [7,  "ODESZA feat. Leon Bridges",                       "Across The Room",                   2017],
+  [8,  "Rihanna feat. Calvin Harris",                     "We Found Love",                     2011],
+  [9,  "Krewella",                                        "Alive",                             2012],
+  [10, "Kaskade",                                         "Eyes",                              2011],
+  [11, "Skrillex",                                        "With You Friends (Long Drive)",      2010],
+  [12, "David Guetta feat. Kelly Rowland",                "When Love Takes Over",              2009],
+  [13, "Kolsch feat. Troels Abrahamsen",                  "All That Matters",                  2012],
+  [14, "Daft Punk",                                       "Something About Us",                2001],
+  [15, "Stardust",                                        "Music Sounds Better With You",      1998],
+  [16, "Alesso and Ingrosso feat. Ryan Tedder",           "Calling (Lose My Mind)",            2012],
+  [17, "Elderbrook and Rudimental",                       "Something About You",               2019],
+  [18, "Avicii",                                          "Fade Into Darkness",                2011],
+  [19, "Marshmello feat. CHVRCHES",                       "Here With Me",                      2019],
+  [20, "Galantis",                                        "Runaway (U and I)",                 2014],
+  [21, "Zedd feat. Matthew Koma",                         "Spectrum",                          2012],
+  [22, "Nadia Ali feat. Starkillers and Alex Kenji",      "Pressure (Alesso Remix)",           2011],
+  [23, "Alex Gaudino",                                    "I'm in Love (I Wanna Do It)",       2010],
+  [24, "Calvin Harris",                                   "Feel So Close",                     2012],
+  [25, "Fatboy Slim",                                     "Praise You",                        1999],
+  [26, "The Chemical Brothers",                           "Snow",                              2010],
+  [27, "Armin van Buuren feat. Laura V",                  "Drowning (Avicii Remix)",           2010],
+  [28, "Calvin Harris feat. Ellie Goulding",              "I Need Your Love",                  2012],
+  [29, "Frank Wiedemann and Ry X",                        "Howling (Ame Remix)",               2012],
+  [30, "Benny Benassi",                                   "Cinema (Skrillex Remix)",           2011],
+  [31, "Galantis",                                        "Gold Dust",                         2015],
+  [32, "Seven Lions",                                     "Days to Come",                      2012],
+  [33, "Porter Robinson",                                 "Language",                          2012],
+  [34, "The Chainsmokers",                                "I Love U",                          2022],
+  [35, "Marvin Gaye",                                     "Sexual Healing (Kygo Remix)",       2013],
+  [36, "Duke Dumont feat. Jax Jones",                     "I Got U",                           2014],
+  [37, "Gorgon City feat. MNEK",                          "Ready for Your Love",               2014],
+  [38, "Hot Natured",                                     "Benediction",                       2012],
+  [39, "Oliver Heldens x Becky Hill",                     "Gecko (Overdrive)",                 2014],
+  [40, "Tim Berg",                                        "Seek Bromance",                     2010],
+  [41, "Tiesto feat. Sneaky Soundsystem",                 "I Will Be Here (Wolfgang Gartner Remix)", 2009],
+  [42, "Above and Beyond feat. Richard Bedford",          "Thing Called Love",                 2011],
+  [43, "Late Night Alumni",                               "Empty Streets",                     2005],
+  [44, "Moore Kismet feat. Pauline Herr",                 "You Should Run",                    2020],
+  [45, "Magnetic Man",                                    "I Need Air",                        2010],
+  [46, "Gareth Emery feat. Lucy Saunders",                "Sanctuary",                         2010],
+  [47, "Nadia Ali",                                       "Rapture (Avicii Remix)",             2010],
+  [48, "Alison Wonderland",                               "I Want U",                          2014],
+  [49, "Duke Dumont",                                     "The Giver (Reprise)",               2015],
+  [50, "Major Lazer feat. Wild Belle",                    "Be Together",                       2015],
+  [51, "Fedde Le Grand",                                  "So Much Love",                      2011],
+  [52, "Third Party vs. Cicada",                          "Feel",                              2012],
+  [53, "Kaskade and Tiesto feat. Haley",                  "Only You",                          2010],
+  [54, "Filo and Peri feat. Audrey Gallagher",            "This Night (Dash Berlin Remix)",     2010],
+  [55, "Axwell",                                          "Centre of the Universe",            2013],
+  [56, "Kaytranada feat. H.E.R.",                         "Intimidated",                       2021],
+  [57, "Axwell Ingrosso",                                 "More Than You Know",                2017],
+  [58, "Caribou",                                         "Your Love Will Set You Free",        2014],
+  [59, "RUFUS DU SOL",                                    "Treat You Better",                  2018],
+  [60, "Maceo Plex",                                      "Under The Sheets",                  2011]
+];
+
+var FEAT = [
+  ["fc-1", "Daft Punk",                    "Digital Love"],
+  ["fc-2", "Deadmau5",                     "I Remember"],
+  ["fc-3", "Disclosure",                   "Latch"],
+  ["fc-4", "Zedd",                         "Clarity"],
+  ["fc-5", "Robin S.",                     "Show Me Love"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Daft Punk", "Digital Love");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

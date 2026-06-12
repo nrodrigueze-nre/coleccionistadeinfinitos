@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Canción Colombiana más Escuchada Cada Año 1945–2024</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:46px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:52px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:52px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:16px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:40px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">COLOMBIA</span>
+    <span class="badge-year">1945&#8211;2024</span>
+  </div>
+  <a href="https://www.youtube.com/watch?v=mUyhGhySNek" target="_blank" class="page-title">CANCIÓN COLOMBIANA MÁS ESCUCHADA CADA AÑO</a>
+  <p class="page-sub">80 años de música colombiana &#183; del porro y la cumbia al vallenato, la salsa y el reggaetón &#183; Lucho Bermúdez, Carlos Vives, Shakira, Joe Arroyo, KAROL G &#183; 1945&#8211;2024</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="La Gota Fría - Carlos Vives">
+    <p class="cover-cap">COLOMBIA &#183; 80 CANCIONES &#183; 1945&#8211;2024</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Ochenta años de la canción colombiana más escuchada año a año, desde 1945 hasta 2024. Un recorrido completo por la historia musical del país: el porro y la cumbia de Lucho Bermúdez en los 40 y 50, el bambuco y la música andina en los 60, el vallenato de Garzón y Collazos y Diomedes Díaz en los 70 y 80, la salsa de Grupo Niche y Joe Arroyo, y el explosivo ascenso de Colombia al panorama global desde los 90 con Carlos Vives, Shakira y Juanes.</p>
+    <p class="rtext">Shakira domina con 9 apariciones. Diomedes Díaz tiene 4, Grupo Niche 2, Carlos Vives 2, Garzón y Collazos 3. Las décadas 2010s y 2020s pertenecen al urbano colombiano: J Balvin, Maluma, KAROL G, Feid. La lista es el mapa de cómo la música colombiana pasó de ser patrimonio nacional a conquistar el mundo entero.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 por impacto &#183; distribuidas en el tiempo</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1950s · VILLANCICO</div>
+      <div class="feat-title">El Año Viejo</div>
+      <div class="feat-artist">Tony Camargo</div>
+      <p class="feat-rev">La canción más longeva de Colombia — grabada en los años 50 y vigente en cada 31 de diciembre desde entonces, sin excepción, durante más de 70 años seguidos. Ninguna otra canción colombiana ha tenido una presencia radiofónica tan sostenida en el tiempo. Tony Camargo creó sin saberlo el villancico de año nuevo más inevitable del país y de gran parte de Latinoamérica.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1960s · BAMABUCO</div>
+      <div class="feat-title">Pueblito Viejo</div>
+      <div class="feat-artist">Jose A. Morales</div>
+      <p class="feat-rev">El himno nostálgico de Colombia por excelencia y la canción andina más querida del repertorio nacional. Una carta de amor al campo colombiano que captura la melancolía del que se fue del pueblo — de las más versionadas de toda la historia musical del país y la que más colombianos en el exterior han llorado escuchando lejos de casa.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1980s · SALSA</div>
+      <div class="feat-title">Rebelión</div>
+      <div class="feat-artist">Joe Arroyo</div>
+      <p class="feat-rev">La obra cumbre de Joe Arroyo y una de las canciones más importantes de toda la historia musical colombiana. Rebelión fusiona la salsa con ritmos africanos y caribeños para narrar la esclavitud con furia y dignidad — un acto de denuncia convertido en himno bailable. Trascendió Colombia para volverse patrimonio latinoamericano y una de las salsas más versionadas del continente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1990s · VALLENATO</div>
+      <div class="feat-title">La Gota Fría</div>
+      <div class="feat-artist">Carlos Vives</div>
+      <p class="feat-rev">El momento en que Colombia cambió el mundo. Carlos Vives tomó el vallenato clásico de Emiliano Zuleta, lo electrificó con guitarra y batería, y creó el vallenato moderno que conquistó el planeta. La Gota Fría no fue solo una canción — fue la apertura de Colombia al mercado global y el inicio de una exportación cultural sin precedentes que anticipó todo lo que vendría.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2010s · REGGAETÓN</div>
+      <div class="feat-title">Mi Gente</div>
+      <div class="feat-artist">J Balvin; Willy William</div>
+      <p class="feat-rev">El momento en que Colombia tomó el control del reggaetón global. Mi Gente llegó al No. 1 en más de 50 países y fue el video latino más visto de YouTube de 2017. J Balvin se consolidaba como el artista urbano colombiano más importante de la historia. Beyoncé pidió unirse a la canción — desde Medellín para el universo.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">80 canciones &#183; orden cronológico 1945&#8211;2024</div>
+  <div class="track-header">
+    <span style="text-align:right">Año</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right"></span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">COLOMBIA &#183; CANCIÓN MÁS ESCUCHADA POR AÑO &#183; 1945&#8211;2024</span>
+  <a href="https://www.youtube.com/watch?v=mUyhGhySNek" target="_blank" class="foot-link">Ver video &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1945,"Se Va el Caimán","Ritmo Caliente"],
+  [1946,"Soy Colombiano","Garzón y Collazos"],
+  [1947,"La Loca Margarita","Milciades Garavito"],
+  [1948,"La Ruana","Obdulio y Julian"],
+  [1949,"Pachito e Che","Alex Tovar y Su Orquesta"],
+  [1950,"Alicia Adorada","Alejandro Durán"],
+  [1951,"La Mucura","Lucho Bermúdez"],
+  [1952,"Carmentea","Luis Ariel Rey"],
+  [1953,"El Año Viejo","Tony Camargo"],
+  [1954,"La Casa en el Aire","Bovea y sus Vallenatos"],
+  [1955,"Carmen De Bolivar","Lucho Bermúdez"],
+  [1956,"Ay Cosita Linda","Pacho Galán"],
+  [1957,"Besame Morenita","Álvaro Dalmar"],
+  [1958,"Feria de Manizales","Banda El Empastre"],
+  [1959,"Bunde Tolimense","Los Tolimenses"],
+  [1960,"La Pollera Colorá","Pedro Salcedo; Wilson Choperena"],
+  [1961,"Guabina Chiquinquireña","Garzón y Collazos"],
+  [1962,"Los Cucaracheros","Cantares de Colombia"],
+  [1963,"Cachipay","Jaime Llano González"],
+  [1964,"Espumas","Garzón y Collazos"],
+  [1965,"El Cuchipe","Brigitte Bardot"],
+  [1966,"Pueblito Viejo","Jose A. Morales"],
+  [1967,"Los Guaduales","Silva y Villalba"],
+  [1968,"Ay Mi Llanura","Arnulfo Briceño"],
+  [1969,"La Piragua","Gabriel Romero"],
+  [1970,"Colombia Tierra Querida","Lucho Bermúdez"],
+  [1971,"Yo Me Llamo Cumbia","Leonor González Mina"],
+  [1972,"Alguien Cantó Una Canción","Billy Pontoni"],
+  [1973,"A Quien Engañas Abuelo","Silva y Villalba"],
+  [1974,"Como Decirte","Génesis"],
+  [1975,"El Preso","Fruko y sus Tesos"],
+  [1976,"El Chanchullito","Náfer Durán; Diomedes Díaz"],
+  [1977,"La Creciente","Binomio de Oro de América"],
+  [1978,"María de Los Guardias","Helenita Vargas"],
+  [1979,"La Cucharita","Los Carrangueros de Ráquira"],
+  [1980,"El Camino de la Vida","Arboleda y Valencia"],
+  [1981,"Baracunatana","Lisandro Meza"],
+  [1982,"Señora","Otto Serge; Rafael Ricardo"],
+  [1983,"Señor","Helenita Vargas"],
+  [1984,"La Cuchilla","Las Hermanas Calle"],
+  [1985,"Cali Pachanguero","Grupo Niche"],
+  [1986,"Sin Medir Distancias","Diomedes Díaz; Colacho Mendoza"],
+  [1987,"Rebelión","Joe Arroyo"],
+  [1988,"Canela","Camagüey"],
+  [1989,"Nadie Es Eterno","Darío Gómez"],
+  [1990,"Cielo de Tambores","Grupo Niche"],
+  [1991,"Era Como Yo","Diomedes Díaz"],
+  [1992,"Amarte Más No Pude","Diomedes Díaz; Juancho Rois"],
+  [1993,"La Gota Fría","Carlos Vives"],
+  [1994,"Los Caminos de la Vida","Los Diablitos"],
+  [1995,"Antología","Shakira"],
+  [1996,"Sentimientos: Niegalo Todo","Charlie Zaa"],
+  [1997,"Bolero Falaz","Aterciopelados"],
+  [1998,"Ciega, Sordomuda","Shakira"],
+  [1999,"Ojos Así","Shakira"],
+  [2000,"Fruta Fresca","Carlos Vives"],
+  [2001,"Suerte (Whenever, Wherever)","Shakira"],
+  [2002,"Mi Bombón","Cabas"],
+  [2003,"A Dios le Pido","Juanes"],
+  [2004,"Niña Bonita","Binomio de Oro de América"],
+  [2005,"La Camisa Negra","Juanes"],
+  [2006,"Hips Don't Lie","Shakira"],
+  [2007,"Las de la Intuición","Shakira"],
+  [2008,"Arroyito","Fonseca"],
+  [2009,"Tú No Eres Para Mí","Fanny Lu"],
+  [2010,"Waka Waka (Esto es África)","Shakira"],
+  [2011,"Eres Mi Sueño","Fonseca"],
+  [2012,"Lo Mejor Que Hay en Mi Vida","Andrés Cepeda"],
+  [2013,"Ay Vamos","J Balvin"],
+  [2014,"La la la (Brazil 2014)","Shakira"],
+  [2015,"El Perdedor","Maluma"],
+  [2016,"Chantaje","Shakira; Maluma"],
+  [2017,"Felices Los 4","Maluma; Marc Anthony"],
+  [2018,"Mi Gente","J Balvin; Willy William"],
+  [2019,"Vida de Rico","Camilo"],
+  [2020,"No Se Habla de Bruno","Elenco de Encanto"],
+  [2021,"Tusa","KAROL G; Nicki Minaj"],
+  [2022,"Pareja Del Año","Sebastián Yatra; Myke Towers"],
+  [2023,"TQG","KAROL G; Shakira"],
+  [2024,"LUNA","Feid; ATL Jacob"]
+];
+
+var FEAT = [
+  ["fc-1", "Tony Camargo",  "El Año Viejo"],
+  ["fc-2", "Jose A. Morales","Pueblito Viejo"],
+  ["fc-3", "Joe Arroyo",    "Rebelión"],
+  ["fc-4", "Carlos Vives",  "La Gota Fría"],
+  ["fc-5", "J Balvin",      "Mi Gente"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Carlos Vives", "La Gota Fría");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s, idx){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = idx + 1;
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[2]);
+  img.dataset.title  = encodeURIComponent(s[1]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[1];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[2];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[0];
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[2]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[1]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

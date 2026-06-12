@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grandes Discos Mexicanos de los 90 - Rolling Stone en Español 2022</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE EN ESPAÑOL</span>
+    <span class="badge-year">1990&#8211;1999</span>
+  </div>
+  <a href="https://es.rollingstone.com/grandes-discos-mexicanos-de-los-90/" target="_blank" class="page-title">GRANDES DISCOS MEXICANOS DE LOS 90</a>
+  <p class="page-sub">Café Tacvba, Caifanes, Luis Miguel, Molotov, Maná &#183; rock, pop, rap, regional, bolero &#183; la última década del siglo XX en la música mexicana &#183; RS en Español &#183; Abr 2022</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Re - Café Tacvba">
+    <p class="cover-cap">RS EN ESPAÑOL &#183; 20 ÁLBUMES &#183; MÉXICO 1990&#8211;1999</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los grandes discos mexicanos de los años 90 según Rolling Stone en Español, publicados en abril de 2022. La última década del siglo XX representa en la música mexicana la perfecta combinación de géneros y texturas que caracterizan a un país tan diverso — rock, pop, rap, regional mexicano y bolero conviviendo en una década de explosión creativa sin precedentes.</p>
+    <p class="rtext">Caifanes aparece tres veces en la lista — El diablito, El silencio y El nervio del volcán — consolidándose como la banda más importante del rock mexicano de los 90. Café Tacvba irrumpe con Re (1994) y Avalancha de éxitos (1996). Luis Miguel redefine el bolero con Romance. Molotov y Control Machete lanzan el rap mexicano al mapa. Una década que aún define la identidad musical del país.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los más impactantes de la década</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994 · ROCK ALTERNATIVO · MÉXICO</div>
+      <div class="feat-title">Re</div>
+      <div class="feat-artist">Café Tacvba</div>
+      <p class="feat-rev">El disco más importante del rock mexicano de todos los tiempos — quizás el más importante de toda la música mexicana de los 90. Re es una obra maestra de fusión que mezcla rock, música tradicional mexicana, punk, norteno y electrónica en un collage sonoro que nadie había intentado antes. Rubén Albarrán y Joselo Rangel crearon el lenguaje musical que definiría al México alternativo por décadas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1991 · POP / BOLERO · MÉXICO</div>
+      <div class="feat-title">Romance</div>
+      <div class="feat-artist">Luis Miguel</div>
+      <p class="feat-rev">El álbum que reinventó el bolero y lo devolvió al centro de la cultura popular latinoamericana. Romance vendió más de 12 millones de copias y convirtió a Luis Miguel en el artista latino más importante de su generación — llevando la música romántica mexicana al mundo entero. Un punto de inflexión que todavía resuena treinta años después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1997 · RAP / ROCK · MÉXICO</div>
+      <div class="feat-title">¿Dónde jugarán las niñas?</div>
+      <div class="feat-artist">Molotov</div>
+      <p class="feat-rev">El debut más explosivo y polémico del rock mexicano de los 90. Molotov mezcló rap, metal y funk con letras provocadoras que sacudieron la industria — prohibido en algunas radiodifusoras, adorado por una generación que encontró en Gimme tha Power su himno de protesta. Un disco que demostró que México tenía algo furioso e inteligente que decirle al mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1992 · ROCK · MÉXICO</div>
+      <div class="feat-title">¿Dónde jugarán los niños?</div>
+      <div class="feat-artist">Maná</div>
+      <p class="feat-rev">El álbum que convirtió a Maná en la banda de rock en español más exitosa del mundo. Me Vale, Oye Mi Amor y Ana se convirtieron en clásicos instantáneos — el disco vendió millones de copias y llevó el rock mexicano a estadios de todo el continente. Una combinación perfecta de melodía pop y energía rockera que aún suena en todas las radiodifusoras.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1991 · ROCK · MÉXICO</div>
+      <div class="feat-title">El circo</div>
+      <div class="feat-artist">Maldita Vecindad y los Hijos del Quinto Patio</div>
+      <p class="feat-rev">El disco que definió el rock urbano mexicano — un collage de ska, danzón, cumbia y rock que capturó la esencia de las calles del D.F. como ningún otro álbum. Pachuco se convirtió en himno generacional. Maldita Vecindad demostró que el rock mexicano podía ser profundamente local sin dejar de ser universal — un modelo que muchos siguieron después.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">20 álbumes &#183; ordenados por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE EN ESPAÑOL &#183; DISCOS MEXICANOS DE LOS 90 &#183; ABR 2022</span>
+  <a href="https://es.rollingstone.com/grandes-discos-mexicanos-de-los-90/" target="_blank" class="foot-link">Ver artículo &#8599;</a>
+</footer>
+
+<script>
+var ALBUMS = [
+  [1,  "Café Tacvba",                              "Re",                               1994],
+  [2,  "Luis Miguel",                              "Romance",                          1991],
+  [3,  "Molotov",                                  "¿Dónde jugarán las niñas?",        1997],
+  [4,  "Maná",                                     "¿Dónde jugarán los niños?",        1992],
+  [5,  "Maldita Vecindad y los Hijos del Quinto Patio","El circo",                     1991],
+  [6,  "Caifanes",                                 "El nervio del volcán",             1994],
+  [7,  "Control Machete",                          "Mucho barato",                     1996],
+  [8,  "Caifanes",                                 "El silencio",                      1992],
+  [9,  "Café Tacvba",                              "Avalancha de éxitos",              1996],
+  [10, "Juan Gabriel",                             "En el Palacio de Bellas Artes",    1990],
+  [11, "Caifanes",                                 "El diablito",                      1990],
+  [12, "Julieta Venegas",                          "Aquí",                             1998],
+  [13, "Fobia",                                    "Fobia",                            1990],
+  [14, "Los Tigres del Norte",                     "El ejemplo",                       1995],
+  [15, "OV7",                                      "Punto",                            1997],
+  [16, "Plastilina Mosh",                          "Aquamosh",                         1998],
+  [17, "Botellita de Jerez",                       "Forjando patria",                  1994],
+  [18, "La Barranca",                              "Tempestad",                        1997],
+  [19, "Moenia",                                   "Adición",                          1999],
+  [20, "La Gusana Ciega",                          "Correspondencia interna",          1999]
+];
+
+var FEAT = [
+  ["fc-1", "Café Tacvba",     "Re"],
+  ["fc-2", "Luis Miguel",     "Romance"],
+  ["fc-3", "Molotov",         "¿Dónde jugarán las niñas?"],
+  ["fc-4", "Maná",            "¿Dónde jugarán los niños?"],
+  ["fc-5", "Maldita Vecindad","El circo"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) +
+        "&media=music&entity=album&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.album && d.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Café Tacvba", "Re");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&album=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

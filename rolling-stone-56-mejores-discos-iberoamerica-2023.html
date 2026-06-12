@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Los 56 Mejores Discos Iberoamericanos de 2023 - Rolling Stone en Español</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE EN ESPAÑOL</span>
+    <span class="badge-year">2023</span>
+  </div>
+  <a href="https://es.rollingstone.com/los-discos-iberoamericanos-que-marcaron-el-ano-2023/" target="_blank" class="page-title">LOS 56 MEJORES DISCOS IBEROAMERICANOS DE 2023</a>
+  <p class="page-sub">Tainy, Mon Laferte, Carin León, Fito Páez, Kali Uchis &#183; Argentina, Colombia, México, Puerto Rico, España &#183; reggaetón, regional mexicano, pop, rock alternativo &#183; RS en Español &#183; Ene 2024</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="DATA - Tainy">
+    <p class="cover-cap">RS EN ESPAÑOL &#183; 56 ÁLBUMES &#183; IBEROAMÉRICA 2023</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los discos iberoamericanos que marcaron el año 2023 según Rolling Stone en Español, publicados en enero de 2024. Una selección que recorre la diversidad y el impacto de la música de habla hispana — desde Argentina hasta España, pasando por Colombia, Puerto Rico, México y Venezuela. Varias generaciones, infinidad de estilos y distintas raíces que se entrelazan en un corazón que palpita a lo largo y ancho del planeta.</p>
+    <p class="rtext">DATA de Tainy encabeza — el álbum debut del productor puertorriqueño es un viaje por la mente más brillante del reggaetón, con Bad Bunny, Daddy Yankee, Skrillex, Rauw Alejandro y más. Mon Laferte (#2), Carin León (#3), Fito Páez (#4) y Kali Uchis (#5) completan un top 5 que abarca Chile, México, Argentina y Colombia. Karol G (#41), Peso Pluma (#46) y Juanes (#36) son otras presencias destacadas.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los más impactantes del año</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2023 · REGGAETÓN · PUERTO RICO</div>
+      <div class="feat-title">DATA</div>
+      <div class="feat-artist">Tainy</div>
+      <p class="feat-rev">El álbum debut del productor puertorriqueño más influyente del reggaetón es un viaje conceptual por la mente que construyó los sonidos de una era. DATA presenta a Sena, un androide al que la música le despierta emociones humanas — una metáfora de cómo necesitamos la música en tiempos de artificialidad. Con Bad Bunny, Daddy Yankee, Rauw Alejandro, Skrillex, The Marías y más en sus 19 tracks.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2023 · POP ALTERNATIVO · CHILE</div>
+      <div class="feat-title">Autopoiética</div>
+      <div class="feat-artist">Mon Laferte</div>
+      <p class="feat-rev">Mon Laferte regresa a sus raíces alternativas y experimenta con una gran variedad de sonidos bajo el concepto de la autopoiesis — la capacidad de un sistema de producirse y regenerarse a sí mismo. Un disco que habla de renacimiento constante y de la capacidad de reinventarse ante las adversidades, con una profundidad creativa que confirma a Laferte como una de las grandes compositoras latinoamericanas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2023 · REGIONAL MEXICANO · MÉXICO</div>
+      <div class="feat-title">Colmillo de leche</div>
+      <div class="feat-artist">Carin León</div>
+      <p class="feat-rev">El disco más ambicioso de Carin León fusiona elementos del regional mexicano con sonidos que nunca había explorado, en 18 canciones que incluyen Si es cierto que te vas y Primera cita. Un trabajo refrescante a nivel personal y para el género — León demuestra que el regional mexicano tiene más dimensiones de las que el mercado suele mostrar.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2023 · POP ROCK · ARGENTINA</div>
+      <div class="feat-title">EADDA9223</div>
+      <div class="feat-artist">Fito Páez</div>
+      <p class="feat-rev">Fito Páez revisita El amor después del amor — su obra maestra de 1992 — junto a Nicki Nicole, Mon Laferte, WOS, Nathy Peluso y otros artistas de la nueva generación. Cada colaboración aporta un giro inédito a las canciones que ya son parte de la identidad cultural latinoamericana, creando un diálogo generacional extraordinario que devolvió al maestro argentino a una enorme visibilidad global.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2023 · R&amp;B / POP LATINO · COLOMBIA-EEUU</div>
+      <div class="feat-title">Red Moon in Venus</div>
+      <div class="feat-artist">Kali Uchis</div>
+      <p class="feat-rev">La colomboestadounidense redefiniendo el pop latino con tintes de R&amp;B en su tercer álbum de estudio. Un viaje por el espectro completo del amor — del enamoramiento a la liberación — con una sofisticación sonora que la coloca en una categoría propia. La luna roja como símbolo de una fuerza única y poderosa: exactamente lo que es Kali Uchis en la música latina contemporánea.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">56 álbumes &#183; ordenados por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE EN ESPAÑOL &#183; 56 MEJORES DISCOS IBEROAMÉRICA &#183; 2023</span>
+  <a href="https://es.rollingstone.com/los-discos-iberoamericanos-que-marcaron-el-ano-2023/" target="_blank" class="foot-link">Ver artículo &#8599;</a>
+</footer>
+
+<script>
+var ALBUMS = [
+  [1,  "Tainy",                        "DATA",                           2023],
+  [2,  "Mon Laferte",                   "Autopoiética",                   2023],
+  [3,  "Carin León",                    "Colmillo de leche",              2023],
+  [4,  "Fito Páez",                     "EADDA9223",                      2023],
+  [5,  "Kali Uchis",                    "Red Moon in Venus",              2023],
+  [6,  "Cabra",                         "MARTÍNEZ",                       2023],
+  [7,  "Don Omar",                      "FOREVER KING",                   2023],
+  [8,  "Alemán",                        "Haciéndolo fino",                2023],
+  [9,  "Aitana",                        "alpha",                          2023],
+  [10, "Vico C",                        "Pánico",                         2023],
+  [11, "Humbe",                         "Esencia",                        2023],
+  [12, "Natanael Cano",                 "Nata Montana",                   2023],
+  [13, "Monsieur Periné",               "Bolero apocalíptico",            2023],
+  [14, "Sen Senra",                     "PO2054AZ Vol. 1",                2023],
+  [15, "Daniela Spalla",                "DARA",                           2023],
+  [16, "Molotov",                       "Solo D'Lira",                    2023],
+  [17, "Triángulo de amor bizarro",     "SED",                            2023],
+  [18, "Él mató a un policía motorizado","Súper terror",                  2023],
+  [19, "Eladio Carrión",                "3MEN2 KBRN",                     2023],
+  [20, "Santiago Cruz",                 "Nueve",                          2023],
+  [21, "Myke Towers",                   "La vida es una",                 2023],
+  [22, "Rawayana",                      "Quién trae las cornetas",        2023],
+  [23, "Diamante Eléctrico",            "Leche de tigre",                 2023],
+  [24, "Alex Anwandter",                "El diablo en el cuerpo",         2023],
+  [25, "Hello Seahorse!",               "Híper",                          2023],
+  [26, "Miranda!",                      "Hotel Miranda!",                 2023],
+  [27, "Yadam",                         "Belamor",                        2023],
+  [28, "Paula Arenas",                  "A ciegas",                       2023],
+  [29, "KHEA",                          "SEROTONINA",                     2023],
+  [30, "León Larregui",                 "Prismarama",                     2023],
+  [31, "Francisca Valenzuela",          "Adentro",                        2023],
+  [32, "Paula Cendejas",                "FOMO",                           2023],
+  [33, "Manuel Turizo",                 "2000",                           2023],
+  [34, "Usted Señalemelo",              "Tripolar",                       2023],
+  [35, "Dellafuente",                   "Lágrimas pa otro día",           2023],
+  [36, "Juanes",                        "Vida cotidiana",                 2023],
+  [37, "Mengers / Progreso nacional",   "Vs.",                            2023],
+  [38, "Velandia y La Tigra",           "Proverbios burros",              2023],
+  [39, "Arde Bogotá",                   "Cowboys de la A3",               2023],
+  [40, "Juan Pablo Vega",               "Despídeme de todxs",             2023],
+  [41, "Karol G",                       "Mañana será bonito",             2023],
+  [42, "Emilia",                        ".mp3",                           2023],
+  [43, "Becky G",                       "Esquinas",                       2023],
+  [44, "The Guapos",                    "Hey!",                           2023],
+  [45, "Oh' Laville",                   "Aurora",                         2023],
+  [46, "Peso Pluma",                    "Génesis",                        2023],
+  [47, "Diles que no me maten",         "Obrigaggi",                      2023],
+  [48, "Feid",                          "MOR no le temas a la oscuridad", 2023],
+  [49, "Isla de Caras",                 "Gran turismo",                   2023],
+  [50, "Nicki Nicole",                  "Alma",                           2023],
+  [51, "Lalo Cortés",                   "Re-Encuentro",                   2023],
+  [52, "Delfina Dib",                   "Directo al cora",                2023],
+  [53, "Conexión Divina",               "Tres mundos",                    2023],
+  [54, "Sofía Reyes",                   "Milamores",                      2023],
+  [55, "Junior H",                      "Sad Boyz 4 Life II",             2023],
+  [56, "Ana Mena",                      "Bellodrama",                     2023]
+];
+
+var FEAT = [
+  ["fc-1", "Tainy",        "DATA"],
+  ["fc-2", "Mon Laferte",  "Autopoiética"],
+  ["fc-3", "Carin León",   "Colmillo de leche"],
+  ["fc-4", "Fito Páez",    "El amor después del amor"],
+  ["fc-5", "Kali Uchis",   "Red Moon in Venus"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) +
+        "&media=music&entity=album&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.album && d.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Tainy", "DATA");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&album=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

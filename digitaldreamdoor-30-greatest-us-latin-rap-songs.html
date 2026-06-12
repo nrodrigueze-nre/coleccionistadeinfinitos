@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Greatest Songs of US Latin Rap</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">COLECCIÓN NELSON RODRÍGUEZ</span>
+    <span class="badge-year">1981&#8211;2004</span>
+  </div>
+  <span class="page-title">GREATEST SONGS OF US LATIN RAP</span>
+  <p class="page-sub">Cypress Hill, Big Pun, Fat Joe, Kid Frost, Immortal Technique &#183; rap latino de EE.UU. &#183; Chicano rap, East Coast, West Coast &#183; selección personal</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Insane in the Brain - Cypress Hill">
+    <p class="cover-cap">COLECCIÓN &#183; 30 CANCIONES &#183; US LATIN RAP</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las mejores canciones del rap latino de los Estados Unidos — una selección que cubre el movimiento desde los orígenes del Spanglish rap en los 80 hasta los grandes nombres del East Coast y West Coast a inicios de los 2000s. Cypress Hill, Big Pun, Kid Frost, Fat Joe, Immortal Technique, The Beatnuts y más.</p>
+    <p class="rtext">Cypress Hill domina con cuatro entradas — la banda chicana-cubana que llevó el rap latino al mainstream global. Big Pun y Fat Joe representan el South Bronx boricua. Kid Frost y Lighter Shade of Brown anclan el Chicano rap. Immortal Technique eleva el nivel político. Una lista que traza el mapa del rap latino en suelo estadounidense desde los primeros pasos hasta su consolidación como fuerza cultural mayor.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los más impactantes del US Latin Rap</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1993 · RAP · CALIFORNIA</div>
+      <div class="feat-title">Insane in the Brain</div>
+      <div class="feat-artist">Cypress Hill</div>
+      <p class="feat-rev">El hit más grande de Cypress Hill y uno de los grandes clásicos del rap de los 90. Insane in the Brain entró al Billboard Hot 100 top 20 y convirtió a la banda chicana-cubana en uno de los actos más reconocibles del hip hop global — demostrando que el rap latino de Los Ángeles podía competir con cualquiera en Estados Unidos y el mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1998 · RAP · NEW YORK</div>
+      <div class="feat-title">Still Not a Player</div>
+      <div class="feat-artist">Big Pun feat. Joe</div>
+      <p class="feat-rev">Big Pun como el primer solista latino en debitar en el No. 1 del Billboard con su álbum Capital Punishment — Still Not a Player fue su carta de presentación masiva. El MC boricua del Bronx con la técnica más asombrosa de su generación, demostrando que el rap latino del East Coast podía dominar el juego mainstream.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1990 · CHICANO RAP · CALIFORNIA</div>
+      <div class="feat-title">La Raza</div>
+      <div class="feat-artist">Kid Frost</div>
+      <p class="feat-rev">El himno fundacional del Chicano rap. Kid Frost samplea el clásico El Cumbanchero y construye sobre él una declaración de orgullo chicano que se convirtió en uno de los tracks más influyentes del hip hop latino — el modelo sobre el que se construiría toda una escena de rap en español e Spanglish en California.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1999 · RAP · CALIFORNIA</div>
+      <div class="feat-title">How I Could Just Kill a Man</div>
+      <div class="feat-artist">Cypress Hill</div>
+      <p class="feat-rev">Uno de los tracks más oscuros y poderosos de Cypress Hill — un clásico del rap de los 90 que Rage Against the Machine versionó en 2000. B-Real y Sen Dog crearon aquí uno de los grooves más reconocibles de la historia del hip hop, demostrando la capacidad de Cypress Hill para la producción atmosférica y las letras cinematográficas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2001 · RAP POLÍTICO · NEW YORK</div>
+      <div class="feat-title">Dance with the Devil</div>
+      <div class="feat-artist">Immortal Technique</div>
+      <p class="feat-rev">La canción más impactante del rap político latino de los 2000s — una narración en primera persona que lleva al oyente al límite de lo que una canción puede contar. Immortal Technique como el rapero peruano-estadounidense más comprometido con la denuncia social, elevando el estándar lírico y conceptual del rap latino independiente a niveles que pocos han igualado.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">30 canciones &#183; ordenadas por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">COLECCIÓN NELSON RODRÍGUEZ &#183; GREATEST US LATIN RAP SONGS</span>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "Cypress Hill",                    "Insane in the Brain",        1993],
+  [2,  "Big Pun feat. Joe",               "Still Not a Player",         1998],
+  [3,  "Kid Frost",                        "La Raza",                    1990],
+  [4,  "Cypress Hill",                    "How I Could Just Kill a Man", 1991],
+  [5,  "Immortal Technique",              "Dance with the Devil",        2001],
+  [6,  "Big Pun feat. Fat Joe",           "Twinz (Deep Cover 98)",       1998],
+  [7,  "Mellow Man Ace",                  "Mentirosa",                   1989],
+  [8,  "Cypress Hill",                    "Latin Lingo",                 1991],
+  [9,  "The Beatnuts feat. Big Pun; Cuban Link","Off the Books",         1999],
+  [10, "Fat Joe",                          "Flow Joe",                   1993],
+  [11, "Kid Frost",                        "No Sunshine",                1990],
+  [12, "Funkdoobiest",                    "Rock On",                     1993],
+  [13, "NORE feat. Nina Sky; Daddy Yankee","Oye Mi Canto",               2004],
+  [14, "Cypress Hill",                    "No entiendes la onda",        1999],
+  [15, "Chino XL",                        "Nunca",                       1996],
+  [16, "The Beatnuts",                    "Watch Out Now",               1997],
+  [17, "2Pac",                            "Slippin Into Darkness",       1996],
+  [18, "Cuban Link",                      "Flowers For the Dead",        2001],
+  [19, "Lighter Shade of Brown",          "On A Sunday Afternoon",       1994],
+  [20, "Kid Frost; Latin Alliance",       "Low Rider",                   1990],
+  [21, "Tony Touch feat. Nina Sky; Cypress Hill","Play That Song",       2004],
+  [22, "Lil Rob",                          "Summer Nights",              1999],
+  [23, "Funkdoobiest",                    "Bow Wow Wow",                 1992],
+  [24, "The Psycho Realm",                "Scandalous",                  1997],
+  [25, "Tha Mexakinz",                    "Phonkie Melodia",             1994],
+  [26, "South Park Mexican",              "High So High",                2000],
+  [27, "The Real Roxanne",                "Roxanne's On A Roll",         1988],
+  [28, "The Mean Machine",                "Disco Dream",                 1981],
+  [29, "Spanish Fly; The Terrible Two",   "Spanglish",                   1981],
+  [30, "Johnny J",                        "Get Away From Me",            1995]
+];
+
+var FEAT = [
+  ["fc-1", "Cypress Hill",    "Insane in the Brain"],
+  ["fc-2", "Big Pun",         "Still Not a Player"],
+  ["fc-3", "Kid Frost",       "La Raza"],
+  ["fc-4", "Cypress Hill",    "How I Could Just Kill a Man"],
+  ["fc-5", "Immortal Technique","Dance with the Devil"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Cypress Hill", "Insane in the Brain");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

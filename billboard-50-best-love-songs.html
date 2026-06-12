@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Top 50 Love Songs of All Time - Billboard 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">BILLBOARD</span>
+    <span class="badge-year">1958&#8211;2019</span>
+  </div>
+  <a href="https://www.billboard.com/lists/top-love-songs-all-time/" target="_blank" class="page-title">TOP 50 LOVE SONGS OF ALL TIME</a>
+  <p class="page-sub">Diana Ross &amp; Lionel Richie, Boyz II Men, Rihanna, Whitney Houston, Wings &#183; basado en el rendimiento real del Hot 100 &#183; solo canciones con "love" en el titulo &#183; Billboard &#183; Feb 2026</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Endless Love - Diana Ross y Lionel Richie">
+    <p class="cover-cap">BILLBOARD &#183; 50 CANCIONES &#183; LOVE SONGS</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">El ranking de Billboard de los 50 mejores temas de amor de todos los tiempos, publicado en febrero de 2026. Metodologia unica: basado en el rendimiento real en el Hot 100 desde su inicio el 4 de agosto de 1958 hasta el 14 de febrero de 2026, incluyendo exclusivamente canciones con la palabra "love" (o variacion) en el titulo. Las semanas en el No. 1 valen mas, y las diferentes eras se ponderan para compensar las tasas de rotacion historicas del chart.</p>
+    <p class="rtext">Endless Love de Diana Ross y Lionel Richie encabeza con 9 semanas en el No. 1 — compuesta por encargo para la pelicula de Franco Zeffirelli. El top 5 incluye a Boyz II Men con 14 semanas en el puesto #1 con I'll Make Love to You, Rihanna y Calvin Harris con We Found Love (10 semanas), Wings con Silly Love Songs y Whitney Houston con I Will Always Love You (14 semanas). El 9% de todos los No. 1 del Hot 100 incluyen la palabra "love" en el titulo.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Ordenados por impacto</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1981</div>
+      <div class="feat-title">Endless Love</div>
+      <div class="feat-artist">Diana Ross &amp; Lionel Richie</div>
+      <p class="feat-rev">El productor Jon Peters y el director Franco Zeffirelli le pidieron a Lionel Richie una instrumental al estilo del tema de Love Story para la pelicula Endless Love con Brooke Shields. Cuando Zeffirelli cambio de opinion y pidio letra, Richie acepto — y luego añadio una cantante femenina: alguien como Diana Ross. Nueve semanas en el No. 1.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994</div>
+      <div class="feat-title">I'll Make Love to You</div>
+      <div class="feat-artist">Boyz II Men</div>
+      <p class="feat-rev">Cuando los miembros de Boyz II Men escucharon la composicion de Babyface, les preocupaba grabar una cancion demasiado similar a End of the Road. La disquera los convenció — y resulto en 14 semanas en el No. 1, igualando el record que ellos mismos habian establecido con End of the Road.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2011</div>
+      <div class="feat-title">We Found Love</div>
+      <div class="feat-artist">Rihanna feat. Calvin Harris</div>
+      <p class="feat-rev">El mayor exito de la carrera de Rihanna — y la cancion de amor del siglo XXI segun Billboard. Encontrar el amor en un lugar sin esperanza: 10 semanas en el No. 1 del Hot 100.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1976</div>
+      <div class="feat-title">Silly Love Songs</div>
+      <div class="feat-artist">Wings</div>
+      <p class="feat-rev">1976 fue un año muy bueno para las canciones de amor en el Hot 100. El No. 1 mas duradero del año fue Wings — con cinco semanas en la cima — en un 12 meses que tambien vio a Love Rollercoaster, Love Hangover de Diana Ross y otras love songs dominar el chart.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1992</div>
+      <div class="feat-title">I Will Always Love You</div>
+      <div class="feat-artist">Whitney Houston</div>
+      <p class="feat-rev">La version de Houston de la cancion de Dolly Parton — el himno del Bodyguard — permanecio 14 semanas en el No. 1. La version original de Parton habia llegado al tope de Hot Country Songs en 1974 y de nuevo en 1982, dos decadas antes de que Whitney la convirtiera en un fenomeno global.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">50 canciones &#183; ordenadas por impacto en el Hot 100</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Cancion / Artista</span>
+    <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">BILLBOARD &#183; TOP 50 LOVE SONGS &#183; FEB 2026</span>
+  <a href="https://www.billboard.com/lists/top-love-songs-all-time/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "Diana Ross and Lionel Richie",   "Endless Love",                        1981],
+  [2,  "Boyz II Men",                    "I'll Make Love to You",               1994],
+  [3,  "Rihanna feat. Calvin Harris",    "We Found Love",                       2011],
+  [4,  "Wings",                          "Silly Love Songs",                    1976],
+  [5,  "Whitney Houston",                "I Will Always Love You",              1992],
+  [6,  "Leona Lewis",                    "Bleeding Love",                       2008],
+  [7,  "Mario",                          "Let Me Love You",                     2005],
+  [8,  "Stevie B",                       "Because I Love You",                  1990],
+  [9,  "The Emotions",                   "Best of My Love",                     1977],
+  [10, "Ray Charles",                    "I Can't Stop Loving You",             1962],
+  [11, "Paul McCartney and Wings",       "My Love",                             1973],
+  [12, "Queen",                          "Crazy Little Thing Called Love",      1980],
+  [13, "Celine Dion",                    "Because You Loved Me",                1996],
+  [14, "The Teddy Bears",                "To Know Him Is to Love Him",          1958],
+  [15, "Paul Mauriat",                   "Love Is Blue",                        1968],
+  [16, "Lewis Capaldi",                  "Someone You Loved",                   2019],
+  [17, "Barbra Streisand",               "Woman in Love",                       1980],
+  [18, "Mariah Carey",                   "Love Takes Time",                     1990],
+  [19, "Mariah Carey",                   "Vision of Love",                      1990],
+  [20, "Roxette",                        "It Must Have Been Love",              1990],
+  [21, "Mariah Carey",                   "Dreamlover",                          1993],
+  [22, "Eminem feat. Rihanna",           "Love the Way You Lie",                2010],
+  [23, "Beyonce feat. Jay-Z",            "Crazy in Love",                       2003],
+  [24, "Bobby Vinton",                   "Roses Are Red (My Love)",             1962],
+  [25, "Captain and Tennille",           "Love Will Keep Us Together",          1975],
+  [26, "Whitney Houston",                "I Wanna Dance With Somebody",         1987],
+  [27, "Ohio Players",                   "Love Rollercoaster",                  1976],
+  [28, "The Partridge Family",           "I Think I Love You",                  1970],
+  [29, "Andy Gibb",                      "Love Is Thicker Than Water",          1978],
+  [30, "Diana Ross and The Supremes",    "Love Child",                          1968],
+  [31, "The Beatles",                    "She Loves You",                       1964],
+  [32, "Tina Turner",                    "What's Love Got to Do With It",       1984],
+  [33, "Foreigner",                      "I Want to Know What Love Is",         1985],
+  [34, "Savage Garden",                  "I Knew I Loved You",                  2000],
+  [35, "England Dan and John Ford Coley","I'd Really Love to See You Tonight",  1976],
+  [36, "UB40",                           "Can't Help Falling in Love",          1993],
+  [37, "Diana Ross",                     "Love Hangover",                       1976],
+  [38, "Mariah Carey",                   "Dreamlover",                          1993],
+  [39, "Stevie Wonder",                  "I Just Called to Say I Love You",     1984],
+  [40, "Huey Lewis and The News",        "The Power of Love",                   1985],
+  [41, "Whitney Houston",                "Greatest Love of All",                1986],
+  [42, "Stevie Wonder",                  "I Just Called to Say I Love You",     1984],
+  [43, "Donna Lewis",                    "I Love You Always Forever",           1996],
+  [44, "Celine Dion",                    "The Power of Love",                   1994],
+  [45, "Janet Jackson",                  "That's The Way Love Goes",            1993],
+  [46, "Madonna",                        "Justify My Love",                     1991],
+  [47, "En Vogue",                       "Don't Let Go (Love)",                 1997],
+  [48, "Herb Alpert",                    "This Guy's In Love With You",         1968],
+  [49, "The Righteous Brothers",         "You've Lost That Lovin' Feelin'",     1965],
+  [50, "Minnie Riperton",                "Lovin' You",                          1975]
+];
+
+var FEAT = [
+  ["fc-1", "Diana Ross",    "Endless Love"],
+  ["fc-2", "Boyz II Men",   "I'll Make Love to You"],
+  ["fc-3", "Rihanna",       "We Found Love"],
+  ["fc-4", "Wings",         "Silly Love Songs"],
+  ["fc-5", "Whitney Houston","I Will Always Love You"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Diana Ross", "Endless Love");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>
