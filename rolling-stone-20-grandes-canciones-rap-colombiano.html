@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rap Colombiano: 20 Grandes Canciones - Rolling Stone en Español</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE EN ESPAÑOL</span>
+    <span class="badge-year">1994&#8211;2017</span>
+  </div>
+  <a href="https://es.rollingstone.com/rap-colombiano-20-grandes-canciones/" target="_blank" class="page-title">RAP COLOMBIANO: 20 GRANDES CANCIONES</a>
+  <p class="page-sub">La Etnnia, Tres Coronas, Chocquibtown, Alcolirykoz, Flaco Flow &amp; Melanina &#183; votación de 30 artistas, periodistas y gestores &#183; las canciones más trascendentes del hip hop colombiano &#183; RS en Español</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Manicomio 5-27 - La Etnnia">
+    <p class="cover-cap">RS EN ESPAÑOL &#183; 20 CANCIONES &#183; RAP COLOMBIANO</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">En 2018 Rolling Stone en Español invitó a 30 artistas, periodistas y gestores del rap para que votaran por las canciones más importantes del hip hop colombiano — no las que más les gustaban, sino las más trascendentes. El proceso tomó alrededor de 10 meses. Resultado republicado en agosto de 2023.</p>
+    <p class="rtext">La Etnnia domina con dos entradas — Manicomio 5-27 (1994, #1) y Real (2004, #15). La votación reveló una escena que va de Bogotá a Cali, Medellín, Buenaventura y el Chocó. Desde los pioneros de Las Cruces hasta la nueva guardia de Alcolirykoz y Afaz Natural. Un documento vivo de la historia del rap colombiano desde sus inicios hasta 2017.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Las más trascendentes según la votación</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994 · RAP · BOGOTÁ</div>
+      <div class="feat-title">Manicomio 5-27</div>
+      <div class="feat-artist">La Etnnia</div>
+      <p class="feat-rev">El himno fundacional del rap colombiano — grabado en el estudio casero de los hermanos Pimienta en Las Cruces, Bogotá. La preproducción nació de letras improvisadas en freestyle; el nombre del estudio le dio el título a la canción. En 2013 un panel de expertos la ubicó en el puesto 11 entre las 50 Grandes Canciones Colombianas de Rolling Stone. Un himno que ha superado el paso del tiempo y las barreras sociales durante más de tres décadas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2002 · RAP · BOGOTÁ / PARIS / NEW YORK</div>
+      <div class="feat-title">Falsedades</div>
+      <div class="feat-artist">Tres Coronas</div>
+      <p class="feat-rev">Sebastián Rocca venía de triunfar con La Cliqua en la era dorada del rap francés. En Nueva York conoció a P.N.O. (Poncho) y juntos formaron Tres Coronas. El beat lo construyó Artwell Smart con una SP1200 usando violines de viejos discos de baladas — José José, Los Ángeles Negros. La estrenaron en su primer concierto en Bogotá y todo el mundo quedó azul. Distribuida en Colombia con gran éxito por el sello 5-27 de La Etnnia.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2005 · RAP · CALI / BUENAVENTURA</div>
+      <div class="feat-title">La jungla</div>
+      <div class="feat-artist">Flaco Flow y Melanina</div>
+      <p class="feat-rev">Inspirada en la realidad de los jóvenes obligados a prestar el servicio militar en una guerra que no quieren vivir. Llevó a Flaco Flow y Melanina a visitar Europa apenas seis meses después de su lanzamiento. La canción aparece en la banda sonora del documental Pickpockets. En Hip Hop al Parque 2005 salieron al escenario vestidos de militares y miles de personas gritaban cada fraseo — una de las presentaciones más recordadas del movimiento.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2004 · RAP · COLOMBIA</div>
+      <div class="feat-title">Todo bien, todo bien</div>
+      <div class="feat-artist">JHT</div>
+      <p class="feat-rev">La canción que ayudó al rap colombiano a ir más allá del underground — su música fue visible en espacios del mainstream como MTV y Mucha Música. JHT marcó una nueva etapa porque su construcción lírica hizo que una generación comenzara a pensar en un hip hop diferente. Un rapero sin trabajo intentando salir de casa de sus padres — que al final la coge con calma y dice: todo bien.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2006 · RAP · CHOCÓ / BOGOTÁ</div>
+      <div class="feat-title">Somos Pacífico</div>
+      <div class="feat-artist">Chocquibtown</div>
+      <p class="feat-rev">Producida por Iván Benavides — el cerebro de La tierra del olvido — después de que él y el productor británico Richard Blair encontraran a Goyo para Sidestepper. Ocupa la casilla 29 entre las 50 Grandes Canciones Colombianas de Rolling Stone. "Muchos que se creían raperos gringos nos dijeron que eso era solo rap con tamborcito", recuerda Tostao. El tamborcito del Pacífico y el rap de Estados Unidos fundidos en una sola identidad colombiana.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">20 canciones &#183; ordenadas por votación · de mayor a menor trascendencia</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE EN ESPAÑOL &#183; RAP COLOMBIANO 20 GRANDES CANCIONES &#183; 2018/2023</span>
+  <a href="https://es.rollingstone.com/rap-colombiano-20-grandes-canciones/" target="_blank" class="foot-link">Ver artículo &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "La Etnnia",                       "Manicomio 5-27",        1994],
+  [2,  "Tres Coronas",                    "Falsedades",            2002],
+  [3,  "Flaco Flow y Melanina",           "La jungla",             2005],
+  [4,  "JHT",                             "Todo bien todo bien",   2004],
+  [5,  "Chocquibtown",                    "Somos Pacífico",        2006],
+  [6,  "Laberinto ELC",                   "Jaula de oro",          2006],
+  [7,  "Asilo 38",                        "Carlito's Way",         2001],
+  [8,  "Rocca",                           "El original",           2001],
+  [9,  "Gotas De Rap",                    "Mama marihuana",        1997],
+  [10, "Ali AKA Mind",                    "Mi raíz",               2012],
+  [11, "Colombia Rap Cartel",             "Ghetto boy",            1996],
+  [12, "Alcolirykoz",                     "Anestesia local",       2014],
+  [13, "Aerophon",                        "Mi familia",            2012],
+  [14, "Superanfor",                      "Barrio chico",          2012],
+  [15, "La Etnnia",                       "Real",                  2004],
+  [16, "Yoky Barrios",                    "Amigos",                2006],
+  [17, "Crack Family feat. Aerophon",     "Gaminart",              2010],
+  [18, "Samurai",                         "El haiku",              2005],
+  [19, "Alcolirykoz",                     "Tararea",               2017],
+  [20, "Afaz Natural",                    "Quizás",                2015]
+];
+
+var FEAT = [
+  ["fc-1", "La Etnnia",            "Manicomio 5-27"],
+  ["fc-2", "Tres Coronas",         "Falsedades"],
+  ["fc-3", "Flaco Flow y Melanina","La jungla"],
+  ["fc-4", "JHT",                  "Todo bien todo bien"],
+  ["fc-5", "Chocquibtown",         "Somos Pacífico"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "La Etnnia", "Manicomio 5-27");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

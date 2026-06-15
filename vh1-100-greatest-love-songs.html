@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VH1 - 100 Greatest Love Songs</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">VH1</span>
+    <span class="badge-year">1956&#8211;2002</span>
+  </div>
+  <a href="https://cs.uwaterloo.ca/~dtompkin/music/list/Best13.html" target="_blank" class="page-title">VH1 · 100 GREATEST LOVE SONGS</a>
+  <p class="page-sub">Whitney Houston, Elvis Presley, Celine Dion, Journey, Etta James &#183; 100 canciones &#183; baladas, soul, pop, rock &#183; de los 50s a los 2000s &#183; VH1</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I Will Always Love You - Whitney Houston">
+    <p class="cover-cap">VH1 &#183; 100 CANCIONES &#183; GREATEST LOVE SONGS</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las 100 mejores canciones de amor según VH1 — desde Elvis Presley en 1956 hasta el pop de los 2000s, con la voz de Whitney Houston encabezando como la interpretación más poderosa de una canción de amor en la historia de la música popular. Una lista que cruza géneros y décadas unida por un solo tema: el amor en todas sus formas.</p>
+    <p class="rtext">Celine Dion aparece dos veces — My Heart Will Go On (#3) y Because You Loved Me (#30). Journey dos veces — Open Arms (#4) y Faithfully (#59). Bonnie Raitt, Peter Gabriel, Marvin Gaye, Etta James, Al Green y Sade representan el soul y el R&B más depurado. Guns N' Roses, Led Zeppelin y Bon Jovi demuestran que el rock también puede romperte el corazón.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Las más grandes canciones de amor</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1992 · POP / R&amp;B · EEUU</div>
+      <div class="feat-title">I Will Always Love You</div>
+      <div class="feat-artist">Whitney Houston</div>
+      <p class="feat-rev">La actuación vocal más extraordinaria en la historia de la canción popular — Whitney Houston tomando el country de Dolly Parton y convirtiéndolo en una demostración de poder humano que va más allá de cualquier género. El melisma final de I Will Always Love You es considerado por muchos el momento vocal más grande jamás grabado. Ganó el Grammy a Mejor Grabación del Año en 1994 y sigue siendo la balada más vendida de la historia.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1956 · ROCK AND ROLL / BALLAD · EEUU</div>
+      <div class="feat-title">Love Me Tender</div>
+      <div class="feat-artist">Elvis Presley</div>
+      <p class="feat-rev">El lado tierno de Elvis — el Rey del Rock mostrandoque podía susurrar igual de poderoso que gritar. Love Me Tender fue el primer single de Elvis en vender más de un millón de copias antes de su lanzamiento oficial, basada en la melodía civil de la guerra americana Aura Lee. Una canción de amor tan simple y tan perfecta que ha resistido setenta años sin perder un gramo de emoción.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1997 · POP / FILM SCORE · CANADA</div>
+      <div class="feat-title">My Heart Will Go On</div>
+      <div class="feat-artist">Celine Dion</div>
+      <p class="feat-rev">La canción de película más exitosa de la historia — James Horner y Will Jennings creando el tema de Titanic que Celine Dion grabó en una sola toma a las seis de la mañana. My Heart Will Go On vendió más de 15 millones de copias, ganó el Oscar y el Grammy, y se convirtió en la banda sonora del romance más grande de la historia del cine. Celine afirmó que James Cameron quería eliminarla del film.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1970 · POP / ROCK · REINO UNIDO</div>
+      <div class="feat-title">Your Song</div>
+      <div class="feat-artist">Elton John</div>
+      <p class="feat-rev">La canción de amor más perfectamente escrita del rock pop moderno — Bernie Taupin y Elton John creando en 1970 una declaración de amor tan genuina e imperfecta que resulta universal. Your Song no intenta ser grandioso: un chico que no tiene mucho que ofrecer excepto esta canción. Y eso es exactamente lo que la hace inmortal. El debut de una de las asociaciones compositivas más grandes de la historia del pop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-year">1961 · SOUL / R&amp;B · EEUU</div>
+    <div class="feat-title">At Last</div>
+    <div class="feat-artist">Etta James</div>
+    <p class="feat-rev">La voz más poderosa del soul americano cantando la canción más perfecta para una primera danza de bodas. Etta James tomó un standard de Glenn Miller de 1941 y lo hizo completamente suyo — At Last es ahora más asociada con Etta que con ningún otro intérprete. La orquestación de Leonard Chess y la voz indestructible de James creando tres minutos de eternidad pura.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1966 · SOUL / BLUE-EYED SOUL · EEUU</div>
+      <div class="feat-title">Unchained Melody</div>
+      <div class="feat-artist">The Righteous Brothers</div>
+      <p class="feat-rev">El dueto de blue-eyed soul más emotivo de los 60 — Bill Medley y Bobby Hatfield con la producción de Phil Spector creando una canción de anhelo y espera que se convirtió en el corazón de Ghost (1990). Unchained Melody fue escrita en 1955 para una película de prisiones y ha sido versionada más de 500 veces, pero ninguna versión supera la de los Righteous Brothers en poder emocional.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1990 · ART POP / SOUL · IRLANDA</div>
+      <div class="feat-title">Nothing Compares 2 U</div>
+      <div class="feat-artist">Sinead O'Connor</div>
+      <p class="feat-rev">La interpretación más desgarradora de una canción de Prince — Sinead O'Connor convirtiendo un corte olvidado del álbum The Family en el momento de desolación amorosa más impactante de los 90. El video donde la lágrima corre por su mejilla rapada es uno de los momentos más icónicos de MTV. O'Connor cantó sobre la muerte de su madre y la disolución de una relación simultáneamente — y esa ambigüedad es parte de su poder.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1986 · ART ROCK / WORLD MUSIC · REINO UNIDO</div>
+      <div class="feat-title">In Your Eyes</div>
+      <div class="feat-artist">Peter Gabriel</div>
+      <p class="feat-rev">La canción de amor más cinematográfica del rock de los 80 — inmortalizada cuando John Cusack la sostuvo sobre su cabeza en un boombox en Say Anything (1989). Peter Gabriel con Youssou N'Dour incorporando el ritmo africano al pop alternativo en una fusión que resultó ser tanto un experimento artístico como la balada definitiva de una generación. El comienzo del World Music como corriente popular.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1973 · SOUL / FUNK · EEUU</div>
+      <div class="feat-title">Let's Get It On</div>
+      <div class="feat-artist">Marvin Gaye</div>
+      <p class="feat-rev">La canción más sensual de la historia de la música popular — Marvin Gaye creando el manual definitivo de la seducción con una voz y una producción que hacen innecesaria cualquier otra explicación. Let's Get It On llegó al #1 y se mantuvo allí dos semanas en 1973, convirtiéndose en la canción romántica más directa y honesta que el soul había producido hasta ese momento. Inimitable.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1988 · HARD ROCK · EEUU</div>
+      <div class="feat-title">Sweet Child O' Mine</div>
+      <div class="feat-artist">Guns N' Roses</div>
+      <p class="feat-rev">La balada de hard rock más perfecta jamás grabada — Slash creando uno de los riffs más reconocibles de la historia mientras Axl Rose le cantaba a su novia Erin Everly con una ternura que nadie esperaba de la banda más peligrosa del mundo. Sweet Child O' Mine fue el único #1 de Guns N' Roses en el Billboard Hot 100 y demostró que detrás del caos había corazones capaces de amar con la misma intensidad con que destruían.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">100 canciones &#183; ordenadas por ranking VH1</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">VH1 &#183; 100 GREATEST LOVE SONGS</span>
+  <a href="https://cs.uwaterloo.ca/~dtompkin/music/list/Best13.html" target="_blank" class="foot-link">Ver lista &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,   "Whitney Houston",                  "I Will Always Love You",              1992],
+  [2,   "Elvis Presley",                    "Love Me Tender",                      1956],
+  [3,   "Celine Dion",                      "My Heart Will Go On",                 1997],
+  [4,   "Journey",                          "Open Arms",                           1982],
+  [5,   "Wings",                            "Maybe I'm Amazed",                    1970],
+  [6,   "The Righteous Brothers",           "Unchained Melody",                    1965],
+  [7,   "Lionel Richie & Diana Ross",       "Endless Love",                        1981],
+  [8,   "Elton John",                       "Your Song",                           1970],
+  [9,   "The Jackson 5",                    "I'll Be There",                       1970],
+  [10,  "Aerosmith",                        "I Don't Want to Miss a Thing",        1998],
+  [11,  "Etta James",                       "At Last",                             1961],
+  [12,  "Bee Gees",                         "How Deep Is Your Love",               1977],
+  [13,  "Sinead O'Connor",                  "Nothing Compares 2 U",                1990],
+  [14,  "Olivia Newton-John",               "I Honestly Love You",                 1974],
+  [15,  "Billy Joel",                       "She's Got a Way",                     1971],
+  [16,  "Frank Sinatra",                    "Fly Me to the Moon",                  1964],
+  [17,  "Faith Hill",                       "Breathe",                             1999],
+  [18,  "Peter Gabriel",                    "In Your Eyes",                        1986],
+  [19,  "Chicago",                          "If You Leave Me Now",                 1976],
+  [20,  "Sonny & Cher",                     "I Got You Babe",                      1965],
+  [21,  "John Travolta & Olivia Newton-John","You're the One That I Want",         1978],
+  [22,  "Barbra Streisand & Neil Diamond",  "You Don't Bring Me Flowers",          1978],
+  [23,  "Natalie Cole & Nat King Cole",     "Unforgettable",                       1991],
+  [24,  "Eric Clapton",                     "Wonderful Tonight",                   1977],
+  [25,  "Joe Cocker",                       "You Are So Beautiful",                1975],
+  [26,  "Styx",                             "Babe",                                1979],
+  [27,  "Rod Stewart",                      "You're in My Heart",                  1977],
+  [28,  "Marvin Gaye",                      "Let's Get It On",                     1973],
+  [29,  "Willie Nelson",                    "Always on My Mind",                   1982],
+  [30,  "Celine Dion",                      "Because You Loved Me",                1996],
+  [31,  "Stevie Wonder",                    "You Are the Sunshine of My Life",     1973],
+  [32,  "John Lennon",                      "Woman",                               1980],
+  [33,  "Bryan Adams",                      "(Everything I Do) I Do It for You",  1991],
+  [34,  "REO Speedwagon",                   "Keep on Loving You",                  1980],
+  [35,  "Carpenters",                       "Superstar",                           1971],
+  [36,  "Barry White",                      "You're the First the Last My Everything", 1974],
+  [37,  "No Doubt",                         "Don't Speak",                         1996],
+  [38,  "Madonna",                          "Crazy for You",                       1985],
+  [39,  "Bon Jovi",                         "I'll Be There for You",               1989],
+  [40,  "Shania Twain",                     "You're Still the One",                1998],
+  [41,  "Kiss",                             "Beth",                                1976],
+  [42,  "Meat Loaf",                        "I'd Do Anything for Love",            1993],
+  [43,  "Extreme",                          "More Than Words",                     1991],
+  [44,  "Bill Medley & Jennifer Warnes",    "(I've Had) the Time of My Life",      1987],
+  [45,  "Toni Braxton",                     "Un-Break My Heart",                   1996],
+  [46,  "Al Green",                         "Let's Stay Together",                 1971],
+  [47,  "Prince",                           "I Would Die 4 U",                     1984],
+  [48,  "Sade",                             "By Your Side",                        2000],
+  [49,  "Bonnie Raitt",                     "I Can't Make You Love Me",            1991],
+  [50,  "Atlantic Starr",                   "Always",                              1987],
+  [51,  "Janet Jackson",                    "That's the Way Love Goes",            1993],
+  [52,  "Def Leppard",                      "Love Bites",                          1987],
+  [53,  "Barry Manilow",                    "Mandy",                               1974],
+  [54,  "Alicia Keys",                      "Fallin'",                             2001],
+  [55,  "The Pretenders",                   "I'll Stand by You",                   1994],
+  [56,  "Roberta Flack",                    "The First Time Ever I Saw Your Face", 1972],
+  [57,  "Foreigner",                        "Waiting for a Girl Like You",         1981],
+  [58,  "The Emotions",                     "Best of My Love",                     1977],
+  [59,  "Journey",                          "Faithfully",                          1983],
+  [60,  "Commodores",                       "Three Times a Lady",                  1978],
+  [61,  "Heart",                            "Alone",                               1987],
+  [62,  "Mr. Big",                          "To Be With You",                      1991],
+  [63,  "LeAnn Rimes",                      "How Do I Live",                       1997],
+  [64,  "Modern English",                   "I Melt With You",                     1982],
+  [65,  "Christina Aguilera & Ricky Martin","Nobody Wants to Be Lonely",           2001],
+  [66,  "Goo Goo Dolls",                    "Iris",                                1998],
+  [67,  "Bangles",                          "Eternal Flame",                       1989],
+  [68,  "Boston",                           "More Than a Feeling",                 1976],
+  [69,  "INXS",                             "Never Tear Us Apart",                 1988],
+  [70,  "The Partridge Family",             "I Think I Love You",                  1970],
+  [71,  "Led Zeppelin",                     "Whole Lotta Love",                    1969],
+  [72,  "Captain and Tennille",             "Love Will Keep Us Together",          1975],
+  [73,  "Vanessa Williams",                 "Save the Best for Last",              1992],
+  [74,  "Chaka Khan",                       "I Feel for You",                      1984],
+  [75,  "Peter Frampton",                   "Baby I Love Your Way",                1976],
+  [76,  "Donna Summer",                     "Love to Love You Baby",               1975],
+  [77,  "Lisa Lisa & Cult Jam",             "All Cried Out",                       1985],
+  [78,  "Edwin McCain",                     "I'll Be",                             1997],
+  [79,  "Guns N' Roses",                    "Sweet Child O' Mine",                 1988],
+  [80,  "Kenny Rogers & Dolly Parton",      "Islands in the Stream",               1983],
+  [81,  "Bonnie Tyler",                     "Total Eclipse of the Heart",          1983],
+  [82,  "Chris Isaak",                      "Wicked Game",                         1989],
+  [83,  "Boyz II Men",                      "I'll Make Love to You",               1994],
+  [84,  "Cyndi Lauper",                     "Time After Time",                     1984],
+  [85,  "Wham!",                            "Careless Whisper",                    1984],
+  [86,  "Bruce Springsteen",                "Secret Garden",                       1995],
+  [87,  "Whitesnake",                       "Is This Love",                        1987],
+  [88,  "Dido",                             "Thank You",                           1999],
+  [89,  "Cheap Trick",                      "I Want You to Want Me",               1977],
+  [90,  "Brian McKnight",                   "Back at One",                         1999],
+  [91,  "Elvis Costello",                   "Alison",                              1977],
+  [92,  "Air Supply",                       "All Out of Love",                     1980],
+  [93,  "Pat Benatar",                      "We Belong",                           1984],
+  [94,  "*NSYNC",                           "This I Promise You",                  2000],
+  [95,  "Roxette",                          "It Must Have Been Love",              1990],
+  [96,  "Andy Gibb",                        "I Just Want to Be Your Everything",   1977],
+  [97,  "Christopher Cross",                "Think of Laura",                      1983],
+  [98,  "LL Cool J",                        "I Need Love",                         1987],
+  [99,  "Enrique Iglesias",                 "Hero",                                2001],
+  [100, "Poison",                           "Every Rose Has Its Thorn",            1988]
+];
+
+var FEAT = [
+  ["fc-1",  "Whitney Houston",       "I Will Always Love You"],
+  ["fc-2",  "Elvis Presley",         "Love Me Tender"],
+  ["fc-3",  "Celine Dion",           "My Heart Will Go On"],
+  ["fc-4",  "Elton John",            "Your Song"],
+  ["fc-5",  "Etta James",            "At Last"],
+  ["fc-6",  "The Righteous Brothers","Unchained Melody"],
+  ["fc-7",  "Sinead O'Connor",       "Nothing Compares 2 U"],
+  ["fc-8",  "Peter Gabriel",         "In Your Eyes"],
+  ["fc-9",  "Marvin Gaye",           "Let's Get It On"],
+  ["fc-10", "Guns N' Roses",         "Sweet Child O' Mine"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Whitney Houston", "I Will Always Love You");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

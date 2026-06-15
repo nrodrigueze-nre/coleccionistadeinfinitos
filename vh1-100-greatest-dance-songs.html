@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VH1 - 100 Greatest Dance Songs</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">VH1</span>
+    <span class="badge-year">1959&#8211;1999</span>
+  </div>
+  <a href="https://cs.uwaterloo.ca/~dtompkin/music/list/Best12.html" target="_blank" class="page-title">VH1 · 100 GREATEST DANCE SONGS</a>
+  <p class="page-sub">Gloria Gaynor, Madonna, Bee Gees, Michael Jackson, Donna Summer &#183; 100 canciones &#183; disco, funk, dance, R&amp;B &#183; de los 50s a los 90s &#183; VH1</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="I Will Survive - Gloria Gaynor">
+    <p class="cover-cap">VH1 &#183; 100 CANCIONES &#183; GREATEST DANCE SONGS</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las 100 mejores canciones de baile de la historia según VH1 — un recorrido desde el twist de Chubby Checker (1961) hasta los hits de finales de los 90s, con el disco de los 70s como núcleo central de la selección. Gloria Gaynor encabeza con I Will Survive, seguida por Thelma Houston, Sister Sledge y Madonna.</p>
+    <p class="rtext">Donna Summer aparece cuatro veces — la Reina del Disco en toda su gloria. La era dorada del Studio 54 (1975–1980) domina la lista con Chic, Village People, Bee Gees, KC & The Sunshine Band y Sylvester. Michael Jackson, Madonna y Prince representan los 80s. Una biblia del dance music que va del funk y el soul hasta el house y el eurodance.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Las más impactantes del baile</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1979 · DISCO · EEUU</div>
+      <div class="feat-title">I Will Survive</div>
+      <div class="feat-artist">Gloria Gaynor</div>
+      <p class="feat-rev">El himno de supervivencia más grande de la historia de la música popular — una canción de disco convertida en declaración universal de empoderamiento. I Will Survive ganó el Grammy a Mejor Grabación del Año en 1980 y se ha reinterpretado en cada crisis colectiva desde entonces. El #1 de VH1 es indiscutible: ninguna canción de baile ha cruzado más fronteras culturales que esta.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1990 · DANCE POP · EEUU</div>
+      <div class="feat-title">Vogue</div>
+      <div class="feat-artist">Madonna</div>
+      <p class="feat-rev">Madonna tomando el voguing de los ballrooms de Harlem y llevándolo al mainstream global — una de las apropiaciones culturales más influyentes de la historia del pop. Vogue introdujo la cultura ballroom LGBTQ+ al mundo masivo, creó un lenguaje visual y coreográfico completamente nuevo, y sigue siendo el track de Madonna más escuchado y analizado más de tres décadas después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1977 · DISCO · AUSTRALIA</div>
+      <div class="feat-title">Stayin' Alive</div>
+      <div class="feat-artist">Bee Gees</div>
+      <p class="feat-rev">La canción más reconocible de la era disco y el corazón de Saturday Night Fever — la película que convirtió el disco en fenómeno global. El bassline de Stayin' Alive es uno de los más imitados de la historia, y su tempo de 100 BPM lo hizo estándar de referencia en técnicas de reanimación cardiopulmonar. Los Gibb hermanos creando el sonido de toda una época.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1979 · DISCO / R&B · EEUU</div>
+      <div class="feat-title">We Are Family</div>
+      <div class="feat-artist">Sister Sledge</div>
+      <p class="feat-rev">Producida y escrita por Nile Rodgers y Bernard Edwards de Chic — una de las duplas creativas más poderosas del disco. We Are Family trascendió el género para convertirse en himno de unidad adoptado por equipos deportivos, movimientos sociales y celebraciones colectivas de todo tipo. La producción de Chic en su estado más generoso y expansivo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1983 · POP / DANCE · EEUU</div>
+      <div class="feat-title">Billie Jean</div>
+      <div class="feat-artist">Michael Jackson</div>
+      <p class="feat-rev">La canción que cambió la televisión para siempre — cuando Michael Jackson hizo el moonwalk por primera vez en Motown 25 en 1983, el mundo quedó paralizado. Billie Jean tiene el bassline más reconocible de la historia del pop y sigue siendo la canción más analizada del artista más vendido de todos los tiempos. La producción de Quincy Jones y Michael en su cima absoluta.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1967 · SOUL / R&B · EEUU</div>
+      <div class="feat-title">Respect</div>
+      <div class="feat-artist">Aretha Franklin</div>
+      <p class="feat-rev">La Reina del Soul apropiándose de una canción de Otis Redding y convirtiéndola en el himno feminista más poderoso de los 60. R-E-S-P-E-C-T deletreado para que nadie lo olvidara. Respect ganó dos Grammy en 1968 y fue declarada la canción más importante del siglo XX por la Biblioteca del Congreso. Que aparezca en una lista de dance songs dice todo sobre su poder de pista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1977 · DISCO · EEUU</div>
+      <div class="feat-title">I Feel Love</div>
+      <div class="feat-artist">Donna Summer</div>
+      <p class="feat-rev">El momento en que el futuro llegó a la pista de baile. Giorgio Moroder construyó I Feel Love enteramente con sintetizadores — algo que nadie había hecho en 1977 — creando el prototipo del house, el techno y el dance electrónico que vendría décadas después. Brian Eno le dijo a David Bowie que esta canción había cambiado el futuro de la música popular. Tenía razón.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1978 · DISCO · EEUU</div>
+      <div class="feat-title">Le Freak</div>
+      <div class="feat-artist">Chic</div>
+      <p class="feat-rev">Nile Rodgers y Bernard Edwards creando el single de disco más vendido de la historia de Atlantic Records — inspirado en haber sido rechazados en la puerta del Studio 54 en Nochevieja de 1977. Le Freak pasó de ser una canción de venganza ("Freak off!") a convertirse en el himno de la noche neoyorquina. La guitarra funk de Rodgers como plantilla para todo el pop de los 80s.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1978 · DISCO · EEUU</div>
+      <div class="feat-title">Y.M.C.A.</div>
+      <div class="feat-artist">Village People</div>
+      <p class="feat-rev">Uno de los fenómenos culturales más complejos de la era disco — una canción aparentemente inocente sobre las instalaciones de la YMCA que se convirtió en himno gay antes de ser adoptada por audiencias mainstream que nunca captaron el subtexto. La coreografía de letras con los brazos es probablemente la más imitada de la historia del pop. Omnipresente en estadios de todo el mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1979 · DISCO · EEUU</div>
+      <div class="feat-title">Good Times</div>
+      <div class="feat-artist">Chic</div>
+      <p class="feat-rev">El bassline de Bernard Edwards que lo cambió todo — sampleado por Sugarhill Gang en Rapper's Delight para crear el primer hit de hip hop, y por Queen en Another One Bites the Dust. Good Times es quizás la canción más influyente de toda la era disco: su groove está en el ADN del hip hop, el R&B y el dance music de los últimos 45 años.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">100 canciones &#183; ordenadas por ranking VH1</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">VH1 &#183; 100 GREATEST DANCE SONGS</span>
+  <a href="https://cs.uwaterloo.ca/~dtompkin/music/list/Best12.html" target="_blank" class="foot-link">Ver lista &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,   "Gloria Gaynor",                       "I Will Survive",                    1979],
+  [2,   "Thelma Houston",                      "Don't Leave Me This Way",            1976],
+  [3,   "Sister Sledge",                       "We Are Family",                     1979],
+  [4,   "Madonna",                             "Vogue",                             1990],
+  [5,   "Van McCoy",                           "The Hustle",                        1975],
+  [6,   "Donna Summer",                        "Last Dance",                        1978],
+  [7,   "Village People",                      "Y.M.C.A.",                          1978],
+  [8,   "Chubby Checker",                      "The Twist",                         1961],
+  [9,   "C + C Music Factory",                 "Gonna Make You Sweat",              1990],
+  [10,  "Bee Gees",                            "Stayin' Alive",                     1977],
+  [11,  "Aretha Franklin",                     "Respect",                           1967],
+  [12,  "KC & The Sunshine Band",              "Get Down Tonight",                  1975],
+  [13,  "Barry White & Love Unlimited Orchestra","Love's Theme",                    1974],
+  [14,  "Sylvester",                           "You Make Me Feel (Mighty Real)",    1975],
+  [15,  "Rob Base & DJ E-Z Rock",              "It Takes Two",                      1988],
+  [16,  "Michael Jackson",                     "Don't Stop 'til You Get Enough",    1979],
+  [17,  "The Trammps",                         "Disco Inferno",                     1978],
+  [18,  "Martha Reeves & The Vandellas",       "Dancing in the Street",             1964],
+  [19,  "Evelyn King",                         "Shame",                             1978],
+  [20,  "Cheryl Lynn",                         "Got to Be Real",                   1979],
+  [21,  "KC & The Sunshine Band",              "That's the Way (I Like It)",        1975],
+  [22,  "Diana Ross",                          "Love Hangover",                     1976],
+  [23,  "LaBelle",                             "Lady Marmalade",                    1975],
+  [24,  "Shannon",                             "Let the Music Play",                1984],
+  [25,  "Dee Dee King",                        "Mashed Potato Time",                1962],
+  [26,  "Chic",                                "Le Freak",                          1978],
+  [27,  "The Kingsmen",                        "Louie Louie",                       1963],
+  [28,  "Michael Jackson",                     "Billie Jean",                       1983],
+  [29,  "Ce Ce Peniston",                      "Finally",                           1991],
+  [30,  "Vicki Sue Robinson",                  "Turn the Beat Around",              1976],
+  [31,  "The Emotions",                        "Best of My Love",                   1977],
+  [32,  "Bee Gees",                            "You Should Be Dancing",             1976],
+  [33,  "Diana Ross",                          "Upside Down",                       1979],
+  [34,  "Patrice Rushen",                      "Forget Me Nots",                    1982],
+  [35,  "The Weather Girls",                   "It's Raining Men",                  1983],
+  [36,  "Snap!",                               "Rhythm Is a Dancer",               1992],
+  [37,  "Salt 'N' Pepa",                       "Push It",                           1987],
+  [38,  "McFadden & Whitehead",                "Ain't No Stopping Us Now",          1979],
+  [39,  "The O'Jays",                          "Love Train",                        1973],
+  [40,  "Madonna",                             "Into the Groove",                   1985],
+  [41,  "The Hues Corporation",                "Rock the Boat",                     1974],
+  [42,  "MFSB",                                "Love Is the Message",               1974],
+  [43,  "Kool & The Gang",                     "Celebration",                       1980],
+  [44,  "Chic",                                "Good Times",                        1979],
+  [45,  "Andrea True Connection",              "More More More",                    1975],
+  [46,  "A Taste of Honey",                    "Boogie Oogie Oogie",               1978],
+  [47,  "Sly & The Family Stone",              "Dance to the Music",               1968],
+  [48,  "The Capitols",                        "Cool Jerk",                         1966],
+  [49,  "The Isley Brothers",                  "Shout",                             1960],
+  [50,  "Soul II Soul",                        "Back to Life",                      1989],
+  [51,  "Gloria Gaynor",                       "Never Can Say Goodbye",             1975],
+  [52,  "Commodores",                          "Brick House",                       1977],
+  [53,  "Anita Ward",                          "Ring My Bell",                      1979],
+  [54,  "First Choice",                        "Doctor Love",                       1977],
+  [55,  "Little Eva",                          "Loco-Motion",                       1962],
+  [56,  "George McCrae",                       "Rock Your Baby",                    1974],
+  [57,  "Dr. Buzzard's Original Savannah Band","Cherchez La Femme",                 1975],
+  [58,  "Lionel Richie",                       "All Night Long",                    1983],
+  [59,  "Ritchie Valens",                      "La Bamba",                          1959],
+  [60,  "Cher",                                "Believe",                           1999],
+  [61,  "Pointer Sisters",                     "Jump (For My Love)",               1984],
+  [62,  "Peaches & Herb",                      "Shake Your Groove Thing",           1979],
+  [63,  "Donna Summer",                        "Love to Love You Baby",             1975],
+  [64,  "Lipps Inc.",                          "Funkytown",                         1980],
+  [65,  "Wilson Pickett",                      "Land of 1000 Dances",              1966],
+  [66,  "Prince",                              "1999",                              1983],
+  [67,  "Irene Cara",                          "Flashdance What a Feeling",         1983],
+  [68,  "The S.O.S. Band",                     "Take Your Time (Do It Right)",      1980],
+  [69,  "Junior Walker",                       "Shotgun",                           1965],
+  [70,  "James Brown",                         "Sex Machine",                       1970],
+  [71,  "David Bowie",                         "Let's Dance",                       1983],
+  [72,  "Silver Convention",                   "Fly Robin Fly",                     1975],
+  [73,  "Robin S.",                            "Show Me Love",                      1994],
+  [74,  "Bobby Brown",                         "My Prerogative",                    1988],
+  [75,  "James Brown",                         "I Got You (I Feel Good)",           1965],
+  [76,  "Donna Summer",                        "I Feel Love",                       1977],
+  [77,  "Rufus & Chaka Khan",                  "Ain't Nobody",                      1979],
+  [78,  "The Whispers",                        "And the Beat Goes On",              1980],
+  [79,  "Blondie",                             "Heart of Glass",                    1979],
+  [80,  "Barry White",                         "You're the First the Last My Everything",1974],
+  [81,  "Paula Abdul",                         "Straight Up",                       1989],
+  [82,  "Wild Cherry",                         "Play That Funky Music",             1976],
+  [83,  "Marvin Gaye",                         "Got to Give It Up",                 1977],
+  [84,  "Los Del Rio",                         "Macarena",                          1996],
+  [85,  "Eddie Kendricks",                     "Keep on Truckin'",                  1973],
+  [86,  "Whitney Houston",                     "I Wanna Dance With Somebody",       1987],
+  [87,  "The Three Degrees",                   "TSOP (The Sound of Philadelphia)",  1974],
+  [88,  "MC Hammer",                           "U Can't Touch This",               1990],
+  [89,  "Donna Summer",                        "MacArthur Park",                    1978],
+  [90,  "Taana Gardner",                       "Heartbeat",                         1981],
+  [91,  "Dead or Alive",                       "You Spin Me Round",                 1985],
+  [92,  "Johnnie Taylor",                      "Disco Lady",                        1976],
+  [93,  "Sly & The Family Stone",              "Thank You Falettinme Be Mice Elf Agin",1970],
+  [94,  "Parliament",                          "Flashlight",                        1978],
+  [95,  "The Jackson 5",                       "ABC",                               1970],
+  [96,  "Ray Charles",                         "What'd I Say",                      1959],
+  [97,  "ABBA",                                "Dancing Queen",                     1977],
+  [98,  "Rod Stewart",                         "Do Ya Think I'm Sexy?",             1979],
+  [99,  "The B-52's",                          "Rock Lobster",                      1979],
+  [100, "Will Smith",                          "Gettin' Jiggy Wit It",             1998]
+];
+
+var FEAT = [
+  ["fc-1",  "Gloria Gaynor",  "I Will Survive"],
+  ["fc-2",  "Madonna",        "Vogue"],
+  ["fc-3",  "Bee Gees",       "Stayin' Alive"],
+  ["fc-4",  "Sister Sledge",  "We Are Family"],
+  ["fc-5",  "Michael Jackson","Billie Jean"],
+  ["fc-6",  "Aretha Franklin","Respect"],
+  ["fc-7",  "Donna Summer",   "I Feel Love"],
+  ["fc-8",  "Chic",           "Le Freak"],
+  ["fc-9",  "Village People", "Y.M.C.A."],
+  ["fc-10", "Chic",           "Good Times"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Gloria Gaynor", "I Will Survive");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

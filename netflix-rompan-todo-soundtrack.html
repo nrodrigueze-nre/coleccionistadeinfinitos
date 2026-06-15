@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rompan Todo - Soundtrack Oficial - Netflix</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">NETFLIX · DOCUMENTAL</span>
+    <span class="badge-year">1960s&#8211;2020s</span>
+  </div>
+  <a href="https://www.netflix.com/es/title/81006953" target="_blank" class="page-title">ROMPAN TODO · SOUNDTRACK OFICIAL</a>
+  <p class="page-sub">Soda Stereo, Charly García, Café Tacvba, Fito Páez, Los Fabulosos Cadillacs, Maldita Vecindad &#183; 116 canciones &#183; 60 años de rock en español &#183; Netflix 2020</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="De Música Ligera - Soda Stereo">
+    <p class="cover-cap">NETFLIX &#183; 116 CANCIONES &#183; ROMPAN TODO</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">La banda sonora oficial de Rompan Todo — el documental de Netflix producido por Gustavo Santaolalla que traza seis décadas de historia del rock en español, desde La Bamba de Ritchie Valens en los 50 hasta Bomba Estéreo y Café Tacvba en los 2000s. Dirigido por Picky Talarico, el documental es el mapa más completo jamás realizado del rock latinoamericano.</p>
+    <p class="rtext">116 canciones que cubren Argentina, México, Colombia, Chile, Uruguay y España — desde los pioneros de los 60 (Los Gatos, Los Shakers, Sandro) hasta Soda Stereo, Charly García, Fito Páez y la generación alternativa de los 90. Serú Girán aparece cinco veces. Maldita Vecindad, El Tri, Café Tacvba y Los Fabulosos Cadillacs con múltiples temas. Gustavo Cerati con tres canciones, incluyendo Adiós.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Las más impactantes del rock en español</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1990 · ROCK · ARGENTINA</div>
+      <div class="feat-title">De Música Ligera</div>
+      <div class="feat-artist">Soda Stereo</div>
+      <p class="feat-rev">El himno máximo del rock en español — la canción más importante de Soda Stereo y uno de los grandes momentos de la música popular latinoamericana del siglo XX. De Música Ligera abre el último concierto de Soda en el Estadio Nacional de Chile ante 70.000 personas que la cantan de principio a fin. Gustavo Cerati, Zeta Bosio y Charly Alberti en su cima absoluta.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1982 · ROCK · ARGENTINA</div>
+      <div class="feat-title">Los Dinosaurios</div>
+      <div class="feat-artist">Charly García</div>
+      <p class="feat-rev">La canción más valiente del rock argentino — escrita en plena dictadura militar para denunciar las desapariciones forzadas. Charly García arriesgó su libertad grabando Los Dinosaurios en 1983, cuando nombraba lo que nadie podía nombrar. Una canción política disfrazada de pop que se convirtió en uno de los documentos más importantes de la cultura argentina del siglo XX.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1967 · ROCK · ARGENTINA</div>
+      <div class="feat-title">La Balsa</div>
+      <div class="feat-artist">Los Gatos</div>
+      <p class="feat-rev">El Big Bang del rock en español — la primera canción de rock en idioma castellano en convertirse en hit masivo. Los Gatos de Litto Nebbia vendieron 200.000 copias en pocas semanas en 1967, demostrando que el rock podía cantarse en español. Todo el rock latinoamericano nació aquí: sin La Balsa no existe nada de lo que vino después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1992 · ROCK ALTERNATIVO · ARGENTINA</div>
+      <div class="feat-title">El Amor Después del Amor</div>
+      <div class="feat-artist">Fito Páez</div>
+      <p class="feat-rev">El álbum más vendido de la historia del rock argentino en su canción más emblemática — una declaración de amor y esperanza en medio del caos. Fito Páez convirtió el dolor personal en celebración colectiva, creando uno de los grandes himnos del rock de habla hispana que sigue resonando treinta años después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994 · RAP / ROCK · MÉXICO</div>
+      <div class="feat-title">Gimme tha Power</div>
+      <div class="feat-artist">Molotov</div>
+      <p class="feat-rev">El track más furioso y político del rock mexicano de los 90 — un llamado a la acción envuelto en rap, metal y funk que escandalizó a la industria y conquistó a una generación. Gimme tha Power fue prohibida en varias radiodifusoras pero se volvió himno en estadios. Molotov demostrando que el rock latinoamericano podía tener colmillos de verdad.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1991 · SKA / ROCK · MÉXICO</div>
+      <div class="feat-title">Pachuco</div>
+      <div class="feat-artist">Maldita Vecindad y Los Hijos del Quinto Patio</div>
+      <p class="feat-rev">El himno del rock urbano mexicano — ska, danzón y rock en un coctel que capturó la esencia de las calles del D.F. Pachuco se convirtió en bandera generacional de una juventud que encontró en Maldita Vecindad el espejo de su identidad. La imagen del pachuco como símbolo de orgullo popular mexicano frente a la presión del Norte.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994 · ROCK ALTERNATIVO · ARGENTINA</div>
+      <div class="feat-title">Matador</div>
+      <div class="feat-artist">Los Fabulosos Cadillacs</div>
+      <p class="feat-rev">Los Cadillacs en su momento más cinematográfico — una balada épica sobre la soledad y la muerte que ganó el Grammy Latino a Mejor Canción de Rock. Matador demostró que el ska y el reggae de Buenos Aires podían convivir con la emoción más pura y universal. Una de las canciones más perfectas del rock latinoamericano de los 90.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994 · ROCK ALTERNATIVO · MÉXICO</div>
+      <div class="feat-title">La Ingrata</div>
+      <div class="feat-artist">Café Tacvba</div>
+      <p class="feat-rev">Café Tacvba en su vertiente más festiva y desbordante — una celebración del despecho convertida en fiesta eléctrica que mezcla norteño, cumbia y rock con una energía irresistible. La Ingrata es el lado B del genio de Re, demostrando que Rubén Albarrán y los hermanos Rangel podían ser profundos y completamente locos al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1973 · ROCK · CHILE</div>
+      <div class="feat-title">El Derecho de Vivir en Paz</div>
+      <div class="feat-artist">Víctor Jara</div>
+      <p class="feat-rev">El himno más poderoso de la música latinoamericana comprometida — escrito por Víctor Jara como protesta contra la guerra de Vietnam y convertido en símbolo universal de resistencia. Su presencia en Rompan Todo es un recordatorio de que el rock latinoamericano siempre tuvo una dimensión política y humana que va más allá de la música.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <div class="feat-cover" id="fc-10" style="width:66px;height:66px;border-radius:4px;border:1px solid #2a2a2a;background:#141414;flex-shrink:0"></div>
+    <div class="feat-info">
+      <div class="feat-year">2010 · ROCK / ELECTRÓNICA · ARGENTINA</div>
+      <div class="feat-title">Adiós</div>
+      <div class="feat-artist">Gustavo Cerati</div>
+      <p class="feat-rev">La última canción que Gustavo Cerati cantó en público antes de caer en coma en 2010 y morir cuatro años después. Adiós — cuyo título resultó profético — es un rock electrónico melancólico y hermoso que cierra el capítulo más importante del rock argentino. Su inclusión en Rompan Todo es el momento más emotivo del documental entero.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">116 canciones &#183; ordenadas por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">NETFLIX &#183; ROMPAN TODO &#183; SOUNDTRACK OFICIAL &#183; 116 CANCIONES</span>
+  <a href="https://www.netflix.com/es/title/81006953" target="_blank" class="foot-link">Ver en Netflix &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,   "Soda Stereo",                              "De Música Ligera",                    1990],
+  [2,   "Charly García",                            "Los Dinosaurios",                     1983],
+  [3,   "Los Gatos",                                "La Balsa",                            1967],
+  [4,   "Fito Páez",                                "El Amor Después del Amor",            1992],
+  [5,   "Molotov",                                  "Gimme tha Power",                     1997],
+  [6,   "Maldita Vecindad y Los Hijos del Quinto Patio","Pachuco",                         1991],
+  [7,   "Los Fabulosos Cadillacs",                  "Matador",                             1994],
+  [8,   "Café Tacvba",                              "La Ingrata",                          1994],
+  [9,   "Víctor Jara",                              "El Derecho de Vivir en Paz",          1971],
+  [10,  "Gustavo Cerati",                           "Adiós",                               2009],
+  [11,  "Almendra",                                 "Muchacha (Ojos de Papel)",            1969],
+  [12,  "Los Prisioneros",                          "We Are Sudamerican Rockers",          1986],
+  [13,  "Sui Generis",                              "Canción Para Mi Muerte",              1972],
+  [14,  "Patricio Rey y sus Redonditos de Ricota",  "Jijiji",                              1987],
+  [15,  "Serú Girán",                               "La Grasa de Las Capitales",           1979],
+  [16,  "León Gieco",                               "Solo le Pido a Dios",                 1978],
+  [17,  "Café Tacvba",                              "La Chica Banda",                      1994],
+  [18,  "Soda Stereo",                              "Persiana Americana",                  1987],
+  [19,  "Los Fabulosos Cadillacs",                  "Mi Novia Se Cayó en un Pozo Ciego",   1993],
+  [20,  "Illya Kuryaki and the Valderramas",        "Abarajame",                           1995],
+  [21,  "Caifanes",                                 "La Negra Tomasa",                     1992],
+  [22,  "Control Machete",                          "Comprendes Mendes",                   1996],
+  [23,  "Maldita Vecindad y Los Hijos del Quinto Patio","Kumbala",                         1991],
+  [24,  "Maná",                                     "Clavado en un Bar",                   1994],
+  [25,  "El Tri",                                   "Abuso de Autoridad",                  1985],
+  [26,  "Calle 13",                                 "Atrévete-te-te",                      2005],
+  [27,  "Babasónicos",                              "D-Generación",                        1994],
+  [28,  "Bersuit Vergarabat",                       "Se Viene",                            1998],
+  [29,  "Ritchie Valens",                           "La Bamba",                            1958],
+  [30,  "Fito Páez",                                "Tercer Mundo",                        1988],
+  [31,  "Sui Generis",                              "Rasguña Las Piedras",                 1972],
+  [32,  "Charly García",                            "Nos Siguen Pegando Abajo",            1981],
+  [33,  "Los Rodríguez",                            "Sin Documentos",                      1993],
+  [34,  "Soda Stereo",                              "Si No Fuera por...",                  1988],
+  [35,  "Café Tacvba",                              "Las Persianas",                       1992],
+  [36,  "Bomba Estéreo",                            "Fuego",                               2012],
+  [37,  "Aterciopelados",                           "Florecita Rockera",                   1995],
+  [38,  "Los Tres",                                 "Déjate Caer",                         1991],
+  [39,  "Serú Girán",                               "Mientras Miro Las Nuevas Olas",       1978],
+  [40,  "Gustavo Cerati",                           "Puente",                              2009],
+  [41,  "Sumo",                                     "Regtest",                             1985],
+  [42,  "Almendra",                                 "Ana No Duerme",                       1969],
+  [43,  "Arco Iris",                                "Sudamérica O el Regreso a la Aurora", 1972],
+  [44,  "Pappo's Blues",                            "Algo ha cambiado",                    1971],
+  [45,  "Pescado Rabioso",                          "Post-Crucifixión",                    1973],
+  [46,  "Manal",                                    "Avenida Rivadavia",                   1970],
+  [47,  "Charly García",                            "No Se Va a Llamar Mi Amor",           1988],
+  [48,  "Los Piojos",                               "Dientes de Cordero",                  1995],
+  [49,  "La Ley",                                   "Prisioneros de la Piel",              1995],
+  [50,  "Maldita Vecindad y Los Hijos del Quinto Patio","Apañón",                          1991],
+  [51,  "Santa Sabina",                             "Babel",                               1993],
+  [52,  "Café Tacvba",                              "El Baile y el Salón",                 1994],
+  [53,  "Los Prisioneros",                          "Por Qué No Se Van",                   1986],
+  [54,  "Aterciopelados",                           "Mujer Gala",                          1995],
+  [55,  "Serú Girán",                               "Serú Girán",                          1978],
+  [56,  "Fobia",                                    "El Microbito",                        1990],
+  [57,  "La Vela Puerca",                           "Zafar",                               2000],
+  [58,  "Los Tres",                                 "La Primera Vez",                      1991],
+  [59,  "Virus",                                    "Wadu-Wadu",                           1981],
+  [60,  "Maná",                                     "Rayando el Sol",                      1992],
+  [61,  "Aterciopelados",                           "Bolero Falaz",                        1997],
+  [62,  "Gustavo Cerati",                           "Cactus",                              2009],
+  [63,  "El Tri",                                   "Que Viva el Rocanrol",                1985],
+  [64,  "Bajofondo; Gustavo Cerati",                "El Mareo",                            2002],
+  [65,  "Bostich; Fussible",                        "Tijuana Sound Machine",               2001],
+  [66,  "León Gieco",                               "Hombres de Hierro",                   1982],
+  [67,  "Plastilina Mosh",                          "Mr. P. Mosh",                         1998],
+  [68,  "Serú Girán",                               "Eiti-Leda",                           1980],
+  [69,  "Tijuana No",                               "Pobre de Ti",                         1992],
+  [70,  "La Pestilencia",                           "Vive Tu Vida",                        1990],
+  [71,  "Julieta Venegas",                          "Me Voy",                              2003],
+  [72,  "Botellita de Jerez",                       "Guacarock",                           1985],
+  [73,  "Los Abuelos de la Nada",                   "Lunes por la Madrugada",              1983],
+  [74,  "Compañía Ilimitada",                       "Contacto",                            1993],
+  [75,  "Los Violadores",                           "Represion",                           1983],
+  [76,  "Peace and Love",                           "Mariguana",                           1970],
+  [77,  "Vox Dei",                                  "Presente",                            1971],
+  [78,  "Serú Girán",                               "Seminaré",                            1982],
+  [79,  "Arco Iris",                                "Blues de Dana",                       1972],
+  [80,  "El Tri",                                   "Perro Negro y Callejero",             1985],
+  [81,  "Sui Generis",                              "Un Hada, un Cisne",                   1972],
+  [82,  "Billy Bond; La Pesada",                    "Salgan Al Sol",                       1972],
+  [83,  "Miguel Mateos; ZAS",                       "Cuando Seas Grande",                  1985],
+  [84,  "Nacha Pop",                                "Como Hasta Hoy",                      1981],
+  [85,  "Los Fabulosos Cadillacs",                  "Matador",                             1994],
+  [86,  "Celeste Carballo",                         "Desconfío (En Vivo)",                 1982],
+  [87,  "Los Enanitos Verdes",                      "La Muralla Verde",                    1986],
+  [88,  "Tijuana No",                               "Transgresores de la Ley",             1992],
+  [89,  "Gabriela",                                 "Día Extraño",                         2000],
+  [90,  "Neon",                                     "Sólo Sentir",                         1981],
+  [91,  "La Joven Guardia",                         "El Extraño de Pelo Largo",            1968],
+  [92,  "Los Toreros Muertos",                      "Yo No Me Llamo Javier",              1987],
+  [93,  "El Tri",                                   "Triste Canción",                      1985],
+  [94,  "The Beatniks",                             "Rebelde",                             1964],
+  [95,  "Billy Cafaro",                             "Pity Pity",                           1960],
+  [96,  "Los Dug Dug's",                            "No Somos Malos",                      1972],
+  [97,  "Los Shakers",                              "Rompan Todo (Break It All)",          1965],
+  [98,  "Tanguito",                                 "Amor de Primavera",                   1968],
+  [99,  "Los Teen Tops",                            "La Plaga (Good Golly Miss Molly)",    1960],
+  [100, "Three Souls in My Mind",                   "La Chava de Avandaro",                1971],
+  [101, "Botellita de Jerez",                       "Heavy Metro",                         1985],
+  [102, "Los Gatos Salvajes",                       "La Respuesta",                        1964],
+  [103, "Los Hooligans",                            "Agujetas de Color de Rosa",           1964],
+  [104, "Los Jaivas",                               "Mira Niñita",                         1972],
+  [105, "Viuda e Hijas de Roque Enroll",            "Estoy Tocando Fondo",                 1984],
+  [106, "Neon",                                     "No Hay Nada Eterno",                  1981],
+  [107, "Julissa",                                  "La Favorita del Profesor",            1963],
+  [108, "Los Shain's",                              "Shain's a Go Go",                     1965],
+  [109, "Palito Ortega",                            "Media Novia",                         1964],
+  [110, "Ulises Butrón",                            "Panza de Torino",                     1985],
+  [111, "Control Machete",                           "Comprendes Mendes",                   1996],
+  [112, "Cuca",                                      "La Pucha Asesina",                    1992],
+  [113, "Ekhymosis",                                 "No Es Justo",                         1994],
+  [114, "La Lupita",                                 "Contrabando y Traición",              1992],
+  [115, "Sandro; Los del Fuego",                     "Compañero de Tu Amor",                1968],
+  [116, "Los Twist",                                 "Pensé Que Se Trataba de Cieguitos",   1984]
+];
+
+var FEAT = [
+  ["fc-1",  "Soda Stereo",   "De Música Ligera"],
+  ["fc-2",  "Charly García", "Los Dinosaurios"],
+  ["fc-3",  "Los Gatos",     "La Balsa"],
+  ["fc-4",  "Fito Páez",     "El Amor Después del Amor"],
+  ["fc-5",  "Molotov",       "Gimme tha Power"],
+  ["fc-6",  "Maldita Vecindad","Pachuco"],
+  ["fc-7",  "Los Fabulosos Cadillacs","Matador"],
+  ["fc-8",  "Café Tacvba",   "La Ingrata"],
+  ["fc-9",  "Víctor Jara",   "El Derecho de Vivir en Paz"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Soda Stereo", "De Música Ligera");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

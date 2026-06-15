@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VH1 - 40 Greatest One-Hit Wonders of the 90s</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">VH1</span>
+    <span class="badge-year">1987&#8211;1999</span>
+  </div>
+  <a href="https://www.albumoftheyear.org/user/elsotemo/list/5438/vh1s-40-greatest-one-hit-wonders-of-the-90s/" target="_blank" class="page-title">VH1 · 40 GREATEST ONE-HIT WONDERS OF THE '90s</a>
+  <p class="page-sub">Sir Mix-a-Lot, Los Del Río, Vanilla Ice, House of Pain, The Verve &#183; 40 canciones &#183; hip hop, new wave, alternative, eurodance &#183; los one-hit wonders definitivos de los 90s &#183; VH1</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Baby Got Back - Sir Mix-a-Lot">
+    <p class="cover-cap">VH1 &#183; 40 CANCIONES &#183; ONE-HIT WONDERS '90s</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los 40 mejores one-hit wonders de los años 90 según VH1. Sir Mix-a-Lot encabeza con Baby Got Back — el himno de las curvas que ganó el Grammy a Mejor Performance de Rap en 1993 y se convirtió en uno de los singles de hip hop más vendidos de la historia. Una lista que captura la diversidad caótica y gloriosa de los 90s: hip hop, eurodance, grunge alternativo, Macarena y todo lo demás.</p>
+    <p class="rtext">1992 fue el año más prolífico para los one-hit wonders: Sir Mix-a-Lot, House of Pain, Kris Kross, Snow, Wreckx-N-Effect, Billy Ray Cyrus y Tag Team. Los Del Río (#4) con la Macarena — el fenómeno de baile más global de los 90s. The Verve (#30) con Bitter Sweet Symphony — que paradójicamente le costó todos sus royalties a The Rolling Stones. Vanilla Ice (#7) con Ice Ice Baby — la primera canción de rap en llegar al #1 del Billboard.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los one-hit wonders más grandes de los 90s</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1992 · HIP HOP · EEUU</div>
+      <div class="feat-title">Baby Got Back</div>
+      <div class="feat-artist">Sir Mix-a-Lot</div>
+      <p class="feat-rev">El himno más directo y celebratorio del cuerpo femenino en la historia del hip hop — Sir Mix-a-Lot declarando su amor por las curvas con una producción de bajo que sacude paredes. Baby Got Back ganó el Grammy a Mejor Performance de Rap en 1993 y permaneció cinco semanas en el #1 del Billboard, convirtiéndose en uno de los singles de hip hop más vendidos de todos los tiempos. Un one-hit wonder que 30 años después sigue siendo omnipresente.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1990 · HIP HOP · EEUU</div>
+      <div class="feat-title">Ice Ice Baby</div>
+      <div class="feat-artist">Vanilla Ice</div>
+      <p class="feat-rev">La primera canción de rap en llegar al #1 del Billboard Hot 100 — Vanilla Ice sampleando Under Pressure de Queen y David Bowie sin pedir permiso, desatando el primer gran escándalo de samples de la historia del hip hop. Ice Ice Baby abrió el mainstream americano al rap de una manera definitiva e irreversible, aunque su creador se convertiría en sinónimo de todo lo que el hip hop auténtico rechazaba.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1992 · HIP HOP / DANCE · EEUU</div>
+      <div class="feat-title">Jump Around</div>
+      <div class="feat-artist">House of Pain</div>
+      <p class="feat-rev">El track más poderoso del hip hop irlandés-americano — DJ Lethal construyendo sobre una muestra de la tuba de Harlem World Posse mientras Everlast y Danny Boy gritan instrucciones de salto que nadie puede ignorar. Jump Around se convirtió en uno de los himnos de estadios más grandes de los 90s, tocado en cada juego de football americano universitario hasta el día de hoy. El único one-hit wonder en la historia que obliga físicamente a saltar.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1993 · LATIN POP / EURODANCE · ESPAÑA</div>
+      <div class="feat-title">Macarena</div>
+      <div class="feat-artist">Los Del Río</div>
+      <p class="feat-rev">El fenómeno de baile más global de los 90s — Antonio Romero y Rafael Ruiz de Sevilla creando sin saberlo la coreografía más imitada de la historia del pop. La versión Bayside Boys Mix llegó al #1 en Estados Unidos durante 14 semanas consecutivas en 1996 — el #1 más prolongado de la historia del Billboard hasta ese momento. La Macarena fue bailada en estadios, bodas y convenciones políticas en todos los continentes.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1997 · BRIT-POP / ORCHESTRAL POP · REINO UNIDO</div>
+      <div class="feat-title">Bitter Sweet Symphony</div>
+      <div class="feat-artist">The Verve</div>
+      <p class="feat-rev">La canción más hermosa y más trágica de los one-hit wonders — Richard Ashcroft paseando por una calle londinense mientras el sample de The Rolling Stones lo arruina financieramente. The Verve tuvo que ceder el 100% de los royalties a Mick Jagger y Keith Richards porque usaron un fragmento de una versión orquestada de The Last Time. Bitter Sweet Symphony es un himno de los 90s cuyo creador no cobró ni un centavo por décadas.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">40 canciones &#183; ordenadas por ranking VH1</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">VH1 &#183; 40 GREATEST ONE-HIT WONDERS OF THE '90s</span>
+  <a href="https://www.albumoftheyear.org/user/elsotemo/list/5438/vh1s-40-greatest-one-hit-wonders-of-the-90s/" target="_blank" class="foot-link">Ver lista &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "Sir Mix-a-Lot",                    "Baby Got Back",                   1992],
+  [2,  "Right Said Fred",                  "I'm Too Sexy",                    1991],
+  [3,  "Gerardo",                          "Rico Suave",                      1990],
+  [4,  "Los Del Río",                      "Macarena",                        1993],
+  [5,  "Chumbawamba",                      "Tubthumping",                     1997],
+  [6,  "Semisonic",                        "Closing Time",                    1998],
+  [7,  "Vanilla Ice",                      "Ice Ice Baby",                    1990],
+  [8,  "Duncan Sheik",                     "Barely Breathing",                1996],
+  [9,  "House of Pain",                    "Jump Around",                     1992],
+  [10, "Joan Osborne",                     "One Of Us",                       1995],
+  [11, "New Radicals",                     "You Get What You Give",           1998],
+  [12, "Digital Underground",              "The Humpty Dance",                1990],
+  [13, "Rednex",                           "Cotton Eye Joe",                  1994],
+  [14, "Wreckx-N-Effect",                  "Rump Shaker",                     1992],
+  [15, "Blind Melon",                      "No Rain",                         1993],
+  [16, "Kris Kross",                       "Jump",                            1992],
+  [17, "Snow",                             "Informer",                        1992],
+  [18, "EMF",                              "Unbelievable",                    1990],
+  [19, "Len",                              "Steal My Sunshine",               1999],
+  [20, "Marky Mark and the Funky Bunch",   "Good Vibrations",                 1991],
+  [21, "Imani Coppola",                    "Legend Of A Cowgirl",             1997],
+  [22, "Marc Cohn",                        "Walking In Memphis",              1991],
+  [23, "Haddaway",                         "What Is Love",                    1993],
+  [24, "Belly",                            "Feed The Tree",                   1993],
+  [25, "The Mighty Mighty Bosstones",      "The Impression That I Get",       1997],
+  [26, "Lou Bega",                         "Mambo No. 5 (A Little Bit of...)",1999],
+  [27, "Billy Ray Cyrus",                  "Achy Breaky Heart",               1992],
+  [28, "Craig Mack",                       "Flava in Ya Ear",                 1994],
+  [29, "Shawn Mullins",                    "Lullaby",                         1998],
+  [30, "The Verve",                        "Bitter Sweet Symphony",           1997],
+  [31, "Crash Test Dummies",               "Mmm Mmm Mmm Mmm",                1993],
+  [32, "B-Rock & The Bizz",               "My Baby Daddy",                   1997],
+  [33, "The Proclaimers",                  "I'm Gonna Be (500 Miles)",        1988],
+  [34, "Des'ree",                          "You Gotta Be",                    1994],
+  [35, "Marcy Playground",                 "Sex and Candy",                   1997],
+  [36, "Inner Circle",                     "Bad Boys",                        1987],
+  [37, "Meredith Brooks",                  "Bitch",                           1997],
+  [38, "The Heights",                      "How Do You Talk To An Angel",     1992],
+  [39, "Divinyls",                         "I Touch Myself",                  1990],
+  [40, "Tag Team",                         "Whoomp! (There It Is)",           1993]
+];
+
+var FEAT = [
+  ["fc-1", "Sir Mix-a-Lot", "Baby Got Back"],
+  ["fc-2", "Vanilla Ice",   "Ice Ice Baby"],
+  ["fc-3", "House of Pain", "Jump Around"],
+  ["fc-4", "Los Del Río",   "Macarena"],
+  ["fc-5", "The Verve",     "Bitter Sweet Symphony"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Sir Mix-a-Lot", "Baby Got Back");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

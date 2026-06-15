@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VH1 - 40 Greatest Metal Songs</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">VH1</span>
+    <span class="badge-year">1969&#8211;2007</span>
+  </div>
+  <a href="https://cs.uwaterloo.ca/~dtompkin/music/list/Best16.html" target="_blank" class="page-title">VH1 · 40 GREATEST METAL SONGS</a>
+  <p class="page-sub">Black Sabbath, Guns N' Roses, Metallica, AC/DC, Judas Priest &#183; 40 canciones &#183; heavy metal, thrash, hard rock, nu-metal &#183; de los 70s a los 2000s &#183; VH1</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Iron Man - Black Sabbath">
+    <p class="cover-cap">VH1 &#183; 40 CANCIONES &#183; GREATEST METAL SONGS</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las 40 mejores canciones de metal según VH1 — un recorrido desde los pioneros absolutos hasta el metal moderno. Black Sabbath encabeza con Iron Man, seguido por Guns N' Roses, Metallica, AC/DC y Judas Priest. La lista abarca cuatro décadas de metal: el proto-metal de los 70, el thrash y glam de los 80, el metal alternativo de los 90 y el nu-metal de los 2000s.</p>
+    <p class="rtext">AC/DC y Guns N' Roses aparecen dos veces cada uno. Metallica dos veces — Master of Puppets (#3) y Enter Sandman (#22). Judas Priest dos veces — You've Got Another Thing Comin' (#5) y Breaking the Law (#40). Iron Maiden dos veces. La lista incluye crossover histórico: Public Enemy con Anthrax en Bring the Noise (#12) y System of a Down con Toxicity (#14).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Las más grandes del metal</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1970 · HEAVY METAL · REINO UNIDO</div>
+      <div class="feat-title">Iron Man</div>
+      <div class="feat-artist">Black Sabbath</div>
+      <p class="feat-rev">La canción que define el heavy metal — Tony Iommi, Ozzy Osbourne, Geezer Butler y Bill Ward creando el riff más oscuro y pesado que nadie había intentado en 1970. Iron Man es la pieza perfecta de metal narrativo: una historia de viaje en el tiempo y venganza construida sobre una pared de sonido que nadie había escuchado antes. El #1 de VH1 es el más obvio y el más correcto de esta lista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1986 · THRASH METAL · EEUU</div>
+      <div class="feat-title">Master of Puppets</div>
+      <div class="feat-artist">Metallica</div>
+      <p class="feat-rev">La obra maestra del thrash metal — ocho minutos y medio de precisión técnica, complejidad compositiva y furia controlada que establecieron el estándar máximo del género. Master of Puppets es considerada por la mayoría de críticos la mejor canción de metal jamás grabada, con una estructura que pasa del ataque brutal a la melodía limpia y de vuelta al caos sin perder un gramo de intensidad. El legado de Cliff Burton en su cima.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1987 · HARD ROCK / HEAVY METAL · EEUU</div>
+      <div class="feat-title">Welcome to the Jungle</div>
+      <div class="feat-artist">Guns N' Roses</div>
+      <p class="feat-rev">El riff de apertura más devastador de los 80s — Slash bajando cuatro notas para anunciar la llegada de la banda más peligrosa del mundo. Welcome to the Jungle convirtió Appetite for Destruction en el álbum de debut de hard rock más vendido de la historia. Axl Rose, Slash, Duff McKagan, Izzy Stradlin y Steven Adler en su momento inaugural y definitivo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1980 · HARD ROCK · AUSTRALIA</div>
+      <div class="feat-title">Back in Black</div>
+      <div class="feat-artist">AC/DC</div>
+      <p class="feat-rev">El manifiesto de supervivencia de AC/DC tras la muerte de Bon Scott — Brian Johnson reemplazando al insustituible con una actuación que resultó ser tan grande como su predecesor. El riff de Angus Young en Back in Black es el más reconocible de toda la historia del hard rock, y el álbum que da nombre a esta canción es el segundo más vendido en la historia de la música. Indestructible.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1970 · HEAVY METAL · REINO UNIDO</div>
+      <div class="feat-title">Paranoid</div>
+      <div class="feat-artist">Black Sabbath</div>
+      <p class="feat-rev">La canción que inventó el heavy metal en dos minutos y cuarenta y cinco segundos — grabada como relleno de álbum en veinte minutos y convertida en el himno definitivo del género. El riff de Tony Iommi sobre el que se construyó toda la música heavy de los siguientes cincuenta años: simple, oscuro, irresistible. Black Sabbath aparece dos veces en el top 40 de VH1 porque fundaron el metal dos veces.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">40 canciones &#183; ordenadas por ranking VH1</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">VH1 &#183; 40 GREATEST METAL SONGS</span>
+  <a href="https://cs.uwaterloo.ca/~dtompkin/music/list/Best16.html" target="_blank" class="foot-link">Ver lista &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,  "Black Sabbath",                "Iron Man",                     1970],
+  [2,  "Guns N' Roses",                "Welcome to the Jungle",        1987],
+  [3,  "Metallica",                    "Master of Puppets",            1986],
+  [4,  "AC/DC",                        "Back in Black",                1980],
+  [5,  "Judas Priest",                 "You've Got Another Thing Comin'",1982],
+  [6,  "Kiss",                         "Detroit Rock City",            1976],
+  [7,  "Iron Maiden",                  "The Number of the Beast",      1982],
+  [8,  "Slayer",                       "Raining Blood",                1986],
+  [9,  "Ozzy Osbourne",                "Crazy Train",                  1980],
+  [10, "Motörhead",                    "Ace of Spades",                1980],
+  [11, "Megadeth",                     "Peace Sells",                  1986],
+  [12, "Public Enemy feat. Anthrax",   "Bring the Noise",              1991],
+  [13, "Dio",                          "Rainbow in the Dark",          1983],
+  [14, "System of a Down",             "Toxicity",                     2001],
+  [15, "Rage Against the Machine",     "Bulls on Parade",              1996],
+  [16, "Pantera",                      "Walk",                         1992],
+  [17, "Mötley Crüe",                  "Live Wire",                    1981],
+  [18, "Skid Row",                     "Slave to the Grind",           1991],
+  [19, "Alice in Chains",              "Man in the Box",               1991],
+  [20, "Twisted Sister",               "I Wanna Rock",                 1984],
+  [21, "Guns N' Roses",                "Paradise City",                1988],
+  [22, "Metallica",                    "Enter Sandman",                1991],
+  [23, "Korn feat. Amy Lee",           "Freak on a Leash (Unplugged)", 2007],
+  [24, "AC/DC",                        "Dirty Deeds Done Dirt Cheap",  1976],
+  [25, "Pantera",                      "Cowboys from Hell",            1990],
+  [26, "Sepultura",                    "Refuse / Resist",              1994],
+  [27, "Iron Maiden",                  "Run to the Hills",             1982],
+  [28, "Marilyn Manson",               "The Beautiful People",         1996],
+  [29, "Anthrax",                      "Caught in a Mosh",             1987],
+  [30, "Faith No More",                "Epic",                         1990],
+  [31, "Scorpions",                    "Rock You Like a Hurricane",    1984],
+  [32, "White Zombie",                 "Thunder Kiss '65",             1992],
+  [33, "Def Leppard",                  "High and Dry",                 1981],
+  [34, "Black Sabbath",                "Paranoid",                     1970],
+  [35, "Quiet Riot",                   "Bang Your Head (Metal Health)", 1983],
+  [36, "Slipknot",                     "Wait and Bleed",               1999],
+  [37, "Deep Purple",                  "Smoke on the Water",           1972],
+  [38, "Accept",                       "Balls to the Wall",            1983],
+  [39, "Alice Cooper",                 "I'm Eighteen",                 1971],
+  [40, "Judas Priest",                 "Breaking the Law",             1980]
+];
+
+var FEAT = [
+  ["fc-1", "Black Sabbath",  "Iron Man"],
+  ["fc-2", "Metallica",      "Master of Puppets"],
+  ["fc-3", "Guns N' Roses",  "Welcome to the Jungle"],
+  ["fc-4", "AC/DC",          "Back in Black"],
+  ["fc-5", "Black Sabbath",  "Paranoid"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Black Sabbath", "Iron Man");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

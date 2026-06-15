@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VH1 - 100 Greatest One-Hit Wonders of the 80s</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">VH1</span>
+    <span class="badge-year">1979&#8211;1989</span>
+  </div>
+  <a href="https://www.vh1.com/news/58qjan/100-greatest-one-hit-wonders-of-the-80s" target="_blank" class="page-title">VH1 · 100 GREATEST ONE-HIT WONDERS OF THE '80s</a>
+  <p class="page-sub">Come on Eileen, Take On Me, Tainted Love, 99 Luftballons, Relax &#183; 100 canciones &#183; new wave, synth-pop, hip hop, novelty hits &#183; los one-hit wonders definitivos de los 80s &#183; VH1</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Come on Eileen - Dexy's Midnight Runners">
+    <p class="cover-cap">VH1 &#183; 100 CANCIONES &#183; ONE-HIT WONDERS '80s</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los 100 mejores one-hit wonders de los años 80 según VH1 — desde new wave y synth-pop hasta hip hop, novelty hits y pop clásico. Come on Eileen de Dexy's Midnight Runners encabeza como el #1 definitivo, seguido por I Ran de A Flock of Seagulls y Take On Me de A-ha. Una lista que captura la exuberancia, el exceso y la ingenuidad de la década más extravagante de la historia del pop.</p>
+    <p class="rtext">Tainted Love de Soft Cell, 99 Luftballons de Nena, Relax de Frankie Goes to Hollywood y Mickey de Toni Basil entre los más altos. El año más representado es 1982, con clásicos del new wave en su apogeo. Aparecen curiosidades como Pac-Man Fever de Buckner & Garcia, Rappin' Rodney de Rodney Dangerfield, y Party All the Time de Eddie Murphy — los 80s en todo su glorioso absurdo.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Los one-hit wonders más grandes de los 80s</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1982 · NEW WAVE / CELTIC SOUL · REINO UNIDO</div>
+      <div class="feat-title">Come on Eileen</div>
+      <div class="feat-artist">Dexy's Midnight Runners</div>
+      <p class="feat-rev">El #1 indiscutible de los one-hit wonders de los 80s — una mezcla extraordinaria de soul celta, folk irlandés y new wave que conquistó el mundo. Come on Eileen fue el single más vendido del Reino Unido en 1982 y llegó al #1 en Estados Unidos en 1983. Kevin Rowland y sus peleles con tirantes crearon uno de los momentos más memorables y reconocibles de toda la década.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1982 · NEW WAVE / POST-PUNK · REINO UNIDO</div>
+      <div class="feat-title">I Ran (So Far Away)</div>
+      <div class="feat-artist">A Flock of Seagulls</div>
+      <p class="feat-rev">El peinado más famoso de la historia del new wave y una canción de synth-pop atmosférico que capturó perfectamente el sonido y la estética de los primeros 80s. A Flock of Seagulls con Mike Score al frente creando una obra de producción electroacústica que sigue siendo el ejemplo más icónico de lo que la nueva ola británica podía lograr en su momento más inventivo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1985 · SYNTH-POP · NORUEGA</div>
+      <div class="feat-title">Take On Me</div>
+      <div class="feat-artist">A-ha</div>
+      <p class="feat-rev">El video más revolucionario de los 80s y una de las canciones de pop más perfectas jamás grabadas. El riff de teclado de Morten Harket y el video rotoscópico en blanco y negro de Steve Barron convirtieron Take On Me en un fenómeno cultural total — llegó al #1 en ocho países y sigue siendo el video más recordado de la era MTV. A-ha demostrando que Noruega podía conquistar el pop global.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1981 · SYNTH-POP / DARK WAVE · REINO UNIDO</div>
+      <div class="feat-title">Tainted Love</div>
+      <div class="feat-artist">Soft Cell</div>
+      <p class="feat-rev">La versión de Soft Cell de un soul olvidado de Gloria Jones convirtió en himno del synth-pop lo que había sido una canción oscura y olvidada. Marc Almond y Dave Ball crearon el single que permaneció en el UK Singles Chart por 43 semanas consecutivas — un récord en 1981 — y que sigue siendo la síntesis más perfecta del hedonismo melancólico que definió la new wave británica.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1983 · SYNTH-POP / NEUE DEUTSCHE WELLE · ALEMANIA</div>
+      <div class="feat-title">99 Luftballons</div>
+      <div class="feat-artist">Nena</div>
+      <p class="feat-rev">La canción anti-guerra más irresistible de los 80s — una metáfora sobre globos rojos que desencadenan una guerra nuclear, envuelta en un pop electrónico contagioso. 99 Luftballons llegó al #1 en 14 países, incluyendo Estados Unidos, en la versión alemana original — uno de los pocos casos de una canción no inglesa conquistando el mercado americano. Gabriele Susanne Kerner en su único momento global.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1983 · NEW WAVE / HI-NRG · REINO UNIDO</div>
+      <div class="feat-title">Relax</div>
+      <div class="feat-artist">Frankie Goes to Hollywood</div>
+      <p class="feat-rev">La canción más prohibida de los 80s — censurada por la BBC por sus letras explícitas, lo que la convirtió instantáneamente en #1 en el UK por cinco semanas. Frankie Goes to Hollywood y el productor Trevor Horn crearon un himno gay que fue simultáneamente escandaloso y omnipresente. La controversia convirtió su debut en el evento pop más hablado de 1984 en el Reino Unido.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1982 · NEW WAVE / POP · EEUU</div>
+      <div class="feat-title">Mickey</div>
+      <div class="feat-artist">Toni Basil</div>
+      <p class="feat-rev">La canción de animadora más grande de la historia del pop — una oda al fútbol americano universitario convertida en fenómeno global de cheerleading y new wave. Toni Basil, coreógrafa y bailarina antes que cantante, creó un hit que aprovechó al máximo la era MTV con un video lleno de pompones y energía desbordante. La pregunta de "Oh Mickey, you're so fine" todavía resuena en estadios.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1981 · POWER POP · EEUU</div>
+      <div class="feat-title">867-5309 / Jenny</div>
+      <div class="feat-artist">Tommy Tutone</div>
+      <p class="feat-rev">El número de teléfono más famoso de la historia del rock — causó que miles de personas en todo Estados Unidos llamaran a números locales buscando a Jenny que causó que miles de personas en todo Estados Unidos llamaran a números locales con ese código buscando a Jenny. Una simple canción de power pop de 1982 que se convirtió en fenómeno cultural y en la primera canción en hacer que una compañía telefónica tuviera que emitir un comunicado oficial.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1979 · NEW WAVE · REINO UNIDO</div>
+      <div class="feat-title">Video Killed the Radio Star</div>
+      <div class="feat-artist">The Buggles</div>
+      <p class="feat-rev">La primera canción en ser emitida por MTV el 1 de agosto de 1981 — la más apropiada posible para el momento. Video Killed the Radio Star de The Buggles capturó la ansiedad sobre los medios emergentes con una ironía perfecta: una canción sobre cómo la televisión destruye la radio, transmitida por el canal que destruiría la televisión convencional. Trevor Horn y Geoff Downes en su único momento de gloria.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1985 · NEW WAVE / SYNTH-POP · REINO UNIDO</div>
+      <div class="feat-title">Don't Worry, Be Happy</div>
+      <div class="feat-artist">Bobby McFerrin</div>
+      <p class="feat-rev">La única canción a cappella en ganar el Grammy a Mejor Grabación del Año — Bobby McFerrin produciendo todos los sonidos con su propia voz en 1988. Don't Worry, Be Happy fue el primer single a cappella en llegar al #1 en Estados Unidos, usada como canción oficial de la campaña presidencial de George H.W. Bush (sin su permiso) y convertida en el mantra más optimista de los últimos años de la década.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">100 canciones &#183; ordenadas por ranking VH1 (1 al 100)</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">VH1 &#183; 100 GREATEST ONE-HIT WONDERS OF THE '80s</span>
+  <a href="https://www.vh1.com/news/58qjan/100-greatest-one-hit-wonders-of-the-80s" target="_blank" class="foot-link">Ver lista &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1, "Dexy's Midnight Runners", "Come on Eileen", 1982],
+  [2, "A Flock of Seagulls", "I Ran (So Far Away)", 1982],
+  [3, "A-ha", "Take On Me", 1985],
+  [4, "Soft Cell", "Tainted Love", 1981],
+  [5, "Nena", "99 Luftballons", 1983],
+  [6, "Frankie Goes to Hollywood", "Relax", 1983],
+  [7, "Toni Basil", "Mickey", 1982],
+  [8, "Tommy Tutone", "867-5309 Jenny", 1981],
+  [9, "The Buggles", "Video Killed the Radio Star", 1979],
+  [10, "Bobby McFerrin", "Don't Worry Be Happy", 1988],
+  [11, "Modern English", "I Melt With You", 1982],
+  [12, "Bow Wow Wow", "I Want Candy", 1982],
+  [13, "Kajagoogoo", "Too Shy", 1983],
+  [14, "Men Without Hats", "The Safety Dance", 1983],
+  [15, "Rob Base & DJ E-Z Rock", "It Takes Two", 1988],
+  [16, "Dead or Alive", "You Spin Me Round (Like a Record)", 1985],
+  [17, "Rockwell", "Somebody's Watching Me", 1984],
+  [18, "Twisted Sister", "We're Not Gonna Take It", 1984],
+  [19, "Michael Sembello", "Maniac", 1983],
+  [20, "Eddy Grant", "Electric Avenue", 1982],
+  [21, "Edie Brickell & New Bohemians", "What I Am", 1988],
+  [22, "Musical Youth", "Pass the Dutchie", 1982],
+  [23, "Cutting Crew", "I Just Died In Your Arms", 1986],
+  [24, "Stacey Q", "Two of Hearts", 1986],
+  [25, "John Parr", "St. Elmo's Fire (Man In Motion)", 1985],
+  [26, "Madness", "Our House", 1982],
+  [27, "The Vapors", "Turning Japanese", 1980],
+  [28, "Thomas Dolby", "She Blinded Me With Science", 1982],
+  [29, "Big Country", "In A Big Country", 1983],
+  [30, "Devo", "Whip It", 1980],
+  [31, "Animotion", "Obsession", 1984],
+  [32, "Tom Tom Club", "Genius of Love", 1981],
+  [33, "The Waitresses", "I Know What Boys Like", 1982],
+  [34, "John Waite", "Missing You", 1984],
+  [35, "Quarterflash", "Harden My Heart", 1981],
+  [36, "Lipps Inc.", "Funkytown", 1980],
+  [37, "Bruce Willis", "Respect Yourself", 1987],
+  [38, "Matthew Wilder", "Break My Stride", 1983],
+  [39, "Billy Vera", "At This Moment", 1981],
+  [40, "Timbuk 3", "The Future's So Bright I Gotta Wear Shades", 1986],
+  [41, "Shannon", "Let the Music Play", 1983],
+  [42, "Wall of Voodoo", "Mexican Radio", 1983],
+  [43, "Robbie Nevil", "C'est La Vie", 1986],
+  [44, "The Georgia Satellites", "Keep Your Hands To Yourself", 1986],
+  [45, "Pretty Poison", "Catch Me I'm Falling", 1987],
+  [46, "Yello", "Oh Yeah", 1985],
+  [47, "Philip Bailey and Phil Collins", "Easy Lover", 1984],
+  [48, "Neneh Cherry", "Buffalo Stance", 1988],
+  [49, "After the Fire", "Der Kommissar", 1982],
+  [50, "Mary Jane Girls", "In My House", 1985],
+  [51, "Taco", "Puttin' On the Ritz", 1983],
+  [52, "Chris DeBurgh", "Lady in Red", 1986],
+  [53, "Johnny Kemp", "Just Got Paid", 1988],
+  [54, "Til Tuesday", "Voices Carry", 1985],
+  [55, "Jermaine Stewart", "We Don't Have to Take Our Clothes Off", 1986],
+  [56, "Don Johnson", "Heartbeat", 1986],
+  [57, "The Outfield", "Your Love", 1985],
+  [58, "Nu Shooz", "I Can't Wait", 1986],
+  [59, "E.U.", "Da Butt", 1988],
+  [60, "XTC", "Dear God", 1987],
+  [61, "Oran Juice Jones", "The Rain", 1986],
+  [62, "Robbie Dupree", "Steal Away", 1980],
+  [63, "The Boomtown Rats", "I Don't Like Mondays", 1979],
+  [64, "The Jeff Healey Band", "Angel Eyes", 1989],
+  [65, "Martika", "Toy Soldiers", 1989],
+  [66, "Peter Schilling", "Major Tom", 1983],
+  [67, "T'Pau", "Heart And Soul", 1987],
+  [68, "Harold Faltermeyer", "Axel F", 1985],
+  [69, "Jack Wagner", "All I Need", 1984],
+  [70, "Swing Out Sister", "Breakout", 1986],
+  [71, "Paul Hardcastle", "19", 1985],
+  [72, "Information Society", "What's On Your Mind (Pure Energy)", 1988],
+  [73, "Bertie Higgins", "Key Largo", 1982],
+  [74, "J.J. Fad", "Supersonic", 1988],
+  [75, "General Public", "Tenderness", 1984],
+  [76, "Aldo Nova", "Fantasy", 1981],
+  [77, "Alannah Myles", "Black Velvet", 1989],
+  [78, "Eddie Murphy", "Party All The Time", 1985],
+  [79, "Josie Cotton", "Johnny Are You Queer?", 1982],
+  [80, "Red Rider", "Lunatic Fringe", 1981],
+  [81, "Paul Lekakis", "Boom Boom Boom Let's Go Back to My Room", 1987],
+  [82, "The Church", "Under The Milky Way", 1988],
+  [83, "Ziggy Marley And The Melody Makers", "Tomorrow People", 1988],
+  [84, "Patrice Rushen", "Forget Me Nots", 1982],
+  [85, "Vixen", "Edge Of A Broken Heart", 1988],
+  [86, "Nik Kershaw", "Wouldn't it Be Good", 1984],
+  [87, "Rodney Dangerfield", "Rappin' Rodney", 1982],
+  [88, "Haircut 100", "Love Plus One", 1982],
+  [89, "Gloria Loring & Carl Anderson", "Friends And Lovers", 1986],
+  [90, "Frank Stallone", "Far From Over", 1983],
+  [91, "L.A. Guns", "The Ballad of Jayne", 1989],
+  [92, "Club Nouveau", "Lean On Me", 1987],
+  [93, "Midnight Oil", "Beds are Burning", 1987],
+  [94, "The Fabulous Thunderbirds", "Tuff Enuff", 1986],
+  [95, "Will To Power", "Baby I Love Your Way / Freebird", 1988],
+  [96, "Buckner & Garcia", "Pac-Man Fever", 1981],
+  [97, "Michael Damian", "Rock On", 1989],
+  [98, "Clarence Clemons", "You're A Friend Of Mine", 1985],
+  [99, "L.A. Guns", "The Ballad of Jayne", 1989],
+  [100, "Clarence Clemons", "You're A Friend Of Mine", 1985]
+];
+
+// Nota: la lista original viene en orden 100→1; la presentamos 1→100
+var FEAT = [
+  ["fc-1",  "Dexy's Midnight Runners", "Come on Eileen"],
+  ["fc-2",  "A Flock of Seagulls",     "I Ran (So Far Away)"],
+  ["fc-3",  "A-ha",                    "Take On Me"],
+  ["fc-4",  "Soft Cell",               "Tainted Love"],
+  ["fc-5",  "Nena",                    "99 Luftballons"],
+  ["fc-6",  "Frankie Goes to Hollywood","Relax"],
+  ["fc-7",  "Toni Basil",              "Mickey"],
+  ["fc-8",  "Tommy Tutone",            "867-5309 Jenny"],
+  ["fc-9",  "The Buggles",             "Video Killed the Radio Star"],
+  ["fc-10", "Bobby McFerrin",          "Don't Worry Be Happy"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Dexy's Midnight Runners", "Come on Eileen");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

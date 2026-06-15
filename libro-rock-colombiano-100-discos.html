@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rock Colombiano: 100 Discos, 50 Años</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">LIBRO · PABLITO WILSON · EDICIONES B</span>
+    <span class="badge-year">1962&#8211;2010s</span>
+  </div>
+  <span class="page-title">ROCK COLOMBIANO: 100 DISCOS, 50 AÑOS</span>
+  <p class="page-sub">Escrito por Pablito Wilson · Ediciones B &#183; Aterciopelados, Carlos Vives, Shakira, Ekhymosis, La Etnnia, Bomba Estéreo, Kraken &#183; 100 álbumes · desde 1962 · guía definitiva del rock colombiano</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="La tierra del olvido - Carlos Vives">
+    <p class="cover-cap">PABLITO WILSON &#183; 100 ÁLBUMES &#183; EDICIONES B</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Los 100 discos fundamentales del rock colombiano en sus primeros 50 años de historia, según el periodista argentino Pablito Wilson en su libro homónimo publicado por Ediciones B — la guía de referencia que documenta la evolución del género en Colombia desde los primeros LP en 1962 hasta propuestas más contemporáneas. Un trabajo periodístico esencial para entender cómo el rock llegó al país y se transformó en algo propio.</p>
+    <p class="rtext">La selección de Wilson abarca desde Los Yetis y The Speakers en los años 60, pasando por el heavy metal de Kraken y Masacre en los 80 y 90, hasta la nueva generación de Bomba Estéreo, Systema Solar y ChocQuibTown. Un mapa completo de la diversidad del rock colombiano: psicodelia, punk, metal, new wave, rock alternativo, vallenato eléctrico, champeta experimental, cumbia electrónica y hip hop. Aterciopelados aparece dos veces, Kraken dos, y figuran Shakira, Juanes y Carlos Vives junto a decenas de bandas del underground nacional.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Los más impactantes del rock colombiano</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1995 · VALLENATO ROCK / POP · COLOMBIA</div>
+      <div class="feat-title">La tierra del olvido</div>
+      <div class="feat-artist">Carlos Vives</div>
+      <p class="feat-rev">El disco que cambió la música colombiana para siempre y abrió al país al mundo. Carlos Vives electrificó el vallenato clásico con guitarra eléctrica y batería, creando un lenguaje nuevo que conquistó el planeta. La Gota Fría, Carito y Frío Frío convirtieron el folclor de la Costa en pop global. Ningún álbum colombiano ha tenido mayor impacto internacional — el punto de no retorno de la música del país.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994 · RAP / HIP HOP · BOGOTÁ</div>
+      <div class="feat-title">El Ataque del Metano</div>
+      <div class="feat-artist">La Etnnia</div>
+      <p class="feat-rev">El primer álbum de rap colombiano que entró en la historia mayor de la música del país. El último tema grabado para el disco — Manicomio 5-27 — se convertiría en el himno fundacional del hip hop colombiano. Un disco grabado en un estudio casero en Las Cruces que marcó el inicio de una escena que hoy es más fuerte que nunca.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1995 · ROCK ALTERNATIVO / CUMBIA · BOGOTÁ</div>
+      <div class="feat-title">La pipa de la paz</div>
+      <div class="feat-artist">Aterciopelados</div>
+      <p class="feat-rev">El debut que catapultó a Andrea Echeverri y Héctor Buitrago al centro del rock alternativo latinoamericano. La pipa de la paz fusionó el rock con la cumbia, el tropicalismo y la psicodelia colombiana en un álbum que ganó el Grammy Latino y definió lo que el rock colombiano podía ser — irreverente, femenino, político y profundamente colombiano al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1994 · ROCK / GRUNGE · MEDELLÍN</div>
+      <div class="feat-title">Ekhymosis</div>
+      <div class="feat-artist">Ekhymosis</div>
+      <p class="feat-rev">El álbum donde Juanes — antes de ser Juanes — mostró por primera vez su talento desbordante como compositor y guitarrista. Ekhymosis fue la banda de rock más importante de Medellín en los 90, y este disco captura a una generación que usó la música como escudo y refugio en medio de la violencia de una ciudad que ardía. Ciudad Pacific es su himno máximo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2008 · CUMBIA ELECTRÓNICA / POP · BOGOTÁ</div>
+      <div class="feat-title">Estalla</div>
+      <div class="feat-artist">Bomba Estéreo</div>
+      <p class="feat-rev">El debut explosivo de Li Saumet y Simón Mejía que creó un nuevo lenguaje musical colombiano — cumbia electrónica, champeta y ritmos del Caribe procesados con sintetizadores y producción de club. Bomba Estéreo señaló el camino hacia lo que sería la nueva exportación cultural colombiana: una mezcla de folclor y electrónica que conquistaría festivales de todo el mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1966 · ROCK PSICODÉLICO · BOGOTÁ</div>
+      <div class="feat-title">En el maravilloso mundo de Ingeson</div>
+      <div class="feat-artist">The Speakers</div>
+      <p class="feat-rev">El primer álbum de rock psicodélico grabado en Colombia — y uno de los primeros en América Latina. The Speakers adelantaron por años lo que el rock latinoamericano haría décadas después, con guitarras distorsionadas, órgano Hammond y letras en español en plena Bogotá de los 60. Un artefacto extraordinario que solo fue redescubierto y valorado en su justa dimensión décadas después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2005 · POP ROCK · BOGOTÁ</div>
+      <div class="feat-title">Fijación Oral Vol. 1</div>
+      <div class="feat-artist">Shakira</div>
+      <p class="feat-rev">El regreso triunfal de Shakira al español después de conquistar el mercado anglosajón — un álbum que ganó el Grammy al Mejor Álbum de Rock Latino y demostró que la barranquillera era igual de poderosa en su idioma natal. La Tortura con Alejandro Sanz se convirtió en el video más reproducido de la historia de YouTube en su momento.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2010 · RAP / WORLD MUSIC · CHOCÓ</div>
+      <div class="feat-title">Somos Pacífico</div>
+      <div class="feat-artist">ChocQuibTown</div>
+      <p class="feat-rev">El disco que llevó el Pacífico colombiano al mundo. Goyo, Tostao y Slow fusionaron el rap con los ritmos afrocolombianos del Chocó — chirimía, currulao — creando un sonido único que ganó múltiples Grammy Latinos. De donde vengo yo se convirtió en himno de una Colombia que por primera vez veía su Pacífico reflejado en la música popular.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1988 · HEAVY METAL · MEDELLÍN</div>
+      <div class="feat-title">Kraken I</div>
+      <div class="feat-artist">Kraken</div>
+      <p class="feat-rev">El debut del grupo de heavy metal más importante de Colombia y uno de los más importantes de América Latina. Kraken estableció los parámetros del metal colombiano — técnica impecable, producción sólida y letras en español — en un momento en que el metal en el continente era todavía una promesa. Treinta años después siguen siendo la referencia obligada del género en el país.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2010 · CUMBIA ELECTRÓNICA / AFRO · BARRANQUILLA</div>
+      <div class="feat-title">Systema Solar</div>
+      <div class="feat-artist">Systema Solar</div>
+      <p class="feat-rev">El debut del colectivo barranquillero que creó la banda sonora de la Colombia contemporánea — cumbia, champeta, pico, mapalé y electrónica en una fusión que celebra la identidad afrocaribe con orgullo y energía desbordante. Systema Solar demostró que la Costa colombiana podía exportar su cultura popular al mundo sin pedir permiso ni disculpas.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">100 álbumes &#183; ordenados por impacto</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">PABLITO WILSON · ROCK COLOMBIANO: 100 DISCOS, 50 AÑOS · EDICIONES B</span>
+</footer>
+
+<script>
+var ALBUMS = [
+  [1,  "Carlos Vives",              "La tierra del olvido",                        1995],
+  [2,  "La Etnnia",                 "El Ataque del Metano",                        1994],
+  [3,  "Aterciopelados",            "La pipa de la paz",                           1995],
+  [4,  "Ekhymosis",                 "Ekhymosis",                                   1994],
+  [5,  "Bomba Estéreo",             "Estalla",                                     2008],
+  [6,  "The Speakers",              "En el maravilloso mundo de Ingeson",          1966],
+  [7,  "Shakira",                   "Fijación oral Vol. 1",                        2005],
+  [8,  "ChocQuibTown",              "Somos Pacífico",                              2010],
+  [9,  "Kraken",                    "Kraken I",                                    1988],
+  [10, "Systema Solar",             "Systema Solar",                               2010],
+  [11, "Aterciopelados",            "El Dorado",                                   1995],
+  [12, "Monsieur Periné",           "Hecho a mano",                                2012],
+  [13, "Juanes",                    "P.A.R.C.E.",                                  2010],
+  [14, "Los Yetis",                 "¡Nadaismo A Go-Go!",                          1966],
+  [15, "Masacre",                   "Muerte verdadera muerte",                     1991],
+  [16, "Kraken",                    "Kraken filarmónico",                          1993],
+  [17, "Parabellum",                "Tempus mortis",                               1988],
+  [18, "La Pestilencia",            "El amarillista",                              1992],
+  [19, "Bloque de búsqueda",        "Bloque de búsqueda",                         2000],
+  [20, "Sidestepper",               "More Grip",                                   1999],
+  [21, "Andrés Cepeda",             "Día tras día",                                2012],
+  [22, "Doctor Krápula",            "Corazón bombea vivo",                        2005],
+  [23, "Poligamia",                 "Buenas gracias, muchas noches",              1997],
+  [24, "I.R.A.",                    "Crónicas De Una Década Podrida",             1998],
+  [25, "Esteman",                   "1er acto",                                    2010],
+  [26, "Velo de Oza",               "Sumercé",                                    2007],
+  [27, "La-33",                     "Ten cuidado",                                 2005],
+  [28, "Cabas",                     "Amores difíciles",                            2002],
+  [29, "Zona Cero",                 "Cruzando el Universo",                        1999],
+  [30, "Ciegossordomudos",          "En Paz",                                      2006],
+  [31, "Velandia y la Tigra",       "Once rasqas",                                 2008],
+  [32, "Don Tetto",                 "Mienteme, Prometeme",                         2009],
+  [33, "Nepentes",                  "Excitando la Guerra",                         1995],
+  [34, "Alerta",                    "Alerta Kamarada",                             1996],
+  [35, "Compañía Ilimitada",        "Contacto",                                    1993],
+  [36, "Distrito Especial",         "Documento",                                   2003],
+  [37, "Génesis",                   "Génesis",                                     1974],
+  [38, "1280 Almas",                "Alegria! Por Encima de la Tristeza",         1993],
+  [39, "Catedral",                  "Catedral",                                    2002],
+  [40, "The Mills",                 "Babel",                                       2012],
+  [41, "Sociedad Anónima",          "El album de menor venta en la historia del disco", 1994],
+  [42, "Tripulantes",               "Coctel Intergalactico",                       2006],
+  [43, "Victoria Sur",              "Coleccion de Mundos",                         2003],
+  [44, "Héctor Buitrago",           "Conector",                                    2014],
+  [45, "Banda Nueva",               "La Gran Feria",                               1969],
+  [46, "Polikarpa y sus Viciosas",  "Libertad y Desorden",                         1997],
+  [47, "Nadie Más Allá de la Realidad","Los mejores ruidos de los nadie",          2004],
+  [48, "Akash",                     "Allá de la Realidad",                         2000],
+  [49, "Jiggy Drama",               "Nerdside",                                    2010],
+  [50, "Mojiganga",                 "No estamos solos",                            2004],
+  [51, "Tr3s de Corazón",           "No hay tiempo que perder",                    2005],
+  [52, "Sanalejo",                  "No lo hagas",                                 2000],
+  [53, "De2",                       "No Radical No Subliminal",                    2004],
+  [54, "Various Artists",           "Odiamos el Rock Nacional",                    1993],
+  [55, "Juanita Dientesverdes",     "Plumas de Pato",                              2010],
+  [56, "Defenza",                   "Pop-O",                                       2000],
+  [57, "Pornomotora",               "Pornomotora",                                 1999],
+  [58, "The Flippers",              "Pronto Viviremos un Mundo Mucho Mejor",       1968],
+  [59, "V for Volume",              "Providence",                                   2007],
+  [60, "el sie7e",                  "Punto cero (.0)",                             2009],
+  [61, "Compadres",                 "Putiadero Gore",                               1998],
+  [62, "Via Rustica",               "Qué Hay Para la Cabeza: Rhythm from Colombia", 2002],
+  [63, "Providencia",               "Radio Candela",                               2011],
+  [64, "Grito",                     "Resistiendo Al Silencio",                     1998],
+  [65, "Unidad 69",                 "Return of the Dead Rudeboys",                 2006],
+  [66, "Various Artists",           "Rodrigo D. No futuro",                        1990],
+  [67, "Dub Killer Combo",          "Root Boy",                                    2003],
+  [68, "Carlos Reyes",              "Ruido de Bogota",                             2008],
+  [69, "Latin Latas",               "Sé",                                          2006],
+  [70, "Hora Local",                "Soluciones para todo menos para los problemas", 2008],
+  [71, "Sonorama",                  "Sonorama",                                    1997],
+  [72, "Skampida",                  "Stereoblaster",                               2004],
+  [73, "Superlitio",                "Sultana: Manual psicodélico del ritmo vol. 1", 2003],
+  [74, "Profetas",                  "Baila",                                       2005],
+  [75, "Alfonso Espriella",         "Anima",                                       2006],
+  [76, "Columna De Fuego",          "Desde España...",                             1993],
+  [77, "Santa Sangre",              "De la tierra a la luna",                      2007],
+  [78, "The Klaxon",                "Del Mar y del Desierto",                      2011],
+  [79, "Artefacto",                 "Engranaje",                                   1996],
+  [80, "Estados Alterados",         "Estados Alterados",                           1998],
+  [81, "Nawal",                     "Ecco",                                        2008],
+  [82, "Mario Duarte",              "Golpe de ala",                                1998],
+  [83, "Pescao Vivo",               "La cura para todos los males",                2006],
+  [84, "Bajo Tierra",               "Lavandería real",                             1996],
+  [85, "Dar a Cada Uno Lo Que Es Suyo","Moldoba",                                  2007],
+  [86, "Morfonia",                  "En Vivo",                                     2004],
+  [87, "Koyi K Utho",               "Vio-Logic",                                   2006],
+  [88, "Tenebrarum",                "Voices",                                      1998],
+  [89, "Diva Gash",                 "VOL. 1",                                      2011],
+  [90, "Krönös",                    "Volver a empezar",                            2004],
+  [91, "Error",                     "Error",                                       2009],
+  [92, "Neurosis",                  "Verdun 1916",                                  1995],
+  [93, "Felipe Szarruk",            "Trinidad",                                    2006],
+  [94, "Gux Swadharma",             "Tropico Ritual",                              2009],
+  [95, "Ultrágeno",                 "Ultrágeno",                                   2003],
+  [96, "Pasaporte",                 "Un Dia X",                                    2005],
+  [97, "Sesenta y Nueve Nombres",   "Tiempo",                                      2004],
+  [98, "La Tumbaga",                "Ter.Co",                                      2008],
+  [99, "The Black Cat Bone",        "The Black Cat Bone",                          2011],
+  [100,"La Rueda de la Fortuna",    "Piedra",                                      2006]
+];
+
+var FEAT = [
+  ["fc-1",  "Carlos Vives",    "La tierra del olvido"],
+  ["fc-2",  "La Etnnia",       "El Ataque del Metano"],
+  ["fc-3",  "Aterciopelados",  "La pipa de la paz"],
+  ["fc-4",  "Ekhymosis",       "Ekhymosis"],
+  ["fc-5",  "Bomba Estéreo",   "Estalla"],
+  ["fc-6",  "The Speakers",    "En el maravilloso mundo de Ingeson"],
+  ["fc-7",  "Shakira",         "Fijación oral Vol. 1"],
+  ["fc-8",  "ChocQuibTown",    "Somos Pacífico"],
+  ["fc-9",  "Kraken",          "Kraken I"],
+  ["fc-10", "Systema Solar",   "Systema Solar"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, album) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(album + " " + artist) +
+        "&media=music&entity=album&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&album=" + encodeURIComponent(album) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.album && d.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Carlos Vives", "La tierra del olvido");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+ALBUMS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&album=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.album && d.album.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

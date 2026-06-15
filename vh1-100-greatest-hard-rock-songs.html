@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VH1 - 100 Greatest Hard Rock Songs</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">VH1 · VOTACIÓN PÚBLICA · 600.000 VOTOS</span>
+    <span class="badge-year">1964&#8211;2004</span>
+  </div>
+  <a href="https://list.fandom.com/wiki/VH1_Greatest_Hard_Rock_Songs" target="_blank" class="page-title">VH1 · 100 GREATEST HARD ROCK SONGS</a>
+  <p class="page-sub">Guns N' Roses, AC/DC, Led Zeppelin, Metallica, Black Sabbath &#183; 101 canciones &#183; hard rock, heavy metal, grunge, punk &#183; votación pública de 600.000 fans &#183; 2008</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Welcome to the Jungle - Guns N' Roses">
+    <p class="cover-cap">VH1 &#183; 101 CANCIONES &#183; GREATEST HARD ROCK</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las 100 mejores canciones de hard rock según una votación pública de más de 600.000 fans en VH1 en 2008. Un programa de cinco partes presentado por Bret Michaels que incluyó comentarios de Ozzy Osbourne, Slash, Lemmy, Ronnie James Dio, Alice Cooper, Dave Mustaine, Rob Halford y más. Guns N' Roses encabeza con Welcome to the Jungle.</p>
+    <p class="rtext">AC/DC, Black Sabbath, Led Zeppelin, Van Halen y The Who aparecen dos veces cada uno — ninguna banda tiene tres. La canción más antigua es You Really Got Me de The Kinks (1964), la más nueva es Slither de Velvet Revolver (2004). El único instrumental es Frankenstein de Edgar Winter. La lista abarca cuatro décadas de rock duro: el blues rock de los 60, el metal de los 70 y 80, el grunge de los 90 y el post-grunge de los 2000s.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Las más grandes del hard rock</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1987 · HARD ROCK · EEUU</div>
+      <div class="feat-title">Welcome to the Jungle</div>
+      <div class="feat-artist">Guns N' Roses</div>
+      <p class="feat-rev">La canción de debut más devastadora de la historia del rock — el primer tema de Appetite for Destruction que anunciaba la llegada de la banda más peligrosa del mundo. Welcome to the Jungle capturó la violencia, el exceso y la seducción de Los Ángeles con una ferocidad que no se había escuchado desde los primeros Aerosmith. Axl Rose, Slash y Duff McKagan redefiniendo qué podía ser el hard rock.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1980 · HARD ROCK · AUSTRALIA</div>
+      <div class="feat-title">Back in Black</div>
+      <div class="feat-artist">AC/DC</div>
+      <p class="feat-rev">El riff más reconocible de la historia del rock duro — grabado como homenaje al fallecido Bon Scott y convertido en el manifiesto de supervivencia de AC/DC. Back in Black es el segundo álbum más vendido de la historia de la música, y su canción titular es la síntesis perfecta de todo lo que hace grande al hard rock: sencillez brutal, groove irresistible y una actitud indestructible.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1969 · HARD ROCK · REINO UNIDO</div>
+      <div class="feat-title">Whole Lotta Love</div>
+      <div class="feat-artist">Led Zeppelin</div>
+      <p class="feat-rev">El Big Bang del heavy metal y el hard rock moderno. El riff de Jimmy Page en Whole Lotta Love es el punto de partida de todo lo que vendría después — Black Sabbath, Deep Purple, Aerosmith, toda la línea evolutiva del rock duro nace aquí. Robert Plant, Jimmy Page, John Paul Jones y John Bonham creando un sonido que nadie había intentado antes y que nadie ha superado después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1970 · HEAVY METAL · REINO UNIDO</div>
+      <div class="feat-title">Paranoid</div>
+      <div class="feat-artist">Black Sabbath</div>
+      <p class="feat-rev">La canción que inventó el heavy metal tal como lo conocemos — Ozzy Osbourne, Tony Iommi, Geezer Butler y Bill Ward creando un sonido oscuro y opresivo que ninguna banda había intentado. Paranoid fue grabada en 20 minutos como relleno de álbum y se convirtió en el himno definitivo del metal. El riff de Iommi es la fundación sobre la que se construyó toda la música heavy de los siguientes 50 años.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1991 · HEAVY METAL / THRASH · EEUU</div>
+      <div class="feat-title">Enter Sandman</div>
+      <div class="feat-artist">Metallica</div>
+      <p class="feat-rev">El momento en que Metallica pasó del underground al estadio sin perder un gramo de agresividad. Enter Sandman abrió el Álbum Negro — el disco de metal más vendido de la historia — con un riff hipnótico y una letra sobre las pesadillas infantiles que capturó a una generación entera. James Hetfield, Lars Ulrich y Kirk Hammett en su momento más accesible y más poderoso al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1971 · HARD ROCK · REINO UNIDO</div>
+      <div class="feat-title">Won't Get Fooled Again</div>
+      <div class="feat-artist">The Who</div>
+      <p class="feat-rev">El anti-himno de la revolución más grande del rock — ocho minutos y media de furia, síntesis y el grito más catártico de la historia de la música popular (el alarido de Roger Daltrey que abre el último verso). Pete Townshend, Keith Moon, John Entwistle y Roger Daltrey en su cima absoluta. Won't Get Fooled Again es la canción de rock más larga en llegar al Top 10 británico.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1991 · GRUNGE · EEUU</div>
+      <div class="feat-title">Smells Like Teen Spirit</div>
+      <div class="feat-artist">Nirvana</div>
+      <p class="feat-rev">La canción que mató al hair metal y cambió la música popular para siempre. Kurt Cobain, Krist Novoselic y Dave Grohl llegaron desde Seattle para demoler el rock de los 80 con tres acordes y una rabia auténtica que hacía quedar en ridículo toda la fantasía glamorosa de la década anterior. Smells Like Teen Spirit es el punto de quiebre cultural más claro de la historia del rock moderno.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1975 · HARD ROCK · EEUU</div>
+      <div class="feat-title">Walk This Way</div>
+      <div class="feat-artist">Aerosmith</div>
+      <p class="feat-rev">El puente entre el rock duro y el hip hop — Walk This Way fue primero un clásico del hard rock de los 70, y luego la colaboración con Run-DMC en 1986 que demolió las barreras entre géneros y creó el rap-rock. Steven Tyler y Joe Perry en su momento más funkero y más poderoso. Una canción que ha vivido dos vidas completamente distintas y ha sido fundamental en ambas.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1970 · HEAVY METAL · REINO UNIDO</div>
+      <div class="feat-title">Smoke on the Water</div>
+      <div class="feat-artist">Deep Purple</div>
+      <p class="feat-rev">El riff más enseñado en clases de guitarra en la historia de la música — el primer ejercicio obligatorio de cualquier guitarrista principiante del mundo. Ritchie Blackmore, Ian Gillan y Roger Glover crearon en 1972 el relato del incendio del Casino de Montreux durante un concierto de Frank Zappa, inmortalizando el momento más caótico de la historia del rock suizo en el track más influyente de Deep Purple.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">1980 · HEAVY METAL / SPEED · REINO UNIDO</div>
+      <div class="feat-title">Ace of Spades</div>
+      <div class="feat-artist">Motörhead</div>
+      <p class="feat-rev">Lemmy Kilmister, Phil Taylor y Fast Eddie Clarke creando el prototipo del speed metal y el thrash en 1980 — una canción sobre el juego y la muerte que se convirtió en el himno de los que viven al límite. Ace of Spades es la canción más rápida, sucia y directa de toda la lista: dos minutos y medio de puro caos controlado que influyeron directamente en Metallica, Slayer y toda la escena del metal extremo.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">101 canciones &#183; ordenadas por ranking VH1 (1 al 101)</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">VH1 &#183; 100 GREATEST HARD ROCK SONGS &#183; 600.000 VOTOS &#183; 2008</span>
+  <a href="https://list.fandom.com/wiki/VH1_Greatest_Hard_Rock_Songs" target="_blank" class="foot-link">Ver lista &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,   "Guns N' Roses",               "Welcome to the Jungle",          1987],
+  [2,   "AC/DC",                       "Back in Black",                  1980],
+  [3,   "Led Zeppelin",                "Whole Lotta Love",               1969],
+  [4,   "Black Sabbath",               "Paranoid",                       1970],
+  [5,   "Metallica",                   "Enter Sandman",                  1991],
+  [6,   "The Who",                     "Won't Get Fooled Again",         1971],
+  [7,   "Nirvana",                     "Smells Like Teen Spirit",        1991],
+  [8,   "Aerosmith",                   "Walk This Way",                  1975],
+  [9,   "Van Halen",                   "Runnin' with the Devil",         1978],
+  [10,  "Motörhead",                   "Ace of Spades",                  1980],
+  [11,  "Deep Purple",                 "Smoke on the Water",             1972],
+  [12,  "Judas Priest",                "Breaking the Law",               1980],
+  [13,  "Def Leppard",                 "Photograph",                     1983],
+  [14,  "Iron Maiden",                 "Run to the Hills",               1982],
+  [15,  "Mötley Crüe",                 "Dr. Feelgood",                   1989],
+  [16,  "Kiss",                        "Rock and Roll All Nite",         1975],
+  [17,  "Twisted Sister",              "I Wanna Rock",                   1984],
+  [18,  "Scorpions",                   "Rock You Like a Hurricane",      1984],
+  [19,  "Rush",                        "Tom Sawyer",                     1981],
+  [20,  "Bon Jovi",                    "You Give Love a Bad Name",       1986],
+  [21,  "Led Zeppelin",                "Kashmir",                        1975],
+  [22,  "The Jimi Hendrix Experience", "Hey Joe",                        1966],
+  [23,  "Ozzy Osbourne",               "Crazy Train",                    1980],
+  [24,  "Iron Butterfly",              "In-A-Gadda-Da-Vida",            1968],
+  [25,  "Ramones",                     "Blitzkrieg Bop",                 1976],
+  [26,  "Lynyrd Skynyrd",              "Free Bird",                      1973],
+  [27,  "Whitesnake",                  "Still of the Night",             1987],
+  [28,  "Foo Fighters",                "Everlong",                       1997],
+  [29,  "Joan Jett",                   "Bad Reputation",                 1980],
+  [30,  "Pearl Jam",                   "Even Flow",                      1991],
+  [31,  "AC/DC",                       "Dirty Deeds Done Dirt Cheap",   1976],
+  [32,  "Ted Nugent",                  "Cat Scratch Fever",              1977],
+  [33,  "Green Day",                   "Basket Case",                    1994],
+  [34,  "Heart",                       "Barracuda",                      1977],
+  [35,  "Alice Cooper",                "School's Out",                   1972],
+  [36,  "Van Halen",                   "Hot for Teacher",                1984],
+  [37,  "The Who",                     "My Generation",                  1965],
+  [38,  "Queen",                       "Stone Cold Crazy",               1974],
+  [39,  "Boston",                      "More than a Feeling",            1976],
+  [40,  "Poison",                      "Talk Dirty to Me",               1986],
+  [41,  "Quiet Riot",                  "Cum On Feel the Noize",         1983],
+  [42,  "The Clash",                   "Should I Stay or Should I Go",  1982],
+  [43,  "Dio",                         "Holy Diver",                     1983],
+  [44,  "Cream",                       "Sunshine of Your Love",          1967],
+  [45,  "Foghat",                      "Slow Ride",                      1975],
+  [46,  "Anthrax",                     "Madhouse",                       1986],
+  [47,  "Kid Rock",                    "Bawitdaba",                      1998],
+  [48,  "Korn",                        "Freak on a Leash",               1998],
+  [49,  "The Stooges",                 "Search and Destroy",             1973],
+  [50,  "Red Hot Chili Peppers",       "Give It Away",                   1991],
+  [51,  "Megadeth",                    "Peace Sells",                    1986],
+  [52,  "The Runaways",                "Cherry Bomb",                    1976],
+  [53,  "Steppenwolf",                 "Born to Be Wild",                1968],
+  [54,  "Faith No More",               "Epic",                           1989],
+  [55,  "Blue Öyster Cult",            "(Don't Fear) The Reaper",       1976],
+  [56,  "Warrant",                     "Cherry Pie",                     1990],
+  [57,  "The Kinks",                   "You Really Got Me",              1964],
+  [58,  "Stone Temple Pilots",         "Interstate Love Song",           1994],
+  [59,  "Billy Squier",                "The Stroke",                     1981],
+  [60,  "Skid Row",                    "18 and Life",                    1989],
+  [61,  "Ratt",                        "Round and Round",                1984],
+  [62,  "Dokken",                      "Breaking the Chains",            1981],
+  [63,  "Survivor",                    "Eye of the Tiger",               1982],
+  [64,  "Rollins Band",                "Liar",                           1994],
+  [65,  "MC5",                         "Kick Out the Jams",              1969],
+  [66,  "Europe",                      "The Final Countdown",            1986],
+  [67,  "ZZ Top",                      "Tush",                           1975],
+  [68,  "White Zombie",                "More Human Than Human",          1995],
+  [69,  "Living Colour",               "Cult of Personality",            1988],
+  [70,  "Foreigner",                   "Hot Blooded",                    1978],
+  [71,  "Jane's Addiction",            "Mountain Song",                  1988],
+  [72,  "Pat Benatar",                 "Heartbreaker",                   1979],
+  [73,  "Thin Lizzy",                  "Jailbreak",                      1976],
+  [74,  "The Cult",                    "Love Removal Machine",           1987],
+  [75,  "The White Stripes",           "Seven Nation Army",              2003],
+  [76,  "Lita Ford",                   "Kiss Me Deadly",                 1988],
+  [77,  "Soundgarden",                 "Black Hole Sun",                 1994],
+  [78,  "Bad Company",                 "Feel Like Makin' Love",          1975],
+  [79,  "Billy Idol",                  "Rebel Yell",                     1983],
+  [80,  "Journey",                     "Any Way You Want It",            1980],
+  [81,  "Black Sabbath",               "Heaven and Hell",                1980],
+  [82,  "Rainbow",                     "Since You've Been Gone",         1979],
+  [83,  "Evanescence",                 "Bring Me to Life",               2003],
+  [84,  "W.A.S.P.",                    "I Wanna Be Somebody",            1984],
+  [85,  "Velvet Revolver",             "Slither",                        2004],
+  [86,  "Marilyn Manson",              "The Beautiful People",           1996],
+  [87,  "Winger",                      "Seventeen",                      1988],
+  [88,  "Alice in Chains",             "Would?",                         1992],
+  [89,  "Andrew W.K.",                 "Party Hard",                     2001],
+  [90,  "Jethro Tull",                 "Aqualung",                       1971],
+  [91,  "The Smashing Pumpkins",       "Bullet with Butterfly Wings",    1995],
+  [92,  "Night Ranger",                "Don't Tell Me You Love Me",      1982],
+  [93,  "Autograph",                   "Turn Up the Radio",              1984],
+  [94,  "The Darkness",                "I Believe in a Thing Called Love",2003],
+  [95,  "Creed",                       "Higher",                         1999],
+  [96,  "Kansas",                      "Carry On Wayward Son",           1976],
+  [97,  "Edgar Winter",                "Frankenstein",                   1973],
+  [98,  "Buckcherry",                  "Lit Up",                         1999],
+  [99,  "Grand Funk Railroad",         "We're An American Band",         1973],
+  [100, "Sammy Hagar",                 "I Can't Drive 55",               1984],
+  [101, "Nolan Gardner Retrofit",      "Sometimes",                      2008]
+];
+
+var FEAT = [
+  ["fc-1",  "Guns N' Roses",  "Welcome to the Jungle"],
+  ["fc-2",  "AC/DC",          "Back in Black"],
+  ["fc-3",  "Led Zeppelin",   "Whole Lotta Love"],
+  ["fc-4",  "Black Sabbath",  "Paranoid"],
+  ["fc-5",  "Metallica",      "Enter Sandman"],
+  ["fc-6",  "The Who",        "Won't Get Fooled Again"],
+  ["fc-7",  "Nirvana",        "Smells Like Teen Spirit"],
+  ["fc-8",  "Aerosmith",      "Walk This Way"],
+  ["fc-9",  "Deep Purple",    "Smoke on the Water"],
+  ["fc-10", "Motörhead",      "Ace of Spades"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Guns N' Roses", "Welcome to the Jungle");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>

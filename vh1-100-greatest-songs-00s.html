@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VH1 - 100 Greatest Songs of the 00's</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
+.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
+.badge-year{font-size:10px;letter-spacing:2px;color:#999}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
+.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
+.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#333}
+.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
+.rtext+.rtext{margin-top:.9rem}
+.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-info{flex:1;min-width:0}
+.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
+.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
+.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
+.track-section{padding:0 3rem 3rem}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
+.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
+.track-row:hover{background:#111}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
+.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#999;font-weight:300}
+.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
+.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
+.track-scrobbles.loading{color:#333;font-weight:300}
+.track-scrobbles.zero{color:#252525}
+.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
+.foot-left{font-size:11px;color:#999;letter-spacing:1px}
+.foot-link{font-size:11px;color:#aaa}
+.foot-link:hover{color:#c8a86a}
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
+  .hero{flex-direction:column}
+  .cover-img{width:140px;height:140px}
+  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">VH1</span>
+    <span class="badge-year">1999&#8211;2009</span>
+  </div>
+  <a href="https://www.albumoftheyear.org/user/leo-av/list/45559/vh1-100-greatest-songs-of-the-00s/" target="_blank" class="page-title">VH1 · 100 GREATEST SONGS OF THE 00's</a>
+  <p class="page-sub">Beyoncé, OutKast, Lady Gaga, Eminem, Jay-Z &#183; 100 canciones &#183; pop, hip hop, R&amp;B, rock alternativo &#183; la primera década del nuevo milenio &#183; VH1 · 2011</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Crazy in Love - Beyoncé">
+    <p class="cover-cap">VH1 &#183; 100 CANCIONES &#183; GREATEST SONGS 00s</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Sobre esta lista</div>
+    <p class="rtext">Las 100 mejores canciones de los años 2000 según VH1, publicada en octubre de 2011. Un recuento de la primera década del milenio — desde Britney Spears y *NSYNC hasta Lady Gaga y Beyoncé, pasando por Eminem, Jay-Z, OutKast y el auge del hip hop como fuerza dominante del pop. Crazy in Love de Beyoncé encabeza como el himno definitivo de la era.</p>
+    <p class="rtext">Beyoncé aparece dos veces — Crazy in Love (#1) y Single Ladies (#16). Jay-Z dos veces — Empire State of Mind (#8) y 99 Problems (#21). Britney Spears dos veces — Toxic (#20) y Oops!... I Did It Again (#37). Lady Gaga dos veces — Poker Face (#3) y Bad Romance (#49). Justin Timberlake dos veces. La lista captura la transición del pop de los 90s al dominio del hip hop y R&B en los 2000s.</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &#183; Las más grandes de los 2000s</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2003 · R&amp;B / HIP HOP · EEUU</div>
+      <div class="feat-title">Crazy in Love</div>
+      <div class="feat-artist">Beyoncé feat. Jay-Z</div>
+      <p class="feat-rev">El momento en que Beyoncé se convirtió en Beyoncé — separada de Destiny's Child y presentándose al mundo como artista solista con el hook más irresistible de la década. Crazy in Love ganó el Grammy a Mejor Grabación del Año en 2004 y estableció el template de lo que sería la carrera de una de las artistas más importantes del siglo XXI. El uh-oh de apertura es uno de los momentos más reconocibles de la historia del pop moderno.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2003 · HIP HOP / FUNK · EEUU</div>
+      <div class="feat-title">Hey Ya!</div>
+      <div class="feat-artist">OutKast</div>
+      <p class="feat-rev">La canción más original de los 2000s — André 3000 mezclando funk, pop, rock y hip hop en una mezcla que ninguna clasificación puede contener. Hey Ya! fue el single más exitoso de OutKast y una de las canciones más escuchadas del año 2003, con una energía y creatividad que hacían que todo lo demás pareciera convencional. Shake it like a Polaroid picture — el non sequitur más pegadizo de la historia del pop.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2008 · SYNTH-POP / DANCE POP · EEUU</div>
+      <div class="feat-title">Poker Face</div>
+      <div class="feat-artist">Lady Gaga</div>
+      <p class="feat-rev">La canción que lanzó a Lady Gaga al centro del universo pop global — synth-pop minimalista con un gancho de una sola nota que se convirtió en el tema más descargado de 2009 en todo el mundo. Poker Face vendió más de 14 millones de copias digitales y consolidó a Gaga como la artista pop más importante de la segunda mitad de la década, heredera del trono de Madonna.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2002 · HIP HOP / RAP · EEUU</div>
+      <div class="feat-title">Lose Yourself</div>
+      <div class="feat-artist">Eminem</div>
+      <p class="feat-rev">La primera canción de rap en ganar el Oscar a Mejor Canción Original — del soundtrack de 8 Mile. Eminem volcó toda su rabia, ambición y vulnerabilidad en tres minutos y cincuenta y dos segundos de la canción de hip hop más motivadora jamás grabada. Lose Yourself permaneció doce semanas en el #1 del Billboard Hot 100 — el mayor logro de la carrera del rapero más vendido de la historia.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2004 · POP ROCK · EEUU</div>
+      <div class="feat-title">Since U Been Gone</div>
+      <div class="feat-artist">Kelly Clarkson</div>
+      <p class="feat-rev">La canción que demostró que un talent show podía producir artistas de verdad. Kelly Clarkson, ganadora de la primera temporada de American Idol, transformó un post-break-up anthem de Max Martin y Lukasz Gottwald en el himno pop-rock más catártico de la década. Since U Been Gone mezcló el pop con la energía del rock alternativo de una manera que nadie había intentado tan bien antes.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2004 · HIP HOP / SOUL · EEUU</div>
+      <div class="feat-title">99 Problems</div>
+      <div class="feat-artist">Jay-Z</div>
+      <p class="feat-rev">Rick Rubin produciendo desde las entrañas del hard rock y el blues para Jay-Z — un resultado que nadie esperaba y que cambió las posibilidades del hip hop mainstream. 99 Problems usa el riff de Billy Squier y la estructura del rock más crudo para construir el relato más tenso de la carrera de Jay-Z, con cada verso funcionando como un monólogo cinematográfico. Líricamente impecable.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2004 · POP / R&amp;B · EEUU</div>
+      <div class="feat-title">Toxic</div>
+      <div class="feat-artist">Britney Spears</div>
+      <p class="feat-rev">La mejor canción de la carrera de Britney Spears y uno de los mejores singles de pop del siglo XXI — una mezcla audaz de bhangra, cuerdas de espionaje, síntesis electrónica y dance pop que ganó el Grammy a Mejor Grabación Dance en 2005. Toxic fue concebida para Madonna y rechazada, lo que demuestra que el destino de las grandes canciones siempre termina siendo correcto.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2003 · ALTERNATIVE ROCK · EEUU / AUSTRALIA</div>
+      <div class="feat-title">Seven Nation Army</div>
+      <div class="feat-artist">The White Stripes</div>
+      <p class="feat-rev">El riff de guitarra más reconocible del siglo XXI — Jack White creando con una sola guitarra y la batería de Meg White algo que ninguna banda de cinco personas había logrado. Seven Nation Army se convirtió en himno de estadios a nivel global, cantado en coros por hinchas de fútbol en todos los continentes. La línea de bajo de apertura, tocada en realidad en una guitarra con octavador, es una de las melodías más cantadas de la historia.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2006 · RAP / SOUL · EEUU</div>
+      <div class="feat-title">Gold Digger</div>
+      <div class="feat-artist">Kanye West feat. Jamie Foxx</div>
+      <p class="feat-rev">Kanye West sampleando Ray Charles y construyendo encima el hit más accesible y más furioso de su carrera — el single que encabezó el Billboard Hot 100 por diez semanas consecutivas. Gold Digger capturó el momento en que Kanye pasó de ser el productor que nadie tomaba en serio como rapero a ser la voz más importante del hip hop de su generación. Jamie Foxx como Ray Charles completando el círculo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="">
+    <div class="feat-info">
+      <div class="feat-year">2003 · HIP HOP / TRAP · EEUU</div>
+      <div class="feat-title">In Da Club</div>
+      <div class="feat-artist">50 Cent</div>
+      <p class="feat-rev">El debut más impactante del rap de los 2000s — producido por Dr. Dre y lanzado el mismo día que Get Rich or Die Tryin'. In Da Club permaneció nueve semanas en el #1 del Billboard y fue la canción más reproducida en radio de la primera mitad de la década. El beat de Dre y la actitud indestructible de 50 Cent presentando al personaje más invulnerable del hip hop de su era.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section" style="padding-top:1.5rem">
+  <div class="sec-label">100 canciones &#183; ordenadas por ranking VH1</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Canción / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">VH1 &#183; 100 GREATEST SONGS OF THE 00's &#183; 2011</span>
+  <a href="https://www.albumoftheyear.org/user/leo-av/list/45559/vh1-100-greatest-songs-of-the-00s/" target="_blank" class="foot-link">Ver lista &#8599;</a>
+</footer>
+
+<script>
+var SONGS = [
+  [1,   "Beyoncé feat. Jay-Z",                    "Crazy in Love",                    2003],
+  [2,   "OutKast",                                 "Hey Ya!",                          2003],
+  [3,   "Lady Gaga",                               "Poker Face",                       2008],
+  [4,   "Eminem",                                  "Lose Yourself",                    2002],
+  [5,   "Kelly Clarkson",                          "Since U Been Gone",                2004],
+  [6,   "Kanye West feat. Jamie Foxx",             "Gold Digger",                      2005],
+  [7,   "Justin Timberlake",                       "SexyBack",                         2006],
+  [8,   "Jay-Z feat. Alicia Keys",                 "Empire State of Mind",             2009],
+  [9,   "Mariah Carey",                            "We Belong Together",               2005],
+  [10,  "50 Cent",                                 "In Da Club",                       2003],
+  [11,  "Rihanna",                                 "Umbrella",                         2007],
+  [12,  "The Black Eyed Peas",                     "I Gotta Feeling",                  2009],
+  [13,  "Green Day",                               "American Idiot",                   2004],
+  [14,  "Gnarls Barkley",                          "Crazy",                            2006],
+  [15,  "U2",                                      "Beautiful Day",                    2000],
+  [16,  "Beyoncé",                                 "Single Ladies (Put a Ring on It)", 2008],
+  [17,  "Coldplay",                                "Clocks",                           2002],
+  [18,  "Christina Aguilera",                      "Beautiful",                        2002],
+  [19,  "Destiny's Child",                         "Bootylicious",                     2001],
+  [20,  "Britney Spears",                          "Toxic",                            2004],
+  [21,  "Jay-Z",                                   "99 Problems",                      2004],
+  [22,  "Alicia Keys",                             "Fallin'",                          2001],
+  [23,  "P!nk",                                    "Get the Party Started",            2001],
+  [24,  "Missy Elliott",                           "Get Ur Freak On",                  2001],
+  [25,  "Nelly",                                   "Hot in Herre",                     2002],
+  [26,  "The White Stripes",                       "Seven Nation Army",                2003],
+  [27,  "Usher",                                   "Yeah!",                            2004],
+  [28,  "Madonna",                                 "Music",                            2000],
+  [29,  "Foo Fighters",                            "Best of You",                      2005],
+  [30,  "Gwen Stefani",                            "Hollaback Girl",                   2005],
+  [31,  "Amy Winehouse",                           "Rehab",                            2006],
+  [32,  "Maroon 5",                                "This Love",                        2004],
+  [33,  "Johnny Cash",                             "Hurt",                             2003],
+  [34,  "Janet Jackson",                           "All for You",                      2001],
+  [35,  "John Mayer",                              "Daughters",                        2004],
+  [36,  "*NSYNC",                                  "Bye Bye Bye",                      2000],
+  [37,  "Britney Spears",                          "Oops!... I Did It Again",          2000],
+  [38,  "Miley Cyrus",                             "Party in the U.S.A.",              2009],
+  [39,  "Adele",                                   "Chasing Pavements",                2008],
+  [40,  "Fall Out Boy",                            "Sugar We're Goin Down",            2005],
+  [41,  "R. Kelly",                                "Trapped in the Closet",            2005],
+  [42,  "Train",                                   "Drops of Jupiter (Tell Me)",       2001],
+  [43,  "Katy Perry",                              "I Kissed a Girl",                  2008],
+  [44,  "Red Hot Chili Peppers",                   "Californication",                  2000],
+  [45,  "Eve feat. Gwen Stefani",                  "Let Me Blow Ya Mind",              2001],
+  [46,  "Kid Rock feat. Sheryl Crow",              "Picture",                          2002],
+  [47,  "Christina Aguilera; P!nk; Lil' Kim; Mýa","Lady Marmalade",                  2001],
+  [48,  "Kings of Leon",                           "Sex on Fire",                      2008],
+  [49,  "Lady Gaga",                               "Bad Romance",                      2009],
+  [50,  "Taylor Swift",                            "You Belong With Me",               2009],
+  [51,  "Natasha Bedingfield",                     "Pocketful of Sunshine",            2008],
+  [52,  "Shakira feat. Wyclef Jean",               "Hips Don't Lie",                   2006],
+  [53,  "blink-182",                               "All the Small Things",             2000],
+  [54,  "Norah Jones",                             "Don't Know Why",                   2002],
+  [55,  "The Killers",                             "Mr. Brightside",                   2003],
+  [56,  "DMX",                                     "Party Up (Up in Here)",            2000],
+  [57,  "Mary J. Blige",                           "Family Affair",                    2001],
+  [58,  "Jason Mraz",                              "I'm Yours",                        2008],
+  [59,  "Justin Timberlake",                       "Cry Me a River",                   2002],
+  [60,  "Ke$ha",                                   "TiK ToK",                          2009],
+  [61,  "Kelis",                                   "Milkshake",                        2003],
+  [62,  "Avril Lavigne",                           "Complicated",                      2002],
+  [63,  "Andrew W.K.",                             "Party Hard",                       2001],
+  [64,  "Jennifer Lopez feat. Ja Rule",            "I'm Real",                         2001],
+  [65,  "Aaliyah",                                 "Try Again",                        2000],
+  [66,  "Snoop Dogg feat. Pharrell",               "Drop It Like It's Hot",            2004],
+  [67,  "Leona Lewis",                             "Bleeding Love",                    2007],
+  [68,  "Ludacris feat. Shawnna",                  "Stand Up",                         2003],
+  [69,  "Evanescence",                             "Bring Me to Life",                 2003],
+  [70,  "Chris Brown",                             "Run It!",                          2005],
+  [71,  "Colbie Caillat",                          "Bubbly",                           2007],
+  [72,  "Jet",                                     "Are You Gonna Be My Girl?",        2003],
+  [73,  "Nelly Furtado feat. Timbaland",           "Promiscuous",                      2006],
+  [74,  "Chamillionaire feat. Krayzie Bone",       "Ridin'",                           2006],
+  [75,  "Gavin DeGraw",                            "I Don't Want to Be",               2004],
+  [76,  "T.I. feat. Rihanna",                      "Live Your Life",                   2008],
+  [77,  "Nickelback",                              "How You Remind Me",                2001],
+  [78,  "Plain White T's",                         "Hey There Delilah",                2006],
+  [79,  "Enrique Iglesias",                        "Hero",                             2001],
+  [80,  "Lil Jon & The East Side Boyz",            "Get Low",                          2003],
+  [81,  "Bruce Springsteen",                       "The Rising",                       2002],
+  [82,  "Matchbox Twenty",                         "Unwell",                           2003],
+  [83,  "D'Angelo",                                "Untitled (How Does It Feel)",      2000],
+  [84,  "Linkin Park",                             "In the End",                       2001],
+  [85,  "Macy Gray",                               "I Try",                            1999],
+  [86,  "Aerosmith",                               "Jaded",                            2000],
+  [87,  "The Darkness",                            "I Believe in a Thing Called Love", 2003],
+  [88,  "Fountains of Wayne",                      "Stacy's Mom",                      2003],
+  [89,  "M.I.A.",                                  "Paper Planes",                     2008],
+  [90,  "Mystikal",                                "Shake Ya Ass",                     2000],
+  [91,  "Creed",                                   "With Arms Wide Open",              2000],
+  [92,  "Flo Rida feat. T-Pain",                   "Low",                              2007],
+  [93,  "OK Go",                                   "Here It Goes Again",               2006],
+  [94,  "Daughtry",                                "It's Not Over",                    2006],
+  [95,  "James Blunt",                             "You're Beautiful",                 2005],
+  [96,  "The Pussycat Dolls feat. Busta Rhymes",   "Don't Cha",                        2005],
+  [97,  "Shaggy feat. Rikrok",                     "It Wasn't Me",                     2000],
+  [98,  "3 Doors Down",                            "Kryptonite",                       2000],
+  [99,  "Carrie Underwood",                        "Before He Cheats",                 2006],
+  [100, "Sisqó",                                   "Thong Song",                       1999]
+];
+
+var FEAT = [
+  ["fc-1",  "Beyoncé",        "Crazy in Love"],
+  ["fc-2",  "OutKast",        "Hey Ya!"],
+  ["fc-3",  "Lady Gaga",      "Poker Face"],
+  ["fc-4",  "Eminem",         "Lose Yourself"],
+  ["fc-5",  "Kelly Clarkson", "Since U Been Gone"],
+  ["fc-6",  "Jay-Z",          "99 Problems"],
+  ["fc-7",  "Britney Spears", "Toxic"],
+  ["fc-8",  "The White Stripes","Seven Nation Army"],
+  ["fc-9",  "Kanye West",     "Gold Digger"],
+  ["fc-10", "50 Cent",        "In Da Club"]
+];
+
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  if (!url || url.indexOf('2a96cbd8b46e442fc41c2b86b821562f') >= 0) return;
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function(){ el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, title) {
+  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(title + " " + artist) +
+        "&media=music&entity=song&limit=5&country=us")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var res = d.results || [], a0 = artist.toLowerCase().split(' ')[0], m = null;
+      for (var i = 0; i < res.length; i++) {
+        if (res[i].artistName && res[i].artistName.toLowerCase().indexOf(a0) >= 0) { m = res[i]; break; }
+      }
+      if (!m && res.length) m = res[0];
+      if (m && m.artworkUrl100) setImg(el, m.artworkUrl100.replace("100x100bb","300x300bb"));
+      else throw 0;
+    })
+    .catch(function(){
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
+          for (var i = imgs.length-1; i >= 0; i--) {
+            if (imgs[i]["#text"] && imgs[i]["#text"].length > 10 &&
+                imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) { best = imgs[i]; break; }
+          }
+          if (best) setImg(el, best["#text"]);
+        }).catch(function(){});
+    });
+}
+
+loadArt(document.getElementById("hero-cover"), "Beyoncé", "Crazy in Love");
+FEAT.forEach(function(fc, i){
+  setTimeout(function(){
+    var el = document.getElementById(fc[0]);
+    if (el) loadArt(el, fc[1], fc[2]);
+  }, i * 280);
+});
+
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(s){
+  var row = document.createElement("div"); row.className = "track-row";
+  var num = document.createElement("div"); num.className = "track-num"; num.textContent = s[0];
+  var img = document.createElement("img"); img.className = "track-cover";
+  img.dataset.artist = encodeURIComponent(s[1]);
+  img.dataset.title  = encodeURIComponent(s[2]);
+  img.src = ""; img.style.opacity = "0"; img.alt = "";
+  var info = document.createElement("div"); info.style.minWidth = "0";
+  var name = document.createElement("div"); name.className = "track-name"; name.textContent = s[2];
+  var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
+  info.appendChild(name); info.appendChild(artist);
+  var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
+  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  sc.dataset.lfmArtist = encodeURIComponent(s[1]);
+  sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
+  sc.innerHTML = "&#8212;";
+  row.appendChild(num); row.appendChild(img); row.appendChild(info);
+  row.appendChild(yr); row.appendChild(sc);
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+
+var artQ = [], artTimer = null;
+function flushArt(){
+  var b = artQ.splice(0,6);
+  b.forEach(function(el){ loadArt(el, decodeURIComponent(el.dataset.artist), decodeURIComponent(el.dataset.title)); });
+  if (artQ.length) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; artObs.unobserve(e.target); artQ.push(e.target); });
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin:"700px" });
+document.querySelectorAll(".track-cover").forEach(function(c){ artObs.observe(c); });
+
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfm(){
+  if (lfmBusy || !lfmQ.length) return;
+  lfmBusy = true;
+  var el = lfmQ.shift(),
+      ar = decodeURIComponent(el.dataset.lfmArtist || ""),
+      tr = decodeURIComponent(el.dataset.lfmTrack  || ""),
+      k  = ar + "|||" + tr;
+  if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
+        "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
+        "&username=" + LFM_USER + "&format=json")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[k] = c; renderS(el, c);
+    })
+    .catch(function(){ el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function(){ lfmBusy = false; setTimeout(processLfm, 250); });
+}
+function renderS(el, c){
+  el.classList.remove("loading");
+  el.textContent = c > 0 ? c.toLocaleString() : "0";
+  if (!c) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (!e.isIntersecting) return; lfmObs.unobserve(e.target); lfmQ.push(e.target); processLfm(); });
+}, { rootMargin:"400px" });
+document.querySelectorAll(".track-scrobbles").forEach(function(s){ lfmObs.observe(s); });
+</script>
+</body>
+</html>
