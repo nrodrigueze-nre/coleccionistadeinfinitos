@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light only">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>50 Best Albums of 2011 - Rolling Stone</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+:root{color-scheme:light only}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0d1117;min-height:100vh}
 a{color:inherit;text-decoration:none}
-.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
-.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
-.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
-.badge-year{font-size:10px;letter-spacing:2px;color:#999}
-.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3.5vw,48px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
-.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
-.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+
+/* PAGE HEADER — azul marino fullwidth */
+.page-header{background:#1a2f5a;padding:1.5rem 2.5rem 1.4rem}
+.source-row{display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
+.badge{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.08)}
+.badge-year{font-size:10px;letter-spacing:1.5px;color:#6a90b8;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,42px);font-weight:400;letter-spacing:3px;color:#fff;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:13px;color:#8aaad8;font-weight:300;letter-spacing:.3px}
+.back-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#7ab0ff;margin-bottom:.8rem;text-decoration:none;transition:color .15s}
+.back-link:hover{color:#fff}
+.back-link svg{width:12px;height:12px}
+
+/* HERO */
+.hero{padding:1.75rem 2.5rem;display:flex;gap:2rem;align-items:flex-start;border-bottom:1px solid #e8ecf4;background:#fff}
 .cover-wrap{flex-shrink:0}
-.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
-.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.cover-img{width:160px;height:160px;object-fit:cover;border-radius:6px;border:1px solid #e0e4ee;display:block;background:#f0f2f8}
+.cover-cap{font-size:10px;color:#ffffff;letter-spacing:1.5px;text-align:center;margin-top:6px}
 .hero-text{flex:1}
-.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
-.sec-label::after{content:'';flex:1;height:1px;background:#333}
-.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
-.rtext+.rtext{margin-top:.9rem}
-.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
-.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15)}
+.rtext{font-size:14px;color:#4a5568;line-height:1.85;font-weight:300}
+.rtext+.rtext{margin-top:.8rem}
+
+/* ABOUT */
+.about-sec{padding:1.5rem 2.5rem;border-bottom:1px solid #e8ecf4;background:#fff}
+
+/* FEAT SECTION */
+.feat-section{padding:1.5rem 2.5rem;border-bottom:1px solid #1a3a6a;background:#2a4a7a}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .feat-item:last-child{border-bottom:none}
-.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
-.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.25);letter-spacing:1px;line-height:1;width:34px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:64px;height:64px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;background:rgba(255,255,255,.05)}
 .feat-info{flex:1;min-width:0}
-.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
-.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
-.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
-.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
-.track-section{padding:0 3rem 3rem}
-.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
-.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
-.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
-.track-row:hover{background:#111}
-.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
-.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
-.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.track-artist{font-size:11px;color:#999;font-weight:300}
-.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
-.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
-.track-scrobbles.loading{color:#333;font-weight:300}
-.track-scrobbles.zero{color:#252525}
-.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
-.foot-left{font-size:11px;color:#999;letter-spacing:1px}
-.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+.feat-meta{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.feat-pill{display:inline-block;font-size:10px;color:#0d1933;border:1px solid #8aaad8;padding:1px 8px;border-radius:99px;background:#e0eaff;font-weight:600}
+.feat-year{font-size:10px;color:#7ab0ff;font-weight:700;letter-spacing:1.5px;margin-bottom:3px}
+.feat-decade{font-size:10px;color:#7ab0ff;font-weight:500;letter-spacing:1px;margin-bottom:7px}
+.feat-vocalist{font-size:11px;color:#8aaad8;font-weight:400;margin-bottom:7px}
+.feat-title{font-size:14px;font-weight:500;color:#ffffff;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#8aaad8;font-weight:300;margin-bottom:7px}
+.feat-rev{font-size:14px;color:#c8d8f0;line-height:1.8;font-weight:300}
+
+/* TRACK SECTION — con franja lateral */
+.track-section{padding:0 2.5rem 2.5rem;background:#fff}
+.section-stripe{height:4px}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.8rem 0 .65rem;border-bottom:1px solid #e8ecf4;position:sticky;top:0;background:#fff;z-index:10}
+.track-header span{font-size:10px;font-weight:600;letter-spacing:1.5px;color:#9aa3b2;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.45rem 0 .45rem 0;border-bottom:1px solid #f0f2f8;transition:background .1s;border-left:3px solid transparent;padding-left:6px}
+.track-row:hover{background:#f8f9fc;border-left-color:var(--stripe,#1a2f5a)}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1a2f5a;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:4px;border:1px solid #e0e4ee;background:#f0f2f8;display:block}
+.track-name{font-size:13px;font-weight:400;color:#0d1117;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#9aa3b2;font-weight:300}
+.track-year{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right}
+.track-decade{font-size:11px;color:#16604a;font-weight:500;text-align:center}
+.track-genre{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-country{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-sales{font-size:11px;color:#4a5568;font-weight:400;text-align:right;white-space:nowrap}
+.track-vocalist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-bassist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-drummer{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-scrobbles{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right;white-space:nowrap}
+.track-scrobbles.loading,.loading{color:#c0c8d8;font-weight:300}
+.track-scrobbles.zero,.zero{color:#dde2ee}
+
+/* FOOTER */
+.page-footer{border-top:1px solid #e8ecf4;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;background:#f8f9fc}
+.foot-left{font-size:11px;color:#9aa3b2;letter-spacing:1px}
+.foot-note{font-size:10px;color:#b0b8c8;letter-spacing:.3px}
+.foot-link{font-size:11px;color:#1a2f5a}
+.foot-link:hover{color:#0d1117}
+
 @media(max-width:640px){
-  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
-  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
-  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
-}</style>
-<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+  .page-header,.hero,.feat-section,.about-sec,.track-section,.page-footer{padding-left:1rem;padding-right:1rem}
+  .hero{flex-direction:column}
+  .cover-img{width:130px;height:130px}
+  .track-header,.track-row{grid-template-columns:34px 42px 1fr 52px}
+}
+.feat-section .sec-label{color:#7ab0ff}
+.feat-section .sec-label::after{background:rgba(255,255,255,.15)}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}
+
+
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
+<style>:root{color-scheme:light only}
+html,body{background:#fff!important;color:#0d1117!important}</style>
 </head>
 <body>
 <header class="page-header">
@@ -83,9 +135,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2011</div>
       <div class="feat-title">21</div>
       <div class="feat-artist">Adele</div>
+      <div class="feat-meta"><span class="feat-pill">2011</span></div>
       <p class="feat-rev">Adele convirtiendo el tumulto personal en un blockbuster para la eternidad. El album mas vendido de 2011 en todo el mundo — mas de 30 millones de copias. Someone Like You, Rolling in the Deep y Set Fire to the Rain como tres de las canciones mas poderosas del pop del siglo XXI, todas nacidas de una ruptura amorosa que Adele convirtio en arte universal.</p>
     </div>
   </div>
@@ -93,9 +145,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2011</div>
       <div class="feat-title">Watch the Throne</div>
       <div class="feat-artist">Jay-Z and Kanye West</div>
+      <div class="feat-meta"><span class="feat-pill">2011</span></div>
       <p class="feat-rev">Jay-Z y Kanye revolcandose en el rap de lujo con una produccion monumental. Otis, Niggas in Paris y No Church in the Wild como tres momentos donde el hip-hop se volvio opera de camara de los ricachones. El album colaborativo mas ambicioso del rap desde que el genero existe — grabado en hoteles de cinco estrellas en Paris, New York y Los Angeles.</p>
     </div>
   </div>
@@ -103,9 +155,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2011</div>
       <div class="feat-title">Born This Way</div>
       <div class="feat-artist">Lady Gaga</div>
+      <div class="feat-meta"><span class="feat-pill">2011</span></div>
       <p class="feat-rev">Lady Gaga canalizando a Bruce Springsteen en un anthem de autoaceptacion que vendio un millon de copias en cinco dias. El album mas ambicioso de Gaga hasta ese momento — 17 canciones que van del glam metal al gospel, del techno al country, todas unidas por una vision de la identidad que convirtio a Gaga en voz de una generacion LGBTQ+.</p>
     </div>
   </div>
@@ -113,9 +165,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2011</div>
       <div class="feat-title">El Camino</div>
       <div class="feat-artist">The Black Keys</div>
+      <div class="feat-meta"><span class="feat-pill">2011</span></div>
       <p class="feat-rev">El album que convirtio a The Black Keys de favoritos del indie en fenomeno de masas. Dan Auerbach y Patrick Carney con la produccion mas pulida y poderosa de su carrera — Gold on the Ceiling, Little Black Submarines y Lonely Boy como tres singles que dominaron el rock de radio de 2012. Ganador del Grammy al Mejor Album de Rock.</p>
     </div>
   </div>
@@ -123,9 +175,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2011</div>
       <div class="feat-title">The King of Limbs</div>
       <div class="feat-artist">Radiohead</div>
+      <div class="feat-meta"><span class="feat-pill">2011</span></div>
       <p class="feat-rev">Radiohead lanzandolo sin previo aviso — descargable desde su sitio web el mismo dia del anuncio. El album mas breve y mas denso de su catalogo, construido sobre ritmos de Thom Yorke inspirados en Aphex Twin y Four Tet. Lotus Flower y Codex como dos polos del disco: uno inquieto y bailable, otro quieto y devastador.</p>
     </div>
   </div>
@@ -136,7 +188,10 @@ a{color:inherit;text-decoration:none}
     <span style="text-align:right">#</span><span></span>
     <span>Album / Artista</span>
     <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
   </div>
   <div id="tracklist"></div>
 </section>
@@ -147,6 +202,7 @@ a{color:inherit;text-decoration:none}
 <script>
 var ALBUMS=[[1, "Adele", "21", 2011], [2, "Jay-Z and Kanye West", "Watch the Throne", 2011], [3, "Lady Gaga", "Born This Way", 2011], [4, "The Black Keys", "El Camino", 2011], [5, "Radiohead", "The King of Limbs", 2011], [6, "Fleet Foxes", "Helplessness Blues", 2011], [7, "Wilco", "The Whole Love", 2011], [8, "Gillian Welch", "The Harrow and the Harvest", 2011], [9, "Ryan Adams", "Ashes and Fire", 2011], [10, "M83", "Hurry Up We're Dreaming", 2011], [11, "TV on the Radio", "Nine Types of Light", 2011], [12, "Lil Wayne", "Tha Carter IV", 2011], [13, "The Civil Wars", "Barton Hollow", 2011], [14, "Nicki Minaj", "Pink Friday", 2010], [15, "Beirut", "The Rip Tide", 2011], [16, "Foo Fighters", "Wasting Light", 2011], [17, "Bon Iver", "Bon Iver", 2011], [18, "Drake", "Take Care", 2011], [19, "Tom Waits", "Bad as Me", 2011], [20, "Frank Ocean", "Nostalgia Ultra", 2011], [21, "Beyonce", "4", 2011], [22, "St. Vincent", "Strange Mercy", 2011], [23, "Florence and the Machine", "Ceremonials", 2011], [24, "Das Racist", "Relax", 2011], [25, "Pistol Annies", "Hell on Heels", 2011], [26, "Tom Morello The Nightwatchman", "World Wide Rebel Songs", 2011], [27, "Miranda Lambert", "Four the Record", 2011], [28, "Big K.R.I.T.", "Return of 4eva", 2011], [29, "Josh T. Pearson", "Last of the Country Gentlemen", 2011], [30, "SuperHeavy", "SuperHeavy", 2011], [31, "Dawes", "Nothing Is Wrong", 2011], [32, "Stephen Malkmus and the Jicks", "Mirror Traffic", 2011], [33, "Panda Bear", "Tomboy", 2011], [34, "Mastodon", "The Hunter", 2011], [35, "Kurt Vile", "Smoke Ring for My Halo", 2011], [36, "Gary Clark Jr.", "The Bright Lights EP", 2011], [37, "Little Dragon", "Ritual Union", 2011], [38, "Destroyer", "Kaputt", 2011], [39, "The Kills", "Blood Pressures", 2011], [40, "Tedeschi Trucks Band", "Revelator", 2011], [41, "Raphael Saadiq", "Stone Rollin'", 2011], [42, "White Denim", "D", 2011], [43, "PJ Harvey", "Let England Shake", 2011], [44, "Charles Bradley", "No Time for Dreaming", 2011], [45, "Wavves", "Life Sux EP", 2011], [46, "The Lonely Island", "Turtleneck and Chain", 2011]];
 var FEAT=[["fc-1", "Adele", "21"], ["fc-2", "Jay-Z and Kanye West", "Watch the Throne"], ["fc-3", "Lady Gaga", "Born This Way"], ["fc-4", "The Black Keys", "El Camino"], ["fc-5", "Radiohead", "The King of Limbs"]];
+var LIST_TYPE="albumes";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,album){
@@ -195,6 +251,107 @@ function processLfm(){
 function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
 var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
 document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+
+// ── Last.fm: genre, listeners, playcount, album ───────────────────────────
+var extraQ=[], extraBusy=false;
+function processExtra(){
+  if(extraBusy||!extraQ.length) return;
+  extraBusy=true;
+  var el=extraQ.shift();
+  var artist=el.dataset.lfmArtist||'';
+  var title=el.dataset.lfmTitle||'';
+  var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+  var method=isAlb?'album.getinfo':'track.getinfo';
+  var param=isAlb?'&album=':'&track=';
+  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+        '&api_key='+LFM_KEY+
+        '&artist='+encodeURIComponent(artist)+
+        param+encodeURIComponent(title)+'&format=json')
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var obj=d.track||d.album; if(!obj) return;
+      var row=el.closest('.track-row'); if(!row) return;
+      // Listeners
+      var lsEl=row.querySelector('.track-listeners');
+      if(lsEl&&obj.listeners){
+        var ls=parseInt(obj.listeners);
+        lsEl.textContent=ls>=1000000?(ls/1000000).toFixed(1)+'M':ls>=1000?(ls/1000).toFixed(0)+'K':ls;
+        lsEl.classList.remove('loading');
+      }
+      // Playcount
+      var pcEl=row.querySelector('.track-playcount');
+      if(pcEl&&obj.playcount){
+        var pc=parseInt(obj.playcount);
+        pcEl.textContent=pc>=1000000?(pc/1000000).toFixed(1)+'M':pc>=1000?(pc/1000).toFixed(0)+'K':pc;
+        pcEl.classList.remove('loading');
+      }
+      // Album title (canciones)
+      if(!isAlb&&obj.album&&obj.album.title){
+        var albEl=row.querySelector('.track-album');
+        if(albEl) albEl.textContent=obj.album.title;
+      }
+      // Genre
+      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      var genEl=row.querySelector('.track-genre');
+      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
+        var tags=obj.toptags.tag;
+        if(!Array.isArray(tags)) tags=[tags];
+        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
+        else{genEl.textContent='';genEl.classList.remove('loading');}
+      }
+    })
+    .catch(function(){})
+    .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
+}
+var extraObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    extraObs.unobserve(e.target);
+    extraQ.push(e.target);
+    processExtra();
+  });
+},{rootMargin:'600px'});
+document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+
+// feat pills: género desde Last.fm para items sin genre
+function loadFeatTags(){
+  document.querySelectorAll('.feat-item').forEach(function(item,idx){
+    var titleEl=item.querySelector('.feat-title');
+    var artistEl=item.querySelector('.feat-artist');
+    var metaEl=item.querySelector('.feat-meta');
+    if(!titleEl||!artistEl||!metaEl) return;
+    var pills=metaEl.querySelectorAll('.feat-pill');
+    if(pills.length>1) return;
+    var artist=artistEl.textContent.trim();
+    var title=titleEl.textContent.trim();
+    var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+    var method=isAlb?'album.getinfo':'track.getinfo';
+    var param=isAlb?'&album=':'&track=';
+    (function(m,a,ti){
+      setTimeout(function(){
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+          .then(function(r){return r.json()}).then(function(d){
+            var obj=d.track||d.album; if(!obj) return;
+            var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            if(obj.toptags&&obj.toptags.tag){
+              var tags=obj.toptags.tag;
+              if(!Array.isArray(tags)) tags=[tags];
+              var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+              valid.slice(0,2).forEach(function(t){
+                var pill=document.createElement('span');
+                pill.className='feat-pill';
+                pill.textContent=t.name.charAt(0).toUpperCase()+t.name.slice(1);
+                m.appendChild(pill);
+              });
+            }
+          }).catch(function(){});
+      },idx*300);
+    })(metaEl,artist,title);
+  });
+}
+setTimeout(loadFeatTags,800);
+
 </script>
 </body>
 </html>

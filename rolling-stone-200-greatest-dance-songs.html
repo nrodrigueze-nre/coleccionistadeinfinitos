@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light only">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>200 Greatest Dance Songs of All Time - Rolling Stone 2022</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+:root{color-scheme:light only}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0d1117;min-height:100vh}
 a{color:inherit;text-decoration:none}
-.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
-.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
-.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
-.badge-year{font-size:10px;letter-spacing:2px;color:#999}
-.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3.5vw,48px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
-.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
-.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+
+/* PAGE HEADER — azul marino fullwidth */
+.page-header{background:#1a2f5a;padding:1.5rem 2.5rem 1.4rem}
+.source-row{display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
+.badge{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.08)}
+.badge-year{font-size:10px;letter-spacing:1.5px;color:#6a90b8;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,42px);font-weight:400;letter-spacing:3px;color:#fff;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:13px;color:#8aaad8;font-weight:300;letter-spacing:.3px}
+.back-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#7ab0ff;margin-bottom:.8rem;text-decoration:none;transition:color .15s}
+.back-link:hover{color:#fff}
+.back-link svg{width:12px;height:12px}
+
+/* HERO */
+.hero{padding:1.75rem 2.5rem;display:flex;gap:2rem;align-items:flex-start;border-bottom:1px solid #e8ecf4;background:#fff}
 .cover-wrap{flex-shrink:0}
-.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
-.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.cover-img{width:160px;height:160px;object-fit:cover;border-radius:6px;border:1px solid #e0e4ee;display:block;background:#f0f2f8}
+.cover-cap{font-size:10px;color:#ffffff;letter-spacing:1.5px;text-align:center;margin-top:6px}
 .hero-text{flex:1}
-.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
-.sec-label::after{content:'';flex:1;height:1px;background:#333}
-.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
-.rtext+.rtext{margin-top:.9rem}
-.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
-.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15)}
+.rtext{font-size:14px;color:#4a5568;line-height:1.85;font-weight:300}
+.rtext+.rtext{margin-top:.8rem}
+
+/* ABOUT */
+.about-sec{padding:1.5rem 2.5rem;border-bottom:1px solid #e8ecf4;background:#fff}
+
+/* FEAT SECTION */
+.feat-section{padding:1.5rem 2.5rem;border-bottom:1px solid #1a3a6a;background:#2a4a7a}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .feat-item:last-child{border-bottom:none}
-.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
-.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.25);letter-spacing:1px;line-height:1;width:34px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:64px;height:64px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;background:rgba(255,255,255,.05)}
 .feat-info{flex:1;min-width:0}
-.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
-.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
-.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
-.track-section{padding:0 3rem 3rem}
-.track-header{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
-.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
-.track-row{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
-.track-row:hover{background:#111}
-.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
-.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
-.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.track-artist{font-size:11px;color:#999;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
-.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
-.track-scrobbles.loading{color:#333;font-weight:300}
-.track-scrobbles.zero{color:#252525}
-.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
-.foot-left{font-size:11px;color:#999;letter-spacing:1px}
-.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+.feat-meta{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.feat-pill{display:inline-block;font-size:10px;color:#0d1933;border:1px solid #8aaad8;padding:1px 8px;border-radius:99px;background:#e0eaff;font-weight:600}
+.feat-year{font-size:10px;color:#7ab0ff;font-weight:700;letter-spacing:1.5px;margin-bottom:3px}
+.feat-decade{font-size:10px;color:#7ab0ff;font-weight:500;letter-spacing:1px;margin-bottom:7px}
+.feat-vocalist{font-size:11px;color:#8aaad8;font-weight:400;margin-bottom:7px}
+.feat-title{font-size:14px;font-weight:500;color:#ffffff;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#8aaad8;font-weight:300;margin-bottom:7px}
+.feat-rev{font-size:14px;color:#c8d8f0;line-height:1.8;font-weight:300}
+
+/* TRACK SECTION — con franja lateral */
+.track-section{padding:0 2.5rem 2.5rem;background:#fff}
+.section-stripe{height:4px}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.8rem 0 .65rem;border-bottom:1px solid #e8ecf4;position:sticky;top:0;background:#fff;z-index:10}
+.track-header span{font-size:10px;font-weight:600;letter-spacing:1.5px;color:#9aa3b2;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.45rem 0 .45rem 0;border-bottom:1px solid #f0f2f8;transition:background .1s;border-left:3px solid transparent;padding-left:6px}
+.track-row:hover{background:#f8f9fc;border-left-color:var(--stripe,#1a2f5a)}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1a2f5a;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:4px;border:1px solid #e0e4ee;background:#f0f2f8;display:block}
+.track-name{font-size:13px;font-weight:400;color:#0d1117;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#9aa3b2;font-weight:300}
+.track-year{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right}
+.track-decade{font-size:11px;color:#16604a;font-weight:500;text-align:center}
+.track-genre{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-country{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-sales{font-size:11px;color:#4a5568;font-weight:400;text-align:right;white-space:nowrap}
+.track-vocalist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-bassist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-drummer{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-scrobbles{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right;white-space:nowrap}
+.track-scrobbles.loading,.loading{color:#c0c8d8;font-weight:300}
+.track-scrobbles.zero,.zero{color:#dde2ee}
+
+/* FOOTER */
+.page-footer{border-top:1px solid #e8ecf4;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;background:#f8f9fc}
+.foot-left{font-size:11px;color:#9aa3b2;letter-spacing:1px}
+.foot-note{font-size:10px;color:#b0b8c8;letter-spacing:.3px}
+.foot-link{font-size:11px;color:#1a2f5a}
+.foot-link:hover{color:#0d1117}
+
 @media(max-width:640px){
-  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
-  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
-  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
-}</style>
-<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+  .page-header,.hero,.feat-section,.about-sec,.track-section,.page-footer{padding-left:1rem;padding-right:1rem}
+  .hero{flex-direction:column}
+  .cover-img{width:130px;height:130px}
+  .track-header,.track-row{grid-template-columns:34px 42px 1fr 52px}
+}
+.feat-section .sec-label{color:#7ab0ff}
+.feat-section .sec-label::after{background:rgba(255,255,255,.15)}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}
+
+
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
+<style>:root{color-scheme:light only}
+html,body{background:#fff!important;color:#0d1117!important}</style>
 </head>
 <body>
 
@@ -86,9 +138,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1977</div>
       <div class="feat-title">I Feel Love</div>
       <div class="feat-artist">Donna Summer</div>
+      <div class="feat-meta"><span class="feat-pill">1977</span></div>
       <p class="feat-rev">La cancion mas influyente en la historia de la musica de baile — producida por Giorgio Moroder con sintetizadores Moog en lugar de una banda de sesion. Brian Eno la escucho y le dijo a David Bowie que habia cambiado el futuro de la musica de pop. Cuatro decadas de techno, house, EDM y musica de club electronica empezaron aqui.</p>
     </div>
   </div>
@@ -96,9 +148,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2000</div>
       <div class="feat-title">One More Time</div>
       <div class="feat-artist">Daft Punk</div>
+      <div class="feat-meta"><span class="feat-pill">2000</span></div>
       <p class="feat-rev">El tema que demostro que la musica de baile podia ser emotiva sin ser cursi. Romanthony cantando con voz vocodeada sobre un loop de sample de Edwin Birdsong — la produccion de Daft Punk convirtiendo algo irresistiblemente alegre en algo casi espiritual. La cancion dance francesa mas importante despues de I Feel Love.</p>
     </div>
   </div>
@@ -106,9 +158,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1979</div>
       <div class="feat-title">Good Times</div>
       <div class="feat-artist">Chic</div>
+      <div class="feat-meta"><span class="feat-pill">1979</span></div>
       <p class="feat-rev">El riff de bajo de Bernard Edwards que definio el hip-hop — Rapper's Delight de Sugarhill Gang lo sampled directamente. Nile Rodgers y Edwards construyeron el groove mas optimista del disco sobre la base de las guitarras de funk mas elegantes jamas grabadas. La despedida perfecta a los 70s y el fundamento del decenio siguiente.</p>
     </div>
   </div>
@@ -116,9 +168,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1986</div>
       <div class="feat-title">Your Love</div>
       <div class="feat-artist">Frankie Knuckles and Jamie Principle</div>
+      <div class="feat-meta"><span class="feat-pill">1986</span></div>
       <p class="feat-rev">El house music en su forma mas pura: grabado en el apartamento de Jamie Principle en Chicago en 1984, circulo como cinta de cassette en el Warehouse de Frankie Knuckles durante dos anos antes de ser lanzado. La voz de Principle sobre la produccion de Knuckles es el documento fundador de la musica de baile moderna.</p>
     </div>
   </div>
@@ -126,9 +178,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1982</div>
       <div class="feat-title">Last Night a DJ Saved My Life</div>
       <div class="feat-artist">Indeep</div>
+      <div class="feat-meta"><span class="feat-pill">1982</span></div>
       <p class="feat-rev">El himno definitivo del poder transformador de la musica de baile — el DJ como sacerdote, el club como iglesia. Michael Cleveland y Reginald Foresythe grabaron lo que se convertiria en uno de los singles mas importantes del proto-house y el proto-rave, antes de que existieran esas palabras para describir lo que hacian.</p>
     </div>
   </div>
@@ -136,9 +188,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1983</div>
       <div class="feat-title">Let the Music Play</div>
       <div class="feat-artist">Shannon</div>
+      <div class="feat-meta"><span class="feat-pill">1983</span></div>
       <p class="feat-rev">El primer hit de freestyle — producido por Chris Barbosa y Ed Chisolm en Nueva York con sintetizadores baratos y una caja de ritmos. Cuando sonaba en el aeropuerto JFK en 1983 la gente empezaba a bailar en las puertas de embarque. El punto de partida de toda la musica latina de baile electronica que vino despues.</p>
     </div>
   </div>
@@ -146,9 +198,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2010</div>
       <div class="feat-title">Dancing on My Own</div>
       <div class="feat-artist">Robyn</div>
+      <div class="feat-meta"><span class="feat-pill">2010</span></div>
       <p class="feat-rev">La mejor cancion de desamor del siglo XXI — y una de las mejores canciones dance de todos los tiempos. Robyn en un club viendo a su ex con otra persona, bailando sola en vez de irse a casa a llorar. La produccion de Patrik Berger con ese sintetizador de arpegio es el sonido del corazon roto con dignidad total.</p>
     </div>
   </div>
@@ -156,9 +208,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1986</div>
       <div class="feat-title">Move Your Body (The House Music Anthem)</div>
       <div class="feat-artist">Marshall Jefferson</div>
+      <div class="feat-meta"><span class="feat-pill">1986</span></div>
       <p class="feat-rev">La primera cancion house con piano — y la que le dio al genero su nombre en el titulo. Marshall Jefferson era empleado del correo en Chicago cuando produjo el himno definitivo del house musical de Chicago. El piano gospel sobre una drum machine Roland TR-909 definio lo que house significaria para siempre.</p>
     </div>
   </div>
@@ -166,9 +218,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1992</div>
       <div class="feat-title">Show Me Love</div>
       <div class="feat-artist">Robin S.</div>
+      <div class="feat-meta"><span class="feat-pill">1992</span></div>
       <p class="feat-rev">El vocal house mas grande de los 90s — producida por Allen George y Fred McFarlane en Nueva York. La voz de Robin Stone es pura potencia gospel sobre un groove house que se fue haciendo mas conocido ano tras ano. Robyn la versioneo en 2019 como tributo y homenaje a su influencia definitoria.</p>
     </div>
   </div>
@@ -176,9 +228,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2013</div>
       <div class="feat-title">Latch</div>
       <div class="feat-artist">Disclosure feat. Sam Smith</div>
+      <div class="feat-meta"><span class="feat-pill">2013</span></div>
       <p class="feat-rev">El momento en que la musica de garaje britanica volvio al mainstream global — los hermanos Guy y Howard Lawrence de Disclosure con Sam Smith en lo que seria su primer hit. Una produccion inmaculada que combine los ganchos del pop con la arquitectura del deep house de los 90s. Lanzo dos carreras de golpe.</p>
     </div>
   </div>
@@ -191,7 +243,10 @@ a{color:inherit;text-decoration:none}
     <span></span>
     <span>Cancion / Artista</span>
     <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
   </div>
   <div id="tracklist"></div>
 </section>
@@ -204,6 +259,7 @@ a{color:inherit;text-decoration:none}
 <script>
 var SONGS=[[1, "Donna Summer", "I Feel Love", 1977], [2, "Daft Punk", "One More Time", 2000], [3, "Chic", "Good Times", 1979], [4, "Frankie Knuckles and Jamie Principle", "Your Love", 1986], [5, "Indeep", "Last Night a DJ Saved My Life", 1982], [6, "Shannon", "Let the Music Play", 1983], [7, "Robyn", "Dancing on My Own", 2010], [8, "Marshall Jefferson", "Move Your Body (The House Music Anthem)", 1986], [9, "Robin S.", "Show Me Love", 1992], [10, "Disclosure feat. Sam Smith", "Latch", 2013], [11, "Madonna", "Vogue", 1990], [12, "Kraftwerk", "Trans-Europe Express", 1977], [13, "First Choice", "Let No Man Put Asunder", 1977], [14, "Adonis", "No Way Back", 1986], [15, "James Brown", "Get on the Good Foot", 1972], [16, "Rihanna feat. Calvin Harris", "We Found Love", 2011], [17, "Beltram", "Energy Flash", 1990], [18, "New Order", "Blue Monday", 1983], [19, "Prince", "Controversy", 1981], [20, "Kylie Minogue", "Can't Get You Out of My Head", 2001], [21, "Lil Louis", "French Kiss", 1989], [22, "DJ Snake feat. Lil Jon", "Turn Down for What", 2013], [23, "Daft Punk", "Da Funk", 1995], [24, "Model 500", "Night Drive (Time Space Transmat)", 1985], [25, "Parliament", "Flash Light", 1977], [26, "Tom Tom Club", "Genius of Love", 1981], [27, "Chaka Khan", "I'm Every Woman", 1978], [28, "John FM", "Where They At", 2019], [29, "Bjork", "Hyperballad", 1996], [30, "Kaytranada", "Lite Spots", 2016], [31, "Incredible Bongo Band", "Apache", 1973], [32, "The Chemical Brothers", "Chemical Beats", 1995], [33, "Rhythim Is Rhythim", "Strings of Life", 1987], [34, "Sister Sledge", "We Are Family", 1979], [35, "Manu Dibango", "Soul Makossa", 1972], [36, "Eric B and Rakim", "Paid in Full (Coldcut Remix)", 1988], [37, "Deee-Lite", "Groove Is in the Heart", 1990], [38, "Underground Resistance", "Transition", 2002], [39, "Sylvester", "You Make Me Feel (Mighty Real)", 1978], [40, "SOPHIE", "Immaterial", 2018], [41, "Frankie Knuckles feat. Jamie Principle", "Baby Wants to Ride", 1987], [42, "Nero", "Promises", 2011], [43, "Gloria Gaynor", "I Will Survive", 1978], [44, "Inner City", "Good Life", 1988], [45, "Diana Ross", "I'm Coming Out", 1980], [46, "Azealia Banks feat. Lazy Jay", "212", 2011], [47, "KH (Four Tet)", "Only Human", 2019], [48, "Moodymann", "Don't You Want My Love", 2000], [49, "Zebra Katz feat. Njena Redd Foxxx", "Ima Read (MikeQ Remix)", 2012], [50, "Paperclip People", "Throw", 1994], [51, "Whitney Houston", "I Wanna Dance with Somebody (Who Loves Me)", 1987], [52, "Crystal Waters", "Gypsy Woman", 1991], [53, "Ten City", "That's the Way Love Is", 1989], [54, "Larry Heard", "Can You Feel It", 1986], [55, "Frankie Knuckles", "Your Love (feat. Jamie Principle)", 1986], [56, "Marshall Jefferson", "Move Your Body (The House Music Anthem)", 1986], [57, "Alicia Myers", "I Want to Thank You", 1981], [58, "Cerrone", "Supernature", 1977], [59, "Sylvester", "Dance (Disco Heat)", 1978], [60, "Carl Bean", "I Was Born This Way", 1975], [61, "Labelle", "Lady Marmalade", 1974], [62, "Barry White", "Never Never Gonna Give Ya Up", 1974], [63, "The Trammps", "Disco Inferno", 1976], [64, "Donna Summer feat. Brooklyn Dreams", "Heaven Knows", 1979], [65, "MFSB feat. The Three Degrees", "TSOP (The Sound of Philadelphia)", 1973], [66, "Harold Melvin and the Blue Notes", "The Love I Lost", 1973], [67, "Phreek", "Weekend", 1978], [68, "Chic", "Good Times", 1979], [69, "First Choice", "Armed and Extremely Dangerous", 1973], [70, "Odyssey", "Native New Yorker", 1977], [71, "Evelyn Champagne King", "Shame", 1977], [72, "Teddy Pendergrass", "Turn Off the Lights", 1979], [73, "James Brown", "I Got You (I Feel Good)", 1965], [74, "Earth Wind and Fire", "Boogie Wonderland", 1979], [75, "KC and the Sunshine Band", "(Shake, Shake, Shake) Shake Your Booty", 1976], [76, "Hues Corporation", "Rock the Boat", 1974], [77, "Gloria Gaynor", "Never Can Say Goodbye", 1974], [78, "Diana Ross", "Upside Down", 1980], [79, "Michael Jackson", "Billy Jean", 1983], [80, "Village People", "YMCA", 1978], [81, "Donna Summer", "I Love You", 1977], [82, "Bee Gees", "Stayin' Alive", 1977], [83, "Chic", "Le Freak", 1978], [84, "Blondie", "Heart of Glass", 1979], [85, "Grace Jones", "Pull Up to the Bumper", 1981], [86, "Talking Heads", "Once in a Lifetime", 1980], [87, "David Bowie", "Let's Dance", 1983], [88, "Cyndi Lauper", "Girls Just Want to Have Fun", 1983], [89, "A-ha", "Take On Me", 1985], [90, "Pet Shop Boys", "West End Girls", 1984], [91, "New Order", "True Faith", 1987], [92, "Wham!", "Wake Me Up Before You Go-Go", 1984], [93, "Michael Jackson", "Thriller", 1982], [94, "George Michael", "Faith", 1987], [95, "Rick Astley", "Never Gonna Give You Up", 1987], [96, "Tears for Fears", "Everybody Wants to Rule the World", 1985], [97, "Cocteau Twins", "Heaven or Las Vegas", 1990], [98, "Fleetwood Mac", "Everywhere", 1987], [99, "James Blake", "Limit to Your Love", 2010], [100, "The xx", "Intro", 2009], [101, "Beyonce", "Lemonade (Formation)", 2016], [102, "Drake", "Hotline Bling", 2015], [103, "Rihanna feat. Calvin Harris", "We Found Love", 2011], [104, "Nicki Minaj", "Super Bass", 2010], [105, "Charli XCX", "Boom Clap", 2014], [106, "Lorde", "Royals", 2013], [107, "Cardi B feat. Bad Bunny and J Balvin", "I Like It", 2018], [108, "Childish Gambino", "This Is America", 2018], [109, "Bruno Mars", "Finesse (Remix) feat. Cardi B", 2018], [110, "Justin Bieber feat. Luis Fonsi and Daddy Yankee", "Despacito (Remix)", 2017], [111, "Drake", "One Dance", 2016], [112, "DaBaby feat. Roddy Ricch", "Rockstar", 2020], [113, "Cardi B", "WAP", 2020], [114, "Dua Lipa", "Levitating", 2020], [115, "Lady Gaga", "Bad Romance", 2009], [116, "Taylor Swift", "Shake It Off", 2014], [117, "Beyonce", "Love on Top", 2011], [118, "Lizzo", "Juice", 2019], [119, "Whitney Houston", "I Wanna Dance with Somebody", 1987], [120, "Donna Summer", "Hot Stuff", 1979], [121, "Beyonce", "Crazy in Love", 2003], [122, "Rihanna", "Umbrella", 2007], [123, "Madonna", "Like a Prayer", 1989], [124, "Sade", "Smooth Operator", 1984], [125, "Chaka Khan", "Ain't Nobody", 1983], [126, "Michael Jackson", "Don't Stop 'Til You Get Enough", 1979], [127, "Grace Jones", "Slave to the Rhythm", 1985], [128, "Nadia Oh", "Hot Like Wow", 2008], [129, "Donna Summer", "Bad Girls", 1979], [130, "Daft Punk", "Around the World", 1997], [131, "Goldie", "Inner City Life", 1994], [132, "Derrick May", "Strings of Life", 1987], [133, "MK", "Always", 1993], [134, "Romanthony", "Hold On (In the Morning)", 1994], [135, "Carl Craig", "At Les", 1995], [136, "Metro Area", "Miura", 2002], [137, "Deadmau5 and Kaskade", "I Remember", 2008], [138, "Basement Jaxx", "Where's Your Head At", 2001], [139, "Britney Spears", "Till the World Ends", 2011], [140, "Madonna", "Sorry", 2005], [141, "Lil Jon feat. Ying Yang Twins", "Get Low", 2002], [142, "Corona", "The Rhythm of the Night", 1993], [143, "The KLF", "What Time Is Love (Live at Trancentral)", 1990], [144, "Sasha & John Digweed", "Xpander", 1999], [145, "Whitney Houston", "It's Not Right but It's Okay (Thunderpuss 2000 Wash & Go Mix)", 1999], [146, "A Guy Called Gerald", "Voodoo Ray", 1988], [147, "Crystal Waters", "Gypsy Woman (She's Homeless)", 1991], [148, "Prince", "When Doves Cry", 1984], [149, "Janet Jackson", "The Pleasure Principle", 1987], [150, "Candi Staton", "Young Hearts Run Free", 1976], [151, "The Human League", "Don't You Want Me", 1981], [152, "Moloko", "Sing It Back (Boris Musical Mix)", 1997], [153, "Squarepusher", "My Red Hot Car", 2001], [154, "Shakira", "Ojos Asi (Thunder Mix)", 1999], [155, "LCD Soundsystem", "Losing My Edge", 2002], [156, "Tom and Jerry", "Maximum Style", 1994], [157, "El General", "Perezosa", 1995], [158, "George McCrae", "Rock Your Baby", 1974], [159, "Aly-Us", "Follow Me", 1992], [160, "Roland Clark", "I Get Deep (Shelter Mix)", 2000], [161, "Drake", "Sticky", 2022], [162, "LFO", "LFO (Leeds Warehouse Mix)", 1990], [163, "Bronski Beat", "Smalltown Boy", 1984], [164, "Nitzer Ebb", "Join in the Chant", 1987], [165, "Ten City", "That's the Way Love Is", 1989], [166, "Paul Johnson", "Feel My M.F. Bass", 1994], [167, "Skream", "Midnight Request Line", 2005], [168, "Polygon Window", "Quoth", 1993], [169, "The Orb", "Little Fluffy Clouds", 1990], [170, "Soft Cell", "Tainted Love / Where Did Our Love Go", 1981], [171, "Tate Kobang", "Bank Rolls (Remix)", 2015], [172, "Debbie Deb", "Lookout Weekend", 1984], [173, "Martin Garrix", "Animals", 2013], [174, "Justice vs. Simian", "We Are Your Friends", 2006], [175, "Mat Zo and Porter Robinson", "Easy", 2013], [176, "Daft Punk feat. Pharrell Williams and Nile Rodgers", "Get Lucky", 2013], [177, "Evelyn Thomas", "High Energy", 1984], [178, "Funkadelic", "One Nation Under a Groove", 1978], [179, "Patrick Cowley feat. Sylvester", "Do Ya Wanna Funk", 1982], [180, "Dntel feat. Ben Gibbard", "This Is the Dream of Evan and Chan (Superpitcher Remix)", 2001], [181, "Felix da Housecat", "Silver Screen Shower Scene", 2001], [182, "Soul II Soul", "Back to Life (However Do You Want Me)", 1989], [183, "Roni Size and Reprazent", "Brown Paper Bag", 1997], [184, "TNGHT", "Higher Ground", 2012], [185, "The Rapture", "House of Jealous Lovers", 2002], [186, "Todd Terje", "Inspector Norse", 2012], [187, "DJ Frosty feat. Fatman Scoop", "Ride That Wave (Remix)", 2010], [188, "Snap!", "The Power", 1990], [189, "Double 99", "RIP Groove", 1997], [190, "La Roux", "In for the Kill (Skream Remix)", 2009], [191, "ESG", "Moody", 1981], [192, "Joy Orbison", "Hyph Mngo", 2009], [193, "Big Freedia", "Azz Everywhere", 2010], [194, "Black Box", "Everybody Everybody", 1990], [195, "Detroit Grand Pubahs", "Sandwiches", 2000], [196, "Kerri Chandler", "Rain", 1998], [197, "Oliver Heldens", "Melody", 2016], [198, "Mescalinum United", "We Have Arrived", 1991], [199, "Fatboy Slim", "The Rockafeller Skank", 1998], [200, "Donna Summer", "Last Dance", 1979]];
 var FEAT=[["fc-1", "Donna Summer", "I Feel Love"], ["fc-2", "Daft Punk", "One More Time"], ["fc-3", "Chic", "Good Times"], ["fc-4", "Frankie Knuckles and Jamie Principle", "Your Love"], ["fc-5", "Indeep", "Last Night a DJ Saved My Life"], ["fc-6", "Shannon", "Let the Music Play"], ["fc-7", "Robyn", "Dancing on My Own"], ["fc-8", "Marshall Jefferson", "Move Your Body (The House Music Anthem)"], ["fc-9", "Robin S.", "Show Me Love"], ["fc-10", "Disclosure feat. Sam Smith", "Latch"]];
+var LIST_TYPE="canciones";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,track){
@@ -252,6 +308,107 @@ function processLfm(){
 function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
 var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
 document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+
+// ── Last.fm: genre, listeners, playcount, album ───────────────────────────
+var extraQ=[], extraBusy=false;
+function processExtra(){
+  if(extraBusy||!extraQ.length) return;
+  extraBusy=true;
+  var el=extraQ.shift();
+  var artist=el.dataset.lfmArtist||'';
+  var title=el.dataset.lfmTitle||'';
+  var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+  var method=isAlb?'album.getinfo':'track.getinfo';
+  var param=isAlb?'&album=':'&track=';
+  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+        '&api_key='+LFM_KEY+
+        '&artist='+encodeURIComponent(artist)+
+        param+encodeURIComponent(title)+'&format=json')
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var obj=d.track||d.album; if(!obj) return;
+      var row=el.closest('.track-row'); if(!row) return;
+      // Listeners
+      var lsEl=row.querySelector('.track-listeners');
+      if(lsEl&&obj.listeners){
+        var ls=parseInt(obj.listeners);
+        lsEl.textContent=ls>=1000000?(ls/1000000).toFixed(1)+'M':ls>=1000?(ls/1000).toFixed(0)+'K':ls;
+        lsEl.classList.remove('loading');
+      }
+      // Playcount
+      var pcEl=row.querySelector('.track-playcount');
+      if(pcEl&&obj.playcount){
+        var pc=parseInt(obj.playcount);
+        pcEl.textContent=pc>=1000000?(pc/1000000).toFixed(1)+'M':pc>=1000?(pc/1000).toFixed(0)+'K':pc;
+        pcEl.classList.remove('loading');
+      }
+      // Album title (canciones)
+      if(!isAlb&&obj.album&&obj.album.title){
+        var albEl=row.querySelector('.track-album');
+        if(albEl) albEl.textContent=obj.album.title;
+      }
+      // Genre
+      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      var genEl=row.querySelector('.track-genre');
+      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
+        var tags=obj.toptags.tag;
+        if(!Array.isArray(tags)) tags=[tags];
+        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
+        else{genEl.textContent='';genEl.classList.remove('loading');}
+      }
+    })
+    .catch(function(){})
+    .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
+}
+var extraObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    extraObs.unobserve(e.target);
+    extraQ.push(e.target);
+    processExtra();
+  });
+},{rootMargin:'600px'});
+document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+
+// feat pills: género desde Last.fm para items sin genre
+function loadFeatTags(){
+  document.querySelectorAll('.feat-item').forEach(function(item,idx){
+    var titleEl=item.querySelector('.feat-title');
+    var artistEl=item.querySelector('.feat-artist');
+    var metaEl=item.querySelector('.feat-meta');
+    if(!titleEl||!artistEl||!metaEl) return;
+    var pills=metaEl.querySelectorAll('.feat-pill');
+    if(pills.length>1) return;
+    var artist=artistEl.textContent.trim();
+    var title=titleEl.textContent.trim();
+    var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+    var method=isAlb?'album.getinfo':'track.getinfo';
+    var param=isAlb?'&album=':'&track=';
+    (function(m,a,ti){
+      setTimeout(function(){
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+          .then(function(r){return r.json()}).then(function(d){
+            var obj=d.track||d.album; if(!obj) return;
+            var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            if(obj.toptags&&obj.toptags.tag){
+              var tags=obj.toptags.tag;
+              if(!Array.isArray(tags)) tags=[tags];
+              var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+              valid.slice(0,2).forEach(function(t){
+                var pill=document.createElement('span');
+                pill.className='feat-pill';
+                pill.textContent=t.name.charAt(0).toUpperCase()+t.name.slice(1);
+                m.appendChild(pill);
+              });
+            }
+          }).catch(function(){});
+      },idx*300);
+    })(metaEl,artist,title);
+  });
+}
+setTimeout(loadFeatTags,800);
+
 </script>
 </body>
 </html>

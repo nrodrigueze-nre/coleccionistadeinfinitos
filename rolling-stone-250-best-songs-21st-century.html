@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light only">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>250 Greatest Songs of the 21st Century - Rolling Stone Oct 2025</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+:root{color-scheme:light only}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0d1117;min-height:100vh}
 a{color:inherit;text-decoration:none}
-.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
-.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
-.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
-.badge-year{font-size:10px;letter-spacing:2px;color:#999}
-.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
-.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
-.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+
+/* PAGE HEADER — azul marino fullwidth */
+.page-header{background:#1a2f5a;padding:1.5rem 2.5rem 1.4rem}
+.source-row{display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
+.badge{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.08)}
+.badge-year{font-size:10px;letter-spacing:1.5px;color:#6a90b8;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,42px);font-weight:400;letter-spacing:3px;color:#fff;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:13px;color:#8aaad8;font-weight:300;letter-spacing:.3px}
+.back-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#7ab0ff;margin-bottom:.8rem;text-decoration:none;transition:color .15s}
+.back-link:hover{color:#fff}
+.back-link svg{width:12px;height:12px}
+
+/* HERO */
+.hero{padding:1.75rem 2.5rem;display:flex;gap:2rem;align-items:flex-start;border-bottom:1px solid #e8ecf4;background:#fff}
 .cover-wrap{flex-shrink:0}
-.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
-.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.cover-img{width:160px;height:160px;object-fit:cover;border-radius:6px;border:1px solid #e0e4ee;display:block;background:#f0f2f8}
+.cover-cap{font-size:10px;color:#ffffff;letter-spacing:1.5px;text-align:center;margin-top:6px}
 .hero-text{flex:1}
-.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
-.sec-label::after{content:'';flex:1;height:1px;background:#333}
-.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
-.rtext+.rtext{margin-top:.9rem}
-.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
-.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15)}
+.rtext{font-size:14px;color:#4a5568;line-height:1.85;font-weight:300}
+.rtext+.rtext{margin-top:.8rem}
+
+/* ABOUT */
+.about-sec{padding:1.5rem 2.5rem;border-bottom:1px solid #e8ecf4;background:#fff}
+
+/* FEAT SECTION */
+.feat-section{padding:1.5rem 2.5rem;border-bottom:1px solid #1a3a6a;background:#2a4a7a}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .feat-item:last-child{border-bottom:none}
-.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
-.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.25);letter-spacing:1px;line-height:1;width:34px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:64px;height:64px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;background:rgba(255,255,255,.05)}
 .feat-info{flex:1;min-width:0}
-.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
-.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
-.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
-.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
-.track-section{padding:0 3rem 3rem}
-.track-header{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
-.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
-.track-row{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
-.track-row:hover{background:#111}
-.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
-.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
-.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.track-artist{font-size:11px;color:#999;font-weight:300}
-.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
-.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
-.track-scrobbles.loading{color:#333;font-weight:300}
-.track-scrobbles.zero{color:#252525}
-.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
-.foot-left{font-size:11px;color:#999;letter-spacing:1px}
-.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+.feat-meta{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.feat-pill{display:inline-block;font-size:10px;color:#0d1933;border:1px solid #8aaad8;padding:1px 8px;border-radius:99px;background:#e0eaff;font-weight:600}
+.feat-year{font-size:10px;color:#7ab0ff;font-weight:700;letter-spacing:1.5px;margin-bottom:3px}
+.feat-decade{font-size:10px;color:#7ab0ff;font-weight:500;letter-spacing:1px;margin-bottom:7px}
+.feat-vocalist{font-size:11px;color:#8aaad8;font-weight:400;margin-bottom:7px}
+.feat-title{font-size:14px;font-weight:500;color:#ffffff;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#8aaad8;font-weight:300;margin-bottom:7px}
+.feat-rev{font-size:14px;color:#c8d8f0;line-height:1.8;font-weight:300}
+
+/* TRACK SECTION — con franja lateral */
+.track-section{padding:0 2.5rem 2.5rem;background:#fff}
+.section-stripe{height:4px}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.8rem 0 .65rem;border-bottom:1px solid #e8ecf4;position:sticky;top:0;background:#fff;z-index:10}
+.track-header span{font-size:10px;font-weight:600;letter-spacing:1.5px;color:#9aa3b2;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.45rem 0 .45rem 0;border-bottom:1px solid #f0f2f8;transition:background .1s;border-left:3px solid transparent;padding-left:6px}
+.track-row:hover{background:#f8f9fc;border-left-color:var(--stripe,#1a2f5a)}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1a2f5a;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:4px;border:1px solid #e0e4ee;background:#f0f2f8;display:block}
+.track-name{font-size:13px;font-weight:400;color:#0d1117;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#9aa3b2;font-weight:300}
+.track-year{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right}
+.track-decade{font-size:11px;color:#16604a;font-weight:500;text-align:center}
+.track-genre{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-country{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-sales{font-size:11px;color:#4a5568;font-weight:400;text-align:right;white-space:nowrap}
+.track-vocalist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-bassist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-drummer{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-scrobbles{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right;white-space:nowrap}
+.track-scrobbles.loading,.loading{color:#c0c8d8;font-weight:300}
+.track-scrobbles.zero,.zero{color:#dde2ee}
+
+/* FOOTER */
+.page-footer{border-top:1px solid #e8ecf4;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;background:#f8f9fc}
+.foot-left{font-size:11px;color:#9aa3b2;letter-spacing:1px}
+.foot-note{font-size:10px;color:#b0b8c8;letter-spacing:.3px}
+.foot-link{font-size:11px;color:#1a2f5a}
+.foot-link:hover{color:#0d1117}
+
 @media(max-width:640px){
-  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
-  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
-  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
-}</style>
-<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+  .page-header,.hero,.feat-section,.about-sec,.track-section,.page-footer{padding-left:1rem;padding-right:1rem}
+  .hero{flex-direction:column}
+  .cover-img{width:130px;height:130px}
+  .track-header,.track-row{grid-template-columns:34px 42px 1fr 52px}
+}
+.feat-section .sec-label{color:#7ab0ff}
+.feat-section .sec-label::after{background:rgba(255,255,255,.15)}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}
+
+
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
+<style>:root{color-scheme:light only}
+html,body{background:#fff!important;color:#0d1117!important}</style>
 </head>
 <body>
 
@@ -86,9 +138,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2001</div>
       <div class="feat-title">Get Ur Freak On</div>
       <div class="feat-artist">Missy Elliott</div>
+      <div class="feat-meta"><span class="feat-pill">2001</span></div>
       <p class="feat-rev">Todo lo vibrante, inventivo y cool del pop del siglo XXI esta aqui. Missy Elliott y Timbaland en su momento mas radical — bhangra, tablas, beats computerizados y la voz de Missy sonando como si el futuro ya hubiera llegado. El #1 de Rolling Stone en su lista de las 250 mejores canciones del siglo. La propia Missy: 'Get Ur Freak On casi no entra en mi album — menos mal que si lo hizo.'</p>
     </div>
   </div>
@@ -96,9 +148,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2003</div>
       <div class="feat-title">Maps</div>
       <div class="feat-artist">Yeah Yeah Yeahs</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span></div>
       <p class="feat-rev">La cancion de amor mas desgarrada del indie rock de los 2000s — Karen O escribiendola para su novio mientras el perdio el avion para llegar al estudio de grabacion. Maps es cinco letras que significan 'My Angus Please Stay'. Una sola guitarra, un bajo de otro planeta y una voz que suena como si el mundo fuera a acabarse. La cancion que definio el sonido del rock alternativo de los 2000s.</p>
     </div>
   </div>
@@ -106,9 +158,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2003</div>
       <div class="feat-title">Crazy in Love</div>
       <div class="feat-artist">Beyonce feat. Jay-Z</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span></div>
       <p class="feat-rev">La advertencia al mundo pop de que Beyonce la solista habia llegado oficialmente. El sample del Chi-Lites, los metales de la intro, el rap de Jay-Z y una voz que redefinion lo que significaba ser una superestrella del pop. Crazy in Love es el momento en que el pop y el hip-hop se fusionaron definitivamente — y Beyonce se convirtio en el artista mas importante de su generacion.</p>
     </div>
   </div>
@@ -116,9 +168,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2003</div>
       <div class="feat-title">Seven Nation Army</div>
       <div class="feat-artist">The White Stripes</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span></div>
       <p class="feat-rev">El riff de guitarra mas reconocible del siglo XXI — confundido por millones de personas con un bajo, tocado con un slide en una guitarra con octavador. Jack White grabando en Detroit uno de los dos instrumentos del duo, Meg White en la bateria. El grito de guerra de estadios de futbol de todo el mundo: Whoa-oh-oh-oh-oh-oh-oh. Ningun riff de guitarra desde los 70s ha tenido tanto alcance global.</p>
     </div>
   </div>
@@ -126,9 +178,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2012</div>
       <div class="feat-title">All Too Well</div>
       <div class="feat-artist">Taylor Swift</div>
+      <div class="feat-meta"><span class="feat-pill">2012</span></div>
       <p class="feat-rev">El himno de ruptura mas duro, crudo y apasionado de Taylor Swift — no fue single hasta que lanzo la version de 10 minutos en 2021, momento en que conquisto el #1 en charts. La cancion sobre Jake Gyllenhaal que se convirtio en el centro de gravedad del Eras Tour. Un ejemplo perfecto de como Swift convirtio su vida personal en arte universal sin perder ni un gramo de especificidad emocional.</p>
     </div>
   </div>
@@ -136,9 +188,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2010</div>
       <div class="feat-title">Dancing on My Own</div>
       <div class="feat-artist">Robyn</div>
+      <div class="feat-meta"><span class="feat-pill">2010</span></div>
       <p class="feat-rev">La disco mas triste del siglo — Robyn observando a su ex bailar con otra persona en un club de Estocolmo. Una cancion sobre la humillacion publica del duelo amoroso que suena como si quieres bailar y llorar al mismo tiempo. Dancing on My Own redefinio lo que el pop europeo podia hacer: vulnerable, especifico, universal. Quince anos despues sigue siendo la cancion perfecta.</p>
     </div>
   </div>
@@ -146,9 +198,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2015</div>
       <div class="feat-title">Alright</div>
       <div class="feat-artist">Kendrick Lamar</div>
+      <div class="feat-meta"><span class="feat-pill">2015</span></div>
       <p class="feat-rev">El nuevo 'We Shall Overcome' — el grito de batalla del movimiento Black Lives Matter. Producida por Pharrell, del album To Pimp a Butterfly, Alright llego en un momento de oscuridad y ofrecio conexion y comunidad. 'We gon be alright' coreado en las protestas de todo Estados Unidos. La cancion mas importante del hip-hop de la decada de los 2010s como declaracion politica.</p>
     </div>
   </div>
@@ -156,9 +208,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2000</div>
       <div class="feat-title">Idioteque</div>
       <div class="feat-artist">Radiohead</div>
+      <div class="feat-meta"><span class="feat-pill">2000</span></div>
       <p class="feat-rev">El apocalipsis bailable — muestras de una pieza de musica computarizada de los 70s convertida en el fin del mundo mas cool imaginable. Thom Yorke haciendo que el doom sonara glamuroso. 'I'll laugh until my head comes off' cantado sobre beats que no existian antes en el rock. Se convirtio en un clasico en vivo de la banda — la version en directo es incluso mas electrizante.</p>
     </div>
   </div>
@@ -166,9 +218,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2003</div>
       <div class="feat-title">Toxic</div>
       <div class="feat-artist">Britney Spears</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span></div>
       <p class="feat-rev">La Britney definitiva — nunca sono tan atrevida, tan segura, tan ella misma. Cuerdas de Bollywood, guitarra de Surf, produccion de desastre total y la voz de Britney en su punto mas preciso. Toxic es la cancion que convirtio a Britney Spears de estrella teen en artista de verdad. El video del avion es una de las mejores actuaciones visuales del pop del siglo.</p>
     </div>
   </div>
@@ -176,9 +228,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">2012</div>
       <div class="feat-title">Thinkin Bout You</div>
       <div class="feat-artist">Frank Ocean</div>
+      <div class="feat-meta"><span class="feat-pill">2012</span></div>
       <p class="feat-rev">El momento en que Channel Orange abrio con algo completamente inesperado: una balada sintetizada, vulnerable y perfectamente construida. Frank Ocean revelando su queerness en una letra de amor que no especifica el genero del objeto del deseo. Una de las canciones mas emocionalmente inteligentes del R&B del siglo — la intro de un album que cambio lo que el genero podia ser.</p>
     </div>
   </div>
@@ -191,7 +243,10 @@ a{color:inherit;text-decoration:none}
     <span></span>
     <span>Cancion / Artista</span>
     <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
   </div>
   <div id="tracklist"></div>
 </section>
@@ -204,6 +259,7 @@ a{color:inherit;text-decoration:none}
 <script>
 var SONGS=[[1, "Missy Elliott", "Get Ur Freak On", 2001], [2, "Yeah Yeah Yeahs", "Maps", 2003], [3, "Beyonce feat. Jay-Z", "Crazy in Love", 2003], [4, "The White Stripes", "Seven Nation Army", 2003], [5, "Taylor Swift", "All Too Well", 2012], [6, "Robyn", "Dancing on My Own", 2010], [7, "Kendrick Lamar", "Alright", 2015], [8, "Radiohead", "Idioteque", 2000], [9, "Britney Spears", "Toxic", 2003], [10, "Frank Ocean", "Thinkin Bout You", 2012], [11, "Bad Bunny", "Safaera", 2020], [12, "The Strokes", "Last Night", 2001], [13, "SZA", "Snooze", 2022], [14, "Daddy Yankee", "Gasolina", 2004], [15, "OutKast", "B.O.B.", 2000], [16, "Mariah Carey", "We Belong Together", 2005], [17, "Drake", "Hotline Bling", 2015], [18, "Billie Eilish", "Bad Guy", 2019], [19, "Adele", "Someone Like You", 2011], [20, "Steve Lacy", "Bad Habit", 2022], [21, "Lady Gaga", "Bad Romance", 2009], [22, "Wizkid feat. Tems", "Essence", 2020], [23, "Chappell Roan", "Pink Pony Club", 2023], [24, "D'Angelo", "Untitled (How Does It Feel)", 2000], [25, "Jay-Z", "99 Problems", 2003], [26, "Beyonce", "Lemonade", 2016], [27, "Kendrick Lamar", "HUMBLE.", 2017], [28, "Taylor Swift", "Shake It Off", 2014], [29, "Kanye West", "Jesus Walks", 2004], [30, "Rihanna", "We Found Love", 2011], [31, "Lorde", "Royals", 2013], [32, "Amy Winehouse", "Rehab", 2006], [33, "LCD Soundsystem", "All My Friends", 2007], [34, "Arcade Fire", "Wake Up", 2004], [35, "Beyonce", "Formation", 2016], [36, "Taylor Swift", "Blank Space", 2014], [37, "Kanye West", "Gold Digger", 2005], [38, "Nicki Minaj", "Super Bass", 2011], [39, "Sufjan Stevens", "Death With Dignity", 2015], [40, "Bon Iver", "Skinny Love", 2008], [41, "Cardi B feat. Bad Bunny and J Balvin", "I Like It", 2018], [42, "Kendrick Lamar", "DNA.", 2017], [43, "SZA", "Good Days", 2020], [44, "Haim", "The Wire", 2013], [45, "Olivia Rodrigo", "drivers license", 2021], [46, "Billie Eilish", "Ocean Eyes", 2016], [47, "Post Malone feat. 21 Savage", "Rockstar", 2017], [48, "Solange", "Cranes in the Sky", 2016], [49, "Taylor Swift", "Love Story", 2008], [50, "Doja Cat feat. SZA", "Kiss Me More", 2021], [51, "Lil Nas X", "Old Town Road", 2019], [52, "Childish Gambino", "This Is America", 2018], [53, "Tyler the Creator", "See You Again", 2017], [54, "Vampire Weekend", "Oxford Comma", 2008], [55, "FKA twigs", "Two Weeks", 2014], [56, "Jay-Z and Kanye West", "Niggas in Paris", 2011], [57, "Lana Del Rey", "Video Games", 2011], [58, "M.I.A.", "Paper Planes", 2007], [59, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [60, "Phoebe Bridgers", "Savior Complex", 2020], [61, "Rihanna", "Umbrella", 2007], [62, "Harry Styles", "As It Was", 2022], [63, "Burna Boy", "Anybody", 2019], [64, "Kendrick Lamar", "money trees", 2012], [65, "Jack White", "Seven Nation Army", 2003], [66, "Lizzo", "Truth Hurts", 2017], [67, "Mitski", "Nobody", 2018], [68, "Janelle Monae", "Tightrope", 2010], [69, "Kanye West feat. Rihanna and Kid Cudi", "All of the Lights", 2010], [70, "Taylor Swift", "Red", 2012], [71, "Bad Bunny", "MIA", 2018], [72, "Billie Eilish", "Happier Than Ever", 2021], [73, "Florence and the Machine", "Dog Days Are Over", 2009], [74, "Carly Rae Jepsen", "Run Away with Me", 2015], [75, "Tame Impala", "Let It Happen", 2015], [76, "Adele", "Rolling in the Deep", 2010], [77, "Frank Ocean", "Pyramids", 2012], [78, "Kanye West", "Runaway", 2010], [79, "Rosalia", "Con Altura", 2019], [80, "Drake", "Started From the Bottom", 2013], [81, "Lorde", "Green Light", 2017], [82, "Weyes Blood", "Movies", 2019], [83, "Dua Lipa", "Levitating", 2020], [84, "Stromae", "Papaoutai", 2013], [85, "Kacey Musgraves", "Rainbow", 2018], [86, "OutKast", "Hey Ya!", 2003], [87, "Post Malone and Swae Lee", "Sunflower", 2018], [88, "Tyla", "Water", 2023], [89, "Bleachers", "I Wanna Get Better", 2014], [90, "Mac Miller", "2009", 2018], [91, "Beyonce", "Single Ladies", 2008], [92, "The National", "Bloodbuzz Ohio", 2010], [93, "Alabama Shakes", "Hold On", 2012], [94, "Coldplay", "The Scientist", 2002], [95, "Ariana Grande", "thank u next", 2018], [96, "LCD Soundsystem", "Losing My Edge", 2002], [97, "Vampire Weekend", "A-Punk", 2008], [98, "Angel Olsen", "Shut Up Kiss Me", 2016], [99, "Kendrick Lamar", "MAAD City", 2012], [100, "Wilco", "Jesus Etc.", 2001], [101, "NewJeans", "Hype Boy", 2022], [102, "Green Day", "Jesus of Suburbia", 2004], [103, "Pop Smoke", "Welcome to the Party", 2019], [104, "Original Koffee", "Toast", 2019], [105, "Rauw Alejandro", "Todo de Ti", 2021], [106, "Aventura feat. Don Omar", "Ella y Yo", 2005], [107, "Ashlee Simpson", "Pieces of Me", 2004], [108, "Rich Gang feat. Young Thug and Rich Homie Quan", "Lifestyle", 2014], [109, "Old Crow Medicine Show", "Wagon Wheel", 2004], [110, "Ke$ha", "Tik Tok", 2009], [111, "Father John Misty", "Holy Shit", 2015], [112, "T-Pain", "I'm Sprung", 2005], [113, "Rich Boy feat. Polow Da Don", "Throw Some D's", 2007], [114, "The Mountain Goats", "No Children", 2002], [115, "Doja Cat feat. SZA", "Kiss Me More", 2021], [116, "Taylor Swift", "Love Story", 2008], [117, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [118, "Aventura feat. Don Omar", "Ella y Yo", 2005], [119, "Ashlee Simpson", "Pieces of Me", 2004], [120, "The Hold Steady", "Killer Parties", 2004], [121, "Rema", "Woman", 2022], [122, "Tyler Childers", "Feathered Indians", 2017], [123, "5 Seconds of Summer", "Youngblood", 2018], [124, "Bright Eyes", "First Day of My Life", 2005], [125, "The Knife", "Heartbeats", 2002], [126, "J Balvin and Willy William", "Mi Gente", 2017], [127, "John Prine", "Summer's End", 2018], [128, "Tems", "Free Mind", 2020], [129, "Florida Georgia Line", "Cruise", 2012], [130, "Mastodon", "Blood and Thunder", 2004], [131, "Old 97's", "Rollerskate Skinny", 2001], [132, "Shaboozey", "A Bar Song (Tipsy)", 2024], [133, "Foo Fighters", "Times Like These", 2002], [134, "Tego Calderon", "Pa Que Retozen", 2002], [135, "Warren Zevon", "Keep Me in Your Heart", 2003], [136, "Davido feat. Musa Keys", "Unavailable", 2023], [137, "Scarface", "My Block", 2002], [138, "Wheatus", "Teenage Dirtbag", 2000], [139, "Fleet Foxes", "Tiger Mountain Peasant Song", 2008], [140, "Avicii", "Levels", 2011], [141, "Tweet", "Oops (Oh My)", 2002], [142, "Train", "Drops of Jupiter", 2001], [143, "Skrillex feat. Sirah", "Bangarang", 2012], [144, "Kid Cudi", "Day N Nite", 2009], [145, "Alabama Shakes", "Hold On", 2012], [146, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [147, "Lorde", "Ribs", 2013], [148, "Bad Bunny", "Yo Perreo Sola", 2020], [149, "SZA", "Ctrl", 2017], [150, "Beyonce", "Drunk in Love", 2013], [151, "Cardi B", "Bodak Yellow", 2017], [152, "Kanye West", "Power", 2010], [153, "St. Vincent", "New York", 2017], [154, "Mitski", "Your Best American Girl", 2016], [155, "Charli XCX", "360", 2024], [156, "Olivia Rodrigo", "good 4 u", 2021], [157, "Rihanna", "Diamonds", 2012], [158, "Bon Iver", "Holocene", 2011], [159, "Kendrick Lamar", "Not Like Us", 2024], [160, "Tyler the Creator", "EARFQUAKE", 2019], [161, "Kanye West", "Ultralight Beam", 2016], [162, "Big Thief", "Not", 2019], [163, "Phoebe Bridgers", "Funeral", 2017], [164, "Drake", "God's Plan", 2018], [165, "Taylor Swift", "cardigan", 2020], [166, "Arcade Fire", "The Suburbs", 2010], [167, "LCD Soundsystem", "Dance Yrself Clean", 2010], [168, "Florence and the Machine", "Cosmic Love", 2009], [169, "Janelle Monae", "Q.U.E.E.N.", 2013], [170, "Lana Del Rey", "Summertime Sadness", 2012], [171, "Dua Lipa", "Don't Start Now", 2019], [172, "Billie Eilish", "when the party's over", 2018], [173, "Sufjan Stevens", "Death With Dignity", 2015], [174, "Vampire Weekend", "Hannah Hunt", 2013], [175, "The National", "Mr. November", 2005], [176, "Frank Ocean", "Lost", 2012], [177, "Rosalia", "Malamente", 2017], [178, "Kanye West", "Hey Mama", 2005], [179, "Amy Winehouse", "Valerie", 2006], [180, "Nicki Minaj", "Anaconda", 2014], [181, "Taylor Swift", "Style", 2014], [182, "Beach House", "Space Song", 2015], [183, "Carly Rae Jepsen", "Call Me Maybe", 2011], [184, "Lady Gaga", "Poker Face", 2008], [185, "Ariana Grande", "Problem", 2014], [186, "Ed Sheeran", "Shape of You", 2017], [187, "BTS", "Dynamite", 2020], [188, "Lizzo", "Juice", 2019], [189, "Adele", "Hello", 2015], [190, "Post Malone", "Circles", 2019], [191, "Harry Styles", "Watermelon Sugar", 2019], [192, "Doja Cat", "Say So", 2019], [193, "SZA", "Kill Bill", 2022], [194, "Kendrick Lamar", "Swimming Pools (Drank)", 2012], [195, "Tyler the Creator", "New Magic Wand", 2019], [196, "Weyes Blood", "Andromeda", 2019], [197, "Angel Olsen", "Intern", 2014], [198, "Caroline Polachek", "Door", 2023], [199, "Tierra Whack", "Cable Guy", 2018], [200, "Courtney Barnett", "Pedestrian at Best", 2015], [201, "Rauw Alejandro", "Todo de Ti", 2021], [202, "Aventura feat. Don Omar", "Ella y Yo", 2005], [203, "Ashlee Simpson", "Pieces of Me", 2004], [204, "Rich Gang feat. Young Thug and Rich Homie Quan", "Lifestyle", 2014], [205, "NewJeans", "Hype Boy", 2022], [206, "Green Day", "Jesus of Suburbia", 2004], [207, "Pop Smoke", "Welcome to the Party", 2019], [208, "Original Koffee", "Toast", 2019], [209, "Tems", "Free Mind", 2020], [210, "Florida Georgia Line", "Cruise", 2012], [211, "Mastodon", "Blood and Thunder", 2004], [212, "Old 97's", "Rollerskate Skinny", 2001], [213, "Shaboozey", "A Bar Song (Tipsy)", 2024], [214, "Foo Fighters", "Times Like These", 2002], [215, "Tego Calderon", "Pa Que Retozen", 2002], [216, "Warren Zevon", "Keep Me in Your Heart", 2003], [217, "Davido feat. Musa Keys", "Unavailable", 2023], [218, "Scarface", "My Block", 2002], [219, "Wheatus", "Teenage Dirtbag", 2000], [220, "Fleet Foxes", "Tiger Mountain Peasant Song", 2008], [221, "Avicii", "Levels", 2011], [222, "Tweet", "Oops (Oh My)", 2002], [223, "Train", "Drops of Jupiter", 2001], [224, "Skrillex feat. Sirah", "Bangarang", 2012], [225, "Kid Cudi", "Day N Nite", 2009], [226, "Rema", "Woman", 2022], [227, "Tyler Childers", "Feathered Indians", 2017], [228, "5 Seconds of Summer", "Youngblood", 2018], [229, "Bright Eyes", "First Day of My Life", 2005], [230, "The Knife", "Heartbeats", 2002], [231, "J Balvin and Willy William", "Mi Gente", 2017], [232, "John Prine", "Summer's End", 2018], [233, "Father John Misty", "Holy Shit", 2015], [234, "T-Pain", "I'm Sprung", 2005], [235, "Rich Boy feat. Polow Da Don", "Throw Some D's", 2007], [236, "The Mountain Goats", "No Children", 2002], [237, "Ke$ha", "Tik Tok", 2009], [238, "The Hold Steady", "Killer Parties", 2004], [239, "Taylor Swift", "Love Story", 2008], [240, "Doja Cat feat. SZA", "Kiss Me More", 2021], [241, "Bleachers", "I Wanna Get Better", 2014], [242, "Mac Miller", "2009", 2018], [243, "Kanye West feat. Rihanna and Kid Cudi", "All of the Lights", 2010], [244, "Paul Simon", "Rewrite", 2011], [245, "Old Crow Medicine Show", "Wagon Wheel", 2004], [246, "Lizzo", "Truth Hurts", 2017], [247, "The Hold Steady", "Killer Parties", 2004], [248, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [249, "Alabama Shakes", "Hold On", 2012], [250, "Train", "Drops of Jupiter", 2001]];
 var FEAT=[["fc-1", "Missy Elliott", "Get Ur Freak On"], ["fc-2", "Yeah Yeah Yeahs", "Maps"], ["fc-3", "Beyonce feat. Jay-Z", "Crazy in Love"], ["fc-4", "The White Stripes", "Seven Nation Army"], ["fc-5", "Taylor Swift", "All Too Well"], ["fc-6", "Robyn", "Dancing on My Own"], ["fc-7", "Kendrick Lamar", "Alright"], ["fc-8", "Radiohead", "Idioteque"], ["fc-9", "Britney Spears", "Toxic"], ["fc-10", "Frank Ocean", "Thinkin Bout You"]];
+var LIST_TYPE="canciones";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,track){
@@ -252,6 +308,107 @@ function processLfm(){
 function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
 var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
 document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+
+// ── Last.fm: genre, listeners, playcount, album ───────────────────────────
+var extraQ=[], extraBusy=false;
+function processExtra(){
+  if(extraBusy||!extraQ.length) return;
+  extraBusy=true;
+  var el=extraQ.shift();
+  var artist=el.dataset.lfmArtist||'';
+  var title=el.dataset.lfmTitle||'';
+  var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+  var method=isAlb?'album.getinfo':'track.getinfo';
+  var param=isAlb?'&album=':'&track=';
+  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+        '&api_key='+LFM_KEY+
+        '&artist='+encodeURIComponent(artist)+
+        param+encodeURIComponent(title)+'&format=json')
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var obj=d.track||d.album; if(!obj) return;
+      var row=el.closest('.track-row'); if(!row) return;
+      // Listeners
+      var lsEl=row.querySelector('.track-listeners');
+      if(lsEl&&obj.listeners){
+        var ls=parseInt(obj.listeners);
+        lsEl.textContent=ls>=1000000?(ls/1000000).toFixed(1)+'M':ls>=1000?(ls/1000).toFixed(0)+'K':ls;
+        lsEl.classList.remove('loading');
+      }
+      // Playcount
+      var pcEl=row.querySelector('.track-playcount');
+      if(pcEl&&obj.playcount){
+        var pc=parseInt(obj.playcount);
+        pcEl.textContent=pc>=1000000?(pc/1000000).toFixed(1)+'M':pc>=1000?(pc/1000).toFixed(0)+'K':pc;
+        pcEl.classList.remove('loading');
+      }
+      // Album title (canciones)
+      if(!isAlb&&obj.album&&obj.album.title){
+        var albEl=row.querySelector('.track-album');
+        if(albEl) albEl.textContent=obj.album.title;
+      }
+      // Genre
+      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      var genEl=row.querySelector('.track-genre');
+      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
+        var tags=obj.toptags.tag;
+        if(!Array.isArray(tags)) tags=[tags];
+        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
+        else{genEl.textContent='';genEl.classList.remove('loading');}
+      }
+    })
+    .catch(function(){})
+    .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
+}
+var extraObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    extraObs.unobserve(e.target);
+    extraQ.push(e.target);
+    processExtra();
+  });
+},{rootMargin:'600px'});
+document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+
+// feat pills: género desde Last.fm para items sin genre
+function loadFeatTags(){
+  document.querySelectorAll('.feat-item').forEach(function(item,idx){
+    var titleEl=item.querySelector('.feat-title');
+    var artistEl=item.querySelector('.feat-artist');
+    var metaEl=item.querySelector('.feat-meta');
+    if(!titleEl||!artistEl||!metaEl) return;
+    var pills=metaEl.querySelectorAll('.feat-pill');
+    if(pills.length>1) return;
+    var artist=artistEl.textContent.trim();
+    var title=titleEl.textContent.trim();
+    var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+    var method=isAlb?'album.getinfo':'track.getinfo';
+    var param=isAlb?'&album=':'&track=';
+    (function(m,a,ti){
+      setTimeout(function(){
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+          .then(function(r){return r.json()}).then(function(d){
+            var obj=d.track||d.album; if(!obj) return;
+            var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            if(obj.toptags&&obj.toptags.tag){
+              var tags=obj.toptags.tag;
+              if(!Array.isArray(tags)) tags=[tags];
+              var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+              valid.slice(0,2).forEach(function(t){
+                var pill=document.createElement('span');
+                pill.className='feat-pill';
+                pill.textContent=t.name.charAt(0).toUpperCase()+t.name.slice(1);
+                m.appendChild(pill);
+              });
+            }
+          }).catch(function(){});
+      },idx*300);
+    })(metaEl,artist,title);
+  });
+}
+setTimeout(loadFeatTags,800);
+
 </script>
 </body>
 </html>

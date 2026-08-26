@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light only">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>250 Discos de la Musica Iberoamericana - Revista Al Borde / RateYourMusic</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:#0c0c0c;color:#e0dbd0;min-height:100vh}
+:root{color-scheme:light only}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0d1117;min-height:100vh}
 a{color:inherit;text-decoration:none}
-.page-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #1c1c1c}
-.source-row{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
-.badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#ccc;border:1px solid #555;padding:3px 12px;border-radius:99px}
-.badge-year{font-size:10px;letter-spacing:2px;color:#999}
-.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,44px);font-weight:400;letter-spacing:3px;color:#ede8dc;line-height:1;display:block;margin-bottom:.4rem}
-.page-sub{font-size:12px;color:#aaa;font-weight:300;letter-spacing:.4px}
-.hero{padding:2.5rem 3rem;display:flex;gap:2.5rem;align-items:flex-start;border-bottom:1px solid #1c1c1c}
+
+/* PAGE HEADER — azul marino fullwidth */
+.page-header{background:#1a2f5a;padding:1.5rem 2.5rem 1.4rem}
+.source-row{display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
+.badge{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.08)}
+.badge-year{font-size:10px;letter-spacing:1.5px;color:#6a90b8;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,42px);font-weight:400;letter-spacing:3px;color:#fff;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:13px;color:#8aaad8;font-weight:300;letter-spacing:.3px}
+.back-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#7ab0ff;margin-bottom:.8rem;text-decoration:none;transition:color .15s}
+.back-link:hover{color:#fff}
+.back-link svg{width:12px;height:12px}
+
+/* HERO */
+.hero{padding:1.75rem 2.5rem;display:flex;gap:2rem;align-items:flex-start;border-bottom:1px solid #e8ecf4;background:#fff}
 .cover-wrap{flex-shrink:0}
-.cover-img{width:170px;height:170px;object-fit:cover;border-radius:5px;border:1px solid #2a2a2a;display:block;background:#141414}
-.cover-cap{font-size:10px;color:#999;letter-spacing:1.5px;text-align:center;margin-top:7px}
+.cover-img{width:160px;height:160px;object-fit:cover;border-radius:6px;border:1px solid #e0e4ee;display:block;background:#f0f2f8}
+.cover-cap{font-size:10px;color:#ffffff;letter-spacing:1.5px;text-align:center;margin-top:6px}
 .hero-text{flex:1}
-.sec-label{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#aaa;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
-.sec-label::after{content:'';flex:1;height:1px;background:#333}
-.rtext{font-size:13.5px;color:#ccc;line-height:1.9;font-weight:300}
-.rtext+.rtext{margin-top:.9rem}
-.feat-section{padding:2rem 3rem;border-bottom:1px solid #1c1c1c}
-.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid #181818}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15)}
+.rtext{font-size:14px;color:#4a5568;line-height:1.85;font-weight:300}
+.rtext+.rtext{margin-top:.8rem}
+
+/* ABOUT */
+.about-sec{padding:1.5rem 2.5rem;border-bottom:1px solid #e8ecf4;background:#fff}
+
+/* FEAT SECTION */
+.feat-section{padding:1.5rem 2.5rem;border-bottom:1px solid #1a3a6a;background:#2a4a7a}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .feat-item:last-child{border-bottom:none}
-.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#555;letter-spacing:1px;line-height:1;width:36px;text-align:right;flex-shrink:0;padding-top:4px}
-.feat-cover{width:66px;height:66px;object-fit:cover;border-radius:4px;border:1px solid #2a2a2a;flex-shrink:0;background:#141414}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.25);letter-spacing:1px;line-height:1;width:34px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:64px;height:64px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;background:rgba(255,255,255,.05)}
 .feat-info{flex:1;min-width:0}
-.feat-year{font-size:10px;color:#c8a86a;font-weight:600;letter-spacing:1.5px;margin-bottom:3px}
-.feat-title{font-size:14px;font-weight:500;color:#eee;margin-bottom:1px}
-.feat-artist{font-size:12px;color:#bbb;font-weight:300;margin-bottom:8px}
-.feat-rev{font-size:13px;color:#bbb;line-height:1.78;font-weight:300}
-.track-section{padding:0 3rem 3rem}
-.track-header{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.9rem 0 .75rem;border-bottom:1px solid #1c1c1c;position:sticky;top:0;background:#0c0c0c;z-index:10}
-.track-header span{font-size:10px;font-weight:500;letter-spacing:1.5px;color:#999;text-transform:uppercase}
-.track-row{display:grid;grid-template-columns:50px 54px 1fr 52px 80px;gap:1rem;align-items:center;padding:.55rem 0;border-bottom:1px solid #191919}
-.track-row:hover{background:#111}
-.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#444;text-align:right;letter-spacing:1px;line-height:1}
-.track-cover{width:46px;height:46px;object-fit:cover;border-radius:3px;border:1px solid #2a2a2a;background:#131313;display:block}
-.track-name{font-size:12.5px;font-weight:400;color:#e0dbd0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.track-artist{font-size:11px;color:#999;font-weight:300}
-.track-year{font-size:11px;color:#c8a86a;font-weight:500;text-align:right}
-.track-scrobbles{font-size:11px;color:#c8a86a;font-weight:500;text-align:right;white-space:nowrap}
-.track-scrobbles.loading{color:#333;font-weight:300}
-.track-scrobbles.zero{color:#252525}
-.page-footer{border-top:1px solid #181818;padding:1.4rem 3rem;display:flex;justify-content:space-between}
-.foot-left{font-size:11px;color:#999;letter-spacing:1px}
-.foot-link{font-size:11px;color:#aaa}.foot-link:hover{color:#c8a86a}
+.feat-meta{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.feat-pill{display:inline-block;font-size:10px;color:#0d1933;border:1px solid #8aaad8;padding:1px 8px;border-radius:99px;background:#e0eaff;font-weight:600}
+.feat-year{font-size:10px;color:#7ab0ff;font-weight:700;letter-spacing:1.5px;margin-bottom:3px}
+.feat-decade{font-size:10px;color:#7ab0ff;font-weight:500;letter-spacing:1px;margin-bottom:7px}
+.feat-vocalist{font-size:11px;color:#8aaad8;font-weight:400;margin-bottom:7px}
+.feat-title{font-size:14px;font-weight:500;color:#ffffff;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#8aaad8;font-weight:300;margin-bottom:7px}
+.feat-rev{font-size:14px;color:#c8d8f0;line-height:1.8;font-weight:300}
+
+/* TRACK SECTION — con franja lateral */
+.track-section{padding:0 2.5rem 2.5rem;background:#fff}
+.section-stripe{height:4px}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.8rem 0 .65rem;border-bottom:1px solid #e8ecf4;position:sticky;top:0;background:#fff;z-index:10}
+.track-header span{font-size:10px;font-weight:600;letter-spacing:1.5px;color:#9aa3b2;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.45rem 0 .45rem 0;border-bottom:1px solid #f0f2f8;transition:background .1s;border-left:3px solid transparent;padding-left:6px}
+.track-row:hover{background:#f8f9fc;border-left-color:var(--stripe,#1a2f5a)}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1a2f5a;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:4px;border:1px solid #e0e4ee;background:#f0f2f8;display:block}
+.track-name{font-size:13px;font-weight:400;color:#0d1117;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#9aa3b2;font-weight:300}
+.track-year{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right}
+.track-decade{font-size:11px;color:#16604a;font-weight:500;text-align:center}
+.track-genre{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-country{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-sales{font-size:11px;color:#4a5568;font-weight:400;text-align:right;white-space:nowrap}
+.track-vocalist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-bassist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-drummer{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-scrobbles{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right;white-space:nowrap}
+.track-scrobbles.loading,.loading{color:#c0c8d8;font-weight:300}
+.track-scrobbles.zero,.zero{color:#dde2ee}
+
+/* FOOTER */
+.page-footer{border-top:1px solid #e8ecf4;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;background:#f8f9fc}
+.foot-left{font-size:11px;color:#9aa3b2;letter-spacing:1px}
+.foot-note{font-size:10px;color:#b0b8c8;letter-spacing:.3px}
+.foot-link{font-size:11px;color:#1a2f5a}
+.foot-link:hover{color:#0d1117}
+
 @media(max-width:640px){
-  .page-header,.hero,.feat-section,.track-section,.page-footer{padding-left:1.25rem;padding-right:1.25rem}
-  .hero{flex-direction:column}.cover-img{width:140px;height:140px}
-  .track-header,.track-row{grid-template-columns:36px 44px 1fr 44px}
-}</style>
-<style>:root{color-scheme:dark!important}html,body{background:#0c0c0c!important;color:#e0dbd0!important}</style>
+  .page-header,.hero,.feat-section,.about-sec,.track-section,.page-footer{padding-left:1rem;padding-right:1rem}
+  .hero{flex-direction:column}
+  .cover-img{width:130px;height:130px}
+  .track-header,.track-row{grid-template-columns:34px 42px 1fr 52px}
+}
+.feat-section .sec-label{color:#7ab0ff}
+.feat-section .sec-label::after{background:rgba(255,255,255,.15)}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}
+
+
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
+<style>:root{color-scheme:light only}
+html,body{background:#fff!important;color:#0d1117!important}</style>
 </head>
 <body>
 
@@ -86,9 +138,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1994</div>
       <div class="feat-title">Re</div>
       <div class="feat-artist">Cafe Tacvba</div>
+      <div class="feat-meta"><span class="feat-pill">1994</span></div>
       <p class="feat-rev">El album mas importante del rock latinoamericano segun esta lista compilada por la revista Al Borde. Cafe Tacvba en su momento de mayor audacia: cumbia, folklore mexicano, noise, bolero y punk en un solo disco sin concesion alguna al formato. Chilanga banda, La ingrata, El metro y Eres en el mismo LP. El disco que demostro que el rock en castellano podia ser tan ambicioso como cualquier cosa que llegara del norte.</p>
     </div>
   </div>
@@ -96,9 +148,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1990</div>
       <div class="feat-title">Cancion animal</div>
       <div class="feat-artist">Soda Stereo</div>
+      <div class="feat-meta"><span class="feat-pill">1990</span></div>
       <p class="feat-rev">El album que consagro a Soda Stereo como la banda mas grande de Argentina y probablemente de toda America Latina. Gustavo Cerati en el punto exacto entre la accesibilidad y la complejidad — un disco de rock con estribillos inmediatos y una produccion que todavia suena al futuro. De musica ligera, Cancion animal, Te hacen falta vitaminas y Primavera 0 como cuatro canciones perfectas en el mismo LP.</p>
     </div>
   </div>
@@ -106,9 +158,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1983</div>
       <div class="feat-title">Clics modernos</div>
       <div class="feat-artist">Charly Garcia</div>
+      <div class="feat-meta"><span class="feat-pill">1983</span></div>
       <p class="feat-rev">El album que modernizo el rock argentino de un solo golpe — grabado en Nueva York con el productor Peter Gabriel, Charly Garcia incorporando los sintetizadores y el produccion new wave al rock nacional. Nos siguen pegando abajo, No bombardeen Buenos Aires y Parte del aire son tres de las canciones mas importantes del rock en castellano. Grabado un ano despues de la Guerra de las Malvinas.</p>
     </div>
   </div>
@@ -116,9 +168,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1998</div>
       <div class="feat-title">Clandestino</div>
       <div class="feat-artist">Manu Chao</div>
+      <div class="feat-meta"><span class="feat-pill">1998</span></div>
       <p class="feat-rev">El disco mas vendido de la historia del rock en espanol fuera del mundo hispano. Manu Chao — frances, hijo de gallegos — mezclando el flamenco, la cumbia, el reggae y el ska en un disco que sono a todo el mundo a la vez. Clandestino, Bienvenida a Tijuana y Me llaman calle como tres himnos de la emigracion y la identidad transnacional. Vendio mas de 4 millones de copias.</p>
     </div>
   </div>
@@ -126,9 +178,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1990</div>
       <div class="feat-title">Senderos de traicion</div>
       <div class="feat-artist">Heroes del Silencio</div>
+      <div class="feat-meta"><span class="feat-pill">1990</span></div>
       <p class="feat-rev">El album que llevo el rock español al estadio — literalmente. Heroes del Silencio con una produccion cinematica y unas guitarras que sonaban a John Woo en la pantalla grande. El aguila defecto y Entre dos tierras como himnos de una generacion espanola que encontro en el rock de Zaragoza su identidad cultural. El disco que hizo de Heroes la banda de rock en castellano con mayor presencia fuera del mundo hispano.</p>
     </div>
   </div>
@@ -136,9 +188,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1994</div>
       <div class="feat-title">Casa Babylon</div>
       <div class="feat-artist">Mano Negra</div>
+      <div class="feat-meta"><span class="feat-pill">1994</span></div>
       <p class="feat-rev">El ultimo album de Mano Negra — y el mejor. La banda de Manu Chao mezclando el rock, el reggae, el rap y la musica arabe con una energia de apocalipsis festivo que ningun otro grupo habia intentado. Grabado durante una gira en barco por el Rio Magdalena en Colombia. Casa Babylon es un disco que suena como si el mundo acabara esta noche y hubiera que bailarlo de todos modos.</p>
     </div>
   </div>
@@ -146,9 +198,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1993</div>
       <div class="feat-title">Vasos vacios</div>
       <div class="feat-artist">Los Fabulosos Cadillacs</div>
+      <div class="feat-meta"><span class="feat-pill">1993</span></div>
       <p class="feat-rev">El disco que llevo a los Cadillacs del underground bonaerense al mundo entero. Ska, reggae, punk y rocksteady en el punto mas perfecto de su carrera. Matador — inspirada en el asesinato de un militante del FSLN por la Contra nicaraguense — se convirtio en el himno politico del rock latino de los 90s. Ganaron el Grammy Latino al Mejor Album de Rock en 1994.</p>
     </div>
   </div>
@@ -156,9 +208,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1997</div>
       <div class="feat-title">Donde jugaran las ninas</div>
       <div class="feat-artist">Molotov</div>
+      <div class="feat-meta"><span class="feat-pill">1997</span></div>
       <p class="feat-rev">El debut mas explosivo del rock mexicano desde El Tri. Gimme tha Power, Puto y Frijolero como tres canciones que definieron lo que el rap-metal en espanol podia ser cuando tenia algo que decir. La critica al sistema politico mexicano en el año en que el PRI seguia gobernando. Vendio mas de dos millones de copias sin radio y sin MTV — solo por boca a boca y conciertos.</p>
     </div>
   </div>
@@ -166,9 +218,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1995</div>
       <div class="feat-title">El Dorado</div>
       <div class="feat-artist">Aterciopelados</div>
+      <div class="feat-meta"><span class="feat-pill">1995</span></div>
       <p class="feat-rev">El disco que cambio el rock colombiano para siempre. Andrea Echeverri y Hector Buitrago convirtiendo elementos de la cultura popular colombiana en rock de clase mundial. Sus videos mostraban pollerias, buses viejos y mercados coloridos. America Latina de verdad. El titulo hace referencia tanto al mito de la ciudad de oro como a la idea de que Colombia es ella misma un tesoro sin descubrir.</p>
     </div>
   </div>
@@ -176,9 +228,9 @@ a{color:inherit;text-decoration:none}
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="">
     <div class="feat-info">
-      <div class="feat-year">1970</div>
       <div class="feat-title">Almendra</div>
       <div class="feat-artist">Almendra</div>
+      <div class="feat-meta"><span class="feat-pill">1970</span></div>
       <p class="feat-rev">El album fundacional del rock argentino — Luis Alberto Spinetta con 19 anos inventando el lenguaje del rock en castellano. Muchacha ojos de papel es la primera gran cancion del rock latinoamericano: la melodia mas delicada que el rock habia intentado hasta ese momento, con una letra que habla de amor con una sensibilidad que el rock anglosajón no conocia. El punto de partida de todo.</p>
     </div>
   </div>
@@ -191,7 +243,10 @@ a{color:inherit;text-decoration:none}
     <span></span>
     <span>Album / Artista</span>
     <span style="text-align:right">Ano</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
   </div>
   <div id="tracklist"></div>
 </section>
@@ -204,6 +259,7 @@ a{color:inherit;text-decoration:none}
 <script>
 var ALBUMS=[[1, "Café Tacvba", "Re", 1994], [2, "Soda Stereo", "Canción animal", 1990], [3, "Charly García", "Clics modernos", 1983], [4, "Manu Chao", "Clandestino", 1998], [5, "Héroes del Silencio", "Senderos de traición", 1990], [6, "Mano Negra", "Casa Babylon", 1994], [7, "Los Fabulosos Cadillacs", "Vasos vacíos", 1993], [8, "Molotov", "¿Dónde jugarán las niñas?", 1997], [9, "Aterciopelados", "El Dorado", 1995], [10, "Almendra", "Almendra", 1970], [11, "Santana", "Abraxas", 1970], [12, "Café Tacvba", "Cuatro caminos", 2003], [13, "Manu Chao", "...Próxima estación... Esperanza", 2001], [14, "Maldita Vecindad y los Hijos del Quinto Patio", "El circo", 1991], [15, "Soda Stereo", "Comfort y música para volar", 1996], [16, "Sui Generis", "Vida", 2005], [17, "Barón Rojo", "Volumen brutal", 1984], [18, "Caifanes", "Caifanes Vol. 2 [El Diablito]", 1990], [19, "Mano Negra", "Puta's Fever", 1989], [20, "Andrés Calamaro", "Alta suciedad", 1997], [21, "Os Mutantes", "Os Mutantes", 1968], [22, "Mecano", "Descanso dominical", 1988], [23, "Café Tacvba", "Avalancha de éxitos", 1996], [24, "Los Jaivas", "Alturas de Machu Pichu", 1981], [25, "Puya", "Fundamental", 1999], [26, "Serú Girán", "Serú Girán", 1978], [27, "Juanes", "Un día normal", 2002], [28, "Raul Seixas", "Gita", 1974], [29, "Vox Dei", "La Biblia", 1971], [30, "Mecano", "Entre el cielo y el suelo", 1986], [31, "La Revolución de Emiliano Zapata", "La Revolución de Emiliano Zapata", 1971], [32, "Babasónicos", "Infame", 2003], [33, "Manal", "Manal", 1970], [34, "Héroes del Silencio", "Avalancha", 1995], [35, "Fito Páez", "El amor después del amor", 1992], [36, "Los Brincos", "Los Brincos", 1964], [37, "Jarabe de Palo", "La flaca", 1996], [38, "Los Rodríguez", "Sin documentos", 1993], [39, "Dug Dug's", "Smog", 1973], [40, "Soda Stereo", "Signos", 1986], [41, "Soda Stereo", "Sueño Stereo", 1995], [42, "Rata Blanca", "Magos, espadas y rosas", 1990], [43, "Triana", "El patio", 1975], [44, "Los Toreros Muertos", "30 años de éxitos", 1986], [45, "Alaska y Dinarama", "Deseo carnal", 1984], [46, "Charly García", "Piano Bar", 1984], [47, "El Ritual", "El Ritual", 1971], [48, "Joaquín Sabina", "Malas compañías", 1980], [49, "Los Gatos", "Los Gatos", 1967], [50, "Almendra", "Almendra", 1970], [51, "Los Teen Tops", "Rock en español con Los Teen Tops", 1960], [52, "Fobia", "Amor chiquito", 1996], [53, "Ozomatli", "Street Signs", 2004], [54, "Los Prisioneros", "Corazones", 1990], [55, "Patricio Rey y Sus Redonditos de Ricota", "Oktubre", 1986], [56, "Los Amigos Invisibles", "The New Sound of the Venezuelan Gozadera", 1998], [57, "Tequila", "Viva Tequila!", 1980], [58, "Botellita de Jerez", "Botellita de Jerez", 1984], [59, "El Tri", "Simplemente", 1984], [60, "Various Artists", "Amores perros", 2000], [61, "Los Tres", "La espada & la pared", 1995], [62, "Radio Futura", "La ley del desierto, la ley del mar", 1984], [63, "Maná", "Dónde jugarán los niños?", 1992], [64, "Jaguares", "El equilibrio de los Jaguares", 1996], [65, "Andrés Calamaro", "Honestidad brutal", 1999], [66, "Bersuit Vergarabat", "Libertinaje", 1998], [67, "Robi Draco Rosa", "Vagabundo", 1996], [68, "La Ley", "Invisible", 1995], [69, "Caifanes", "Caifanes", 1988], [70, "Control Machete", "Artilleria pesada: Presenta", 1999], [71, "Los Locos del Ritmo", "Rock!", 1960], [72, "Laghonia", "Glue", 1971], [73, "Gustavo Cerati", "Bocanada", 1999], [74, "Los de Abajo", "Los de Abajo", 1998], [75, "Ekhymosis", "Niño gigante", 1993], [76, "Los Fabulosos Cadillacs", "Fabulosos calavera", 1997], [77, "Los Pericos", "Pampas Reggae", 1994], [78, "Kinky", "Kinky", 2002], [79, "El Último de la Fila", "Enemigos de lo ajeno", 1986], [80, "Los Shakers", "La conferencia secreta del Toto's Bar", 1968], [81, "Bunbury", "Flamingos", 2002], [82, "Julieta Venegas", "Bueninvento", 2000], [83, "La Polla Records", "Salve", 1984], [84, "Enanitos Verdes", "Contra reloj", 1986], [85, "Ojos de Brujo", "Barí", 2002], [86, "Illya Kuryaki & the Valderramas", "Chaco", 1995], [87, "Kevin Johansen", "Sur o no sur", 2003], [88, "Plastilina Mosh", "Aquamosh", 1998], [89, "Maná", "MTV Unplugged", 1999], [90, "Yerba Buena", "President Alien", 2003], [91, "Enanitos Verdes", "Big Bang", 1994], [92, "Os Paralamas do Sucesso", "Selvagem?", 1986], [93, "Joaquín Sabina", "19 días y 500 noches", 1999], [94, "Tijuana No!", "No", 1992], [95, "Sumo", "After chabón", 1987], [96, "Radio Futura", "La canción de Juan Perro", 1987], [97, "Secos & Molhados", "Secos & Molhados", 1973], [98, "Hombres G", "Hombres G", 1985], [99, "Miguel Mateos ZAS", "Solos en América", 1986], [100, "Jumbo", "Restaurant", 1999], [101, "Ángeles del Infierno", "Pacto con el Diablo", 1984], [102, "Miguel Ríos", "Rock & Ríos", 1982], [103, "Sui Generis", "Confesiones de invierno", 1973], [104, "Nacha Pop", "Nacha Pop", 1980], [105, "Fiel a la Vega", "Tres", 1999], [106, "Leño", "Leño", 1979], [107, "Barón Rojo", "Metalmorfosis", 1983], [108, "Mägo de Oz", "Finisterra", 2000], [109, "Molotov", "Apocalypshit", 1999], [110, "Ely Guerra", "Lotofire", 2002], [111, "Soda Stereo", "Doble vida", 1988], [112, "Ska-P", "El vals del obrero", 1996], [113, "Café Tacvba", "Café Tacvba", 1992], [114, "Legião Urbana", "Que país é este", 1987], [115, "Soda Stereo", "Dynamo", 1992], [116, "Lucybell", "Viajar", 1996], [117, "Héroes del Silencio", "El espíritu del vino", 1993], [118, "Caifanes", "El silencio", 1992], [119, "Héroes del Silencio", "El mar no cesa", 1989], [120, "Catupecu Machu", "Cuentos decapitados", 2000], [121, "La Barranca", "El fuego de la noche", 1996], [122, "Mœnia", "Adicion", 1999], [123, "Todos Tus Muertos", "Dale aborigen", 1994], [124, "Panteón Rococó", "Compañeros musicales", 2002], [125, "Julieta Venegas", "Aquí", 1997], [126, "El Otro Yo", "Abrecaminos", 1999], [127, "Traffic Sound", "Virgin", 1969], [128, "Los Piojos", "3er arco", 1996], [129, "King Changó", "The Return of El Santo", 2000], [130, "Fito Páez", "Circo Beat", 1994], [131, "Los Prisioneros", "La voz de los '80", 1984], [132, "Divididos", "La era de la boludez", 1993], [133, "Duncan Dhu", "El grito del tiempo", 1987], [134, "Cuca", "La Invasión de Los Blátidos", 1991], [135, "Los Auténticos Decadentes", "Mi vida loca", 1995], [136, "La Renga", "La Renga", 1998], [137, "Various Artists", "Silencio = Muerte: Red Hot + Latin", 1997], [138, "Celtas Cortos", "Gente impresentable", 1990], [139, "Maná", "Sueños líquidos", 1997], [140, "A.N.I.M.A.L.", "Poder latino", 1998], [141, "Rodrigo González", "Hurbanistorias", 1984], [142, "Pastilla", "Vox Electra", 1998], [143, "Sui Generis", "Pequeñas anécdotas sobre las instituciones", 1974], [144, "Brujeria", "Raza odiada", 1995], [145, "Molotov", "Dance and Dense Denso", 2003], [146, "Los Rodríguez", "Palabras más, palabras menos", 1995], [147, "Charly García", "Yendo de la cama al living", 1982], [148, "Loquillo y Trogloditas", "El ritmo del garage", 1983], [149, "Gustavo Cerati", "Amor amarillo", 1993], [150, "Siniestro Total", "Bailaré sobre tu tumba", 1985], [151, "Los Tres", "Los Tres", 1991], [152, "Los Rodríguez", "Buena suerte", 1991], [153, "Fobia", "Mundo feliz", 1991], [154, "Bunbury", "Pequeño", 1999], [155, "La Unión", "Mil siluetas", 1984], [156, "Shakira", "Dónde están los ladrones?", 1998], [157, "Caifanes", "El nervio del volcán", 1994], [158, "Virus", "Locura", 1985], [159, "Soda Stereo", "Nada personal", 1985], [160, "Los Prisioneros", "Pateando piedras", 1986], [161, "Los Rabanes", "All Star Volume II", 1997], [162, "Los Violadores", "Los Violadores", 1983], [163, "Jarabe de Palo", "Depende", 1998], [164, "Los Fabulosos Cadillacs", "Rey Azúcar", 1995], [165, "Aviador Dro", "Alas sobre el Mundo", 1982], [166, "Javier Bátiz", "Coming Home", 1971], [167, "Santa Sabina", "Santa Sabina", 1992], [168, "La Lupita", "Pa' servir a Ud.", 1992], [169, "El Último de la Fila", "Astronomía razonable", 1993], [170, "La Gusana Ciega", "Correspondencia interna", 1999], [171, "Orquesta Mondragón", "Bon voyage", 1980], [172, "Orishas", "A lo cubano", 1999], [173, "Brincos", "Contrabando", 1968], [174, "Nortec Collective", "The Tijuana Sessions Vol. 1", 2001], [175, "Miguel Mateos ZAS", "Rockas vivas", 1985], [176, "Los Fabulosos Cadillacs", "La marcha del golazo solitario", 1999], [177, "Maná", "Revolución de amor", 2002], [178, "Moris", "Fiebre de vivir", 1978], [179, "Bajofondo Tango Club", "Bajofondo Tango Club", 2003], [180, "Aterciopelados", "Gozo poderoso", 2000], [181, "Los Jaivas", "Todos Juntos", 1998], [182, "Pescado Rabioso", "Desatormentándonos", 1972], [183, "Serú Girán", "Bicicleta", 1980], [184, "Estopa", "Estopa", 1999], [185, "Hombres G", "La cagaste...Burt Lancaster", 1986], [186, "Orixa", "2012 E.D", 2000], [187, "Sentimiento Muerto", "El amor ya no existe", 1987], [188, "Resorte", "República de ciegos", 1997], [189, "Bacilos", "Bacilos", 2000], [190, "Serú Girán", "Peperina", 1981], [191, "Chac Mool", "Nadie en especial", 1980], [192, "Sergent Garcia", "Un Poquito Quema'o", 1999], [193, "El Kinto", "El Kinto clásico", 1998], [194, "Desorden Público", "Plomo revienta", 1997], [195, "Andrés Calamaro", "El salmón", 2000], [196, "Inspector", "Alma en fuego", 2001], [197, "Libido", "Hembra", 2000], [198, "El Tri", "Los número uno: Éxitos 1968/2003", 2003], [199, "Los Abuelos de la Nada", "Vasos y besos", 1983], [200, "La Ley", "Doble opuesto", 1991], [201, "Los Planetas", "Una semana en el motor de un autobús", 1998], [202, "Enanitos Verdes", "Habitaciones extrañas", 1987], [203, "Loquillo y Trogloditas", "Mis problemas con las mujeres", 1991], [204, "Cerati / Melero", "Colores santos", 1992], [205, "Jorge Drexler", "Eco", 2004], [206, "Malo", "Malo", 1972], [207, "La Vela Puerca", "De bichos y flores", 2001], [208, "Gotan Project", "La revancha del tango", 2001], [209, "Zurdok", "Hombre sintetizador", 1999], [210, "Los Tres", "Unplugged", 1996], [211, "Fito Páez", "Euforia", 1996], [212, "Amparanoia", "El poder de Machín", 1997], [213, "Los Bunkers", "La culpa", 2003], [214, "Gabinete Caligari", "Cuatro rosas", 1984], [215, "Patricio Rey y Sus Redonditos de Ricota", "Un baión para el ojo idiota", 0], [216, "Veneno", "Veneno", 1977], [217, "Sumo", "Divididos por la felicidad", 1985], [218, "Pappo's Blues", "Pappo's Blues 2", 1972], [219, "Babasónicos", "Jessico", 2001], [220, "La Ley", "MTV Unplugged", 2001], [221, "Volumen Cero", "Luces", 2002], [222, "Témpano", "Åtabal-Yémal", 1998], [223, "Paralamas", "Vamo batê lata: Ao vivo", 1995], [224, "Frágil", "Avenida Larco", 1981], [225, "Cecilia Toussaint", "Arpía", 1987], [226, "Aterciopelados", "La pipa de la paz", 1997], [227, "Extremoduro", "Agila", 1996], [228, "Bunbury", "Radical sonora", 1997], [229, "Control Machete", "Mucho barato", 1996], [230, "Patricio Rey y Sus Redonditos de Ricota", "Gulp!", 1985], [231, "Fabiana Cantilo", "Algo mejor", 1991], [232, "Caramelos de Cianuro", "Miss Mujerzuela", 2000], [233, "Riff", "Contenidos", 1982], [234, "La Castañeda", "Servicios Generales II", 1992], [235, "Zoé", "Zoé", 2001], [236, "Various Artists", "Tributo a Sandro: Un disco de rock", 1999], [237, "Transmetal", "El Infierno de Dante", 1993], [238, "Los Pericos", "Mystic Love", 1998], [239, "Grupo de Experimentación Sonora del ICAIC", "Grupo de Experimentación Sonora del ICAIC Vol. 1", 1998], [240, "Luis Alberto Spinetta", "Spinettalandia y sus amigos", 1993], [241, "Miranda!", "Sin restricciones", 2004], [242, "Invisible", "El jardin de los presentes", 2003], [243, "Artefakto", "Interruptor", 1997], [244, "Kraken", "Kraken II", 1989], [245, "Los Brincos", "Los Brincos", 1966], [246, "Juan Carlos Baglietto", "Tiempos difíciles", 1982], [247, "Jaime López & José Manuel Aguilera", "Odio Funky: Tomás de Buró", 1994], [248, "Makiza", "Aerolineas Makiza", 1999], [249, "Alaska y Dinarama", "No es pecado", 1986], [250, "Spinetta", "Pelusón of Milk", 1991]];
 var FEAT=[["fc-1", "Cafe Tacvba", "Re"], ["fc-2", "Soda Stereo", "Cancion animal"], ["fc-3", "Charly Garcia", "Clics modernos"], ["fc-4", "Manu Chao", "Clandestino"], ["fc-5", "Heroes del Silencio", "Senderos de traicion"], ["fc-6", "Mano Negra", "Casa Babylon"], ["fc-7", "Los Fabulosos Cadillacs", "Vasos vacios"], ["fc-8", "Molotov", "Donde jugaran las ninas"], ["fc-9", "Aterciopelados", "El Dorado"], ["fc-10", "Almendra", "Almendra"]];
+var LIST_TYPE="albumes";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,album){
@@ -252,6 +308,107 @@ function processLfm(){
 function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}
 var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});
 document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+
+// ── Last.fm: genre, listeners, playcount, album ───────────────────────────
+var extraQ=[], extraBusy=false;
+function processExtra(){
+  if(extraBusy||!extraQ.length) return;
+  extraBusy=true;
+  var el=extraQ.shift();
+  var artist=el.dataset.lfmArtist||'';
+  var title=el.dataset.lfmTitle||'';
+  var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+  var method=isAlb?'album.getinfo':'track.getinfo';
+  var param=isAlb?'&album=':'&track=';
+  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+        '&api_key='+LFM_KEY+
+        '&artist='+encodeURIComponent(artist)+
+        param+encodeURIComponent(title)+'&format=json')
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var obj=d.track||d.album; if(!obj) return;
+      var row=el.closest('.track-row'); if(!row) return;
+      // Listeners
+      var lsEl=row.querySelector('.track-listeners');
+      if(lsEl&&obj.listeners){
+        var ls=parseInt(obj.listeners);
+        lsEl.textContent=ls>=1000000?(ls/1000000).toFixed(1)+'M':ls>=1000?(ls/1000).toFixed(0)+'K':ls;
+        lsEl.classList.remove('loading');
+      }
+      // Playcount
+      var pcEl=row.querySelector('.track-playcount');
+      if(pcEl&&obj.playcount){
+        var pc=parseInt(obj.playcount);
+        pcEl.textContent=pc>=1000000?(pc/1000000).toFixed(1)+'M':pc>=1000?(pc/1000).toFixed(0)+'K':pc;
+        pcEl.classList.remove('loading');
+      }
+      // Album title (canciones)
+      if(!isAlb&&obj.album&&obj.album.title){
+        var albEl=row.querySelector('.track-album');
+        if(albEl) albEl.textContent=obj.album.title;
+      }
+      // Genre
+      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      var genEl=row.querySelector('.track-genre');
+      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
+        var tags=obj.toptags.tag;
+        if(!Array.isArray(tags)) tags=[tags];
+        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
+        else{genEl.textContent='';genEl.classList.remove('loading');}
+      }
+    })
+    .catch(function(){})
+    .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
+}
+var extraObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    extraObs.unobserve(e.target);
+    extraQ.push(e.target);
+    processExtra();
+  });
+},{rootMargin:'600px'});
+document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+
+// feat pills: género desde Last.fm para items sin genre
+function loadFeatTags(){
+  document.querySelectorAll('.feat-item').forEach(function(item,idx){
+    var titleEl=item.querySelector('.feat-title');
+    var artistEl=item.querySelector('.feat-artist');
+    var metaEl=item.querySelector('.feat-meta');
+    if(!titleEl||!artistEl||!metaEl) return;
+    var pills=metaEl.querySelectorAll('.feat-pill');
+    if(pills.length>1) return;
+    var artist=artistEl.textContent.trim();
+    var title=titleEl.textContent.trim();
+    var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+    var method=isAlb?'album.getinfo':'track.getinfo';
+    var param=isAlb?'&album=':'&track=';
+    (function(m,a,ti){
+      setTimeout(function(){
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+          .then(function(r){return r.json()}).then(function(d){
+            var obj=d.track||d.album; if(!obj) return;
+            var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            if(obj.toptags&&obj.toptags.tag){
+              var tags=obj.toptags.tag;
+              if(!Array.isArray(tags)) tags=[tags];
+              var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+              valid.slice(0,2).forEach(function(t){
+                var pill=document.createElement('span');
+                pill.className='feat-pill';
+                pill.textContent=t.name.charAt(0).toUpperCase()+t.name.slice(1);
+                m.appendChild(pill);
+              });
+            }
+          }).catch(function(){});
+      },idx*300);
+    })(metaEl,artist,title);
+  });
+}
+setTimeout(loadFeatTags,800);
+
 </script>
 </body>
 </html>
