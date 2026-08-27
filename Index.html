@@ -3496,6 +3496,8 @@ var topAlbums=[{"name":"Thriller","sub":"Michael Jackson · 11 listas"},{"name":
 var topSongs=[{"name":"Thriller","sub":"Michael Jackson · 11 listas"},{"name":"Back in Black","sub":"AC/DC · 11 listas"},{"name":"What's Going On","sub":"Marvin Gaye · 10 listas"},{"name":"Purple Rain","sub":"Prince · 10 listas"},{"name":"London Calling","sub":"The Clash · 10 listas"}];
 
 // ══ HELPERS ══
+function isAlbum(t){return t==='albumes'||t==='álbumes';}
+
 function getStripe(sec){
   if(sec==='super') return 'cs';
   if(sec==='albums-latin'||sec==='songs-latin'||sec==='latinas') return 'cl';
