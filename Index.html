@@ -3506,7 +3506,12 @@ function getStripe(sec){
 function card(l){
   var sec=SECTIONS[l.file]||'global';
   var s=getStripe(sec);
-  var em=sec==='super'?'⚡':(l.type==='albumes'?'💿':'🎵');
+  var isAlb=isAlbum(l.type);
+  var dA=encodeURIComponent((l._artist||'').replace(/"/g,''));
+  var dAl=isAlb?encodeURIComponent((l._title||'').replace(/"/g,'')):'' ;
+  var dT=encodeURIComponent((l._title||'').replace(/"/g,''));
+  var coverHTML='<img src="" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:5px;opacity:0;transition:opacity .3s"'
+    +' data-artist="'+dA+'" data-album="'+dAl+'" data-track="'+dT+'">';
   return '<div class="card" onclick="window.location=\''+l.file+'\'">'
     +'<div class="card-stripe '+s+'"></div>'
     +'<div class="card-top">'
