@@ -194,11 +194,14 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 <section class="track-section" style="padding-top:1.5rem">
   <div class="sec-label">80 canciones &#183; orden cronológico 1945&#8211;2024</div>
   <div class="track-header">
-    <span style="text-align:right">Año</span>
+    <span style="text-align:right">#</span>
     <span></span>
     <span>Canción / Artista</span>
-    <span style="text-align:right"></span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
   </div>
   <div id="tracklist"></div>
 </section>
@@ -377,6 +380,7 @@ SONGS.forEach(function(s, idx){
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 
 var artQ = [], artTimer = null;
 function flushArt(){
@@ -480,7 +484,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){

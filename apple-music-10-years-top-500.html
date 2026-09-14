@@ -135,7 +135,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="Shape of You">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Shape of You</div>
       <div class="feat-artist">Ed Sheeran</div>
       <div class="feat-meta"><span class="feat-pill">2017</span></div>
@@ -146,7 +146,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="Blinding Lights">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Blinding Lights</div>
       <div class="feat-artist">The Weeknd</div>
       <div class="feat-meta"><span class="feat-pill">2019</span></div>
@@ -157,7 +157,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="God's Plan">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">God's Plan</div>
       <div class="feat-artist">Drake</div>
       <div class="feat-meta"><span class="feat-pill">2018</span></div>
@@ -168,7 +168,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="Sunflower">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Sunflower (Spider-Man: Into the Spider-Verse)</div>
       <div class="feat-artist">Post Malone & Swae Lee</div>
       <div class="feat-meta"><span class="feat-pill">2018</span></div>
@@ -179,7 +179,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="rockstar">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">rockstar</div>
       <div class="feat-artist">Post Malone ft. 21 Savage</div>
       <div class="feat-meta"><span class="feat-pill">2017</span></div>
@@ -190,7 +190,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="One Dance">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">One Dance</div>
       <div class="feat-artist">Drake ft. Wizkid & Kyla</div>
       <div class="feat-meta"><span class="feat-pill">2016</span></div>
@@ -201,7 +201,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="SICKO MODE">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">SICKO MODE</div>
       <div class="feat-artist">Travis Scott</div>
       <div class="feat-meta"><span class="feat-pill">2018</span></div>
@@ -212,7 +212,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="Perfect">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Perfect</div>
       <div class="feat-artist">Ed Sheeran</div>
       <div class="feat-meta"><span class="feat-pill">2017</span></div>
@@ -223,7 +223,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="No Guidance">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">No Guidance</div>
       <div class="feat-artist">Chris Brown ft. Drake</div>
       <div class="feat-meta"><span class="feat-pill">2019</span></div>
@@ -234,7 +234,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="bad guy">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">bad guy</div>
       <div class="feat-artist">Billie Eilish</div>
       <div class="feat-meta"><span class="feat-pill">2019</span></div>
@@ -792,6 +792,7 @@ songs.forEach(([num, title, artist, year]) => {
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 
 // Hero cover
 fetch(`https://itunes.apple.com/search?term=Shape+of+You+Ed+Sheeran&media=music&entity=song&limit=1`)
@@ -988,7 +989,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){

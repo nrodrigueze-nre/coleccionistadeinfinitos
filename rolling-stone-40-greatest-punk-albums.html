@@ -185,9 +185,10 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 <section class="track-section" style="padding-top:1.5rem">
   <div class="sec-label">40 albumes &#183; del #1 al #40</div>
   <div class="track-header">
-    <span style="text-align:right">#</span><span></span>
-    <span>Album / Artista</span>
-    <span style="text-align:right">Ano</span>
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
     <span style="text-align:right">Género</span>
     <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
@@ -230,10 +231,14 @@ ALBUMS.forEach(function(s){
     "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[1])+"\" data-album=\""+encodeURIComponent(s[2])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
     "<div style=\"min-width:0\"><div class=\"track-name\">"+s[2]+"</div><div class=\"track-artist\">"+s[1]+"</div></div>"+
     "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-genre loading track-extra-trigger\" data-lfm-artist=\""+encodeURIComponent(s[1])+"\" data-lfm-title=\""+encodeURIComponent(s[2])+"\">&#8212;</div>"+
+    "<div class=\"track-listeners loading\">&#8212;</div>"+
+    "<div class=\"track-playcount loading\">&#8212;</div>"+
     "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(s[1])+"\" data-lfm-album=\""+encodeURIComponent(s[2])+"\">&#8212;</div>";
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -312,7 +317,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){

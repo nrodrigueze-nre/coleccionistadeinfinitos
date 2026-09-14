@@ -140,7 +140,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-1" src="" alt="KICK ii / KicK iii / kick iiii / kiCK iiiii">
     <div class="feat-info">
       <div class="feat-title">KICK ii / KicK iii / kick iiii / kiCK iiiii</div>
-      <div class="feat-artist">Arca &middot; 2021</div>
+      <div class="feat-artist">Arca</div>
+      <div class="feat-meta"><span class="feat-pill">2021</span></div>
       <p class="feat-rev">Cuatro LPs lanzados simultáneamente en diciembre — cada uno explorando un sonido distinto: club deconstruido en KicK iii, ambient atmosférico en kiCK iiiii. En una semana Arca lanzó más obra que la mayoría de artistas en toda una carrera, cementando su lugar junto a Aphex Twin y Björk en términos de prolijidad e ingenio.</p>
     </div>
   </div>
@@ -150,7 +151,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-2" src="" alt="Isles">
     <div class="feat-info">
       <div class="feat-title">Isles</div>
-      <div class="feat-artist">Bicep &middot; 2021</div>
+      <div class="feat-artist">Bicep</div>
+      <div class="feat-meta"><span class="feat-pill">2021</span></div>
       <p class="feat-rev">En enero, en los días más oscuros de la pandemia, los mejores amigos de Belfast nos regalaron su muy esperado segundo álbum. 'Atlas' abre con un groove marcial y cánticos — resumen sónico de la euforia de dos años de gira. El único track pre-COVID. Un álbum emocional y hermoso que fue el refugio de todos en 2021.</p>
     </div>
   </div>
@@ -160,7 +162,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-3" src="" alt="Subconsciously">
     <div class="feat-info">
       <div class="feat-title">Subconsciously</div>
-      <div class="feat-artist">Black Coffee &middot; 2021</div>
+      <div class="feat-artist">Black Coffee</div>
+      <div class="feat-meta"><span class="feat-pill">2021</span></div>
       <p class="feat-rev">El DJ/productor sudafricano es un verdadero exponente de los buenos vibraciones, los grooves profundos y la música poderosamente emotiva. Su sexto álbum de estudio presenta a artistas de Sudáfrica junto a Usher, Pharrell, Sabrina Claudio y David Guetta en este soñador y dinámico álbum de house nominado al Grammy.</p>
     </div>
   </div>
@@ -170,7 +173,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-4" src="" alt="Vanice">
     <div class="feat-info">
       <div class="feat-title">Vanice</div>
-      <div class="feat-artist">Cookiee Kawaii &middot; 2021</div>
+      <div class="feat-artist">Cookiee Kawaii</div>
+      <div class="feat-meta"><span class="feat-pill">2021</span></div>
       <p class="feat-rev">Tras el hit viral de TikTok 'Vibe (If I Back It Up)', Kawaii respaldó con su debut LP — 16 tracks que sintetizan el Jersey Club y su amor por los videojuegos. Un álbum profundamente humano y físico, con versos rapid-fire que exigen que te muevas.</p>
     </div>
   </div>
@@ -180,7 +184,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-5" src="" alt="Second Line">
     <div class="feat-info">
       <div class="feat-title">Second Line</div>
-      <div class="feat-artist">Dawn Richard &middot; 2021</div>
+      <div class="feat-artist">Dawn Richard</div>
+      <div class="feat-meta"><span class="feat-pill">2021</span></div>
       <p class="feat-rev">En su sexto álbum de estudio, la renegade musical está más resuelta que nunca. Los 16 tracks evocan su Nueva Orleans natal a través de canciones e interludes de spoken-word que zumban con vida. La secuencia de tres canciones 'Nostalgia', 'Boomerang' y 'Bussifame' es más completa que la mayoría de álbumes enteros.</p>
     </div>
   </div>
@@ -361,6 +366,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre

@@ -140,7 +140,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-1" src="" alt="Tension">
     <div class="feat-info">
       <div class="feat-title">Tension</div>
-      <div class="feat-artist">Kylie Minogue · 2023</div>
+      <div class="feat-artist">Kylie Minogue</div>
+      <div class="feat-meta"><span class="feat-pill">2023</span></div>
       <p class="feat-rev">El mayor regreso comercial de Kylie en décadas — "Padam Padam" fue el fenómeno viral del verano de 2023, pero Tension como álbum completo demostró que Minogue en los 50 podía sonar más confiada y más fresca que la mayoría de artistas pop de 25. Una mezcla de synth power, disco y ganchos sensuales que Billboard calificó como "un triunfo tardío en su carrera", aunque —con razón— la esperanza es que siga celebrando con muchos álbumes más.</p>
     </div>
   </div>
@@ -150,7 +151,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-2" src="" alt="Quest for Fire">
     <div class="feat-info">
       <div class="feat-title">Quest for Fire</div>
-      <div class="feat-artist">Skrillex · 2023</div>
+      <div class="feat-artist">Skrillex</div>
+      <div class="feat-meta"><span class="feat-pill">2023</span></div>
       <p class="feat-rev">El mejor comeback de Skrillex — su primer álbum solista completo en casi una década, lanzado tras meses de sets legendarios en conjunto con Fred again.. y Four Tet. Quest for Fire actualiza su sonido con colaboradores nuevos (Horse Lookin Boy, Flowdan, Bibi Bourelly) sin perder la personalidad que lo hizo estrella. "Rumble" ganó el Grammy a mejor canción dance/electrónica. Billboard lo señaló como el escenario casi ideal para un productor sinónimo de un momento ya lejano.</p>
     </div>
   </div>
@@ -160,7 +162,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-3" src="" alt="Raven">
     <div class="feat-info">
       <div class="feat-title">Raven</div>
-      <div class="feat-artist">Kelela · 2023</div>
+      <div class="feat-artist">Kelela</div>
+      <div class="feat-meta"><span class="feat-pill">2023</span></div>
       <p class="feat-rev">Siete años después de Take Me Apart, Kelela regresó con su álbum más ambicioso: drum'n'bass, house, amapiano y dancehall al servicio de una narrativa posruptura que usa el rave como espacio de sanación. El título es un juego entre el pájaro y "raving" — la música de club como ritual de autodescubrimiento. Billboard destacó su capacidad de moverse entre la orquesta ambient del dúo con Shygirl y la sensualidad del bashment jamaicano con la misma reverencia por el poder terapéutico del dance.</p>
     </div>
   </div>
@@ -170,7 +173,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-4" src="" alt="For That Beautiful Feeling">
     <div class="feat-info">
       <div class="feat-title">For That Beautiful Feeling</div>
-      <div class="feat-artist">The Chemical Brothers · 2023</div>
+      <div class="feat-artist">The Chemical Brothers</div>
+      <div class="feat-meta"><span class="feat-pill">2023</span></div>
       <p class="feat-rev">El décimo álbum de los hermanos Simons y Rowlands balancea el peso existencial del momento —pandemia, clima, inflación, guerra— con producciones funky, duras y en ocasiones empapadas de ácido que definen un catálogo incomparable desde 1995. La colaboración con Beck en "Skipping Like a Stone" es uno de sus momentos más expansivos. "No queríamos quedarnos en ese lugar oscuro", dijo Ed Simons a Billboard. "Lo que creamos es quizás una forma de tener momentos de escape."</p>
     </div>
   </div>
@@ -180,7 +184,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
     <img class="feat-cover" id="fc-5" src="" alt="That Feels Good">
     <div class="feat-info">
       <div class="feat-title">That! Feels Good!</div>
-      <div class="feat-artist">Jessie Ware · 2023</div>
+      <div class="feat-artist">Jessie Ware</div>
+      <div class="feat-meta"><span class="feat-pill">2023</span></div>
       <p class="feat-rev">Después de que What's Your Pleasure? (2020) estableciera a Jessie Ware como fuerza del disco moderno, That! Feels Good! perfecciona ese sonido: más limpio, más seguro, igual de sensorial. "Beautiful People" como starter de fiesta y "Free Yourself" como himno de piano son los puntos más altos de un álbum que Billboard describió como ejercicio de refinamiento — el sonido disco pulido hasta convertirse en un producto más elegante, potenciado por una de las voces más poderosas que el dance tiene a su disposición.</p>
     </div>
   </div>
@@ -263,7 +268,7 @@ ALBUMS.forEach(function(s){
   frag.appendChild(row);
 });
 container.appendChild(frag);
-  setTimeout(observeExtras, 50);
+  if(typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -360,6 +365,7 @@ var extraObs=new IntersectionObserver(function(es){
 function observeExtras(){
   document.querySelectorAll('.track-extra-trigger').forEach(function(g){
     if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+setTimeout(observeExtras, 200);
   });
 }
 

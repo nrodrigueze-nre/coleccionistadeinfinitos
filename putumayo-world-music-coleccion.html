@@ -251,9 +251,12 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="track-header">
     <span style="text-align:right">#</span>
     <span></span>
-    <span>Álbum / Sello</span>
-    <span style="text-align:right"></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
   </div>
   <div id="tracklist"></div>
 </section>
@@ -691,6 +694,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre
