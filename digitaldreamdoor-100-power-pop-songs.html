@@ -424,7 +424,7 @@ SONGS.forEach(function(item){
   frag.appendChild(row);
 });
 container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
 
 var artQ=[],artTimer=null;
 function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}

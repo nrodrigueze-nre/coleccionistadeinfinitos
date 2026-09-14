@@ -268,7 +268,7 @@ ALBUMS.forEach(function(s){
   frag.appendChild(row);
 });
 container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
