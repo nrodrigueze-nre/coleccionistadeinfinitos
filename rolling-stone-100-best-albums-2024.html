@@ -138,7 +138,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="Brat">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Brat</div>
       <div class="feat-artist">Charli XCX</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -149,7 +149,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="Cowboy Carter">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Cowboy Carter</div>
       <div class="feat-artist">Beyoncé</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -160,7 +160,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="Manning Fireworks">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Manning Fireworks</div>
       <div class="feat-artist">MJ Lenderman</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -171,7 +171,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="Short n Sweet">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Short n' Sweet</div>
       <div class="feat-artist">Sabrina Carpenter</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -182,7 +182,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="Hit Me Hard and Soft">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Hit Me Hard and Soft</div>
       <div class="feat-artist">Billie Eilish</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -193,7 +193,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="Tyla">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Tyla</div>
       <div class="feat-artist">Tyla</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -204,7 +204,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="We Don't Trust You">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">We Don't Trust You</div>
       <div class="feat-artist">Future & Metro Boomin</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -215,7 +215,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="Eternal Sunshine">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Eternal Sunshine</div>
       <div class="feat-artist">Ariana Grande</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -226,7 +226,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="Alligator Bites Never Heal">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Alligator Bites Never Heal</div>
       <div class="feat-artist">Doechii</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -237,7 +237,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="Tigers Blood">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Tigers Blood</div>
       <div class="feat-artist">Waxahatchee</div>
       <div class="feat-meta"><span class="feat-pill">2024</span></div>
@@ -579,6 +579,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre

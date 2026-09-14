@@ -136,7 +136,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="https://upload.wikimedia.org/wikipedia/en/1/1d/KanyeWest_MyBeautifulDarkTwistedFantasy.jpg" alt="My Beautiful Dark Twisted Fantasy">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">My Beautiful Dark Twisted Fantasy</div>
       <div class="feat-artist">Kanye West</div>
       <div class="feat-meta"><span class="feat-pill">2010</span></div>
@@ -147,7 +147,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="https://upload.wikimedia.org/wikipedia/en/1/1f/Beyonce_-_Lemonade_%28album%29.png" alt="Lemonade">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Lemonade</div>
       <div class="feat-artist">Beyoncé</div>
       <div class="feat-meta"><span class="feat-pill">2016</span></div>
@@ -158,7 +158,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png" alt="To Pimp a Butterfly">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">To Pimp a Butterfly</div>
       <div class="feat-artist">Kendrick Lamar</div>
       <div class="feat-meta"><span class="feat-pill">2015</span></div>
@@ -169,7 +169,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="https://upload.wikimedia.org/wikipedia/en/3/3f/Taylor_Swift_-_Red.png" alt="Red">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Red</div>
       <div class="feat-artist">Taylor Swift</div>
       <div class="feat-meta"><span class="feat-pill">2012</span></div>
@@ -180,7 +180,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="https://upload.wikimedia.org/wikipedia/en/8/86/David_Bowie_-_Blackstar.png" alt="Blackstar">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Blackstar</div>
       <div class="feat-artist">David Bowie</div>
       <div class="feat-meta"><span class="feat-pill">2016</span></div>
@@ -191,7 +191,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="https://upload.wikimedia.org/wikipedia/en/4/4d/Take_Care_%28mixtape%29.jpg" alt="Take Care">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Take Care</div>
       <div class="feat-artist">Drake</div>
       <div class="feat-meta"><span class="feat-pill">2011</span></div>
@@ -202,7 +202,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="https://upload.wikimedia.org/wikipedia/en/5/5c/Melodrama_%28Lorde_album%29.png" alt="Melodrama">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Melodrama</div>
       <div class="feat-artist">Lorde</div>
       <div class="feat-meta"><span class="feat-pill">2017</span></div>
@@ -213,7 +213,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png" alt="21">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">21</div>
       <div class="feat-artist">Adele</div>
       <div class="feat-meta"><span class="feat-pill">2011</span></div>
@@ -224,7 +224,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="Golden Hour">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Golden Hour</div>
       <div class="feat-artist">Kacey Musgraves</div>
       <div class="feat-meta"><span class="feat-pill">2018</span></div>
@@ -235,7 +235,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg" alt="Blonde">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Blonde</div>
       <div class="feat-artist">Frank Ocean</div>
       <div class="feat-meta"><span class="feat-pill">2016</span></div>
@@ -645,6 +645,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre

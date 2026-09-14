@@ -338,15 +338,16 @@ ALBUMS.forEach(function(s){
   var artist = document.createElement("div"); artist.className = "track-artist"; artist.textContent = s[1];
   info.appendChild(name); info.appendChild(artist);
   var yr = document.createElement("div"); yr.className = "track-year"; yr.textContent = s[3] || "";
-  var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
+  var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc = document.createElement("div"); sc.className = "track-scrobbles loading";
   sc.dataset.lfmArtist = encodeURIComponent(s[1]);
   sc.dataset.lfmTrack  = encodeURIComponent(s[2]);
   sc.innerHTML = "&#8212;";
   row.appendChild(num); row.appendChild(img); row.appendChild(info);
-  row.appendChild(yr); row.appendChild(sc);
+  row.appendChild(yr); row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 
 var artQ = [], artTimer = null;
 function flushArt(){
@@ -450,7 +451,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){

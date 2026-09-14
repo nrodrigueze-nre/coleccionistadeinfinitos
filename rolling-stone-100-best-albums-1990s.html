@@ -137,7 +137,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="Nevermind">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Nevermind</div>
       <div class="feat-artist">Nirvana</div>
       <div class="feat-meta"><span class="feat-pill">1991</span></div>
@@ -148,7 +148,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="The Chronic">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">The Chronic</div>
       <div class="feat-artist">Dr. Dre</div>
       <div class="feat-meta"><span class="feat-pill">1992</span></div>
@@ -159,7 +159,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="OK Computer">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">OK Computer</div>
       <div class="feat-artist">Radiohead</div>
       <div class="feat-meta"><span class="feat-pill">1997</span></div>
@@ -170,7 +170,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="Achtung Baby">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Achtung Baby</div>
       <div class="feat-artist">U2</div>
       <div class="feat-meta"><span class="feat-pill">1991</span></div>
@@ -181,7 +181,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="The Miseducation of Lauryn Hill">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">The Miseducation of Lauryn Hill</div>
       <div class="feat-artist">Lauryn Hill</div>
       <div class="feat-meta"><span class="feat-pill">1998</span></div>
@@ -192,7 +192,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="Ten">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Ten</div>
       <div class="feat-artist">Pearl Jam</div>
       <div class="feat-meta"><span class="feat-pill">1991</span></div>
@@ -203,7 +203,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="In Utero">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">In Utero</div>
       <div class="feat-artist">Nirvana</div>
       <div class="feat-meta"><span class="feat-pill">1993</span></div>
@@ -214,7 +214,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="Ready to Die">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Ready to Die</div>
       <div class="feat-artist">The Notorious B.I.G.</div>
       <div class="feat-meta"><span class="feat-pill">1994</span></div>
@@ -225,7 +225,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="Odelay">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Odelay</div>
       <div class="feat-artist">Beck</div>
       <div class="feat-meta"><span class="feat-pill">1996</span></div>
@@ -236,7 +236,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="Crooked Rain, Crooked Rain">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Crooked Rain, Crooked Rain</div>
       <div class="feat-artist">Pavement</div>
       <div class="feat-meta"><span class="feat-pill">1994</span></div>
@@ -703,6 +703,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre

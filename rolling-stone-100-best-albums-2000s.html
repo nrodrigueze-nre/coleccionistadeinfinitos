@@ -136,7 +136,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="https://upload.wikimedia.org/wikipedia/en/b/b5/Radiohead.kid_a.albumart.jpg" alt="Kid A">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Kid A</div>
       <div class="feat-artist">Radiohead</div>
       <div class="feat-meta"><span class="feat-pill">2000</span></div>
@@ -147,7 +147,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="https://upload.wikimedia.org/wikipedia/en/1/1d/Is_This_It_album_cover.jpg" alt="Is This It">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Is This It</div>
       <div class="feat-artist">The Strokes</div>
       <div class="feat-meta"><span class="feat-pill">2001</span></div>
@@ -158,7 +158,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="https://upload.wikimedia.org/wikipedia/en/a/ab/Yankeehotelfoxtrot.jpg" alt="Yankee Hotel Foxtrot">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Yankee Hotel Foxtrot</div>
       <div class="feat-artist">Wilco</div>
       <div class="feat-meta"><span class="feat-pill">2002</span></div>
@@ -169,7 +169,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="https://upload.wikimedia.org/wikipedia/en/d/d1/JayZ-Blueprint.jpg" alt="The Blueprint">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">The Blueprint</div>
       <div class="feat-artist">Jay-Z</div>
       <div class="feat-meta"><span class="feat-pill">2001</span></div>
@@ -180,7 +180,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="https://upload.wikimedia.org/wikipedia/en/8/89/TheWhiteStripesElephant.jpg" alt="Elephant">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Elephant</div>
       <div class="feat-artist">The White Stripes</div>
       <div class="feat-meta"><span class="feat-pill">2003</span></div>
@@ -191,7 +191,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="https://upload.wikimedia.org/wikipedia/en/d/df/Arcade_Fire_-_Funeral.png" alt="Funeral">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Funeral</div>
       <div class="feat-artist">Arcade Fire</div>
       <div class="feat-meta"><span class="feat-pill">2004</span></div>
@@ -202,7 +202,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="https://upload.wikimedia.org/wikipedia/en/a/ae/The_Marshall_Mathers_LP.jpg" alt="The Marshall Mathers LP">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">The Marshall Mathers LP</div>
       <div class="feat-artist">Eminem</div>
       <div class="feat-meta"><span class="feat-pill">2000</span></div>
@@ -213,7 +213,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="https://upload.wikimedia.org/wikipedia/en/6/6e/BobDylanModernTimesalbumcover.jpg" alt="Modern Times">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Modern Times</div>
       <div class="feat-artist">Bob Dylan</div>
       <div class="feat-meta"><span class="feat-pill">2006</span></div>
@@ -224,7 +224,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="https://upload.wikimedia.org/wikipedia/en/0/04/MIAKala.jpg" alt="Kala">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Kala</div>
       <div class="feat-artist">M.I.A.</div>
       <div class="feat-meta"><span class="feat-pill">2007</span></div>
@@ -235,7 +235,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg" alt="The College Dropout">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">The College Dropout</div>
       <div class="feat-artist">Kanye West</div>
       <div class="feat-meta"><span class="feat-pill">2004</span></div>
@@ -637,6 +637,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre

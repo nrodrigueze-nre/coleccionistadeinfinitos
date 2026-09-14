@@ -137,7 +137,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="Renaissance">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Renaissance</div>
       <div class="feat-artist">Beyoncé</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -148,7 +148,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="Un Verano Sin Ti">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Un Verano Sin Ti</div>
       <div class="feat-artist">Bad Bunny</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -159,7 +159,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="Midnights">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Midnights</div>
       <div class="feat-artist">Taylor Swift</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -170,7 +170,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="Motomami">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Motomami</div>
       <div class="feat-artist">Rosalía</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -181,7 +181,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="Harry's House">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Harry's House</div>
       <div class="feat-artist">Harry Styles</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -192,7 +192,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="It's Almost Dry">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">It's Almost Dry</div>
       <div class="feat-artist">Pusha T</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -203,7 +203,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="Hold on Baby">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Hold on Baby</div>
       <div class="feat-artist">King Princess</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -214,7 +214,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="Caprisongs">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Caprisongs</div>
       <div class="feat-artist">FKA Twigs</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -225,7 +225,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="Jack in the Box">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Jack in the Box</div>
       <div class="feat-artist">J-Hope</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -236,7 +236,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="Wet Leg">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Wet Leg</div>
       <div class="feat-artist">Wet Leg</div>
       <div class="feat-meta"><span class="feat-pill">2022</span></div>
@@ -576,6 +576,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre

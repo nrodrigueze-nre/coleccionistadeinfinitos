@@ -154,11 +154,17 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
       <p class="feat-rev">U2 desatando una brillante sorpresa — lanzado sin previo aviso en iTunes y regalado a 500 millones de usuarios de Apple, lo que genero una controversia enorme. Miracle (of Joey Ramone), Cedarwood Road y Every Breaking Wave como tres canciones donde Bono y The Edge regresaron a sus raices dublinesas. El album mas personal de U2 en decadas — y el mas incomprendido.</p>
     </div>
   </div></section>
-<section class="track-section" style="padding-top:1.5rem"><div class="sec-label">50 albumes &#183; del #1 al #50</div><div class="track-header"><span style="text-align:right">#</span><span></span><span>Album / Artista</span><span style="text-align:right">Ano</span>
+<section class="track-section" style="padding-top:1.5rem"><div class="sec-label">50 albumes &#183; del #1 al #50</div><div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
     <span style="text-align:right">Género</span>
     <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
-    <span style="text-align:right">Mis plays</span></div><div id="tracklist"></div></section>
+    <span style="text-align:right">Mis plays</span>
+  </div>
+  <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2014 &#183; DIC 2014</span><a href="https://www.rollingstone.com/music/music-lists/50-best-albums-of-2014-143954/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
 <script>
 var ALBUMS=[[1, "Taylor Swift", "1989", 2014], [2, "St. Vincent", "St. Vincent", 2014], [3, "Bruce Springsteen", "High Hopes", 2014], [4, "Run the Jewels", "Run the Jewels 2", 2014], [5, "U2", "Songs of Innocence", 2014], [6, "Beyonce", "Beyonce", 2013], [7, "FKA Twigs", "LP1", 2014], [8, "Kendrick Lamar", "Untitled Unmastered", 2014], [9, "Flying Lotus", "You're Dead!", 2014], [10, "Charli XCX", "Sucker", 2014], [11, "Miranda Lambert", "Platinum", 2014], [12, "Jackson Browne", "Standing in the Breach", 2014], [13, "Public Enemy", "Nothing Is Quick in the Desert", 2014], [14, "YG", "My Krazy Life", 2014], [15, "Leonard Cohen", "Popular Problems", 2014], [16, "Ought", "More Than Any Other Day", 2014], [17, "Eric Church", "The Outsiders", 2014], [18, "D'Angelo and the Vanguard", "Black Messiah", 2014], [19, "War on Drugs", "Lost in the Dream", 2014], [20, "Skrillex", "Recess", 2014], [21, "Tom Petty and the Heartbreakers", "Hypnotic Eye", 2014], [22, "Alt-J", "This Is All Yours", 2014], [23, "Parquet Courts", "Sunbathing Animal", 2014], [24, "Spoon", "They Want My Soul", 2014], [25, "Thom Yorke", "Tomorrow's Modern Boxes", 2014], [26, "Young Thug and Bloody Jay", "Black Portland", 2014], [27, "Damon Albarn", "Everyday Robots", 2014], [28, "The Ghost of a Saber Tooth Tiger", "Midnight Sun", 2014], [29, "Prince", "Art Official Age", 2014], [30, "Lenny Kravitz", "Strut", 2014], [31, "Alvvays", "Alvvays", 2014], [32, "Benjamin Booker", "Benjamin Booker", 2014], [33, "Hurray for the Riff Raff", "Small Town Heroes", 2014], [34, "Caribou", "Our Love", 2014], [35, "Jack White", "Lazaretto", 2014], [36, "Aphex Twin", "Syro", 2014], [37, "Perfume Genius", "Too Bright", 2014], [38, "Future", "Honest", 2014], [39, "Interpol", "El Pintor", 2014], [40, "EMA", "The Future's Void", 2014], [41, "Tweedy", "Sukierae", 2014], [42, "Gary Clark Jr.", "Gary Clark Jr. Live", 2014], [43, "Coldplay", "Ghost Stories", 2014], [44, "Tinariwen", "Emmaar", 2014], [45, "Yob", "Clearing the Path to Ascend", 2014], [46, "Sharon Van Etten", "Are We There", 2014], [47, "Sturgill Simpson", "Metamodern Sounds in Country Music", 2014], [48, "Sun Kil Moon", "Benji", 2014], [49, "Lana Del Rey", "Ultraviolence", 2014], [50, "Angel Olsen", "Burn Your Fire for No Witness", 2014]];
@@ -194,11 +200,12 @@ ALBUMS.forEach(function(s){
   var artist=document.createElement("div");artist.className="track-artist";artist.textContent=s[1];
   info.appendChild(name);info.appendChild(artist);
   var yr=document.createElement("div");yr.className="track-year";yr.textContent=s[3]||"";
-  var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";
-  row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(sc);
+  var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";
+  row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -277,7 +284,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){

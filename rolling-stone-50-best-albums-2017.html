@@ -154,11 +154,17 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
       <p class="feat-rev">Jay-Z haciendo el album mas honesto de su carrera — una confersion publica sobre la infidelidad, los errores y el legado. 4:44, The Story of O.J. y Family Feud como tres canciones donde el rap se convirtio en terapia de pareja transmitida en streaming. Producido completamente por No I.D. con samples de Nina Simone, Hannah Williams y otros. El mayor acto de vulnerabilidad de Jay-Z.</p>
     </div>
   </div></section>
-<section class="track-section" style="padding-top:1.5rem"><div class="sec-label">48 albumes &#183; del #1 al #48</div><div class="track-header"><span style="text-align:right">#</span><span></span><span>Album / Artista</span><span style="text-align:right">Ano</span>
+<section class="track-section" style="padding-top:1.5rem"><div class="sec-label">48 albumes &#183; del #1 al #48</div><div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
     <span style="text-align:right">Género</span>
     <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
-    <span style="text-align:right">Mis plays</span></div><div id="tracklist"></div></section>
+    <span style="text-align:right">Mis plays</span>
+  </div>
+  <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2017 &#183; NOV 2017</span><a href="https://www.rollingstone.com/music/music-lists/50-best-albums-of-2017-123296/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
 <script>var ALBUMS=[[1, "Kendrick Lamar", "DAMN.", 2017], [2, "Lorde", "Melodrama", 2017], [3, "Taylor Swift", "Reputation", 2017], [4, "LCD Soundsystem", "American Dream", 2017], [5, "Jay-Z", "4:44", 2017], [6, "Kesha", "Rainbow", 2017], [7, "Queens of the Stone Age", "Villains", 2017], [8, "Margo Price", "All American Made", 2017], [9, "Khalid", "American Teen", 2017], [10, "Courtney Barnett and Kurt Vile", "Lotta Sea Lice", 2017], [11, "Randy Newman", "Dark Matter", 2017], [12, "Moses Sumney", "Aromanticism", 2017], [13, "Hurray for the Riff Raff", "The Navigator", 2017], [14, "Jason Isbell and the 400 Unit", "The Nashville Sound", 2017], [15, "Residente", "Residente", 2017], [16, "Alvvays", "Antisocialites", 2017], [17, "Harry Styles", "Harry Styles", 2017], [18, "St. Vincent", "Masseduction", 2017], [19, "Father John Misty", "Pure Comedy", 2017], [20, "SZA", "Ctrl", 2017], [21, "Sheer Mag", "Need to Feel Your Love", 2017], [22, "Jlin", "Black Origami", 2017], [23, "Valerie June", "The Order of Time", 2017], [24, "Paramore", "After Laughter", 2017], [25, "Lana Del Rey", "Lust for Life", 2017], [26, "Drake", "More Life", 2017], [27, "Vince Staples", "Big Fish Theory", 2017], [28, "Jay Som", "Everybody Works", 2017], [29, "Chris Stapleton", "From A Room Volume 1", 2017], [30, "Songhoy Blues", "Resistance", 2017], [31, "Robert Plant", "Carry Fire", 2017], [32, "Vijay Iyer Sextet", "Far From Over", 2017], [33, "Open Mike Eagle", "Brick Body Kids Still Daydream", 2017], [34, "Bob Dylan", "Triplicate", 2017], [35, "Lindsey Buckingham and Christine McVie", "Lindsey Buckingham Christine McVie", 2017], [36, "Liam Gallagher", "As You Were", 2017], [37, "Japanese Breakfast", "Soft Sounds From Another Planet", 2017], [38, "Grizzly Bear", "Painted Ruins", 2017], [39, "Ornette Coleman", "Celebrate Ornette", 2014], [40, "Gregg Allman", "Southern Blood", 2017], [41, "Beck", "Colors", 2017], [42, "The New Pornographers", "Whiteout Conditions", 2017], [43, "Tracy Bonham", "Modern Burdens", 2017], [44, "Sharon Jones and the Dap-Kings", "Soul of a Woman", 2017], [45, "Low Cut Connie", "Dirty Pictures Part One", 2017], [46, "Chronixx", "Chronology", 2017], [47, "Foo Fighters", "Concrete and Gold", 2017], [48, "Code Orange", "Forever", 2017]];
 var FEAT=[["fc-1", "Kendrick Lamar", "DAMN."], ["fc-2", "Lorde", "Melodrama"], ["fc-3", "Taylor Swift", "Reputation"], ["fc-4", "LCD Soundsystem", "American Dream"], ["fc-5", "Jay-Z", "4:44"]];
@@ -193,11 +199,12 @@ ALBUMS.forEach(function(s){
   var artist=document.createElement("div");artist.className="track-artist";artist.textContent=s[1];
   info.appendChild(name);info.appendChild(artist);
   var yr=document.createElement("div");yr.className="track-year";yr.textContent=s[3]||"";
-  var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";
-  row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(sc);
+  var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";
+  row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -275,7 +282,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){

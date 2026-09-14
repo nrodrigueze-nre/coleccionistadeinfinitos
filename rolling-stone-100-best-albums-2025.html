@@ -136,7 +136,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">1</div>
     <img class="feat-cover" id="fc-1" src="" alt="Debí Tirar Más Fotos">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Debí Tirar Más Fotos</div>
       <div class="feat-artist">Bad Bunny</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -147,7 +147,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">2</div>
     <img class="feat-cover" id="fc-2" src="" alt="Mayhem">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Mayhem</div>
       <div class="feat-artist">Lady Gaga</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -158,7 +158,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">3</div>
     <img class="feat-cover" id="fc-3" src="" alt="Lux">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Lux</div>
       <div class="feat-artist">Rosalía</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -169,7 +169,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">4</div>
     <img class="feat-cover" id="fc-4" src="" alt="Baby">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Baby</div>
       <div class="feat-artist">Dijon</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -180,7 +180,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="Getting Killed">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Getting Killed</div>
       <div class="feat-artist">Geese</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -191,7 +191,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">6</div>
     <img class="feat-cover" id="fc-6" src="" alt="Let God Sort Em Out">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Let God Sort Em Out</div>
       <div class="feat-artist">Clipse</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -202,7 +202,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">7</div>
     <img class="feat-cover" id="fc-7" src="" alt="Snipe Hunter">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Snipe Hunter</div>
       <div class="feat-artist">Tyler Childers</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -213,7 +213,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">8</div>
     <img class="feat-cover" id="fc-8" src="" alt="Bleeds">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Bleeds</div>
       <div class="feat-artist">Wednesday</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -224,7 +224,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">9</div>
     <img class="feat-cover" id="fc-9" src="" alt="Ego Death at a Bachelorette Party">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Ego Death at a Bachelorette Party</div>
       <div class="feat-artist">Hayley Williams</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -235,7 +235,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">10</div>
     <img class="feat-cover" id="fc-10" src="" alt="Music">
-    <div>
+    <div class="feat-info">
       <div class="feat-title">Music</div>
       <div class="feat-artist">Playboi Carti</div>
       <div class="feat-meta"><span class="feat-pill">2025</span></div>
@@ -575,6 +575,7 @@ var extraObs=new IntersectionObserver(function(es){
   });
 },{rootMargin:'600px'});
 function observeExtras(){document.querySelectorAll('.track-extra-trigger').forEach(function(g){if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}});}
+setTimeout(observeExtras, 100);
 setTimeout(observeExtras,50);
 
 // feat pills: género desde Last.fm para items sin genre

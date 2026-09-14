@@ -154,11 +154,17 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
       <p class="feat-rev">Solange construyendo una declaracion cultural sobre identidad negra y sanacion — el album hermano tematico de Lemonade de su hermana Beyonce, lanzado el mismo ano. Cranes in the Sky, Mad y Don't Touch My Hair como tres canciones donde el R&B se convirtio en meditacion politica. El primer album de Solange en alcanzar el #1 del Billboard 200.</p>
     </div>
   </div></section>
-<section class="track-section" style="padding-top:1.5rem"><div class="sec-label">50 albumes &#183; del #1 al #50</div><div class="track-header"><span style="text-align:right">#</span><span></span><span>Album / Artista</span><span style="text-align:right">Ano</span>
+<section class="track-section" style="padding-top:1.5rem"><div class="sec-label">50 albumes &#183; del #1 al #50</div><div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
     <span style="text-align:right">Género</span>
     <span style="text-align:right">Oyentes</span>
     <span style="text-align:right">Plays</span>
-    <span style="text-align:right">Mis plays</span></div><div id="tracklist"></div></section>
+    <span style="text-align:right">Mis plays</span>
+  </div>
+  <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2016 &#183; NOV 2016</span><a href="https://www.rollingstone.com/music/music-lists/50-best-albums-of-2016-119690/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
 <script>var ALBUMS=[[1, "Beyonce", "Lemonade", 2016], [2, "David Bowie", "Blackstar", 2016], [3, "Chance the Rapper", "Coloring Book", 2016], [4, "Frank Ocean", "Blonde", 2016], [5, "Solange", "A Seat at the Table", 2016], [6, "Leonard Cohen", "You Want It Darker", 2016], [7, "Green Day", "Revolution Radio", 2016], [8, "Anderson Paak", "Malibu", 2016], [9, "A Tribe Called Quest", "We Got It From Here Thank You 4 Your Service", 2016], [10, "Kanye West", "The Life of Pablo", 2016], [11, "Nick Cave and the Bad Seeds", "Skeleton Tree", 2016], [12, "Danny Brown", "Atrocity Exhibition", 2016], [13, "The 1975", "I Like It When You Sleep for You Are So Beautiful yet So Unaware of It", 2016], [14, "Parquet Courts", "Human Performance", 2016], [15, "Miranda Lambert", "The Weight of These Wings", 2016], [16, "Lvl Up", "Return to Love", 2016], [17, "Sturgill Simpson", "A Sailor's Guide to Earth", 2016], [18, "Rihanna", "Anti", 2016], [19, "Drive-By Truckers", "American Band", 2016], [20, "Mitski", "Puberty 2", 2016], [21, "Bon Iver", "22 A Million", 2016], [22, "Margo Price", "Midwest Farmer's Daughter", 2016], [23, "Blood Orange", "Freetown Sound", 2016], [24, "Brandy Clark", "Big Day in a Small Town", 2016], [25, "Mudcrutch", "Mudcrutch 2", 2016], [26, "White Lung", "Paradise", 2016], [27, "Angel Olsen", "My Woman", 2016], [28, "Anohni", "Hopelessness", 2016], [29, "Alicia Keys", "Here", 2016], [30, "Sting", "57th and 9th", 2016], [31, "Metallica", "Hardwired to Self-Destruct", 2016], [32, "Bonnie Raitt", "Dig In Deep", 2016], [33, "Tove Lo", "Lady Wood", 2016], [34, "Elton John", "Wonderful Crazy Night", 2016], [35, "Maxwell", "blackSUMMERS'night", 2016], [36, "Wilco", "Schmilco", 2016], [37, "Drake", "Views", 2016], [38, "Future", "Evol", 2016], [39, "The Monkees", "Good Times!", 2016], [40, "Iggy Pop", "Post Pop Depression", 2016], [41, "Norah Jones", "Day Breaks", 2016], [42, "Kyle Dixon and Michael Stein", "Stranger Things Vol 1 and 2", 2016], [43, "Esperanza Spalding", "Emily's D+Evolution", 2016], [44, "Dawes", "We're All Gonna Die", 2016], [45, "Death Grips", "Bottomless Pit", 2016], [46, "Prince", "Hit n Run Phase Two", 2015], [47, "Radiohead", "A Moon Shaped Pool", 2016], [48, "Weyes Blood", "Front Row Seat to Earth", 2016], [49, "Car Seat Headrest", "Teens of Denial", 2016], [50, "Young Thug", "Jeffery", 2016]];
 var FEAT=[["fc-1", "Beyonce", "Lemonade"], ["fc-2", "David Bowie", "Blackstar"], ["fc-3", "Chance the Rapper", "Coloring Book"], ["fc-4", "Frank Ocean", "Blonde"], ["fc-5", "Solange", "A Seat at the Table"]];
@@ -193,11 +199,12 @@ ALBUMS.forEach(function(s){
   var artist=document.createElement("div");artist.className="track-artist";artist.textContent=s[1];
   info.appendChild(name);info.appendChild(artist);
   var yr=document.createElement("div");yr.className="track-year";yr.textContent=s[3]||"";
-  var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";
-  row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(sc);
+  var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";
+  row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -275,7 +282,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){
