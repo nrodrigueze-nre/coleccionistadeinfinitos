@@ -181,10 +181,11 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <div class="feat-item">
     <div class="feat-pos">5</div>
     <img class="feat-cover" id="fc-5" src="" alt="">
-    <div class="feat-meta"><span class="feat-pill">1961</span><span class="feat-pill">SOUL / R&amp;B</span><span class="feat-pill">EEUU</span></div>
-    <div class="feat-title">At Last</div>
-    <div class="feat-artist">Etta James</div>
-    <p class="feat-rev">La voz más poderosa del soul americano cantando la canción más perfecta para una primera danza de bodas. Etta James tomó un standard de Glenn Miller de 1941 y lo hizo completamente suyo — At Last es ahora más asociada con Etta que con ningún otro intérprete. La orquestación de Leonard Chess y la voz indestructible de James creando tres minutos de eternidad pura.</p>
+    <div class="feat-info">
+      <div class="feat-title">At Last</div>
+      <div class="feat-artist">Etta James</div>
+      <div class="feat-meta"><span class="feat-pill">1961</span><span class="feat-pill">SOUL / R&amp;B</span><span class="feat-pill">EEUU</span></div>
+      <p class="feat-rev">La voz más poderosa del soul americano cantando la canción más perfecta para una primera danza de bodas. Etta James tomó un standard de Glenn Miller de 1941 y lo hizo completamente suyo — At Last es ahora más asociada con Etta que con ningún otro intérprete. La orquestación de Leonard Chess y la voz indestructible de James creando tres minutos de eternidad pura.</p>
     </div>
   </div>
 
@@ -459,6 +460,7 @@ SONGS.forEach(function(s){
   frag.appendChild(row);
 });
 container.appendChild(frag);
+  if(typeof observeExtras==="function") observeExtras();
 
 var artQ = [], artTimer = null;
 function flushArt(){
@@ -562,7 +564,12 @@ var extraObs=new IntersectionObserver(function(es){
     processExtra();
   });
 },{rootMargin:'600px'});
-document.querySelectorAll('.track-extra-trigger').forEach(function(g){extraObs.observe(g);});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
 
 // feat pills: género desde Last.fm para items sin genre
 function loadFeatTags(){
