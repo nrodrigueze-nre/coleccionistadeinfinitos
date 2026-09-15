@@ -398,7 +398,7 @@ function loadArt(el,artist,track){
       if(!match&&results.length)match=results[0];
       if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));else throw new Error("x");
     }).catch(function(){
-      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&autocorrect=1&format=json")
         .then(function(r){return r.json();}).then(function(d){
           var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
           for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
@@ -435,7 +435,7 @@ function processLfmQ(){
   if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
   var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
   if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
-  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&format=json")
+  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&autocorrect=1&format=json")
     .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
     .catch(function(){el.textContent="—";el.classList.remove("loading");})
     .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
@@ -459,7 +459,7 @@ function processExtra(){
   fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
@@ -528,7 +528,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

@@ -65,6 +65,7 @@ a{color:inherit;text-decoration:none}
 .track-cover{width:46px;height:46px;object-fit:cover;border-radius:4px;border:1px solid #e0e4ee;background:#f0f2f8;display:block}
 .track-name{font-size:13px;font-weight:400;color:#0d1117;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .track-artist{font-size:11px;color:#9aa3b2;font-weight:300}
+.track-year.loading{color:#c0c8d8;font-weight:300}
 .track-year{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right}
 .track-decade{font-size:11px;color:#16604a;font-weight:500;text-align:center}
 .track-genre{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -292,13 +293,32 @@ function loadArt(el,artist,album){
       var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
       for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
       if(!m&&res.length)m=res[0];
-      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var row=el.closest?el.closest(".track-row"):null;
+        if(row){
+          var yrEl=row.querySelector(".track-year");
+          if(yrEl&&(!yrEl.textContent||yrEl.textContent==="\u2014"||yrEl.textContent===""||/^\d0s$/.test(yrEl.textContent))&&m.releaseDate){
+            var yr=m.releaseDate.substring(0,4);
+            if(yr){yrEl.textContent=yr;yrEl.classList.remove("loading");}
+          }
+        }
+      }
+      if(!m) throw 0;
     }).catch(function(){
-      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&format=json")
+      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&autocorrect=1&format=json")
         .then(function(r){return r.json();}).then(function(d){
           var imgs=(d&&d.album&&d.album.image)||[],best=null;
           for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
           if(best)setImg(el,best["#text"]);
+          var row2=el.closest?el.closest(".track-row"):null;
+          if(row2&&d&&d.album){
+            var yrEl2=row2.querySelector(".track-year");
+            if(yrEl2&&(!yrEl2.textContent||/^\d0s$/.test(yrEl2.textContent))&&d.album.wiki&&d.album.wiki.published){
+              var m2=d.album.wiki.published.match(/\b(19|20)\d{2}\b/);
+              if(m2){yrEl2.textContent=m2[0];yrEl2.classList.remove("loading");}
+            }
+          }
         }).catch(function(){});
     });
 }
@@ -312,7 +332,7 @@ ALBUMS.forEach(function(s){
   row.innerHTML="<div class=\"track-num\">"+s[0]+"</div>"+
     "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(s[1])+"\" data-album=\""+encodeURIComponent(s[2])+"\" src=\"\" style=\"opacity:0\" alt=\"\">"+
     "<div style=\"min-width:0\"><div class=\"track-name\">"+s[2]+"</div><div class=\"track-artist\">"+s[1]+"</div></div>"+
-    "<div class=\"track-year\">"+s[3]+"</div>"+
+    "<div class=\"track-year loading\">"+s[3]+"</div>"+
     "<div class=\"track-genre loading track-extra-trigger\" data-lfm-artist=\""+encodeURIComponent(s[1])+"\" data-lfm-title=\""+encodeURIComponent(s[2])+"\">&#8212;</div>"+
     "<div class=\"track-listeners loading\">&#8212;</div>"+
     "<div class=\"track-playcount loading\">&#8212;</div>"+
@@ -332,7 +352,7 @@ function processLfm(){
   if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
   var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),al=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+al;
   if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
-  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&format=json")
+  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&autocorrect=1&format=json")
     .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.album&&d.album.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
     .catch(function(){el.textContent="—";el.classList.remove("loading");})
     .finally(function(){lfmBusy=false;setTimeout(processLfm,250);});
@@ -355,7 +375,7 @@ function processExtra(){
   fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
@@ -444,7 +464,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

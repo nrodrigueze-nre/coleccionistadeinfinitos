@@ -407,7 +407,7 @@ function loadArt(el, artist, title) {
     })
     .catch(function(){
       fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
-            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&format=json")
+            "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(title) + "&autocorrect=1&format=json")
         .then(function(r){ return r.json(); })
         .then(function(d){
           var imgs = d.track && d.track.album && d.track.album.image || [], best = null;
@@ -485,7 +485,7 @@ function processLfm(){
   if (lfmCache[k] !== undefined){ renderS(el, lfmCache[k]); lfmBusy = false; setTimeout(processLfm,30); return; }
   fetch("https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=" + LFM_KEY +
         "&artist=" + encodeURIComponent(ar) + "&track=" + encodeURIComponent(tr) +
-        "&username=" + LFM_USER + "&format=json")
+        "&username=" + LFM_USER + "&autocorrect=1&format=json")
     .then(function(r){ return r.json(); })
     .then(function(d){
       var c = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
@@ -518,7 +518,7 @@ function processExtra(){
   fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
@@ -587,7 +587,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

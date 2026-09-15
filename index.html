@@ -246,73 +246,9 @@ input{font-family:inherit}
     <div class="nav-sep"></div>
     <div class="nav-sep-lbl">Listas</div>
 
-    <div class="cat-head" onclick="tog('sb1','a1')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Superlistas
-      <span class="nav-cnt">8</span>
-      <svg class="cat-arr" id="a1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="sb1">
-      <div class="cat-sub" onclick="go('super')">Todas (8)</div>
-      <div class="cat-sub" onclick="go('super')">Álbumes (5)</div>
-      <div class="cat-sub" onclick="go('super')">Canciones (3)</div>
-    </div>
+    <div id="sidebar-categories"></div>
 
-    <div class="cat-head" onclick="tog('ag1','a2')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>Álbumes Globales
-      <span class="nav-cnt">43</span>
-      <svg class="cat-arr" id="a2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="ag1">
-      <div class="cat-sub" onclick="go('albumes-globales')">Rolling Stone (12)</div>
-      <div class="cat-sub" onclick="go('albumes-globales')">Digital Dream Door (18)</div>
-      <div class="cat-sub" onclick="go('albumes-globales')">Billboard (8)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('cg1','a3')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Canciones Globales
-      <span class="nav-cnt">38</span>
-      <svg class="cat-arr" id="a3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="cg1">
-      <div class="cat-sub" onclick="go('canciones-globales')">VH1 (12)</div>
-      <div class="cat-sub" onclick="go('canciones-globales')">Rolling Stone (15)</div>
-      <div class="cat-sub" onclick="go('canciones-globales')">Digital Dream Door (8)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('al1','a4')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="3"/><path d="M2 12c0 4.418 4.477 8 10 8s10-3.582 10-8"/><path d="M2 12c0-4.418 4.477-8 10-8s10 3.582 10 8"/></svg>Álbumes Latinos
-      <span class="nav-cnt">29</span>
-      <svg class="cat-arr" id="a4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="al1">
-      <div class="cat-sub" onclick="go('albumes-latinos')">RS en Español (14)</div>
-      <div class="cat-sub" onclick="go('albumes-latinos')">MediaMonkey (4)</div>
-      <div class="cat-sub" onclick="go('albumes-latinos')">Canal Viva (3)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('cl1','a5')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>Canciones Latinas
-      <span class="nav-cnt">31</span>
-      <svg class="cat-arr" id="a5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="cl1">
-      <div class="cat-sub" onclick="go('canciones-latinas')">RS en Español (12)</div>
-      <div class="cat-sub" onclick="go('canciones-latinas')">Digital Dream Door (9)</div>
-      <div class="cat-sub" onclick="go('canciones-latinas')">Netflix / Plataformas (4)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('te1','a6')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Temáticas
-      <span class="nav-cnt">14</span>
-      <svg class="cat-arr" id="a6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="te1">
-      <div class="cat-sub" onclick="go('tematicas')">Fútbol (2)</div>
-      <div class="cat-sub" onclick="go('tematicas')">Soundtracks (4)</div>
-      <div class="cat-sub" onclick="go('tematicas')">Géneros (8)</div>
-    </div>
-  </div>
-  <div class="sb-foot">262 listas · 145.155 canciones<br>Última: World Cup Songs (RS · 2026)</div>
+    <div class="sb-foot">262 listas · 145.155 canciones<br>Última: World Cup Songs (RS · 2026)</div>
 </aside>
 
 <div class="main">
@@ -453,7 +389,7 @@ const LISTS = [
     title: "100 Mejores Discos del Rock Nacional",
     source: "Rolling Stone Argentina",
     year: "1967–2009",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Artaud, Clics Modernos, Oktubre, Canción Animal — el canon del rock argentino según músicos y productores · RS Argentina 2013.",
     url: "https://licricardososa.wordpress.com/2013/12/16/rolling-stone-argentina-2013-los-100-mejores-discos-del-rock-nacional/",
@@ -465,7 +401,7 @@ const LISTS = [
     title: "100 Álbumes Esenciales de la Música Dominicana",
     source: "Acroarte",
     year: "2013",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 álbumes esenciales de la música dominicana según Acroarte.",
     url: "https://elnacional.com.do/acroarte-selecciona-los-100-albumes-esenciales-de-la-musica-dominicana/",
@@ -477,7 +413,7 @@ const LISTS = [
     title: "101 Albums That Changed Popular Music",
     source: "Libro · Chris Smith",
     year: "1952–2003",
-    type: "álbumes",
+    type: "albumes",
     count: "101",
     desc: "De Anthology of American Folk Music a Elephant de White Stripes · Oxford University Press 2009 · impacto cultural, ventas e influencia.",
     url: "https://rateyourmusic.com/list/Alecway_Aldwinbay/101_albums_that_changed_popular_music_by_chris_smith/",
@@ -489,7 +425,7 @@ const LISTS = [
     title: "1001 Discos Que Hay Que Escuchar Antes De Morir",
     source: "Libro · 90 Críticos",
     year: "1950–2007",
-    type: "álbumes",
+    type: "albumes",
     count: "1001",
     desc: "Sgt. Pepper's, Kind of Blue, Dark Side of the Moon, Exile, Nevermind — el canon global de 90 críticos · por impacto.",
     url: "https://os1001discos.wordpress.com/about/",
@@ -537,7 +473,7 @@ const LISTS = [
     title: "100 Greatest Latin American Albums",
     source: "Digital Dream Door",
     year: "1954–2007",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes latinoamericanos de todos los tiempos según Digital Dream Door.",
     url: "https://digitaldreamdoor.com/pages/best_albums-Latin.html",
@@ -546,51 +482,51 @@ const LISTS = [
   },
   {
     file: "rolling-stone-10-best-latin-2015.html",
-    title: "10 Best Latin Albums of 2015",
+    title: "Mejores Canciones Latinas 2015",
     source: "Rolling Stone",
     year: "2015",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2015 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/10-best-latin-albums-of-the-year-38370/",
-    _artist: "Rubén Blades",
-    _title: "Decisiones"
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2015 según Rolling Stone en Español.",
+    url: "",
+    _artist: "J Balvin",
+    _title: "Ay Vamos"
   },
   {
     file: "rolling-stone-10-best-latin-2016.html",
-    title: "10 Best Latin Albums of 2016",
+    title: "Mejores Canciones Latinas 2016",
     source: "Rolling Stone",
     year: "2016",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2016 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/10-best-latin-albums-of-2016-106779/",
-    _artist: "Shakira",
-    _title: "La Bicicleta"
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2016 según Rolling Stone en Español.",
+    url: "",
+    _artist: "Bad Bunny",
+    _title: "Soy Peor"
   },
   {
     file: "rolling-stone-10-best-latin-2017.html",
-    title: "10 Best Latin Albums of 2017",
+    title: "Mejores Canciones Latinas 2017",
     source: "Rolling Stone",
     year: "2017",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2017 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/10-best-latin-albums-of-2017-121987/",
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2017 según Rolling Stone en Español.",
+    url: "",
     _artist: "Luis Fonsi",
     _title: "Despacito"
   },
   {
     file: "rolling-stone-10-best-latin-2018.html",
-    title: "10 Best Latin Albums of 2018",
+    title: "Mejores Canciones Latinas 2018",
     source: "Rolling Stone",
     year: "2018",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2018 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-latin-lists/best-latin-albums-2018-769413/",
-    _artist: "J Balvin",
-    _title: "Mi Gente"
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2018 según Rolling Stone en Español.",
+    url: "",
+    _artist: "Bad Bunny",
+    _title: "Mia"
   },
   {
     file: "mediamonkey-100-greatest-brazilian-songs.html",
@@ -609,7 +545,7 @@ const LISTS = [
     title: "100 Greatest Brazilian Albums",
     source: "Digital Dream Door",
     year: "2012",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes brasileros de todos los tiempos según Digital Dream Door.",
     url: "https://digitaldreamdoor.com/pages/best_albums-Brazilian.html",
@@ -736,7 +672,6 @@ const LISTS = [
     _artist: "Black Sabbath",
     _title: "Black Sabbath"
   },
-
   {
     file: "digitaldreamdoor-100-songs-1950s.html",
     title: "100 Greatest Rock Songs of the 1950s",
@@ -790,7 +725,7 @@ const LISTS = [
     title: "100 Best Albums of the Eighties",
     source: "Rolling Stone",
     year: "1989",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 80s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-eighties-150477/",
@@ -814,7 +749,7 @@ const LISTS = [
     title: "100 Best Albums of the '90s",
     source: "Rolling Stone",
     year: "2011",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 90s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-90s-152425/",
@@ -1144,30 +1079,6 @@ const LISTS = [
   },
   {
     file: "vh1-100-greatest-dance-songs.html",
-    title: "VH1: 100 Greatest Dance Songs",
-    source: "VH1",
-    year: "1959–1999",
-    type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones de baile según VH1 · Gloria Gaynor, Madonna, Bee Gees, Michael Jackson, Donna Summer · disco, funk, soul, dance · cuatro décadas de pista de baile.",
-    url: "https://cs.uwaterloo.ca/~dtompkin/music/list/Best12.html",
-    feat: [
-      {pos:1,  artist:"Gloria Gaynor",  title:"I Will Survive",           review:"El himno de supervivencia más poderoso de la historia — ganó el único Grammy de Mejor Grabación Disco y lleva cinco décadas en cada pista de baile del mundo."},
-      {pos:2,  artist:"Madonna",        title:"Vogue",                    review:"Madonna apropiando la cultura queer del ballroom de Harlem y llevándola al mainstream global — declaración cultural que hizo visible la comunidad LGBTQ+."},
-      {pos:3,  artist:"Sister Sledge",  title:"We Are Family",            review:"Producida por Nile Rodgers y Bernard Edwards de Chic — uno de los himnos de celebración colectiva más usados de la historia. Sonó en Mundiales, bodas y protestas."},
-      {pos:4,  artist:"Bee Gees",       title:"Stayin' Alive",            review:"El corazón sonoro de Saturday Night Fever — un groove de 103 BPM tan preciso que los médicos lo usan para marcar el ritmo de las compresiones en reanimación cardiopulmonar."},
-      {pos:5,  artist:"Michael Jackson","title":"Billie Jean",            review:"La canción que llegó con el moonwalk. Producida por Quincy Jones con ese bajo imparable — el mayor thriller del pop convirtió una historia de paternidad en obra maestra."},
-      {pos:6,  artist:"Donna Summer",   title:"I Feel Love",              review:"Brian Eno le dijo a Bowie al escucharla: 'Esta canción cambiará la música de baile en los próximos 15 años'. Tenía razón — el primer gran hit de música electrónica pura."},
-      {pos:7,  artist:"Aretha Franklin","title":"Respect",                review:"Aretha invirtió la canción de Otis Redding y la convirtió en el himno feminista y de los derechos civiles más poderoso del siglo XX. R-E-S-P-E-C-T."},
-      {pos:8,  artist:"Chic",           title:"Le Freak",                 review:"Nile Rodgers fue rechazado en Studio 54 una Nochevieja y escribió una canción de venganza — el disco más vendido de Atlantic Records hasta ese momento."},
-      {pos:9,  artist:"Chubby Checker", title:"The Twist",                review:"La única canción en llegar al número 1 dos veces en el Billboard. Creó el primer baile popular sin pareja fija de la era moderna — sin The Twist, la historia del baile es otra."},
-      {pos:10, artist:"Chic",           title:"Good Times",               review:"La línea de bajo sampleada en Rapper's Delight y Another One Bites the Dust — conectando disco, hip hop y rock en una genealogía musical única. Chic en su momento más influyente."}
-    ],
-    _artist:"Gloria Gaynor",
-    _title:"I Will Survive"
-  },
-  {
-    file: "vh1-100-greatest-dance-songs.html",
     title: "VH1 · 100 Greatest Dance Songs",
     source: "VH1",
     year: "1959–1999",
@@ -1219,7 +1130,7 @@ const LISTS = [
     title: "20 Grandes Discos en la Historia de la Salsa",
     source: "Rolling Stone en Español",
     year: "1955–2007",
-    type: "álbumes",
+    type: "albumes",
     count: "20",
     desc: "Selección cronológica de Diego F. Sánchez (La-33) · Siembra, De ti depende, Tapando el hueco, Cheo · Nueva York, Puerto Rico, Colombia · RS en Español Nov 2022.",
     url: "https://es.rollingstone.com/muestrario-20-grandes-discos-en-la-historia-de-la-salsa/",
@@ -1238,7 +1149,7 @@ const LISTS = [
     title: "Rock Colombiano: 100 Discos, 50 Años",
     source: "Pablito Wilson · Ediciones B",
     year: "1960s–2010s",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Libro de Pablito Wilson (Ediciones B) · 100 álbumes fundamentales del rock colombiano · Carlos Vives, La Etnnia, Aterciopelados, Shakira, Bomba Estéreo, Kraken · desde 1962 hasta los 2010s.",
     url: "",
@@ -1281,7 +1192,7 @@ const LISTS = [
     title: "Colección Putumayo World Music",
     source: "Colección Nelson Rodríguez",
     year: "1993–2020s",
-    type: "álbumes",
+    type: "albumes",
     count: "211",
     desc: "211 compilaciones del sello de world music más importante · África, Brasil, Cuba, Colombia, Jazz, Reggae, Flamenco, Celta, Nueva Orleans · catálogo completo en la colección de Nelson.",
     url: "https://www.putumayo.com",
@@ -1381,7 +1292,7 @@ const LISTS = [
     title: "Grandes Discos Mexicanos de los 90",
     source: "Rolling Stone en Español",
     year: "1990–1999",
-    type: "álbumes",
+    type: "albumes",
     count: "20",
     desc: "Los 20 grandes discos mexicanos de los 90 · Café Tacvba, Luis Miguel, Molotov, Maná, Caifanes · rock, bolero, rap, regional · RS en Español Abr 2022.",
     url: "https://es.rollingstone.com/grandes-discos-mexicanos-de-los-90/",
@@ -1396,30 +1307,11 @@ const LISTS = [
     _title:"Re"
   },
   {
-    file: "rolling-stone-50-mejores-discos-espanol-2024.html",
-    title: "Grandes Álbumes en Español de 2024",
-    source: "Rolling Stone en Español",
-    year: "2024",
-    type: "álbumes",
-    count: "53",
-    desc: "Los grandes álbumes en español de 2024 · Álvaro Díaz, Rauw Alejandro, The Marías, Residente, Kali Uchis · 50 álbumes + 3 menciones honoríficas · RS en Español Nov 2024.",
-    url: "https://es.rollingstone.com/grandes-albumes-en-espanol-de-2024/",
-    feat: [
-      {pos:1, artist:"Álvaro Díaz",   title:"SAYONARA",                 review:"Un clásico instantáneo del género urbano — RS lo llama uno de los álbumes urbanos más grandes de todos los tiempos. Valentía sin límites, romanticismo en exceso."},
-      {pos:2, artist:"Rauw Alejandro", title:"Cosa Nuestra",            review:"Un eco profundo de las raíces caribeñas de Rauw — mapa emocional de su trayectoria que fusiona el pasado y el presente del sonido latinoamericano."},
-      {pos:3, artist:"The Marías",    title:"Submarine",                review:"De dream-pop a grunge introspectivo — reinvención creativa total. María Zardoya reafirmada como ícono hispanohablante con el álbum más crudo y ambicioso del dúo."},
-      {pos:4, artist:"Residente",     title:"Las Letras Ya No Importan", review:"Casi siete años de espera para un disco que desafía las normas del rap y las expectativas de la industria. René Pérez reafirmado como ícono latinoamericano irrepetible."},
-      {pos:5, artist:"Kali Uchis",    title:"ORQUÍDEAS",                review:"Kali exaltando sus raíces colombianas y redefiniendo la imagen de la mujer latina — dream pop, R&B, dembow y ritmos latinoamericanos en una atmósfera de ensueño."}
-    ],
-    _artist:"Álvaro Díaz",
-    _title:"SAYONARA"
-  },
-  {
     file: "rolling-stone-25-debuts-mujeres-hispanohablantes.html",
     title: "Grandes Álbumes Debut de Mujeres Hispanohablantes",
     source: "Rolling Stone en Español",
     year: "1995–2025",
-    type: "álbumes",
+    type: "albumes",
     count: "25",
     desc: "Los debuts que marcaron el inicio de carreras brillantes · Shakira, Rosalía, Natalia Lafourcade, Nathy Peluso, Julieta Venegas · México, España, Colombia, Chile · RS en Español Abr 2025.",
     url: "https://es.rollingstone.com/grandes-albumes-debut-de-mujeres-hispanohablantes/",
@@ -1438,7 +1330,7 @@ const LISTS = [
     title: "Los 56 Mejores Discos Iberoamericanos de 2023",
     source: "Rolling Stone en Español",
     year: "2023",
-    type: "álbumes",
+    type: "albumes",
     count: "56",
     desc: "Los discos iberoamericanos que marcaron el 2023 · Tainy, Mon Laferte, Carin León, Fito Páez, Kali Uchis · Argentina, Colombia, México, Puerto Rico, España · RS en Español.",
     url: "https://es.rollingstone.com/los-discos-iberoamericanos-que-marcaron-el-ano-2023/",
@@ -1453,7 +1345,7 @@ const LISTS = [
     _title:"DATA"
   },
   {
-    file: "colombia-cancion-mas-escuchada-por-año.html",
+    file: "colombia-cancion-mas-escuchada-por-a#U00f1o.html",
     title: "Canción Colombiana más Escuchada Cada Año",
     source: "Colombia",
     year: "1945–2024",
@@ -1552,7 +1444,7 @@ const LISTS = [
     title: "Los 99 Mejores Discos de Música Dance de Todos los Tiempos",
     source: "VICE / THUMP",
     year: "1976–2014",
-    type: "álbumes",
+    type: "albumes",
     count: "99",
     desc: "Los 99 LPs que han dejado marca en la pista de baile · de Daft Punk a Kraftwerk · THUMP/VICE 2015 · house, techno, EDM, disco, dubstep.",
     url: "https://www.vice.com/es/article/los-99-mejores-discos-de-musica-dance-de-todos-los-tiempos/",
@@ -2006,73 +1898,73 @@ const LISTS = [
   },
   {
     file: "rolling-stone-100-best-songs-2025.html",
-    title: "The 100 Best Songs of 2025",
+    title: "Best Songs of 2025",
     source: "Rolling Stone",
     year: "2025",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2025 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-2025-1235468614/",
-    _artist: "Kendrick Lamar",
-    _title: "Not Like Us"
+    count: "50",
+    desc: "Las mejores canciones de 2025 según Rolling Stone · selección del staff editorial.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2025/",
+    _artist: "Billie Eilish",
+    _title: "Birds of a Feather"
   },
   {
     file: "rolling-stone-100-best-songs-2024.html",
-    title: "The 100 Best Songs of 2024",
+    title: "Best Songs of 2024",
     source: "Rolling Stone",
     year: "2024",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2024 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-2024-1235163675/",
-    _artist: "Chappell Roan",
-    _title: "Good Luck Babe"
+    count: "50",
+    desc: "Las mejores canciones de 2024 según Rolling Stone · Charli XCX, Chappell Roan, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2024/",
+    _artist: "Charli XCX",
+    _title: "360"
   },
   {
     file: "rolling-stone-100-best-songs-2023.html",
-    title: "The 100 Best Songs of 2023",
+    title: "Best Songs of 2023",
     source: "Rolling Stone",
     year: "2023",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2023 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-2023-1234879541/",
-    _artist: "Miley Cyrus",
-    _title: "Flowers"
+    count: "50",
+    desc: "Las mejores canciones de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Doja Cat.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2023/",
+    _artist: "Olivia Rodrigo",
+    _title: "vampire"
   },
   {
     file: "rolling-stone-100-best-songs-2022.html",
-    title: "The 100 Best Songs of 2022",
+    title: "Best Songs of 2022",
     source: "Rolling Stone",
     year: "2022",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2022 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2022-list-1234632381/",
+    count: "50",
+    desc: "Las mejores canciones de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2022/",
     _artist: "Beyoncé",
     _title: "Break My Soul"
   },
   {
     file: "rolling-stone-100-best-songs-2013.html",
-    title: "100 Best Songs of 2013",
+    title: "Best Songs of 2013",
     source: "Rolling Stone",
     year: "2013",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2013 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/100-best-songs-of-2013-38994/",
+    count: "25",
+    desc: "Las mejores canciones de 2013 según Rolling Stone · Daft Punk, Lorde, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2013/",
     _artist: "Daft Punk",
     _title: "Get Lucky"
   },
   {
     file: "rolling-stone-100-best-songs-1982.html",
-    title: "100 Best Songs of 1982",
+    title: "Best Songs of 1982",
     source: "Rolling Stone",
-    year: "2022",
+    year: "1982",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 1982 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-1982-1234592830/",
+    count: "25",
+    desc: "Las mejores canciones de 1982 según Rolling Stone · Michael Jackson, The Clash, Prince.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-1982/",
     _artist: "Michael Jackson",
     _title: "Billie Jean"
   },
@@ -2138,22 +2030,10 @@ const LISTS = [
   },
   {
     file: "billboard-goat-billboard200-albums-top100.html",
-    title: "Greatest of All Time Billboard 200 Albums — Top 100",
-    source: "Billboard",
-    year: "1956–2015",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 álbumes con mayor performance histórico en el Billboard 200 · basado en semanas y posición · 2015.",
-    url: "https://www.billboard.com/charts/greatest-billboard-200-albums/",
-    _artist: "Adele",
-    _title: "21"
-  },
-  {
-    file: "billboard-goat-billboard200-albums-top100.html",
     title: "100 Best Debut Albums of All Time",
     source: "Rolling Stone",
     year: "2022",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes debut de todos los tiempos según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-debut-albums-of-all-time-143608/",
@@ -2177,7 +2057,7 @@ const LISTS = [
     title: "The 100 Best Albums of the 2010s",
     source: "Rolling Stone",
     year: "2019",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 2010s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/best-albums-2010s-ranked-913997/",
@@ -2201,7 +2081,7 @@ const LISTS = [
     title: "100 Best Albums of the 2000s",
     source: "Rolling Stone",
     year: "2011",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 2000s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-2000s-153375/",
@@ -2210,51 +2090,51 @@ const LISTS = [
   },
   {
     file: "rolling-stone-100-best-albums-2025.html",
-    title: "The 100 Best Albums of 2025",
+    title: "Best Albums of 2025",
     source: "Rolling Stone",
     year: "2025",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2025 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-of-2025-1235466292/",
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2025 según Rolling Stone · selección del staff editorial.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2025/",
     _artist: "Kendrick Lamar",
-    _title: "Not Like Us"
+    _title: "GNX"
   },
   {
     file: "rolling-stone-100-best-albums-2024.html",
-    title: "The 100 Best Albums of 2024",
+    title: "Best Albums of 2024",
     source: "Rolling Stone",
     year: "2024",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2024 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2024-1235031987/",
-    _artist: "Sabrina Carpenter",
-    _title: "Espresso"
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2024 según Rolling Stone · Charli XCX, Billie Eilish, Sabrina Carpenter.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2024/",
+    _artist: "Charli XCX",
+    _title: "BRAT"
   },
   {
     file: "rolling-stone-100-best-albums-2023.html",
-    title: "The 100 Best Albums of 2023",
+    title: "Best Albums of 2023",
     source: "Rolling Stone",
     year: "2023",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2023 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2023-1234879538/",
-    _artist: "Taylor Swift",
-    _title: "Anti-Hero"
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Morgan Wallen.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2023/",
+    _artist: "Olivia Rodrigo",
+    _title: "GUTS"
   },
   {
     file: "rolling-stone-100-best-albums-2022.html",
-    title: "The 100 Best Albums of 2022",
+    title: "Best Albums of 2022",
     source: "Rolling Stone",
     year: "2022",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2022 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2022-list-1234632387/",
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2022/",
     _artist: "Beyoncé",
-    _title: "Break My Soul"
+    _title: "Renaissance"
   },
   {
     file: "digitaldreamdoor-100-latin-pop-2000s-songs.html",
@@ -2423,7 +2303,8 @@ const LISTS = [
     url: "https://www.rollingstone.com/music/music-lists/50-best-albums-of-2017-123296/",
     _artist: "Kendrick Lamar",
     _title: "DAMN."
-  },  {
+  },
+  {
     file: "rolling-stone-50-best-albums-2016.html",
     title: "50 Best Albums of 2016",
     source: "Rolling Stone",
@@ -2560,7 +2441,7 @@ const LISTS = [
     title: "20 Best Dance Albums of 2021",
     source: "Billboard",
     year: "2021",
-    type: "álbumes",
+    type: "albumes",
     count: "20",
     desc: "Porter Robinson, Bicep, Black Coffee, Arca, ZHU — el equipo de Billboard Dance elige sus favoritos con reseñas completas · orden alfabético.",
     url: "https://www.billboard.com/lists/the-20-best-dance-albums-of-2021-critics-picks/",
@@ -2572,7 +2453,7 @@ const LISTS = [
     title: "15 Best Dance & Electronic Albums of 2023",
     source: "Billboard",
     year: "2023",
-    type: "álbumes",
+    type: "albumes",
     count: "15",
     desc: "Kylie Minogue, Skrillex, Kelela, Chemical Brothers — el mejor año reciente del álbum dance según el staff de Billboard · orden alfabético.",
     url: "https://www.billboard.com/lists/best-dance-music-electronic-albums-2023/",
@@ -2812,60 +2693,12 @@ const LISTS = [
     title: "100 Best Debut Albums of All Time",
     source: "Rolling Stone",
     year: "1956-2021",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "The Clash, Jimi Hendrix, Led Zeppelin, Beyoncé — los mejores álbumes debut de la historia según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-debut-albums-of-all-time-143608/",
     _artist: "Ramones",
     _title: "Ramones"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2022.html",
-    title: "Best Songs of 2022",
-    source: "Rolling Stone",
-    year: "2022",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2022/",
-    _artist: "Beyoncé",
-    _title: "Break My Soul"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2023.html",
-    title: "Best Songs of 2023",
-    source: "Rolling Stone",
-    year: "2023",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Doja Cat.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2023/",
-    _artist: "Olivia Rodrigo",
-    _title: "vampire"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2024.html",
-    title: "Best Songs of 2024",
-    source: "Rolling Stone",
-    year: "2024",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2024 según Rolling Stone · Charli XCX, Chappell Roan, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2024/",
-    _artist: "Charli XCX",
-    _title: "360"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2025.html",
-    title: "Best Songs of 2025",
-    source: "Rolling Stone",
-    year: "2025",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2025 según Rolling Stone · selección del staff editorial.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2025/",
-    _artist: "Billie Eilish",
-    _title: "Birds of a Feather"
   },
   {
     file: "billboard-25-best-latin-albums-2020.html",
@@ -3024,90 +2857,6 @@ const LISTS = [
     _title: "El Madrileño"
   },
   {
-    file: "rolling-stone-100-best-albums-2022.html",
-    title: "Best Albums of 2022",
-    source: "Rolling Stone",
-    year: "2022",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2022/",
-    _artist: "Beyoncé",
-    _title: "Renaissance"
-  },
-  {
-    file: "rolling-stone-100-best-albums-2023.html",
-    title: "Best Albums of 2023",
-    source: "Rolling Stone",
-    year: "2023",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Morgan Wallen.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2023/",
-    _artist: "Olivia Rodrigo",
-    _title: "GUTS"
-  },
-  {
-    file: "rolling-stone-100-best-albums-2024.html",
-    title: "Best Albums of 2024",
-    source: "Rolling Stone",
-    year: "2024",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2024 según Rolling Stone · Charli XCX, Billie Eilish, Sabrina Carpenter.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2024/",
-    _artist: "Charli XCX",
-    _title: "BRAT"
-  },
-  {
-    file: "rolling-stone-100-best-albums-2025.html",
-    title: "Best Albums of 2025",
-    source: "Rolling Stone",
-    year: "2025",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2025 según Rolling Stone · selección del staff editorial.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2025/",
-    _artist: "Kendrick Lamar",
-    _title: "GNX"
-  },
-  {
-    file: "rolling-stone-100-best-songs-1982.html",
-    title: "Best Songs of 1982",
-    source: "Rolling Stone",
-    year: "1982",
-    type: "canciones",
-    count: "25",
-    desc: "Las mejores canciones de 1982 según Rolling Stone · Michael Jackson, The Clash, Prince.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-1982/",
-    _artist: "Michael Jackson",
-    _title: "Billie Jean"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2013.html",
-    title: "Best Songs of 2013",
-    source: "Rolling Stone",
-    year: "2013",
-    type: "canciones",
-    count: "25",
-    desc: "Las mejores canciones de 2013 según Rolling Stone · Daft Punk, Lorde, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2013/",
-    _artist: "Daft Punk",
-    _title: "Get Lucky"
-  },
-  {
-    file: "rolling-stone-col-50-grandes-canciones-colombianas.html",
-    title: "50 Grandes Canciones Colombianas",
-    source: "Rolling Stone Colombia",
-    year: "1967-2023",
-    type: "canciones",
-    count: "50",
-    desc: "Carlos Vives, Ekhymosis, Aterciopelados, Juanes, Bomba Estereo — del rock psicodelico de los 60s al vallenato electrico y la cumbia electronica · Ordenadas por impacto · RS Colombia.",
-    url: "",
-    _artist: "Carlos Vives",
-    _title: "La Tierra del Olvido"
-  },
-  {
     file: "rolling-stone-col-50-grandes-canciones-colombianas.html",
     title: "50 Grandes Canciones Colombianas",
     source: "Rolling Stone Colombia",
@@ -3180,30 +2929,6 @@ const LISTS = [
     _title: "Gimme tha Power"
   },
   {
-    file: "rolling-stone-10-best-latin-2015.html",
-    title: "Mejores Canciones Latinas 2015",
-    source: "Rolling Stone",
-    year: "2015",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2015 según Rolling Stone en Español.",
-    url: "",
-    _artist: "J Balvin",
-    _title: "Ay Vamos"
-  },
-  {
-    file: "rolling-stone-10-best-latin-2016.html",
-    title: "Mejores Canciones Latinas 2016",
-    source: "Rolling Stone",
-    year: "2016",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2016 según Rolling Stone en Español.",
-    url: "",
-    _artist: "Bad Bunny",
-    _title: "Soy Peor"
-  },
-  {
     file: "billboard-20-best-latin-songs-2018.html",
     title: "20 Best Latin Songs of 2018",
     source: "Billboard",
@@ -3226,35 +2951,11 @@ const LISTS = [
     _title: "Despacito"
   },
   {
-    file: "rolling-stone-10-best-latin-2017.html",
-    title: "Mejores Canciones Latinas 2017",
-    source: "Rolling Stone",
-    year: "2017",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2017 según Rolling Stone en Español.",
-    url: "",
-    _artist: "Luis Fonsi",
-    _title: "Despacito"
-  },
-  {
-    file: "rolling-stone-10-best-latin-2018.html",
-    title: "Mejores Canciones Latinas 2018",
-    source: "Rolling Stone",
-    year: "2018",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2018 según Rolling Stone en Español.",
-    url: "",
-    _artist: "Bad Bunny",
-    _title: "Mia"
-  },
-  {
     file: "rrhof-200-definitive-albums.html",
     title: "200 Definitive Albums — Rock and Roll Hall of Fame",
     source: "Rock and Roll Hall of Fame",
     year: "1955-2004",
-    type: "álbumes",
+    type: "albumes",
     count: "200",
     desc: "Sgt. Pepper's #1, Dark Side #2, Thriller #3 — 200 álbumes por ventas masivas y popularidad duradera · RRHOF & NARM 2007.",
     url: "https://en.wikipedia.org/wiki/List_of_200_Definitive_Albums_in_the_Rock_and_Roll_Hall_of_Fame",
@@ -3266,7 +2967,7 @@ const LISTS = [
     title: "25 Discos Mas Vendidos de la Historia",
     source: "Infolaso",
     year: "1971-2011",
-    type: "álbumes",
+    type: "albumes",
     count: "25",
     desc: "Thriller, Back in Black, Dark Side, The Bodyguard, Eagles — por ventas certificadas · ChartMasters, RIAA, BPI · Infolaso 2025.",
     url: "https://www.infolaso.com/discos-mas-vendidos.html",
@@ -3440,10 +3141,9 @@ const SECTIONS = {
   "digitaldreamdoor-60-greatest-latin-urban-songs.html": "songs-latin",
   "rolling-stone-59-hits-pop-espanol-siglo-xxi.html": "songs-global",
   "rolling-stone-20-grandes-discos-mexicanos-90s.html": "albums-latin",
-  "rolling-stone-50-mejores-discos-espanol-2024.html": "albums-latin",
   "rolling-stone-25-debuts-mujeres-hispanohablantes.html": "albums-latin",
   "rolling-stone-56-mejores-discos-iberoamerica-2023.html": "albums-latin",
-  "colombia-cancion-mas-escuchada-por-año.html": "songs-latin",
+  "colombia-cancion-mas-escuchada-por-a#U00f1o.html": "songs-latin",
   "billboard-60-best-edm-love-songs.html": "thematic",
   "billboard-50-best-love-songs.html": "thematic",
   "billboard-100-best-breakup-songs.html": "thematic",
@@ -3467,7 +3167,7 @@ const SECTIONS = {
   "rolling-stone-esp-20-mejores-albumes-heavy-metal.html": "genres",
   "rolling-stone-esp-200-mejores-canciones-pop-rock-espanol.html": "super",
   "rolling-stone-200-greatest-dance-songs.html": "super",
-  "rolling-stone-esp-20-sencillos-debut-mas-grandes.html": "albums-global",
+  "rolling-stone-esp-20-sencillos-debut-mas-grandes.html": "songs-global",
   "rolling-stone-esp-20-mejores-discos-postpunk.html": "genres",
   "rolling-stone-esp-20-discos-synth-pop.html": "genres",
   "digitaldreamdoor-100-sophisti-pop-songs.html": "genres",
@@ -3607,15 +3307,18 @@ function homeHTML(){
 var LBLS={home:'Inicio',aclamados:'Más aclamados',super:'Superlistas',
   'albumes-globales':'Álbumes Globales','canciones-globales':'Canciones Globales',
   'albumes-latinos':'Álbumes Latinos','canciones-latinas':'Canciones Latinas',
-  tematicas:'Temáticas'};
+  tematicas:'Temáticas',anuales:'Listas Anuales',decadas:'Por Décadas',generos:'Por Géneros',top12:'Mi Top 12'};
 
 var SEC_FILTERS={
-  super:             function(l){return SECTIONS[l.file]==='super';},
-  'albumes-globales':function(l){var s=SECTIONS[l.file];return (s==='global'||s==='albums-global')&&l.type==='albumes';},
+  super:              function(l){return SECTIONS[l.file]==='super';},
+  'albumes-globales': function(l){var s=SECTIONS[l.file];return (s==='global'||s==='albums-global')&&l.type==='albumes';},
   'canciones-globales':function(l){var s=SECTIONS[l.file];return (s==='global'||s==='songs-global')&&l.type==='canciones';},
-  'albumes-latinos': function(l){var s=SECTIONS[l.file];return (s==='latinas'||s==='albums-latin')&&l.type==='albumes';},
-  'canciones-latinas':function(l){var s=SECTIONS[l.file];return (s==='latinas'||s==='songs-latin')&&l.type==='canciones';},
-  tematicas:         function(l){var s=SECTIONS[l.file];return s==='tematica'||s==='thematic';}
+  'albumes-latinos':  function(l){var s=SECTIONS[l.file];return (s==='latin'||s==='latinas'||s==='albums-latin')&&l.type==='albumes';},
+  'canciones-latinas':function(l){var s=SECTIONS[l.file];return (s==='latin'||s==='latinas'||s==='songs-latin')&&l.type==='canciones';},
+  tematicas:          function(l){var s=SECTIONS[l.file];return s==='tematica'||s==='thematic';},
+  anuales:            function(l){return SECTIONS[l.file]==='annual';},
+  decadas:            function(l){return SECTIONS[l.file]==='decades';},
+  generos:            function(l){return SECTIONS[l.file]==='genres';}
 };
 
 function sectionHTML(sec){
@@ -3624,6 +3327,71 @@ function sectionHTML(sec){
   var items=fn?LISTS.filter(fn):[];
   var h='<div class="sec-head"><h1>'+lbl+'</h1><p>'+items.length+' listas · más recientes primero</p></div>';
   return h+(items.length?'<div class="grid">'+items.map(card).join('')+'</div>':'<p style="color:var(--text3);font-size:14px;margin-top:16px">No hay listas en esta sección.</p>');
+}
+
+
+// ── Mi Top 12 Personal — datos de Nelson ──────────────────────────────────
+var TOP12_SONGS = [
+  ["Queen","Bohemian Rhapsody"],
+  ["Jimi Hendrix","Little Wing"],
+  ["Soda Stereo","En la Ciudad de la Furia"],
+  ["Bad Boys Blue","How I Need You"],
+  ["Kraken","Rostros Ocultos"],
+  ["Diego El Cigala","Lagrimas Negras"],
+  ["Wilfrido Vargas","El Jardinero"],
+  ["Pearl Jam","Jeremy"],
+  ["Joe Arroyo","Noche de Arreboles"],
+  ["Florence + the Machine","Dog Days Are Over"],
+  ["Calle 13","Atrevete-te-te"],
+  ["Led Zeppelin","Stairway to Heaven"]
+];
+var TOP12_ALBUMS = [
+  ["Soda Stereo","Cancion Animal"],
+  ["Pearl Jam","Ten"],
+  ["Pixies","Doolittle"],
+  ["Carlos Vives","Clasicos de la Provincia"],
+  ["Willie Colon & Ruben Blades","Siembra"],
+  ["Oasis","(What's the Story) Morning Glory"],
+  ["U2","Achtung Baby"],
+  ["Guns N' Roses","Appetite for Destruction"],
+  ["Santana","Supernatural"],
+  ["Paul Oakenfold","Bunkka"],
+  ["Kraken","Kraken I"],
+  ["Alanis Morissette","Jagged Little Pill"]
+];
+var TOP12_ARTISTS = [
+  ["Queen","Greatest Hits"],
+  ["Guns N' Roses","Appetite for Destruction"],
+  ["Joe Arroyo","Lo Mejor de Joe Arroyo"],
+  ["Metallica","Metallica"],
+  ["Pet Shop Boys","Actually"],
+  ["Pearl Jam","Ten"],
+  ["Carlos Vives","Clasicos de la Provincia"],
+  ["The Cure","Disintegration"],
+  ["Florence + the Machine","Lungs"],
+  ["Proyecto Uno","El Boom"],
+  ["El Gran Combo de Puerto Rico","Un Verano en Nueva York"],
+  ["Michael Jackson","Thriller"]
+];
+
+function top12Row(artist, ref, idx){
+  return '<div class="acl-row">'
+    +'<span class="acl-pos">'+(idx+1)+'</span>'
+    +'<div class="card-cover" style="width:40px;height:40px;flex-shrink:0">'
+    +'<img src="" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:4px;opacity:0" '
+    +'data-artist="'+encodeURIComponent(artist)+'" data-album="'+encodeURIComponent(ref)+'" data-track="'+encodeURIComponent(ref)+'">'
+    +'</div>'
+    +'<div style="min-width:0"><div class="acl-name">'+artist+'</div><div class="acl-sub">'+ref+'</div></div>'
+    +'</div>';
+}
+
+function top12HTML(){
+  return '<div class="sec-head"><h1>Mi Top 12</h1><p>Selección personal de Nelson Rodríguez Esmeral</p></div>'
+    +'<div class="acl-grid">'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+TOP12_ARTISTS.map(function(a,i){return top12Row(a[0],a[1],i)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+TOP12_SONGS.map(function(a,i){return top12Row(a[0],a[1],i)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+TOP12_ALBUMS.map(function(a,i){return top12Row(a[0],a[1],i)}).join('')+'</div>'
+    +'</div>';
 }
 
 function aclamadosHTML(){
@@ -3646,6 +3414,7 @@ function go(sec,sEl,bnEl){
   bc.innerHTML=sec==='home'?'<span class="crumb">Inicio</span>':'<span>Colección</span><span class="sep">›</span><span class="crumb">'+lbl+'</span>';
   if(sec==='home') area.innerHTML=homeHTML();
   else if(sec==='aclamados') area.innerHTML=aclamadosHTML();
+  else if(sec==='top12') area.innerHTML=top12HTML();
   else area.innerHTML=sectionHTML(sec);
   area.scrollTop=0;
   setTimeout(observeImages,60);
@@ -3756,6 +3525,84 @@ function observeImages(){
     if(!img.dataset.obs){img.dataset.obs='1';artObsHub.observe(img);}
   });
 }
+
+
+// Calcular badges reales de la sidebar desde los datos verdaderos
+(function(){
+  var badgeMap = {
+    'super':'cnt-super',
+    'albumes-globales':'cnt-ag',
+    'canciones-globales':'cnt-cg',
+    'albumes-latinos':'cnt-al',
+    'canciones-latinas':'cnt-cl',
+    'tematicas':'cnt-te'
+  };
+  Object.keys(badgeMap).forEach(function(key){
+    var fn = SEC_FILTERS[key];
+    if(!fn) return;
+    var n = LISTS.filter(fn).length;
+    var el = document.getElementById(badgeMap[key]);
+    if(el) el.textContent = n;
+  });
+  // Total real en el footer del sidebar
+  var footEl = document.querySelector('.sb-foot');
+  if(footEl){
+    var totalSongs = LISTS.reduce(function(acc,l){
+      var n = parseInt((l.count||'0').replace(/\D/g,''),10);
+      return acc + (isNaN(n)?0:n);
+    },0);
+    footEl.innerHTML = LISTS.length + ' listas · ' + totalSongs.toLocaleString('es') + ' canciones<br>Última: ' + (LISTS[LISTS.length-1] ? LISTS[LISTS.length-1].title : '');
+  }
+})();
+
+
+// ── Generador dinámico del sidebar de categorías ──────────────────────────
+var CAT_ICONS = {
+  super:'<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+  'albumes-globales':'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>',
+  'canciones-globales':'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  'albumes-latinos':'<ellipse cx="12" cy="12" rx="10" ry="3"/><path d="M2 12c0 4.418 4.477 8 10 8s10-3.582 10-8"/><path d="M2 5c0 4.418 4.477 8 10 8s10-3.582 10-8"/>',
+  'canciones-latinas':'<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>',
+  tematicas:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>',
+  anuales:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+  decadas:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  generos:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>'
+};
+var CAT_ORDER = ['super','albumes-globales','canciones-globales','albumes-latinos',
+                  'canciones-latinas','tematicas','anuales','decadas','generos'];
+
+function renderSidebarCategories(){
+  var container = document.getElementById('sidebar-categories');
+  if(!container) return;
+  var html = '';
+  CAT_ORDER.forEach(function(key, idx){
+    var fn = SEC_FILTERS[key];
+    var count = fn ? LISTS.filter(fn).length : 0;
+    var lbl = LBLS[key] || key;
+    var icon = CAT_ICONS[key] || '';
+    var arrId = 'arr-' + key;
+    html += '<div class="cat-head" onclick="go(\'' + key + '\',null,null)">'
+      + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' + icon + '</svg>'
+      + lbl
+      + '<span class="nav-cnt">' + count + '</span>'
+      + '</div>';
+  });
+  container.innerHTML = html;
+}
+renderSidebarCategories();
+
+
+(function(){
+  var footEl = document.querySelector('.sb-foot');
+  if(footEl){
+    var totalSongs = LISTS.reduce(function(acc,l){
+      var n = parseInt((l.count||'0').replace(/\D/g,''),10);
+      return acc + (isNaN(n)?0:n);
+    },0);
+    var last = LISTS[LISTS.length-1];
+    footEl.innerHTML = LISTS.length + ' listas · ' + totalSongs.toLocaleString('es') + ' entradas<br>Última: ' + (last?last.title:'');
+  }
+})();
 
 go('home');
 

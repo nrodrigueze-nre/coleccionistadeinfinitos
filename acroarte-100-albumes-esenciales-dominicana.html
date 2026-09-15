@@ -396,7 +396,7 @@ function setImg(el, url) {
 
 function loadArt(el, artist, album) {
   // Last.fm first — better for Dominican music
-  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&format=json')
+  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&autocorrect=1&format=json')
     .then(function(r) { return r.json(); })
     .then(function(d) {
       var imgs = (d && d.album && d.album.image) ? d.album.image : [];
@@ -486,7 +486,7 @@ function processLfmQ() {
   if (lfmCache[key] !== undefined) {
     renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return;
   }
-  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&username=' + LFM_USER + '&format=json')
+  fetch('https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + LFM_KEY + '&artist=' + encodeURIComponent(artist) + '&album=' + encodeURIComponent(album) + '&username=' + LFM_USER + '&autocorrect=1&format=json')
     .then(function(r) { return r.json(); })
     .then(function(d) {
       var tracks = (d && d.album && d.album.tracks && d.album.tracks.track) ? d.album.tracks.track : [];
@@ -531,7 +531,7 @@ function processExtra(){
   fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
@@ -600,7 +600,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
