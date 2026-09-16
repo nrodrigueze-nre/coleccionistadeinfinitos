@@ -3330,67 +3330,72 @@ function sectionHTML(sec){
 }
 
 
-// ── Mi Top 12 Personal — datos de Nelson ──────────────────────────────────
+
+// ── Mi Top 12 Personal — datos originales de Nelson (recuperados) ─────────
 var TOP12_SONGS = [
-  ["Queen","Bohemian Rhapsody"],
-  ["Jimi Hendrix","Little Wing"],
-  ["Soda Stereo","En la Ciudad de la Furia"],
-  ["Bad Boys Blue","How I Need You"],
-  ["Kraken","Rostros Ocultos"],
-  ["Diego El Cigala","Lagrimas Negras"],
-  ["Wilfrido Vargas","El Jardinero"],
-  ["Pearl Jam","Jeremy"],
-  ["Joe Arroyo","Noche de Arreboles"],
-  ["Florence + the Machine","Dog Days Are Over"],
-  ["Calle 13","Atrevete-te-te"],
-  ["Led Zeppelin","Stairway to Heaven"]
-];
-var TOP12_ALBUMS = [
-  ["Soda Stereo","Cancion Animal"],
-  ["Pearl Jam","Ten"],
-  ["Pixies","Doolittle"],
-  ["Carlos Vives","Clasicos de la Provincia"],
-  ["Willie Colon & Ruben Blades","Siembra"],
-  ["Oasis","(What's the Story) Morning Glory"],
-  ["U2","Achtung Baby"],
-  ["Guns N' Roses","Appetite for Destruction"],
-  ["Santana","Supernatural"],
-  ["Paul Oakenfold","Bunkka"],
-  ["Kraken","Kraken I"],
-  ["Alanis Morissette","Jagged Little Pill"]
-];
-var TOP12_ARTISTS = [
-  ["Queen","Greatest Hits"],
-  ["Guns N' Roses","Appetite for Destruction"],
-  ["Joe Arroyo","Lo Mejor de Joe Arroyo"],
-  ["Metallica","Metallica"],
-  ["Pet Shop Boys","Actually"],
-  ["Pearl Jam","Ten"],
-  ["Carlos Vives","Clasicos de la Provincia"],
-  ["The Cure","Disintegration"],
-  ["Florence + the Machine","Lungs"],
-  ["Proyecto Uno","El Boom"],
-  ["El Gran Combo de Puerto Rico","Un Verano en Nueva York"],
-  ["Michael Jackson","Thriller"]
+  ["mts-1","Bohemian Rhapsody","Queen · 1975","Rock / Operístico","Seis minutos de música donde Queen inventó un género que no tenía nombre. La suite operística en el centro — el cambio de balada al heavy metal al music hall — sigue siendo el momento de mayor ambición del pop del siglo XX.","Queen","Bohemian Rhapsody"],
+  ["mts-2","Little Wing","Jimi Hendrix · 1967","Blues / Psicodelia","Tres minutos de guitarra que contienen más emoción que la mayoría de los álbumes completos. Hendrix escribió Little Wing en una noche en Monterey; la tocó como si la hubiera llevado dentro toda la vida.","Jimi Hendrix","Little Wing"],
+  ["mts-3","En la Ciudad de la Furia","Soda Stereo · 1988","Rock en Español","Cerati describiendo Buenos Aires de noche como una ciudad apocalíptica. La producción de Doble Vida fue la primera vez que Soda incorporó texturas electrónicas al rock en español de manera masiva.","Soda Stereo","En la Ciudad de la Furia"],
+  ["mts-4","How I Need You","Bad Boys Blue","Italo Disco / Synth-pop","","Bad Boys Blue","How I Need You"],
+  ["mts-5","Rostros Ocultos","Kraken","Heavy Metal / Colombia","","Kraken","Rostros Ocultos"],
+  ["mts-6","Lagrimas Negras","Diego El Cigala","Flamenco / Bolero","","Diego El Cigala","Lagrimas Negras"],
+  ["mts-7","El Jardinero","Wilfrido Vargas","Merengue","","Wilfrido Vargas","El Jardinero"],
+  ["mts-8","Jeremy","Pearl Jam","Grunge","","Pearl Jam","Jeremy"],
+  ["mts-9","Noche de Arreboles","Joe Arroyo","Salsa / Afrocaribe","","Joe Arroyo","Noche de Arreboles"],
+  ["mts-10","Dog Days Are Over","Florence and the Machine · 2008","Indie Pop / Art Rock","Florence Welch construyendo el himno más catártico del indie pop de los 2000s. La percusión de harp y la voz de Florence escalando hacia el clímax — la canción que le dio a la colección su artista femenina favorita.","Florence and the Machine","Dog Days Are Over"],
+  ["mts-11","Atrevete-te-te","Calle 13 · 2005","Reggaetón / Electrónica","René y Visitante llegaron al mundo con una canción imposible de clasificar: reggaetón con actitud punk, crítica social en pista de baile, humor absurdo mezclado con política. El sonido que nadie esperaba del reggaetón y que Calle 13 nunca repitió exactamente igual.","Calle 13","Residente o Visitante"],
+  ["mts-12","Stairway to Heaven","Led Zeppelin · 1971","Rock / Hard Rock","Ocho minutos que definen el rock: del arpeggio acústico de Jimmy Page al solo de guitarra más estudiado de la historia. La canción que demuestra que el rock puede ser al mismo tiempo íntimo, épico y trascendente.","Led Zeppelin","Led Zeppelin IV"]
 ];
 
-function top12Row(artist, ref, idx){
-  return '<div class="acl-row">'
-    +'<span class="acl-pos">'+(idx+1)+'</span>'
-    +'<div class="card-cover" style="width:40px;height:40px;flex-shrink:0">'
-    +'<img src="" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:4px;opacity:0" '
-    +'data-artist="'+encodeURIComponent(artist)+'" data-album="'+encodeURIComponent(ref)+'" data-track="'+encodeURIComponent(ref)+'">'
-    +'</div>'
-    +'<div style="min-width:0"><div class="acl-name">'+artist+'</div><div class="acl-sub">'+ref+'</div></div>'
-    +'</div>';
+var TOP12_ALBUMS = [
+  ["mta-al-1","Canción Animal","Soda Stereo · 1990","Rock en Español","El pico absoluto de Soda Stereo. Cerati condensó diez años de exploración sonora en once canciones perfectas — de la fiereza de En la Ciudad de la Furia a la ternura de Canción Animal.","Soda Stereo","Cancion Animal"],
+  ["mta-al-2","Ten","Pearl Jam · 1991","Grunge / Rock Alternativo","El debut más poderoso del grunge después de Nevermind. Eddie Vedder llegó al mundo con Alive, Black y Jeremy en el mismo disco — tres canciones que habrían hecho la carrera entera de cualquier otra banda.","Pearl Jam","Ten"],
+  ["mta-al-3","Doolittle","Pixies · 1989","Alternative / Indie Rock","El álbum que Nirvana declaró como su modelo. Black Francis construyendo canciones con la lógica del surrealismo — Debaser, Here Comes Your Man, Gouge Away — y Kim Deal como el contrapeso perfecto.","Pixies","Doolittle"],
+  ["mta-al-4","Clásicos de la Provincia","Carlos Vives · 1993","Vallenato / Pop","El disco que reinventó el vallenato para el mundo. Vives tomó los clásicos de Escalona y los electrificó sin perder la magia — La Gota Fría se convirtió en el himno de Colombia en el exterior.","Carlos Vives","Clasicos de la Provincia"],
+  ["mta-al-5","Siembra","Willie Colón & Rubén Blades · 1978","Salsa / Latin","El álbum de salsa más vendido de todos los tiempos. Pedro Navaja, Plástico y Buscando Guayaba en el mismo disco — Rubén Blades escribiendo el alma de América Latina con la trompeta de Willie Colón.","Willie Colon Ruben Blades","Siembra"],
+  ["mta-al-6","(What\'s the Story) Morning Glory?","Oasis · 1995","Britpop / Rock","Wonderwall, Don\'t Look Back in Anger y Champagne Supernova en el mismo disco. Los Gallagher en su pico creativo, antes de que el ego los separara — el britpop en su momento más luminoso.","Oasis","Whats the Story Morning Glory"],
+  ["mta-al-7","Achtung Baby","U2 · 1991","Alternative / Rock","El disco en que U2 destruyó su propia fórmula y salió mejor. One, The Fly, Mysterious Ways — Bono y The Edge absorbiendo el industrial de Berlín y el dance y volviendo con el álbum más arriesgado de su carrera.","U2","Achtung Baby"],
+  ["mta-al-8","Appetite for Destruction","Guns N\' Roses · 1987","Hard Rock","30 millones de copias — el álbum de hard rock más vendido de la historia. Welcome to the Jungle, Paradise City y Sweet Child O\' Mine en el mismo debut. Nelson los vio en Bogotá en 1992.","Guns N Roses","Appetite for Destruction"],
+  ["mta-al-9","Supernatural","Santana · 1999","Latin Rock / Pop","La resurrección más improbable del rock. Santana convocando a Rob Thomas, Everlast y Lauryn Hill — nueve Grammys, Smooth como hit planetario y la guitarra de Carlos Santana sonando más relevante que nunca.","Santana","Supernatural"],
+  ["mta-al-10","Bunkka","Paul Oakenfold · 2002","Trance / Electronic","El único álbum de estudio del DJ más influyente del trance británico. Ready Steady Go y Starry Eyed Surprise mezclando el éxtasis del club con la producción cinematográfica — el trance mainstream en su cima.","Paul Oakenfold","Bunkka"],
+  ["mta-al-11","Kraken I","Kraken · 1990","Heavy Metal / Colombia","El álbum que puso al metal colombiano en el mapa. Elkin Ramírez con la voz más poderosa del rock latinoamericano — verlo en La Macarena en 1990 fue el primer gran hito de la vida musical de Nelson. Un disco de heavy metal grabado en Colombia que no tenía nada que envidiarle a sus equivalentes anglosajones.","Kraken","Kraken"],
+  ["mta-al-12","Jagged Little Pill","Alanis Morissette · 1995","Alternative Rock / Pop Rock","33 millones de copias — el álbum de debut más vendido de una artista femenina en la historia. Ironic, You Oughta Know y Hand in My Pocket en el mismo disco: la rabia, la ironía y la vulnerabilidad del rock alternativo de los 90s en su forma más directa y sin filtros.","Alanis Morissette","Jagged Little Pill"]
+];
+
+var TOP12_ARTISTS = [
+  ["mta-1","Queen","Londres · 1970–hoy","Rock / Glam / Arena Rock","Freddie Mercury como el performer más completo de la historia del rock. De Sheer Heart Attack a Innuendo, el catálogo más ecléctico del rock clásico — y Bohemian Rhapsody como la cumbre de todos ellos.","Queen","Greatest Hits"],
+  ["mta-2","Guns N\' Roses","Los Ángeles · 1985–hoy","Hard Rock / Heavy Metal","Axl Rose, Slash y el sonido más peligroso de los 80s. Appetite for Destruction es el debut más fulminante del hard rock — Nelson los vio en vivo en Bogotá en el 92, primer gran concierto de su vida.","Guns N Roses","Appetite for Destruction"],
+  ["mta-3","Joe Arroyo","Cartagena · 1955–2011","Salsa / Afrocaribe","El cantante costeño más importante de Colombia. Joe inventó un sonido que mezclaba la salsa con el porro, la cumbia y ritmos africanos — la Noche de Arreboles es el sonido exacto de Barranquilla.","Joe Arroyo","Lo Mejor de Joe Arroyo"],
+  ["mta-4","Metallica","San Francisco · 1981–hoy","Heavy Metal / Thrash","La banda de metal más exitosa de la historia. Master of Puppets como el álbum definitivo del thrash, el Black Album como el crossover perfecto — Nelson los vio en Bogotá en 1999.","Metallica","Metallica"],
+  ["mta-5","Pet Shop Boys","Londres · 1981–hoy","Synth-pop / Electropop","Neil Tennant y Chris Lowe redefinieron el pop electrónico cuatro décadas seguidas. West End Girls, It\'s a Sin, Always on My Mind — la ironía británica y la producción perfecta como filosofía.","Pet Shop Boys","Actually"],
+  ["mta-6","Pearl Jam","Seattle · 1990–hoy","Grunge / Rock Alternativo","La banda más consistente del grunge — 30 años sin un disco vergonzoso. Ten, Vs. y Vitalogy como trilogía perfecta. Eddie Vedder con la voz más honesta del rock americano.","Pearl Jam","Ten"],
+  ["mta-7","Carlos Vives","Santa Marta · 1961–hoy","Vallenato / Pop Tropical","El músico que le enseñó al mundo a escuchar vallenato. Clásicos de la Provincia puso a Colombia en el mapa mundial — La Gota Fría es el himno de la identidad costeña.","Carlos Vives","Clasicos de la Provincia"],
+  ["mta-8","The Cure","Crawley · 1976–hoy","Post-punk / Gothic Rock","Robert Smith construyendo una catedral de melancolía y pop perfectamente equilibrados. Disintegration como el álbum de la desesperación más hermosa — la banda de los 80s que envejeció mejor que todas.","The Cure","Disintegration"],
+  ["mta-9","Florence and the Machine","Londres · 2007–hoy","Art Rock / Indie Pop","Florence Welch con la voz más épica del indie de los 2000s. Dog Days Are Over y Shake It Out como himnos catárticos — la única artista de la lista que conecta el indie con la teatralidad del art rock clásico.","Florence and the Machine","Lungs"],
+  ["mta-10","Proyecto Uno","Nueva York / Colombia · 1992–hoy","Merengue Rap / Dance","El grupo que fusionó el merengue dominicano con el hip-hop neoyorquino y la champeta caribeña. El Party fue el hit del verano de 1995 en toda América Latina — el sonido de las discotecas de Barranquilla.","Proyecto Uno","El Boom"],
+  ["mta-11","El Gran Combo de Puerto Rico","San Juan · 1962–hoy","Salsa / Afrocaribe","La Universidad de la Salsa — más de 60 años de salsa puertorriqueña de primer nivel, sin interrupciones. Un placer de dios, No Hay Cama Pa\' Tanta Gente y Ojos Chinos como himnos eternos. La banda que demuestra que la salsa no envejece — solo mejora.","El Gran Combo de Puerto Rico","Un Verano en Nueva York"],
+  ["mta-12","Michael Jackson","Gary, Indiana · 1958–2009","Pop / R&B / Funk","El artista más completo de la historia del pop. Thriller como el álbum más vendido de todos los tiempos, Off the Wall y Bad como obras perfectas de producción. Bailarín, cantante y compositor en un nivel que nadie ha igualado — el estándar absoluto del entretenimiento popular del siglo XX.","Michael Jackson","Thriller"]
+];
+
+function top12Card(item){
+  var id=item[0],title=item[1],sub=item[2],genre=item[3],bio=item[4],sartist=item[5],stitle=item[6];
+  return '<div class="mytop-item" style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border,#e8ecf4)">'
+    +'<img class="mytop-art" id="'+id+'" src="" alt="'+title.replace(/"/g,"&quot;")+'" style="width:64px;height:64px;object-fit:cover;border-radius:6px;flex-shrink:0;opacity:0;transition:opacity .3s" '
+    +'data-artist="'+encodeURIComponent(sartist)+'" data-album="'+encodeURIComponent(stitle)+'" data-track="'+encodeURIComponent(stitle)+'">'
+    +'<div style="min-width:0;flex:1">'
+    +'<div style="font-weight:600;font-size:13px;color:var(--text1,#0d1117)">'+title+'</div>'
+    +'<div style="font-size:11px;color:var(--text3,#9aa3b2);margin-bottom:2px">'+sub+'</div>'
+    +(genre?'<div style="font-size:10px;color:#1a2f5a;font-weight:500;margin-bottom:5px">'+genre+'</div>':'')
+    +(bio?'<div style="font-size:11.5px;color:var(--text2,#4a5568);line-height:1.6">'+bio+'</div>':'')
+    +'</div></div>';
 }
 
 function top12HTML(){
   return '<div class="sec-head"><h1>Mi Top 12</h1><p>Selección personal de Nelson Rodríguez Esmeral</p></div>'
     +'<div class="acl-grid">'
-    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+TOP12_ARTISTS.map(function(a,i){return top12Row(a[0],a[1],i)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+TOP12_SONGS.map(function(a,i){return top12Row(a[0],a[1],i)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+TOP12_ALBUMS.map(function(a,i){return top12Row(a[0],a[1],i)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+TOP12_ARTISTS.map(top12Card).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+TOP12_SONGS.map(top12Card).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+TOP12_ALBUMS.map(top12Card).join('')+'</div>'
     +'</div>';
 }
 
