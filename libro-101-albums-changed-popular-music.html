@@ -267,6 +267,14 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 </footer>
 
 <script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
 var ALBUMS=[[1, "Various Artists", "Anthology of American Folk Music", 1952], [2, "Elvis Presley", "Elvis Presley", 1956], [3, "Miles Davis", "Kind of Blue", 1959], [4, "The Weavers", "The Weavers at Carnegie Hall", 1957], [5, "The Dave Brubeck Quartet", "Time Out", 1959], [6, "Muddy Waters", "Muddy Waters at Newport", 1960], [7, "Robert Johnson", "King of the Delta Blues Singers", 1961], [8, "Ray Charles", "Modern Sounds in Country and Western Music", 1962], [9, "Bob Dylan", "The Freewheelin' Bob Dylan", 1963], [10, "The Beatles", "Rubber Soul", 1965], [11, "Bob Dylan", "Highway 61 Revisited", 1965], [12, "The Byrds", "Mr. Tambourine Man", 1965], [13, "The Beach Boys", "Pet Sounds", 1966], [14, "The Byrds", "Fifth Dimension", 1966], [15, "Frank Zappa and the Mothers of Invention", "Freak Out!", 1966], [16, "The Beatles", "Sgt. Pepper's Lonely Hearts Club Band", 1967], [17, "The Velvet Underground", "The Velvet Underground and Nico", 1967], [18, "The Doors", "The Doors", 1967], [19, "Jefferson Airplane", "Surrealistic Pillow", 1967], [20, "The Jimi Hendrix Experience", "Are You Experienced", 1967], [21, "The Beatles", "The Beatles (The White Album)", 1968], [22, "The Moody Blues", "Days of Future Passed", 1967], [23, "The Band", "Music from Big Pink", 1968], [24, "Led Zeppelin", "Led Zeppelin", 1969], [25, "MC5", "Kick Out the Jams", 1969], [26, "The Who", "Tommy", 1969], [27, "King Crimson", "In the Court of the Crimson King", 1969], [28, "Captain Beefheart", "Trout Mask Replica", 1969], [29, "James Taylor", "Sweet Baby James", 1970], [30, "Miles Davis", "Bitches Brew", 1970], [31, "Black Sabbath", "Paranoid", 1970], [32, "Carole King", "Tapestry", 1971], [33, "Marvin Gaye", "What's Going On", 1971], [34, "Sly and the Family Stone", "There's a Riot Goin' On", 1971], [35, "Mahavishnu Orchestra", "The Inner Mounting Flame", 1971], [36, "David Bowie", "The Rise and Fall of Ziggy Stardust", 1972], [37, "Iggy and the Stooges", "Raw Power", 1973], [38, "Pink Floyd", "The Dark Side of the Moon", 1973], [39, "New York Dolls", "New York Dolls", 1973], [40, "Herbie Hancock", "Head Hunters", 1973], [41, "Kraftwerk", "Autobahn", 1974], [42, "Linda Ronstadt", "Heart Like a Wheel", 1974], [43, "Aerosmith", "Toys in the Attic", 1975], [44, "Bruce Springsteen", "Born to Run", 1975], [45, "Kiss", "Alive!", 1975], [46, "Patti Smith", "Horses", 1975], [47, "Brian Eno", "Another Green World", 1975], [48, "Queen", "A Night at the Opera", 1975], [49, "Waylon Jennings / Willie Nelson / Jessi Colter / Tompall Glaser", "Wanted! The Outlaws", 1976], [50, "Parliament", "Mothership Connection", 1976], [51, "The Ramones", "Ramones", 1976], [52, "Boston", "Boston", 1976], [53, "Bob Marley and the Wailers", "Exodus", 1977], [54, "Sex Pistols", "Never Mind the Bollocks", 1977], [55, "Television", "Marquee Moon", 1977], [56, "Pere Ubu", "The Modern Dance", 1978], [57, "Van Halen", "Van Halen", 1978], [58, "Funkadelic", "One Nation Under a Groove", 1978], [59, "Neil Young", "Rust Never Sleeps", 1979], [60, "The Clash", "London Calling", 1979], [61, "AC/DC", "Highway to Hell", 1979], [62, "Michael Jackson", "Thriller", 1982], [63, "Herbie Hancock", "Future Shock", 1983], [64, "Def Leppard", "Pyromania", 1983], [65, "U2", "War", 1983], [66, "R.E.M.", "Murmur", 1983], [67, "Stevie Ray Vaughan and Double Trouble", "Texas Flood", 1983], [68, "Metallica", "Kill 'Em All", 1983], [69, "Bruce Springsteen", "Born in the U.S.A.", 1984], [70, "Prince", "Purple Rain", 1984], [71, "Hüsker Dü", "Zen Arcade", 1984], [72, "Madonna", "Like a Virgin", 1984], [73, "Run-DMC", "Raising Hell", 1986], [74, "Paul Simon", "Graceland", 1986], [75, "Beastie Boys", "Licensed to Ill", 1986], [76, "Suzanne Vega", "Solitude Standing", 1987], [77, "Guns N' Roses", "Appetite for Destruction", 1987], [78, "Public Enemy", "It Takes a Nation of Millions to Hold Us Back", 1988], [79, "Sonic Youth", "Daydream Nation", 1988], [80, "De La Soul", "3 Feet High and Rising", 1989], [81, "N.W.A.", "Straight Outta Compton", 1988], [82, "Nine Inch Nails", "Pretty Hate Machine", 1989], [83, "Uncle Tupelo", "No Depression", 1990], [84, "Garth Brooks", "No Fences", 1990], [85, "Ice-T", "OG Original Gangster", 1991], [86, "Nirvana", "Nevermind", 1991], [87, "Red Hot Chili Peppers", "Blood Sugar Sex Magik", 1991], [88, "Tori Amos", "Little Earthquakes", 1992], [89, "Dr. Dre", "The Chronic", 1992], [90, "Liz Phair", "Exile in Guyville", 1993], [91, "Wu-Tang Clan", "Enter the Wu-Tang (36 Chambers)", 1993], [92, "Green Day", "Dookie", 1994], [93, "Ani DiFranco", "Out of Range", 1994], [94, "Beck", "Odelay", 1996], [95, "Spice Girls", "Spice", 1996], [96, "Dixie Chicks", "Wide Open Spaces", 1998], [97, "Eminem", "The Slim Shady LP", 1999], [98, "The White Stripes", "White Blood Cells", 2001], [99, "The White Stripes", "Elephant", 2003], [100, "Jay-Z", "The Blueprint", 2001], [101, "Radiohead", "Kid A", 2000]];
 var FEAT=[["fc-1", "The Beatles", "Sgt Peppers Lonely Hearts Club Band"], ["fc-2", "Miles Davis", "Kind of Blue"], ["fc-3", "Pink Floyd", "The Dark Side of the Moon"], ["fc-4", "Sex Pistols", "Never Mind the Bollocks"], ["fc-5", "Nirvana", "Nevermind"], ["fc-6", "Michael Jackson", "Thriller"], ["fc-7", "The Clash", "London Calling"], ["fc-8", "Marvin Gaye", "Whats Going On"], ["fc-9", "Public Enemy", "It Takes a Nation of Millions to Hold Us Back"], ["fc-10", "Bruce Springsteen", "Born to Run"]];
 
@@ -274,15 +282,36 @@ var LIST_TYPE="albumes";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,album){
-  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(album+" "+artist)+"&media=music&entity=album&limit=5&country=us")
+  fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(album+" "+artist)+"&media=music&entity=album&limit=5&country=us")
     .then(function(r){return r.json();}).then(function(d){
       var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
       for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
       if(!m&&res.length)m=res[0];
-      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&m.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=m.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw 0;
     }).catch(function(){
-      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&autocorrect=1&format=json")
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&autocorrect=1&format=json")
         .then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.album&&d.album.toptags&&d.album.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.album.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
           var imgs=(d&&d.album&&d.album.image)||[],best=null;
           for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
           if(best)setImg(el,best["#text"]);
@@ -319,7 +348,7 @@ function processLfm(){
   if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
   var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),al=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+al;
   if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
-  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&autocorrect=1&format=json")
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&autocorrect=1&format=json")
     .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.album&&d.album.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
     .catch(function(){el.textContent="—";el.classList.remove("loading");})
     .finally(function(){lfmBusy=false;setTimeout(processLfm,250);});
@@ -339,7 +368,7 @@ function processExtra(){
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
         param+encodeURIComponent(title)+'&autocorrect=1&format=json')
@@ -347,6 +376,8 @@ function processExtra(){
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -366,20 +397,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -411,7 +491,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

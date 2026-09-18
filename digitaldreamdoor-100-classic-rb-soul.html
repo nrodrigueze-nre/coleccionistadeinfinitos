@@ -270,6 +270,14 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 </footer>
 
 <script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
 
 var SONGS = [
   [1,"Respect","Aretha Franklin",1967],
@@ -392,16 +400,26 @@ var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
 var LFM_USER = "lartzrodriguez";
 function setImg(el, url) { el.src = url; el.style.opacity = "1"; el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; }; }
 function loadArt(el, artist, track) {
-  fetch("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+  fetchTO("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
     .then(function(r) { return r.json(); })
     .then(function(d) {
       var results = d.results || [], a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0], match = null;
       for (var i = 0; i < results.length; i++) { if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; } }
       if (!match && results.length) match = results[0];
-      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb")); else throw new Error("x");
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(match){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&match.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=match.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      } else throw new Error("x");
     })
     .catch(function() {
-      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&autocorrect=1&format=json")
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&autocorrect=1&format=json")
         .then(function(r) { return r.json(); })
         .then(function(d) {
           var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [], best = null;
@@ -440,7 +458,7 @@ function processLfmQ() {
   if (lfmBusy || lfmQ.length === 0) return; lfmBusy = true;
   var el = lfmQ.shift(), artist = decodeURIComponent(el.dataset.lfmArtist || ""), track = decodeURIComponent(el.dataset.lfmAlbum || ""), key = artist + "|||" + track;
   if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
-  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&autocorrect=1&format=json")
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&autocorrect=1&format=json")
     .then(function(r) { return r.json(); })
     .then(function(d) { var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10); lfmCache[key] = count; renderScrobble(el, count); })
     .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
@@ -462,7 +480,7 @@ function processExtra(){
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
         param+encodeURIComponent(title)+'&autocorrect=1&format=json')
@@ -470,6 +488,8 @@ function processExtra(){
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -489,20 +509,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -534,8 +603,19 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.track&&d.track.toptags&&d.track.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.track.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
             if(obj.toptags&&obj.toptags.tag){

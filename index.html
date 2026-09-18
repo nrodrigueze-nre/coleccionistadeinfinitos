@@ -3191,9 +3191,9 @@ var LAST5 = [
   "vh1-100-greatest-songs-00s.html"
 ];
 
-var topArtists=[{"name":"Taylor Swift","sub":"36 listas"},{"name":"Drake","sub":"34 listas"},{"name":"Beyoncé","sub":"31 listas"},{"name":"Shakira","sub":"28 listas"},{"name":"Kendrick Lamar","sub":"26 listas"}];
-var topAlbums=[{"name":"Thriller","sub":"Michael Jackson · 11 listas"},{"name":"Back in Black","sub":"AC/DC · 11 listas"},{"name":"What's Going On","sub":"Marvin Gaye · 10 listas"},{"name":"Born in the U.S.A.","sub":"Bruce Springsteen · 10 listas"},{"name":"London Calling","sub":"The Clash · 10 listas"}];
-var topSongs=[{"name":"Thriller","sub":"Michael Jackson · 11 listas"},{"name":"Back in Black","sub":"AC/DC · 11 listas"},{"name":"What's Going On","sub":"Marvin Gaye · 10 listas"},{"name":"Purple Rain","sub":"Prince · 10 listas"},{"name":"London Calling","sub":"The Clash · 10 listas"}];
+var topArtists=[{"name":"Taylor Swift","sub":"36 listas"},{"name":"Drake","sub":"31 listas"},{"name":"Bruce Springsteen","sub":"26 listas"},{"name":"David Bowie","sub":"26 listas"},{"name":"The Beatles","sub":"25 listas"}];
+var topAlbums=[{"name":"The Dark Side of the Moon","artist":"Pink Floyd","sub":"Pink Floyd \u00b7 8 listas"},{"name":"American Idiot","artist":"Green Day","sub":"Green Day \u00b7 8 listas"},{"name":"Abraxas","artist":"Santana","sub":"Santana \u00b7 7 listas"},{"name":"Thriller","artist":"Michael Jackson","sub":"Michael Jackson \u00b7 7 listas"},{"name":"Marquee Moon","artist":"Television","sub":"Television \u00b7 7 listas"}];
+var topSongs=[{"name":"Welcome to the Jungle","artist":"Guns N' Roses","sub":"Guns N' Roses \u00b7 8 listas"},{"name":"Seven Nation Army","artist":"The White Stripes","sub":"The White Stripes \u00b7 8 listas"},{"name":"Relax","artist":"Frankie Goes to Hollywood","sub":"Frankie Goes to Hollywood \u00b7 8 listas"},{"name":"Smells Like Teen Spirit","artist":"Nirvana","sub":"Nirvana \u00b7 8 listas"},{"name":"I Will Survive","artist":"Gloria Gaynor","sub":"Gloria Gaynor \u00b7 7 listas"}];
 
 // ══ HELPERS ══
 function isAlbum(t){return t==='albumes'||t==='álbumes';}
@@ -3232,7 +3232,14 @@ function card(l){
 }
 
 function aclRow(a,i,cnt){
-  return '<div class="acl-item"><span class="acl-pos">'+(i+1)+'</span>'
+  var artistSearch = a.artist || a.name; // artist column: name itself; album/song column: real artist
+  var albumSearch  = a.artist ? a.name : a.name; // si tiene .artist, este item ES un album/cancion
+  return '<div class="acl-item">'
+    +'<span class="acl-pos">'+(i+1)+'</span>'
+    +'<div class="card-cover" style="width:36px;height:36px;flex-shrink:0;border-radius:4px;overflow:hidden;background:var(--bg2,#f0f2f8)">'
+    +'<img src="" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s" '
+    +'data-artist="'+encodeURIComponent(artistSearch)+'" data-album="'+encodeURIComponent(albumSearch)+'" data-track="'+encodeURIComponent(a.name)+'">'
+    +'</div>'
     +'<div style="flex:1;min-width:0"><div class="acl-name">'+a.name+'</div>'
     +(!cnt&&a.sub?'<div class="acl-sub">'+a.sub+'</div>':'')+'</div>'
     +(cnt?'<span class="acl-cnt">'+a.sub+'</span>':'')
@@ -3336,12 +3343,12 @@ var TOP12_SONGS = [
   ["mts-1","Bohemian Rhapsody","Queen · 1975","Rock / Operístico","Seis minutos de música donde Queen inventó un género que no tenía nombre. La suite operística en el centro — el cambio de balada al heavy metal al music hall — sigue siendo el momento de mayor ambición del pop del siglo XX.","Queen","Bohemian Rhapsody"],
   ["mts-2","Little Wing","Jimi Hendrix · 1967","Blues / Psicodelia","Tres minutos de guitarra que contienen más emoción que la mayoría de los álbumes completos. Hendrix escribió Little Wing en una noche en Monterey; la tocó como si la hubiera llevado dentro toda la vida.","Jimi Hendrix","Little Wing"],
   ["mts-3","En la Ciudad de la Furia","Soda Stereo · 1988","Rock en Español","Cerati describiendo Buenos Aires de noche como una ciudad apocalíptica. La producción de Doble Vida fue la primera vez que Soda incorporó texturas electrónicas al rock en español de manera masiva.","Soda Stereo","En la Ciudad de la Furia"],
-  ["mts-4","How I Need You","Bad Boys Blue","Italo Disco / Synth-pop","","Bad Boys Blue","How I Need You"],
-  ["mts-5","Rostros Ocultos","Kraken","Heavy Metal / Colombia","","Kraken","Rostros Ocultos"],
-  ["mts-6","Lagrimas Negras","Diego El Cigala","Flamenco / Bolero","","Diego El Cigala","Lagrimas Negras"],
-  ["mts-7","El Jardinero","Wilfrido Vargas","Merengue","","Wilfrido Vargas","El Jardinero"],
-  ["mts-8","Jeremy","Pearl Jam","Grunge","","Pearl Jam","Jeremy"],
-  ["mts-9","Noche de Arreboles","Joe Arroyo","Salsa / Afrocaribe","","Joe Arroyo","Noche de Arreboles"],
+  ["mts-4","How I Need You","Bad Boys Blue","Italo Disco / Synth-pop","El eurodance antes de que existiera el eurodance. Bad Boys Blue construyeron sobre un groove sintetizado y tres voces masculinas en armonía algo que sonaba completamente nuevo en 1987 y que hoy suena exactamente a lo que era: un momento perfecto de pop europeo de los 80s.","Bad Boys Blue","How I Need You"],
+  ["mts-5","Rostros Ocultos","Kraken","Heavy Metal / Colombia","El heavy metal colombiano en su momento más épico. Kraken — la banda de Medellín liderada por Alberto Cardona — grabó esta canción con una ambición orquestal que pocas bandas latinoamericanas de metal han igualado. Un clásico del rock colombiano que merece más reconocimiento internacional.","Kraken","Rostros Ocultos"],
+  ["mts-6","Lagrimas Negras","Diego El Cigala","Flamenco / Bolero","El cantaor flamenco Diego El Cigala y el pianista cubano Bebo Valdés grabaron este disco en una sola noche en Madrid. La versión de Lágrimas Negras — la bolero de Miguel Matamoros — es una fusión de flamenco y son cubano que suena como si siempre hubiera existido así.","Diego El Cigala","Lagrimas Negras"],
+  ["mts-7","El Jardinero","Wilfrido Vargas","Merengue","Wilfrido Vargas en estado de gracia: merengue rápido, letra de doble sentido perfecto, y ese ritmo que no da tregua. La canción del jardinero que \'poda los jardines\' fue polémica en su momento por exactamente las razones correctas — y sigue siendo imposible no bailarla.","Wilfrido Vargas","El Jardinero"],
+  ["mts-8","Jeremy","Pearl Jam","Grunge","Eddie Vedder tomó dos historias reales de adolescentes que llevaron armas a sus escuelas y las fusionó en una canción sobre los invisibles — los que están pero nadie ve. Cuatro MTV VMAs, el video más visto de 1993, y una canción que sigue siendo urgente treinta años después.","Pearl Jam","Jeremy"],
+  ["mts-9","Noche de Arreboles","Joe Arroyo","Salsa / Afrocaribe","Joe Arroyo en su momento más cinematográfico: una historia de amor y violencia en el Caribe narrada con la precisión de un novelista y el groove de alguien que hace bailar sin esfuerzo. La voz de Joe Arroyo era un instrumento que no tenía equivalente en la salsa colombiana.","Joe Arroyo","Noche de Arreboles"],
   ["mts-10","Dog Days Are Over","Florence and the Machine · 2008","Indie Pop / Art Rock","Florence Welch construyendo el himno más catártico del indie pop de los 2000s. La percusión de harp y la voz de Florence escalando hacia el clímax — la canción que le dio a la colección su artista femenina favorita.","Florence and the Machine","Dog Days Are Over"],
   ["mts-11","Atrevete-te-te","Calle 13 · 2005","Reggaetón / Electrónica","René y Visitante llegaron al mundo con una canción imposible de clasificar: reggaetón con actitud punk, crítica social en pista de baile, humor absurdo mezclado con política. El sonido que nadie esperaba del reggaetón y que Calle 13 nunca repitió exactamente igual.","Calle 13","Residente o Visitante"],
   ["mts-12","Stairway to Heaven","Led Zeppelin · 1971","Rock / Hard Rock","Ocho minutos que definen el rock: del arpeggio acústico de Jimmy Page al solo de guitarra más estudiado de la historia. La canción que demuestra que el rock puede ser al mismo tiempo íntimo, épico y trascendente.","Led Zeppelin","Led Zeppelin IV"]
@@ -3380,8 +3387,10 @@ var TOP12_ARTISTS = [
 function top12Card(item){
   var id=item[0],title=item[1],sub=item[2],genre=item[3],bio=item[4],sartist=item[5],stitle=item[6];
   return '<div class="mytop-item" style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border,#e8ecf4)">'
-    +'<img class="mytop-art" id="'+id+'" src="" alt="'+title.replace(/"/g,"&quot;")+'" style="width:64px;height:64px;object-fit:cover;border-radius:6px;flex-shrink:0;opacity:0;transition:opacity .3s" '
+    +'<div class="card-cover" style="width:64px;height:64px;flex-shrink:0;border-radius:6px;overflow:hidden;background:var(--bg2,#f0f2f8)">'
+    +'<img class="mytop-art" id="'+id+'" src="" alt="'+title.replace(/"/g,"&quot;")+'" style="width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s" '
     +'data-artist="'+encodeURIComponent(sartist)+'" data-album="'+encodeURIComponent(stitle)+'" data-track="'+encodeURIComponent(stitle)+'">'
+    +'</div>'
     +'<div style="min-width:0;flex:1">'
     +'<div style="font-weight:600;font-size:13px;color:var(--text1,#0d1117)">'+title+'</div>'
     +'<div style="font-size:11px;color:var(--text3,#9aa3b2);margin-bottom:2px">'+sub+'</div>'
