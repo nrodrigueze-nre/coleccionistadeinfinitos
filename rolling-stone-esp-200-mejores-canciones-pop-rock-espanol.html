@@ -257,6 +257,14 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 </footer>
 
 <script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
 var SONGS=[[1, "Joan Manuel Serrat", "Mediterraneo", 1971], [2, "Nacha Pop", "Chica de ayer", 1980], [3, "Los Bravos", "Black Is Black", 1966], [4, "Camaron de la Isla", "La leyenda del tiempo", 1979], [5, "Los Canarios", "Get On Your Knees", 1968], [6, "Kiko Veneno / Camaron", "Volando Voy", 1979], [7, "Burning", "Que hace una chica como tu en un sitio como este", 1978], [8, "Radio Futura", "Escuela de calor", 1984], [9, "Paralisis Permanente", "Autosuficiencia", 1982], [10, "Paco de Lucia", "Entre dos aguas", 1973], [11, "Los Brincos", "Mejor", 1966], [12, "El Ultimo de la Fila", "Insurreccion", 1987], [13, "Andres Calamaro", "Flaca", 1994], [14, "Golpes Bajos", "No mires a los ojos de la gente", 1983], [15, "Antonio Vega", "Un sitio de mi recreo", 1989], [16, "Gabinete Caligari", "Cuatro rosas", 1984], [17, "Derribos Arias", "Branquias bajo el agua", 1982], [18, "Lone Star", "Mi calle", 1969], [19, "Alejandro Sanz", "Corazon partio", 1997], [20, "Joaquin Sabina", "19 dias y 500 noches", 1999], [21, "Radio Futura", "La estatua del jardin botanico", 1983], [22, "Los Rodriguez", "Sin documentos", 1993], [23, "Los Brincos", "Nadie te quiere ya", 1966], [24, "Alaska y Dinarama", "Ni tu ni nadie", 1984], [25, "Vainica Doble", "Habanera del primer amor", 1973], [26, "Las Grecas", "Te estoy amando locamente", 1973], [27, "Leno", "Maneras de vivir", 1981], [28, "C.R.A.G.", "Senora azul", 1982], [29, "Golpes Bajos", "Malos tiempos para la lirica", 1983], [30, "Paraiso", "Para ti", 1982], [31, "Extremoduro", "So payaso", 1992], [32, "Los Secretos", "Dejame", 1982], [33, "Alarma!!!", "Frio", 1983], [34, "Kiko Veneno", "Echo de menos", 1992], [35, "Loquillo y los Trogloditas", "Cadillac solitario", 1984], [36, "Los Planetas", "Un buen dia", 1994], [37, "Alaska y los Pegamoides", "El hospital", 1982], [38, "Miguel Rios", "Santa Lucia", 1971], [39, "Kiko Veneno", "Los delincuentes", 1992], [40, "Baron Rojo", "Los rockeros van al infierno", 1982], [41, "Alaska y los Pegamoides", "Bailando", 1982], [42, "Luz Casal", "No me importa nada", 1986], [43, "Jeanette", "Porque te vas", 1976], [44, "Los Brincos", "Flamenco", 1966], [45, "Triana", "En el lago", 1975], [46, "Nino Bravo", "Libre", 1972], [47, "Heroes del Silencio", "Entre dos tierras", 1990], [48, "Andres Calamaro", "Estadio Azteca", 1994], [49, "Mecano", "Hoy no me puedo levantar", 1981], [50, "C.R.A.G.", "Solo pienso en ti", 1983], [51, "Los Salvajes", "Soy asi", 1966], [52, "Alaska y Dinarama", "A quien le importa", 1984], [53, "Cecilia", "Un ramito de violetas", 1973], [54, "Nacha Pop", "Una decima de segundo", 1980], [55, "Los Enemigos", "Septiembre", 1992], [56, "Paralisis Permanente", "Unidos", 1982], [57, "Ray Heredia", "Alegria de vivir", 1991], [58, "Kiko Veneno", "En un mercedes blanco", 1992], [59, "Los Rodriguez", "Dulce condena", 1993], [60, "Los Zombies", "Groenlandia", 1966], [61, "La Union", "Lobo hombre en Paris", 1985], [62, "Joaquin Sabina", "Princesa", 1985], [63, "Radio Futura", "Enamorado de la moda juvenil", 1982], [64, "Asfalto", "Dias de escuela", 1978], [65, "Jorge Drexler", "Eco", 2001], [66, "Miguel Rios", "Bienvenidos", 1969], [67, "Amaral", "Sin ti no soy nada", 2002], [68, "Los Piratas", "Promesas que no valen nada", 1994], [69, "Pata Negra", "Los managers", 1987], [70, "Lluis Llach", "L'estaca", 1968], [71, "Leno", "Este Madrid", 1979], [72, "Esclarecidos", "Arponera", 1993], [73, "Camilo Sesto", "Vivir asi es morir de amor", 1978], [74, "El Ultimo de la Fila", "Aviones plateados", 1985], [75, "Moris", "Nocturno de Princesa", 1970], [76, "Luis Eduardo Aute", "Al Alba", 1975], [77, "Tino Casal", "Eloise", 1986], [78, "Alaska y Dinarama", "Perlas ensangrentadas", 1983], [79, "Jaume Sisa", "Qualsevol nit pot sortir el Sol", 1975], [80, "Pata Negra", "Pasa la vida", 1987], [81, "Lagartija Nick", "Nuevo Harlem", 1995], [82, "Leno", "Entre cejas", 1982], [83, "Mala Rodriguez", "Tengo un trato", 2000], [84, "Camilo Sesto", "Algo de mi", 1972], [85, "Aviador Dro", "Selector de frecuencia", 1982], [86, "Solera", "Linda prima", 1974], [87, "El Ultimo de la Fila", "Querida Milagros", 1984], [88, "Baron Rojo", "Resistire", 1981], [89, "Radio Futura", "Semilla negra", 1986], [90, "Tequila", "Dime que me quieres", 1979], [91, "Vainica Doble", "Caramelo de limon", 1973], [92, "Dover", "Devil came to me", 1997], [93, "Loquillo y los Intocables", "Rock and Roll Star", 1989], [94, "Los Modulos", "Todo tiene su fin", 1969], [95, "Nino Bravo", "Un beso y una flor", 1971], [96, "Radio Futura", "La negra flor", 1989], [97, "Triana", "Se de un lugar", 1975], [98, "Luis Eduardo Aute", "Pasaba por aqui", 1986], [99, "Alaska y Dinarama", "Como pudiste hacerme esto a mi", 1984], [100, "Los Brincos", "En sorbito de champagne", 1967], [101, "Bebe", "Malo", 2004], [102, "Joaquin Sabina", "Y nos dieron las diez", 1990], [103, "Tino Casal", "Embrujada", 1983], [104, "Los Bolidos", "Rafagas", 1965], [105, "Family", "Nadadora", 1992], [106, "Kiko Veneno", "Volando Voy (version)", 1990], [107, "Joaquin Sabina", "Y sin embargo", 1995], [108, "Ilegales", "Tiempos nuevos tiempos salvajes", 1983], [109, "Joaquin Sabina", "Pongamos que hablo de Madrid", 1983], [110, "Moris", "Sabado noche", 1970], [111, "El Ultimo de la Fila", "Desde el Jergon", 1984], [112, "Los Ronaldos", "Si Si", 1988], [113, "Miguel Rios", "Himno de la alegria", 1969], [114, "Gabinete Caligari", "Al calor del amor en un bar", 1983], [115, "Carlos Cano", "Maria la portuguesa", 1978], [116, "Mocedades", "Eres tu", 1973], [117, "Rosendo", "Agradecido", 1985], [118, "Pop Tops", "Oh lord Why lord", 1968], [119, "Duncan Dhu", "Mueve tus caderas", 1989], [120, "Los Planetas", "De viaje", 1996], [121, "Pata Negra", "Camaron", 1990], [122, "Los Bravos", "Bring a Little Lovin", 1968], [123, "Mama", "Nada mas", 1977], [124, "Gabinete Caligari", "Camino Soria", 1985], [125, "Polanski y el Ardor", "Ataque preventivo de la URSS", 1983], [126, "Joan Manuel Serrat", "Aquellas pequenas cosas", 1975], [127, "Jorge Drexler", "Todo se transforma", 2004], [128, "Amaral", "Como hablar", 2002], [129, "Kiko Veneno", "Joselito", 1992], [130, "Deluxe", "Que no", 2002], [131, "Baron Rojo", "Larga vida al rock and roll", 1981], [132, "Enrique Morente & Lagartija Nick", "Omega", 1996], [133, "Cecilia", "Dama dama", 1972], [134, "El Nino Gusano", "Pon tu mente al sol", 1999], [135, "Extremoduro", "Jesucristo Garcia", 1989], [136, "Los Chunguitos", "Dame Veneno", 1985], [137, "Manolo Garcia", "Pajaros de barro", 1998], [138, "Pistones", "El pistolero", 1983], [139, "Vainica Doble", "Un metro cuadrado", 1973], [140, "Siniestro Total", "Bailare sobre tu tumba", 1982], [141, "Radio Futura", "Veneno en la piel", 1990], [142, "Kortatu", "Nicaragua sandinista", 1987], [143, "Duncan Dhu", "Cien gaviotas", 1988], [144, "Joan Manuel Serrat", "Cantares", 1969], [145, "Kiko Veneno", "Lobo Lopez", 1992], [146, "Loquillo y los Trogloditas", "La matare", 1985], [147, "Joan Manuel Serrat", "La mujer que yo quiero", 1987], [148, "Aviador Dro", "La chica de Plexiglas", 1982], [149, "Leno", "Sorprendente", 1984], [150, "La Banda Trapera del Rio", "La regla", 1979], [151, "Joan Manuel Serrat", "Para la libertad", 1971], [152, "Josele Santiago", "Ole papa", 2003], [153, "M-Clan", "Carolina", 1996], [154, "La Frontera", "El limite", 1991], [155, "Australian Blondie", "Chup Chup", 1982], [156, "Obus", "Va a estallar el obus", 1983], [157, "Quique Gonzalez", "Vidas cruzadas", 2002], [158, "La Buenavida", "Que nos va a pasar", 1998], [159, "PVP", "El coche de la plas", 1982], [160, "Mecano", "Cruz de navajas", 1986], [161, "Pop Tops", "Mammy Blue", 1971], [162, "Joan Manuel Serrat", "Tu nombre me sabe a yerba", 1975], [163, "Jaime Urrutia", "Donde estas", 1989], [164, "Ramoncin", "Hormigon mujeres y alcohol", 1983], [165, "Rojo", "Animal caliente", 1976], [166, "Pablo Guerrero", "A cantaros", 1974], [167, "Juan y Junior", "La caza", 1969], [168, "Siniestro Total", "Quienes somos De donde venimos Adonde vamos", 1982], [169, "Kiko Veneno", "San Jose de Arimatea", 1992], [170, "Leno", "El tren", 1984], [171, "Tequila", "Necesito un trago", 1979], [172, "Camaron de la Isla", "Como el agua", 1981], [173, "Los Enemigos", "Todo nos parece una mierda", 1992], [174, "Antonio Flores", "Pongamos que hablo de Madrid", 1994], [175, "Os Resentidos", "Galicia canibal", 1985], [176, "Almodovar y McNamara", "Voy a ser mama", 1983], [177, "Nacha Pop", "Lucha de gigantes", 1983], [178, "Radio Futura", "Amabel Lee", 1982], [179, "Albert Pla", "Carta al rey Melchor", 1993], [180, "Los Angeles", "98.6", 1967], [181, "Raimundo Amador", "Bollere", 1994], [182, "Los Burros", "Huesos", 1990], [183, "The Refrescos", "Aqui no hay playa", 1989], [184, "Smash", "El garrotin", 1968], [185, "Tabletom", "Me estoy quitando", 1983], [186, "Tequila", "Salta!!", 1978], [187, "Nacha Pop", "Atras", 1985], [188, "La Polla Records", "Ellos dicen mierda nosotros amen", 1984], [189, "Los Planetas", "Santos que y te pinte", 1998], [190, "Asfalto", "Capitan Trueno", 1980], [191, "O Funk Illo", "Nos vamos pal keli", 1994], [192, "Andres Calamaro", "Crimenes perfectos", 1997], [193, "Los Pekenikes", "Hilo de seda", 1966], [194, "Complices", "Es por ti", 1990], [195, "Lole y Manuel", "Tu mira", 1977], [196, "Victor Manuel", "Solo pienso en ti", 1980], [197, "Chucho", "Magic", 1996], [198, "Topo", "Mis amigos donde estaran", 1980], [199, "Coz", "Mas sexy", 1978], [200, "Kaka de Luxe", "Pero que publico mas tonto tengo", 1977]];
 var FEAT=[["fc-1", "Joan Manuel Serrat", "Mediterraneo"], ["fc-2", "Nacha Pop", "Chica de ayer"], ["fc-3", "Los Bravos", "Black Is Black"], ["fc-4", "Camaron de la Isla", "La leyenda del tiempo"], ["fc-5", "Los Canarios", "Get On Your Knees"], ["fc-6", "Kiko Veneno / Camaron", "Volando Voy"], ["fc-7", "Burning", "Que hace una chica como tu en un sitio como este"], ["fc-8", "Radio Futura", "Escuela de calor"], ["fc-9", "Paralisis Permanente", "Autosuficiencia"], ["fc-10", "Paco de Lucia", "Entre dos aguas"]];
 var LIST_TYPE="canciones";
@@ -264,15 +272,36 @@ var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,track){
   var country = "es";
-  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country="+country)
+  fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country="+country)
     .then(function(r){return r.json();}).then(function(d){
       var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
       for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
       if(!m&&res.length)m=res[0];
-      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&m.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=m.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw 0;
     }).catch(function(){
-      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&autocorrect=1&format=json")
         .then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.track&&d.track.toptags&&d.track.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.track.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
           var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
           for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
           if(best)setImg(el,best["#text"]);
@@ -295,7 +324,7 @@ SONGS.forEach(function(s){
   frag.appendChild(row);
 });
 container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.track));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -305,7 +334,7 @@ function processLfm(){
   if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
   var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmTrack||""),k=ar+"|||"+tr;
   if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
-  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&autocorrect=1&format=json")
     .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
     .catch(function(){el.textContent="&#8212;";el.classList.remove("loading");})
     .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
@@ -320,19 +349,21 @@ function processExtra(){
   if(extraBusy||!extraQ.length) return;
   extraBusy=true;
   var el=extraQ.shift();
-  var artist=el.dataset.lfmArtist||'';
-  var title=el.dataset.lfmTitle||'';
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -352,20 +383,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -397,7 +477,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

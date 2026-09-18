@@ -168,28 +168,59 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST SONGS 2012 &#183; DIC 2012</span><a href="https://www.rollingstone.com/music/music-lists/50-best-songs-of-2012-152157/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>var SONGS=[[1, "Alabama Shakes", "Hold On", 2012], [2, "Taylor Swift", "We Are Never Ever Getting Back Together", 2012], [3, "Passion Pit", "Take a Walk", 2012], [4, "Frank Ocean", "Thinkin Bout You", 2012], [5, "Neil Young and Crazy Horse", "Ramada Inn", 2012], [6, "Kanye West feat. Big Sean Pusha T and 2 Chainz", "Mercy", 2012], [7, "Bruce Springsteen", "Rocky Ground", 2012], [8, "Jack White", "Sixteen Saltines", 2012], [9, "Bob Dylan", "Pay in Blood", 2012], [10, "First Aid Kit", "Emmylou", 2012], [11, "fun.", "Some Nights", 2012], [12, "Fiona Apple", "Hot Knife", 2012], [13, "Mumford and Sons", "I Will Wait", 2012], [14, "The Vaccines", "Teenage Icon", 2012], [15, "Usher", "Climax", 2012], [16, "Van Halen", "Stay Frosty", 2012], [17, "Kitty Pryde", "Okay Cupid", 2012], [18, "The Rolling Stones", "Doom and Gloom", 2012], [19, "Beach House", "Other People", 2012], [20, "Leonard Cohen", "Going Home", 2012], [21, "Donald Fagen", "Weather in My Head", 2012], [22, "Skrillex feat. Sirah", "Bangarang", 2012], [23, "Randy Newman", "I'm Dreaming", 2012], [24, "Japandroids", "The House That Heaven Built", 2012], [25, "Psy", "Gangnam Style", 2012], [26, "The Lumineers", "Ho Hey", 2012], [27, "A$AP Rocky", "Goldie", 2012], [28, "Grimes", "Oblivion", 2012], [29, "Grizzly Bear", "Yet Again", 2012], [30, "The Beach Boys", "That's Why God Made the Radio", 2012], [31, "Low Cut Connie", "Boozophilia", 2012], [32, "Bruce Springsteen", "We Take Care of Our Own", 2012], [33, "Miguel", "Adorn", 2012], [34, "Kendrick Lamar", "Swimming Pools (Drank)", 2012], [35, "Icona Pop", "I Love It", 2012], [36, "Himanshu", "Womyn", 2012], [37, "Muse", "Madness", 2012], [38, "Teen", "Better", 2012], [39, "Dwight Yoakam", "A Heart Like Mine", 2012], [40, "Craig Finn", "Rented Room", 2012], [41, "Danny Brown", "Grown Up", 2012], [42, "The 2 Bears", "Bear Hug", 2012], [43, "Tanlines", "All of Me", 2012], [44, "The Wanted", "Glad You Came", 2011], [45, "Justin Bieber", "Die in Your Arms", 2012], [46, "Maroon 5 feat. Wiz Khalifa", "Payphone", 2012], [47, "Superchunk", "This Summer", 2012], [48, "Deadmau5", "The Veldt", 2012], [49, "Kacey Musgraves", "Merry Go Round", 2012], [50, "Carly Rae Jepsen", "Call Me Maybe", 2012]];var FEAT=[["fc-1", "Alabama Shakes", "Hold On"], ["fc-2", "Taylor Swift", "We Are Never Ever Getting Back Together"], ["fc-3", "Passion Pit", "Take a Walk"], ["fc-4", "Frank Ocean", "Thinkin Bout You"], ["fc-5", "Neil Young and Crazy Horse", "Ramada Inn"]];var LIST_TYPE="canciones";
-var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}function loadArt(el,artist,track){fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us").then(function(r){return r.json();}).then(function(d){var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}if(!m&&res.length)m=res[0];if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;}).catch(function(){fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json").then(function(r){return r.json();}).then(function(d){var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}if(best)setImg(el,best["#text"]);}).catch(function(){});});}loadArt(document.getElementById("hero-cover"),"Alabama Shakes","Hold On");FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*280);});var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();SONGS.forEach(function(s){var row=document.createElement("div");row.className="track-row";var img=document.createElement("img");img.className="track-cover";img.dataset.artist=encodeURIComponent(s[1]);img.dataset.track=encodeURIComponent(s[2]);img.src="";img.style.opacity="0";img.alt="";var num=document.createElement("div");num.className="track-num";num.textContent=s[0];var info=document.createElement("div");info.style.minWidth="0";var name=document.createElement("div");name.className="track-name";name.textContent=s[2];var artist=document.createElement("div");artist.className="track-artist";artist.textContent=s[1];info.appendChild(name);info.appendChild(artist);var yr=document.createElement("div");yr.className="track-year";yr.textContent=s[3]||"";var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmTrack=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);frag.appendChild(row);});container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();var artQ=[],artTimer=null;function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.track));});if(artQ.length)artTimer=setTimeout(flushArt,500);}var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});var lfmCache={},lfmQ=[],lfmBusy=false;function processLfm(){if(lfmBusy||!lfmQ.length)return;lfmBusy=true;var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmTrack||""),k=ar+"|||"+tr;if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json").then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);}).catch(function(){el.textContent="—";el.classList.remove("loading");}).finally(function(){lfmBusy=false;setTimeout(processLfm,200);});}function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+<script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+var SONGS=[[1, "Alabama Shakes", "Hold On", 2012], [2, "Taylor Swift", "We Are Never Ever Getting Back Together", 2012], [3, "Passion Pit", "Take a Walk", 2012], [4, "Frank Ocean", "Thinkin Bout You", 2012], [5, "Neil Young and Crazy Horse", "Ramada Inn", 2012], [6, "Kanye West feat. Big Sean Pusha T and 2 Chainz", "Mercy", 2012], [7, "Bruce Springsteen", "Rocky Ground", 2012], [8, "Jack White", "Sixteen Saltines", 2012], [9, "Bob Dylan", "Pay in Blood", 2012], [10, "First Aid Kit", "Emmylou", 2012], [11, "fun.", "Some Nights", 2012], [12, "Fiona Apple", "Hot Knife", 2012], [13, "Mumford and Sons", "I Will Wait", 2012], [14, "The Vaccines", "Teenage Icon", 2012], [15, "Usher", "Climax", 2012], [16, "Van Halen", "Stay Frosty", 2012], [17, "Kitty Pryde", "Okay Cupid", 2012], [18, "The Rolling Stones", "Doom and Gloom", 2012], [19, "Beach House", "Other People", 2012], [20, "Leonard Cohen", "Going Home", 2012], [21, "Donald Fagen", "Weather in My Head", 2012], [22, "Skrillex feat. Sirah", "Bangarang", 2012], [23, "Randy Newman", "I'm Dreaming", 2012], [24, "Japandroids", "The House That Heaven Built", 2012], [25, "Psy", "Gangnam Style", 2012], [26, "The Lumineers", "Ho Hey", 2012], [27, "A$AP Rocky", "Goldie", 2012], [28, "Grimes", "Oblivion", 2012], [29, "Grizzly Bear", "Yet Again", 2012], [30, "The Beach Boys", "That's Why God Made the Radio", 2012], [31, "Low Cut Connie", "Boozophilia", 2012], [32, "Bruce Springsteen", "We Take Care of Our Own", 2012], [33, "Miguel", "Adorn", 2012], [34, "Kendrick Lamar", "Swimming Pools (Drank)", 2012], [35, "Icona Pop", "I Love It", 2012], [36, "Himanshu", "Womyn", 2012], [37, "Muse", "Madness", 2012], [38, "Teen", "Better", 2012], [39, "Dwight Yoakam", "A Heart Like Mine", 2012], [40, "Craig Finn", "Rented Room", 2012], [41, "Danny Brown", "Grown Up", 2012], [42, "The 2 Bears", "Bear Hug", 2012], [43, "Tanlines", "All of Me", 2012], [44, "The Wanted", "Glad You Came", 2011], [45, "Justin Bieber", "Die in Your Arms", 2012], [46, "Maroon 5 feat. Wiz Khalifa", "Payphone", 2012], [47, "Superchunk", "This Summer", 2012], [48, "Deadmau5", "The Veldt", 2012], [49, "Kacey Musgraves", "Merry Go Round", 2012], [50, "Carly Rae Jepsen", "Call Me Maybe", 2012]];var FEAT=[["fc-1", "Alabama Shakes", "Hold On"], ["fc-2", "Taylor Swift", "We Are Never Ever Getting Back Together"], ["fc-3", "Passion Pit", "Take a Walk"], ["fc-4", "Frank Ocean", "Thinkin Bout You"], ["fc-5", "Neil Young and Crazy Horse", "Ramada Inn"]];var LIST_TYPE="canciones";
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}function loadArt(el,artist,track){fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us").then(function(r){return r.json();}).then(function(d){var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}if(!m&&res.length)m=res[0];if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&m.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=m.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw 0;}).catch(function(){fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&autocorrect=1&format=json").then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.track&&d.track.toptags&&d.track.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.track.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}if(best)setImg(el,best["#text"]);}).catch(function(){});});}loadArt(document.getElementById("hero-cover"),"Alabama Shakes","Hold On");FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*280);});var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();SONGS.forEach(function(s){var row=document.createElement("div");row.className="track-row";var img=document.createElement("img");img.className="track-cover";img.dataset.artist=encodeURIComponent(s[1]);img.dataset.track=encodeURIComponent(s[2]);img.src="";img.style.opacity="0";img.alt="";var num=document.createElement("div");num.className="track-num";num.textContent=s[0];var info=document.createElement("div");info.style.minWidth="0";var name=document.createElement("div");name.className="track-name";name.textContent=s[2];var artist=document.createElement("div");artist.className="track-artist";artist.textContent=s[1];info.appendChild(name);info.appendChild(artist);var yr=document.createElement("div");yr.className="track-year";yr.textContent=s[3]||"";var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmTrack=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);frag.appendChild(row);});container.appendChild(frag);
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();var artQ=[],artTimer=null;function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.track));});if(artQ.length)artTimer=setTimeout(flushArt,500);}var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});var lfmCache={},lfmQ=[],lfmBusy=false;function processLfm(){if(lfmBusy||!lfmQ.length)return;lfmBusy=true;var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmTrack||""),k=ar+"|||"+tr;if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&autocorrect=1&format=json").then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);}).catch(function(){el.textContent="—";el.classList.remove("loading");}).finally(function(){lfmBusy=false;setTimeout(processLfm,200);});}function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
 // ── Last.fm: genre, listeners, playcount, album ───────────────────────────
 var extraQ=[], extraBusy=false;
 function processExtra(){
   if(extraBusy||!extraQ.length) return;
   extraBusy=true;
   var el=extraQ.shift();
-  var artist=el.dataset.lfmArtist||'';
-  var title=el.dataset.lfmTitle||'';
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -209,20 +240,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -254,7 +334,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

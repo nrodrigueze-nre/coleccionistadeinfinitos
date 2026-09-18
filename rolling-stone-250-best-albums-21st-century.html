@@ -257,21 +257,50 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 </footer>
 
 <script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
 var ALBUMS=[[1, "Beyonce", "Lemonade", 2016], [2, "Radiohead", "Kid A", 2000], [3, "Frank Ocean", "Blonde", 2016], [4, "OutKast", "Stankonia", 2000], [5, "Taylor Swift", "Folklore", 2020], [6, "Kendrick Lamar", "good kid m.A.A.d city", 2012], [7, "SZA", "SOS", 2022], [8, "Kanye West", "My Beautiful Dark Twisted Fantasy", 2010], [9, "Bad Bunny", "Un Verano Sin Ti", 2022], [10, "The Strokes", "Is This It", 2001], [11, "D'Angelo", "Voodoo", 2000], [12, "Jay-Z", "The Blueprint", 2001], [13, "Fiona Apple", "The Idler Wheel", 2012], [14, "The White Stripes", "Elephant", 2003], [15, "Lana Del Rey", "Norman Fucking Rockwell!", 2019], [16, "Beyonce", "Beyonce", 2013], [17, "Adele", "21", 2011], [18, "Missy Elliott", "Under Construction", 2002], [19, "Bob Dylan", "Love and Theft", 2001], [20, "Lady Gaga", "The Fame Monster", 2009], [21, "Rihanna", "Anti", 2016], [22, "Rosalia", "El Mal Querer", 2018], [23, "Drake", "Take Care", 2011], [24, "David Bowie", "Blackstar", 2016], [25, "Lorde", "Melodrama", 2017], [26, "Amy Winehouse", "Back to Black", 2006], [27, "Kendrick Lamar", "To Pimp a Butterfly", 2015], [28, "Arcade Fire", "Funeral", 2004], [29, "LCD Soundsystem", "Sound of Silver", 2007], [30, "Bon Iver", "For Emma Forever Ago", 2007], [31, "Taylor Swift", "1989", 2014], [32, "Beyonce", "Renaissance", 2022], [33, "Kendrick Lamar", "DAMN.", 2017], [34, "Taylor Swift", "Folklore", 2020], [35, "Bad Bunny", "YHLQMDLG", 2020], [36, "Billie Eilish", "When We All Fall Asleep Where Do We Go?", 2019], [37, "Kanye West", "The College Dropout", 2004], [38, "Sufjan Stevens", "Illinois", 2005], [39, "Vampire Weekend", "Contra", 2010], [40, "Gorillaz", "Demon Days", 2005], [41, "Kendrick Lamar", "Mr. Morale & The Big Steppers", 2022], [42, "Beyonce", "Lemonade", 2016], [43, "Taylor Swift", "Red", 2012], [44, "Tyler the Creator", "Igor", 2019], [45, "The National", "Boxer", 2007], [46, "LCD Soundsystem", "This Is Happening", 2010], [47, "Vampire Weekend", "Vampire Weekend", 2008], [48, "Phoebe Bridgers", "Punisher", 2020], [49, "Solange", "A Seat at the Table", 2016], [50, "Harry Styles", "Harry's House", 2022], [51, "SZA", "CTRL", 2017], [52, "Charli XCX", "Brat", 2024], [53, "Paramore", "Paramore", 2013], [54, "Kanye West", "Late Registration", 2005], [55, "LCD Soundsystem", "American Dream", 2017], [56, "Robyn", "Body Talk", 2010], [57, "M.I.A.", "Kala", 2007], [58, "Arcade Fire", "The Suburbs", 2010], [59, "Daft Punk", "Random Access Memories", 2013], [60, "Mitski", "Be the Cowboy", 2018], [61, "FKA twigs", "LP1", 2014], [62, "Drake", "If You're Reading This It's Too Late", 2015], [63, "Tame Impala", "Currents", 2015], [64, "Big Thief", "Dragon New Warm Mountain I Believe in You", 2022], [65, "Chance the Rapper", "Coloring Book", 2016], [66, "Frank Ocean", "Channel Orange", 2012], [67, "Cardi B", "Invasion of Privacy", 2018], [68, "Jay-Z", "The Black Album", 2003], [69, "Jack White", "Blunderbuss", 2012], [70, "Eminem", "The Marshall Mathers LP 2", 2013], [71, "Jorja Smith", "Lost & Found", 2018], [72, "Arca", "Kick I", 2020], [73, "Billie Eilish", "Happier Than Ever", 2021], [74, "Stromae", "Racine Carree", 2013], [75, "Lizzo", "Cuz I Love You", 2019], [76, "Janelle Monae", "The ArchAndroid", 2010], [77, "James Blake", "James Blake", 2011], [78, "Dirty Projectors", "Bitte Orca", 2009], [79, "Sturgill Simpson", "Metamodern Sounds in Country Music", 2014], [80, "Run the Jewels", "Run the Jewels 2", 2014], [81, "The War on Drugs", "Lost in the Dream", 2014], [82, "Perfume Genius", "No Shape", 2017], [83, "Weyes Blood", "Titanic Rising", 2019], [84, "Angel Olsen", "Burn Your Fire for No Witness", 2014], [85, "Sharon Van Etten", "Are We There", 2014], [86, "Beach House", "Teen Dream", 2010], [87, "Haim", "Women in Music Pt. III", 2020], [88, "Carly Rae Jepsen", "Emotion", 2015], [89, "Florence and the Machine", "Lungs", 2009], [90, "Esperanza Spalding", "Radio Music Society", 2012], [91, "Anderson Paak", "Malibu", 2016], [92, "Childish Gambino", "Awaken My Love!", 2016], [93, "King Krule", "The OOZ", 2017], [94, "Low", "Double Negative", 2018], [95, "Moses Sumney", "Grae", 2020], [96, "Caroline Polachek", "Desire I Want to Turn Into You", 2023], [97, "Tierra Whack", "Whack World", 2018], [98, "Kacey Musgraves", "Golden Hour", 2018], [99, "Courtney Barnett", "Sometimes I Sit and Think and Sometimes I Just Sit", 2015], [100, "Wilco", "Yankee Hotel Foxtrot", 2002], [101, "Interpol", "Turn on the Bright Lights", 2002], [102, "The Killers", "Hot Fuss", 2004], [103, "Nicki Minaj", "Pink Friday", 2010], [104, "Eminem", "The Marshall Mathers LP", 2000], [105, "Green Day", "American Idiot", 2004], [106, "Common", "Be", 2005], [107, "Death Grips", "The Money Store", 2012], [108, "yeule", "Softscars", 2023], [109, "Anohni", "Hopelessness", 2016], [110, "Lucy Dacus", "Home Video", 2021], [111, "Spoon", "Kill the Moonlight", 2002], [112, "Questlove", "Soulquarians", 2002], [113, "Yeah Yeah Yeahs", "Fever to Tell", 2003], [114, "Kanye West", "Graduation", 2007], [115, "Bon Iver", "Bon Iver Bon Iver", 2011], [116, "The xx", "xx", 2009], [117, "Chloe x Halle", "Ungodly Hour", 2020], [118, "Destroyer", "Kaputt", 2011], [119, "Dave", "We're All Alone in This Together", 2021], [120, "PJ Harvey", "Stories from the City Stories from the Sea", 2000], [121, "Burial", "Untrue", 2007], [122, "Kanye West", "808s & Heartbreak", 2008], [123, "Justin Timberlake", "FutureSex/LoveSounds", 2006], [124, "Thundercat", "Drunk", 2017], [125, "Grizzly Bear", "Veckatimest", 2009], [126, "Fleet Foxes", "Fleet Foxes", 2008], [127, "Feist", "The Reminder", 2007], [128, "St. Vincent", "Strange Mercy", 2011], [129, "Taylor Swift", "Reputation", 2017], [130, "Doja Cat", "Planet Her", 2021], [131, "My Chemical Romance", "The Black Parade", 2006], [132, "A$AP Rocky", "TESTING", 2018], [133, "Dua Lipa", "Future Nostalgia", 2020], [134, "Mitski", "Puberty 2", 2016], [135, "Killer Mike", "R.A.P. Music", 2012], [136, "Japandroids", "Celebration Rock", 2012], [137, "Father John Misty", "I Love You Honeybear", 2015], [138, "Blood Orange", "Freetown Sound", 2016], [139, "The Roots", "Phrenology", 2002], [140, "Nicki Minaj", "Queen", 2018], [141, "Perfume Genius", "Set My Heart on Fire Immediately", 2020], [142, "U2", "All That You Can't Leave Behind", 2000], [143, "Jack Johnson", "In Between Dreams", 2005], [144, "Rihanna", "Good Girl Gone Bad", 2007], [145, "One Direction", "Four", 2014], [146, "Chance the Rapper", "Acid Rap", 2013], [147, "Little Simz", "Sometimes I Might Be Introvert", 2021], [148, "Freddie Gibbs", "Bandana", 2019], [149, "Joji", "Nectar", 2020], [150, "Chris Stapleton", "Traveller", 2015], [151, "Jay-Z and Kanye West", "Watch the Throne", 2011], [152, "Tinashe", "Aquarius", 2014], [153, "Miguel", "Kaleidoscope Dream", 2012], [154, "Fleet Foxes", "Helplessness Blues", 2011], [155, "Sufjan Stevens", "Carrie and Lowell", 2015], [156, "Adele", "25", 2015], [157, "Dipset", "Diplomatic Immunity", 2003], [158, "Vampire Weekend", "Father of the Bride", 2019], [159, "Taylor Swift", "Speak Now", 2010], [160, "Rapsody", "Laila's Wisdom", 2017], [161, "Jeff Buckley", "Live at Sin-e Legacy Edition", 2003], [162, "Snail Mail", "Lush", 2018], [163, "Kali Uchis", "Isolation", 2018], [164, "MUNA", "MUNA", 2022], [165, "Springsteen", "The Rising", 2002], [166, "Beyonce", "Cowboy Carter", 2024], [167, "clipping.", "Visions of Bodies Being Burned", 2020], [168, "Caroline Shaw", "Partita for 8 Voices", 2013], [169, "Janelle Monae", "Dirty Computer", 2018], [170, "Pusha T", "It's Almost Dry", 2022], [171, "Rosalia", "Motomami", 2022], [172, "JPEGMAFIA", "All My Heroes Are Cornballs", 2019], [173, "Jazmine Sullivan", "Heaux Tales", 2021], [174, "Kendrick Lamar", "Section.80", 2011], [175, "Brockhampton", "Saturation", 2017], [176, "Rihanna", "Rated R", 2009], [177, "Idles", "Joy as an Act of Resistance", 2018], [178, "J. Cole", "2014 Forest Hills Drive", 2014], [179, "Blood Orange", "Negro Swan", 2018], [180, "Cardi B", "Invasion of Privacy", 2018], [181, "Lil Wayne", "Tha Carter III", 2008], [182, "Dua Lipa", "Radical Optimism", 2024], [183, "Big Boi", "Sir Lucious Left Foot", 2010], [184, "The Weeknd", "Trilogy", 2012], [185, "Yaeji", "What We Drew", 2020], [186, "The Hold Steady", "Boys and Girls in America", 2006], [187, "Bat for Lashes", "Two Suns", 2009], [188, "Courtney Barnett & Kurt Vile", "Lotta Sea Lice", 2017], [189, "Tyler the Creator", "Goblin", 2011], [190, "H.E.R.", "Back of My Mind", 2021], [191, "Chris Brown", "Exclusive", 2007], [192, "Tinashe", "Nightride", 2016], [193, "Purity Ring", "Shrines", 2012], [194, "Brittany Howard", "Jaime", 2019], [195, "Olivia Rodrigo", "SOUR", 2021], [196, "Lizzo", "Special", 2022], [197, "Taylor Swift", "Midnights", 2022], [198, "Kendrick Lamar", "untitled unmastered.", 2016], [199, "Burna Boy", "African Giant", 2019], [200, "The 1975", "Notes on a Conditional Form", 2020], [201, "Julieta Venegas", "Si", 2003], [202, "Queens of the Stone Age", "Rated R", 2000], [203, "Jessie Ware", "What's Your Pleasure?", 2020], [204, "Broken Social Scene", "You Forgot It in People", 2002], [205, "The Streets", "Original Pirate Material", 2002], [206, "Joanna Newsom", "Ys", 2006], [207, "Paul McCartney", "Chaos and Creation in the Backyard", 2005], [208, "Vince Staples", "Summertime '06", 2015], [209, "Maren Morris", "Hero", 2016], [210, "St. Vincent", "St. Vincent", 2014], [211, "The Shins", "Oh Inverted World", 2001], [212, "Jazmine Sullivan", "Heaux Tales", 2021], [213, "50 Cent", "Get Rich or Die Tryin'", 2003], [214, "The Libertines", "Up the Bracket", 2002], [215, "Pusha T", "Daytona", 2018], [216, "Halsey", "Manic", 2020], [217, "The Black Keys", "Brothers", 2010], [218, "A$AP Rocky", "Long. Live. A$AP", 2013], [219, "Mac Miller", "Swimming", 2018], [220, "The Coup", "Party Music", 2001], [221, "Tems", "For Broken Ears", 2020], [222, "The National", "High Violet", 2010], [223, "Pink", "M!ssundaztood", 2001], [224, "Miley Cyrus", "Bangerz", 2013], [225, "Hop Along", "Painted Shut", 2015], [226, "Wizkid", "Made in Lagos", 2020], [227, "TV on the Radio", "Return to Cookie Mountain", 2006], [228, "Earl Sweatshirt", "Some Rap Songs", 2018], [229, "Avril Lavigne", "Let Go", 2002], [230, "R.E.M.", "Reveal", 2001], [231, "Vince Staples", "Summertime '06", 2015], [232, "Mach-Hommy", "Pray for Haiti", 2021], [233, "Khalid", "American Teen", 2017], [234, "Swearin'", "Swearin'", 2012], [235, "Turnstile", "Glow On", 2021], [236, "Dua Lipa", "Future Nostalgia", 2020], [237, "C. Tangana", "El Madrileno", 2021], [238, "MJ Lenderman", "Manning Fireworks", 2024], [239, "Tyla", "Tyla", 2024], [240, "Doja Cat", "Hot Pink", 2019], [241, "Kurt Vile", "Smoke Ring for My Halo", 2011], [242, "Ashlee Simpson", "Autobiography", 2004], [243, "Tyler Childers", "Purgatory", 2017], [244, "Saba", "Care for Me", 2018], [245, "The 1975", "The 1975", 2013], [246, "21 Savage and Metro Boomin", "Savage Mode", 2016], [247, "Pierce the Veil", "Collide With the Sky", 2012], [248, "Jenni Rivera", "La Gran Senora", 2009], [249, "Car Seat Headrest", "Teens of Denial", 2016], [250, "Marina", "Electra Heart", 2012]];
 var FEAT=[["fc-1", "Beyonce", "Lemonade"], ["fc-2", "Radiohead", "Kid A"], ["fc-3", "Frank Ocean", "Blonde"], ["fc-4", "OutKast", "Stankonia"], ["fc-5", "Taylor Swift", "Folklore"], ["fc-6", "Kendrick Lamar", "good kid m.A.A.d city"], ["fc-7", "SZA", "SOS"], ["fc-8", "Kanye West", "My Beautiful Dark Twisted Fantasy"], ["fc-9", "Bad Bunny", "Un Verano Sin Ti"], ["fc-10", "The Strokes", "Is This It"]];
 var LIST_TYPE="albumes";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,album){
-  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(album+" "+artist)+"&media=music&entity=album&limit=5&country=us")
+  fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(album+" "+artist)+"&media=music&entity=album&limit=5&country=us")
     .then(function(r){return r.json();}).then(function(d){
       var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
       for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
       if(!m&&res.length)m=res[0];
-      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&m.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=m.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw 0;
     }).catch(function(){
-      fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&format=json")
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&autocorrect=1&format=json")
         .then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.album&&d.album.toptags&&d.album.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.album.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
           var imgs=(d&&d.album&&d.album.image)||[],best=null;
           for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
           if(best)setImg(el,best["#text"]);
@@ -294,7 +323,7 @@ ALBUMS.forEach(function(s){
   frag.appendChild(row);
 });
 container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -304,7 +333,7 @@ function processLfm(){
   if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
   var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),al=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+al;
   if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
-  fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&format=json")
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&autocorrect=1&format=json")
     .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.album&&d.album.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
     .catch(function(){el.textContent="&#8212;";el.classList.remove("loading");})
     .finally(function(){lfmBusy=false;setTimeout(processLfm,250);});
@@ -319,19 +348,21 @@ function processExtra(){
   if(extraBusy||!extraQ.length) return;
   extraBusy=true;
   var el=extraQ.shift();
-  var artist=el.dataset.lfmArtist||'';
-  var title=el.dataset.lfmTitle||'';
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -351,20 +382,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -396,7 +476,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

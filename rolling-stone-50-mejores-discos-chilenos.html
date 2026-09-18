@@ -166,28 +166,59 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE CHILE &#183; 50 MEJORES DISCOS CHILENOS</span></footer>
-<script>var ALBUMS=[[1, "Los Prisioneros", "Pateando piedras", 1986], [2, "Violeta Parra", "Las últimas composiciones de Violeta Parra", 1966], [3, "Víctor Jara", "Manifiesto", 1974], [4, "Los Jaivas", "Alturas de Macchu Picchu", 1981], [5, "Los Prisioneros", "La voz de los '80", 1984], [6, "Quilapayún", "Cantata Santa María de Iquique", 1970], [7, "Los Tres", "La espada & La pared", 1995], [8, "Víctor Jara", "La población", 1972], [9, "Los Bunkers", "Vida de perros", 2005], [10, "Los Prisioneros", "Corazones", 1990], [11, "La Ley", "Invisible", 1995], [12, "Tiro de Gracia", "Ser humano!!", 1997], [13, "Los Tres", "Los Tres", 1991], [14, "Los Jaivas", "Los Jaivas", 1975], [15, "Inti-Illimani", "Autores chilenos", 1969], [16, "Makiza", "Aerolineas Makiza", 1999], [17, "Víctor Jara", "Pongo en tus manos abiertas…", 1969], [18, "Violeta Parra", "Antología", 1992], [19, "Lucho Gatica", "50 canciones inmortales", 1990], [20, "Los Tres", "Fome", 1997], [21, "La Ley", "Doble opuesto", 1994], [22, "Aguaturbia", "Aguaturbia", 1970], [23, "Los Jaivas", "Canción del Sur", 1977], [24, "Pánico", "Subliminal Kill", 2004], [25, "Los Mac's", "Go Go / 22", 1967], [26, "Congregación", "Congregacion viene…", 1971], [27, "Fiskales Ad-Hok", "Fiesta", 1996], [28, "Los Ángeles Negros", "Y volveré", 1969], [29, "Cecilia", "La incomparable", 1970], [30, "Blops", "Blops", 1971], [31, "Gepe", "Gepinto", 2009], [32, "Electrodomésticos", "¡Viva Chile!", 1993], [33, "Inti-Illimani", "Imaginación", 1984], [34, "Los Chileneros", "La Cueca Centrina", 1966], [35, "De Kiruza", "De Kiruza", 1988], [36, "Lucybell", "Viajar", 1995], [37, "Violeta Parra", "Canciones reencontradas en París", 1971], [38, "Supersordo", "Supersórdido", 2007], [39, "Buddy Richard", "En vivo en el Astor", 1967], [40, "Mauricio Redolés", "¿Quién mató a Gaete?", 1990], [41, "Emociones Clandestinas", "Abajo en la costanera", 1986], [42, "Manuel García", "Pánico", 2011], [43, "CHC", "La cosa", 1997], [44, "Los Vidrios Quebrados", "Fictions", 1987], [45, "Pentagram Chile", "Pentagram", 1993], [46, "Congreso", "Terra incógnita", 1992], [47, "Tobias Alcayota", "Omi", 2014], [48, "Leo Quinteros", "Los accidentes del futuro", 2012], [49, "Joe Vasconcellos", "Vivo", 1999], [50, "Orquesta Huambaly", "100 Exitos Inolvidables", 1990]];var FEAT=[["fc-1", "Los Prisioneros", "Pateando piedras"], ["fc-2", "Violeta Parra", "Las últimas composiciones de Violeta Parra"], ["fc-3", "Víctor Jara", "Manifiesto"], ["fc-4", "Los Jaivas", "Alturas de Macchu Picchu"], ["fc-5", "Los Prisioneros", "La voz de los '80"]];var LIST_TYPE="albumes";
-var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}function loadArt(el,artist,album){fetch("https://itunes.apple.com/search?term="+encodeURIComponent(album+" "+artist)+"&media=music&entity=album&limit=5&country=cl").then(function(r){return r.json();}).then(function(d){var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}if(!m&&res.length)m=res[0];if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;}).catch(function(){fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&format=json").then(function(r){return r.json();}).then(function(d){var imgs=(d&&d.album&&d.album.image)||[],best=null;for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}if(best)setImg(el,best["#text"]);}).catch(function(){});});}loadArt(document.getElementById("hero-cover"),"Los Prisioneros","Pateando piedras");FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*280);});var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();ALBUMS.forEach(function(s){var row=document.createElement("div");row.className="track-row";var img=document.createElement("img");img.className="track-cover";img.dataset.artist=encodeURIComponent(s[1]);img.dataset.album=encodeURIComponent(s[2]);img.src="";img.style.opacity="0";img.alt="";var num=document.createElement("div");num.className="track-num";num.textContent=s[0];var info=document.createElement("div");info.style.minWidth="0";var name=document.createElement("div");name.className="track-name";name.textContent=s[2];var artist=document.createElement("div");artist.className="track-artist";artist.textContent=s[1];info.appendChild(name);info.appendChild(artist);var yr=document.createElement("div");yr.className="track-year";yr.textContent=s[3]||"";var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);frag.appendChild(row);});container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();var artQ=[],artTimer=null;function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});var lfmCache={},lfmQ=[],lfmBusy=false;function processLfm(){if(lfmBusy||!lfmQ.length)return;lfmBusy=true;var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),al=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+al;if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&format=json").then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.album&&d.album.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);}).catch(function(){el.textContent="—";el.classList.remove("loading");}).finally(function(){lfmBusy=false;setTimeout(processLfm,250);});}function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
+<script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+var ALBUMS=[[1, "Los Prisioneros", "Pateando piedras", 1986], [2, "Violeta Parra", "Las últimas composiciones de Violeta Parra", 1966], [3, "Víctor Jara", "Manifiesto", 1974], [4, "Los Jaivas", "Alturas de Macchu Picchu", 1981], [5, "Los Prisioneros", "La voz de los '80", 1984], [6, "Quilapayún", "Cantata Santa María de Iquique", 1970], [7, "Los Tres", "La espada & La pared", 1995], [8, "Víctor Jara", "La población", 1972], [9, "Los Bunkers", "Vida de perros", 2005], [10, "Los Prisioneros", "Corazones", 1990], [11, "La Ley", "Invisible", 1995], [12, "Tiro de Gracia", "Ser humano!!", 1997], [13, "Los Tres", "Los Tres", 1991], [14, "Los Jaivas", "Los Jaivas", 1975], [15, "Inti-Illimani", "Autores chilenos", 1969], [16, "Makiza", "Aerolineas Makiza", 1999], [17, "Víctor Jara", "Pongo en tus manos abiertas…", 1969], [18, "Violeta Parra", "Antología", 1992], [19, "Lucho Gatica", "50 canciones inmortales", 1990], [20, "Los Tres", "Fome", 1997], [21, "La Ley", "Doble opuesto", 1994], [22, "Aguaturbia", "Aguaturbia", 1970], [23, "Los Jaivas", "Canción del Sur", 1977], [24, "Pánico", "Subliminal Kill", 2004], [25, "Los Mac's", "Go Go / 22", 1967], [26, "Congregación", "Congregacion viene…", 1971], [27, "Fiskales Ad-Hok", "Fiesta", 1996], [28, "Los Ángeles Negros", "Y volveré", 1969], [29, "Cecilia", "La incomparable", 1970], [30, "Blops", "Blops", 1971], [31, "Gepe", "Gepinto", 2009], [32, "Electrodomésticos", "¡Viva Chile!", 1993], [33, "Inti-Illimani", "Imaginación", 1984], [34, "Los Chileneros", "La Cueca Centrina", 1966], [35, "De Kiruza", "De Kiruza", 1988], [36, "Lucybell", "Viajar", 1995], [37, "Violeta Parra", "Canciones reencontradas en París", 1971], [38, "Supersordo", "Supersórdido", 2007], [39, "Buddy Richard", "En vivo en el Astor", 1967], [40, "Mauricio Redolés", "¿Quién mató a Gaete?", 1990], [41, "Emociones Clandestinas", "Abajo en la costanera", 1986], [42, "Manuel García", "Pánico", 2011], [43, "CHC", "La cosa", 1997], [44, "Los Vidrios Quebrados", "Fictions", 1987], [45, "Pentagram Chile", "Pentagram", 1993], [46, "Congreso", "Terra incógnita", 1992], [47, "Tobias Alcayota", "Omi", 2014], [48, "Leo Quinteros", "Los accidentes del futuro", 2012], [49, "Joe Vasconcellos", "Vivo", 1999], [50, "Orquesta Huambaly", "100 Exitos Inolvidables", 1990]];var FEAT=[["fc-1", "Los Prisioneros", "Pateando piedras"], ["fc-2", "Violeta Parra", "Las últimas composiciones de Violeta Parra"], ["fc-3", "Víctor Jara", "Manifiesto"], ["fc-4", "Los Jaivas", "Alturas de Macchu Picchu"], ["fc-5", "Los Prisioneros", "La voz de los '80"]];var LIST_TYPE="albumes";
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}function loadArt(el,artist,album){fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(album+" "+artist)+"&media=music&entity=album&limit=5&country=cl").then(function(r){return r.json();}).then(function(d){var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}if(!m&&res.length)m=res[0];if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&m.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=m.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw 0;}).catch(function(){fetchTO("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&album="+encodeURIComponent(album)+"&autocorrect=1&format=json").then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.album&&d.album.toptags&&d.album.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.album.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }var imgs=(d&&d.album&&d.album.image)||[],best=null;for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}if(best)setImg(el,best["#text"]);}).catch(function(){});});}loadArt(document.getElementById("hero-cover"),"Los Prisioneros","Pateando piedras");FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*280);});var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();ALBUMS.forEach(function(s){var row=document.createElement("div");row.className="track-row";var img=document.createElement("img");img.className="track-cover";img.dataset.artist=encodeURIComponent(s[1]);img.dataset.album=encodeURIComponent(s[2]);img.src="";img.style.opacity="0";img.alt="";var num=document.createElement("div");num.className="track-num";num.textContent=s[0];var info=document.createElement("div");info.style.minWidth="0";var name=document.createElement("div");name.className="track-name";name.textContent=s[2];var artist=document.createElement("div");artist.className="track-artist";artist.textContent=s[1];info.appendChild(name);info.appendChild(artist);var yr=document.createElement("div");yr.className="track-year";yr.textContent=s[3]||"";var genre=document.createElement("div");genre.className="track-genre loading track-extra-trigger";genre.dataset.lfmArtist=encodeURIComponent(s[1]);genre.dataset.lfmTitle=encodeURIComponent(s[2]);genre.innerHTML="&#8212;";var listeners=document.createElement("div");listeners.className="track-listeners loading";listeners.innerHTML="&#8212;";var playcount=document.createElement("div");playcount.className="track-playcount loading";playcount.innerHTML="&#8212;";var sc=document.createElement("div");sc.className="track-scrobbles loading";sc.dataset.lfmArtist=encodeURIComponent(s[1]);sc.dataset.lfmAlbum=encodeURIComponent(s[2]);sc.innerHTML="&#8212;";row.appendChild(num);row.appendChild(img);row.appendChild(info);row.appendChild(yr);row.appendChild(genre);row.appendChild(listeners);row.appendChild(playcount);row.appendChild(sc);frag.appendChild(row);});container.appendChild(frag);
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();var artQ=[],artTimer=null;function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.album));});if(artQ.length)artTimer=setTimeout(flushArt,500);}var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});document.querySelectorAll(".track-cover").forEach(function(c){artObs.observe(c);});var lfmCache={},lfmQ=[],lfmBusy=false;function processLfm(){if(lfmBusy||!lfmQ.length)return;lfmBusy=true;var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),al=decodeURIComponent(el.dataset.lfmAlbum||""),k=ar+"|||"+al;if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}fetchTO("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&album="+encodeURIComponent(al)+"&username="+LFM_USER+"&autocorrect=1&format=json").then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.album&&d.album.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);}).catch(function(){el.textContent="—";el.classList.remove("loading");}).finally(function(){lfmBusy=false;setTimeout(processLfm,250);});}function renderS(el,c){el.classList.remove("loading");el.textContent=c>0?c.toLocaleString():"0";if(!c)el.classList.add("zero");}var lfmObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;lfmObs.unobserve(e.target);lfmQ.push(e.target);processLfm();});},{rootMargin:"400px"});document.querySelectorAll(".track-scrobbles").forEach(function(s){lfmObs.observe(s);});
 // ── Last.fm: genre, listeners, playcount, album ───────────────────────────
 var extraQ=[], extraBusy=false;
 function processExtra(){
   if(extraBusy||!extraQ.length) return;
   extraBusy=true;
   var el=extraQ.shift();
-  var artist=el.dataset.lfmArtist||'';
-  var title=el.dataset.lfmTitle||'';
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -207,20 +238,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -252,7 +332,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

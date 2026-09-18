@@ -251,21 +251,50 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/arg-300-canciones-rock-argentino-siglo-xxi/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 <script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
 var SONGS=[[1, "Babasonicos", "La Pregunta", 2018], [2, "Andrés Calamaro", "Estadio Azteca", 2004], [3, "Gustavo Cerati", "Cactus", 2009], [4, "El Mató a un Policía Motorizado", "Mi Próximo Movimiento", 2008], [5, "Indio Solari", "Y Mientras Tanto el Sol Se Muere...", 2007], [6, "WOS", "CANGURO", 2019], [7, "Los Auténticos Decadentes", "Un Osito de Peluche de Taiwán", 2003], [8, "Intoxicados", "Una Vela", 2003], [9, "Marilina Bertoldi", "Fumar de día", 2018], [10, "La Renga", "La Razón Que Te Demora", 2003], [11, "Pappo", "Juntos a la Par", 2003], [12, "Juana Molina", "Un día", 2008], [13, "Catupecu Machu", "Magia Veneno", 2004], [14, "Turf", "Pasos Al Costado", 2004], [15, "Los Piojos", "Pacífico", 2007], [16, "Las Pelotas", "Será", 2003], [17, "Miranda!", "Don", 2008], [18, "Bersuit Vergarabat", "La Soledad", 2004], [19, "Estelares", "Ella Dijo", 2006], [20, "León Gieco", "El Ángel De La Bicicleta", 2005], [21, "Attaque 77", "Arrancacorazones", 2003], [22, "Pez", "Desde el Viento en la Montaña Hasta la Espuma del Mar", 2002], [23, "Dillom", "OPA", 2021], [24, "Massacre", "Tanto amor", 2011], [25, "Flopa Manza Minimal", "Debajo Del Album Blanco", 0], [26, "Daniel Melingo", "Corazón y Hueso", 2017], [27, "Gabo Ferro", "El amigo de mi padre", 2005], [28, "Nicki Nicole", "Wapo Traketero", 2019], [29, "Los Espiritus", "La Crecida", 2015], [30, "Almafuerte", "Toro y Pampa", 2006], [31, "Divididos", "Casitas Inundadas, a Votar", 2002], [32, "Los Tipitos", "Campanas en la Noche", 2004], [33, "Rosario Bléfari", "Estaciones", 2005], [34, "Fidel Nadal", "International Love", 2008], [35, "Kapanga", "Fumar", 2002], [36, "Charly García", "Asesíname", 2003], [37, "Carajo", "Sacate la Mierda", 2002], [38, "Mancha De Rolando", "Arde la Ciudad", 2004], [39, "Andrés Calamaro", "Carnaval de Brasil", 2007], [40, "Skay Beilinson", "Oda a la Sin Nombre", 2002], [41, "Palo Pandolfo", "Oficio del Cantor", 2009], [42, "boom boom kid", "I Do", 2001], [43, "Callejeros", "Una Nueva Noche Fría", 2004], [44, "Árbol", "Pequeños Sueños", 2005], [45, "Vicentico", "Solo un Momento", 2010], [46, "Los Cafres", "Si El Amor Se Cae", 2004], [47, "Onda Vaga", "Mambeado", 2008], [48, "Gustavo Cerati", "La Excepción", 2006], [49, "Tan Bionica", "La Melodía de Dios", 2013], [50, "Las Ligas Menores", "A 1200 Km", 2014], [51, "Loquero", "Era un Día Perfecto", 2001], [52, "Babasonicos", "Los Calientes", 2001], [53, "Mi Amigo Invencible", "Máquina del Tiempo", 2015], [54, "Fito Paez", "Tu Vida Mi Vida", 2017], [55, "Illya Kuryaki & The Valderramas", "Aguila Amarilla", 2012], [56, "Ciro y los Persas", "Antes y Después", 2009], [57, "Acorazado Potemkin", "La Mitad", 2011], [58, "Bestia Bebé", "Lo Quiero Mucho a Ese Muchacho", 2013], [59, "Spinetta, García, Ferrón", "Iris", 2015], [60, "Mimi Maura", "Yo no lloro más", 2017], [61, "Lisandro Aristimuño", "Un Dólar, un Reloj y una Frase Sin Sentido", 2012], [62, "Doris", "Así", 2004], [63, "Los Fabulosos Cadillacs", "Nosotros Egoístas", 2008], [64, "Valle de Muñecas", "Días de Suerte", 2007], [65, "Indio Solari", "Nike Es la Cultura", 2004], [66, "Trueno", "Sangría - con WOS", 2020], [67, "El Mató a un Policía Motorizado", "El Tesoro", 2017], [68, "Emmanuel Horvilleur", "Radios", 2007], [69, "Shaman Y Los Hombres En Llamas", "La Niebla", 2011], [70, "Daniel Melero", "Tu Vida Empieza Hoy", 2001], [71, "Las Pelotas", "Personalmente", 2010], [72, "Norma", "Freezer", 2012], [73, "Guasones", "Reyes de la Noche", 2005], [74, "107 Faunos", "Jazmín Chino", 2014], [75, "La Renga", "En Bicicleta", 2022], [76, "Kevin Johansen", "Down With My Baby", 2003], [77, "Sol Pereyra", "Nadie Te Preguntó", 2014], [78, "Me Darás Mil Hijos", "Sueños de Autostop (feat. Hilda Lizarazu)", 2004], [79, "Banda de Turistas", "Todo Mío el Otoño", 2008], [80, "Intoxicados", "Fuego", 2005], [81, "Victoria Mil", "G-13", 2011], [82, "Prietto Viaja al Cosmos con Mariano", "Av Corrientes", 2007], [83, "Charly García", "Influencia", 2002], [84, "El Siempreterno", "Full Coma", 2020], [85, "Barbi Recanati", "Que No", 2020], [86, "Bajofondo", "El Mareo", 2007], [87, "Onda Vaga", "Gilda", 2008], [88, "Poncho", "Tantra Sky", 2010], [89, "Duki", "Malbec", 2021], [90, "Pablo Dacal", "El Esclavo Feliz", 2019], [91, "Indio Solari", "Pabellón Séptimo (Relato de Horacio)", 2004], [92, "Los Reyes del Falsete", "Los Niños (feat. Litto Nebbia)", 2012], [93, "Moura Sergi", "Perdón", 2012], [94, "Ciro y los Persas", "Mírenla", 2012], [95, "Eruca Sativa", "Carapazón", 2019], [96, "Richard Coleman", "Incandescente", 2013], [97, "Miranda!", "Yo Te Diré", 2004], [98, "Leo García", "Morrissey", 2001], [99, "Conociendo Rusia", "Cabildo y Juramento", 2019], [100, "Carca", "Luz de Blues", 2013], [101, "Bandalos Chinos", "Vámonos De Viaje", 2018], [102, "Las Pastillas del Abuelo", "El Sensei", 2018], [103, "Estelares", "Moneda Corriente", 2003], [104, "Juana Molina", "Cosoco", 2017], [105, "Usted Señalemelo", "Aguetas", 2017], [106, "WOS", "FRESCO", 2019], [107, "Gabo Ferro", "Costurera y carpintero", 2006], [108, "Gustavo Cerati", "Lago en el Cielo", 2006], [109, "Jorge Serrano", "Emociones Negativas", 2010], [110, "Palo Pandolfo", "Río Reconquista", 2009], [111, "Pappo", "Rock and Roll y Fiebre", 2003], [112, "A tirador láser", "Rasante Oscuridad", 2002], [113, "Fabiana Cantilo", "Desde el Cielo", 2015], [114, "Rosario Bléfari", "Viento Helado", 2005], [115, "Miranda!", "Traición", 2004], [116, "Paula Maffia", "Corazón Licántropo", 2019], [117, "Las Pelotas", "Esperando el Milagro", 2003], [118, "Andrés Calamaro", "Tuyo siempre - En directo 2005", 2005], [119, "Fantasmagoria", "Gori Llamando a Rio", 2001], [120, "Lisandro Aristimuño", "Desprender del Sur", 2009], [121, "Mostruo!", "El Capitán", 2011], [122, "Norma", "6 A M", 2015], [123, "Babasonicos", "Risa", 2003], [124, "Los Mundos Posibles", "La Guerra del Japón", 2018], [125, "Almafuerte", "La Máquina de Picar Carne", 2006], [126, "Utopians", "Algo Mejor", 2014], [127, "La Franela", "Hacer un puente", 2011], [128, "Vicentico", "Cuando Te Vi", 2003], [129, "Trueno", "ARGENTINA", 2022], [130, "Massacre", "La Octava Maravilla", 2007], [131, "El Mató a un Policía Motorizado", "Mas o Menos Bien", 2013], [132, "Babasonicos", "El Loco", 2001], [133, "Las Ligas Menores", "En Invierno", 2018], [134, "Las manos de Filippi", "Los Métodos Piqueteros", 2008], [135, "Andrea Álvarez", "Dormis?", 2005], [136, "Jóvenes Pordioseros", "Descontrolado", 2004], [137, "Marilina Bertoldi", "Cosa Mía", 2022], [138, "Viva Elastico", "Imágenes de Amor", 2009], [139, "Peces Raros", "Cicuta - Remix", 2022], [140, "Coiffeur", "¡Qué Mala Suerte!", 2006], [141, "Leo García", "Tesoro", 2005], [142, "Riel", "Paseo Psicodelico", 2018], [143, "León Gieco", "La Memoria", 2001], [144, "Luis Alberto Spinetta", "Tu Vuelo Al Fin", 2008], [145, "Pequeña Orquesta Reincidentes", "Mi Suerte", 2001], [146, "Charly García", "Lluvia", 2017], [147, "Karamelo Santo", "Nunca", 2001], [148, "Árbol", "Trenes, Camiones Y Tractores", 2005], [149, "Catupecu Machu", "Musas", 2011], [150, "CA7RIEL", "OUKE", 2019], [151, "Los Natas", "Humo De Marihuana", 2003], [152, "Gustavo Cerati", "Sulky", 2002], [153, "Intoxicados", "Nunca quise", 2005], [154, "Divididos", "Living de Trincheras", 2012], [155, "Las Pelotas", "Cerca de las Nubes", 2012], [156, "Los Piojos", "Dientes de Cordero", 2003], [157, "Skay Beilinson", "El Golem de Paternal", 2004], [158, "Ariel Minimal", "A los Amigos", 2006], [159, "Flopa", "Corazón de Pie", 2004], [160, "boom boom kid", "She Runaway", 2004], [161, "Callejeros", "9 de Julio", 2006], [162, "Los Pericos", "Anónimos (feat. Carla Morrison)", 2016], [163, "El Bordo", "En la vereda", 2006], [164, "No Lo Soporto", "Nunca iré", 2008], [165, "Pelea de Gallos", "Viernes", 2019], [166, "Florencia Ruiz", "Movimiento final", 2014], [167, "Cuentos Borgeanos", "Océano", 2007], [168, "Fito Paez", "La Canción de las Bestias", 2020], [169, "Lucy Patané", "En Toneles", 2019], [170, "Fémina", "Resist", 2019], [171, "Francisco Bochatón", "Balvanera", 2007], [172, "Los Fabulosos Cadillacs", "Padre Nuestro", 2008], [173, "Adicta", "Tu Mal", 2003], [174, "Guasones", "Brillar", 2008], [175, "Gran Martell", "Empetrolado", 2008], [176, "Los Reyes del Falsete", "Las Cosas Como Son", 2009], [177, "Travesti", "Calibre 44", 2009], [178, "Bicicletas", "11 y 20", 2009], [179, "Arbolito", "Europa", 2009], [180, "Illya Kuryaki & The Valderramas", "Ula Ula", 2012], [181, "Gustavo Cerati", "Crimen", 2006], [182, "Intoxicados", "Esta Saliendo El Sol", 2003], [183, "Estelares", "Un Dia Perfecto", 2006], [184, "Nonpalidece", "Reggae en el Universo", 2006], [185, "Cabezones", "Pasajero En Extinción", 2006], [186, "Viva Elastico", "El Gran Encuentro", 2019], [187, "Vicentico", "Morir A Tu Lado", 2010], [188, "El Perrodiablo", "Algo Sobre Estar Vivo", 2012], [189, "Pilsen", "Nonsanto", 2020], [190, "Alfonso Barbieri", "El pintor verdadero", 2012], [191, "Ratones Paranoicos", "Sigue Girando", 2006], [192, "Eruca Sativa", "Fuera o Más Allá", 2012], [193, "Juan Ravioli", "Son Días Felices", 2009], [194, "Miranda!", "Fantasmas", 2014], [195, "Indios", "Ya Pasó", 2013], [196, "Mercedes Sosa", "Zona de Promesas (with Gustavo Cerati)", 2009], [197, "Los Brujos", "Beat Hit", 2015], [198, "Chancha Via Circuito", "Sueño en Paraguay", 2014], [199, "Peligrosos Gorriones", "Florería", 2014], [200, "Acorazado Potemkin", "El Pan del Facho", 2014], [201, "Los Espiritus", "Jugo", 2017], [202, "Morbo y Mambo", "Pomán", 2017], [203, "MUJERCITAS TERROR", "La Secta Olvidada", 2015], [204, "Bestia Bebé", "El Uruguayo", 2013], [205, "Lo' Pibitos", "El Ritmo de la Vida", 2015], [206, "Willy Crook", "Lotophagy", 2019], [207, "Marina Fages", "Piedra Marea Fuego", 2019], [208, "Expulsados", "Nada Cambió Mi Amor", 2006], [209, "Juan Ingaramo", "Matemática", 2016], [210, "Marilina Bertoldi", "La Cena", 2022], [211, "Usted Señalemelo", "Pastizal", 2019], [212, "Los Caligaris", "Asado y Fernet", 2007], [213, "El Plan De La Mariposa", "El Riesgo", 2017], [214, "Indio Solari", "Encuentro Con un Ángel Amateur - En Vivo", 2021], [215, "Las Sombras", "Rocanrol del Idiota", 2018], [216, "Los Rusos Hijos de Puta", "Capilla del Monte", 2018], [217, "LOUTA", "AYER TE VI (feat. Zoe Gotusso)", 2018], [218, "Las Armas Bs. As.", "La Policía Emocional", 2018], [219, "Las Ligas Menores", "La Nieve", 2021], [220, "El Kuelgue", "Planeta Numir", 2018], [221, "WOS", "MELÓN VINO", 2019], [222, "Trueno", "DANCE CRIP", 2021], [223, "Bandalos Chinos", "El Ídolo", 2020], [224, "Feli Colina", "Aguatera", 2022], [225, "La Portuaria", "10000 Km", 2003], [226, "Miss Bolivia", "Tomate el Palo (feat. Leo García)", 2014], [227, "Villanos", "Chau corazón", 2005], [228, "Eterna Inocencia", "Nuestras Fronteras", 2004], [229, "Sr Tomate", "Dibujo un Corazón", 2012], [230, "Rayos Láser", "Disparo de Onda", 2013], [231, "Perras on the beach", "Ramona", 2016], [232, "Melingo", "¡cha Digo!", 2007], [233, "Jorge Serrano", "Fósforo", 2010], [234, "Babasonicos", "El Colmo", 2005], [235, "Duki", "Goteo", 2019], [236, "Conociendo Rusia", "Loco en el Desierto", 2018], [237, "El Estrellero", "Ok Amigo", 2019], [238, "Trueno", "Mamichula - con Nicki Nicole", 2020], [239, "Horcas", "Esperanza", 2002], [240, "Viejas Locas", "Perro guardián", 2011], [241, "Miranda!", "Dos", 2022], [242, "Un Planeta", "Fuego III", 2014], [243, "Humo Del Cairo", "Sepia", 2014], [244, "Las Pastillas del Abuelo", "Ojos de Dragón!", 2011], [245, "Pez", "1986", 2017], [246, "Barbi Recanati", "Teoria Espacial", 2018], [247, "Duki", "Quavo #Mododiablo", 2018], [248, "Las Armas Bs. As.", "Tenis", 2022], [249, "Francisca y Los Exploradores", "Villa Urquiza", 2018], [250, "Perotá Chingó", "Rie Chinito", 2014], [251, "Carmen Sánchez Viamonte", "Pensamientos intrusivos", 2022], [252, "Lache", "Yo Quiero Ser un Jedi", 2007], [253, "Orion XL", "Delirante", 2020], [254, "Fito Paez", "Margarita", 2013], [255, "Andrés Calamaro", "Cuando no estás", 2013], [256, "Lisandro Aristimuño", "Tu Nombre y el Mío", 2004], [257, "Los Auténticos Decadentes", "Sigue Tu Camino", 2003], [258, "Los Alamos", "Problemas", 2008], [259, "Valle de Muñecas", "1000 Kilometros", 2015], [260, "Nicki Nicole", "Mala Vida", 2020], [261, "Skay Beilinson", "El Viaje de las Partículas", 2007], [262, "OConnor", "Rock Del Suicida", 2006], [263, "Les Mentettes", "Fairy Tale", 2010], [264, "Bajofondo", "A Tiempo (feat. Usted Señalemelo)", 2019], [265, "Los Fabulosos Cadillacs", "No Era para Vos", 2016], [266, "Banda de Turistas", "Química", 2014], [267, "Palo Pandolfo", "Tu Amor", 2021], [268, "Viajantes", "La Hora De Los Magos", 2020], [269, "Los Reyes del Falsete", "Contale al Mundo", 2012], [270, "Las Bodas Quimicas", "Compañero", 2016], [271, "Los Besos", "Helados Verdes", 2017], [272, "Estelares", "Aire", 2006], [273, "Massacre", "Niña Dios", 2015], [274, "Rubin", "Odio el Amor", 2004], [275, "Los Antiguos", "La Culpa Al Viento", 2015], [276, "Fidel Nadal", "Crucial", 2015], [277, "Babasonicos", "Microdancing", 2008], [278, "Killer Burritos", "El Club de la Pelea", 2015], [279, "Leo García", "Canción para los Inocentes", 2016], [280, "Pequeña Orquesta Reincidentes", "Siete Suelas", 2020], [281, "Charly García", "Tu Vicio", 2002], [282, "Gustavo Cerati", "Adiós", 2006], [283, "Pyramides", "Caoscalma", 2017], [284, "Fin del Mundo", "La Noche", 2020], [285, "El robot bajo el agua", "Ver-Tiente", 2010], [286, "CA7RIEL", "BAD BITCH", 2021], [287, "boom boom kid", "Lo Único Feo Es No Tener Porque Vivir", 2009], [288, "El Mató a un Policía Motorizado", "Mujeres Bellas y Fuertes", 2013], [289, "Juana Molina", "Río Seco", 2006], [290, "Mostruo!", "Dios", 2006], [291, "Almafuerte", "Mi credo", 2012], [292, "Victoria Mil", "Cambiar", 2020], [293, "Guasones", "Canción para un Amigo", 2017], [294, "Turf", "Disconocidos", 2017], [295, "Luca Bocci", "Bahía", 2017], [296, "Viva Elastico", "Algo de Mí, Algo de Vos", 2021], [297, "Sol Pereyra", "Ella y un Perro", 2011], [298, "Pablo Sbaraglia", "Nada! (Zippo Rock)", 2008], [299, "Guillermo Klein", "Va Roman", 2008], [300, "Neo Pistea", "Tumbando el Club (feat. C.R.O, Obiewanshot, YSY A, Cazzu, KHEA, Lucho SSJ, Coqeéin Montana, Marcianos Crew & Duki) - Remix", 2019]];
 var FEAT=[["fc-1", "Babasonicos", "La Pregunta"], ["fc-2", "Andres Calamaro", "Estadio Azteca"], ["fc-3", "Gustavo Cerati", "Cactus"], ["fc-4", "El Mato a un Policia Motorizado", "Mi Proximo Movimiento"], ["fc-5", "Indio Solari", "Y Mientras Tanto el Sol Se Muere"], ["fc-6", "Wos", "Canguro"], ["fc-7", "Los Autenticos Decadentes", "Un Osito de Peluche de Taiwan"], ["fc-8", "Intoxicados", "Una Vela"], ["fc-9", "Marilina Bertoldi", "Fumar de Dia"], ["fc-10", "La Renga", "La Razon que Te Demora"]];
 var LIST_TYPE="canciones";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,track){
-  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=ar")
+  fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=ar")
     .then(function(r){return r.json();}).then(function(d){
       var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
       for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
       if(!m&&res.length)m=res[0];
-      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&m.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=m.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw 0;
     }).catch(function(){
-      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&autocorrect=1&format=json")
         .then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.track&&d.track.toptags&&d.track.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.track.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
           var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
           for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
           if(best)setImg(el,best["#text"]);
@@ -288,7 +317,7 @@ SONGS.forEach(function(s){
   frag.appendChild(row);
 });
 container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.track));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -298,7 +327,7 @@ function processLfm(){
   if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
   var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmTrack||""),k=ar+"|||"+tr;
   if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
-  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&autocorrect=1&format=json")
     .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
     .catch(function(){el.textContent="&#8212;";el.classList.remove("loading");})
     .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
@@ -313,19 +342,21 @@ function processExtra(){
   if(extraBusy||!extraQ.length) return;
   extraBusy=true;
   var el=extraQ.shift();
-  var artist=el.dataset.lfmArtist||'';
-  var title=el.dataset.lfmTitle||'';
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -345,20 +376,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -390,7 +470,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];

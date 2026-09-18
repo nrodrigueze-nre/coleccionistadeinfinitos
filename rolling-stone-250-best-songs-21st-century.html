@@ -257,21 +257,50 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 </footer>
 
 <script>
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
 var SONGS=[[1, "Missy Elliott", "Get Ur Freak On", 2001], [2, "Yeah Yeah Yeahs", "Maps", 2003], [3, "Beyonce feat. Jay-Z", "Crazy in Love", 2003], [4, "The White Stripes", "Seven Nation Army", 2003], [5, "Taylor Swift", "All Too Well", 2012], [6, "Robyn", "Dancing on My Own", 2010], [7, "Kendrick Lamar", "Alright", 2015], [8, "Radiohead", "Idioteque", 2000], [9, "Britney Spears", "Toxic", 2003], [10, "Frank Ocean", "Thinkin Bout You", 2012], [11, "Bad Bunny", "Safaera", 2020], [12, "The Strokes", "Last Night", 2001], [13, "SZA", "Snooze", 2022], [14, "Daddy Yankee", "Gasolina", 2004], [15, "OutKast", "B.O.B.", 2000], [16, "Mariah Carey", "We Belong Together", 2005], [17, "Drake", "Hotline Bling", 2015], [18, "Billie Eilish", "Bad Guy", 2019], [19, "Adele", "Someone Like You", 2011], [20, "Steve Lacy", "Bad Habit", 2022], [21, "Lady Gaga", "Bad Romance", 2009], [22, "Wizkid feat. Tems", "Essence", 2020], [23, "Chappell Roan", "Pink Pony Club", 2023], [24, "D'Angelo", "Untitled (How Does It Feel)", 2000], [25, "Jay-Z", "99 Problems", 2003], [26, "Beyonce", "Lemonade", 2016], [27, "Kendrick Lamar", "HUMBLE.", 2017], [28, "Taylor Swift", "Shake It Off", 2014], [29, "Kanye West", "Jesus Walks", 2004], [30, "Rihanna", "We Found Love", 2011], [31, "Lorde", "Royals", 2013], [32, "Amy Winehouse", "Rehab", 2006], [33, "LCD Soundsystem", "All My Friends", 2007], [34, "Arcade Fire", "Wake Up", 2004], [35, "Beyonce", "Formation", 2016], [36, "Taylor Swift", "Blank Space", 2014], [37, "Kanye West", "Gold Digger", 2005], [38, "Nicki Minaj", "Super Bass", 2011], [39, "Sufjan Stevens", "Death With Dignity", 2015], [40, "Bon Iver", "Skinny Love", 2008], [41, "Cardi B feat. Bad Bunny and J Balvin", "I Like It", 2018], [42, "Kendrick Lamar", "DNA.", 2017], [43, "SZA", "Good Days", 2020], [44, "Haim", "The Wire", 2013], [45, "Olivia Rodrigo", "drivers license", 2021], [46, "Billie Eilish", "Ocean Eyes", 2016], [47, "Post Malone feat. 21 Savage", "Rockstar", 2017], [48, "Solange", "Cranes in the Sky", 2016], [49, "Taylor Swift", "Love Story", 2008], [50, "Doja Cat feat. SZA", "Kiss Me More", 2021], [51, "Lil Nas X", "Old Town Road", 2019], [52, "Childish Gambino", "This Is America", 2018], [53, "Tyler the Creator", "See You Again", 2017], [54, "Vampire Weekend", "Oxford Comma", 2008], [55, "FKA twigs", "Two Weeks", 2014], [56, "Jay-Z and Kanye West", "Niggas in Paris", 2011], [57, "Lana Del Rey", "Video Games", 2011], [58, "M.I.A.", "Paper Planes", 2007], [59, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [60, "Phoebe Bridgers", "Savior Complex", 2020], [61, "Rihanna", "Umbrella", 2007], [62, "Harry Styles", "As It Was", 2022], [63, "Burna Boy", "Anybody", 2019], [64, "Kendrick Lamar", "money trees", 2012], [65, "Jack White", "Seven Nation Army", 2003], [66, "Lizzo", "Truth Hurts", 2017], [67, "Mitski", "Nobody", 2018], [68, "Janelle Monae", "Tightrope", 2010], [69, "Kanye West feat. Rihanna and Kid Cudi", "All of the Lights", 2010], [70, "Taylor Swift", "Red", 2012], [71, "Bad Bunny", "MIA", 2018], [72, "Billie Eilish", "Happier Than Ever", 2021], [73, "Florence and the Machine", "Dog Days Are Over", 2009], [74, "Carly Rae Jepsen", "Run Away with Me", 2015], [75, "Tame Impala", "Let It Happen", 2015], [76, "Adele", "Rolling in the Deep", 2010], [77, "Frank Ocean", "Pyramids", 2012], [78, "Kanye West", "Runaway", 2010], [79, "Rosalia", "Con Altura", 2019], [80, "Drake", "Started From the Bottom", 2013], [81, "Lorde", "Green Light", 2017], [82, "Weyes Blood", "Movies", 2019], [83, "Dua Lipa", "Levitating", 2020], [84, "Stromae", "Papaoutai", 2013], [85, "Kacey Musgraves", "Rainbow", 2018], [86, "OutKast", "Hey Ya!", 2003], [87, "Post Malone and Swae Lee", "Sunflower", 2018], [88, "Tyla", "Water", 2023], [89, "Bleachers", "I Wanna Get Better", 2014], [90, "Mac Miller", "2009", 2018], [91, "Beyonce", "Single Ladies", 2008], [92, "The National", "Bloodbuzz Ohio", 2010], [93, "Alabama Shakes", "Hold On", 2012], [94, "Coldplay", "The Scientist", 2002], [95, "Ariana Grande", "thank u next", 2018], [96, "LCD Soundsystem", "Losing My Edge", 2002], [97, "Vampire Weekend", "A-Punk", 2008], [98, "Angel Olsen", "Shut Up Kiss Me", 2016], [99, "Kendrick Lamar", "MAAD City", 2012], [100, "Wilco", "Jesus Etc.", 2001], [101, "NewJeans", "Hype Boy", 2022], [102, "Green Day", "Jesus of Suburbia", 2004], [103, "Pop Smoke", "Welcome to the Party", 2019], [104, "Original Koffee", "Toast", 2019], [105, "Rauw Alejandro", "Todo de Ti", 2021], [106, "Aventura feat. Don Omar", "Ella y Yo", 2005], [107, "Ashlee Simpson", "Pieces of Me", 2004], [108, "Rich Gang feat. Young Thug and Rich Homie Quan", "Lifestyle", 2014], [109, "Old Crow Medicine Show", "Wagon Wheel", 2004], [110, "Ke$ha", "Tik Tok", 2009], [111, "Father John Misty", "Holy Shit", 2015], [112, "T-Pain", "I'm Sprung", 2005], [113, "Rich Boy feat. Polow Da Don", "Throw Some D's", 2007], [114, "The Mountain Goats", "No Children", 2002], [115, "Doja Cat feat. SZA", "Kiss Me More", 2021], [116, "Taylor Swift", "Love Story", 2008], [117, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [118, "Aventura feat. Don Omar", "Ella y Yo", 2005], [119, "Ashlee Simpson", "Pieces of Me", 2004], [120, "The Hold Steady", "Killer Parties", 2004], [121, "Rema", "Woman", 2022], [122, "Tyler Childers", "Feathered Indians", 2017], [123, "5 Seconds of Summer", "Youngblood", 2018], [124, "Bright Eyes", "First Day of My Life", 2005], [125, "The Knife", "Heartbeats", 2002], [126, "J Balvin and Willy William", "Mi Gente", 2017], [127, "John Prine", "Summer's End", 2018], [128, "Tems", "Free Mind", 2020], [129, "Florida Georgia Line", "Cruise", 2012], [130, "Mastodon", "Blood and Thunder", 2004], [131, "Old 97's", "Rollerskate Skinny", 2001], [132, "Shaboozey", "A Bar Song (Tipsy)", 2024], [133, "Foo Fighters", "Times Like These", 2002], [134, "Tego Calderon", "Pa Que Retozen", 2002], [135, "Warren Zevon", "Keep Me in Your Heart", 2003], [136, "Davido feat. Musa Keys", "Unavailable", 2023], [137, "Scarface", "My Block", 2002], [138, "Wheatus", "Teenage Dirtbag", 2000], [139, "Fleet Foxes", "Tiger Mountain Peasant Song", 2008], [140, "Avicii", "Levels", 2011], [141, "Tweet", "Oops (Oh My)", 2002], [142, "Train", "Drops of Jupiter", 2001], [143, "Skrillex feat. Sirah", "Bangarang", 2012], [144, "Kid Cudi", "Day N Nite", 2009], [145, "Alabama Shakes", "Hold On", 2012], [146, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [147, "Lorde", "Ribs", 2013], [148, "Bad Bunny", "Yo Perreo Sola", 2020], [149, "SZA", "Ctrl", 2017], [150, "Beyonce", "Drunk in Love", 2013], [151, "Cardi B", "Bodak Yellow", 2017], [152, "Kanye West", "Power", 2010], [153, "St. Vincent", "New York", 2017], [154, "Mitski", "Your Best American Girl", 2016], [155, "Charli XCX", "360", 2024], [156, "Olivia Rodrigo", "good 4 u", 2021], [157, "Rihanna", "Diamonds", 2012], [158, "Bon Iver", "Holocene", 2011], [159, "Kendrick Lamar", "Not Like Us", 2024], [160, "Tyler the Creator", "EARFQUAKE", 2019], [161, "Kanye West", "Ultralight Beam", 2016], [162, "Big Thief", "Not", 2019], [163, "Phoebe Bridgers", "Funeral", 2017], [164, "Drake", "God's Plan", 2018], [165, "Taylor Swift", "cardigan", 2020], [166, "Arcade Fire", "The Suburbs", 2010], [167, "LCD Soundsystem", "Dance Yrself Clean", 2010], [168, "Florence and the Machine", "Cosmic Love", 2009], [169, "Janelle Monae", "Q.U.E.E.N.", 2013], [170, "Lana Del Rey", "Summertime Sadness", 2012], [171, "Dua Lipa", "Don't Start Now", 2019], [172, "Billie Eilish", "when the party's over", 2018], [173, "Sufjan Stevens", "Death With Dignity", 2015], [174, "Vampire Weekend", "Hannah Hunt", 2013], [175, "The National", "Mr. November", 2005], [176, "Frank Ocean", "Lost", 2012], [177, "Rosalia", "Malamente", 2017], [178, "Kanye West", "Hey Mama", 2005], [179, "Amy Winehouse", "Valerie", 2006], [180, "Nicki Minaj", "Anaconda", 2014], [181, "Taylor Swift", "Style", 2014], [182, "Beach House", "Space Song", 2015], [183, "Carly Rae Jepsen", "Call Me Maybe", 2011], [184, "Lady Gaga", "Poker Face", 2008], [185, "Ariana Grande", "Problem", 2014], [186, "Ed Sheeran", "Shape of You", 2017], [187, "BTS", "Dynamite", 2020], [188, "Lizzo", "Juice", 2019], [189, "Adele", "Hello", 2015], [190, "Post Malone", "Circles", 2019], [191, "Harry Styles", "Watermelon Sugar", 2019], [192, "Doja Cat", "Say So", 2019], [193, "SZA", "Kill Bill", 2022], [194, "Kendrick Lamar", "Swimming Pools (Drank)", 2012], [195, "Tyler the Creator", "New Magic Wand", 2019], [196, "Weyes Blood", "Andromeda", 2019], [197, "Angel Olsen", "Intern", 2014], [198, "Caroline Polachek", "Door", 2023], [199, "Tierra Whack", "Cable Guy", 2018], [200, "Courtney Barnett", "Pedestrian at Best", 2015], [201, "Rauw Alejandro", "Todo de Ti", 2021], [202, "Aventura feat. Don Omar", "Ella y Yo", 2005], [203, "Ashlee Simpson", "Pieces of Me", 2004], [204, "Rich Gang feat. Young Thug and Rich Homie Quan", "Lifestyle", 2014], [205, "NewJeans", "Hype Boy", 2022], [206, "Green Day", "Jesus of Suburbia", 2004], [207, "Pop Smoke", "Welcome to the Party", 2019], [208, "Original Koffee", "Toast", 2019], [209, "Tems", "Free Mind", 2020], [210, "Florida Georgia Line", "Cruise", 2012], [211, "Mastodon", "Blood and Thunder", 2004], [212, "Old 97's", "Rollerskate Skinny", 2001], [213, "Shaboozey", "A Bar Song (Tipsy)", 2024], [214, "Foo Fighters", "Times Like These", 2002], [215, "Tego Calderon", "Pa Que Retozen", 2002], [216, "Warren Zevon", "Keep Me in Your Heart", 2003], [217, "Davido feat. Musa Keys", "Unavailable", 2023], [218, "Scarface", "My Block", 2002], [219, "Wheatus", "Teenage Dirtbag", 2000], [220, "Fleet Foxes", "Tiger Mountain Peasant Song", 2008], [221, "Avicii", "Levels", 2011], [222, "Tweet", "Oops (Oh My)", 2002], [223, "Train", "Drops of Jupiter", 2001], [224, "Skrillex feat. Sirah", "Bangarang", 2012], [225, "Kid Cudi", "Day N Nite", 2009], [226, "Rema", "Woman", 2022], [227, "Tyler Childers", "Feathered Indians", 2017], [228, "5 Seconds of Summer", "Youngblood", 2018], [229, "Bright Eyes", "First Day of My Life", 2005], [230, "The Knife", "Heartbeats", 2002], [231, "J Balvin and Willy William", "Mi Gente", 2017], [232, "John Prine", "Summer's End", 2018], [233, "Father John Misty", "Holy Shit", 2015], [234, "T-Pain", "I'm Sprung", 2005], [235, "Rich Boy feat. Polow Da Don", "Throw Some D's", 2007], [236, "The Mountain Goats", "No Children", 2002], [237, "Ke$ha", "Tik Tok", 2009], [238, "The Hold Steady", "Killer Parties", 2004], [239, "Taylor Swift", "Love Story", 2008], [240, "Doja Cat feat. SZA", "Kiss Me More", 2021], [241, "Bleachers", "I Wanna Get Better", 2014], [242, "Mac Miller", "2009", 2018], [243, "Kanye West feat. Rihanna and Kid Cudi", "All of the Lights", 2010], [244, "Paul Simon", "Rewrite", 2011], [245, "Old Crow Medicine Show", "Wagon Wheel", 2004], [246, "Lizzo", "Truth Hurts", 2017], [247, "The Hold Steady", "Killer Parties", 2004], [248, "Usher feat. Lil Jon and Ludacris", "Yeah!", 2004], [249, "Alabama Shakes", "Hold On", 2012], [250, "Train", "Drops of Jupiter", 2001]];
 var FEAT=[["fc-1", "Missy Elliott", "Get Ur Freak On"], ["fc-2", "Yeah Yeah Yeahs", "Maps"], ["fc-3", "Beyonce feat. Jay-Z", "Crazy in Love"], ["fc-4", "The White Stripes", "Seven Nation Army"], ["fc-5", "Taylor Swift", "All Too Well"], ["fc-6", "Robyn", "Dancing on My Own"], ["fc-7", "Kendrick Lamar", "Alright"], ["fc-8", "Radiohead", "Idioteque"], ["fc-9", "Britney Spears", "Toxic"], ["fc-10", "Frank Ocean", "Thinkin Bout You"]];
 var LIST_TYPE="canciones";
 var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
 function setImg(el,url){if(!url||url.indexOf('2a96cbd8b46e442fc41c2b86b821562f')>=0)return;el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
 function loadArt(el,artist,track){
-  fetch("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+  fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
     .then(function(r){return r.json();}).then(function(d){
       var res=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").split(" ")[0],m=null;
       for(var i=0;i<res.length;i++){if(res[i].artistName&&res[i].artistName.toLowerCase().indexOf(a)>=0){m=res[i];break;}}
       if(!m&&res.length)m=res[0];
-      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));else throw 0;
+      if(m&&m.artworkUrl100)setImg(el,m.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(m){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&m.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=m.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw 0;
     }).catch(function(){
-      fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&format=json")
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&autocorrect=1&format=json")
         .then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.track&&d.track.toptags&&d.track.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.track.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
           var imgs=(d&&d.track&&d.track.album&&d.track.album.image)||[],best=null;
           for(var i=imgs.length-1;i>=0;i--){if(imgs[i]["#text"]&&imgs[i]["#text"].length>10&&imgs[i]["#text"].indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0){best=imgs[i];break;}}
           if(best)setImg(el,best["#text"]);
@@ -294,7 +323,7 @@ SONGS.forEach(function(s){
   frag.appendChild(row);
 });
 container.appendChild(frag);
-  if(typeof observeExtras==="function") observeExtras();
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
 var artQ=[],artTimer=null;
 function flushArt(){var b=artQ.splice(0,6);b.forEach(function(el){loadArt(el,decodeURIComponent(el.dataset.artist),decodeURIComponent(el.dataset.track));});if(artQ.length)artTimer=setTimeout(flushArt,500);}
 var artObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;artObs.unobserve(e.target);artQ.push(e.target);});clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"700px"});
@@ -304,7 +333,7 @@ function processLfm(){
   if(lfmBusy||!lfmQ.length)return;lfmBusy=true;
   var el=lfmQ.shift(),ar=decodeURIComponent(el.dataset.lfmArtist||""),tr=decodeURIComponent(el.dataset.lfmTrack||""),k=ar+"|||"+tr;
   if(lfmCache[k]!==undefined){renderS(el,lfmCache[k]);lfmBusy=false;setTimeout(processLfm,30);return;}
-  fetch("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&format=json")
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(ar)+"&track="+encodeURIComponent(tr)+"&username="+LFM_USER+"&autocorrect=1&format=json")
     .then(function(r){return r.json();}).then(function(d){var c=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[k]=c;renderS(el,c);})
     .catch(function(){el.textContent="&#8212;";el.classList.remove("loading");})
     .finally(function(){lfmBusy=false;setTimeout(processLfm,200);});
@@ -319,19 +348,21 @@ function processExtra(){
   if(extraBusy||!extraQ.length) return;
   extraBusy=true;
   var el=extraQ.shift();
-  var artist=el.dataset.lfmArtist||'';
-  var title=el.dataset.lfmTitle||'';
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
   var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
   var method=isAlb?'album.getinfo':'track.getinfo';
   var param=isAlb?'&album=':'&track=';
-  fetch('https://ws.audioscrobbler.com/2.0/?method='+method+
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
         '&api_key='+LFM_KEY+
         '&artist='+encodeURIComponent(artist)+
-        param+encodeURIComponent(title)+'&format=json')
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
     .then(function(r){return r.json()})
     .then(function(d){
       var obj=d.track||d.album; if(!obj) return;
       var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
       // Listeners
       var lsEl=row.querySelector('.track-listeners');
       if(lsEl&&obj.listeners){
@@ -351,20 +382,69 @@ function processExtra(){
         var albEl=row.querySelector('.track-album');
         if(albEl) albEl.textContent=obj.album.title;
       }
-      // Genre
-      var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
       var genEl=row.querySelector('.track-genre');
-      if(genEl&&genEl.classList.contains('loading')&&obj.toptags&&obj.toptags.tag){
-        var tags=obj.toptags.tag;
-        if(!Array.isArray(tags)) tags=[tags];
-        var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
-        if(valid.length){genEl.textContent=valid[0].name.charAt(0).toUpperCase()+valid[0].name.slice(1);genEl.classList.remove('loading');}
-        else{genEl.textContent='';genEl.classList.remove('loading');}
+      if(genEl&&genEl.classList.contains('loading')){
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
       }
     })
     .catch(function(){})
     .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
 }
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
 var extraObs=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting) return;
@@ -396,7 +476,7 @@ function loadFeatTags(){
     var param=isAlb?'&album=':'&track=';
     (function(m,a,ti){
       setTimeout(function(){
-        fetch('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&format=json')
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
           .then(function(r){return r.json()}).then(function(d){
             var obj=d.track||d.album; if(!obj) return;
             var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
