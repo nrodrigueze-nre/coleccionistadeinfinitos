@@ -2973,6 +2973,61 @@ const LISTS = [
     url: "https://www.infolaso.com/discos-mas-vendidos.html",
     _artist: "Michael Jackson",
     _title: "Thriller"
+  },
+  {
+    file: "timeline-1877-1959.html",
+    title: "Cronología del Rock: 1877-1959",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "25",
+    desc: "Los orígenes del rock and roll, del fonógrafo de Edison a Elvis Presley.",
+    url: "#",
+    _artist: "Historia", _title: "1877-1959"
+  },
+  {
+    file: "timeline-1960s.html",
+    title: "Cronología del Rock: 1960s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "The Beatles, Woodstock, la invasión británica y el nacimiento del rock psicodélico.",
+    url: "#",
+    _artist: "Historia", _title: "1960s"
+  },
+  {
+    file: "timeline-1970s.html",
+    title: "Cronología del Rock: 1970s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Metal, Punk, Glam, Disco y el nacimiento del Rap.",
+    url: "#",
+    _artist: "Historia", _title: "1970s"
+  },
+  {
+    file: "timeline-1980s.html",
+    title: "Cronología del Rock: 1980s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "New Wave, Synth Pop, Glam Metal y el debut de MTV.",
+    url: "#",
+    _artist: "Historia", _title: "1980s"
+  },
+  {
+    file: "timeline-1990s.html",
+    title: "Cronología del Rock: 1990s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Lollapalooza, el Salón de la Fama del Rock, Napster, Grunge y Alternativo.",
+    url: "#",
+    _artist: "Historia", _title: "1990s"
   }
 ];
 
@@ -3314,7 +3369,7 @@ function homeHTML(){
 var LBLS={home:'Inicio',aclamados:'Más aclamados',super:'Superlistas',
   'albumes-globales':'Álbumes Globales','canciones-globales':'Canciones Globales',
   'albumes-latinos':'Álbumes Latinos','canciones-latinas':'Canciones Latinas',
-  tematicas:'Temáticas',anuales:'Listas Anuales',decadas:'Por Décadas',generos:'Por Géneros',top12:'Mi Top 12'};
+  tematicas:'Temáticas',anuales:'Listas Anuales',decadas:'Por Décadas',generos:'Por Géneros',cronologia:'Cronología',top12:'Mi Top 12'};
 
 var SEC_FILTERS={
   super:              function(l){return SECTIONS[l.file]==='super';},
@@ -3325,7 +3380,8 @@ var SEC_FILTERS={
   tematicas:          function(l){var s=SECTIONS[l.file];return s==='tematica'||s==='thematic';},
   anuales:            function(l){return SECTIONS[l.file]==='annual';},
   decadas:            function(l){return SECTIONS[l.file]==='decades';},
-  generos:            function(l){return SECTIONS[l.file]==='genres';}
+  generos:            function(l){return SECTIONS[l.file]==='genres';},
+  cronologia:         function(l){return l.type==='cronologia';}
 };
 
 function sectionHTML(sec){
@@ -3580,10 +3636,11 @@ var CAT_ICONS = {
   tematicas:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>',
   anuales:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
   decadas:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
-  generos:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>'
+  generos:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  cronologia:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'
 };
 var CAT_ORDER = ['super','albumes-globales','canciones-globales','albumes-latinos',
-                  'canciones-latinas','tematicas','anuales','decadas','generos'];
+                  'canciones-latinas','tematicas','anuales','decadas','generos','cronologia'];
 
 function renderSidebarCategories(){
   var container = document.getElementById('sidebar-categories');
