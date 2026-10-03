@@ -206,7 +206,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/arg-25-discos-esenciales-del-rock-progresivo/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Pink Floyd|||The Dark Side of the Moon":{"y":"1973","g":"Progressive rock"},"King Crimson|||In the Court of the Crimson King":{"y":"1970","g":"Progressive rock"},"High Tide|||Sea Shanties":{"y":"1969","g":"Progressive rock"},"Third Ear Band|||Third Ear Band":{"y":"1970","g":"Psychedelic"},"Soft Machine|||Third":{"y":"","g":"Progressive rock"},"Emerson Lake & Palmer|||Emerson Lake & Palmer":{"y":"1970","g":""},"Colosseum|||Daughter of Time":{"y":"1970","g":"Progressive rock"},"Caravan|||In the Land of Grey and Pink":{"y":"1971","g":"Pop"},"Nucleus|||We'll Talk About It Later":{"y":"1971","g":"Jazz Rock"},"Pink Floyd|||Meddle":{"y":"1971","g":"Progressive rock"},"Van der Graaf Generator|||Pawn Hearts":{"y":"1971","g":"Progressive rock"},"Brian Auger's Oblivion Express|||A Better Land":{"y":"1971","g":"British"},"Jethro Tull|||Thick as a Brick":{"y":"1972","g":"Progressive rock"},"Yes|||Close to the Edge":{"y":"1972","g":"Progressive rock"},"Kingdom Come|||Kingdom Come":{"y":"1988","g":"Hard rock"},"Henry Cow|||Legend":{"y":"2016","g":"Rock In Opposition"},"Gentle Giant|||In a Glass House":{"y":"1973","g":"Progressive rock"},"King Crimson|||Lark's Tongues in Aspic":{"y":"1973","g":"Progressive rock"},"Gryphon|||Red Queen to Gryphon Three":{"y":"1974","g":"Progressive rock"},"Genesis|||The Lamb Lies Down on Broadway":{"y":"2025","g":"Progressive rock"},"Camel|||Mirage":{"y":"1974","g":"Progressive rock"},"Gong|||You":{"y":"1997","g":"Space rock"},"Hatfield and the North|||Hatfield and the North":{"y":"","g":"Canterbury Scene"},"Van der Graaf Generator|||Still Life":{"y":"1976","g":"Progressive rock"},"National Health|||National Health":{"y":"1978","g":"Canterbury Scene"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -339,9 +340,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -360,6 +367,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -421,6 +429,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

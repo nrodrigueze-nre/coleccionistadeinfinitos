@@ -263,7 +263,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-2000s-153375/" target="_blank" class="foot-link">Ver lista original ↗</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Radiohead|||Kid A":{"y":"2000","g":"Electronic"},"The Strokes|||Is This It":{"y":"2003","g":"Indie rock"},"Wilco|||Yankee Hotel Foxtrot":{"y":"2002","g":"Alt-country"},"Jay-Z|||The Blueprint":{"y":"2001","g":"Hip-Hop"},"The White Stripes|||Elephant":{"y":"2003","g":"Rock"},"Arcade Fire|||Funeral":{"y":"2004","g":"Indie rock"},"Eminem|||The Marshall Mathers LP":{"y":"2000","g":"Rap"},"Bob Dylan|||Modern Times":{"y":"","g":"Folk rock"},"M.I.A.|||Kala":{"y":"2007","g":"Electronic"},"Kanye West|||The College Dropout":{"y":"2004","g":"Hip hop"},"Bob Dylan|||Love and Theft":{"y":"2001","g":"Blues rock"},"LCD Soundsystem|||Sound of Silver":{"y":"","g":"Electronic"},"U2|||All That You Can\\'t Leave Behind":{"y":"2000","g":"Rock"},"Jay-Z|||The Black Album":{"y":"2003","g":"Rap"},"Bruce Springsteen|||The Rising":{"y":"2002","g":"Rock"},"OutKast|||Stankonia":{"y":"","g":"Hip-Hop"},"Beck|||Sea Change":{"y":"2002","g":"Singer-songwriter"},"MGMT|||Oracular Spectacular":{"y":"2007","g":"Electronic"},"Amy Winehouse|||Back to Black":{"y":"2007","g":"Soul"},"The White Stripes|||White Blood Cells":{"y":"2001","g":"Alternative rock"},"Coldplay|||A Rush of Blood to the Head":{"y":"2002","g":"Rock"},"Green Day|||American Idiot":{"y":"2004","g":"Punk rock"},"D\\'Angelo|||Voodoo":{"y":"2021","g":"R&B/Soul"},"Bruce Springsteen|||Magic":{"y":"","g":"Rock"},"Radiohead|||Amnesiac":{"y":"","g":"Electronic"},"Cat Power|||The Greatest":{"y":"2019","g":"Female vocalists"},"The Flaming Lips|||Yoshimi Battles the Pink Robots":{"y":"2002","g":"Neo-Psychedelia"},"Yeah Yeah Yeahs|||Fever to Tell":{"y":"2003","g":"Indie rock"},"Sigur Ros|||Agaetis Byrjun":{"y":"1999","g":""},"Radiohead|||In Rainbows":{"y":"","g":"Alternative rock"},"Interpol|||Turn on the Bright Lights":{"y":"2002","g":"Indie rock"},"Phoenix|||Wolfgang Amadeus Phoenix":{"y":"2009","g":"Best of 2009"},"The Shins|||Oh Inverted World":{"y":"2001","g":""},"Kanye West|||808s and Heartbreak":{"y":"2008","g":"Current moods"},"Johnny Cash|||American III Solitary Man":{"y":"2000","g":"Country"},"Sleater-Kinney|||The Woods":{"y":"2005","g":"Noise rock"},"Coldplay|||Parachutes":{"y":"2000","g":"Britpop"},"Franz Ferdinand|||Franz Ferdinand":{"y":"2005","g":"Indie rock"},"Red Hot Chili Peppers|||Stadium Arcadium":{"y":"2006","g":"Alternative rock"},"Arcade Fire|||Neon Bible":{"y":"2007","g":"Indie rock"},"Yo La Tengo|||And Then Nothing Turned Itself Inside Out":{"y":"2000","g":"Indie rock"},"Sufjan Stevens|||Illinois":{"y":"2005","g":"Chamber pop"},"Bjork|||Vespertine":{"y":"2001","g":"Electronic"},"Antony and the Johnsons|||I Am a Bird Now":{"y":"2005","g":"Singer-songwriter"},"Manu Chao|||Proxima Estacion Esperanza":{"y":"2001","g":"Latin"},"Gillian Welch|||Time the Revelator":{"y":"2001","g":"Folk"},"U2|||How to Dismantle an Atomic Bomb":{"y":"2004","g":"Rock"},"Missy Elliott|||Under Construction":{"y":"2002","g":"Rap"},"Johnny Cash|||Unearthed":{"y":"2003","g":"Country"},"Bon Iver|||For Emma Forever Ago":{"y":"2007","g":"Folk"},"The Hives|||Veni Vidi Vicious":{"y":"","g":"Garage Rock"},"Amadou and Miriam|||Dimanche a Bamako":{"y":"2004","g":"Mali"},"Radiohead|||Hail to the Thief":{"y":"2003","g":"Alternative rock"},"Brian Wilson|||Smile":{"y":"2004","g":"Baroque pop"},"Gnarls Barkley|||St. Elsewhere":{"y":"2006","g":"Funk"},"The Postal Service|||Give Up":{"y":"2003","g":"Indie"},"Coldplay|||Viva La Vida":{"y":"2008","g":"Alternative"},"Eminem|||The Eminem Show":{"y":"2002","g":"Rap"},"The Black Keys|||Attack and Release":{"y":"2008","g":"Garage Rock"},"Queens of the Stone Age|||Rated R":{"y":"","g":"Stoner Rock"},"Ryan Adams|||Gold":{"y":"2001","g":"Alt-country"},"Kings of Leon|||Youth and Young Manhood":{"y":"2003","g":"Rock"},"The New Pornographers|||Electric Version":{"y":"2003","g":"Canadian"},"The Libertines|||Up the Bracket":{"y":"2002","g":"Alternative"},"Alicia Keys|||Songs in A Minor":{"y":"2001","g":"Soul"},"The Streets|||Original Pirate Material":{"y":"2002","g":"UK Garage"},"Wilco|||Sky Blue Sky":{"y":"2007","g":"Indie"},"TV on the Radio|||Return to Cookie Mountain":{"y":"2006","g":"Alternative"},"The Hold Steady|||Almost Killed Me":{"y":"2004","g":"Indie rock"},"Leonard Cohen|||Ten New Songs":{"y":"2001","g":"Leonard cohen"},"Bright Eyes|||Lifted":{"y":"2002","g":""},"Kanye West|||Late Registration":{"y":"2005","g":"Hip-Hop"},"OutKast|||Speakerboxxx The Love Below":{"y":"2003","g":"Hip-Hop/Rap"},"Lil Wayne|||Tha Carter III":{"y":"2008","g":""},"50 Cent|||Get Rich or Die Tryin":{"y":"2003","g":"50 Cent"},"Kanye West|||Graduation":{"y":"2007","g":"Hip-Hop"},"My Morning Jacket|||Z":{"y":"2005","g":"Indie"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -631,9 +632,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -652,6 +659,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})

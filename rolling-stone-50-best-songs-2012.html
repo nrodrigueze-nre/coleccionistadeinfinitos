@@ -168,7 +168,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST SONGS 2012 &#183; DIC 2012</span><a href="https://www.rollingstone.com/music/music-lists/50-best-songs-of-2012-152157/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Alabama Shakes|||Hold On":{"y":"2012","g":"Alternative"},"Taylor Swift|||We Are Never Ever Getting Back Together":{"y":"2012","g":"Pop"},"Passion Pit|||Take a Walk":{"y":"2012","g":""},"Frank Ocean|||Thinkin Bout You":{"y":"2012","g":"Pop"},"Neil Young and Crazy Horse|||Ramada Inn":{"y":"2018","g":""},"Kanye West feat. Big Sean Pusha T and 2 Chainz|||Mercy":{"y":"2012","g":""},"Bruce Springsteen|||Rocky Ground":{"y":"2012","g":""},"Jack White|||Sixteen Saltines":{"y":"2012","g":"Alternative"},"Bob Dylan|||Pay in Blood":{"y":"2022","g":"Rock"},"First Aid Kit|||Emmylou":{"y":"2012","g":""},"fun.|||Some Nights":{"y":"2012","g":"Indie"},"Fiona Apple|||Hot Knife":{"y":"2005","g":"Alternative"},"Mumford and Sons|||I Will Wait":{"y":"2012","g":""},"The Vaccines|||Teenage Icon":{"y":"2012","g":""},"Usher|||Climax":{"y":"2012","g":""},"Van Halen|||Stay Frosty":{"y":"2012","g":"Rock"},"Kitty Pryde|||Okay Cupid":{"y":"2012","g":""},"The Rolling Stones|||Doom and Gloom":{"y":"2012","g":"Rock"},"Beach House|||Other People":{"y":"2012","g":"Alternative"},"Leonard Cohen|||Going Home":{"y":"2015","g":"Pop"},"Donald Fagen|||Weather in My Head":{"y":"1995","g":""},"Skrillex feat. Sirah|||Bangarang":{"y":"2012","g":"Dance"},"Randy Newman|||I'm Dreaming":{"y":"1983","g":""},"Japandroids|||The House That Heaven Built":{"y":"2012","g":"Alternative"},"Psy|||Gangnam Style":{"y":"2012","g":"Pop"},"The Lumineers|||Ho Hey":{"y":"2011","g":"Indie"},"A$AP Rocky|||Goldie":{"y":"2012","g":"Hip-Hop/Rap"},"Grimes|||Oblivion":{"y":"2012","g":"Poptron"},"Grizzly Bear|||Yet Again":{"y":"2012","g":"Alternative"},"The Beach Boys|||That's Why God Made the Radio":{"y":"2012","g":"Pop"},"Low Cut Connie|||Boozophilia":{"y":"","g":"Rock"},"Bruce Springsteen|||We Take Care of Our Own":{"y":"2012","g":"Rock"},"Miguel|||Adorn":{"y":"2012","g":"Rnb"},"Kendrick Lamar|||Swimming Pools (Drank)":{"y":"2012","g":"Hip-Hop"},"Icona Pop|||I Love It":{"y":"2012","g":"Poptron"},"Himanshu|||Womyn":{"y":"1992","g":""},"Muse|||Madness":{"y":"2012","g":"Rock"},"Teen|||Better":{"y":"","g":""},"Dwight Yoakam|||A Heart Like Mine":{"y":"2015","g":""},"Craig Finn|||Rented Room":{"y":"2005","g":""},"Danny Brown|||Grown Up":{"y":"2012","g":""},"The 2 Bears|||Bear Hug":{"y":"2011","g":"House"},"Tanlines|||All of Me":{"y":"2005","g":""},"The Wanted|||Glad You Came":{"y":"2011","g":"Pop"},"Justin Bieber|||Die in Your Arms":{"y":"2012","g":""},"Maroon 5 feat. Wiz Khalifa|||Payphone":{"y":"2014","g":"Pop"},"Superchunk|||This Summer":{"y":"2012","g":"Folk"},"Deadmau5|||The Veldt":{"y":"2012","g":"Electronic"},"Kacey Musgraves|||Merry Go Round":{"y":"2012","g":"Country"},"Carly Rae Jepsen|||Call Me Maybe":{"y":"","g":"Pop"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -247,9 +248,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -268,6 +275,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -329,6 +337,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

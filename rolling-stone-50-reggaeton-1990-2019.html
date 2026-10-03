@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">COLECCION PERSONAL &#183; 50 CANCIONES ICONICAS DEL REGGAETON &#183; 1990&#8211;2019</span></footer>
-<script>
+<script>var BAKED_DATA={"Daddy Yankee|||Gasolina":{"y":"2005","g":"Reggaeton"},"Don Omar|||Dile":{"y":"2005","g":"Reggaeton"},"Wisin and Yandel|||Rakata":{"y":"2005","g":"Reggaeton"},"Ivy Queen|||Yo Quiero Bailar":{"y":"2019","g":"Urbano latino"},"El General|||Tu Pum Pum":{"y":"2018","g":"Urbano latino"},"Daddy Yankee|||Rompe":{"y":"2005","g":"Reggaeton"},"Calle 13|||Atrevete-te-te":{"y":"2022","g":""},"Tego Calderon|||Pa' Que Retozen":{"y":"2015","g":"Urbano latino"},"Don Omar and Lucenzo|||Danza Kuduro":{"y":"2010","g":"Urbano latino"},"N.O.R.E. feat. Nina Sky and Daddy Yankee|||Oye Mi Canto":{"y":"2004","g":""},"Daddy Yankee|||Lo que paso, paso":{"y":"2005","g":"Latin"},"J Balvin|||Ginza":{"y":"2015","g":""},"Nicky Jam and J Balvin|||X":{"y":"2018","g":""},"Wisin and Yandel|||Sexy Movimiento":{"y":"2008","g":"Urbano latino"},"J Balvin|||Ay Vamos":{"y":"2014","g":""},"Hector el Father and Wisin and Yandel|||El Telefono":{"y":"2011","g":"Urbano latino"},"Bad Bunny and Tainy|||Callaita":{"y":"2019","g":"Urbano latino"},"Lorna|||Papi Chulo... Te Traigo el MMMM":{"y":"2003","g":"Urbano latino"},"Rosalia and J Balvin feat. El Guincho|||Con Altura":{"y":"2019","g":"Pop"},"Maluma|||Felices Los 4":{"y":"2017","g":"Música tropical"},"Don Omar|||Salio el Sol":{"y":"2006","g":""},"Tego Calderon|||Metele Sazon":{"y":"2023","g":"Urbano latino"},"El General|||Te Ves Buena":{"y":"1990","g":"Urbano latino"},"Hector and Tito|||Baila Morena":{"y":"2005","g":"Urbano latino"},"Plan B|||Si No le Contesto":{"y":"2010","g":"Reggaeton"},"Wisin and Yandel|||Pam Pam":{"y":"2008","g":""},"Baby Ranks feat. Daddy Yankee Tonny Tun Tun Hector el Father Wisin and Yandel|||Mayor Que Yo":{"y":"2015","g":""},"Nicky Jam|||X":{"y":"2018","g":"Urbano latino"},"Becky G and Bad Bunny|||Mayores":{"y":"2017","g":""},"Wisin and Yandel|||Algo Me Gusta de Ti":{"y":"2020","g":"Urbano latino"},"Ozuna|||Dile Que Tu Me Quieres":{"y":"2016","g":"Obra de arte"},"Natti Natasha and Ozuna|||Criminal":{"y":"2017","g":"Urbano latino"},"Maluma|||Borro Cassette":{"y":"2015","g":"Reggaeton"},"Zion and Lennox|||Yo Voy":{"y":"2017","g":"Latin"},"Plan B|||Es un Secreto":{"y":"2010","g":"Reggaeton"},"Nio Garcia Casper Magico Bad Bunny Darell Ozuna and Nicky Jam|||Te Bote (Remix)":{"y":"2018","g":""},"Daddy Yankee|||Ella Me Levanto":{"y":"2016","g":"Urbano latino"},"Hector el Father|||Gata Fiera":{"y":"2021","g":"Latin"},"Wisin and Yandel feat. Hector el Father and Daddy Yankee|||Noche de Entierro":{"y":"2021","g":"Latin"},"Don Omar feat. Mr. Vegas|||Pobre Diabla Remix":{"y":"2004","g":"Urbano latino"},"KAROL G feat. J Balvin and Nicky Jam|||Mi Cama (Remix)":{"y":"2018","g":"Urbano latino"},"Alexis and Fido|||5 Letras":{"y":"2007","g":""},"La Factoria|||Perdoname":{"y":"2023","g":"Hip-Hop/Rap"},"Latin Fresh|||Ella Se Arrebata":{"y":"2019","g":"Reggae"},"J Balvin|||6 Am":{"y":"2013","g":""},"Angel and Khriz feat. Gocho and John Eric|||Na De Na":{"y":"2020","g":"Latin"},"Angel and Khriz|||Ven bailalo":{"y":"2005","g":"Latin"},"Tony Dize and Yandel|||Permitame":{"y":"2008","g":""},"Hector el Father|||Noche de Travesura":{"y":"2012","g":"Pop Latino"},"Pitbull and Don Miguelo|||Como Yo le Doy":{"y":"2014","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

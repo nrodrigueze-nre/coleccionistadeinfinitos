@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST GOTH SONGS &#183; OCT 2022</span><a href="https://www.rollingstone.com/music/music-lists/the-50-best-goth-songs-of-all-time-1234614460/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Bauhaus|||Bela Lugosi's Dead":{"y":"1979","g":""},"Joy Division|||She's Lost Control":{"y":"1980","g":""},"Siouxsie and the Banshees|||Spellbound":{"y":"1981","g":"Post-punk"},"The Cure|||A Forest":{"y":"1990","g":"New wave"},"Sisters of Mercy|||Temple of Love":{"y":"1983","g":"Goth Rock"},"David Bowie|||Rock 'n' Roll Suicide":{"y":"1974","g":""},"Nick Cave and the Bad Seeds|||The Mercy Seat":{"y":"1988","g":""},"The Cure|||Lovesong":{"y":"1989","g":"New wave"},"Joy Division|||Atmosphere":{"y":"1988","g":"Rock"},"Bauhaus|||In the Flat Field":{"y":"1980","g":"Alternative"},"Siouxsie and the Banshees|||Cities in Dust":{"y":"1985","g":"Post-punk"},"Nine Inch Nails|||Something I Can Never Have":{"y":"2002","g":""},"The Cure|||Disintegration":{"y":"1989","g":"Post-punk"},"Depeche Mode|||Personal Jesus":{"y":"1989","g":"Pop"},"Sisters of Mercy|||Lucretia My Reflection":{"y":"1987","g":"Goth Rock"},"Nick Cave and the Bad Seeds|||Red Right Hand":{"y":"1994","g":"Rock"},"The Cure|||The Hanging Garden":{"y":"","g":""},"David Bowie|||Heroes":{"y":"1977","g":""},"London After Midnight|||Sacrifice":{"y":"2023","g":"Rock"},"Specimen|||Kiss Kiss Bang Bang":{"y":"2006","g":"Alternative"},"Sisters of Mercy|||Black Planet":{"y":"2008","g":"Rock"},"Crystal Castles feat. Robert Smith|||Not in Love":{"y":"2010","g":"Electronic"},"The Velvet Underground|||Venus in Furs":{"y":"2023","g":"Rock"},"Killing Joke|||Love Like Blood":{"y":"1985","g":""},"Tones on Tail|||Christian Says":{"y":"1984","g":"Alternative"},"The Damned|||Shadow of Love":{"y":"1985","g":"Rock"},"X-Mal Deutschland|||Qual":{"y":"1983","g":""},"The Cure|||Pornography":{"y":"1982","g":"Post-punk"},"This Mortal Coil|||Sixteen Days Gathering Dust":{"y":"1983","g":""},"Alien Sex Fiend|||R.I.P.":{"y":"1984","g":""},"The Mission|||Wasteland":{"y":"2004","g":""},"Bauhaus|||Stigmata Martyr":{"y":"","g":""},"Depeche Mode|||Black Celebration":{"y":"1986","g":""},"Johnny Cash|||Hurt":{"y":"2003","g":"Country"},"Light Asylum|||Dark Allies":{"y":"2014","g":"Techno"},"She Past Away|||Kasvetli Kutlama":{"y":"2010","g":"Electronic"},"Nine Inch Nails|||Dead Souls":{"y":"1996","g":""},"Cocteau Twins|||Pandora":{"y":"2003","g":"Alternative"},"Fad Gadget|||Lady Shave":{"y":"2022","g":"Alternative"},"The Sisterhood|||Giving Ground":{"y":"1986","g":""},"Clan of Xymox|||Jasmine and Rose":{"y":"2014","g":"Electronic"},"Suicide|||Ghost Rider":{"y":"1986","g":""},"Paralisis Permanente|||Heroes":{"y":"1991","g":"Pop"},"Echo and the Bunnymen|||All My Colours (Zimbo)":{"y":"2017","g":"Rock"},"Type O Negative|||Love You to Death":{"y":"1996","g":"Gothic Metal"},"My Chemical Romance|||Helena":{"y":"2005","g":"Rock"},"She Wants Revenge|||Tear You Apart":{"y":"2006","g":"Darkwave"},"Diamanda Galas|||Double Barrel Prayer":{"y":"1988","g":""},"AFI|||Silver and Cold":{"y":"2003","g":"Rock"},"Strawberry Switchblade|||Since Yesterday":{"y":"1984","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

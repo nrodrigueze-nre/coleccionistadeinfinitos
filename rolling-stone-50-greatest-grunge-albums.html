@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 GREATEST GRUNGE ALBUMS &#183; ABR 2019</span><a href="https://www.rollingstone.com/music/music-lists/50-greatest-grunge-albums-798851/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Nirvana|||Nevermind":{"y":"1991","g":"Grunge"},"Soundgarden|||Badmotorfinger":{"y":"1991","g":"Grunge"},"Pearl Jam|||Ten":{"y":"1991","g":"Grunge"},"Hole|||Live Through This":{"y":"1994","g":"Grunge"},"Mudhoney|||Superfuzz Bigmuff":{"y":"1988","g":"Grunge"},"Alice in Chains|||Dirt":{"y":"1992","g":"Grunge"},"Temple of the Dog|||Temple of the Dog":{"y":"1991","g":"Grunge"},"Nirvana|||In Utero":{"y":"","g":"Alternative"},"Soundgarden|||Superunknown":{"y":"1994","g":"Grunge"},"Pearl Jam|||Vs.":{"y":"1993","g":"Grunge"},"Stone Temple Pilots|||Core":{"y":"1992","g":"Grunge"},"Smashing Pumpkins|||Siamese Dream":{"y":"1993","g":"Hard Rock"},"Nirvana|||Bleach":{"y":"1989","g":"Grunge"},"Alice in Chains|||Facelift":{"y":"1990","g":"Grunge"},"L7|||Bricks Are Heavy":{"y":"1992","g":"Grunge"},"Melvins|||Houdini":{"y":"1993","g":"Sludge metal"},"Screaming Trees|||Sweet Oblivion":{"y":"1992","g":"Pop"},"Mad Season|||Above":{"y":"1995","g":"Grunge"},"Singles Soundtrack|||Singles: Original Motion Picture Soundtrack":{"y":"2003","g":""},"Green River|||Dry as a Bone":{"y":"1987","g":"Grunge"},"Jerry Cantrell|||Degradation Trip":{"y":"2002","g":"Heavy metal"},"Various Artists|||Deep Six":{"y":"1986","g":"Alt rock"},"Soundgarden|||Ultramega OK":{"y":"1988","g":"Grunge"},"Stone Temple Pilots|||Purple":{"y":"1994","g":"Grunge"},"Melvins|||Bullhead":{"y":"1991","g":"Doom metal"},"Smashing Pumpkins|||Mellon Collie and the Infinite Sadness":{"y":"1995","g":"Hard Rock"},"Babes in Toyland|||Spanking Machine":{"y":"1990","g":"Aggressive"},"Soundgarden|||Louder Than Love":{"y":"1989","g":"Grunge"},"Green River|||Come on Down":{"y":"1985","g":"Grunge"},"Wipers|||Youth of America":{"y":"1981","g":"Post-punk"},"Tad|||8-Way Santa":{"y":"1991","g":"Grunge"},"Smashing Pumpkins|||Gish":{"y":"1991","g":"Hard Rock"},"Babes in Toyland|||Fontanelle":{"y":"1992","g":"Grunge"},"7 Year Bitch|||Viva Zapata!":{"y":"1994","g":"Selene Vigil"},"Paw|||Dragline":{"y":"1993","g":"Grunge"},"Neil Young and Crazy Horse|||Ragged Glory":{"y":"1990","g":""},"L7|||Smell the Magic":{"y":"1990","g":"Grunge"},"The Fluid|||Purplemetalflakemusic":{"y":"1992","g":"Rock"},"The Gits|||Enter: The Conquering Chicken":{"y":"1994","g":"Blues rock"},"Mudhoney|||Every Good Boy Deserves Fudge":{"y":"","g":"Grunge"},"Soundgarden|||Screaming Life":{"y":"1987","g":"Alt rock"},"Alice in Chains|||Jar of Flies":{"y":"1994","g":"Grunge"},"Black Flag|||My War":{"y":"1984","g":"Hardcore punk"},"Skin Yard|||Hallowed Ground":{"y":"1988","g":"Grunge"},"The Stooges|||Fun House":{"y":"1970","g":"Proto-punk"},"Veruca Salt|||American Thighs":{"y":"1994","g":"Alternative"},"The U-Men|||Step on a Bug":{"y":"1988","g":"Hip-Hop/Rap"},"Fecal Matter|||Illiteracy Will Prevail":{"y":"1985","g":"Grunge"},"Toadies|||Rubberneck":{"y":"1994","g":"Rock"},"Mother Love Bone|||Apple":{"y":"1990","g":"Grunge"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

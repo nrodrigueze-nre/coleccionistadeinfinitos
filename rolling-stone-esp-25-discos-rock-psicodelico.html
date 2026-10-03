@@ -206,7 +206,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/musica-para-volar-los-25-discos-esenciales-del-rock-psicodelico-arg/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Pink Floyd|||The Piper at the Gates of Dawn":{"y":"","g":"Psychedelic Rock"},"The Beatles|||Sgt. Pepper's Lonely Hearts Club Band":{"y":"1967","g":"Psychedelic"},"Love|||Forever Changes":{"y":"1967","g":"Psychedelic Rock"},"13th Floor Elevators|||The Psychedelic Sounds of the 13th Floor Elevators":{"y":"1966","g":"Psychedelic Rock"},"Donovan|||Sunshine Superman":{"y":"1966","g":"Psychedelic Rock"},"The Byrds|||Younger Than Yesterday":{"y":"","g":"Psychedelic Rock"},"The Beach Boys|||Smiley Smile":{"y":"1967","g":"Psychedelic"},"Pearls Before Swine|||One Nation Underground":{"y":"1967","g":"Folk"},"The Who|||The Who Sell Out":{"y":"1967","g":"Rock"},"The Incredible String Band|||The 5000 Spirits or the Layers of the Onion":{"y":"1967","g":"Folk"},"The Electric Prunes|||Underground":{"y":"1967","g":"Psychedelic Rock"},"The Move|||Move":{"y":"1968","g":"Rock"},"Jefferson Airplane|||After Bathing at Baxter's":{"y":"","g":"Psychedelic Rock"},"Blossom Toes|||We Are Ever So Clean":{"y":"1967","g":"Psychedelic pop"},"The Hollies|||Butterfly":{"y":"1967","g":"Psychedelic pop"},"Kaleidoscope|||Tangerine Dream":{"y":"1967","g":"Psychedelic"},"Grateful Dead|||Anthem of the Sun":{"y":"1968","g":"Psychedelic Rock"},"Soft Machine|||Soft Machine":{"y":"1968","g":"Prog-Rock/Art Rock"},"The Small Faces|||Ogdens Nut Gone Flake":{"y":"1968","g":"Rock"},"The Pretty Things|||S.F. Sorrow":{"y":"1968","g":"Psychedelic Rock"},"The Rolling Stones|||Their Satanic Majesties Request":{"y":"1967","g":"Psychedelic"},"The United States of America|||The United States of America":{"y":"1968","g":"Psychedelic Rock"},"Tomorrow|||Tomorrow":{"y":"2015","g":"Psychedelic Rock"},"The Kinks|||The Kinks Are the Village Green Preservation Society":{"y":"1968","g":"British"},"The Zombies|||Odessey and Oracle":{"y":"1968","g":"Psychedelic pop"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -339,9 +340,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -360,6 +367,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -421,6 +429,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

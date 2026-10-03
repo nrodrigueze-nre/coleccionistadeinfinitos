@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST SONGS 2020 &#183; DIC 2020</span><a href="https://www.rollingstone.com/music/music-lists/best-songs-2020-1097442/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Cardi B feat. Megan Thee Stallion|||WAP":{"y":"2020","g":"Hip-Hop/Rap"},"Bob Dylan|||Key West (Philosopher Pirate)":{"y":"2002","g":""},"Christine and the Queens|||People I've Been Sad":{"y":"2020","g":""},"The Weeknd|||Blinding Lights":{"y":"2019","g":"Synthwave"},"Taylor Swift|||August":{"y":"2020","g":"Dream pop"},"Dua Lipa|||Don't Start Now":{"y":"2019","g":"Pop"},"BTS|||Dynamite":{"y":"2020","g":"Pop"},"Fiona Apple|||Ladies":{"y":"","g":"Alternative"},"Harry Styles|||Adore You":{"y":"2019","g":"Pop"},"The Chicks|||Gaslighter":{"y":"2020","g":""},"Miley Cyrus|||Midnight Sky":{"y":"2020","g":"Pop"},"Megan Thee Stallion feat. Beyonce|||Savage Remix":{"y":"2020","g":""},"Blackpink feat. Selena Gomez|||Ice Cream":{"y":"2020","g":""},"DaBaby feat. Roddy Ricch|||Rockstar":{"y":"2020","g":""},"Bad Bunny feat. Jowell and Randy x Nengo Flow|||Safaera":{"y":"","g":""},"Lady Gaga|||Stupid Love":{"y":"2020","g":"Pop"},"Phoebe Bridgers|||Kyoto":{"y":"2020","g":"Indie rock"},"Perfume Genius|||Describe":{"y":"2020","g":""},"Selena Gomez|||Cut You Off":{"y":"2014","g":"Pop"},"Rina Sawayama|||STFU!":{"y":"2019","g":""},"Mac Miller|||Good News":{"y":"2020","g":"Neo-Soul"},"Caribou|||You and I":{"y":"2019","g":""},"Oxlade|||Away":{"y":"2020","g":"Afro-Pop"},"Drake feat. Lil Durk|||Laugh Now Cry Later":{"y":"2020","g":""},"Hailey Whitters|||Janice at the Hotel Bar":{"y":"2020","g":""},"Curtis Waters feat. Harm Franklin|||Stunnin'":{"y":"2020","g":""},"Jhene Aiko|||PU$$Y Fairy (OTW)":{"y":"2020","g":"R&B/Soul"},"Frances Quinlan|||Your Reply":{"y":"2020","g":""},"Moodymann|||Taken Away":{"y":"2020","g":""},"RMR|||RASCAL":{"y":"2020","g":"Hip-Hop/Rap"},"Halsey|||3am":{"y":"2006","g":"Alternative"},"Roisin Murphy|||Murphy's Law":{"y":"2020","g":""},"24KGoldn feat. Iann Dior|||Mood":{"y":"2020","g":""},"Roddy Ricch|||The Box":{"y":"2020","g":"Trap"},"Tyler Childers|||Long Violent History":{"y":"2020","g":""},"Westside Gunn feat. Armani Caesar|||Lil Cease":{"y":"2021","g":""},"Morgan Wallen|||Seven Summers":{"y":"2020","g":""},"The 1975|||If You're Too Shy (Let Me Know)":{"y":"2020","g":"Alternative"},"Fennec|||Boy-U":{"y":"2023","g":"House"},"Pretenders|||You Can't Hurt a Fool":{"y":"2023","g":""},"John Prine|||I Remember Everything":{"y":"2020","g":""},"J Balvin|||Azul":{"y":"2025","g":"Urbano latino"},"Doja Cat feat. Nicki Minaj|||Say So":{"y":"2020","g":"R&B/Soul"},"Trace Mountains|||Lost in the Country":{"y":"2020","g":""},"Charli XCX|||Claws":{"y":"2020","g":"Bubblegum bass"},"Bill Callahan|||Pigeons":{"y":"2020","g":"Alternative"},"Jarv Is|||House Music All Night Long":{"y":"2020","g":"Alternative"},"Sam Hunt|||Hard to Forget":{"y":"2020","g":""},"Caroline Rose|||Feel the Way I Want":{"y":"2020","g":"Country"},"Fleetwood Mac|||Dreams":{"y":"1977","g":"Classic rock"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

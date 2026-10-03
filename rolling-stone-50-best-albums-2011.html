@@ -200,7 +200,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2011 &#183; DIC 2011</span>
   <a href="https://www.rollingstone.com/music/music-lists/50-best-albums-of-2011-154391/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
-<script>
+<script>var BAKED_DATA={"Adele|||21":{"y":"2011","g":"Soul"},"Jay-Z and Kanye West|||Watch the Throne":{"y":"2011","g":"Hip-Hop/Rap"},"Lady Gaga|||Born This Way":{"y":"2011","g":"Pop"},"The Black Keys|||El Camino":{"y":"2011","g":"Blues rock"},"Radiohead|||The King of Limbs":{"y":"2011","g":"Electronic"},"Fleet Foxes|||Helplessness Blues":{"y":"","g":"Folk"},"Wilco|||The Whole Love":{"y":"2012","g":"Best of 2011"},"Gillian Welch|||The Harrow and the Harvest":{"y":"2011","g":""},"Ryan Adams|||Ashes and Fire":{"y":"2011","g":""},"M83|||Hurry Up We're Dreaming":{"y":"2011","g":"Shoegaze"},"TV on the Radio|||Nine Types of Light":{"y":"2011","g":"Best of 2011"},"Lil Wayne|||Tha Carter IV":{"y":"2011","g":"Hip-Hop/Rap"},"The Civil Wars|||Barton Hollow":{"y":"","g":"Folk"},"Nicki Minaj|||Pink Friday":{"y":"2010","g":"Rap"},"Beirut|||The Rip Tide":{"y":"","g":"Indie"},"Foo Fighters|||Wasting Light":{"y":"2011","g":"Rock"},"Bon Iver|||Bon Iver":{"y":"2011","g":"Best of 2011"},"Drake|||Take Care":{"y":"2011","g":"Hip-Hop"},"Tom Waits|||Bad as Me":{"y":"2011","g":"Best of 2011"},"Frank Ocean|||Nostalgia Ultra":{"y":"2011","g":""},"Beyonce|||4":{"y":"2011","g":""},"St. Vincent|||Strange Mercy":{"y":"2011","g":"Art pop"},"Florence and the Machine|||Ceremonials":{"y":"2011","g":""},"Das Racist|||Relax":{"y":"2011","g":"Best of 2011"},"Pistol Annies|||Hell on Heels":{"y":"2011","g":"Country"},"Tom Morello The Nightwatchman|||World Wide Rebel Songs":{"y":"2011","g":""},"Miranda Lambert|||Four the Record":{"y":"2011","g":"Country"},"Big K.R.I.T.|||Return of 4eva":{"y":"2011","g":"Rap"},"Josh T. Pearson|||Last of the Country Gentlemen":{"y":"2011","g":"2010s"},"SuperHeavy|||SuperHeavy":{"y":"2011","g":"Rock"},"Dawes|||Nothing Is Wrong":{"y":"2011","g":"2010s"},"Stephen Malkmus and the Jicks|||Mirror Traffic":{"y":"2011","g":"Indie rock"},"Panda Bear|||Tomboy":{"y":"2011","g":"Best of 2011"},"Mastodon|||The Hunter":{"y":"2011","g":"Progressive metal"},"Kurt Vile|||Smoke Ring for My Halo":{"y":"2011","g":"Folk rock"},"Gary Clark Jr.|||The Bright Lights EP":{"y":"2011","g":"Blues"},"Little Dragon|||Ritual Union":{"y":"2011","g":"Best of 2011"},"Destroyer|||Kaputt":{"y":"2011","g":"Best of 2011"},"The Kills|||Blood Pressures":{"y":"2011","g":"Garage Rock"},"Tedeschi Trucks Band|||Revelator":{"y":"2011","g":"Blues"},"Raphael Saadiq|||Stone Rollin'":{"y":"2011","g":"Soul"},"White Denim|||D":{"y":"2011","g":"Downtown records"},"PJ Harvey|||Let England Shake":{"y":"2011","g":"Alternative"},"Charles Bradley|||No Time for Dreaming":{"y":"2011","g":"Soul"},"Wavves|||Life Sux EP":{"y":"2011","g":"Ghost Ramp"},"The Lonely Island|||Turtleneck and Chain":{"y":"2011","g":"Comedy"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -333,9 +334,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -354,6 +361,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -415,6 +423,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

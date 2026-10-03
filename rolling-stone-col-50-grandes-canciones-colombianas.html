@@ -168,7 +168,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE COLOMBIA &#183; 50 GRANDES CANCIONES COLOMBIANAS</span></footer>
-<script>
+<script>var BAKED_DATA={"Carlos Vives|||La Tierra del Olvido":{"y":"1995","g":""},"Ekhymosis|||La Tierra":{"y":"2019","g":"Rock y Alternativo"},"Aterciopelados|||Bolero Falaz":{"y":"2024","g":""},"Juanes|||A Dios le Pido":{"y":"2002","g":"Pop Latino"},"Shakira|||Donde Estas Corazon?":{"y":"1998","g":"Latin"},"Bomba Estereo|||Fuego":{"y":"2021","g":"Rock y Alternativo"},"ChocQuibTown|||Somos Pacifico":{"y":"2007","g":"Urbano latino"},"The Speakers|||Si la Guerra Es un Buen Negocio Invierte a Tus Hijos":{"y":"2022","g":""},"Kraken|||Escudo y Espada":{"y":"2002","g":""},"Hora Local|||El Rock No Te Necesita":{"y":"1991","g":""},"La Pestilencia|||Fango":{"y":"2013","g":""},"Compania Ilimitada|||La Calle":{"y":"2011","g":""},"The Flippers|||Pronto Viviremos un Mundo Mucho Mejor":{"y":"1998","g":""},"Systema Solar|||Sin Oficio":{"y":"2018","g":"Rock y Alternativo"},"Doctor Krapula|||El Pibe de Mi Barrio":{"y":"2002","g":"Latin"},"Aterciopelados|||Maligno":{"y":"2006","g":"Rock y Alternativo"},"La Etnnia|||Manicomio 5-27":{"y":"2017","g":""},"Ultrageno|||Divino Nino":{"y":"2024","g":""},"Compania Ilimitada|||Siloe":{"y":"","g":"Pop Latino"},"Ekhymosis|||Solo":{"y":"2024","g":"Rock y Alternativo"},"Superlitio|||Que Vo Hacer":{"y":"2016","g":"Rock"},"Kraken|||Vestido de Cristal":{"y":"1993","g":""},"Sidestepper|||Mas Papaya":{"y":"2008","g":""},"La Pestilencia|||Vive Tu Vida":{"y":"2016","g":""},"I.R.A.|||Barquizidio":{"y":"1989","g":""},"Aterciopelados|||Mujer Gala":{"y":"2023","g":"Rock y Alternativo"},"Hora Local|||Londres":{"y":"2023","g":""},"Fonseca|||Paraiso":{"y":"1981","g":"Música tropical"},"Bloque de busqueda|||Hay un Dano en el Bano":{"y":"2007","g":""},"Aterciopelados|||Sortilegio":{"y":"2016","g":"Rock y Alternativo"},"Kronos|||Fuego en Mis Venas":{"y":"1990","g":""},"Catedral|||Redes Rojas":{"y":"2016","g":""},"Ana y Jaime|||Decimo Grado":{"y":"2005","g":""},"Ultrageno|||Drulos":{"y":"","g":""},"Pasaporte|||Igor y Penelope":{"y":"1999","g":"South America"},"Poligamia|||Mi Generacion":{"y":"","g":"Pop Latino"},"Agony|||Guerrillas":{"y":"2016","g":""},"Darkness|||Metalero":{"y":"2016","g":""},"Mutantex|||Sin Reaccion":{"y":"1971","g":""},"La Derecha|||Ay Que Dolor!":{"y":"2012","g":""},"Estados Alterados|||El Velo":{"y":"2001","g":""},"Estados Alterados|||Muevete":{"y":"","g":""},"Sociedad Anonima|||La Causa Nacional":{"y":"1989","g":""},"Distrito Especial|||Candelaria":{"y":"2013","g":""},"Ship|||Cali Girls":{"y":"2012","g":"Rock"},"Banda Nueva|||Emiliano Pinilla":{"y":"2024","g":""},"Genesis|||Don Simon":{"y":"1991","g":"Latin"},"Bajo Tierra|||El Pobre":{"y":"2011","g":""},"1280 Almas|||El Platanal":{"y":"2009","g":""},"1280 Almas|||Soledad Criminal":{"y":"1993","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -247,9 +248,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -268,6 +275,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -329,6 +337,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

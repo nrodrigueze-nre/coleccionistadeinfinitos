@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE COLOMBIA &#183; 50 GRANDES ALBUMES COLOMBIANOS S. XXI &#183; ENE 2024</span><a href="https://es.rollingstone.com/50-grandes-albumes-colombianos-del-siglo-xxi/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"La Pestilencia|||Balistica":{"y":"2001","g":""},"Juanes|||Un dia normal":{"y":"2002","g":"Latin"},"Ultrageno|||Codigo Fuente":{"y":"2018","g":"Alternative"},"Mojarra Electrica|||Calle 19":{"y":"2014","g":""},"Carlos Vives|||El rock de mi pueblo":{"y":"","g":"Latin"},"La 33|||La 33":{"y":"1980","g":"16xbpm"},"Superlitio|||Tripping Tropicana":{"y":"","g":"Rock Colombia"},"Chocquibtown|||Somos Pacifico":{"y":"2007","g":"Aj playlist"},"Hora Local y Varios|||Soluciones para todo, menos para los problemas":{"y":"","g":""},"Bomba Estereo|||Estalla":{"y":"2008","g":"Reggae"},"Ciegossordomudos|||En paz":{"y":"","g":""},"Velandia y La Tigra|||Superzencillo":{"y":"2009","g":"Rock y Alternativo"},"Mucho Indio|||Mucho indio":{"y":"2011","g":""},"Doctor Krapula|||Corazon Bombea (En vivo)":{"y":"2011","g":""},"La Derecha|||Polvo eres":{"y":"2011","g":"Rock"},"Shakira|||En vivo desde Paris":{"y":"2011","g":""},"Monsieur Perine|||Hecho a mano":{"y":"2012","g":""},"Ondatropica|||Ondatropica":{"y":"2012","g":"Latin"},"Burning Caravan|||En el espacio":{"y":"2014","g":""},"Systema Solar|||La revancha del burro":{"y":"2013","g":"Alternative"},"Diamante Electrico|||B":{"y":"2015","g":"Rock y Alternativo"},"La Etnnia|||5-27 Internacional":{"y":"2001","g":""},"LosPetitFellas|||Historias minimas":{"y":"2015","g":""},"Toto La Momposina|||Tambolero":{"y":"2015","g":"Música tropical"},"Aterciopelados|||Reluciente, Rechinante y Aterciopelado (En vivo)":{"y":"2016","g":"Rock y Alternativo"},"Kraken|||Sobre esta tierra":{"y":"2016","g":""},"Revolver Plateado|||Luz de San Telmo":{"y":"2013","g":"Rock"},"Rocca|||Bogota-Paris":{"y":"2015","g":""},"Sidestepper|||Supernatural Love":{"y":"2015","g":"Worldwide"},"Alcolirykoz|||Servicios ambulatorioz":{"y":"2017","g":"Colombia"},"Elkin Robinson|||Sun a Shine":{"y":"2011","g":""},"Hermanos Menores|||Campoamalia":{"y":"","g":""},"Las Anez|||Al aire":{"y":"2017","g":""},"Magin Diaz|||El orisha de la rosa":{"y":"2017","g":""},"Suricato|||Detras del sol":{"y":"2014","g":"Pop"},"1280 Almas|||Marteko Euriak":{"y":"2018","g":"Rock y Alternativo"},"Morfonia|||Antigueto parlante":{"y":"2001","g":""},"Nicolas y Los Fumadores|||Como pez en el hielo":{"y":"2018","g":""},"Yuri Buenaventura y Orquesta Sinfonica Nacional|||Manigua":{"y":"","g":""},"AcidYesit|||A lo mas que nunca":{"y":"2012","g":""},"Cimarron|||Orinoco":{"y":"2010","g":"Worldwide"},"Oh'Laville|||Soles negros":{"y":"2012","g":"Alternative rock"},"Andres Cepeda|||Me estas haciendo falta":{"y":"2021","g":""},"Armenia|||Grita II":{"y":"2021","g":"Alternative"},"Briela Ojeda|||Templo Komodo":{"y":"2015","g":"Colombia"},"Lucio Feuillet|||Bailando, bailando":{"y":"2012","g":""},"Petrona Martinez|||Ancestras":{"y":"2021","g":"Worldwide"},"Elsa y Elmar|||Ya no somos los mismos":{"y":"2022","g":""},"Adriana Lucia|||Maestro Lucho":{"y":"2022","g":""},"Masacre|||REQVIEM (Re-Recorded Version)":{"y":"1991","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

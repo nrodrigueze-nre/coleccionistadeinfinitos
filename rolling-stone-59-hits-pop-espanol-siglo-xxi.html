@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/grandes-hits-del-pop-espanol-del-siglo-xxi/" target="_blank" class="foot-link">Ver artículo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Rosalía|||Malamente":{"y":"2018","g":""},"Las Ketchup|||Aserejé":{"y":"2023","g":"Pop"},"La Oreja de Van Gogh|||Rosas":{"y":"1989","g":""},"Pablo Alborán|||Solamente tú":{"y":"2010","g":""},"C. Tangana feat. Rosalía|||Antes de morirme":{"y":"2016","g":"Pop"},"Alejandro Sanz feat. Shakira|||Te lo agradezco pero no":{"y":"2007","g":"Pop"},"Alejandro Sanz|||Cuando nadie me ve":{"y":"2010","g":"Pop"},"David Bisbal|||Ave María":{"y":"2006","g":"Pop"},"David Bisbal feat. Sebastián Yatra|||A partir de hoy":{"y":"2018","g":"Pop"},"Aitana|||Los Ángeles":{"y":"2023","g":"Dance"},"Ana Mena feat. Rocco Hunt|||A un paso de la luna":{"y":"2020","g":"Hip-Hop/Rap"},"Amaral|||El universo sobre mí":{"y":"2005","g":""},"Manuel Carrasco|||Ya no":{"y":"2013","g":"Pop"},"Alejandro Sanz feat. Camila Cabello|||Mi persona favorita":{"y":"2019","g":"Pop Latino"},"Ana Mena|||Música ligera":{"y":"2021","g":"Pop Latino"},"Pablo Alborán|||Saturno":{"y":"2012","g":"Pop Latino"},"Álvaro Soler|||Sofia":{"y":"2016","g":""},"La Quinta Estación|||El sol no regresa":{"y":"2006","g":""},"Rozalén|||Comiéndote a besos":{"y":"2012","g":"Pop Latino"},"David Bisbal|||Bulería":{"y":"2004","g":"Pop"},"Amaral|||Cómo hablar":{"y":"2011","g":""},"Amaia Montero|||Quiero ser":{"y":"2008","g":"Pop Latino"},"La Oreja de Van Gogh|||El último vals":{"y":"1998","g":""},"Álex Ubago feat. Amaia Montero|||Sin miedo a nada":{"y":"2018","g":""},"Estopa|||Fuego":{"y":"2019","g":""},"Pastora Soler|||Quédate conmigo":{"y":"2012","g":""},"Melendi|||Tocado y hundido":{"y":"2021","g":"Pop"},"Beret|||Si por mí fuera":{"y":"2019","g":""},"Dani Martín|||Mira la vida":{"y":"2016","g":"Pop"},"Dvicio|||Enamórate":{"y":"1991","g":""},"Natalia Jiménez|||Creo en mí":{"y":"2014","g":""},"Enrique Iglesias|||Dímelo":{"y":"1973","g":"Pop"},"Andy y Lucas|||Tanto la quería":{"y":"2019","g":""},"Andy y Lucas|||Son de amores":{"y":"2003","g":""},"Vicco|||Nochentera":{"y":"2022","g":""},"Lola Índigo feat. Luis Fonsi|||Corazones rotos":{"y":"2023","g":""},"Sen Senra feat. Aitana|||Hermosa casualidad":{"y":"2024","g":""},"Judeline|||Mangata":{"y":"2024","g":""},"Rels B|||Ni 1 complejo":{"y":"2024","g":""},"Dani Fernández|||Te esperaré toda la vida":{"y":"2024","g":"Pop"},"India Martínez feat. Melendi|||Si ella supiera":{"y":"2022","g":"Pop Latino"},"Dani Martín|||Cero":{"y":"2013","g":""},"Nena Daconte|||En qué estrella estará":{"y":"2026","g":""},"Marlena|||Me sabe mal":{"y":"2021","g":""},"Marc Seguí feat. Pol Granch|||Tiroteo":{"y":"2021","g":"Latin"},"Cariño|||Si quieres":{"y":"1998","g":"Baladas y Boleros"},"Fangoria|||Dramas y comedias":{"y":"2013","g":"Rock y Alternativo"},"Dorian|||La tormenta de arena":{"y":"2009","g":""},"Efecto Mariposa|||Por quererte":{"y":"2014","g":"Pop"},"Malú|||Blanco y negro":{"y":"2017","g":"Pop Latino"},"Manolo García|||Un giro teatral":{"y":"2011","g":""},"Pol 3.14|||Jóvenes eternamente":{"y":"2012","g":""},"Miguel Bosé feat. Ximena Sariñana|||Aire soy":{"y":"2012","g":""},"La Casa Azul|||La revolución sexual":{"y":"2007","g":"Pop"},"Merche|||Eras tú":{"y":"2023","g":""},"Elefantes|||Azul":{"y":"2000","g":""},"Álex Ubago|||Aunque no te pueda ver":{"y":"2020","g":""},"Sofía Ellar|||Amor de anticuario":{"y":"2022","g":""},"Maldita Nerea|||Bailarina":{"y":"2017","g":"Pop"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -479,9 +480,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -500,6 +507,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -561,6 +569,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

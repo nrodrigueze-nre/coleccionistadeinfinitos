@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2019 &#183; DIC 2019</span><a href="https://www.rollingstone.com/music/music-lists/best-albums-2019-914750/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Lana Del Rey|||Norman Fucking Rockwell!":{"y":"2019","g":"Art pop"},"Billie Eilish|||When We All Fall Asleep Where Do We Go?":{"y":"2019","g":""},"Lizzo|||Cuz I Love You":{"y":"2019","g":"Pop"},"Taylor Swift|||Lover":{"y":"2019","g":"Pop"},"Vampire Weekend|||Father of the Bride":{"y":"2019","g":"Indie rock"},"Tyler the Creator|||Igor":{"y":"2019","g":""},"Weyes Blood|||Titanic Rising":{"y":"2019","g":"Baroque pop"},"Solange|||When I Get Home":{"y":"2019","g":"Rnb"},"Miranda Lambert|||Wildcard":{"y":"2019","g":"Vinyl"},"DaBaby|||Baby on Baby":{"y":"2019","g":"Hip-Hop"},"Jenny Lewis|||On the Line":{"y":"2019","g":"Rock"},"Angel Olsen|||All Mirrors":{"y":"2019","g":"Chamber pop"},"Brittany Howard|||Jaime":{"y":"2019","g":"Rock"},"Sturgill Simpson|||Sound and Fury":{"y":"2019","g":""},"Big Thief|||Two Hands":{"y":"","g":"Indie rock"},"Young Thug|||So Much Fun":{"y":"2019","g":"Trap"},"100 Gecs|||1000 Gecs":{"y":"2019","g":"Hyperpop"},"Polo G|||Die a Legend":{"y":"2019","g":"Rap"},"Bon Iver|||i i":{"y":"2019","g":"Alternative"},"Bruce Springsteen|||Western Stars":{"y":"2019","g":"Yearning"},"Harry Styles|||Fine Line":{"y":"2019","g":"Pop"},"Tanya Tucker|||While I'm Livin'":{"y":"2019","g":""},"Jamila Woods|||Legacy! Legacy!":{"y":"2019","g":"Soul"},"Wilco|||Ode to Joy":{"y":"2019","g":"Folk"},"Sharon Van Etten|||Remind Me Tomorrow":{"y":"2019","g":"Rock"},"Coldplay|||Everyday Life":{"y":"2019","g":"Rock"},"Sleater-Kinney|||The Center Won't Hold":{"y":"2019","g":"Vinyl"},"The National|||I Am Easy to Find":{"y":"2019","g":"Mixtaperoom"},"Megan Thee Stallion|||Fever":{"y":"2019","g":"Rap"},"Sheer Mag|||A Distant Call":{"y":"2019","g":"Classic rock"},"J Balvin and Bad Bunny|||Oasis":{"y":"2019","g":""},"Karen O and Danger Mouse|||Lux Prima":{"y":"2019","g":""},"Brockhampton|||Ginger":{"y":"2019","g":"Pop rap"},"FKA Twigs|||Magdalene":{"y":"2019","g":"Art pop"},"Purple Mountains|||Purple Mountains":{"y":"2008","g":"Alt-country"},"Summer Walker|||Over It":{"y":"2019","g":"Rnb"},"Juice WRLD|||Death Race to Love":{"y":"2019","g":""},"Beck|||Hyperspace":{"y":"2019","g":"Alternative"},"Maggie Rogers|||Heard It in a Past Life":{"y":"2019","g":"Vinyl"},"Rapsody|||Eve":{"y":"2019","g":"Conscious hip-hop"},"The Black Keys|||Let's Rock":{"y":"2019","g":"Psychedelic blues"},"Todd Snider|||Cash Cabin Sessions Vol 3":{"y":"2019","g":""},"Burna Boy|||African Giant":{"y":"2019","g":""},"Rico Nasty and Kenny Beats|||Anger Management":{"y":"2019","g":""},"Post Malone|||Hollywood's Bleeding":{"y":"2019","g":"Hip-Hop"},"Yola|||Walk Through Fire":{"y":"2019","g":"Country"},"Priests|||The Seduction of Kansas":{"y":"2019","g":"Pop"},"Moon Tooth|||Crux":{"y":"2019","g":"Albums"},"Ariana Grande|||Thank U Next":{"y":"2018","g":"Pop"},"Big Thief|||UFOF":{"y":"2019","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

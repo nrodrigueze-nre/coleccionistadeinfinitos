@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2017 &#183; NOV 2017</span><a href="https://www.rollingstone.com/music/music-lists/50-best-albums-of-2017-123296/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Kendrick Lamar|||DAMN.":{"y":"2017","g":"Rap"},"Lorde|||Melodrama":{"y":"2017","g":"Pop"},"Taylor Swift|||Reputation":{"y":"2017","g":"Pop"},"LCD Soundsystem|||American Dream":{"y":"2017","g":"New wave"},"Jay-Z|||4:44":{"y":"2017","g":"Hip hop"},"Kesha|||Rainbow":{"y":"2017","g":"Country pop"},"Queens of the Stone Age|||Villains":{"y":"2017","g":"Stoner Rock"},"Margo Price|||All American Made":{"y":"2017","g":"Vinyl"},"Khalid|||American Teen":{"y":"2017","g":"Vinyl"},"Courtney Barnett and Kurt Vile|||Lotta Sea Lice":{"y":"2017","g":"Alternative"},"Randy Newman|||Dark Matter":{"y":"2017","g":""},"Moses Sumney|||Aromanticism":{"y":"2017","g":"Art pop"},"Hurray for the Riff Raff|||The Navigator":{"y":"2017","g":"Folk"},"Jason Isbell and the 400 Unit|||The Nashville Sound":{"y":"2017","g":"AOTY"},"Residente|||Residente":{"y":"2022","g":"Latin"},"Alvvays|||Antisocialites":{"y":"2017","g":"Indie pop"},"Harry Styles|||Harry Styles":{"y":"2017","g":"Bisexual"},"St. Vincent|||Masseduction":{"y":"2017","g":"Test"},"Father John Misty|||Pure Comedy":{"y":"","g":"Singer-songwriter"},"SZA|||Ctrl":{"y":"2017","g":""},"Sheer Mag|||Need to Feel Your Love":{"y":"2017","g":"Classic rock"},"Jlin|||Black Origami":{"y":"2017","g":"Electronic"},"Valerie June|||The Order of Time":{"y":"2017","g":"Soft rock"},"Paramore|||After Laughter":{"y":"2017","g":"New wave"},"Lana Del Rey|||Lust for Life":{"y":"2017","g":"Pop"},"Drake|||More Life":{"y":"2017","g":"Hip-Hop"},"Vince Staples|||Big Fish Theory":{"y":"2017","g":"Rap"},"Jay Som|||Everybody Works":{"y":"2017","g":"Shoegaze"},"Chris Stapleton|||From A Room Volume 1":{"y":"2017","g":"Country"},"Songhoy Blues|||Resistance":{"y":"2017","g":"Worldwide"},"Robert Plant|||Carry Fire":{"y":"2017","g":"Americana"},"Vijay Iyer Sextet|||Far From Over":{"y":"2017","g":"Jazz"},"Open Mike Eagle|||Brick Body Kids Still Daydream":{"y":"2017","g":"Jazz rap"},"Bob Dylan|||Triplicate":{"y":"2017","g":"Jazz"},"Lindsey Buckingham and Christine McVie|||Lindsey Buckingham Christine McVie":{"y":"2017","g":""},"Liam Gallagher|||As You Were":{"y":"2017","g":"Indie rock"},"Japanese Breakfast|||Soft Sounds From Another Planet":{"y":"2017","g":"Dream pop"},"Grizzly Bear|||Painted Ruins":{"y":"2017","g":"Neo-Psychedelia"},"Ornette Coleman|||Celebrate Ornette":{"y":"2016","g":""},"Gregg Allman|||Southern Blood":{"y":"2017","g":"Southern Rock"},"Beck|||Colors":{"y":"2017","g":"Indie pop"},"The New Pornographers|||Whiteout Conditions":{"y":"2017","g":"Indie rock"},"Tracy Bonham|||Modern Burdens":{"y":"2017","g":""},"Sharon Jones and the Dap-Kings|||Soul of a Woman":{"y":"2017","g":""},"Low Cut Connie|||Dirty Pictures Part One":{"y":"2018","g":""},"Chronixx|||Chronology":{"y":"2017","g":""},"Foo Fighters|||Concrete and Gold":{"y":"2017","g":"Rock"},"Code Orange|||Forever":{"y":"2017","g":"Hardcore"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -298,9 +299,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -319,6 +326,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -380,6 +388,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

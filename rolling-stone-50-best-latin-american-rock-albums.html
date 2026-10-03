@@ -168,7 +168,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST LATIN-AMERICAN ROCK ALBUMS &#183; SEP 2023</span><a href="https://www.rollingstone.com/music/music-lists/best-latin-american-rock-albums-1234818717/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Cafe Tacvba|||Re":{"y":"1994","g":"Rock y Alternativo"},"Gustavo Cerati|||Bocanada":{"y":"1999","g":"Downtempo"},"Babasonicos|||Jessico":{"y":"2001","g":"Rock y Alternativo"},"Maldita Vecindad y los Hijos del Quinto Patio|||El Circo":{"y":"1991","g":"Rock en Espanol"},"Charly Garcia|||Clics Modernos":{"y":"1983","g":""},"Julieta Venegas|||Bueninvento":{"y":"2000","g":"Latin"},"Santana|||Abraxas":{"y":"1970","g":"Latin Rock"},"Caifanes|||El Silencio":{"y":"1992","g":"Mexico"},"Pescado Rabioso|||Artaud":{"y":"1973","g":"Folk rock"},"Los Amigos Invisibles|||The New Sound of the Venezuelan Gozadera":{"y":"1998","g":"Latin funk"},"Natalia Lafourcade|||Hasta la Raiz":{"y":"2015","g":""},"Soda Stereo|||Cancion Animal":{"y":"","g":"AR"},"Karnak|||Karnak":{"y":"1995","g":"Karnak"},"Sumo|||Llegando los Monos":{"y":"1986","g":"Rock Argentino"},"Roberto Carlos|||Em Ritmo de Aventura":{"y":"1967","g":"Pop"},"Moris|||Treinta Minutos de Vida":{"y":"1970","g":"Singer-songwriter"},"Tribalistas|||Tribalistas":{"y":"2017","g":"Mpb"},"Fito Paez|||El Amor Despues Del Amor":{"y":"1992","g":"Rock y Alternativo"},"Los Prisioneros|||Corazones":{"y":"1990","g":"Synthpop"},"Andres Calamaro|||El Salmon":{"y":"2000","g":""},"Molotov|||Donde Jugaran Las Ninas":{"y":"1997","g":"Crossover"},"Carlos Vives|||El Rock de mi Pueblo":{"y":"2004","g":"Latin"},"Totem|||Totem":{"y":"1971","g":"Stoner metal"},"Mon Laferte|||Vol. 1":{"y":"2015","g":"Pop Latino"},"Los Hermanos|||Ventura":{"y":"2003","g":"Los hermanos"},"Santa Sabina|||Santa Sabina":{"y":"1992","g":""},"Eduardo Mateo|||Mateo Solo Bien Se Lame":{"y":"1972","g":"Psychedelic folk"},"Los Tres|||Fome":{"y":"1997","g":"Rock chileno"},"No Te Va Gustar|||Este Fuerte Viento Que Sopla":{"y":"","g":"Charrua"},"Os Paralamas do Sucesso|||Selvagem?":{"y":"1986","g":"Ska"},"El Mato a un Policia Motorizado|||La Sintesis O'Konor":{"y":"2017","g":""},"Banda Nueva|||La Gran Feria":{"y":"2014","g":"Rock"},"El Gran Silencio|||Chuntaros Radio Poder":{"y":"2001","g":""},"Traffic Sound|||Virgin":{"y":"1969","g":"Rock"},"Puya|||Fundamental":{"y":"1998","g":"Salsa Heavy Metal"},"Zoe|||Memo Rex Commander":{"y":"2006","g":"Rock y Alternativo"},"Rita Lee and Tutti Frutti|||Fruto Proibido":{"y":"1975","g":""},"Juanes|||Un Dia Normal":{"y":"2002","g":"Latin"},"Raul Seixas|||Krig-ha Bandolo!":{"y":"1973","g":"Rock"},"Genesis Colombia|||Genesis":{"y":"1972","g":"Electronic"},"Los Bunkers|||Vida de Perros":{"y":"2005","g":"Garage rock revival"},"Los Van Van|||Los Van Van":{"y":"1999","g":"Música tropical"},"Los Jaivas|||Alturas De Macchu Picchu":{"y":"1981","g":"Progressive rock"},"La Revolucion de Emiliano Zapata|||Revolucion de Emiliano Zapata":{"y":"1971","g":"Música Mexicana"},"Diamante Electrico|||Mira Lo Que Me Hiciste Hacer":{"y":"2021","g":""},"Los Shakers|||La Conferencia Secreta Del Toto's Bar":{"y":"","g":"Progressive rock"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -247,9 +248,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -268,6 +275,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -329,6 +337,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

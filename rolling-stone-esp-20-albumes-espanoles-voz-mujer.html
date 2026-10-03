@@ -212,7 +212,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/muestrario-20-grandes-albumes-espanoles-en-voz-de-mujer/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Aitana|||11 razones":{"y":"2020","g":"Pop Latino"},"Rocio Durcal|||Canta a Juan Gabriel":{"y":"1996","g":"Música Mexicana"},"Luz Casal|||Como la flor prometida":{"y":"1995","g":"Pop"},"Natalia Jimenez|||Creo en mi":{"y":"2014","g":"Pop Latino"},"Rozalen|||Cuando el rio suena":{"y":"2017","g":"Pop"},"Rosario|||De ley":{"y":"1992","g":"Bossa Nova"},"Dover|||Devil Came To Me":{"y":"1997","g":"Punk rock"},"Rosalia|||El mal querer":{"y":"2018","g":""},"Mecano|||Entre el cielo y el suelo":{"y":"1986","g":"Ana torroja"},"Amaral|||Estrella de mar":{"y":"2003","g":"Latin"},"Malu|||Guerra fria":{"y":"2010","g":""},"Lola Flores|||La inimitable Lola Flores":{"y":"1990","g":""},"La Oreja de Van Gogh|||Lo que te conte mientras te hacías la dormida":{"y":"2003","g":"Pop Latino"},"Ole Ole|||Los caballeros las prefieren rubias":{"y":"1987","g":""},"Mala Rodriguez|||Malamarismo":{"y":"2007","g":"Hip hop"},"Alaska y Dinarama|||No es pecado":{"y":"1986","g":""},"Bebe|||Pafuera telaranas":{"y":"2004","g":""},"Zahara|||Puta":{"y":"2021","g":"Skipless albums"},"Christina y los Subterraneos|||Que me parta un rayo":{"y":"1992","g":"Mis cds"},"Presuntos Implicados|||Ser de agua":{"y":"1991","g":"Pop"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -345,9 +346,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -366,6 +373,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -427,6 +435,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

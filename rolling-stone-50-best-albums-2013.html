@@ -200,7 +200,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2013 &#183; DIC 2013</span>
   <a href="https://www.rollingstone.com/music/music-lists/50-best-albums-of-2013-39776/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
-<script>
+<script>var BAKED_DATA={"Kanye West|||Yeezus":{"y":"2013","g":"Hip-Hop"},"Vampire Weekend|||Modern Vampires of the City":{"y":"","g":"Indie pop"},"Daft Punk|||Random Access Memories":{"y":"2013","g":"Electronic"},"David Bowie|||The Next Day":{"y":"2013","g":"Rock"},"Queens of the Stone Age|||...Like Clockwork":{"y":"2013","g":"Stoner Rock"},"Arcade Fire|||Reflektor":{"y":"2013","g":"Indie rock"},"Lorde|||Pure Heroine":{"y":"","g":"Indie pop"},"Beyonce|||Beyonce":{"y":"2013","g":"Pop"},"Drake|||Nothing Was the Same":{"y":"2013","g":"Hip hop"},"Justin Timberlake|||The 20/20 Experience":{"y":"2013","g":"Pop"},"Miley Cyrus|||Bangerz":{"y":"2013","g":"Pop"},"Disclosure|||Settle":{"y":"2013","g":"Electronic"},"Paul McCartney|||New":{"y":"2013","g":"Rock"},"John Fogerty|||Wrote a Song for Everyone":{"y":"2013","g":"Rock"},"Chance the Rapper|||Acid Rap":{"y":"2013","g":"Hip hop"},"Parquet Courts|||Light Up Gold":{"y":"2012","g":"Indie rock"},"Danny Brown|||Old":{"y":"2013","g":"Hardcore hip hop"},"Jake Bugg|||Jake Bugg":{"y":"2012","g":"Indie"},"Eminem|||The Marshall Mathers LP 2":{"y":"2013","g":"Hip hop"},"Phosphorescent|||Muchacho":{"y":"2013","g":"Best of 2013"},"Ashley Monroe|||Like a Rose":{"y":"","g":"Country"},"Laura Marling|||Once I Was an Eagle":{"y":"2013","g":"Contemporary folk"},"Rhye|||Woman":{"y":"2013","g":"Best of 2013"},"Nick Cave and the Bad Seeds|||Push the Sky Away":{"y":"2013","g":"Best of 2013"},"James Blake|||Overgrown":{"y":"2013","g":"Best of 2013"},"The National|||Trouble Will Find Me":{"y":"2013","g":"Classical"},"Kacey Musgraves|||Same Trailer Different Park":{"y":"2013","g":"Country"},"Bombino|||Nomad":{"y":"2013","g":"Alt rock"},"Tegan and Sara|||Heartthrob":{"y":"","g":"Pop"},"Haim|||Days Are Gone":{"y":"2013","g":"Alternative"},"Chvrches|||The Bones of What You Believe":{"y":"2013","g":"Synthpop"},"Pusha T|||My Name Is My Name":{"y":"2013","g":"Rap"},"Neko Case|||The Worse Things Get the Harder I Fight":{"y":"2013","g":""},"Best Coast|||Fade Away EP":{"y":"2013","g":"Alternative"},"Waxahatchee|||Cerulean Salt":{"y":"2013","g":"Indie"},"The So So Glos|||Blowout":{"y":"2013","g":""},"Kurt Vile|||Wakin on a Pretty Daze":{"y":"2013","g":"Indie rock"},"Keith Urban|||Fuse":{"y":"2013","g":"Country"},"Pearl Jam|||Lightning Bolt":{"y":"2014","g":"Alternative rock"},"J. Cole|||Born Sinner":{"y":"2013","g":"Hip hop"},"Earl Sweatshirt|||Doris":{"y":"2013","g":"Rap"},"Savages|||Silence Yourself":{"y":"2013","g":"Post-punk"},"Valerie June|||Pushin' Against a Stone":{"y":"","g":"Blues"},"Avicii|||True":{"y":"2013","g":"Electronic"},"Franz Ferdinand|||Right Thoughts Right Words Right Action":{"y":"2013","g":"Dance punk"},"M.I.A.|||Matangi":{"y":"2013","g":"Electronic"},"Fuck Buttons|||Slow Focus":{"y":"2013","g":"Electronic"},"The Flaming Lips|||The Terror":{"y":"2013","g":"Experimental"},"Beck|||Song Reader":{"y":"2014","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -333,9 +334,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -354,6 +361,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -415,6 +423,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

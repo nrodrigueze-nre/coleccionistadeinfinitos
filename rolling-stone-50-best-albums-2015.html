@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST ALBUMS 2015 &#183; DIC 2015</span><a href="https://www.rollingstone.com/music/music-lists/50-best-albums-of-2015-146153/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Kendrick Lamar|||To Pimp a Butterfly":{"y":"2015","g":"Jazz rap"},"Adele|||25":{"y":"2015","g":"Adele"},"D'Angelo and the Vanguard|||Black Messiah":{"y":"2014","g":"Classic"},"Sleater-Kinney|||No Cities to Love":{"y":"2015","g":"Indie rock"},"Kamasi Washington|||The Epic":{"y":"","g":"Jazz"},"Jason Isbell|||Something More Than Free":{"y":"2025","g":"Roots rock"},"Chris Stapleton|||Traveller":{"y":"2015","g":"Country"},"Father John Misty|||I Love You Honeybear":{"y":"2015","g":"Alt-country"},"Courtney Barnett|||Sometimes I Sit and Think and Sometimes I Just Sit":{"y":"2015","g":""},"The Weeknd|||Beauty Behind the Madness":{"y":"","g":"Rnb"},"Drake|||If You're Reading This It's Too Late":{"y":"2015","g":"Hip hop"},"Halsey|||Badlands":{"y":"2015","g":"Pop"},"Wilco|||Star Wars":{"y":"2015","g":"Indie"},"Miguel|||Wildheart":{"y":"2015","g":"Soul"},"Alabama Shakes|||Sound and Color":{"y":"2015","g":""},"Blur|||The Magic Whip":{"y":"2015","g":"Alternative rock"},"Bob Dylan|||Shadows in the Night":{"y":"2015","g":"Jazz"},"Rhiannon Giddens|||Tomorrow Is My Turn":{"y":"2015","g":"Folk"},"Future|||DS2":{"y":"2015","g":"Trap"},"Sufjan Stevens|||Carrie and Lowell":{"y":"2015","g":"Alternative"},"Joanna Newsom|||Divers":{"y":"2015","g":"Chamber folk"},"Vince Staples|||Summertime '06":{"y":"2015","g":"Hardcore hip hop"},"Car Seat Headrest|||Teens of Style":{"y":"2015","g":"Noise pop"},"Leon Bridges|||Coming Home":{"y":"2015","g":"Soul"},"Jazmine Sullivan|||Reality Show":{"y":"2015","g":"Playful"},"Beach House|||Depression Cherry":{"y":"2015","g":"Dream pop"},"Marilyn Manson|||The Pale Emperor":{"y":"2014","g":"Alternative rock"},"Darlene Love|||Introducing Darlene Love":{"y":"","g":""},"Eric Church|||Mr. Misunderstood":{"y":"2015","g":"Country"},"Hop Along|||Painted Shut":{"y":"2015","g":"Indie rock"},"Ashley Monroe|||The Blade":{"y":"2015","g":"Country"},"Muse|||Drones":{"y":"2015","g":"Alternative rock"},"Songhoy Blues|||Music in Exile":{"y":"2015","g":"Cds I own"},"Bjork|||Vulnicura":{"y":"2015","g":""},"Selena Gomez|||Revival":{"y":"2021","g":"Pop"},"Rae Sremmurd|||SremmLife":{"y":"2015","g":"Best of 2015"},"Madonna|||Rebel Heart":{"y":"2015","g":"Pop"},"James Taylor|||Before This World":{"y":"2015","g":"Rock"},"Carly Rae Jepsen|||Emotion":{"y":"2010","g":"Pop"},"Bomba Estereo|||Amanecer":{"y":"2015","g":""},"Keith Richards|||Crosseyed Heart":{"y":"2015","g":""},"Don Henley|||Cass County":{"y":"2015","g":"Country"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -298,9 +299,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -319,6 +326,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -380,6 +388,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

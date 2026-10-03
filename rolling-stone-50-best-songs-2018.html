@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST SONGS 2018 &#183; DIC 2018</span><a href="https://www.rollingstone.com/music/music-lists/50-best-songs-of-2018-764204/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Drake|||In My Feelings":{"y":"2018","g":"Rap"},"Lady Gaga and Bradley Cooper|||Shallow":{"y":"2018","g":"Soundtrack"},"Cardi B feat. Bad Bunny and J Balvin|||I Like It":{"y":"2018","g":"Hip-Hop/Rap"},"Camila Cabello|||Never Be the Same":{"y":"2017","g":"Pop"},"Drake|||Nice For What":{"y":"2018","g":"Rap"},"Lana Del Rey|||Mariners Apartment Complex":{"y":"2018","g":"Pop"},"Courtney Barnett|||Charity":{"y":"2018","g":""},"Paul McCartney|||Come on to Me":{"y":"2018","g":"Rock"},"Janelle Monae|||Make Me Feel":{"y":"2018","g":""},"Travis Scott|||Sicko Mode":{"y":"2018","g":"Trap"},"Nio Garcia Casper Magico Darell Bad Bunny Ozuna and Nicky Jam|||Te Bote (Remix)":{"y":"2018","g":"Urbano latino"},"Taylor Swift|||Delicate":{"y":"2018","g":"Pop"},"Snail Mail|||Pristine":{"y":"2018","g":""},"Sheck Wes|||Mo Bamba":{"y":"2018","g":"Trap"},"Kacey Musgraves|||High Horse":{"y":"2018","g":""},"Ariana Grande|||Thank U Next":{"y":"2018","g":"Pop"},"Eric Church|||Desperate Man":{"y":"","g":"Vinyl"},"Shawn Mendes|||Nervous":{"y":"1997","g":"Pop"},"J Balvin and Nicky Jam|||X":{"y":"2018","g":"Urbano latino"},"The 1975|||Love It If We Made It":{"y":"2018","g":"Indie"},"Kurt Vile|||Bassackwards":{"y":"2019","g":""},"Karol G|||Mi Cama":{"y":"2018","g":""},"Christina Aguilera|||Unless It's With You":{"y":"2010","g":""},"The Carters|||Ape Shit":{"y":"2006","g":"Hip-Hop/Rap"},"Mitski|||A Pearl":{"y":"2021","g":"Indie rock"},"Carly Rae Jepsen|||Party for One":{"y":"2018","g":"Pop"},"Tove Styrke|||Changed My Mind":{"y":"2018","g":"Pop"},"Stephen Malkmus and the Jicks|||Middle America":{"y":"2018","g":"Alternative"},"Pistol Annies|||Best Years of My Life":{"y":"2021","g":"Country"},"Lucy Dacus|||Night Shift":{"y":"2017","g":"Indie rock"},"Lil Baby feat. Gunna|||Drip Too Hard":{"y":"2018","g":"Hip-Hop/Rap"},"Hayley Kiyoko|||Curious":{"y":"2018","g":""},"Robyn|||Ever Again":{"y":"2019","g":"Musicals"},"Hop Along|||How Simple":{"y":"2016","g":""},"Rosalia|||Pienso En Tu Mira (Cap. 3: Celos)":{"y":"2018","g":"Pop"},"Christine and the Queens|||Doesn't Matter":{"y":"2022","g":"Alternative"},"Low Cut Connie|||Beverly":{"y":"2006","g":""},"BTS|||Fake Love":{"y":"2018","g":"Bts"},"Childish Gambino|||This Is America":{"y":"2018","g":"Rap"},"Yella Beezy feat. Lil Baby|||Up One (Remix)":{"y":"1996","g":""},"Troye Sivan|||Animal":{"y":"2018","g":""},"King Princess|||1950":{"y":"2018","g":"Singer/Songwriter"},"Nicki Minaj|||Barbie Dreams":{"y":"2012","g":"Hip-Hop/Rap"},"Iceage|||Thieves Like Us":{"y":"1984","g":""},"Willie Nelson|||Bad Breath":{"y":"2024","g":"Country"},"Playboi Carti feat. Nicki Minaj|||Poke It Out":{"y":"2020","g":"R&B/Soul"},"The Beths|||Happy Unhappy":{"y":"1967","g":"Rock"},"Teyana Taylor|||Gonna Love Me":{"y":"2008","g":""},"Arctic Monkeys|||Four Out of Five":{"y":"2018","g":""},"Weezer|||Africa":{"y":"2018","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

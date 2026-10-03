@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.rollingstone.com/music/music-lists/best-summer-songs-of-all-time-43407/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Chic|||Good Times":{"y":"1979","g":""},"Martha and The Vandellas|||Dancing in the Street":{"y":"1968","g":"R&B/Soul"},"Marvin Gaye|||Got to Give It Up":{"y":"1977","g":""},"Public Enemy|||Fight the Power":{"y":"1989","g":""},"The Beach Boys|||California Girls":{"y":"1965","g":"Rock"},"Alice Cooper|||School's Out":{"y":"1974","g":""},"Prince|||When Doves Cry":{"y":"1984","g":"Funk"},"The Go-Gos|||Vacation":{"y":"1982","g":""},"Wizkid feat. Tems|||Essence":{"y":"2020","g":""},"Cardi B Bad Bunny and J Balvin|||I Like It":{"y":"2018","g":""},"Rauw Alejandro|||Todo de Ti":{"y":"2021","g":"Pop"},"Bananarama|||Cruel Summer":{"y":"1983","g":""},"BTS and Megan Thee Stallion|||Butter (Remix)":{"y":"2021","g":""},"LFO|||Summer Girls":{"y":"1999","g":""},"Ramones|||Rockaway Beach":{"y":"1977","g":"Punk"},"Eric Church|||Springsteen":{"y":"2012","g":""},"Len|||Steal My Sunshine":{"y":"1999","g":"Pop"},"Seals and Crofts|||Summer Breeze":{"y":"1972","g":""},"Eddie Cochran|||Summertime Blues":{"y":"1996","g":""},"Lil Nas X|||Old Town Road":{"y":"","g":""},"Pavement|||Summer Babe (Winter Version)":{"y":"1991","g":"Alternative"},"Grateful Dead|||Scarlet Begonias":{"y":"2015","g":""},"Sam Cooke|||Summertime":{"y":"1959","g":""},"Drake|||In My Feelings":{"y":"2018","g":"Rap"},"Luis Fonsi feat. Daddy Yankee|||Despacito":{"y":"2017","g":"Urbano latino"},"Snoop Doggy Dogg|||Gin and Juice":{"y":"1994","g":"Rap"},"The Lovin' Spoonful|||Summer In the City":{"y":"1966","g":"Pop"},"Ginuwine|||Pony":{"y":"2018","g":"Rnb"},"Harry Styles|||As It Was":{"y":"2022","g":"Pop"},"Cardi B and Megan Thee Stallion|||WAP":{"y":"2020","g":""},"Dick Dale|||Miserlou":{"y":"1962","g":"Rock"},"Koffee|||Toast":{"y":"1989","g":""},"Snail Mail|||Heat Wave":{"y":"2018","g":"Alternative"},"Chubby Checker|||Let's Twist Again":{"y":"1961","g":"R&B/Soul"},"Donna Summer|||Hot Stuff":{"y":"1979","g":""},"Taylor Swift|||Cruel Summer":{"y":"2023","g":"Electropop"},"Rob Base and DJ E-Z Rock|||It Takes Two":{"y":"1988","g":""},"Jan and Dean|||Surf City":{"y":"1988","g":""},"Santo and Johnny|||Sleepwalk":{"y":"2002","g":"Pop"},"Led Zeppelin|||Dancing Days":{"y":"2006","g":""},"Superchunk|||This Summer":{"y":"2012","g":"Folk"},"Chicago|||Saturday in the Park":{"y":"1972","g":"Rock"},"Eric Burdon and War|||Spill the Wine":{"y":"1970","g":"Rock"},"The B-52s|||Rock Lobster":{"y":"1979","g":"New wave"},"Wilco|||Heavy Metal Drummer":{"y":"2002","g":""},"The Drifters|||Under The Boardwalk":{"y":"2000","g":""},"The Hold Steady|||Constructive Summer":{"y":"2023","g":""},"Nelly|||Hot in Herre":{"y":"","g":"Hip-Hop"},"Jonathan Richman|||That Summer Feeling":{"y":"1984","g":"Rock"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -474,9 +475,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -495,6 +502,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -556,6 +564,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

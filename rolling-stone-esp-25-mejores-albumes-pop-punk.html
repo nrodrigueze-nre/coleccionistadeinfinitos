@@ -206,7 +206,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/los-25-mejores-albumes-de-pop-punk/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Blink-182|||Enema of the State":{"y":"","g":"Pop punk"},"Green Day|||American Idiot":{"y":"2004","g":"Punk rock"},"Paramore|||Riot!":{"y":"2007","g":"Pop punk"},"Green Day|||Dookie":{"y":"1994","g":"Test"},"My Chemical Romance|||Three Cheers for Sweet Revenge":{"y":"2004","g":"Rock"},"The Offspring|||Conspiracy of One":{"y":"2000","g":"Punk rock"},"Blink-182|||Blink-182":{"y":"2003","g":"Pop punk"},"Avril Lavigne|||Let Go":{"y":"2002","g":"Rock"},"Sum 41|||All Killer No Filler":{"y":"2001","g":"Punk rock"},"Simple Plan|||No Pads No Helmets Just Balls":{"y":"2002","g":"Pop"},"Fall Out Boy|||From Under the Cork Tree":{"y":"2005","g":"Pop punk"},"NOFX|||Punk in Drublic":{"y":"1994","g":"Punk rock"},"Millencolin|||Pennybridge Pioneers":{"y":"","g":"Punk rock"},"Weezer|||Weezer (Blue Album)":{"y":"1994","g":"Alternative"},"Goldfinger|||Goldfinger":{"y":"1996","g":"Ska punk"},"Good Charlotte|||The Chronicles of Life and Death":{"y":"2005","g":"Pop punk"},"Panic! At the Disco|||A Fever You Cant Sweat Out":{"y":"2005","g":"Fueled by Ramen"},"Descendents|||Milo Goes to College":{"y":"1982","g":"Hardcore punk"},"My Chemical Romance|||The Black Parade":{"y":"2006","g":"Rock"},"Jimmy Eat World|||Bleed American":{"y":"2001","g":"Alternative rock"},"Simple Plan|||Still Not Getting Any":{"y":"","g":"Pop punk"},"Fall Out Boy|||Take This to Your Grave":{"y":"2003","g":"Pop punk"},"New Found Glory|||New Found Glory":{"y":"2000","g":"Pop punk"},"Saves the Day|||Through Being Cool":{"y":"1999","g":"Pop punk"},"Yellowcard|||Ocean Avenue":{"y":"","g":"Pop punk"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -339,9 +340,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -360,6 +367,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -421,6 +429,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

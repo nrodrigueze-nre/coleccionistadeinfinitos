@@ -200,7 +200,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <span class="foot-left">STEREOGUM &#183; 36 ESSENTIAL 80S POP METAL TRACKS &#183; ABR 2017</span>
   <a href="https://stereogum.com/1922586/36-essential-80s-pop-metal-tracks/lists" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
-<script>
+<script>var BAKED_DATA={"Def Leppard|||Photograph":{"y":"1983","g":""},"White Lion|||Wait":{"y":"1987","g":"Hard Rock"},"Van Halen|||Jump":{"y":"1983","g":""},"Ratt|||Round and Round":{"y":"1987","g":""},"Scorpions|||Rock You Like a Hurricane":{"y":"2014","g":""},"Aldo Nova|||Fantasy":{"y":"1982","g":""},"Alice Cooper|||Poison":{"y":"","g":"Hard rock"},"Guns N Roses|||Sweet Child O Mine":{"y":"1988","g":"Rock"},"Judas Priest|||Turbo Lover":{"y":"1986","g":""},"Kix|||Cold Blood":{"y":"2012","g":"Rock"},"Motley Crue|||Home Sweet Home":{"y":"1985","g":""},"Skid Row|||18 and Life":{"y":"1989","g":"Rock"},"Whitesnake|||Still of the Night":{"y":"1987","g":""},"Guns N Roses|||Welcome to the Jungle":{"y":"1987","g":"Hard rock"},"Twisted Sister|||We're Not Gonna Take It":{"y":"1999","g":"Rock"},"King's X|||Over My Head":{"y":"1989","g":"Rock"},"Quiet Riot|||Metal Health (Bang Your Head)":{"y":"1983","g":"Hard Rock"},"Bon Jovi|||You Give Love a Bad Name":{"y":"1986","g":"Rock"},"Def Leppard|||Animal":{"y":"1987","g":"Hard Rock"},"David Lee Roth|||Yankee Rose":{"y":"1986","g":""},"Dokken|||In My Dreams":{"y":"2018","g":"Rock"},"Hanoi Rocks|||Boulevard of Broken Dreams":{"y":"1990","g":""},"Ozzy Osbourne|||Shot in the Dark":{"y":"1986","g":""},"Winger|||Seventeen":{"y":"2006","g":"Rock"},"Autograph|||Turn Up the Radio":{"y":"1984","g":""},"Cinderella|||Gypsy Road":{"y":"1988","g":""},"Extreme|||Get the Funk Out":{"y":"1990","g":""},"Night Ranger|||When You Close Your Eyes":{"y":"1984","g":"Hard Rock"},"Lita Ford|||Kiss Me Deadly":{"y":"1997","g":"Hard Rock"},"KISS|||Lick It Up":{"y":"1983","g":"Hard Rock"},"Love Hate|||Why Do You Think They Call It Dope":{"y":"2025","g":""},"Black N Blue|||Miss Mystery":{"y":"1984","g":""},"Europe|||The Final Countdown":{"y":"1988","g":"Rock"},"Faster Pussycat|||Bathroom Wall":{"y":"2018","g":"Hard Rock"},"Poison|||Fallen Angel":{"y":"1988","g":"Hard Rock"},"Enuff Z Nuff|||Fly High Michelle":{"y":"","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -333,9 +334,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -354,6 +361,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -415,6 +423,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

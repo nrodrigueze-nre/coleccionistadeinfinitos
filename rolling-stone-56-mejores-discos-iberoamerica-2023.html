@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/los-discos-iberoamericanos-que-marcaron-el-ano-2023/" target="_blank" class="foot-link">Ver artículo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Tainy|||DATA":{"y":"2023","g":"Reggaeton"},"Mon Laferte|||Autopoiética":{"y":"2023","g":"Art pop"},"Carin León|||Colmillo de leche":{"y":"2023","g":""},"Fito Páez|||EADDA9223":{"y":"2023","g":""},"Kali Uchis|||Red Moon in Venus":{"y":"2023","g":"Rnb"},"Cabra|||MARTÍNEZ":{"y":"2023","g":""},"Don Omar|||FOREVER KING":{"y":"2023","g":"Hip-Hop/Rap"},"Alemán|||Haciéndolo fino":{"y":"2018","g":"Jazz"},"Aitana|||alpha":{"y":"2023","g":"Alternative"},"Vico C|||Pánico":{"y":"2023","g":""},"Humbe|||Esencia":{"y":"2023","g":"Pop Latino"},"Natanael Cano|||Nata Montana":{"y":"2023","g":"Música Mexicana"},"Monsieur Periné|||Bolero apocalíptico":{"y":"2023","g":""},"Sen Senra|||PO2054AZ Vol. 1":{"y":"2023","g":"Pop Latino"},"Daniela Spalla|||DARA":{"y":"2023","g":"Pop Latino"},"Molotov|||Solo D'Lira":{"y":"2023","g":""},"Triángulo de amor bizarro|||SED":{"y":"2023","g":""},"Él mató a un policía motorizado|||Súper terror":{"y":"2023","g":"Mid"},"Eladio Carrión|||3MEN2 KBRN":{"y":"2023","g":""},"Santiago Cruz|||Nueve":{"y":"2023","g":"Latin"},"Myke Towers|||La vida es una":{"y":"2023","g":"Pop Latino"},"Rawayana|||Quién trae las cornetas":{"y":"2023","g":""},"Diamante Eléctrico|||Leche de tigre":{"y":"2023","g":"Rock"},"Alex Anwandter|||El diablo en el cuerpo":{"y":"2023","g":"Synthpop"},"Hello Seahorse!|||Híper":{"y":"2023","g":"Ambient"},"Miranda!|||Hotel Miranda!":{"y":"2023","g":"Pop Latino"},"Yadam|||Belamor":{"y":"","g":"Pop Latino"},"Paula Arenas|||A ciegas":{"y":"2023","g":"Pop"},"KHEA|||SEROTONINA":{"y":"2023","g":""},"León Larregui|||Prismarama":{"y":"2023","g":"Neo-psychedelic"},"Francisca Valenzuela|||Adentro":{"y":"2023","g":"Rock y Alternativo"},"Paula Cendejas|||FOMO":{"y":"2023","g":"Pop Latino"},"Manuel Turizo|||2000":{"y":"2023","g":""},"Usted Señalemelo|||Tripolar":{"y":"2023","g":"Mid"},"Dellafuente|||Lágrimas pa otro día":{"y":"2023","g":""},"Juanes|||Vida cotidiana":{"y":"2023","g":""},"Mengers / Progreso nacional|||Vs.":{"y":"2023","g":""},"Velandia y La Tigra|||Proverbios burros":{"y":"2021","g":""},"Arde Bogotá|||Cowboys de la A3":{"y":"2023","g":"Rock y Alternativo"},"Juan Pablo Vega|||Despídeme de todxs":{"y":"2025","g":"Pop Latino"},"Karol G|||Mañana será bonito":{"y":"2023","g":"Latin"},"Emilia|||.mp3":{"y":"2023","g":"Dance-pop"},"Becky G|||Esquinas":{"y":"2023","g":""},"The Guapos|||Hey!":{"y":"2023","g":"Rock"},"Oh' Laville|||Aurora":{"y":"1994","g":"Alternative"},"Peso Pluma|||Génesis":{"y":"2023","g":"Peso Pluma"},"Diles que no me maten|||Obrigaggi":{"y":"2023","g":""},"Feid|||MOR no le temas a la oscuridad":{"y":"2023","g":""},"Isla de Caras|||Gran turismo":{"y":"2023","g":"Rock y Alternativo"},"Nicki Nicole|||Alma":{"y":"2023","g":""},"Lalo Cortés|||Re-Encuentro":{"y":"1989","g":""},"Delfina Dib|||Directo al cora":{"y":"2010","g":""},"Conexión Divina|||Tres mundos":{"y":"2012","g":"Música Mexicana"},"Sofía Reyes|||Milamores":{"y":"2023","g":"Álbuns ✅"},"Junior H|||Sad Boyz 4 Life II":{"y":"2023","g":""},"Ana Mena|||Bellodrama":{"y":"","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -467,9 +468,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -488,6 +495,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -549,6 +557,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

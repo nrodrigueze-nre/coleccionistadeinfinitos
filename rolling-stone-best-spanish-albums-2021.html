@@ -200,7 +200,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <span class="foot-left">ROLLING STONE &#183; 35 BEST SPANISH-LANGUAGE ALBUMS &#183; DIC 2021</span>
   <a href="https://www.rollingstone.com/music/music-lists/best-spanish-language-albums-2021-1269982/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
-<script>
+<script>var BAKED_DATA={"Rauw Alejandro|||Vice Versa":{"y":"2021","g":"Reggaeton"},"C. Tangana|||El Madrileño":{"y":"2021","g":"Latin"},"Cimafunk|||El Alimento":{"y":"2021","g":"3"},"Mabiland|||Niñxs Rotxs":{"y":"2019","g":"3"},"Natalia Lafourcade|||Un Canto Por Mexico Vol 2":{"y":"2021","g":""},"Juanes|||Origen":{"y":"2021","g":""},"Alvaro Diaz|||Felicilandia":{"y":"2021","g":"Reggaeton"},"Xenia Rubinos|||Una Rosa":{"y":"2021","g":"3"},"Xiomara Fortuna|||Viendoaver":{"y":"","g":"Latin"},"Ruben Blades Roberto Delgado|||Salswing!":{"y":"2021","g":""},"Petrona Martinez|||Ancestras":{"y":"2021","g":"Worldwide"},"Myke Towers|||Lyke Mike":{"y":"2021","g":"2"},"Zoe|||Sonidos De Karmatica Resonancia":{"y":"2021","g":"Rock y Alternativo"},"Bomba Estereo|||Deja":{"y":"2021","g":""},"Alea|||Alborota":{"y":"1992","g":""},"Mon Laferte|||Seis":{"y":"2021","g":"3"},"Javiera Mena|||I. Entusiasmo":{"y":"2021","g":"Latin"},"Eladio Carrion|||Monarca":{"y":"2021","g":""},"Diamante Electrico|||Mira Lo Que Me Hiciste Hacer":{"y":"2021","g":""},"Helado Negro|||Far In":{"y":"2021","g":"3"},"Sech|||42":{"y":"2021","g":""},"Calibre 50|||Vamos Bien":{"y":"2021","g":"Música Mexicana"},"Randy|||Romances De Una Nota 2021 Vol 2":{"y":"2021","g":""},"Elvis Costello|||Spanish Model":{"y":"2021","g":"Rock"},"Jhay Cortez|||Timelezz":{"y":"2021","g":"3"},"Nino Augustine|||Global Ninz":{"y":"1997","g":""},"Ed Maverick|||Eduardo":{"y":"2021","g":"Acid techno"},"Amenazzy|||Santo Nino":{"y":"2002","g":""},"Maria Isabel|||i hope youre very unhappy without me":{"y":"2004","g":"R&B/Soul"},"La Santa Cecilia|||Quiero Verte Feliz":{"y":"2021","g":"Pop Latino"},"The Marias|||CINEMA":{"y":"2021","g":""},"ElArturo|||Y Que":{"y":"2017","g":""},"Nicki Nicole|||Parte De Mi":{"y":"2021","g":"Pop Latino"},"Mas Aya|||Mascaras":{"y":"2021","g":""},"Big Soto|||The Good Trip":{"y":"2021","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -333,9 +334,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -354,6 +361,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -415,6 +423,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

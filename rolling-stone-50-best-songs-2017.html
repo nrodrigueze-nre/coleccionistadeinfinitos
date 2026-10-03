@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 BEST SONGS 2017 &#183; NOV 2017</span><a href="https://www.rollingstone.com/music/music-lists/50-best-songs-of-2017-116129/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Harry Styles|||Sign of the Times":{"y":"2017","g":"Rock"},"Lorde|||Homemade Dynamite":{"y":"2017","g":"Tove Lo"},"Kendrick Lamar|||Humble.":{"y":"2017","g":"Rap"},"Cardi B|||Bodak Yellow":{"y":"2017","g":"Trap"},"U2|||Lights of Home":{"y":"2018","g":"Rock"},"Migos feat. Lil Uzi Vert|||Bad and Boujee":{"y":"","g":""},"Luis Fonsi and Daddy Yankee feat. Justin Bieber|||Despacito":{"y":"2017","g":""},"Portugal. The Man|||Feel It Still":{"y":"2017","g":"Poptron"},"Lana Del Rey feat. The Weeknd|||Lust for Life":{"y":"2017","g":""},"Future|||Mask Off":{"y":"2017","g":"Future"},"Tove Styrke|||Say My Name":{"y":"2017","g":"Pop"},"Selena Gomez|||Bad Liar":{"y":"2017","g":"Pop"},"Ed Sheeran|||Shape of You":{"y":"2017","g":"Pop"},"LCD Soundsystem|||Call the Police":{"y":"2017","g":"Electronic"},"Drake|||Passionfruit":{"y":"2017","g":"Rnb"},"Julia Michaels|||Uh Huh":{"y":"2017","g":"Pop"},"Lil Uzi Vert|||XO Tour Llif3":{"y":"2017","g":"Emo rap"},"Beck|||Dear Life":{"y":"2017","g":""},"Diet Cig|||Sixteen":{"y":"2005","g":""},"Taylor Swift|||Call It What You Want":{"y":"2017","g":"Pop"},"Arcade Fire|||Everything Now":{"y":"2017","g":"Alternative"},"Spoon|||Hot Thoughts":{"y":"2017","g":"Alternative"},"Charli XCX|||Boys":{"y":"2017","g":""},"DJ Khaled feat. Rihanna and Bryson Tiller|||Wild Thoughts":{"y":"2017","g":"Hip-Hop/Rap"},"Superorganism|||Something For Your M.I.N.D.":{"y":"2017","g":""},"Tee Grizzley|||First Day Out":{"y":"2017","g":""},"Calvin Harris feat. Frank Ocean and Migos|||Slide":{"y":"2017","g":""},"Charly Bliss|||Glitter":{"y":"2002","g":""},"J Balvin and Willy William|||Mi Gente":{"y":"2017","g":"Urbano latino"},"Jidenna|||Bambi":{"y":"2017","g":""},"Craig Finn|||God in Chicago":{"y":"2015","g":"Alternative"},"Margo Price|||Pay Gap":{"y":"2015","g":"Americana"},"Dirty Projectors|||Up in Hudson":{"y":"2017","g":""},"Dua Lipa feat. Miguel|||Lost in Your Light":{"y":"2017","g":""},"Lil Yachty feat. Diplo|||Forever Young":{"y":"1992","g":"Hip-Hop/Rap"},"Fergie feat. Nicki Minaj|||You Already Know":{"y":"2017","g":""},"Kamasi Washington|||Truth":{"y":"2017","g":""},"Kodak Black|||Tunnel Vision":{"y":"2017","g":"Trap"},"Big Thief|||Shark Smile":{"y":"2017","g":"Alternative"},"Carly Rae Jepsen|||Cut to the Feeling":{"y":"2017","g":""},"Miley Cyrus|||Malibu":{"y":"2017","g":"Pop"},"Dan Auerbach|||Waiting on a Song":{"y":"2017","g":""},"Gorillaz feat. Popcaan|||Saturnz Barz":{"y":"2017","g":""},"Lindsey Buckingham and Christine McVie|||In My World":{"y":"2017","g":""},"Laura Marling|||Wild Fire":{"y":"2017","g":"Singer/Songwriter"},"Willie Nelson|||Delete and Fast Forward":{"y":"1995","g":""},"YFN Lucci feat. PnB Rock|||Everyday We Lit":{"y":"2016","g":"Hip-Hop/Rap"},"Haim|||Want You Back":{"y":"2017","g":""},"21 Savage|||Bank Account":{"y":"2017","g":"Hip-Hop/Rap"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

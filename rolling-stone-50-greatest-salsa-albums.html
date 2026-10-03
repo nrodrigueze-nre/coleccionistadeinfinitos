@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 GREATEST SALSA ALBUMS &#183; OCT 2024</span><a href="https://www.rollingstone.com/music/music-lists/best-salsa-albums-1235139298/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Willie Colon and Ruben Blades|||Siembra":{"y":"1978","g":"Salsa"},"Eddie Palmieri|||Azucar Pa Ti":{"y":"1965","g":""},"Hector Lavoe|||Comedia":{"y":"1978","g":"Latino"},"Cheo Feliciano|||Cheo":{"y":"1971","g":"Latin"},"Johnny Pacheco and Celia Cruz|||Celia y Johnny":{"y":"1974","g":""},"Oscar D'Leon|||Y Su Salsa Mayor":{"y":"1978","g":"Latin"},"La Sonora Poncena|||Musical Conquest":{"y":"1976","g":""},"Ray Barretto|||Indestructible":{"y":"1973","g":""},"El Gran Combo|||Aqui No Se Sienta Nadie!":{"y":"1979","g":""},"Fruko y sus Tesos|||El Grande":{"y":"1975","g":"Música tropical"},"Rafael Cortijo and Ismael Rivera|||Con Todos Los Hierros":{"y":"1967","g":"Música tropical"},"Roberto Roena y su Apollo Sound|||6":{"y":"1974","g":""},"Willie Colon and Hector Lavoe|||Cosa Nuestra":{"y":"1969","g":"Latin"},"Grupo Niche|||No Hay Quinto Malo":{"y":"1984","g":"Salsa"},"Mark Dimond|||Brujeria":{"y":"1971","g":""},"Fania All-Stars|||Live at the Cheetah Vol. 1":{"y":"1972","g":"Música tropical"},"Tito Puente|||Para Los Rumberos":{"y":"1972","g":""},"Joe Arroyo y La Verdad|||Musa Original":{"y":"1986","g":""},"Ruben Blades y Seis del Solar|||Buscando America":{"y":"1984","g":"Música tropical"},"Orchestra Harlow|||Salsa":{"y":"1974","g":"Música tropical"},"Eddie Palmieri|||The Sun of Latin Music":{"y":"2008","g":"Latin jazz"},"The Joe Cuba Sextet|||Wanted Dead or Alive":{"y":"2018","g":""},"Willie Colon|||Fantasmas":{"y":"1981","g":""},"Willie Rosario|||Infinito":{"y":"1973","g":"Salsa"},"Bobby Valentin|||Soy Boricua":{"y":"1972","g":"Música tropical"},"Gilberto Santa Rosa|||Intenso":{"y":"2001","g":"Salsa"},"Ricardo Ray y Bobby Cruz|||El Bestial Sonido De...":{"y":"","g":"Música tropical"},"Ismael Miranda|||Asi Se Compone Un Son":{"y":"1973","g":"Ismael miranda"},"Marc Anthony|||Todo a Su Tiempo":{"y":"1995","g":"Salsa"},"Johnny Pacheco and Pete El Conde|||Tres de Cafe y Dos de Azucar":{"y":"1973","g":""},"La Dimension Latina|||75":{"y":"1974","g":""},"Willie Colon and Hector Lavoe|||Asalto Navideno":{"y":"1972","g":"Música tropical"},"Ismael Rivera y sus Cachimbos|||Esto Si Es Lo Mio":{"y":"1978","g":""},"Charlie Palmieri|||El Gigante del Teclado":{"y":"1973","g":"Latin jazz"},"La Lupe|||Queen of Latin Soul":{"y":"1968","g":""},"Angel Canales|||Sabor":{"y":"1975","g":""},"Frankie Ruiz|||Solista... Pero No Solo":{"y":"1985","g":""},"Ray Barretto|||Rican/Struction":{"y":"1979","g":"Música tropical"},"Justo Betancourt|||Pa Bravo Yo":{"y":"1972","g":"Música tropical"},"Tommy Olivencia y su Orquesta|||Plante Bandera":{"y":"1975","g":""},"Tito Puente|||Homenaje a Beny":{"y":"1978","g":""},"Machito|||Fireworks":{"y":"1992","g":""},"Spanish Harlem Orchestra|||Across 110th Street":{"y":"2004","g":"Salsa"},"Cheo Feliciano|||Estampas":{"y":"1979","g":"Música tropical"},"India|||Llego La India Via Eddie Palmieri":{"y":"1992","g":"Música tropical"},"Tipica 73|||Tipica 73":{"y":"1974","g":"Música tropical"},"Guayacan Orquesta|||Sentimental de Punta a Punta":{"y":"1991","g":"Música tropical"},"Luis Enrique|||Ciclos":{"y":"2009","g":"Salsa romantica"},"Bobby Rodriguez|||Lead Me to That Beautiful Band":{"y":"1975","g":""},"La-33|||La-33":{"y":"2004","g":"Música tropical"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

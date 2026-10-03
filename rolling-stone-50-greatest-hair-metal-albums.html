@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">ROLLING STONE &#183; 50 GREATEST HAIR METAL ALBUMS &#183; AGO 2019</span><a href="https://www.rollingstone.com/music/music-lists/50-greatest-hair-metal-albums-of-all-time-162362/" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Def Leppard|||Hysteria":{"y":"1987","g":"Hard rock"},"Poison|||Look What the Cat Dragged In":{"y":"1986","g":"Hard Rock"},"Bon Jovi|||Slippery When Wet":{"y":"1986","g":"Hard rock"},"Motley Crue|||Shout at the Devil":{"y":"1983","g":"Hard Rock"},"Skid Row|||Skid Row":{"y":"1989","g":"Hard rock"},"Ratt|||Out of the Cellar":{"y":"1984","g":"Glam Metal"},"Faster Pussycat|||Faster Pussycat":{"y":"1987","g":"Hard Rock"},"Kix|||Blow My Fuse":{"y":"1988","g":"Hard rock"},"Motley Crue|||Too Fast for Love":{"y":"1981","g":""},"Cinderella|||Long Cold Winter":{"y":"1988","g":"Hard rock"},"Tesla|||The Great Radio Controversy":{"y":"1989","g":"Hard rock"},"Whitesnake|||Whitesnake":{"y":"1987","g":"Hard rock"},"Extreme|||Extreme II Pornograffitti":{"y":"1990","g":""},"Warrant|||Dirty Rotten Filthy Stinking Rich":{"y":"1988","g":"Glam Metal"},"Quiet Riot|||Metal Health":{"y":"1983","g":"Heavy metal"},"Twisted Sister|||Stay Hungry":{"y":"1984","g":"Heavy metal"},"Def Leppard|||Pyromania":{"y":"1983","g":"Hard rock"},"Cinderella|||Night Songs":{"y":"1987","g":"Hard rock"},"Warrant|||Cherry Pie":{"y":"1990","g":"Hard rock"},"Love/Hate|||Blackout in the Red Room":{"y":"1990","g":"Rock"},"Dokken|||Under Lock and Key":{"y":"1985","g":"Hard rock"},"White Lion|||Pride":{"y":"1987","g":"Hard rock"},"Hanoi Rocks|||Self Destruction Blues":{"y":"1985","g":"Hard rock"},"Enuff Z'Nuff|||Enuff Z'Nuff":{"y":"1989","g":"Power pop"},"David Lee Roth|||Eat 'Em and Smile":{"y":"1986","g":"Hard rock"},"Poison|||Open Up and Say... Ahh!":{"y":"1988","g":"Hair metal"},"L.A. Guns|||Cocked and Loaded":{"y":"1989","g":"Hard Rock"},"Black 'N Blue|||Black 'N Blue":{"y":"","g":"Hard rock"},"Dangerous Toys|||Dangerous Toys":{"y":"","g":"Glam"},"BulletBoys|||Freakshow":{"y":"1991","g":"Hair band"},"Slaughter|||Stick It to Ya":{"y":"","g":"Hair metal"},"Great White|||...Twice Shy":{"y":"1989","g":"Hair metal"},"Saigon Kick|||The Lizard":{"y":"1992","g":"Hard rock"},"Junkyard|||Junkyard":{"y":"1989","g":"Wants"},"Badlands|||Badlands":{"y":"1989","g":"Blues rock"},"Alice Cooper|||Trash":{"y":"","g":"Hard rock"},"Bang Tango|||Psycho Cafe":{"y":"1989","g":"Hard rock"},"Britny Fox|||Britny Fox":{"y":"1988","g":"Hair metal"},"Vinnie Vincent Invasion|||Vinnie Vincent Invasion":{"y":"1986","g":"Owned"},"Stryper|||To Hell With the Devil":{"y":"1986","g":"Christian metal"},"Winger|||Winger":{"y":"1988","g":"Hard rock"},"D.A.D.|||No Fuel Left for the Pilgrims":{"y":"2016","g":""},"Vixen|||Vixen":{"y":"1988","g":"Glam Metal"},"Kiss|||Lick It Up":{"y":"1983","g":"Hard rock"},"Pretty Boy Floyd|||Leather Boyz With Electric Toyz":{"y":"1989","g":"Glam Metal"},"Kik Tracee|||No Rules":{"y":"1991","g":"Pop"},"Lita Ford|||Lita":{"y":"","g":"Hard rock"},"Precious Metal|||Right Here Right Now":{"y":"","g":"Rock"},"Mr. Big|||Lean Into It":{"y":"1991","g":"Hard rock"},"Lord Tracy|||Deaf Gods of Babylon":{"y":"1989","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';
