@@ -206,7 +206,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.billboard.com/lists/best-birthday-songs/" target="_blank" class="foot-link">Ver en Billboard &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Lesley Gore|||It's My Party":{"y":"1991","g":"Pop"},"Anne-Marie|||Birthday":{"y":"2020","g":""},"New Kids On The Block|||Happy Birthday":{"y":"2025","g":""},"Sufjan Stevens|||Happy Birthday":{"y":"2018","g":"Alternative"},"Taylor Swift|||22":{"y":"2013","g":"Pop"},"Migos|||Birthday":{"y":"2016","g":"Hip-Hop/Rap"},"Kygo feat. John Legend|||Happy Birthday":{"y":"2023","g":"Dance"},"Weird Al Yankovic|||Happy Birthday":{"y":"2006","g":"Comedy"},"Moby|||Sunday (The Day Before My Birthday)":{"y":"2003","g":""},"Olivia Rodrigo|||Teenage Dream":{"y":"2021","g":"Pop"},"Frankie Cosmos|||Birthday Song":{"y":"1955","g":"Alternative"},"Pet Shop Boys|||Birthday Boy":{"y":"2004","g":"Pop"},"Loretta Lynn|||Happy Birthday":{"y":"1974","g":""},"Drake|||Ratchet Happy Birthday":{"y":"1970","g":"Hip-Hop/Rap"},"The Smiths|||Unhappy Birthday":{"y":"1969","g":""},"Kings of Leon|||Birthday":{"y":"2018","g":"Alternative"},"Destiny's Child|||Birthday":{"y":"2023","g":""},"Selena Gomez|||Birthday":{"y":"2016","g":"Pop"},"The Click Five|||Happy Birthday":{"y":"1970","g":""},"Lizzo|||Birthday Girl":{"y":"2011","g":""},"Madonna feat. M.I.A.|||B-Day Song":{"y":"2003","g":""},"Jeremih|||Birthday Sex":{"y":"2009","g":"Birthday sex"},"Twista|||Birthday":{"y":"2016","g":"Hip-Hop"},"2 Chainz feat. Kanye West|||Birthday Song":{"y":"2012","g":""},"The Lumineers|||Birthday":{"y":"1969","g":"Alternative"},"Katy Perry|||Birthday":{"y":"2014","g":"Pop"},"50 Cent|||In Da Club":{"y":"","g":"Hip-Hop"},"Rihanna|||Birthday Cake":{"y":"2012","g":""},"Stevie Wonder|||Happy Birthday":{"y":"1970","g":""},"The Beatles|||Birthday":{"y":"1969","g":"Rock"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -339,9 +340,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -360,6 +367,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -421,6 +429,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

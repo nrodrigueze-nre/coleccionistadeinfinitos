@@ -421,6 +421,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

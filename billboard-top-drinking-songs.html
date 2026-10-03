@@ -206,7 +206,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.billboard.com/lists/top-drinking-songs-alcohol/" target="_blank" class="foot-link">Ver en Billboard &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Shaboozey|||A Bar Song (Tipsy)":{"y":"2024","g":"Country"},"Drake|||Shot for Me":{"y":"2013","g":"Hip-Hop/Rap"},"Brad Paisley|||Alcohol":{"y":"2005","g":""},"Dan and Shay|||Tequila":{"y":"2018","g":""},"Moneybagg Yo feat. Morgan Wallen|||Whiskey Whiskey":{"y":"2018","g":"Hip-Hop/Rap"},"Chappell Roan|||Red Wine Supernova":{"y":"2023","g":"Pop"},"Little Big Town|||Wine Beer Whiskey":{"y":"2020","g":"Country"},"Morgan Wallen feat. Eric Church|||Man Made a Bar":{"y":"2023","g":"Country"},"Dierks Bentley|||Drunk on a Plane":{"y":"2024","g":""},"Noah Kahan feat. Post Malone|||Dial Drunk":{"y":"2023","g":""},"Trey Songz feat. Nicki Minaj|||Bottoms Up":{"y":"2011","g":"Karaoke"},"Jamie Foxx feat. T-Pain|||Blame It (On the Alcohol)":{"y":"2009","g":"R&B/Soul"},"Kesha|||TiK ToK":{"y":"2010","g":"Pop"},"T-Pain feat. Yung Joc|||Buy U a Drank (Shawty Snappin')":{"y":"2007","g":"Hip-Hop/Rap"},"J-Kwon|||Tipsy":{"y":"2004","g":""},"Kendrick Lamar|||Swimming Pools (Drank)":{"y":"2012","g":"Hip-Hop"},"Snoop Dogg|||Gin and Juice":{"y":"1994","g":"Rap"},"Beyonce feat. Jay-Z|||Drunk in Love":{"y":"2013","g":"Pop"},"Eminem, Dr. Dre and 50 Cent|||Crack a Bottle":{"y":"2009","g":""},"Rupert Holmes|||Escape (The Pina Colada Song)":{"y":"1979","g":"Pop"},"Rihanna|||Cheers (Drink to That)":{"y":"2011","g":""},"LMFAO feat. Lil Jon|||Shots":{"y":"2016","g":""},"Post Malone|||Wow.":{"y":"2018","g":"Rap"},"Metallica|||Whiskey in the Jar":{"y":"1998","g":""},"The Champs|||Tequila":{"y":"2000","g":""},"Luke Combs|||Beer Never Broke My Heart":{"y":"2019","g":"Country"},"Eric Burdon and War|||Spill the Wine":{"y":"1970","g":"Rock"},"Chumbawamba|||Tubthumping":{"y":"1997","g":"Pop"},"UB40|||Red Red Wine":{"y":"1989","g":"Reggae"},"Toby Keith|||Red Solo Cup":{"y":"2011","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -339,9 +340,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -360,6 +367,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -421,6 +429,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

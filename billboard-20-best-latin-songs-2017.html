@@ -206,7 +206,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.billboard.com/music/music-news/the-20-best-latin-songs-of-2017-critics-picks-8078462/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Luis Fonsi & Daddy Yankee feat. Justin Bieber|||Despacito (Remix)":{"y":"2017","g":""},"J Balvin & Willy William|||Mi Gente":{"y":"2017","g":"Urbano latino"},"Romeo Santos feat. Ozuna|||El Farsante (Remix)":{"y":"2018","g":""},"Maluma|||Felices los 4":{"y":"2017","g":"Música tropical"},"Becky G feat. Bad Bunny|||Mayores":{"y":"2017","g":""},"Mon Laferte|||La Trenza":{"y":"2017","g":"Rock y Alternativo"},"Farruko, Bad Bunny & Rvssian feat. Nicki Minaj & 21 Savage|||Krippy Kush (Remix)":{"y":"2017","g":"Urbano latino"},"Enrique Iglesias feat. Descemer Bueno & Zion & Lennox|||Subeme la Radio":{"y":"2017","g":"Pop Latino"},"Nicky Jam feat. Ozuna|||Se Preparo":{"y":"2017","g":""},"Natalia Lafourcade feat. Los Macorinos|||Tu Si Sabes Quererme":{"y":"2017","g":"Pop Latino"},"Ozuna feat. Romeo Santos|||El Farsante":{"y":"2018","g":""},"Karol G|||Ahora Me Llama":{"y":"2017","g":"Urbano latino"},"Bad Bunny|||Soy Peor":{"y":"2016","g":"Urbano latino"},"Los Angeles Azules feat. Natalia Lafourcade|||Nunca Es Suficiente":{"y":"2015","g":""},"Christian Nodal|||Adios Amor":{"y":"2017","g":"Música Mexicana"},"Shakira feat. Maluma|||Chantaje":{"y":"2016","g":""},"Daddy Yankee|||Dura":{"y":"2018","g":"Urbano latino"},"Nicky Jam & Enrique Iglesias|||El Perdon (Remix)":{"y":"2015","g":"Pop"},"Luis Fonsi feat. Demi Lovato|||Echame la Culpa":{"y":"2017","g":"Pop Latino"},"Residente|||Aquel Lugar (feat. iLe & PJ Sin Suela)":{"y":"1970","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -339,9 +340,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -360,6 +367,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -421,6 +429,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

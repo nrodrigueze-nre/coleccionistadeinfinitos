@@ -200,7 +200,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <span class="foot-left">HEADPHONESTY &#183; 50 AUDIOPHILE ALBUMS &#183; SEP 2025</span>
   <a href="https://www.headphonesty.com/2025/09/albums-everyone-listen-life-audiophiles/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
-<script>
+<script>var BAKED_DATA={"Pink Floyd|||The Dark Side of the Moon":{"y":"1973","g":"Progressive rock"},"Fleetwood Mac|||Rumours":{"y":"1977","g":"Classic rock"},"Steely Dan|||Aja":{"y":"","g":"Jazz Rock"},"Roger Waters|||Amused to Death":{"y":"1992","g":"Progressive rock"},"Supertramp|||Breakfast in America":{"y":"1979","g":"Classic rock"},"Pink Floyd|||Wish You Were Here":{"y":"1995","g":"Progressive rock"},"The Prodigy|||The Fat of the Land":{"y":"1997","g":"Electronic"},"Yes|||Close to the Edge":{"y":"1972","g":"Progressive rock"},"Dire Straits|||Brothers in Arms":{"y":"1986","g":"Rock"},"King Crimson|||In the Court of the Crimson King":{"y":"1970","g":"Progressive rock"},"Genesis|||Selling England by the Pound":{"y":"1973","g":"Progressive rock"},"Miles Davis|||Kind of Blue":{"y":"1959","g":"Jazz"},"Daft Punk|||Random Access Memories":{"y":"2013","g":"Electronic"},"Return to Forever|||Romantic Warrior":{"y":"1976","g":"Jazz fusion"},"Marillion|||Clutching at Straws":{"y":"1987","g":"Progressive rock"},"Supertramp|||Crime of the Century":{"y":"1974","g":"Progressive rock"},"Frank Zappa|||Joe's Garage (Acts I-III)":{"y":"1987","g":"Rock"},"The Smashing Pumpkins|||Mellon Collie and the Infinite Sadness":{"y":"1995","g":"Alternative rock"},"Donald Fagen|||The Nightfly":{"y":"1982","g":"Jazz Rock"},"Peter Gabriel|||So":{"y":"1986","g":"Rock"},"Talk Talk|||Spirit of Eden":{"y":"1988","g":"Post-rock"},"Nine Inch Nails|||The Downward Spiral":{"y":"1994","g":"Industrial rock"},"Marillion|||Misplaced Childhood":{"y":"1985","g":"Rock"},"The Beach Boys|||Pet Sounds":{"y":"1966","g":"Rock"},"Michael Jackson|||Thriller":{"y":"1983","g":"Pop"},"Def Leppard|||Hysteria":{"y":"1987","g":"Hard rock"},"Dire Straits|||Love Over Gold":{"y":"1982","g":"Rock"},"Radiohead|||OK Computer":{"y":"1997","g":"Alternative rock"},"Led Zeppelin|||Physical Graffiti":{"y":"1975","g":"Rock"},"Stevie Wonder|||Songs in the Key of Life":{"y":"1976","g":"Soul"},"Metallica|||Master of Puppets":{"y":"1986","g":"Thrash metal"},"Muddy Waters|||Folk Singer":{"y":"1964","g":"Blues"},"Queensryche|||Operation: Mindcrime":{"y":"1988","g":"Hard Rock"},"The The|||Soul Mining":{"y":"1983","g":"New wave"},"Electric Light Orchestra|||Out of the Blue":{"y":"1977","g":"Classic rock"},"Dream Theater|||Images and Words":{"y":"1992","g":"Progressive metal"},"The Alan Parsons Project|||Eye in the Sky":{"y":"1982","g":"Progressive rock"},"Dead Can Dance|||Within the Realm of a Dying Sun":{"y":"1987","g":"Darkwave"},"The Beatles|||Abbey Road":{"y":"1969","g":"Rock"},"Jamiroquai|||Emergency on Planet Earth":{"y":"1993","g":"Funk"},"Led Zeppelin|||Houses of the Holy":{"y":"1973","g":"Hard rock"},"The Rolling Stones|||Sticky Fingers":{"y":"1971","g":"Classic rock"},"The Cure|||Disintegration":{"y":"1989","g":"Post-punk"},"Alphaville|||Forever Young":{"y":"1984","g":"Synthpop"},"Radiohead|||In Rainbows":{"y":"","g":"Alternative rock"},"Marvin Gaye|||What's Going On":{"y":"1983","g":"Soul"},"Simon and Garfunkel|||Bridge Over Troubled Water":{"y":"1970","g":"Pop"},"Kim Wilde|||Here Come the Aliens":{"y":"2018","g":""},"Air|||Moon Safari":{"y":"1998","g":"Electronic"},"Joni Mitchell|||Blue":{"y":"1971","g":"Folk"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -333,9 +334,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -354,6 +361,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -415,6 +423,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

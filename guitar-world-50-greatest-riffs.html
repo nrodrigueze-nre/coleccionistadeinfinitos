@@ -166,7 +166,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
   <div id="tracklist"></div></section>
 <footer class="page-footer"><span class="foot-left">GUITAR WORLD &#183; 50 GREATEST GUITAR RIFFS &#183; AGO 2021</span><a href="https://www.guitarworld.com/features/greatest-guitar-riffs-of-all-time" target="_blank" class="foot-link">Ver articulo &#8599;</a></footer>
-<script>
+<script>var BAKED_DATA={"Led Zeppelin|||Whole Lotta Love":{"y":"1970","g":"Hard Rock"},"Ozzy Osbourne|||Crazy Train":{"y":"1980","g":"Metal"},"AC/DC|||Back In Black":{"y":"","g":"Hard rock"},"Deep Purple|||Smoke on the Water":{"y":"1994","g":"Hard Rock"},"Van Halen|||Ain't Talkin' 'Bout Love":{"y":"1978","g":""},"Metallica|||Enter Sandman":{"y":"1991","g":"Metal"},"Black Sabbath|||Iron Man":{"y":"1992","g":""},"Pantera|||Walk":{"y":"1993","g":"Thrash metal"},"ZZ Top|||La Grange":{"y":"1974","g":""},"The Jimi Hendrix Experience|||Purple Haze":{"y":"1999","g":"Rock"},"Derek and the Dominos|||Layla":{"y":"1971","g":""},"Chuck Berry|||Johnny B. Goode":{"y":"1993","g":"Rock and Roll"},"Dire Straits|||Money for Nothing":{"y":"1988","g":"Rock"},"Cream|||Sunshine of Your Love":{"y":"","g":"Classic rock"},"Megadeth|||Symphony of Destruction":{"y":"1992","g":"Metal"},"Rage Against the Machine|||Killing in the Name":{"y":"1992","g":"Rock"},"Nirvana|||Smells Like Teen Spirit":{"y":"1991","g":"Grunge"},"Slayer|||Angel of Death":{"y":"1991","g":"Thrash metal"},"Lynyrd Skynyrd|||Sweet Home Alabama":{"y":"1997","g":"Classic rock"},"The Rolling Stones|||I Can't Get No (Satisfaction)":{"y":"1965","g":""},"Pink Floyd|||Money":{"y":"1994","g":"Progressive rock"},"Motorhead|||Ace of Spades":{"y":"1999","g":"Heavy metal"},"Michael Jackson|||Beat It":{"y":"1983","g":"Pop"},"Iron Maiden|||2 Minutes to Midnight":{"y":"1984","g":"Metal"},"Aerosmith|||Walk This Way":{"y":"1975","g":""},"Judas Priest|||Breaking the Law":{"y":"1980","g":"Heavy metal"},"Heart|||Barracuda":{"y":"1977","g":"Classic rock"},"Blue Oyster Cult|||(Don't Fear) The Reaper":{"y":"1989","g":"Classic rock"},"Rush|||The Spirit of Radio":{"y":"1980","g":""},"The White Stripes|||Seven Nation Army":{"y":"2003","g":"Rock"},"Tool|||Lateralus":{"y":"2002","g":"Progressive metal"},"Thin Lizzy|||The Boys Are Back in Town":{"y":"1991","g":"Hard Rock"},"The Kinks|||You Really Got Me":{"y":"1991","g":"Classic rock"},"Alice in Chains|||Man in the Box":{"y":"1991","g":"Grunge"},"Guns N' Roses|||Sweet Child O'Mine":{"y":"2019","g":"Rock"},"Mountain|||Mississippi Queen":{"y":"2008","g":"Rock"},"Stevie Ray Vaughan and Double Trouble|||Scuttle Buttin'":{"y":"2017","g":""},"Slipknot|||Psychosocial":{"y":"2008","g":"Metal"},"Steppenwolf|||Born to Be Wild":{"y":"1999","g":"Rock"},"Pearl Jam|||Alive":{"y":"1991","g":"Grunge"},"Rainbow|||Stargazer":{"y":"2002","g":"Hard Rock"},"The Police|||Message in a Bottle":{"y":"1979","g":"Rock"},"Eagles|||Life in the Fast Lane":{"y":"2021","g":""},"Red Hot Chili Peppers|||Can't Stop":{"y":"2002","g":"Rock"},"Queens of the Stone Age|||No One Knows":{"y":"2002","g":"Rock"},"Soundgarden|||Outshined":{"y":"1991","g":"Hard Rock"},"Polyphia|||G.O.A.T.":{"y":"2018","g":""},"Free|||All Right Now":{"y":"1970","g":""},"The Beatles|||Ticket to Ride":{"y":"2002","g":""},"Opeth|||Heir Apparent":{"y":"1992","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -245,9 +246,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -266,6 +273,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -327,6 +335,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

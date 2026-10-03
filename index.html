@@ -300,14 +300,9 @@ input{font-family:inherit}
     <div class="nav-item" onclick="go('aclamados');closeDw()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Más aclamados</div>
     <div class="nav-sep" style="margin:6px 10px"></div>
     <div class="nav-sep-lbl" style="padding:8px 16px 4px">Secciones</div>
-    <div class="nav-item" onclick="go('albumes-globales');closeDw()">Álbumes Globales<span class="nav-cnt" style="margin-left:auto">43</span></div>
-    <div class="nav-item" onclick="go('canciones-globales');closeDw()">Canciones Globales<span class="nav-cnt" style="margin-left:auto">38</span></div>
-    <div class="nav-item" onclick="go('albumes-latinos');closeDw()">Álbumes Latinos<span class="nav-cnt" style="margin-left:auto">29</span></div>
-    <div class="nav-item" onclick="go('canciones-latinas');closeDw()">Canciones Latinas<span class="nav-cnt" style="margin-left:auto">31</span></div>
-    <div class="nav-item" onclick="go('super');closeDw()">Superlistas<span class="nav-cnt" style="margin-left:auto">8</span></div>
-    <div class="nav-item" onclick="go('tematicas');closeDw()">Temáticas<span class="nav-cnt" style="margin-left:auto">14</span></div>
+    <div id="sidebar-categories-mobile"></div>
   </div>
-  <div class="sb-foot">262 listas · 145.155 canciones</div>
+  <div class="sb-foot" id="sb-foot-mobile">262 listas</div>
 </div>
 
 <div class="sp-ov" id="sp" onclick="closeSp(event)">
@@ -324,7 +319,19 @@ input{font-family:inherit}
 <script>
 // ══ DATOS REALES ══
 const LISTS = [
-  {
+    {
+    file: "billboard-30-best-sorry-songs.html",
+    title: "The 30 Best Songs to Say \u201cSorry\u201d",
+    source: "Billboard",
+    year: "1967\u20132025",
+    type: "canciones",
+    count: "30",
+    desc: "John Lennon, Prince, Adele, Elton John, Nirvana \u2014 las 30 mejores canciones para pedir perdon \u2014 Billboard \u00b7 Sep 2026.",
+    url: "https://www.billboard.com/lists/best-sorry-songs-apology-music/",
+    _artist: "John Lennon",
+    _title: "Jealous Guy"
+  },
+{
     file: "mediamonkey-100-canciones-frikis.html",
     title: "100 Canciones Más Frikis",
     source: "MediaMonkey",
@@ -3032,6 +3039,7 @@ const LISTS = [
 ];
 
 const SECTIONS = {
+  "billboard-30-best-sorry-songs.html": "thematic",
   "libro-101-albums-changed-popular-music.html": "super",
   "libro-1001-discos-ouvir-antes-morrer.html": "super",
   "libro-1001-songs-must-hear.html": "super",
@@ -3661,6 +3669,13 @@ function renderSidebarCategories(){
   container.innerHTML = html;
 }
 renderSidebarCategories();
+(function(){
+  var m = document.getElementById('sidebar-categories-mobile');
+  var sb = document.getElementById('sidebar-categories');
+  if(m && sb) m.innerHTML = sb.innerHTML;
+  var footM = document.getElementById('sb-foot-mobile');
+  if(footM) footM.textContent = LISTS.length + ' listas';
+})();
 
 
 (function(){

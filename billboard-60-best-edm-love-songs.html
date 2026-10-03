@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.billboard.com/lists/top-dance-love-songs-edm-all-time/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Daft Punk|||Digital Love":{"y":"2001","g":"Electronic"},"Deadmau5 and Kaskade|||I Remember":{"y":"2008","g":""},"Disclosure feat. Sam Smith|||Latch":{"y":"2012","g":"Electronic"},"Zedd feat. Foxes|||Clarity":{"y":"2012","g":"Electronic"},"Steve Angello and Laidback Luke feat. Robin S.|||Show Me Love":{"y":"2021","g":"Dance"},"OneRepublic vs. Alesso|||If I Lose Myself":{"y":"2013","g":"Pop"},"ODESZA feat. Leon Bridges|||Across The Room":{"y":"2018","g":"Electronic"},"Rihanna feat. Calvin Harris|||We Found Love":{"y":"2011","g":"Pop"},"Krewella|||Alive":{"y":"2012","g":"Dance"},"Kaskade|||Eyes":{"y":"2011","g":"Dance"},"Skrillex|||With You Friends (Long Drive)":{"y":"2016","g":""},"David Guetta feat. Kelly Rowland|||When Love Takes Over":{"y":"2009","g":"Electronica"},"Kolsch feat. Troels Abrahamsen|||All That Matters":{"y":"2013","g":"Dance"},"Daft Punk|||Something About Us":{"y":"2011","g":"Electronic"},"Stardust|||Music Sounds Better With You":{"y":"1998","g":"House"},"Alesso and Ingrosso feat. Ryan Tedder|||Calling (Lose My Mind)":{"y":"2011","g":""},"Elderbrook and Rudimental|||Something About You":{"y":"2019","g":"Electronic"},"Avicii|||Fade Into Darkness":{"y":"2011","g":""},"Marshmello feat. CHVRCHES|||Here With Me":{"y":"2019","g":"Dance"},"Galantis|||Runaway (U and I)":{"y":"2014","g":"Dance"},"Zedd feat. Matthew Koma|||Spectrum":{"y":"2012","g":""},"Nadia Ali feat. Starkillers and Alex Kenji|||Pressure (Alesso Remix)":{"y":"2011","g":"Dance"},"Alex Gaudino|||I'm in Love (I Wanna Do It)":{"y":"2010","g":"Dance"},"Calvin Harris|||Feel So Close":{"y":"2011","g":""},"Fatboy Slim|||Praise You":{"y":"1998","g":"Electronic"},"The Chemical Brothers|||Snow":{"y":"2020","g":""},"Armin van Buuren feat. Laura V|||Drowning (Avicii Remix)":{"y":"2011","g":""},"Calvin Harris feat. Ellie Goulding|||I Need Your Love":{"y":"2013","g":"Pop"},"Frank Wiedemann and Ry X|||Howling (Ame Remix)":{"y":"2016","g":"House"},"Benny Benassi|||Cinema (Skrillex Remix)":{"y":"2011","g":""},"Galantis|||Gold Dust":{"y":"2015","g":"Dance"},"Seven Lions|||Days to Come":{"y":"2012","g":""},"Porter Robinson|||Language":{"y":"2012","g":"Dance"},"The Chainsmokers|||I Love U":{"y":"2026","g":"Pop"},"Marvin Gaye|||Sexual Healing (Kygo Remix)":{"y":"2013","g":""},"Duke Dumont feat. Jax Jones|||I Got U":{"y":"2014","g":""},"Gorgon City feat. MNEK|||Ready for Your Love":{"y":"2014","g":""},"Hot Natured|||Benediction":{"y":"2014","g":"Dance"},"Oliver Heldens x Becky Hill|||Gecko (Overdrive)":{"y":"2014","g":""},"Tim Berg|||Seek Bromance":{"y":"2010","g":"Techno"},"Tiesto feat. Sneaky Soundsystem|||I Will Be Here (Wolfgang Gartner Remix)":{"y":"2009","g":""},"Above and Beyond feat. Richard Bedford|||Thing Called Love":{"y":"2011","g":"Dance"},"Late Night Alumni|||Empty Streets":{"y":"2005","g":"Electronic"},"Moore Kismet feat. Pauline Herr|||You Should Run":{"y":"2020","g":"Dance"},"Magnetic Man|||I Need Air":{"y":"2010","g":"Dance"},"Gareth Emery feat. Lucy Saunders|||Sanctuary":{"y":"2010","g":""},"Nadia Ali|||Rapture (Avicii Remix)":{"y":"2010","g":"Electronic"},"Alison Wonderland|||I Want U":{"y":"2021","g":""},"Duke Dumont|||The Giver (Reprise)":{"y":"2015","g":""},"Major Lazer feat. Wild Belle|||Be Together":{"y":"2015","g":"Electronic"},"Fedde Le Grand|||So Much Love":{"y":"2011","g":"Dance"},"Third Party vs. Cicada|||Feel":{"y":"2012","g":""},"Kaskade and Tiesto feat. Haley|||Only You":{"y":"2011","g":""},"Filo and Peri feat. Audrey Gallagher|||This Night (Dash Berlin Remix)":{"y":"2010","g":"Dance"},"Axwell|||Centre of the Universe":{"y":"2013","g":"Dance"},"Kaytranada feat. H.E.R.|||Intimidated":{"y":"2021","g":"Electronic"},"Axwell Ingrosso|||More Than You Know":{"y":"2017","g":""},"Caribou|||Your Love Will Set You Free":{"y":"2014","g":""},"RUFUS DU SOL|||Treat You Better":{"y":"2018","g":""},"Maceo Plex|||Under The Sheets":{"y":"2011","g":"Dance"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -480,9 +481,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -501,6 +508,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -562,6 +570,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

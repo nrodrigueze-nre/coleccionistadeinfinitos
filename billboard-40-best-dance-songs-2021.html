@@ -200,7 +200,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <span class="foot-left">BILLBOARD &#183; 40 BEST DANCE/ELECTRONIC SONGS 2021 &#183; CRITICS PICKS</span>
   <a href="https://www.billboard.com/lists/best-dance-songs-2021-critics-picks/" target="_blank" class="foot-link">Ver en Billboard &#8599;</a>
 </footer>
-<script>
+<script>var BAKED_DATA={"ACRAZE|||Do It To It":{"y":"2021","g":""},"Austin Millz & Aluna|||Gold":{"y":"2021","g":"Dance"},"Bleu Clair, AC Slater, Kate Wild|||Green Light":{"y":"2021","g":""},"Caribou|||You Can Do It":{"y":"2021","g":""},"The Chemical Brothers|||The Darkness That You Fear":{"y":"2021","g":"Electronic"},"Chris Lake & NPC|||A Drug From God":{"y":"2021","g":"Dance"},"Cosha & Shygirl|||Lapdance From Asia":{"y":"2021","g":""},"DJ Minx|||Purse First":{"y":"2016","g":""},"Duke Dumont & Channel Tres|||Alter Ego":{"y":"2024","g":""},"Elohim|||Go Through It":{"y":"2020","g":""},"Farruko|||Pepas":{"y":"2021","g":"Pop Latino"},"Felix Cartal & Karen Harding|||Only One":{"y":"2021","g":"Dance"},"Flight Facilities & Channel Tres|||Lights Up":{"y":"2021","g":"Dance"},"Fred Again & The Blessed Madonna|||Marea (We've Lost Dancing)":{"y":"2021","g":"Electronic"},"Gorgon City & DRAMA|||You've Done Enough":{"y":"2021","g":"Dance"},"Illenium feat. iann dior|||First Time":{"y":"2021","g":"Dance"},"Jax Jones|||Feels":{"y":"2021","g":"Dance"},"Jessie Ware|||Please":{"y":"2021","g":""},"Jungle feat. Bas|||Romeo":{"y":"2021","g":"Electronic"},"Kah-Lo|||Fire":{"y":"2002","g":""},"Kylie Minogue & Dua Lipa|||Real Groove (Initial Talk Remix)":{"y":"2021","g":"Pop"},"LP Giobbi & Kaleena Zanders|||Carry Us":{"y":"2021","g":""},"LSDXOXO|||Sick Bitch":{"y":"1996","g":""},"Marshmello & Nitti Gritti feat. Megan Thee Stallion|||Bad Bitches":{"y":"2015","g":""},"Mikey Lion|||Above The Clouds":{"y":"2025","g":""},"Mila Jam|||It's Raining Them":{"y":"1994","g":"Pop"},"Moore Kismet & WYN|||Rumor":{"y":"2021","g":"Dance"},"Muzi|||Interblaktic":{"y":"2021","g":"Dance"},"Octo Octa|||Find Your Way Home":{"y":"2007","g":"Dance"},"PinkPantheress|||Pain":{"y":"2021","g":"Bedroom pop"},"Porter Robinson|||Look at the Sky":{"y":"2021","g":"Electronic"},"Purple Disco Machine, Moss Kena, The Knocks|||Fireworks":{"y":"2021","g":"Dance"},"Rezz + Deathpact|||Chemical Bond":{"y":"2021","g":""},"RUFUS DU SOL|||Next To Me":{"y":"2013","g":""},"SG Lewis & Nile Rodgers|||One More":{"y":"2021","g":"Electronic"},"Shift K3y feat. Tinashe|||Love Line":{"y":"2021","g":""},"Skrillex, Starrah, Four Tet|||Butterflies":{"y":"2021","g":""},"Swedish House Mafia|||Lifetime":{"y":"2021","g":"Dance"},"Tokimonsta & VanJess|||Say Yes":{"y":"2021","g":""},"Uniiqu3|||Microdosing":{"y":"2021","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -333,9 +334,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -354,6 +361,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -415,6 +423,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

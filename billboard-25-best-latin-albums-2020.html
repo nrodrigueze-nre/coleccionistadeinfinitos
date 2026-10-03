@@ -206,7 +206,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.billboard.com/media/lists/best-latin-albums-2020-top-25-9499516/" target="_blank" class="foot-link">Ver en Billboard &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Arcangel|||Los Favoritos 2":{"y":"2020","g":""},"Bad Bunny|||YHLQMDLG":{"y":"2020","g":"Reggaeton"},"Bad Bunny|||El Ultimo Tour del Mundo":{"y":"2020","g":"Música Mexicana"},"Black Eyed Peas|||Translation":{"y":"2020","g":"Rap"},"Camilo|||Por Primera Vez":{"y":"2020","g":"Pop Latino"},"Carin Leon|||Colmillo de Leche":{"y":"2023","g":"Música Mexicana"},"Christian Nodal|||Ahora Soy Mas Fuerte":{"y":"2019","g":""},"Feid|||ZZZXXX":{"y":"","g":""},"Grupo Firme|||El Mejor Show del Mundo":{"y":"2017","g":"Música Mexicana"},"J Balvin|||Colores":{"y":"2020","g":"Skipless albums"},"Jesse & Joy|||Un Besito Mas":{"y":"2015","g":"Pop Latino"},"Jorge Drexler|||Salvavidas de Hielo":{"y":"2017","g":""},"Kany Garcia|||Mesa Para Dos":{"y":"2020","g":""},"Lunay|||Epico":{"y":"2019","g":"Urbano latino"},"Maluma|||Papi Juancho":{"y":"2020","g":"Reggaeton"},"Natalia Lafourcade|||Un Canto por Mexico Vol. 1":{"y":"2020","g":"Música Mexicana"},"Ozuna|||ENOC":{"y":"2020","g":""},"Rauw Alejandro|||Afrodisiacos":{"y":"","g":""},"Ricky Martin|||Pausa":{"y":"2020","g":"Pop Latino"},"Romeo Santos|||Formula Vol. 3 Pt. 2":{"y":"2022","g":"Latin"},"Rosalia|||El Mal Querer (Live)":{"y":"2018","g":""},"Santa Fe Klan & Lefty SM|||Necesidad":{"y":"2020","g":""},"Sech|||1 of 1":{"y":"2020","g":""},"Shakira|||El Dorado World Tour Live":{"y":"2019","g":""},"Zion & Lennox|||Motivan2":{"y":"","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -339,9 +340,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -360,6 +367,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -421,6 +429,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

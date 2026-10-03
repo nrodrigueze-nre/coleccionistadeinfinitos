@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://es.rollingstone.com/las-mejores-canciones-en-espanol-sobre-futbol/" target="_blank" class="foot-link">Ver artículo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Shakira|||Waka Waka (Esto es África)":{"y":"2010","g":"Pop"},"Ricky Martin|||La Copa de la Vida":{"y":"1999","g":"Pop Latino"},"Rodrigo|||La Mano de Dios":{"y":"2000","g":"Latin"},"K'naan feat. David Bisbal|||Wavin Flag":{"y":"2010","g":""},"Shakira feat. Carlinhos Brown|||La La La (Brazil 2014)":{"y":"2014","g":"Pop"},"Andrés Calamaro|||Maradona":{"y":"2019","g":"Rock y Alternativo"},"Mano Negra|||Santa Maradona":{"y":"1994","g":"Rock"},"Bersuit Vergarabat|||El Baile De La Gambeta":{"y":"2014","g":""},"Pitbull feat. Jennifer Lopez|||We Are One (Ole Ola)":{"y":"2014","g":""},"Diomedes Díaz; Juancho Rois|||Yo Soy Mundial":{"y":"2013","g":"Música tropical"},"La Mosca Tse Tse|||Simplemente futbol":{"y":"2017","g":""},"Cali Y El Dandee|||Gol":{"y":"2012","g":""},"Jason Derulo feat. Maluma|||Colors":{"y":"2018","g":"Pop"},"Ryan Castro; SOG|||El ritmo que nos une":{"y":"2024","g":"Urbano latino"},"Gianluca Vacchi feat. Sebastián Yatra|||LOVE":{"y":"2018","g":"Pop Latino"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -435,9 +436,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -456,6 +463,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -517,6 +525,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

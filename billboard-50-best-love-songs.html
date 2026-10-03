@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.billboard.com/lists/top-love-songs-all-time/" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Diana Ross and Lionel Richie|||Endless Love":{"y":"1981","g":"R&B/Soul"},"Boyz II Men|||I'll Make Love to You":{"y":"2021","g":"Neo-Soul"},"Rihanna feat. Calvin Harris|||We Found Love":{"y":"2011","g":"Pop"},"Wings|||Silly Love Songs":{"y":"1976","g":"Rock"},"Whitney Houston|||I Will Always Love You":{"y":"1992","g":"Female vocalists"},"Leona Lewis|||Bleeding Love":{"y":"2007","g":"Pop"},"Mario|||Let Me Love You":{"y":"2004","g":"Rnb"},"Stevie B|||Because I Love You":{"y":"1990","g":""},"The Emotions|||Best of My Love":{"y":"1996","g":""},"Ray Charles|||I Can't Stop Loving You":{"y":"1988","g":""},"Paul McCartney and Wings|||My Love":{"y":"1973","g":""},"Queen|||Crazy Little Thing Called Love":{"y":"1979","g":"Classic rock"},"Celine Dion|||Because You Loved Me":{"y":"1996","g":"Pop"},"The Teddy Bears|||To Know Him Is to Love Him":{"y":"2012","g":""},"Paul Mauriat|||Love Is Blue":{"y":"1987","g":"Pop"},"Lewis Capaldi|||Someone You Loved":{"y":"2019","g":"2010s"},"Barbra Streisand|||Woman in Love":{"y":"1980","g":"Pop"},"Mariah Carey|||Love Takes Time":{"y":"1990","g":"R&B/Soul"},"Mariah Carey|||Vision of Love":{"y":"1990","g":"R&B/Soul"},"Roxette|||It Must Have Been Love":{"y":"1990","g":"Pop"},"Mariah Carey|||Dreamlover":{"y":"1993","g":""},"Eminem feat. Rihanna|||Love the Way You Lie":{"y":"2010","g":"955 WKQI"},"Beyonce feat. Jay-Z|||Crazy in Love":{"y":"2013","g":""},"Bobby Vinton|||Roses Are Red (My Love)":{"y":"1962","g":"Pop"},"Captain and Tennille|||Love Will Keep Us Together":{"y":"1975","g":"Pop"},"Whitney Houston|||I Wanna Dance With Somebody":{"y":"1987","g":"R&B/Soul"},"Ohio Players|||Love Rollercoaster":{"y":"2014","g":"R&B/Soul"},"The Partridge Family|||I Think I Love You":{"y":"1970","g":""},"Andy Gibb|||Love Is Thicker Than Water":{"y":"1977","g":"Pop"},"Diana Ross and The Supremes|||Love Child":{"y":"2004","g":""},"The Beatles|||She Loves You":{"y":"1992","g":"Rock"},"Tina Turner|||What's Love Got to Do With It":{"y":"1984","g":"R&B/Soul"},"Foreigner|||I Want to Know What Love Is":{"y":"1984","g":""},"Savage Garden|||I Knew I Loved You":{"y":"1999","g":"Pop"},"England Dan and John Ford Coley|||I'd Really Love to See You Tonight":{"y":"2006","g":""},"UB40|||Can't Help Falling in Love":{"y":"","g":"Rock"},"Diana Ross|||Love Hangover":{"y":"1988","g":"Disco"},"Stevie Wonder|||I Just Called to Say I Love You":{"y":"1984","g":"R&B/Soul"},"Huey Lewis and The News|||The Power of Love":{"y":"1985","g":"Rock"},"Whitney Houston|||Greatest Love of All":{"y":"1986","g":""},"Donna Lewis|||I Love You Always Forever":{"y":"1996","g":"Pop"},"Celine Dion|||The Power of Love":{"y":"1993","g":""},"Janet Jackson|||That's The Way Love Goes":{"y":"1993","g":"Pop"},"Madonna|||Justify My Love":{"y":"1990","g":""},"En Vogue|||Don't Let Go (Love)":{"y":"1996","g":"Soundtrack"},"Herb Alpert|||This Guy's In Love With You":{"y":"1968","g":"Jazz"},"The Righteous Brothers|||You've Lost That Lovin' Feelin'":{"y":"1978","g":""},"Minnie Riperton|||Lovin' You":{"y":"1975","g":"R&B/Soul"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -470,9 +471,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -491,6 +498,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -552,6 +560,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';
