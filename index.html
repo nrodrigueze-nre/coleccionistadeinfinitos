@@ -3038,7 +3038,40 @@ const LISTS = [
     desc: "Lollapalooza, el Salón de la Fama del Rock, Napster, Grunge y Alternativo.",
     url: "#",
     _artist: "Historia", _title: "1990s"
-  }
+  },
+  {
+    file: "timeline-2000s.html",
+    title: "Cronología del Rock: 2000s",
+    source: "Coleccionista de Infinitos",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Napster, iTunes y el iPod, YouTube, el reguetón y el fin de la era del CD.",
+    url: "#",
+    _artist: "Historia", _title: "2000s"
+  },
+  {
+    file: "timeline-2010s.html",
+    title: "Cronología del Rock: 2010s",
+    source: "Coleccionista de Infinitos",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Spotify, Beyoncé y Taylor Swift, el K-pop y la música latina global.",
+    url: "#",
+    _artist: "Historia", _title: "2010s"
+  },
+  {
+    file: "timeline-2020s.html",
+    title: "Cronología del Rock: 2020s",
+    source: "Coleccionista de Infinitos",
+    year: "Cronología",
+    type: "cronologia",
+    count: "7",
+    desc: "Pandemia, TikTok, Bad Bunny, BTS, reuniones legendarias y la llegada de la IA.",
+    url: "#",
+    _artist: "Historia", _title: "2020s"
+  },
 ];
 
 const SECTIONS = {
@@ -3250,11 +3283,11 @@ const SECTIONS = {
 };
 
 var LAST5 = [
-  "rolling-stone-20-best-world-cup-songs.html",
-  "vh1-40-greatest-one-hit-wonders-90s.html",
-  "vh1-100-greatest-love-songs.html",
-  "vh1-40-greatest-metal-songs.html",
-  "vh1-100-greatest-songs-00s.html"
+  "timeline-2020s.html",
+  "timeline-2010s.html",
+  "timeline-2000s.html",
+  "billboard-30-best-sorry-songs.html",
+  "rolling-stone-20-best-world-cup-songs.html"
 ];
 
 var topArtists=[{"name":"Taylor Swift","sub":"36 listas"},{"name":"Drake","sub":"31 listas"},{"name":"Bruce Springsteen","sub":"26 listas"},{"name":"David Bowie","sub":"26 listas"},{"name":"The Beatles","sub":"25 listas"}];
@@ -3632,7 +3665,7 @@ function observeImages(){
       var n = parseInt((l.count||'0').replace(/\D/g,''),10);
       return acc + (isNaN(n)?0:n);
     },0);
-    footEl.innerHTML = LISTS.length + ' listas · ' + totalSongs.toLocaleString('es') + ' canciones<br>Última: ' + (LISTS[LISTS.length-1] ? LISTS[LISTS.length-1].title : '');
+    footEl.innerHTML = LISTS.length + ' listas · ' + totalSongs.toLocaleString('es') + ' entradas<br>Última: ' + ((LISTS.find(function(l){return l.file===LAST5[0];})||{}).title||'');
   }
 })();
 
@@ -3681,17 +3714,6 @@ renderSidebarCategories();
 })();
 
 
-(function(){
-  var footEl = document.querySelector('.sb-foot');
-  if(footEl){
-    var totalSongs = LISTS.reduce(function(acc,l){
-      var n = parseInt((l.count||'0').replace(/\D/g,''),10);
-      return acc + (isNaN(n)?0:n);
-    },0);
-    var last = LISTS[LISTS.length-1];
-    footEl.innerHTML = LISTS.length + ' listas · ' + totalSongs.toLocaleString('es') + ' entradas<br>Última: ' + (last?last.title:'');
-  }
-})();
 
 go('home');
 
