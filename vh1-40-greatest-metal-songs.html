@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://cs.uwaterloo.ca/~dtompkin/music/list/Best16.html" target="_blank" class="foot-link">Ver lista &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Black Sabbath|||Iron Man":{"y":"1992","g":""},"Guns N' Roses|||Welcome to the Jungle":{"y":"1987","g":"Hard rock"},"Metallica|||Master of Puppets":{"y":"1986","g":"Thrash metal"},"AC/DC|||Back in Black":{"y":"1980","g":"Hard rock"},"Judas Priest|||You've Got Another Thing Comin'":{"y":"1982","g":"Metal"},"Kiss|||Detroit Rock City":{"y":"1993","g":"Hard Rock"},"Iron Maiden|||The Number of the Beast":{"y":"1982","g":""},"Slayer|||Raining Blood":{"y":"2014","g":"Thrash metal"},"Ozzy Osbourne|||Crazy Train":{"y":"1980","g":"Metal"},"Motörhead|||Ace of Spades":{"y":"1999","g":"Heavy metal"},"Megadeth|||Peace Sells":{"y":"1986","g":"Metal"},"Public Enemy feat. Anthrax|||Bring the Noise":{"y":"1988","g":"Metal"},"Dio|||Rainbow in the Dark":{"y":"1983","g":"Heavy metal"},"System of a Down|||Toxicity":{"y":"2002","g":"Alternative metal"},"Rage Against the Machine|||Bulls on Parade":{"y":"1996","g":"Rock"},"Pantera|||Walk":{"y":"1993","g":"Thrash metal"},"Mötley Crüe|||Live Wire":{"y":"2000","g":"Hard Rock"},"Skid Row|||Slave to the Grind":{"y":"1991","g":"Rock"},"Alice in Chains|||Man in the Box":{"y":"1991","g":"Grunge"},"Twisted Sister|||I Wanna Rock":{"y":"1984","g":""},"Guns N' Roses|||Paradise City":{"y":"1989","g":"Hard rock"},"Metallica|||Enter Sandman":{"y":"1991","g":"Metal"},"Korn feat. Amy Lee|||Freak on a Leash (Unplugged)":{"y":"2007","g":"Hard Rock"},"AC/DC|||Dirty Deeds Done Dirt Cheap":{"y":"1992","g":"Hard rock"},"Pantera|||Cowboys from Hell":{"y":"1994","g":"Thrash metal"},"Sepultura|||Refuse / Resist":{"y":"1994","g":""},"Iron Maiden|||Run to the Hills":{"y":"1982","g":""},"Marilyn Manson|||The Beautiful People":{"y":"1996","g":"Industrial metal"},"Anthrax|||Caught in a Mosh":{"y":"2007","g":""},"Faith No More|||Epic":{"y":"1989","g":""},"Scorpions|||Rock You Like a Hurricane":{"y":"2014","g":""},"White Zombie|||Thunder Kiss '65":{"y":"1992","g":"Hard Rock"},"Def Leppard|||High and Dry":{"y":"1981","g":"Rock"},"Black Sabbath|||Paranoid":{"y":"2004","g":"Heavy metal"},"Quiet Riot|||Bang Your Head (Metal Health)":{"y":"1983","g":"Hard Rock"},"Slipknot|||Wait and Bleed":{"y":"1999","g":"Nu Metal"},"Deep Purple|||Smoke on the Water":{"y":"1994","g":"Hard Rock"},"Accept|||Balls to the Wall":{"y":"1983","g":"Metal"},"Alice Cooper|||I'm Eighteen":{"y":"1977","g":""},"Judas Priest|||Breaking the Law":{"y":"1980","g":"Heavy metal"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -460,9 +461,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -481,6 +488,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -542,6 +550,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

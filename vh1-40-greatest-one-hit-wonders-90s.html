@@ -211,7 +211,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <a href="https://www.albumoftheyear.org/user/elsotemo/list/5438/vh1s-40-greatest-one-hit-wonders-of-the-90s/" target="_blank" class="foot-link">Ver lista &#8599;</a>
 </footer>
 
-<script>
+<script>var BAKED_DATA={"Sir Mix-a-Lot|||Baby Got Back":{"y":"1992","g":"Hip-Hop"},"Right Said Fred|||I'm Too Sexy":{"y":"1991","g":"Rock"},"Gerardo|||Rico Suave":{"y":"","g":"Urbano latino"},"Los Del Río|||Macarena":{"y":"1993","g":""},"Chumbawamba|||Tubthumping":{"y":"1997","g":"Pop"},"Semisonic|||Closing Time":{"y":"1998","g":"Rock"},"Vanilla Ice|||Ice Ice Baby":{"y":"1990","g":""},"Duncan Sheik|||Barely Breathing":{"y":"1996","g":"Pop"},"House of Pain|||Jump Around":{"y":"2007","g":"Hip-Hop/Rap"},"Joan Osborne|||One Of Us":{"y":"2005","g":"Alternative"},"New Radicals|||You Get What You Give":{"y":"1998","g":"Rock"},"Digital Underground|||The Humpty Dance":{"y":"1989","g":"Hip-Hop/Rap"},"Rednex|||Cotton Eye Joe":{"y":"1994","g":"Dance"},"Wreckx-N-Effect|||Rump Shaker":{"y":"1992","g":""},"Blind Melon|||No Rain":{"y":"1992","g":"Rock"},"Kris Kross|||Jump":{"y":"1992","g":"Hip-Hop/Rap"},"Snow|||Informer":{"y":"1992","g":"Hip-Hop/Rap"},"EMF|||Unbelievable":{"y":"1990","g":"Rock"},"Len|||Steal My Sunshine":{"y":"1999","g":"Pop"},"Marky Mark and the Funky Bunch|||Good Vibrations":{"y":"1991","g":""},"Imani Coppola|||Legend Of A Cowgirl":{"y":"1997","g":"Pop"},"Marc Cohn|||Walking In Memphis":{"y":"1991","g":""},"Haddaway|||What Is Love":{"y":"1992","g":""},"Belly|||Feed The Tree":{"y":"1993","g":"Pop"},"The Mighty Mighty Bosstones|||The Impression That I Get":{"y":"1997","g":"Rock"},"Lou Bega|||Mambo No. 5 (A Little Bit of...)":{"y":"1999","g":"Pop"},"Billy Ray Cyrus|||Achy Breaky Heart":{"y":"2001","g":""},"Craig Mack|||Flava in Ya Ear":{"y":"1994","g":"Hip-Hop/Rap"},"Shawn Mullins|||Lullaby":{"y":"1998","g":"Pop"},"The Verve|||Bitter Sweet Symphony":{"y":"1997","g":""},"Crash Test Dummies|||Mmm Mmm Mmm Mmm":{"y":"1993","g":"Rock"},"B-Rock & The Bizz|||My Baby Daddy":{"y":"1997","g":"Hip-Hop/Rap"},"The Proclaimers|||I'm Gonna Be (500 Miles)":{"y":"1988","g":"Pop"},"Des'ree|||You Gotta Be":{"y":"1994","g":""},"Marcy Playground|||Sex and Candy":{"y":"1997","g":"Rock"},"Inner Circle|||Bad Boys":{"y":"1989","g":""},"Meredith Brooks|||Bitch":{"y":"1997","g":"Female vocalists"},"The Heights|||How Do You Talk To An Angel":{"y":"1992","g":"Pop"},"Divinyls|||I Touch Myself":{"y":"1990","g":"Rock"},"Tag Team|||Whoomp! (There It Is)":{"y":"1993","g":"Dance"}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -460,9 +461,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -481,6 +488,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -542,6 +550,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';

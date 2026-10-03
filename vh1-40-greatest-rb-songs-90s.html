@@ -200,7 +200,8 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   <span class="foot-left">VH1 &#183; 40 GREATEST R&amp;B SONGS OF THE 90S &#183; JUN 2012</span>
   <a href="https://www.vh1.com/news/mc6nph/40-greatest-rb-songs-of-the-90s" target="_blank" class="foot-link">Ver articulo &#8599;</a>
 </footer>
-<script>
+<script>var BAKED_DATA={"Bell Biv DeVoe|||Poison":{"y":"1990","g":"New jack swing"},"Mariah Carey ft. Boyz II Men|||One Sweet Day":{"y":"1995","g":"Pop"},"Whitney Houston|||I Will Always Love You":{"y":"1992","g":"Female vocalists"},"Janet Jackson|||That's The Way Love Goes":{"y":"1993","g":"Pop"},"R. Kelly|||I Believe I Can Fly":{"y":"1996","g":"R&B/Soul"},"TLC|||Waterfalls":{"y":"1995","g":"Rnb"},"Montell Jordan|||This Is How We Do It":{"y":"1995","g":""},"Mary J. Blige|||Real Love":{"y":"1992","g":"R&B/Soul"},"Aaliyah|||Are You That Somebody?":{"y":"1998","g":"R&B/Soul"},"Boyz II Men|||End Of The Road":{"y":"1992","g":""},"En Vogue|||My Lovin' (You're Never Gonna Get It)":{"y":"1992","g":"R&B/Soul"},"Color Me Badd|||I Wanna Sex You Up":{"y":"1991","g":"R&B/Soul"},"Brandy & Monica|||The Boy Is Mine":{"y":"1998","g":""},"R. Kelly|||Bump N' Grind":{"y":"1994","g":""},"Brian McKnight|||Back At One":{"y":"1999","g":"R&B/Soul"},"Mary J. Blige|||Not Gon' Cry":{"y":"1996","g":"R&B/Soul"},"Blackstreet|||No Diggity":{"y":"1996","g":"Rnb"},"SWV|||I'm So Into You":{"y":"1992","g":"R&B/Soul"},"Usher|||You Make Me Wanna":{"y":"2004","g":"R&B/Soul"},"Mariah Carey|||Fantasy":{"y":"1995","g":"Pop"},"Guy|||Do Me Right":{"y":"2013","g":""},"TLC|||No Scrubs":{"y":"1999","g":"Rnb"},"Jodeci|||Come And Talk To Me":{"y":"1992","g":"R&B/Soul"},"Whitney Houston|||I'm Every Woman":{"y":"1993","g":""},"Lisa Stansfield|||All Around The World":{"y":"1989","g":""},"K-Ci & JoJo|||All My Life":{"y":"1998","g":"R&B/Soul"},"Silk|||Freak Me":{"y":"1993","g":""},"Faith Evans|||Love Like This":{"y":"1998","g":""},"Tony! Toni! Toné!|||Feels Good":{"y":"1990","g":""},"Ginuwine|||Pony":{"y":"2018","g":"Rnb"},"Bone Thugs-N-Harmony|||The Crossroads":{"y":"1996","g":"Rap"},"Johnny Gill|||Rub You The Right Way":{"y":"1990","g":""},"702|||Where My Girls At?":{"y":"1999","g":""},"Aaron Hall|||I Miss You":{"y":"1994","g":"R&B/Soul"},"Keith Sweat|||Twisted":{"y":"1996","g":"R&B/Soul"},"Boyz II Men|||Motownphilly":{"y":"1991","g":""},"Shanice|||I Love Your Smile":{"y":"1991","g":"Pop"},"Jade|||Don't Walk Away":{"y":"1993","g":""},"En Vogue|||Hold On":{"y":"1990","g":""},"Bobby Brown|||Humpin' Around":{"y":"1992","g":""}};
+
 function fetchTO(url, ms){
   ms = ms || 8000;
   return Promise.race([
@@ -333,9 +334,15 @@ function processExtra(){
         processMbYear();
       }
 
-      // Genre — llamada dedicada a getTopTags (toptags no viene confiable en getInfo)
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
       var genEl=row.querySelector('.track-genre');
       if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
         var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
         fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
               '&api_key='+LFM_KEY+
@@ -354,6 +361,7 @@ function processExtra(){
             }
           })
           .catch(function(){});
+        }
       }
     })
     .catch(function(){})
@@ -415,6 +423,18 @@ function loadFeatTags(){
     if(pills.length>1) return;
     var artist=artistEl.textContent.trim();
     var title=titleEl.textContent.trim();
+
+    // Primero mirar datos horneados
+    var bakedKey=artist+'|||'+title;
+    var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+    if(baked&&baked.g){
+      var pill=document.createElement('span');
+      pill.className='feat-pill';
+      pill.textContent=baked.g;
+      metaEl.appendChild(pill);
+      return;
+    }
+
     var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
     var method=isAlb?'album.getinfo':'track.getinfo';
     var param=isAlb?'&album=':'&track=';
