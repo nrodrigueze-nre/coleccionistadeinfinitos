@@ -153,6 +153,10 @@ input{font-family:inherit}
 .acl-name{font-size:12px;color:var(--text);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .acl-sub{font-size:11px;color:var(--text3);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .acl-cnt{font-size:11px;color:var(--sb);font-weight:600;white-space:nowrap;flex-shrink:0}
+.acl-item.has-rev{align-items:flex-start;padding:9px 0}
+.acl-item.has-rev .acl-pos{padding-top:2px}
+.acl-rev{font-size:11.5px;color:var(--text2,#4a5568);line-height:1.55;font-weight:300;margin-top:4px;white-space:normal}
+
 
 /* SPOTLIGHT */
 .sp-ov{display:none;position:fixed;inset:0;background:rgba(10,18,36,.55);z-index:100;align-items:flex-start;justify-content:center;padding-top:80px;backdrop-filter:blur(4px)}
@@ -3294,6 +3298,8 @@ var topArtists=[{"name":"Taylor Swift","sub":"36 listas"},{"name":"Drake","sub":
 var topAlbums=[{"name":"The Dark Side of the Moon","artist":"Pink Floyd","sub":"Pink Floyd \u00b7 8 listas"},{"name":"American Idiot","artist":"Green Day","sub":"Green Day \u00b7 8 listas"},{"name":"Abraxas","artist":"Santana","sub":"Santana \u00b7 7 listas"},{"name":"Thriller","artist":"Michael Jackson","sub":"Michael Jackson \u00b7 7 listas"},{"name":"Marquee Moon","artist":"Television","sub":"Television \u00b7 7 listas"}];
 var topSongs=[{"name":"Welcome to the Jungle","artist":"Guns N' Roses","sub":"Guns N' Roses \u00b7 8 listas"},{"name":"Seven Nation Army","artist":"The White Stripes","sub":"The White Stripes \u00b7 8 listas"},{"name":"Relax","artist":"Frankie Goes to Hollywood","sub":"Frankie Goes to Hollywood \u00b7 8 listas"},{"name":"Smells Like Teen Spirit","artist":"Nirvana","sub":"Nirvana \u00b7 8 listas"},{"name":"I Will Survive","artist":"Gloria Gaynor","sub":"Gloria Gaynor \u00b7 7 listas"}];
 
+var ACL_REVIEWS={"Taylor Swift": "La gran narradora del pop del siglo XXI: de la balada country adolescente a «Midnights», se reinventa disco tras disco, regraba su catálogo para recuperar sus másters y convierte cada lanzamiento en récord.", "Drake": "El artista que mejor entendió la era del streaming: su mezcla de rap melódico y R&B lo volvió referencia de la década de 2010 y dueño de las listas de reproducciones.", "Bruce Springsteen": "El cronista del sueño americano y de la clase trabajadora: «Born to Run», «The River» y «Born in the U.S.A.», siempre con la E Street Band, lo hicieron leyenda del rock de estadios.", "David Bowie": "El camaleón del rock: de Ziggy Stardust al Thin White Duke y a «Blackstar», se reinventó una y otra vez; su último disco salió dos días antes de su muerte, en enero de 2016.", "The Beatles": "La banda que cambió la música popular: de la Beatlemanía a «Sgt. Pepper's» y «Abbey Road», convirtieron el álbum en obra de arte y siguen siendo la influencia más citada del rock.", "The Dark Side of the Moon": "El disco conceptual de Pink Floyd (1973) sobre el tiempo, el dinero y la locura: estuvo 741 semanas (no consecutivas) en la lista de álbumes de Billboard y es una cumbre del rock progresivo.", "American Idiot": "La ópera rock punk de Green Day (2004) contra la era Bush: devolvió a la banda a la cima, ganó el Grammy al Mejor Álbum de Rock y terminó convertida en musical de Broadway.", "Abraxas": "La fusión de rock, blues, jazz y ritmos afrolatinos de Santana (1970): «Black Magic Woman» y «Oye Como Va» llevaron la percusión latina al corazón del rock y el disco llegó al #1 en Estados Unidos.", "Thriller": "El disco de Michael Jackson (1982) que redefinió el pop: pasó 37 semanas en el #1 del Billboard 200 y convirtió el videoclip en arte con «Thriller» y «Billie Jean».", "Marquee Moon": "El debut de Television (1977), joya del rock neoyorquino: las guitarras entrelazadas de Tom Verlaine y Richard Lloyd lo volvieron un clásico de culto de enorme influencia.", "Welcome to the Jungle": "El himno de presentación de Guns N' Roses, de «Appetite for Destruction» (1987): su riff de apertura y el grito de Axl Rose abrieron la era del sleaze rock.", "Seven Nation Army": "El riff más coreado en los estadios del mundo: The White Stripes lo grabaron para «Elephant» (2003) con una guitarra procesada para sonar como un bajo.", "Relax": "Prohibida por la BBC en 1984 por su letra sugerente y, aun así, #1 en el Reino Unido: el sencillo de Frankie Goes to Hollywood es un símbolo del synth-pop provocador de los 80.", "Smells Like Teen Spirit": "El himno del grunge y de la Generación X: de «Nevermind» (septiembre de 1991), llevó el rock alternativo al mainstream y cambió el rumbo de los años 90.", "I Will Survive": "El himno de la resiliencia y de la pista de baile: Gloria Gaynor la convirtió en el gran clásico del disco, #1 en Estados Unidos en 1979."};
+
 // ══ HELPERS ══
 function isAlbum(t){return t==='albumes'||t==='álbumes';}
 
@@ -3330,17 +3336,18 @@ function card(l){
     +'</div>';
 }
 
-function aclRow(a,i,cnt){
+function aclRow(a,i,cnt,withRev){
+  var rev=(withRev&&ACL_REVIEWS[a.name])?ACL_REVIEWS[a.name]:'';
   var artistSearch = a.artist || a.name; // artist column: name itself; album/song column: real artist
   var albumSearch  = a.artist ? a.name : a.name; // si tiene .artist, este item ES un album/cancion
-  return '<div class="acl-item">'
+  return '<div class="acl-item'+(rev?' has-rev':'')+'">'
     +'<span class="acl-pos">'+(i+1)+'</span>'
     +'<div class="card-cover" style="width:36px;height:36px;flex-shrink:0;border-radius:4px;overflow:hidden;background:var(--bg2,#f0f2f8)">'
     +'<img src="" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s" '
     +'data-artist="'+encodeURIComponent(artistSearch)+'" data-album="'+encodeURIComponent(albumSearch)+'" data-track="'+encodeURIComponent(a.name)+'">'
     +'</div>'
     +'<div style="flex:1;min-width:0"><div class="acl-name">'+a.name+'</div>'
-    +(!cnt&&a.sub?'<div class="acl-sub">'+a.sub+'</div>':'')+'</div>'
+    +(!cnt&&a.sub?'<div class="acl-sub">'+a.sub+'</div>':'')+(rev?'<div class="acl-rev">'+rev+'</div>':'')+'</div>'
     +(cnt?'<span class="acl-cnt">'+a.sub+'</span>':'')
     +'</div>';
 }
@@ -3511,9 +3518,9 @@ function top12HTML(){
 function aclamadosHTML(){
   return '<div class="sec-head"><h1>Más aclamados</h1><p>Artistas, álbumes y canciones con más apariciones en las '+LISTS.length+' listas</p></div>'
     +'<div class="acl-grid">'
-    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+topArtists.map(function(a,i){return aclRow(a,i,true)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+topAlbums.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+topSongs.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+topArtists.map(function(a,i){return aclRow(a,i,true,true)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+topAlbums.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+topSongs.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div>'
     +'</div>';
 }
 
