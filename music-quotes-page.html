@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Quotes — Coleccionista de Infinitos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{overflow-x:clip;}
+body{margin:0;padding:0;overflow-x:clip;max-width:100%;}
+:root{
+  --p:#c04bff; --p2:#ff3fc9; --c:#2ff0d8; --c2:#38b8ff;
+  --bg:#07060d; --surface:#100c1c; --surface2:#160f28; --line:#262040;
+  --ink:#f4f1fb; --sub:#9b93bf; --sub2:#6e668f;
+}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",sans-serif;}
+h1,h2,h3,.tag{font-family:"Space Grotesk";}
+a{color:inherit;}
+::selection{background:var(--p);color:#fff;}
+
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- top bar (idéntica al home) ---------- */
+.topbar{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line);isolation:isolate;overflow:hidden;background:#0a0914;}
+.genreStrip{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.genreStrip .bgtrack{position:absolute;inset:0;width:200%;height:100%;display:flex;animation:genreScroll 90s linear infinite;}
+.genreStrip .bgtrack img{height:100%;width:50%;object-fit:cover;object-position:center top;flex:none;display:block;
+  filter:saturate(1.2) contrast(1.05);}
+@keyframes genreScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.topbar::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg, rgba(176,94,255,.14), rgba(47,240,216,.1) 50%, rgba(255,63,201,.14));
+  mix-blend-mode:soft-light;
+}
+.topbar::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg, rgba(7,6,13,.5), rgba(7,6,13,.68) 60%, rgba(7,6,13,.88)),
+             linear-gradient(90deg, #07060d 0%, transparent 9%, transparent 91%, #07060d 100%);
+  backdrop-filter:blur(0.5px) saturate(130%);
+}
+.topbar-row,.dropdown{position:relative;z-index:2;}
+.topbar-row{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand .mark{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 140deg,var(--p),var(--c2),var(--c),var(--p2),var(--p));flex:none;box-shadow:0 0 18px rgba(192,75,255,.5);}
+.brand .name{font:600 16px "Space Grotesk";letter-spacing:-.01em;}
+.navRight{display:flex;align-items:center;gap:20px;}
+.navRight .search{font-size:13px;color:var(--sub);border:1px solid var(--line);padding:8px 14px;border-radius:999px;}
+.quickNav{display:flex;align-items:center;gap:20px;}
+.quickNav a{font:600 13px "Inter";color:var(--sub);text-decoration:none;position:relative;transition:color .15s;}
+.quickNav a:hover{color:var(--ink);}
+.quickNav a.active{color:var(--c);}
+.menuBtn{display:flex;align-items:center;gap:8px;font:600 13px "Inter";color:var(--ink);background:transparent;border:1px solid var(--line);padding:8px 14px;border-radius:999px;cursor:pointer;transition:border-color .2s,box-shadow .2s;}
+.menuBtn:hover{border-color:var(--p);box-shadow:0 0 0 3px rgba(192,75,255,.12);}
+.menuBtn .chev{width:9px;height:9px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);transition:transform .25s;margin-top:-3px;}
+.menuBtn.open .chev{transform:rotate(225deg);margin-top:3px;}
+.dropdown{max-height:0;overflow:hidden;border-bottom:1px solid var(--line);transition:max-height .32s ease;background:#0a0914;}
+.dropdown.open{max-height:460px;}
+.dropdown-in{padding:28px 48px 34px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+.catgroup b{display:block;font-size:12.5px;color:var(--c);margin:0 0 12px;font-weight:600;}
+.catgroup a{display:block;font-size:14px;color:var(--ink);text-decoration:none;padding:6px 0;opacity:.85;}
+.catgroup .count{color:var(--sub2);font-size:12px;}
+
+/* ---------- mini-hero de la página ---------- */
+.pagehero{position:relative;padding:60px 48px 40px;overflow:hidden;z-index:2;}
+.pagehero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 60% at 8% -10%, rgba(192,75,255,.32), transparent 60%),
+             radial-gradient(ellipse 45% 50% at 95% 10%, rgba(47,240,216,.22), transparent 60%);}
+.crumb{position:relative;z-index:2;font-size:12.5px;color:var(--sub2);margin:0 0 16px;}
+.crumb a{color:var(--sub);text-decoration:none;}
+.crumb a:hover{color:var(--c);}
+.tag{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.03em;color:#07060d;background:linear-gradient(95deg,var(--c),var(--c2));padding:6px 13px;border-radius:999px;margin:0 0 20px;font-weight:600;}
+.pagehero h1{position:relative;z-index:2;font-weight:700;font-size:clamp(36px,5.5vw,62px);line-height:1;letter-spacing:-.02em;margin:0 0 14px;
+  background:linear-gradient(100deg,var(--ink) 25%, var(--p2) 60%, var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.pagehero p{position:relative;z-index:2;font-size:15.5px;line-height:1.65;color:var(--sub);max-width:58ch;margin:0;}
+
+/* ---------- filtros ---------- */
+.filters{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:10px;padding:0 48px 36px;}
+.chip{font:600 12.5px "Inter";color:var(--sub);background:rgba(255,255,255,.03);border:1px solid var(--line);padding:8px 16px;border-radius:999px;cursor:pointer;transition:border-color .2s,color .2s,background .2s;}
+.chip:hover{color:var(--ink);border-color:var(--p);}
+.chip.on{color:#07060d;background:linear-gradient(95deg,var(--c),var(--c2));border-color:transparent;}
+
+/* ---------- quotes grid ---------- */
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px;padding:0 48px 90px;position:relative;z-index:2;}
+.quote-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px 28px 24px;overflow:hidden;transition:border-color .2s,transform .2s;}
+.quote-card:hover{border-color:var(--p);transform:translateY(-3px);}
+.quote-card::before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(176,94,255,.10),transparent 55%);pointer-events:none;}
+.quote-card .qmark{font:800 46px/1 "Space Grotesk";color:var(--p);opacity:.5;margin:0 0 8px;position:relative;z-index:2;}
+.quote-card p.qtext{font:500 18px/1.45 "Space Grotesk";color:var(--ink);margin:0 0 20px;position:relative;z-index:2;letter-spacing:-.005em;}
+.quote-card .qsrc{display:flex;align-items:center;gap:10px;position:relative;z-index:2;}
+.quote-card .qsrc .qcov{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--p),var(--c));flex:none;}
+.quote-card .qsrc b{display:block;font-size:13.5px;color:var(--ink);font-weight:600;}
+.quote-card .qsrc span{font-size:11.5px;color:var(--sub2);}
+.quote-card .qtag{position:absolute;top:22px;right:22px;font-size:10.5px;color:var(--sub2);border:1px solid var(--line);padding:3px 9px;border-radius:999px;z-index:2;}
+.quote-more{border:1px dashed var(--line);background:transparent;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--sub);font-size:13.5px;min-height:160px;cursor:pointer;transition:border-color .2s,color .2s;}
+.quote-more:hover{border-color:var(--p);color:var(--ink);}
+
+/* ---------- formulario agregar frase ---------- */
+.addBtn{display:flex;align-items:center;gap:7px;font:600 12.5px "Inter";color:#07060d;background:linear-gradient(95deg,var(--p),var(--p2));border:none;padding:9px 18px;border-radius:999px;cursor:pointer;margin-left:auto;}
+.modalBg{position:fixed;inset:0;background:rgba(5,4,10,.72);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;}
+.modalBg.open{display:flex;}
+.modal{background:var(--surface2);border:1px solid var(--line);border-radius:18px;padding:30px 30px 26px;max-width:460px;width:100%;position:relative;max-height:88vh;overflow:auto;}
+.modal h3{margin:0 0 4px;font-size:19px;}
+.modal p.hint{font-size:12.5px;color:var(--sub2);margin:0 0 22px;}
+.modal label{display:block;font:600 12px "Inter";color:var(--sub);margin:0 0 6px;}
+.modal .fld{margin-bottom:14px;}
+.modal input,.modal textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--ink);font:400 14px "Inter";resize:vertical;}
+.modal input:focus,.modal textarea:focus{outline:none;border-color:var(--p);}
+.modal textarea{min-height:70px;}
+.modal .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.modal .pwdRow{border-top:1px solid var(--line);margin-top:6px;padding-top:16px;}
+.modal .actions{display:flex;gap:10px;margin-top:8px;}
+.modal .save{flex:1;font:600 13.5px "Inter";color:#07060d;background:linear-gradient(95deg,var(--c),var(--c2));border:none;padding:11px;border-radius:10px;cursor:pointer;}
+.modal .cancel{font:600 13.5px "Inter";color:var(--sub);background:transparent;border:1px solid var(--line);padding:11px 16px;border-radius:10px;cursor:pointer;}
+.modal .closeX{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--sub);font-size:20px;cursor:pointer;line-height:1;}
+.modal .msg{font-size:12.5px;margin:10px 0 0;min-height:16px;}
+.modal .msg.err{color:#ff6b6b;}
+.modal .msg.ok{color:#2ff0d8;}
+
+@media(max-width:760px){
+  .topbar-row,.pagehero,.filters,.quotes-grid{padding-left:18px;padding-right:18px;}
+  .topbar-row{padding-top:13px;padding-bottom:13px;}
+  .dropdown-in{padding:22px 18px 26px;grid-template-columns:1fr 1fr;gap:20px;}
+  .navRight .search,.quickNav{display:none;}
+  .menuBtn{padding:8px 11px;font-size:12px;}
+  .brand .name{font-size:14.5px;}
+  .pagehero{padding:40px 18px 30px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="genreStrip">
+    <div class="bgtrack">
+      <img src="menu-bg-strip.jpg" alt="">
+      <img src="menu-bg-strip.jpg" alt="">
+    </div>
+  </div>
+  <div class="topbar-row">
+    <div class="brand"><div class="mark"></div><span class="name">Coleccionista de Infinitos</span></div>
+    <div class="navRight">
+      <span class="search">Buscar una lista…</span>
+      <nav class="quickNav">
+        <a href="#">Más aclamados</a>
+        <a href="#">Mi Top 12</a>
+        <a href="#">Cronología</a>
+        <a href="#" class="active">Music Quotes</a>
+      </nav>
+      <button class="menuBtn" id="menuBtn">Categorías <span class="chev"></span></button>
+    </div>
+  </div>
+  <div class="dropdown" id="dropdown">
+    <div class="dropdown-in">
+      <div class="catgroup"><b>Superlistas</b>
+        <a href="#">Álbumes globales <span class="count">· 4</span></a>
+        <a href="#">Canciones globales <span class="count">· 6</span></a></div>
+      <div class="catgroup"><b>Música latina</b>
+        <a href="#">Álbumes latinos <span class="count">· 11</span></a>
+        <a href="#">Canciones latinas <span class="count">· 18</span></a>
+        <a href="#">Latino general <span class="count">· 9</span></a></div>
+      <div class="catgroup"><b>Por época</b>
+        <a href="#">Anuales <span class="count">· 22</span></a>
+        <a href="#">Décadas <span class="count">· 14</span></a>
+        <a href="#">Cronología <span class="count">· 8</span></a></div>
+      <div class="catgroup"><b>Por tema / género</b>
+        <a href="#">Temáticas <span class="count">· 16</span></a>
+        <a href="#">Géneros <span class="count">· 27</span></a>
+        <a href="#">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="pagehero">
+  <p class="crumb"><a href="#">Inicio</a> / Music Quotes</p>
+  <span class="tag">COLECCIÓN EN CRECIMIENTO</span>
+  <h1>Music Quotes</h1>
+  <p>Frases sueltas de canciones que se quedaron grabadas — algunas por lo que dicen, otras por cómo se sienten al cantarlas. Nelson va sumando una a la vez.</p>
+</div>
+
+<div class="filters">
+  <button class="chip on">Todas</button>
+  <button class="chip">Rock</button>
+  <button class="chip">Pop</button>
+  <button class="chip">Latino</button>
+  <button class="chip">80s</button>
+  <button class="addBtn" id="openAdd">+ Agregar frase</button>
+</div>
+
+<div class="quotes-grid" id="quotesGrid">
+  <div class="quote-card" data-tag="80s · synth-pop">
+    <span class="qtag">80s · synth-pop</span>
+    <div class="qmark">&ldquo;</div>
+    <p class="qtext">Hoping the best, but expecting the worst</p>
+    <div class="qsrc"><div class="qcov"></div><div><b>Forever Young</b><span>Alphaville</span></div></div>
+  </div>
+  <div class="quote-card" data-tag="70s · art rock">
+    <span class="qtag">70s · art rock</span>
+    <div class="qmark">&ldquo;</div>
+    <p class="qtext">Nothing prepared me for your smile</p>
+    <div class="qsrc"><div class="qcov"></div><div><b>Thursday's Child</b><span>David Bowie</span></div></div>
+  </div>
+  <div class="quote-card" data-tag="latino · urbano">
+    <span class="qtag">latino · urbano</span>
+    <div class="qmark">&ldquo;</div>
+    <p class="qtext">Ya resuelvo ecuaciones como físico nuclear, pero, Zatina, tu mirar, ya no lo puedo descifrar. De qué me sirve tanto estudio si contigo yo repruebo siempre.</p>
+    <div class="qsrc"><div class="qcov"></div><div><b>Decimo Grado</b><span>Ana y Jaime</span></div></div>
+  </div>
+  <div class="quote-card" data-tag="rock · 80s">
+    <span class="qtag">rock · 80s</span>
+    <div class="qmark">&ldquo;</div>
+    <p class="qtext">If you want to kiss the sky, better learn how to kneel</p>
+    <div class="qsrc"><div class="qcov"></div><div><b>Mysterious Ways</b><span>U2</span></div></div>
+  </div>
+  <div class="quote-card quote-more" id="openAdd2">+ Nueva frase<br>— clic aquí para agregarla</div>
+</div>
+
+<div class="modalBg" id="modalBg">
+  <div class="modal">
+    <button class="closeX" id="closeModal">&times;</button>
+    <h3>Agregar una frase</h3>
+    <p class="hint">Se guarda directo en la Hoja de Google — no necesitas tocar GitHub.</p>
+    <div class="fld"><label>Frase</label><textarea id="fText" placeholder="La frase de la canción"></textarea></div>
+    <div class="row2">
+      <div class="fld"><label>Canción</label><input id="fSong" placeholder="Nombre de la canción"></div>
+      <div class="fld"><label>Artista</label><input id="fArtist" placeholder="Nombre del artista"></div>
+    </div>
+    <div class="fld"><label>Género / etiqueta (opcional)</label><input id="fTag" placeholder="ej: rock, 80s, latino…"></div>
+    <div class="fld pwdRow"><label>Clave</label><input id="fPwd" type="password" placeholder="Tu clave"></div>
+    <p class="msg" id="formMsg"></p>
+    <div class="actions">
+      <button class="cancel" id="cancelAdd">Cancelar</button>
+      <button class="save" id="saveAdd">Guardar frase</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== CONFIGURA AQUÍ la URL de tu Apps Script (ver instrucciones) ===== */
+var QUOTES_API_URL = "https://script.google.com/macros/s/AKfycbwF5yVj30lCSi_BLBWND1KjTtsJdPJ1v1AEaGTLQpRVnM1JC64a8n8VxNfEsdGnWohG/exec";
+
+var grid=document.getElementById('quotesGrid');
+
+function shuffleCards(){
+  var cards=Array.prototype.slice.call(grid.querySelectorAll('.quote-card:not(.quote-more)'));
+  var more=grid.querySelector('.quote-more');
+  for(var i=cards.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var tmp=cards[i]; cards[i]=cards[j]; cards[j]=tmp;
+  }
+  cards.forEach(function(c){grid.appendChild(c);});
+  if(more) grid.appendChild(more);
+}
+shuffleCards();
+
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function renderFromApi(list){
+  var more=grid.querySelector('.quote-more');
+  grid.querySelectorAll('.quote-card:not(.quote-more)').forEach(function(c){c.remove();});
+  list.forEach(function(q){
+    var card=document.createElement('div');
+    card.className='quote-card';
+    card.dataset.tag=q.tag||'';
+    card.innerHTML=
+      (q.tag?'<span class="qtag">'+esc(q.tag)+'</span>':'')+
+      '<div class="qmark">&ldquo;</div>'+
+      '<p class="qtext">'+esc(q.text)+'</p>'+
+      '<div class="qsrc"><div class="qcov"></div><div><b>'+esc(q.song)+'</b><span>'+esc(q.artist)+'</span></div></div>';
+    grid.insertBefore(card, more);
+  });
+  shuffleCards();
+}
+
+/* Si hay una API configurada, trae las frases reales de la Hoja de Google.
+   Si no (o falla, p.ej. dentro de esta vista previa), se queda con las de ejemplo. */
+if(QUOTES_API_URL && QUOTES_API_URL.indexOf('http')===0){
+  fetch(QUOTES_API_URL).then(function(r){return r.json();}).then(function(list){
+    if(Array.isArray(list) && list.length) renderFromApi(list);
+  }).catch(function(){ /* se queda con las de ejemplo */ });
+}
+
+var btn=document.getElementById('menuBtn'), dd=document.getElementById('dropdown');
+btn.addEventListener('click',function(){
+  var open=dd.classList.toggle('open');
+  btn.classList.toggle('open',open);
+});
+document.querySelectorAll('.chip').forEach(function(ch){
+  ch.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});
+    ch.classList.add('on');
+  });
+});
+
+/* ---- modal agregar frase ---- */
+var modalBg=document.getElementById('modalBg'), msg=document.getElementById('formMsg');
+function openModal(){ modalBg.classList.add('open'); msg.textContent=''; msg.className='msg'; }
+function closeModal(){ modalBg.classList.remove('open'); }
+document.getElementById('openAdd').addEventListener('click',openModal);
+document.getElementById('openAdd2').addEventListener('click',openModal);
+document.getElementById('closeModal').addEventListener('click',closeModal);
+document.getElementById('cancelAdd').addEventListener('click',closeModal);
+modalBg.addEventListener('click',function(e){ if(e.target===modalBg) closeModal(); });
+
+document.getElementById('saveAdd').addEventListener('click',function(){
+  var text=document.getElementById('fText').value.trim();
+  var song=document.getElementById('fSong').value.trim();
+  var artist=document.getElementById('fArtist').value.trim();
+  var tag=document.getElementById('fTag').value.trim();
+  var pwd=document.getElementById('fPwd').value;
+
+  if(!text||!song||!artist){ msg.textContent='Completa frase, canción y artista.'; msg.className='msg err'; return; }
+  if(!pwd){ msg.textContent='Falta la clave.'; msg.className='msg err'; return; }
+  if(!QUOTES_API_URL || QUOTES_API_URL.indexOf('http')!==0){
+    msg.textContent='Falta configurar la URL del Apps Script en el código.'; msg.className='msg err'; return;
+  }
+
+  msg.textContent='Guardando…'; msg.className='msg';
+  fetch(QUOTES_API_URL,{
+    method:'POST',
+    headers:{'Content-Type':'text/plain;charset=utf-8'}, /* evita preflight CORS con Apps Script */
+    body:JSON.stringify({password:pwd,text:text,song:song,artist:artist,tag:tag})
+  }).then(function(r){return r.json();}).then(function(res){
+    if(res && res.error){ msg.textContent='Clave incorrecta.'; msg.className='msg err'; return; }
+    msg.textContent='¡Guardada!'; msg.className='msg ok';
+    document.getElementById('fText').value='';
+    document.getElementById('fSong').value='';
+    document.getElementById('fArtist').value='';
+    document.getElementById('fTag').value='';
+    document.getElementById('fPwd').value='';
+    setTimeout(function(){
+      closeModal();
+      fetch(QUOTES_API_URL).then(function(r){return r.json();}).then(renderFromApi).catch(function(){});
+    }, 700);
+  }).catch(function(){ msg.textContent='No se pudo conectar. Revisa la URL del Apps Script.'; msg.className='msg err'; });
+});
+</script>
+</body>
+</html>
