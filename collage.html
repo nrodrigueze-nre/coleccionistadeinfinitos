@@ -95,7 +95,6 @@ function next(){
     results[i] = artUrl;
     if(artUrl){
       var img = document.createElement('img');
-      img.crossOrigin = 'anonymous';
       img.alt = a.artist + ' - ' + a.title;
       img.onload = function(){ img.classList.add('loaded'); };
       img.onerror = function(){
