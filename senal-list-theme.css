@@ -53,16 +53,23 @@ a{color:inherit;}
 .si-back:hover{color:var(--ink);}
 
 /* ---------- page-header ---------- */
-.page-header{background:linear-gradient(165deg,var(--surface2),var(--surface)) !important;border-bottom:1px solid var(--line);}
-.badge{color:var(--c) !important;border:1px solid var(--line) !important;background:rgba(47,240,216,.08) !important;}
+.page-header{background:var(--bg) !important;border-bottom:1px solid var(--line);position:relative;overflow:hidden;isolation:isolate;}
+.page-header::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 70% at 15% -20%, rgba(192,75,255,.35), transparent 60%),
+             radial-gradient(ellipse 50% 60% at 100% 10%, rgba(47,240,216,.25), transparent 60%);}
+.page-header>*{position:relative;z-index:1;}
+.badge{color:#07060d !important;border:1px solid transparent !important;background:linear-gradient(95deg,var(--c),var(--c2)) !important;font-weight:600 !important;}
 .badge-year{color:var(--sub) !important;border:1px solid var(--line) !important;}
-.page-title{color:var(--ink) !important;}
+.page-title{background:linear-gradient(100deg,var(--ink) 25%, var(--p2) 65%, var(--c)) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;}
 .page-sub{color:var(--sub) !important;}
 .back-link{color:var(--c) !important;}
 .back-link:hover{color:var(--ink) !important;}
 
 /* ---------- hero / about ---------- */
-.hero{background:var(--bg) !important;border-bottom:1px solid var(--line) !important;}
+.hero{background:var(--bg) !important;border-bottom:1px solid var(--line) !important;position:relative;overflow:hidden;isolation:isolate;}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 45% 60% at 90% 0%, rgba(255,63,201,.18), transparent 60%);}
+.hero>*{position:relative;z-index:1;}
 .cover-img{background:var(--surface) !important;border:1px solid var(--line) !important;}
 .cover-cap{color:var(--sub2) !important;}
 .sec-label{color:var(--c) !important;}
