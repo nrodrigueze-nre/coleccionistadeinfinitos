@@ -3908,7 +3908,11 @@ function loadHomeQuotes(){
   }).catch(function(){renderHomeQuotes(HOME_QUOTES_FALLBACK);});
 }
 
-go('home');
+(function(){
+  var h=(location.hash||'').replace('#','');
+  var valid=h&&(h==='aclamados'||h==='top12'||SEC_FILTERS[h]);
+  go(valid?h:'home');
+})();
 
 </script>
 </body>
