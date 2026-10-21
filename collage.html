@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collage de portadas — Coleccionista de Infinitos</title>
+<style>
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#050409;}
+.grid{display:grid;grid-template-columns:repeat(16, 1fr);gap:1px;background:#050409;}
+.tile{position:relative;aspect-ratio:1/1;overflow:hidden;background:linear-gradient(135deg,#1a1430,#241a38);}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .6s;}
+.tile img.loaded{opacity:1;}
+.tile .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font:600 8px/1.2 sans-serif;color:#cfc9ea;text-align:center;padding:4px;background:linear-gradient(135deg,#b05eff,#2ff0d8);opacity:.5;}
+.bar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+  padding:12px 18px;background:rgba(5,4,9,.85);backdrop-filter:blur(8px);font:600 13px "Inter",sans-serif;color:#eeeaf7;}
+.bar .dl{background:linear-gradient(95deg,#2ff0d8,#38b8ff);color:#07060d;border:none;padding:9px 16px;border-radius:999px;cursor:pointer;font:600 13px "Inter",sans-serif;}
+.bar .dl:disabled{opacity:.4;cursor:default;}
+.bar .hint{color:#8d87ab;font-weight:500;font-size:12px;}
+.spacer{height:52px;}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span id="statusTxt">Preparando…</span>
+  <span style="display:flex;align-items:center;gap:10px">
+    <span class="hint" id="hintTxt">Si el botón no descarga, toma una captura de pantalla de la cuadrícula.</span>
+    <button class="dl" id="dlBtn" disabled>Descargar PNG</button>
+  </span>
+</div>
+<div class="spacer"></div>
+<div class="grid" id="grid"></div>
+
+<script>
+var ALBUMS = [{"artist":"John Lennon","title":"Jealous Guy"},{"artist":"They Might Be Giants","title":"Birdhouse in Your Soul"},{"artist":"Pet Shop Boys","title":"West End Girls"},{"artist":"Aterciopelados","title":"Florecita Rockera"},{"artist":"Carlos Vives","title":"La Gota Fría"},{"artist":"Carlos Vives","title":"La Gota Fría"},{"artist":"Pescado Rabioso","title":"Artaud"},{"artist":"Juan Luis Guerra","title":"Bachata Rosa"},{"artist":"The Beatles","title":"Sgt Peppers Lonely Hearts Club Band"},{"artist":"The Beatles","title":"Sgt Peppers Lonely Hearts Club Band"},{"artist":"Billie Holiday","title":"Strange Fruit"},{"artist":"The Beatles","title":"I Want to Hold Your Hand"},{"artist":"Taylor Swift","title":"Shake It Off"},{"artist":"Rubén Blades","title":"Siembra"},{"artist":"J Balvin","title":"Ay Vamos"},{"artist":"Bad Bunny","title":"Soy Peor"},{"artist":"Luis Fonsi","title":"Despacito"},{"artist":"Bad Bunny","title":"Mia"},{"artist":"Jorge Ben","title":"Mas Que Nada"},{"artist":"Caetano Veloso","title":"Tropicália"},{"artist":"Smokey Robinson","title":"The Tracks of My Tears"},{"artist":"Usher","title":"Confessions Part II"},{"artist":"Bell Biv DeVoe","title":"Poison"},{"artist":"Bauhaus","title":"Bela Lugosi's Dead"},{"artist":"Bruce Springsteen","title":"Born to Run"},{"artist":"Outkast","title":"Hey Ya!"},{"artist":"Robert Johnson","title":"Hellhound on My Trail"},{"artist":"Jimi Hendrix","title":"All Along the Watchtower"},{"artist":"Grandmaster Flash","title":"The Message"},{"artist":"Black Sabbath","title":"Black Sabbath"},{"artist":"Chuck Berry","title":"Johnny B. Goode"},{"artist":"Aretha Franklin","title":"Respect"},{"artist":"Led Zeppelin","title":"Stairway to Heaven"},{"artist":"Michael Jackson","title":"Billie Jean"},{"artist":"Bruce Springsteen","title":"Born in the USA"},{"artist":"Nirvana","title":"Smells Like Teen Spirit"},{"artist":"Nirvana","title":"Smells Like Teen Spirit"},{"artist":"Soda Stereo","title":"De Música Ligera"},{"artist":"Kendrick Lamar","title":"HUMBLE"},{"artist":"Los Fabulosos Cadillacs","title":"Matador"},{"artist":"Soda Stereo","title":"Persiana Americana"},{"artist":"Rubén Blades","title":"Pedro Navaja"},{"artist":"Daddy Yankee","title":"Gasolina"},{"artist":"Daddy Yankee","title":"Gasolina"},{"artist":"Bad Bunny","title":"Tití Me Preguntó"},{"artist":"James Brown","title":"Get Up"},{"artist":"Lisa Lisa","title":"I Wonder If I Take You Home"},{"artist":"Cocteau Twins","title":"Heaven or Las Vegas"},{"artist":"Shaboozey","title":"A Bar Song (Tipsy)"},{"artist":"Lesley Gore","title":"It's My Party"},{"artist":"Lady Gaga","title":"Born This Way"},{"artist":"Shakira","title":"Waka Waka"},{"artist":"Sir Mix-a-Lot","title":"Baby Got Back"},{"artist":"Whitney Houston","title":"I Will Always Love You"},{"artist":"Black Sabbath","title":"Iron Man"},{"artist":"Beyoncé","title":"Crazy in Love"},{"artist":"Dexy's Midnight Runners","title":"Come on Eileen"},{"artist":"Guns N' Roses","title":"Welcome to the Jungle"},{"artist":"Gloria Gaynor","title":"I Will Survive"},{"artist":"Soda Stereo","title":"De Música Ligera"},{"artist":"Willie Colón","title":"Siembra"},{"artist":"Carlos Vives","title":"La tierra del olvido"},{"artist":"La Etnnia","title":"Manicomio 5-27"},{"artist":"Putumayo World Music","title":"Africa"},{"artist":"Shakira","title":"Waka Waka"},{"artist":"Cypress Hill","title":"Insane in the Brain"},{"artist":"Vico C","title":"La recta final"},{"artist":"Rosalía","title":"Malamente"},{"artist":"Café Tacvba","title":"Re"},{"artist":"Shakira","title":"Pies Descalzos"},{"artist":"Tainy","title":"DATA"},{"artist":"Carlos Vives","title":"La Gota Fría"},{"artist":"Daft Punk","title":"Digital Love"},{"artist":"Diana Ross","title":"Endless Love"},{"artist":"Dolly Parton","title":"I Will Always Love You"},{"artist":"Chic","title":"Good Times"},{"artist":"Daft Punk","title":"Discovery"},{"artist":"Queen","title":"We Will Rock You"},{"artist":"The Smiths","title":"This Charming Man"},{"artist":"Avicii","title":"Wake Me Up"},{"artist":"Age of Love","title":"The Age of Love"},{"artist":"Marshall Jefferson","title":"Move Your Body"},{"artist":"Gloria Gaynor","title":"I Will Survive"},{"artist":"Robin S","title":"Show Me Love"},{"artist":"Michael Jackson","title":"Billie Jean"},{"artist":"The Weeknd","title":"Blinding Lights"},{"artist":"Daft Punk","title":"Get Lucky"},{"artist":"Daft Punk","title":"One More Time"},{"artist":"Cafe Tacvba","title":"Avalancha de exitos"},{"artist":"Rosalia","title":"El mal querer"},{"artist":"Los Violadores","title":"Y ahora que pasa eh"},{"artist":"Pink Floyd","title":"The Piper at the Gates of Dawn"},{"artist":"Blink-182","title":"Enema of the State"},{"artist":"Pink Floyd","title":"The Dark Side of the Moon"},{"artist":"Talking Heads","title":"Remain in Light"},{"artist":"Def Leppard","title":"Photograph"},{"artist":"Pink Floyd","title":"The Dark Side of the Moon"},{"artist":"Pulp","title":"Different Class"},{"artist":"The Ramones","title":"Ramones"},{"artist":"Metallica","title":"Metallica"},{"artist":"Joan Manuel Serrat","title":"Mediterraneo"},{"artist":"Donna Summer","title":"I Feel Love"},{"artist":"Britney Spears","title":"Baby One More Time"},{"artist":"Joy Division","title":"Unknown Pleasures"},{"artist":"Depeche Mode","title":"Speak and Spell"},{"artist":"Sade","title":"Smooth Operator"},{"artist":"Eurythmics","title":"Sweet Dreams Are Made of This"},{"artist":"Badfinger","title":"No Matter What"},{"artist":"Ramones","title":"Blitzkrieg Bop"},{"artist":"Carl Perkins","title":"Blue Suede Shoes"},{"artist":"Bob Marley","title":"No Woman No Cry"},{"artist":"Nirvana","title":"Smells Like Teen Spirit"},{"artist":"Harry Belafonte","title":"Banana Boat Song"},{"artist":"Aretha Franklin","title":"Respect"},{"artist":"Billie Eilish","title":"Birds of a Feather"},{"artist":"Charli XCX","title":"360"},{"artist":"Olivia Rodrigo","title":"vampire"},{"artist":"Beyoncé","title":"Break My Soul"},{"artist":"Daft Punk","title":"Get Lucky"},{"artist":"Michael Jackson","title":"Billie Jean"},{"artist":"Tool","title":"Ticks and Leeches"},{"artist":"Queen","title":"We Will Rock You"},{"artist":"Queen","title":"Bohemian Rhapsody"},{"artist":"Rush","title":"YYZ"},{"artist":"Bob Dylan","title":"The Times They Are a-Changin"},{"artist":"Adele","title":"21"},{"artist":"Adele","title":"Rolling in the Deep"},{"artist":"Kendrick Lamar","title":"HUMBLE"},{"artist":"Outkast","title":"Hey Ya"},{"artist":"Radiohead","title":"Paranoid Android"},{"artist":"Kendrick Lamar","title":"GNX"},{"artist":"Charli XCX","title":"BRAT"},{"artist":"Olivia Rodrigo","title":"GUTS"},{"artist":"Beyoncé","title":"Renaissance"},{"artist":"Juanes","title":"A Dios le Pido"},{"artist":"Los Fabulosos Cadillacs","title":"Matador"},{"artist":"Natalia Lafourcade","title":"Hasta la Raiz"},{"artist":"Farruko","title":"Pepas"},{"artist":"Wizkid","title":"Essence"},{"artist":"Olivia Rodrigo","title":"Sour"},{"artist":"Cardi B","title":"WAP"},{"artist":"Taylor Swift","title":"Folklore"},{"artist":"Billie Eilish","title":"Bad Guy"},{"artist":"Lana Del Rey","title":"Norman Fucking Rockwell!"},{"artist":"Drake","title":"In My Feelings"},{"artist":"Kacey Musgraves","title":"Golden Hour"},{"artist":"Harry Styles","title":"Sign of the Times"},{"artist":"Kendrick Lamar","title":"DAMN."},{"artist":"Beyonce","title":"Lemonade"},{"artist":"Beyonce","title":"Formation"},{"artist":"The Weeknd","title":"Can't Feel My Face"},{"artist":"Kendrick Lamar","title":"To Pimp a Butterfly"},{"artist":"Beyonce","title":"Drunk in Love"},{"artist":"Taylor Swift","title":"1989"},{"artist":"Kanye West","title":"Yeezus"},{"artist":"Alabama Shakes","title":"Hold On"},{"artist":"Frank Ocean","title":"Channel Orange"},{"artist":"Adele","title":"Rolling in the Deep"},{"artist":"Adele","title":"21"},{"artist":"Porter Robinson","title":"Nurture"},{"artist":"Kylie Minogue","title":"Tension"},{"artist":"Black Sabbath","title":"Black Sabbath"},{"artist":"Willie Colón","title":"Siembra"},{"artist":"Eddie Palmieri","title":"Vamonos Pal Monte"},{"artist":"Kraftwerk","title":"Trans-Europe Express"},{"artist":"Marvin Gaye","title":"What's Going On"},{"artist":"El Último de la Fila","title":"Enemigos de lo ajeno"},{"artist":"Willie Colón","title":"Siembra"},{"artist":"Daft Punk","title":"Discovery"},{"artist":"Los Prisioneros","title":"Pateando piedras"},{"artist":"Álvaro Díaz","title":"TE VI EN MIS PESADILLAS"},{"artist":"KAROL G","title":"ME TENGO QUE IR"},{"artist":"Willie Colon","title":"Siembra"},{"artist":"Pink Floyd","title":"The Dark Side of the Moon"},{"artist":"Daddy Yankee","title":"Gasolina"},{"artist":"Buena Vista Social Club","title":"Buena Vista Social Club"},{"artist":"Def Leppard","title":"Hysteria"},{"artist":"Led Zeppelin","title":"Whole Lotta Love"},{"artist":"Nirvana","title":"Nevermind"},{"artist":"Kendrick Lamar","title":"good kid m.A.A.d city"},{"artist":"Ramones","title":"Ramones"},{"artist":"Bad Bunny","title":"YHLQMDLG"},{"artist":"Bad Bunny","title":"X100PRE"},{"artist":"Rosalia","title":"Motomami"},{"artist":"Babasonicos","title":"La Pregunta"},{"artist":"Missy Elliott","title":"Get Ur Freak On"},{"artist":"Beyonce","title":"Lemonade"},{"artist":"Cafe Tacvba","title":"Re"},{"artist":"Cafe Tacvba","title":"Re"},{"artist":"Bad Bunny","title":"Debi Tirar Mas Fotos"},{"artist":"Alvaro Diaz","title":"Sayonara"},{"artist":"Bad Bunny","title":"Un Verano sin Ti"},{"artist":"Rauw Alejandro","title":"Vice Versa"},{"artist":"C. Tangana","title":"El Madrileño"},{"artist":"Carlos Vives","title":"La Tierra del Olvido"},{"artist":"La Pestilencia","title":"Balistica"},{"artist":"Aterciopelados","title":"El Dorado"},{"artist":"Carlos Vives","title":"Clasicos de la Provincia"},{"artist":"Ritchie Valens","title":"La Bamba"},{"artist":"Molotov","title":"Gimme tha Power"},{"artist":"Cardi B","title":"I Like It"},{"artist":"Luis Fonsi","title":"Despacito"},{"artist":"The Beatles","title":"Sgt Peppers Lonely Hearts Club Band"},{"artist":"Michael Jackson","title":"Thriller"},{"artist":"Historia","title":"1877-1959"},{"artist":"Historia","title":"1960s"},{"artist":"Historia","title":"1970s"},{"artist":"Historia","title":"1980s"},{"artist":"Historia","title":"1990s"},{"artist":"Historia","title":"2000s"},{"artist":"Historia","title":"2010s"},{"artist":"Historia","title":"2020s"}];
+var CACHE_KEY = 'coi_collage_cache_v1';
+
+var grid = document.getElementById('grid');
+var statusTxt = document.getElementById('statusTxt');
+var dlBtn = document.getElementById('dlBtn');
+var loaded = 0, failed = 0;
+var results = new Array(ALBUMS.length).fill(null);
+
+var cache = {};
+try{ cache = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}'); }catch(e){}
+
+ALBUMS.forEach(function(a, i){
+  var tile = document.createElement('div');
+  tile.className = 'tile';
+  grid.appendChild(tile);
+});
+
+function upgradeArt(url){
+  return url ? url.replace(/\d+x\d+bb\.jpg$/, '400x400bb.jpg') : null;
+}
+
+function fetchCover(a){
+  var key = a.artist + '|||' + a.title;
+  if(cache[key] !== undefined) return Promise.resolve(cache[key]);
+  var term = encodeURIComponent(a.artist + ' ' + a.title);
+  var url = 'https://itunes.apple.com/search?term=' + term + '&media=music&entity=album&limit=1';
+  return fetch(url).then(function(r){ return r.json(); }).then(function(data){
+    if(data.results && data.results.length){
+      return upgradeArt(data.results[0].artworkUrl100);
+    }
+    var url2 = 'https://itunes.apple.com/search?term=' + term + '&media=music&limit=1';
+    return fetch(url2).then(function(r){return r.json();}).then(function(d2){
+      if(d2.results && d2.results.length) return upgradeArt(d2.results[0].artworkUrl100);
+      return null;
+    });
+  }).catch(function(){ return null; }).then(function(art){
+    cache[key] = art;
+    try{ localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); }catch(e){}
+    return art;
+  });
+}
+
+function finish(){
+  statusTxt.textContent = loaded + ' de ' + ALBUMS.length + ' portadas listas';
+  dlBtn.disabled = false;
+}
+
+var CONCURRENCY = 8;
+var idx = 0;
+function next(){
+  if(idx >= ALBUMS.length){
+    if(loaded+failed >= ALBUMS.length) finish();
+    return;
+  }
+  var i = idx++;
+  var a = ALBUMS[i];
+  var tile = grid.children[i];
+  fetchCover(a).then(function(artUrl){
+    results[i] = artUrl;
+    if(artUrl){
+      var img = document.createElement('img');
+      img.crossOrigin = 'anonymous';
+      img.alt = a.artist + ' - ' + a.title;
+      img.onload = function(){ img.classList.add('loaded'); };
+      img.onerror = function(){
+        failed++;
+        tile.innerHTML = '<div class="fallback">'+a.artist+'</div>';
+      };
+      img.src = artUrl;
+      tile.appendChild(img);
+      loaded++;
+    } else {
+      failed++;
+      tile.innerHTML = '<div class="fallback">'+a.artist+'</div>';
+    }
+    if(loaded+failed >= ALBUMS.length) finish();
+    next();
+  });
+}
+for(var c=0;c<CONCURRENCY;c++) next();
+
+dlBtn.addEventListener('click', function(){
+  var cols = 16, tileSize = 160;
+  var rows = Math.ceil(ALBUMS.length/cols);
+  var canvas = document.createElement('canvas');
+  canvas.width = cols*tileSize;
+  canvas.height = rows*tileSize;
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#15121f';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  var imgs = grid.querySelectorAll('img.loaded');
+  var pending = imgs.length;
+  if(pending === 0){ alert('Todavía no hay portadas cargadas.'); return; }
+
+  imgs.forEach(function(img){
+    var tile = img.parentElement;
+    var i = Array.prototype.indexOf.call(grid.children, tile);
+    var col = i % cols, row = Math.floor(i/cols);
+    try{
+      ctx.drawImage(img, col*tileSize, row*tileSize, tileSize, tileSize);
+    }catch(e){}
+    pending--;
+    if(pending === 0) doExport();
+  });
+
+  function doExport(){
+    try{
+      canvas.toBlob(function(blob){
+        if(!blob){
+          alert('El navegador bloqueó la exportación por seguridad (CORS). Toma una captura de pantalla de la cuadrícula en su lugar.');
+          return;
+        }
+        saveBlob(blob);
+      }, 'image/png');
+    }catch(e){
+      alert('El navegador bloqueó la exportación por seguridad (las portadas vienen de Apple y no siempre se pueden "leer" dentro de un canvas). Toma una captura de pantalla de la cuadrícula en su lugar — con eso también sirve.');
+    }
+  }
+
+  function saveBlob(blob){
+      if(window.claude && window.claude.use){
+        window.claude.use('downloads').then(function(downloads){
+          if(!downloads){
+            alert('La descarga no está disponible aquí. Toma una captura de pantalla de la cuadrícula en su lugar.');
+            return;
+          }
+          downloads.save({filename:'coleccionista-collage.png', data: blob}).catch(function(){
+            alert('No se pudo guardar el archivo (puede que lo hayas rechazado).');
+          });
+        });
+      } else {
+        alert('La descarga no está disponible aquí. Toma una captura de pantalla de la cuadrícula en su lugar.');
+      }
+  }
+});
+</script>
+</body>
+</html>
