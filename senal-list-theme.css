@@ -132,7 +132,8 @@ a{color:inherit;}
 .decade-nav a:hover{background:var(--surface2) !important;color:var(--ink) !important;}
 .decade-nav a.active{background:linear-gradient(95deg,var(--p),var(--c2)) !important;color:#07060d !important;border-color:transparent !important;}
 .year-block{border-bottom:1px solid var(--line) !important;align-items:flex-start !important;}
-.year-tag{color:var(--c) !important;}
+.year-tag{color:var(--c) !important;flex-shrink:0 !important;}
+.year-events{flex:1 1 0% !important;min-width:0 !important;}
 .year-events p{color:var(--sub) !important;}
 .page-footer a[href="index.html"]{color:var(--c) !important;}
 .page-footer a[href="index.html"]:hover{color:var(--ink) !important;}
