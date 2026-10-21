@@ -1,0 +1,129 @@
+/* ============================================================
+   Coleccionista de Infinitos — tema "Señal" para páginas de lista
+   Un solo archivo compartido: reskin oscuro por encima del CSS
+   original de cada lista. No toca estructura ni clases usadas
+   por el JS (scrobbles/listeners/playcount/loading/zero, etc).
+   ============================================================ */
+:root{
+  color-scheme: dark !important;
+  --p:#c04bff; --p2:#ff3fc9; --c:#2ff0d8; --c2:#38b8ff;
+  --bg:#07060d; --surface:#100c1c; --surface2:#160f28; --line:#262040;
+  --ink:#f4f1fb; --sub:#9b93bf; --sub2:#6e668f;
+}
+html,body{background:var(--bg) !important;color:var(--ink) !important;}
+body{font-family:'Inter',sans-serif !important;}
+a{color:inherit;}
+::selection{background:var(--p);color:#fff;}
+
+/* tipografía Señal: Space Grotesk para títulos/acentos, Inter para texto */
+.page-title,.feat-title,.si-name,.track-num,.sec-label{font-family:'Space Grotesk',sans-serif !important;}
+.page-title{letter-spacing:-.01em !important;}
+.rtext,.feat-rev,.page-sub,.track-name,.track-artist,.feat-artist,.foot-left,.foot-note{font-family:'Inter',sans-serif !important;}
+
+/* ---------- topbar compartida (inyectada al inicio del <body>) ---------- */
+.si-topbar{position:sticky;top:0;z-index:999;border-bottom:1px solid var(--line);isolation:isolate;overflow:hidden;background:#0a0914;}
+.si-topbar .genreStrip{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.si-topbar .genreStrip .bgtrack{position:absolute;inset:0;width:200%;height:100%;display:flex;animation:siGenreScroll 90s linear infinite;}
+.si-topbar .genreStrip .bgtrack img{height:100%;width:50%;object-fit:cover;object-position:center top;flex:none;display:block;filter:saturate(1.2) contrast(1.05);}
+@keyframes siGenreScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.si-topbar::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg, rgba(176,94,255,.14), rgba(47,240,216,.1) 50%, rgba(255,63,201,.14));mix-blend-mode:soft-light;}
+.si-topbar::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(7,6,13,.5), rgba(7,6,13,.68) 60%, rgba(7,6,13,.88)),linear-gradient(90deg, #07060d 0%, transparent 9%, transparent 91%, #07060d 100%);backdrop-filter:blur(0.5px) saturate(130%);}
+.si-topbar-row,.si-dropdown{position:relative;z-index:2;}
+.si-topbar-row{display:flex;align-items:center;justify-content:space-between;padding:14px 48px;font-family:'DM Sans',sans-serif;}
+.si-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.si-brand .si-mark{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 140deg,var(--p),var(--c2),var(--c),var(--p2),var(--p));flex:none;box-shadow:0 0 16px rgba(192,75,255,.5);}
+.si-brand .si-name{font:600 14.5px 'DM Sans';letter-spacing:-.01em;color:var(--ink);}
+.si-navRight{display:flex;align-items:center;gap:18px;}
+.si-quickNav{display:flex;align-items:center;gap:18px;}
+.si-quickNav a{font:600 12.5px 'DM Sans';color:var(--sub);text-decoration:none;}
+.si-quickNav a:hover{color:var(--ink);}
+.si-quickNav a.si-active{color:var(--c);}
+.si-menuBtn{display:flex;align-items:center;gap:7px;font:600 12.5px 'DM Sans';color:var(--ink);background:transparent;border:1px solid var(--line);padding:7px 13px;border-radius:999px;cursor:pointer;}
+.si-menuBtn:hover{border-color:var(--p);}
+.si-menuBtn .si-chev{width:8px;height:8px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);transition:transform .25s;margin-top:-3px;}
+.si-menuBtn.open .si-chev{transform:rotate(225deg);margin-top:3px;}
+.si-dropdown{max-height:0;overflow:hidden;border-bottom:1px solid var(--line);transition:max-height .32s ease;background:#0a0914;}
+.si-dropdown.open{max-height:460px;}
+.si-dropdown-in{padding:24px 48px 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.si-catgroup b{display:block;font-size:11.5px;color:var(--c);margin:0 0 10px;font-weight:600;font-family:'DM Sans';}
+.si-catgroup a{display:block;font-size:13px;color:var(--ink);text-decoration:none;padding:5px 0;opacity:.85;}
+.si-catgroup a:hover{opacity:1;color:var(--c);}
+.si-catgroup .si-count{color:var(--sub2);font-size:11px;}
+.si-back{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--c);text-decoration:none;padding:10px 48px 0;position:relative;z-index:2;}
+.si-back:hover{color:var(--ink);}
+
+/* ---------- page-header ---------- */
+.page-header{background:linear-gradient(165deg,var(--surface2),var(--surface)) !important;border-bottom:1px solid var(--line);}
+.badge{color:var(--c) !important;border:1px solid var(--line) !important;background:rgba(47,240,216,.08) !important;}
+.badge-year{color:var(--sub) !important;border:1px solid var(--line) !important;}
+.page-title{color:var(--ink) !important;}
+.page-sub{color:var(--sub) !important;}
+.back-link{color:var(--c) !important;}
+.back-link:hover{color:var(--ink) !important;}
+
+/* ---------- hero / about ---------- */
+.hero{background:var(--bg) !important;border-bottom:1px solid var(--line) !important;}
+.cover-img{background:var(--surface) !important;border:1px solid var(--line) !important;}
+.cover-cap{color:var(--sub2) !important;}
+.sec-label{color:var(--c) !important;}
+.sec-label::after{background:var(--line) !important;}
+.rtext{color:var(--sub) !important;}
+.about-sec{background:var(--bg) !important;border-bottom:1px solid var(--line) !important;}
+
+/* ---------- feat-section (reseñas destacadas) ---------- */
+.feat-section{background:var(--surface) !important;border-bottom:1px solid var(--line) !important;}
+.feat-item{border-bottom:1px solid var(--line) !important;}
+.feat-pos{color:rgba(244,241,251,.18) !important;}
+.feat-cover{background:var(--surface2) !important;border:1px solid var(--line) !important;}
+.feat-pill{color:#07060d !important;border:1px solid transparent !important;background:linear-gradient(95deg,var(--c),var(--c2)) !important;}
+.feat-year{color:var(--p2) !important;}
+.feat-decade{color:var(--c) !important;}
+.feat-vocalist{color:var(--sub2) !important;}
+.feat-title{color:var(--ink) !important;}
+.feat-artist{color:var(--sub) !important;}
+.feat-rev{color:var(--sub) !important;}
+.feat-section .sec-label{color:var(--c) !important;}
+.feat-section .sec-label::after{background:var(--line) !important;}
+
+/* ---------- track-section (tabla principal) ---------- */
+.track-section{background:var(--bg) !important;}
+.track-header{border-bottom:1px solid var(--line) !important;background:var(--bg) !important;}
+.track-header span{color:var(--sub2) !important;}
+.track-row{border-bottom:1px solid var(--line) !important;}
+.track-row:hover{background:var(--surface) !important;border-left-color:var(--p) !important;}
+.track-num{color:var(--p2) !important;}
+.track-cover{background:var(--surface) !important;border:1px solid var(--line) !important;}
+.track-name{color:var(--ink) !important;}
+.track-artist{color:var(--sub2) !important;}
+.track-year{color:var(--c) !important;}
+.track-decade{color:var(--c2) !important;}
+.track-genre{color:var(--sub2) !important;}
+.track-country{color:var(--sub2) !important;}
+.track-sales{color:var(--sub) !important;}
+.track-vocalist,.track-bassist,.track-drummer{color:var(--c2) !important;}
+.track-scrobbles{color:var(--c) !important;}
+.track-scrobbles.loading,.loading{color:var(--sub2) !important;}
+.track-scrobbles.zero,.zero{color:var(--line) !important;}
+.track-playcount{color:var(--p2) !important;}
+.track-playcount.loading{color:var(--sub2) !important;}
+.track-listeners{color:var(--c) !important;}
+.track-listeners.loading{color:var(--sub2) !important;}
+.track-album{color:var(--sub2) !important;}
+
+/* ---------- footer ---------- */
+.page-footer{background:var(--surface) !important;border-top:1px solid var(--line) !important;}
+.foot-left{color:var(--sub2) !important;}
+.foot-note{color:var(--sub2) !important;}
+.foot-link{color:var(--c) !important;}
+.foot-link:hover{color:var(--ink) !important;}
+
+/* ---------- timeline / intro (páginas de cronología) ---------- */
+.timeline,.intro{background:var(--bg) !important;color:var(--ink) !important;}
+.intro{border-bottom:1px solid var(--line) !important;}
+
+@media(max-width:640px){
+  .si-topbar-row{padding:12px 18px;}
+  .si-navRight .si-search,.si-quickNav{display:none;}
+  .si-dropdown-in{padding:20px 18px 24px;grid-template-columns:1fr 1fr;gap:18px;}
+  .si-back{padding:10px 18px 0;}
+}
