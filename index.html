@@ -43,7 +43,7 @@
   --bh:60px;
   --r:8px;
 }
-html,body{height:100%;overflow:hidden}
+html,body{height:auto;overflow:visible}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input{font-family:inherit}
@@ -222,94 +222,238 @@ input{font-family:inherit}
 .lfm-name{font-size:12px;font-weight:500;color:var(--text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lfm-plays{font-size:11px;color:var(--text3)}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style id="senal-theme">
+:root{
+  --p:#c04bff; --p2:#ff3fc9; --c:#2ff0d8; --c2:#38b8ff;
+  --bg:#07060d; --bg-white:#100c1c; --bg2:#160f28;
+  --surface:#100c1c; --surface2:#160f28; --line:#262040; --card-border:#262040; --card-hover:#c04bff;
+  --text:#f4f1fb; --text1:#f4f1fb; --text2:#9b93bf; --text3:#6e668f;
+  --sub:#9b93bf; --sub2:#6e668f; --ink:#f4f1fb;
+  --sb:#100c1c; --sb2:#180f2a; --sb3:#0c0815;
+  --sbt:#f4f1fb; --sbt2:#9b93bf; --sbt3:#6e668f;
+  --sbor:rgba(255,255,255,.06); --acc:#c04bff;
+  --cg:#c04bff; --cl:#ff3fc9; --cs:#2ff0d8; --ct:#38b8ff;
+  --cg-bg:rgba(192,75,255,.12); --cl-bg:rgba(255,63,201,.12);
+  --cs-bg:rgba(47,240,216,.12); --ct-bg:rgba(56,184,255,.12);
+}
+html,body{background:var(--bg) !important;color:var(--ink) !important;height:auto!important;overflow:visible!important;overflow-x:hidden!important;}
+.pageContent{min-height:100vh;}
+.content{overflow:visible!important;height:auto!important;flex:none!important;}
+.app,.main{display:block!important;height:auto!important;overflow:visible!important;}
+body{font-family:'Inter',sans-serif !important;}
+a{color:inherit;}
+::selection{background:var(--p);color:#fff;}
+.page-title,.hero-title,.sec-head h1,.bio-label,.acl-lbl,.lfm-label,h1,h2,h3{font-family:'Space Grotesk',sans-serif !important;}
+
+/* -------- topbar (demo style, horizontal dropdown) -------- */
+.topbar{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line);isolation:isolate;overflow:hidden;background:#0a0914;height:auto!important;display:block!important;padding:0!important;}
+.si-genreStrip{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.si-genreStrip .si-bgtrack{position:absolute;inset:0;width:200%;height:100%;display:flex;animation:siGenreScroll 90s linear infinite;}
+.si-genreStrip .si-bgtrack img{height:100%;width:50%;object-fit:cover;object-position:center top;flex:none;display:block;filter:saturate(1.2) contrast(1.05);}
+@keyframes siGenreScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.topbar::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg, rgba(176,94,255,.14), rgba(47,240,216,.1) 50%, rgba(255,63,201,.14));mix-blend-mode:soft-light;}
+.topbar::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(7,6,13,.5), rgba(7,6,13,.68) 60%, rgba(7,6,13,.88)),linear-gradient(90deg, #07060d 0%, transparent 9%, transparent 91%, #07060d 100%);backdrop-filter:blur(.5px) saturate(130%);}
+.si-tb-row,.si-dropdown{position:relative;z-index:2;}
+.si-tb-row{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;}
+.si-brand{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none;}
+.si-mark{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 140deg,var(--p),var(--c2),var(--c),var(--p2),var(--p));flex:none;box-shadow:0 0 18px rgba(192,75,255,.5);}
+.si-brand-txt{font:600 16px 'Space Grotesk';letter-spacing:-.01em;color:var(--ink);line-height:1.25;}
+.si-brand-txt strong{display:block;}
+.tb-right{display:flex;align-items:center;gap:20px;}
+.si-quicknav{display:flex;align-items:center;gap:20px;}
+.si-quicknav a{font:600 13px 'Inter';color:var(--sub);text-decoration:none;cursor:pointer;position:relative;transition:color .15s;}
+.si-quicknav a:hover{color:var(--ink);}
+.si-quotes-link{color:var(--c)!important;display:flex;align-items:center;gap:6px;}
+.si-quotes-link::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--p2);box-shadow:0 0 8px var(--p2);}
+.menu-btn.si-catbtn{display:flex!important;align-items:center;gap:8px;font:600 13px 'Inter';color:var(--ink);background:transparent;border:1px solid var(--line);padding:8px 14px;border-radius:999px;cursor:pointer;width:auto;height:auto;}
+.menu-btn.si-catbtn:hover{border-color:var(--p);box-shadow:0 0 0 3px rgba(192,75,255,.12);}
+.menu-btn.si-catbtn svg{width:14px;height:14px;color:inherit;}
+.btn-srch{background:transparent!important;border:1px solid var(--line)!important;color:var(--ink)!important;border-radius:999px!important;padding:8px 16px!important;}
+.btn-srch:hover{border-color:var(--card-hover)!important;}
+.si-dropdown{max-height:0;overflow:hidden;border-bottom:1px solid var(--line);transition:max-height .32s ease;background:#0a0914;}
+.si-dropdown.open{max-height:460px;}
+.si-dropdown-in{padding:28px 48px 34px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+.si-catgroup b{display:block;font-size:12.5px;color:var(--c);margin:0 0 12px;font-weight:600;font-family:'Space Grotesk';}
+.si-catgroup a{display:block;font-size:14px;color:var(--ink);text-decoration:none;cursor:pointer;padding:6px 0;opacity:.85;transition:opacity .15s,color .15s;}
+.si-catgroup a:hover{opacity:1;color:var(--c);}
+.si-catgroup .si-count{color:var(--sub2);font-size:12px;}
+.bc{display:none!important;}
+@media(max-width:760px){
+  .si-tb-row{padding:13px 18px;}
+  .si-quicknav{display:none;}
+  .si-dropdown-in{padding:22px 18px 26px;grid-template-columns:1fr 1fr;gap:20px;}
+}
+
+/* -------- hero -------- */
+.content{padding:0!important;background:var(--bg);}
+.hero{position:relative;padding:92px 48px 56px;overflow:hidden;background:var(--bg)!important;border-radius:0!important;margin:0!important;}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 60% at 12% -10%, rgba(192,75,255,.38), transparent 60%),
+             radial-gradient(ellipse 50% 55% at 95% 15%, rgba(47,240,216,.28), transparent 60%),
+             radial-gradient(ellipse 40% 40% at 60% 90%, rgba(255,63,201,.18), transparent 60%);}
+.si-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.03em;color:#07060d;background:linear-gradient(95deg,var(--c),var(--c2));padding:6px 13px;border-radius:999px;margin:0 0 22px;font-weight:600;position:relative;z-index:2;}
+.hero-title{position:relative;z-index:2;font-weight:700!important;font-size:clamp(40px,6.2vw,80px)!important;line-height:.97!important;letter-spacing:-.025em!important;margin:0 0 18px!important;max-width:15ch;
+  background:linear-gradient(100deg,var(--ink) 25%, var(--p2) 60%, var(--c));-webkit-background-clip:text;background-clip:text;color:transparent!important;}
+.hero-text{position:relative;z-index:2;font-size:16.5px!important;line-height:1.65!important;color:var(--sub)!important;max-width:52ch;margin:0 0 26px!important;}
+.stats{position:relative;z-index:2;display:flex!important;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;width:fit-content;background:rgba(16,12,28,.5);margin-top:0!important;}
+.stat{padding:14px 24px;border-right:1px solid var(--line);background:none!important;border-radius:0!important;}
+.stat:last-child{border-right:none;}
+.stat-n{font:700 26px 'Space Grotesk'!important;background:linear-gradient(95deg,var(--c),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent!important;}
+.stat-l{font-size:11px!important;color:var(--sub2)!important;letter-spacing:.03em;text-transform:uppercase;}
+.si-mosaic{position:absolute;right:48px;top:70px;height:280px;width:300px;z-index:1;display:none;}
+@media(min-width:1050px){.si-mosaic{display:block;}}
+.si-mosaic .si-tile{position:absolute;border-radius:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);}
+.si-mosaic .t1{width:150px;height:150px;top:0;right:60px;background:linear-gradient(135deg,var(--p),var(--p2));transform:rotate(-6deg);z-index:3;}
+.si-mosaic .t2{width:120px;height:120px;top:60px;right:200px;background:linear-gradient(135deg,var(--c),var(--c2));transform:rotate(5deg);z-index:2;opacity:.9;}
+.si-mosaic .t3{width:110px;height:110px;top:150px;right:40px;background:linear-gradient(135deg,var(--c2),var(--p));transform:rotate(10deg);z-index:1;opacity:.8;}
+.si-mosaic .t4{width:90px;height:90px;top:0;right:220px;background:linear-gradient(135deg,var(--p2),var(--c));transform:rotate(-14deg);z-index:1;opacity:.7;}
+
+/* -------- sec-head -------- */
+.sec-head{padding:14px 48px 6px;margin:0!important;}
+.sec-head h1{font-size:23px!important;font-weight:700!important;letter-spacing:-.01em!important;margin:0 0 4px!important;color:var(--ink)!important;}
+.sec-head p{font-size:13px!important;color:var(--sub2)!important;}
+
+/* -------- bio card -------- */
+.bio-card{position:relative;background:linear-gradient(165deg,var(--surface2),var(--surface))!important;border:1px solid var(--line)!important;border-radius:20px!important;padding:40px 44px!important;overflow:hidden;margin:30px 48px 60px!important;}
+.bio-card::before{content:"";position:absolute;top:-40%;right:-20%;width:60%;height:140%;background:radial-gradient(circle,rgba(192,75,255,.16),transparent 65%);pointer-events:none;}
+.bio-label{display:inline-block;font:600 12.5px 'Space Grotesk'!important;color:var(--c)!important;letter-spacing:.03em;position:relative;z-index:2;margin:0 0 16px!important;}
+.bio-card .si-collapse{position:relative;z-index:2;max-height:120px;overflow:hidden;transition:max-height .4s ease;}
+.bio-card.si-open .si-collapse{max-height:2400px;}
+.bio-card .si-collapse::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(180deg,transparent,var(--surface));transition:opacity .3s;}
+.bio-card.si-open .si-collapse::after{opacity:0;}
+.bio-text{font-size:14.5px!important;line-height:1.75!important;color:#cdc6e8!important;max-width:76ch;margin:0 0 16px!important;}
+.bio-text:last-child{margin-bottom:0;color:var(--ink)!important;}
+
+/* -------- si-toggle (bio + acl + top12) -------- */
+.si-toggle{display:flex;align-items:center;gap:7px;font:600 12.5px 'Inter';color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:7px 13px;border-radius:999px;cursor:pointer;transition:border-color .2s,background .2s;position:relative;z-index:2;margin-top:12px;}
+.si-toggle:hover{border-color:var(--p);background:rgba(192,75,255,.08);}
+.si-chev{display:inline-block;width:8px;height:8px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);transition:transform .25s;margin-top:-2px;}
+.si-open .si-chev,.si-toggle.si-open .si-chev{transform:rotate(225deg);margin-top:2px;}
+
+/* -------- aclamados / top12 -------- */
+.acl-grid{display:grid;grid-template-columns:repeat(3,1fr)!important;gap:20px!important;padding:0 48px 60px!important;margin:0!important;}
+.acl-card{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:16px!important;padding:22px 24px!important;}
+.acl-lbl{font:600 13px 'Space Grotesk'!important;color:var(--c)!important;margin:0 0 16px!important;display:flex;align-items:center;gap:8px;}
+.acl-card .si-collapse{position:relative;max-height:280px;overflow:hidden;transition:max-height .4s ease;}
+.acl-card.si-open .si-collapse{max-height:4000px;}
+.acl-card .si-collapse::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(180deg,transparent,var(--surface));transition:opacity .3s;}
+.acl-card.si-open .si-collapse::after{opacity:0;}
+.acl-item,.mytop-item{display:flex!important;gap:12px!important;align-items:flex-start!important;padding:12px 0!important;border-bottom:1px solid var(--line)!important;background:none!important;}
+.acl-item:last-child,.mytop-item:last-child{border-bottom:none!important;padding-bottom:0!important;}
+.acl-pos{font:700 15px 'Space Grotesk'!important;color:var(--p2)!important;width:20px!important;flex:none;padding-top:1px;}
+.acl-item .card-cover,.mytop-item .card-cover{width:38px!important;height:38px!important;border-radius:9px!important;background:linear-gradient(135deg,var(--p),var(--c))!important;border:none!important;}
+.acl-name{font-size:13.5px!important;color:var(--ink)!important;font-weight:600!important;white-space:normal!important;display:block;}
+.acl-sub{font-size:11.5px!important;color:var(--sub2)!important;margin:1px 0 5px!important;white-space:normal!important;}
+.acl-cnt{font-size:11.5px!important;color:var(--sub2)!important;font-weight:400!important;}
+.acl-rev{font-size:11.8px!important;line-height:1.55!important;color:var(--sub)!important;margin:0!important;white-space:normal!important;}
+
+/* -------- music quotes -------- */
+.quotes-sec{padding:0 48px 70px;position:relative;z-index:2;}
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
+.quote-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 24px 20px;overflow:hidden;transition:border-color .2s,transform .2s;}
+.quote-card:hover{border-color:var(--p);transform:translateY(-3px);}
+.quote-card .qmark{font:800 40px/1 'Space Grotesk';color:var(--p);opacity:.5;margin:0 0 6px;}
+.quote-card .qtext{font:500 16px/1.45 'Space Grotesk';color:var(--ink);margin:0 0 16px;letter-spacing:-.005em;}
+.quote-card .qsrc{display:flex;align-items:center;gap:10px;}
+.quote-card .qsrc .qcov{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--p),var(--c));flex:none;}
+.quote-card .qsrc b{display:block;font-size:12.5px;color:var(--ink);font-weight:600;}
+.quote-card .qsrc span{font-size:11px;color:var(--sub2);}
+.quote-more{border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--sub);font-size:13px;min-height:130px;text-decoration:none;}
+
+/* -------- recent lists grid -------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))!important;gap:16px!important;padding:0 48px 80px!important;margin:0!important;}
+.card{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:14px!important;padding:0!important;position:relative;overflow:hidden!important;transition:border-color .2s,transform .2s;}
+.card::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(180deg,var(--p),var(--c));z-index:2;}
+.card:hover{transform:translateY(-3px);border-color:var(--p)!important;box-shadow:none!important;}
+.card-stripe{display:none!important;}
+.card-top{padding:20px 20px 10px 24px!important;}
+.card-cover{width:40px!important;height:40px!important;border-radius:8px!important;background:var(--bg2)!important;border:1px solid var(--line)!important;}
+.card-src{font-size:11px!important;font-weight:600!important;letter-spacing:.02em;margin-bottom:6px!important;}
+.card-src.cg,.bdg.canciones{color:var(--p2)!important;}
+.card-src.cl,.bdg.albumes{color:var(--c)!important;}
+.card-title{font-size:16px!important;color:var(--ink)!important;margin:0 0 6px!important;}
+.bdg{background:rgba(255,255,255,.06)!important;border:1px solid var(--line)!important;color:var(--sub2)!important;}
+.bdg.superlista{background:var(--cs-bg)!important;color:var(--c)!important;border-color:var(--line)!important;}
+.card-review{color:var(--sub)!important;border-top:1px solid var(--line)!important;padding:10px 20px 14px 24px!important;}
+.card-foot{padding:0 20px 14px 24px!important;}
+.card-count{color:var(--sub2)!important;}
+.card-count strong{color:var(--ink)!important;}
+.card-year{color:var(--sub2)!important;}
+.card-arr{color:var(--sub2)!important;}
+.card:hover .card-arr{color:var(--c)!important;}
+
+/* -------- last.fm / spotlight / bottom nav dark -------- */
+.lfm-section{padding:0 48px 36px;}
+.lfm-label{color:var(--c)!important;font-size:12.5px;}
+.lfm-user{color:var(--sub2)!important;font-weight:400;}
+.lfm-col-label{color:var(--sub2)!important;}
+.lfm-cover{background:var(--surface2)!important;border:1px solid var(--line)!important;}
+.lfm-name{color:var(--ink)!important;}
+.lfm-plays{color:var(--sub2)!important;}
+.sp-ov{background:rgba(7,6,13,.75)!important;}
+.sp-box{background:var(--surface)!important;border:1px solid var(--line)!important;}
+.sp-row{border-bottom:1px solid var(--line)!important;}
+.sp-inp{color:var(--ink)!important;background:none!important;}
+.sp-inp::placeholder{color:var(--sub2)!important;}
+.sp-sect{color:var(--sub2)!important;}
+.sp-item:hover{background:var(--surface2)!important;}
+.sp-ttl{color:var(--ink)!important;}
+.sp-sub{color:var(--sub2)!important;}
+.sp-tag{background:rgba(192,75,255,.12)!important;color:var(--c)!important;}
+.bot-nav{background:rgba(16,12,28,.92)!important;border-top:1px solid var(--line)!important;backdrop-filter:blur(14px);}
+.bn-tab{color:var(--sub)!important;}
+.bn-tab.active{color:var(--ink)!important;}
+.bn-tab svg{color:inherit!important;}
+</style>
 </head>
 <body>
-<div class="app">
-
-<aside class="sidebar">
-  <div class="sb-logo">
-    <div class="sb-abbr">NRE</div>
-    <div class="sb-txt"><strong>Coleccionista de Infinitos</strong>Nelson Rodríguez Esmeral</div>
-  </div>
-  <button class="sp-btn" onclick="openSp()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    Buscar lista o artista...
-    <span class="kbd">⌘K</span>
-  </button>
-  <div class="nav-scroll">
-    <div class="nav-sep-lbl">General</div>
-    <div class="nav-item active" onclick="go('home',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio
+<div class="pageContent">
+<header class="topbar">
+  <div class="si-genreStrip"><div class="si-bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div></div>
+  <div class="si-tb-row">
+    <div class="si-brand" onclick="go('home',null,null)" role="button">
+      <div class="si-mark"></div>
+      <span class="si-brand-txt"><strong>Coleccionista de Infinitos</strong>Nelson Rodríguez Esmeral</span>
     </div>
-    <div class="nav-item" onclick="go('aclamados',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Más aclamados
-    </div>
-    <div class="nav-item" onclick="go('top12',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Mi Top 12
-    </div>
-    <div class="nav-item" onclick="go('cronologia',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cronología
-    </div>
-    <div class="nav-sep"></div>
-    <div class="nav-sep-lbl">Listas</div>
-
-    <div id="sidebar-categories"></div>
-
-    <div class="sb-foot">262 listas · 145.155 canciones<br>Última: World Cup Songs (RS · 2026)</div>
-</aside>
-
-<div class="main">
-  <header class="topbar">
-    <button class="menu-btn" onclick="openDw()" aria-label="Menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="bc" id="bc"><span class="crumb">Inicio</span></div>
     <div class="tb-right">
+      <nav class="si-quicknav">
+        <a onclick="go('aclamados',null,null)">Más aclamados</a>
+        <a onclick="go('top12',null,null)">Mi Top 12</a>
+        <a onclick="go('cronologia',null,null)">Cronología</a>
+        <a href="music-quotes-page.html" class="si-quotes-link">Music Quotes</a>
+      </nav>
+      <button class="menu-btn si-catbtn" id="catBtn" onclick="toggleCatMenu()" aria-label="Categorías">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Categorías <span class="si-chev" id="catChev"></span>
+      </button>
       <button class="btn-srch" onclick="openSp()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Buscar
       </button>
     </div>
-  </header>
-  <main class="content" id="content"></main>
-  <nav class="bot-nav">
-    <div class="bn">
-      <div class="bn-tab active" id="bn0" onclick="go('home',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inicio
-      </div>
-      <div class="bn-tab" id="bn1" onclick="go('albumes-globales',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>Álbumes
-      </div>
-      <div class="bn-tab" id="bn2" onclick="go('canciones-globales',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/></svg>Canciones
-      </div>
-      <div class="bn-tab" id="bn3" onclick="go('albumes-latinos',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="3"/><path d="M2 12c0 4.418 4.477 8 10 8s10-3.582 10-8"/></svg>Latinas
-      </div>
-      <div class="bn-tab" id="bn4" onclick="openSp()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Buscar
-      </div>
+  </div>
+  <div class="si-dropdown" id="catDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup" id="catg-1"><b>Superlistas</b></div>
+      <div class="si-catgroup" id="catg-2"><b>Música latina</b></div>
+      <div class="si-catgroup" id="catg-3"><b>Por época</b></div>
+      <div class="si-catgroup" id="catg-4"><b>Por tema / género</b></div>
     </div>
-  </nav>
-</div>
-</div>
+  </div>
+  <div class="bc" id="bc"><span class="crumb">Inicio</span></div>
+</header>
 
-<div class="dw-ov" id="dwo" onclick="closeDw()"></div>
-<div class="drawer" id="dw">
-  <div class="sb-logo" style="padding:16px 16px 12px">
-    <div class="sb-abbr">NRE</div>
-    <div class="sb-txt"><strong>Coleccionista de Infinitos</strong>Nelson Rodríguez Esmeral</div>
-    <button onclick="closeDw()" style="margin-left:auto;color:var(--sbt2);padding:4px" aria-label="Cerrar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-  </div>
-  <div style="padding:8px 0;overflow-y:auto;flex:1">
-    <div class="nav-item" onclick="go('home');closeDw()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inicio</div>
-    <div class="nav-item" onclick="go('aclamados');closeDw()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Más aclamados</div>
-    <div class="nav-sep" style="margin:6px 10px"></div>
-    <div class="nav-sep-lbl" style="padding:8px 16px 4px">Secciones</div>
-    <div id="sidebar-categories-mobile"></div>
-  </div>
-  <div class="sb-foot" id="sb-foot-mobile">262 listas</div>
+<main class="content" id="content"></main>
+
+<nav class="bot-nav bottomNav">
+  <div class="bn-tab active" id="bn0" onclick="go('home',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inicio</div>
+  <div class="bn-tab" id="bn1" onclick="go('aclamados',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Aclamados</div>
+  <div class="bn-tab" id="bn2" onclick="go('top12',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Top 12</div>
+  <div class="bn-tab" id="bn3" onclick="go('cronologia',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cronología</div>
+  <div class="bn-tab" id="bn4" onclick="openSp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Buscar</div>
+</nav>
 </div>
 
 <div class="sp-ov" id="sp" onclick="closeSp(event)">
@@ -2044,15 +2188,15 @@ const LISTS = [
   },
   {
     file: "billboard-goat-billboard200-albums-top100.html",
-    title: "100 Best Debut Albums of All Time",
-    source: "Rolling Stone",
-    year: "2022",
+    title: "Greatest of All Time Billboard 200 Albums",
+    source: "Billboard",
+    year: "2015",
     type: "albumes",
     count: "100",
-    desc: "Los 100 mejores álbumes debut de todos los tiempos según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/100-best-debut-albums-of-all-time-143608/",
-    _artist: "Television",
-    _title: "Marquee Moon"
+    desc: "Los 100 álbumes con mejor desempeño en el Billboard 200 entre 1963 y 2015: Adele, The Sound of Music y Thriller lideran. Ranking por éxito comercial en el chart, no por calidad artística.",
+    url: "https://www.billboard.com/charts/greatest-billboard-200-albums",
+    _artist: "Adele",
+    _title: "21"
   },
   {
     file: "digitaldreamdoor-100-songs-2010s.html",
@@ -3336,6 +3480,14 @@ function card(l){
     +'</div>';
 }
 
+function siToggle(btn){
+  var card=btn.closest('.bio-card,.acl-card'); if(!card) return;
+  var open=card.classList.toggle('si-open');
+  var closedLbl=btn.getAttribute('data-closed')||'Ver más';
+  var openLbl=btn.getAttribute('data-open')||'Ver menos';
+  btn.innerHTML=(open?openLbl:closedLbl)+' <span class="si-chev"></span>';
+}
+
 function aclRow(a,i,cnt,withRev){
   var rev=(withRev&&ACL_REVIEWS[a.name])?ACL_REVIEWS[a.name]:'';
   var artistSearch = a.artist || a.name; // artist column: name itself; album/song column: real artist
@@ -3347,8 +3499,7 @@ function aclRow(a,i,cnt,withRev){
     +'data-artist="'+encodeURIComponent(artistSearch)+'" data-album="'+encodeURIComponent(albumSearch)+'" data-track="'+encodeURIComponent(a.name)+'">'
     +'</div>'
     +'<div style="flex:1;min-width:0"><div class="acl-name">'+a.name+'</div>'
-    +(!cnt&&a.sub?'<div class="acl-sub">'+a.sub+'</div>':'')+(rev?'<div class="acl-rev">'+rev+'</div>':'')+'</div>'
-    +(cnt?'<span class="acl-cnt">'+a.sub+'</span>':'')
+    +(a.sub?'<div class="acl-sub">'+a.sub+'</div>':'')+(rev?'<div class="acl-rev">'+rev+'</div>':'')+'</div>'
     +'</div>';
 }
 
@@ -3385,19 +3536,23 @@ function loadLfm(){
 // ══ HOME ══
 function homeHTML(){
   var recentLists=LAST5.map(function(f){return LISTS.find(function(l){return l.file===f;})}).filter(Boolean);
-  var h='<div class="hero"><div class="hero-title">Coleccionista de Infinitos</div>'
+  var h='<div class="hero"><span class="si-tag">'+LISTS.length+' LISTAS · '+CAT_ORDER.length+' CATEGORÍAS</span><div class="hero-title">Coleccionista de Infinitos</div>'
     +'<div class="hero-text">145.000+ canciones · '+LISTS.length+' listas · álbumes y canciones globales y latinas, superlistas y temáticas — el archivo musical más personal de Colombia.</div>'
     +'<div class="stats"><div class="stat"><div class="stat-n">'+LISTS.length+'</div><div class="stat-l">Listas</div></div>'
     +'<div class="stat"><div class="stat-n">145K</div><div class="stat-l">Canciones</div></div>'
     +'<div class="stat"><div class="stat-n">22K</div><div class="stat-l">Artistas</div></div>'
-    +'<div class="stat"><div class="stat-n">8.8K</div><div class="stat-l">Álbumes</div></div></div></div>';
+    +'<div class="stat"><div class="stat-n">8.8K</div><div class="stat-l">Álbumes</div></div></div>'
+    +'<div class="si-mosaic"><div class="si-tile t4"></div><div class="si-tile t2"></div><div class="si-tile t3"></div><div class="si-tile t1"></div></div></div>';
   h+='<div class="bio-card"><div class="bio-label">El coleccionista</div>'
+    +'<div class="si-collapse">'
     +'<div class="bio-text">Todo comenzó con el roce de la cinta: Hysteria y Live After Death, unos originales y otros copiados de amigos. Mi educación en vivo arrancó por lo alto: mi primer concierto fue Miguel Mateos en el 91. Al mismo tiempo, vivía el rock desde adentro: Juanes estudiaba en mi colegio, así que disfrutaba de Ekhymosis en cada fiesta escolar. Crecí entre los conciertos de Raphael de mi mamá y la salsa de mi papá. En el colegio, el ritual con Francisco era Losing My Religion, y los viernes recorría El Poblado con Nicolas al ritmo de Bohemian Rhapsody. Un hito imborrable fue Kraken en La Macarena (1990), con la voz insuperable de Elkin Ramírez.</div>'
     +'<div class="bio-text">A finales del 92, los Guns N\' Roses en Bogotá cerraron mi etapa en Medellín (Puesto 1 del Top 3). En el 93, al mudarme a Barranquilla, mi oído se expandió. Mientras me sumergía en la melancolía de The Cure y el grunge de Seattle, abracé el ritmo del Caribe sin prejuicios. Siempre he amado el merengue, el merengue house, el reggaetón y la champeta; mi ADN se nutrió tanto de Nirvana como de los ritmos tropicales. Esa fluidez se reflejó en el concierto de Maná, Carlos Vives y Diomedes en Cartagena (1996). Mi lugar favorito era Oh Curramba, bailando al ritmo de Proyecto Uno, Sergio Vargas y el Joe Arroyo.</div>'
     +'<div class="bio-text">Al llegar a Bogotá, mandé mi ropa por correo para que mi música cupiera en el avión. Asistí a Metallica en el 99 (Puesto 2 del Top 3). El clímax era Full 80s, logrando una abstracción absoluta con el house de How I Need You. El 2010 fue perfecto: Depeche Mode, Maroon 5 y Calamaro. Pero el cierre del Top 3 de mi vida fue Sting: 1.000 personas y una versión perfecta de Fragile.</div>'
     +'<div class="bio-text">En 2013 llegó Dayana, la erudita de la alegría. Ella no solo conoce la salsa, la habita. Lo que más me inspira es su conexión con lo luminoso: es casi imposible ver a Dayana refugiada en una canción triste. Ella elige la autenticidad que vibra. Nuestra historia se selló tras un empate de la Selección bailando La Invite a Bailar; y aunque hoy ya no frecuentamos Melodía para Dos, ese oasis de la plancha sigue siendo un hito esencial.</div>'
     +'<div class="bio-text">En 2016 llegó Simón. La Bicicleta, To My Love y Despacito fueron la banda sonora de su baño diario, marcando sus mañanas desde el principio. Hoy, su lista supera las 150 canciones, desde phonks brasileras hasta sus propios hallazgos.</div>'
     +'<div class="bio-text">Hoy, mi biblioteca supera las 145.000 canciones. Disfruto este viaje infinito donde conviven Elkin Ramírez, Technotronic y Diomedes, la luz de Dayana y la lista de Simón. Expandan su universo musical. No se queden con el algoritmo; hay un océano esperando. Es bellísimo ver cómo creamos arte con el solo hecho de sentir. La música es la prueba de que nuestras emociones pueden convertirse en belleza eterna. ¡Vayan y encuentren su propia banda sonora!</div>'
+    +'</div>'
+    +'<button class="si-toggle" data-closed="Leer reseña completa" data-open="Mostrar menos" onclick="siToggle(this)">Leer reseña completa <span class="si-chev"></span></button>'
     +'</div>';
   h+='<div class="lfm-section"><div class="lfm-label">♪ Más escuchado · últimos 30 días <span class="lfm-user">lartzrodriguez en Last.fm</span></div>'
     +'<div class="lfm-row">'
@@ -3407,10 +3562,13 @@ function homeHTML(){
     +'</div></div>';
   setTimeout(loadLfm,200);
   h+='<div class="acl-grid">'
-    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+topArtists.map(function(a,i){return aclRow(a,i,true)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+topAlbums.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+topSongs.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div><div class="si-collapse">'+topArtists.map(function(a,i){return aclRow(a,i,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div><div class="si-collapse">'+topAlbums.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div><div class="si-collapse">'+topSongs.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
     +'</div>';
+  h+='<div class="sec-head"><h1>Music Quotes</h1><p>Frases de canciones que se quedaron grabadas</p></div>'
+    +'<div class="quotes-sec"><div class="quotes-grid" id="homeQuotesGrid"><div class="quote-card quote-more">Cargando frases…</div></div></div>';
+  setTimeout(loadHomeQuotes, 50);
   h+='<div class="sec-head"><h1>Listas recientes</h1><p>Las últimas 5 listas agregadas</p></div>'
     +'<div class="grid">'+recentLists.map(card).join('')+'</div>';
   return h;
@@ -3491,36 +3649,36 @@ var TOP12_ARTISTS = [
   ["mta-12","Michael Jackson","Gary, Indiana · 1958–2009","Pop / R&B / Funk","El artista más completo de la historia del pop. Thriller como el álbum más vendido de todos los tiempos, Off the Wall y Bad como obras perfectas de producción. Bailarín, cantante y compositor en un nivel que nadie ha igualado — el estándar absoluto del entretenimiento popular del siglo XX.","Michael Jackson","Thriller"]
 ];
 
-function top12Card(item){
+function top12Card(item,i){
   var id=item[0],title=item[1],sub=item[2],genre=item[3],bio=item[4],sartist=item[5],stitle=item[6];
-  return '<div class="mytop-item" style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border,#e8ecf4)">'
-    +'<div class="card-cover" style="width:64px;height:64px;flex-shrink:0;border-radius:6px;overflow:hidden;background:var(--bg2,#f0f2f8)">'
+  var subLine=sub+(genre?' · '+genre:'');
+  return '<div class="acl-item">'
+    +'<span class="acl-pos">'+((i||0)+1)+'</span>'
+    +'<div class="card-cover" style="overflow:hidden">'
     +'<img class="mytop-art" id="'+id+'" src="" alt="'+title.replace(/"/g,"&quot;")+'" style="width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s" '
     +'data-artist="'+encodeURIComponent(sartist)+'" data-album="'+encodeURIComponent(stitle)+'" data-track="'+encodeURIComponent(stitle)+'">'
     +'</div>'
-    +'<div style="min-width:0;flex:1">'
-    +'<div style="font-weight:600;font-size:13px;color:var(--text1,#0d1117)">'+title+'</div>'
-    +'<div style="font-size:11px;color:var(--text3,#9aa3b2);margin-bottom:2px">'+sub+'</div>'
-    +(genre?'<div style="font-size:10px;color:#1a2f5a;font-weight:500;margin-bottom:5px">'+genre+'</div>':'')
-    +(bio?'<div style="font-size:11.5px;color:var(--text2,#4a5568);line-height:1.6">'+bio+'</div>':'')
+    +'<div style="flex:1;min-width:0"><div class="acl-name">'+title+'</div>'
+    +'<div class="acl-sub">'+subLine+'</div>'
+    +(bio?'<p class="acl-rev">'+bio+'</p>':'')
     +'</div></div>';
 }
 
 function top12HTML(){
   return '<div class="sec-head"><h1>Mi Top 12</h1><p>Selección personal de Nelson Rodríguez Esmeral</p></div>'
     +'<div class="acl-grid">'
-    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+TOP12_ARTISTS.map(top12Card).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+TOP12_SONGS.map(top12Card).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+TOP12_ALBUMS.map(top12Card).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div><div class="si-collapse">'+TOP12_ARTISTS.map(top12Card).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div><div class="si-collapse">'+TOP12_SONGS.map(top12Card).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div><div class="si-collapse">'+TOP12_ALBUMS.map(top12Card).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
     +'</div>';
 }
 
 function aclamadosHTML(){
   return '<div class="sec-head"><h1>Más aclamados</h1><p>Artistas, álbumes y canciones con más apariciones en las '+LISTS.length+' listas</p></div>'
     +'<div class="acl-grid">'
-    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+topArtists.map(function(a,i){return aclRow(a,i,true,true)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+topAlbums.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+topSongs.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div><div class="si-collapse">'+topArtists.map(function(a,i){return aclRow(a,i,true,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div><div class="si-collapse">'+topAlbums.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div><div class="si-collapse">'+topSongs.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
     +'</div>';
 }
 
@@ -3541,8 +3699,13 @@ function go(sec,sEl,bnEl){
   setTimeout(observeImages,60);
 }
 function tog(bid,aid){var b=document.getElementById(bid),a=document.getElementById(aid);if(b&&a){b.classList.toggle('open');a.classList.toggle('open');}}
-function openDw(){document.getElementById('dw').classList.add('open');document.getElementById('dwo').classList.add('open');}
-function closeDw(){document.getElementById('dw').classList.remove('open');document.getElementById('dwo').classList.remove('open');}
+function toggleCatMenu(){
+  var dd=document.getElementById('catDropdown'), btn=document.getElementById('catBtn');
+  var open=dd.classList.toggle('open');
+  btn.classList.toggle('open',open);
+}
+function openDw(){toggleCatMenu();}
+function closeDw(){document.getElementById('catDropdown').classList.remove('open');document.getElementById('catBtn').classList.remove('open');}
 
 // ══ SPOTLIGHT ══
 var SNAMES={super:'Superlistas',global:'Globales','albums-global':'Globales','songs-global':'Globales',
@@ -3693,34 +3856,57 @@ var CAT_ICONS = {
 var CAT_ORDER = ['super','albumes-globales','canciones-globales','albumes-latinos',
                   'canciones-latinas','tematicas','anuales','decadas','generos'];
 
-function renderSidebarCategories(){
-  var container = document.getElementById('sidebar-categories');
-  if(!container) return;
-  var html = '';
-  CAT_ORDER.forEach(function(key, idx){
-    var fn = SEC_FILTERS[key];
-    var count = fn ? LISTS.filter(fn).length : 0;
-    var lbl = LBLS[key] || key;
-    var icon = CAT_ICONS[key] || '';
-    var arrId = 'arr-' + key;
-    html += '<div class="cat-head" onclick="go(\'' + key + '\',null,null)">'
-      + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' + icon + '</svg>'
-      + lbl
-      + '<span class="nav-cnt">' + count + '</span>'
-      + '</div>';
-  });
-  container.innerHTML = html;
+function catLink(key){
+  var fn = SEC_FILTERS[key];
+  var count = fn ? LISTS.filter(fn).length : 0;
+  var lbl = LBLS[key] || key;
+  return '<a onclick="go(\'' + key + '\',null,null);closeDw();">' + lbl + ' <span class="si-count">· ' + count + '</span></a>';
 }
-renderSidebarCategories();
-(function(){
-  var m = document.getElementById('sidebar-categories-mobile');
-  var sb = document.getElementById('sidebar-categories');
-  if(m && sb) m.innerHTML = sb.innerHTML;
-  var footM = document.getElementById('sb-foot-mobile');
-  if(footM) footM.textContent = LISTS.length + ' listas';
-})();
+function renderDropdownCategories(){
+  var map = {
+    'catg-1': ['super','albumes-globales','canciones-globales'],
+    'catg-2': ['albumes-latinos','canciones-latinas'],
+    'catg-3': ['anuales','decadas','cronologia'],
+    'catg-4': ['tematicas','generos']
+  };
+  Object.keys(map).forEach(function(gid){
+    var el = document.getElementById(gid);
+    if(!el) return;
+    var label = el.querySelector('b').outerHTML;
+    el.innerHTML = label + map[gid].map(catLink).join('');
+  });
+  var qg = document.getElementById('catg-4');
+  if(qg) qg.innerHTML += '<a href="music-quotes-page.html">Music Quotes <span class="si-count">nuevo</span></a>';
+}
+renderDropdownCategories();
 
 
+
+
+// ══ MUSIC QUOTES (home preview, datos reales vía Google Sheets) ══
+var QUOTES_API_URL_HOME = "https://script.google.com/macros/s/AKfycbwF5yVj30lCSi_BLBWND1KjTtsJdPJ1v1AEaGTLQpRVnM1JC64a8n8VxNfEsdGnWohG/exec";
+var HOME_QUOTES_FALLBACK = [
+  {text:"Hoping the best, but expecting the worst", song:"Forever Young", artist:"Alphaville"},
+  {text:"Nothing prepared me for your smile", song:"Thursday's Child", artist:"David Bowie"},
+  {text:"If you want to kiss the sky / Better learn how to kneel", song:"Mysterious Ways", artist:"U2"}
+];
+function renderHomeQuotes(list){
+  var grid=document.getElementById('homeQuotesGrid');
+  if(!grid) return;
+  var shown=list.slice();
+  for(var i=shown.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=shown[i];shown[i]=shown[j];shown[j]=t;}
+  shown=shown.slice(0,6);
+  grid.innerHTML=shown.map(function(q){
+    return '<div class="quote-card"><div class="qmark">&ldquo;</div><p class="qtext">'+q.text+'</p>'
+      +'<div class="qsrc"><div class="qcov"></div><div><b>'+q.song+'</b><span>'+q.artist+'</span></div></div></div>';
+  }).join('')+'<a class="quote-card quote-more" href="music-quotes-page.html">Ver todas las frases →</a>';
+}
+function loadHomeQuotes(){
+  fetch(QUOTES_API_URL_HOME).then(function(r){return r.json();}).then(function(data){
+    if(Array.isArray(data)&&data.length) renderHomeQuotes(data);
+    else renderHomeQuotes(HOME_QUOTES_FALLBACK);
+  }).catch(function(){renderHomeQuotes(HOME_QUOTES_FALLBACK);});
+}
 
 go('home');
 
