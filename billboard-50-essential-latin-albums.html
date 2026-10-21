@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">BILLBOARD</span><span class="badge-year">1968&#8211;2009</span></div><a href="https://www.billboard.com/photos/50-most-essential-latin-albums-past-50-years-6686047/" target="_blank" class="page-title">50 MOST ESSENTIAL LATIN ALBUMS OF THE PAST 50 YEARS</a><p class="page-sub">Buena Vista Social Club, Carlos Vives, Willie Colon, Juan Luis Guerra, Soda Stereo &#183; de salsa a bachata, de vallenato a reggaeton — 50 anos de musica latina esencial &#183; Equipo Latin de Billboard &#183; Sep 2015</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Buena Vista Social Club"><p class="cover-cap">BILLBOARD &#183; 50 ALBUMES &#183; LATIN ESENCIAL</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 albumes latinos mas esenciales de los ultimos 50 anos segun el equipo Latin de Billboard, publicados el 17 de septiembre de 2015 como parte del paquete especial Greatest of All Time. La lista no incluye necesariamente los albumes mas vendidos ni los de mayor airplay — se busco el impacto duradero en la musica latina contemporanea.</p><p class="rtext">Colombia bien representada: Carlos Vives (#2, Clasicos de la Provincia) y Grupo Niche (#41, Cielo de Tambores). Argentina: Soda Stereo (#5, Cancion Animal), Charly Garcia (#18, Clics Modernos), Astor Piazzolla (#16, Adios Nonino), Mercedes Sosa (#37), Los Fabulosos Cadillacs (#25). Cuba: Buena Vista Social Club (#1), Celia Cruz (#8), Hector Lavoe (#15), Irakere (#32). La lista va del 1968 de Armando Manzanero al 2009 de Aventura.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Ordenados por impacto</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

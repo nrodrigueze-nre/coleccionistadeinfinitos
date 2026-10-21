@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">EL COMERCIO PERÚ</span><span class="badge-year">1964&#8211;1988</span></div><a href="https://elcomercio.pe/luces/musica/estos-son-50-mejores-discos-fania-records-parte-ii-noticia-1741168/" target="_blank" class="page-title">50 MEJORES DISCOS DE FANIA RECORDS</a><p class="page-sub">Willie Colón, Héctor Lavoe, Celia Cruz, Cheo Feliciano, Ray Barretto &#183; el canon completo del sello que invento la salsa — desde Cañonazo en 1964 hasta Bamboleo en 1988 &#183; El Comercio Perú &#183; Ordenados por impacto</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Willie Colón Siembra"><p class="cover-cap">FANIA RECORDS &#183; 50 ÁLBUMES &#183; 1964&#8211;1988</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores discos del sello Fania Records segun El Comercio Peru — la seleccion que abarca los 24 anos de oro del sello fundado en 1964 por Johnny Pacheco y Jerry Masucci. Fania fue la fabrica de la salsa: el hogar de Willie Colon y Hector Lavoe, de Celia Cruz y Cheo Feliciano, de Ray Barretto y Ruben Blades, de los Fania All-Stars y de toda una generacion de musicos puertorriquenos, cubanos y dominicanos en Nueva York.</p><p class="rtext">Willie Colon aparece ocho veces. Hector Lavoe cinco veces. Fania All-Stars seis veces. Ismael Miranda tres veces. Ray Barretto tres veces. Johnny Pacheco cinco veces. La lista no tiene ranking original — aqui se presenta ordenada por impacto. Siembra (#1) como el album mas vendido de la historia de la salsa.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los discos más grandes de Fania</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

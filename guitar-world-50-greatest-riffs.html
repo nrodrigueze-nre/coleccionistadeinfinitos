@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">GUITAR WORLD</span><span class="badge-year">1964&#8211;2018</span></div><a href="https://www.guitarworld.com/features/greatest-guitar-riffs-of-all-time" target="_blank" class="page-title">50 GREATEST GUITAR RIFFS OF ALL TIME</a><p class="page-sub">Led Zeppelin, Ozzy Osbourne, AC/DC, Deep Purple, Van Halen &#183; del metal al rock, del punk al grunge — los mejores riffs jamas grabados, votados por los lectores &#183; Guitar World / Total Guitar &#183; Ago 2021</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Led Zeppelin Whole Lotta Love"><p class="cover-cap">GUITAR WORLD &#183; 50 RIFFS &#183; TODOS LOS TIEMPOS</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores riffs de guitarra de todos los tiempos segun los lectores de Guitar World y Total Guitar, publicados en agosto de 2021. La lista parte de una shortlist de 125 riffs preparada por Total Guitar con la regla estricta de un riff por artista. Generos representados: metal, hard rock, classic rock, grunge, punk, prog, blues rock y math rock moderno.</p><p class="rtext">Led Zeppelin #1 con Whole Lotta Love — Jimmy Page lanzando su propio gran salto para la humanidad. Polyphia (#47, G.O.A.T.) y Opeth (#50, Heir Apparent) como los unicos representantes del metal progresivo moderno. Soundgarden (#46, Outshined) y Pearl Jam (#40, Alive) como los representantes del grunge. Slayer (#18), Slipknot (#38) y Tool (#31) como el metal extremo y progresivo.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los riffs que definieron el rock</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>
