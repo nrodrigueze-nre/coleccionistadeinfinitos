@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">1967&#8211;2021</span></div><a href="https://www.rollingstone.com/music/music-lists/best-latin-american-rock-albums-1234818717/" target="_blank" class="page-title">50 BEST LATIN-AMERICAN ROCK ALBUMS</a><p class="page-sub">Cafe Tacvba, Soda Stereo, Charly Garcia, Caifanes, Fito Paez &#183; de Argentina a Brasil a Mexico, de la psicodelia sesentera al alt-rock de los 2000 &#183; Por Ernesto Lechner &#183; RS &#183; Sep 2023</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Cafe Tacvba Re"><p class="cover-cap">ROLLING STONE &#183; 50 ALBUMES &#183; ROCK LATINOAMERICANO</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores albumes de rock latinoamericano segun Ernesto Lechner para Rolling Stone, publicados el 18 de septiembre de 2023. Seis decadas desde los anos 60 hasta el presente, encapsulando los sonidos del rock & roll de America Latina en su momento mas ambicioso y trascendente. Al principio fue Elvis, Dylan, los Beatles y los Stones. Luego el prog-rock de los 70, la new wave de los 80, el grunge de los 90 y el trip-hop.</p><p class="rtext">Colombia representada por Diamante Electrico (#45), Genesis (#40), Banda Nueva (#32), Carlos Vives (#22) y Juanes (#38). Argentina domina con Cafe Tacvba (#1), Almendra (#2), Babasonicos (#3), Charly Garcia (#5), Pescado Rabioso (#9), Sumo (#14), Soda Stereo (#12), Fito Paez (#18), Andres Calamaro (#20) y El Mato a un Policia Motorizado (#31). Santana (#7) como el arquitecto del rock latino desde San Francisco.</p></div></section>
 <section class="feat-section">
@@ -376,4 +417,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

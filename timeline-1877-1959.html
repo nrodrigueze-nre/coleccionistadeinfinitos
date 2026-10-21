@@ -28,11 +28,10 @@ a{color:inherit;text-decoration:none}
 .sec-label{font-size:10px;font-weight:600;letter-spacing:2px;color:#1a2f5a;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
 .sec-label::after{content:'';flex:1;height:1px;background:#dde2ee}
 .intro p{font-size:14px;color:#4a5568;line-height:1.85;font-weight:300}
-.timeline{padding:1.5rem 2.5rem 3rem}
+.timeline{padding:1.5rem 2.5rem 3rem;max-width:900px}
 .year-block{display:flex;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid #f0f2f8}
 .year-block:last-child{border-bottom:none}
 .year-tag{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;color:#1a2f5a;width:76px;flex-shrink:0;text-align:right;padding-top:2px}
-.year-events{flex:1;min-width:0}
 .year-events p{font-size:13.5px;color:#4a5568;line-height:1.85;font-weight:300;margin-bottom:.7rem}
 .year-events p:last-child{margin-bottom:0}
 .page-footer{border-top:1px solid #dde2ee;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;background:#f8f9fc}
@@ -43,8 +42,49 @@ a{color:inherit;text-decoration:none}
   .year-tag{width:auto;text-align:left}
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <div class="hub-topbar">
   <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Colección</a>
   <span class="hub-topbar-sep">›</span>
@@ -54,10 +94,10 @@ a{color:inherit;text-decoration:none}
 <header class="page-header">
   <span class="badge">CRONOLOGÍA · DIGITALDREAMDOOR</span>
   <span class="page-title">1877 – 1959 · Los orígenes</span>
-  <div class="page-sub">Historia del rock año por año, de la invención del fonógrafo a la actualidad</div>
+  <div class="page-sub">Historia del rock año por año, de la invención del fonógrafo al nacimiento del grunge</div>
 </header>
 
-<div class="decade-nav"><a href="timeline-1877-1959.html" class="active">1877 – 1959</a><a href="timeline-1960s.html">1960 – 1969</a><a href="timeline-1970s.html">1970 – 1979</a><a href="timeline-1980s.html">1980 – 1989</a><a href="timeline-1990s.html">1990 – 1999</a><a href="timeline-2000s.html">2000 – 2009</a><a href="timeline-2010s.html">2010 – 2019</a><a href="timeline-2020s.html">2020 – 2026</a></div>
+<div class="decade-nav"><a href="timeline-1877-1959.html" class="active">1877 – 1959</a><a href="timeline-1960s.html">1960 – 1969</a><a href="timeline-1970s.html">1970 – 1979</a><a href="timeline-1980s.html">1980 – 1989</a><a href="timeline-1990s.html">1990 – 1999</a></div>
 
 <section class="intro">
   <div class="sec-label">Sobre esta década</div>
@@ -97,5 +137,6 @@ a{color:inherit;text-decoration:none}
   <a href="index.html" style="font-size:11px;color:#1a2f5a">← Volver a la Colección</a>
 </footer>
 
+<script src="senal-topbar.js"></script>
 </body>
 </html>

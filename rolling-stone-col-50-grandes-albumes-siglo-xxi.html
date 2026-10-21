@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE COLOMBIA</span><span class="badge-year">2001&#8211;2023</span></div><a href="https://es.rollingstone.com/50-grandes-albumes-colombianos-del-siglo-xxi/" target="_blank" class="page-title">50 GRANDES ALBUMES COLOMBIANOS DEL SIGLO XXI</a><p class="page-sub">La Pestilencia, Juanes, Bomba Estereo, Chocquibtown, Aterciopelados &#183; pop, rock gitano, death metal, rap, salsa y rasqa — 22 anos de patrimonio sonoro colombiano &#183; Por Ricardo Duran &#183; RS Colombia &#183; Ene 2024</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="La Pestilencia Balistica"><p class="cover-cap">ROLLING STONE COL &#183; 50 ALBUMES &#183; COLOMBIA S. XXI</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 grandes albumes colombianos del siglo XXI segun Ricardo Duran para Rolling Stone Colombia, publicados el 2 de enero de 2024. Esta seleccion se presenta en orden cronologico y no pretende ser un ranking de nada, pero cae en la tirana antipatia de todos los listados. Hay aqui un criterio absolutamente personal que incluye solo un trabajo de cada artista, para no hacerlo eterno.</p><p class="rtext">Desde Providencia hasta Pasto, pasando por Piedecuesta, los Llanos Orientales y Buenaventura, ignorando las barreras de los generos. Porque no todo esta perdido, y porque hay vida mas alla del reggaeton — acca hay muchas evidencias de un patrimonio sonoro valiosisimo. La lista no incluye reggaeton, vallenato, musica popular ni champeta. Va de La Pestilencia (2001) a Masacre (2023) — 22 anos de musica colombiana imprescindible.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los primeros cinco de la lista cronologica</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">2012</span></div><a href="https://www.rollingstone.com/music/music-lists/50-best-songs-of-2012-152157/" target="_blank" class="page-title">50 BEST SONGS OF 2012</a><p class="page-sub">Alabama Shakes, Taylor Swift, Frank Ocean, Kendrick Lamar, Grimes &#183; Taylor armo el pop de armas de destruccion masiva, Kanye en piloto automatico, Gangnam Style conquisto el mundo &#183; Dolan, Fricke, Sheffield y otros &#183; RS &#183; Dic 2012</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Alabama Shakes Hold On"><p class="cover-cap">ROLLING STONE &#183; 50 CANCIONES &#183; 2012</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Las 50 mejores canciones de 2012 segun Rolling Stone, publicadas el 5 de diciembre. Taylor Swift armo pop de armas de destruccion masiva, Kanye puso el cerebro en piloto automatico, los reyes del dubstep y los rockers de estadio nos invitaron a sus fiestas. Un ano con el ultimo single de los Rolling Stones en 7 anos, el regreso de los Beach Boys con los 5 originales, y Frank Ocean reinventando el R&B.</p><p class="rtext">Carly Rae Jepsen (#50) con la cancion universal que nadie esperaba — disco guitar, Chic bass y la gloria de las hormonas sobrecalentadas. Grimes (#23) con Oblivion como el single de electropop mas perturbador del ano. Kendrick Lamar (#34) emergiendo como el rapero del ano con Swimming Pools. PSY (#20) conquistando America desde Seoul con Gangnam Style — el primer video de YouTube en llegar a mil millones de reproducciones.</p></div></section>
 <section class="feat-section">
@@ -376,4 +417,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

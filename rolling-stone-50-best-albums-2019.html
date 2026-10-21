@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">2019</span></div><a href="https://www.rollingstone.com/music/music-lists/best-albums-2019-914750/" target="_blank" class="page-title">50 BEST ALBUMS OF 2019</a><p class="page-sub">Lana Del Rey, Billie Eilish, Lizzo, Taylor Swift, Vampire Weekend &#183; Billie Eilish reescribio las reglas del exito pop, Ariana Grande exulto en grandeza emo, Taylor y Lana coronaron grandes decadas &#183; RS &#183; Dic 2019</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Lana Del Rey Norman Fucking Rockwell"><p class="cover-cap">ROLLING STONE &#183; 50 ALBUMES &#183; 2019</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores albumes de 2019 segun Rolling Stone, publicados el 5 de diciembre. Mientras la cultura siguio hundiendose, la musica se elevo. Fue el ano en que Billie Eilish reescribio las reglas del exito pop masivo desde cero; Ariana Grande exulto en la grandeza espacial del emo en Thank U Next; Taylor, Lana, Miranda Lambert, Vampire Weekend y Sharon Van Etten coronaron grandes decadas con grandes reinvenciones.</p><p class="rtext">J Balvin y Bad Bunny representaron el urbano latinoamericano (#31 con Oasis). Lizzo transformo la autocelebración en genero musical (#3). Megan Thee Stallion (#29) y DaBaby (#10) lideraron la nueva generacion del rap surenno. Big Thief aparece dos veces — con Two Hands (#15) y UFOF (#50) — el unico artista con dos albums en la lista.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los albumes del ano</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

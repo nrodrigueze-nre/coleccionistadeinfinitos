@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">2022</span></div><a href="https://www.rollingstone.com/music/music-lists/the-50-best-spanish-language-albums-of-2022-1234645737/" target="_blank" class="page-title">50 BEST SPANISH-LANGUAGE ALBUMS OF 2022</a><p class="page-sub">Bad Bunny, Rosalia, Silvana Estrada, Lucrecia Dalt, Jorge Drexler &#183; Un Verano sin Ti haciendo historia, Motomami redefiniendo el pop en espanol, Colombia en su mejor forma experimental &#183; RS &#183; Dic 2022</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Bad Bunny Un Verano sin Ti"><p class="cover-cap">ROLLING STONE &#183; 50 ALBUMES &#183; ESPANOL 2022</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores albumes en espanol de 2022 segun Rolling Stone, publicados el 16 de diciembre. El concepto de genero parecio mas escurridizo que nunca en 2022, particularmente entre artistas hispanohablantes, que rompieron barreras y experimentaron libremente con todo tipo de sonidos y estilos. Motomami de Rosalia y Un Verano Sin Ti de Bad Bunny como los dos albumes que fueron ubicuos en 2022.</p><p class="rtext">Colombia bien representada: Lucrecia Dalt (#4, Ay! — produccion experimental desde Berlin), Goyo (#10, En Letra de Otro), Meridian Brothers (#24, con El Grupo Renacimiento), Combo Chimbita (#44, IRE). Bad Bunny (#1) haciendo historia con el primer album de rap en espanol en llegar al #1 del Billboard 200. Rosalia (#2) ganando el Grammy Latino al Album del Ano con Motomami.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los albumes del ano</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

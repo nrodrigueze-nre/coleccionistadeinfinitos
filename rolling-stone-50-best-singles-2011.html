@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">2011</span></div><a href="https://www.rollingstone.com/music/music-lists/50-best-singles-of-2011-154693/" target="_blank" class="page-title">50 BEST SINGLES OF 2011</a><p class="page-sub">Adele, Beyonce, Jay-Z y Kanye West, Lady Gaga, Radiohead &#183; Adele con el breakup scorcher definitivo, Beyonce en la estratosfera, Lana Del Rey llegando desde ninguna parte &#183; Anderson, Dolan, Fricke, Sheffield y otros &#183; RS &#183; Dic 2011</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Adele Rolling in the Deep"><p class="cover-cap">ROLLING STONE &#183; 50 CANCIONES &#183; 2011</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Las 50 mejores canciones de 2011 segun Rolling Stone, publicadas el 7 de diciembre. El ano incluyo a Adele entregando el breakup scorcher para terminar con todos los breakup scorchers, Beyonce bañando una cancion de amor triunfante en crazy sauce y Lady Gaga dandole a la era la mejor cancion de arena del ano. La ultima colaboracion de Clarence Clemons antes de morir — el saxo de Edge of Glory — y la despedida de R.E.M.</p><p class="rtext">Lana Del Rey (#8) llegando desde ninguna parte con Video Games — uno de los debuts mas impactantes del siglo. Tyler, the Creator (#11) con Yonkers polarizando criticos y fans. Drake (#6) con Marvin's Room como el rap mas vulnerable del ano. Bon Iver (#10) con Holocene como catedral de folk. Watch the Throne de Jay-Z y Kanye dominando el hip-hop con dos entradas (#3 y #15).</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Las canciones del ano</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

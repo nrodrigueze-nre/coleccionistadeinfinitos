@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE CHILE</span><span class="badge-year">1966&#8211;2014</span></div><span class="page-title">50 MEJORES DISCOS CHILENOS</span><p class="page-sub">Los Prisioneros, Violeta Parra, Víctor Jara, Los Jaivas, Los Tres &#183; del folk de la Nueva Canción al rock alternativo, del hip hop al metal — el canon del álbum chileno &#183; Ordenados por impacto</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Los Prisioneros Pateando piedras"><p class="cover-cap">RS CHILE &#183; 50 ÁLBUMES &#183; CHILE</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores discos chilenos segun Rolling Stone Chile — el canon definitivo de la musica grabada en Chile desde los anos 60 hasta la decada del 2010. Una seleccion que abarca la Nueva Cancion Chilena (Violeta Parra, Victor Jara, Inti-Illimani, Quilapayun), el rock de los 80 y 90 (Los Prisioneros, Los Tres, La Ley), el hip hop (Makiza, Tiro de Gracia) y las generaciones mas recientes (Los Bunkers, Gepe, Supersordo).</p><p class="rtext">Los Prisioneros aparecen tres veces (Pateando piedras, La voz de los 80, Corazones). Violeta Parra tres veces. Victor Jara tres veces. Los Tres tres veces. Los Jaivas tres veces. La lista no tiene orden oficial — aqui se presenta ordenada por impacto cultural e historico.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los álbumes más influyentes</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

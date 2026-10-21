@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">2018</span></div><a href="https://www.rollingstone.com/music/music-lists/50-best-albums-2018-764071/" target="_blank" class="page-title">50 BEST ALBUMS OF 2018</a><p class="page-sub">Kacey Musgraves, Cardi B, Ariana Grande, Pusha T, Camila Cabello &#183; voces nuevas saliendo de los margenes — Latin-pop, rap feminista, indie Gen Z &#183; Dolan, Johnston, Spanos, Exposito y otros &#183; RS &#183; Dic 2018</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Kacey Musgraves Golden Hour"><p class="cover-cap">ROLLING STONE &#183; 50 ALBUMES &#183; 2018</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores albumes de 2018 segun Rolling Stone, publicados el 13 de diciembre. El ano sintio como un relevo generacional mas que cualquier otro en memoria reciente. Sin tantos blockbusters de superestrellas que acaparen todo el oxigeno, innovadores mas jovenes obtuvieron la atencion que merecian. Fue un ano fantastico para el latin-pop ambicioso, el rap surenno psicodelico, el indie rock de la Gen Z y el country sin fronteras.</p><p class="rtext">Janelle Monae (#13) armo la fiesta mas importante del ano sobre el legado fluido de Prince. J Balvin (#15) — unico artista colombiano en el top 50 — llevo el reggaeton al mundo con Vibras. Rosalia (#31) reinvento el flamenco como plataforma de vanguardia electronica. Kacey Musgraves (#1) gano el Grammy al Album del Ano — la victoria mas sorprendente en esa categoria en anos.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los albumes del ano</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

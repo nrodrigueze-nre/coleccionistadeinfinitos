@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">1969&#8211;2007</span></div><a href="https://www.rollingstone.com/music/music-lists/50-greatest-prog-rock-albums-of-all-time-78793/" target="_blank" class="page-title">50 GREATEST PROG ROCK ALBUMS OF ALL TIME</a><p class="page-sub">Pink Floyd, King Crimson, Rush, Yes, Genesis &#183; del Court of the Crimson King al Comatorium — los mejores LPs del genero mas extravagante del rock &#183; Dolan, Geist, Grow y otros &#183; RS &#183; Jun 2015</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Pink Floyd The Dark Side of the Moon"><p class="cover-cap">ROLLING STONE &#183; 50 ALBUMES &#183; PROG ROCK</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores albumes de prog rock de todos los tiempos segun Rolling Stone, publicados el 17 de junio de 2015 en celebracion del primer cover de Rush en la revista. Por casi medio siglo el prog ha sido el terreno de las ideas mas extremas del rock: concept albums del grosor de un ladrillo, abrazo temprano de los sintetizadores, compases complicados, fantasias tolkienianas.</p><p class="rtext">Pink Floyd aparece tres veces (#1 Dark Side, #4 Wish You Were Here, #13 Animals). Rush tres veces (#3 Moving Pictures, #11 Hemispheres, #22 2112). Genesis tres veces (#6 Selling England, #9 The Lamb, #14 Foxtrot). King Crimson tres veces (#2 In the Court, #15 Red, #20 Larks' Tongues). Yes dos veces (#5 Close to the Edge, #10 Fragile). Tool (#33, Lateralus) y The Mars Volta (#25) como los representantes del prog moderno.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los albumes que definieron el prog rock</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

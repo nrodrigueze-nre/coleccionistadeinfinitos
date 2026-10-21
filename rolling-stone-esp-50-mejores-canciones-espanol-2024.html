@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE EN ESPAÑOL</span><span class="badge-year">2024</span></div><a href="https://es.rollingstone.com/las-50-mejores-canciones-en-espanol-de-2024/" target="_blank" class="page-title">50 MEJORES CANCIONES EN ESPAÑOL DE 2024</a><p class="page-sub">Álvaro Díaz, The Marías, Kali Uchis, Camilo, Manuel Medrano &#183; pop, reggaeton, rock, regional mexicano y ritmos urbanos — lo mejor de la musica hispanohablante del año &#183; RS en Español &#183; Dic 2024</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Álvaro Díaz TE VI EN MIS PESADILLAS"><p class="cover-cap">RS EN ESPAÑOL &#183; 50 CANCIONES &#183; 2024</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Las 50 mejores canciones en español de 2024 segun Rolling Stone en Español, publicadas el 13 de diciembre de 2024. Una seleccion que recorre Mexico, Puerto Rico, Argentina, Colombia, España y Venezuela — mas nuevas voces de Chile, Republica Dominicana y otros paises. Del pop al reggaeton, del rock al regional mexicano y los ritmos urbanos.</p><p class="rtext">Colombia presente con Kali Uchis (#3, Igual Que Un Angel con Peso Pluma), Camilo (#4, Corazon de hojalata), Manuel Medrano (#5 y #22), Santiago Cruz (#18) y Diamante Electrico (#13). Álvaro Díaz de Puerto Rico como el #1 y el #23 — unico artista con dos entradas en el top 25. Residente también dos veces (#11 y #24). Shakira (#12) como la colombiana mas comercial de la lista.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Las canciones del año</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

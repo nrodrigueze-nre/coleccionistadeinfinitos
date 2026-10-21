@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">1970&#8211;1995</span></div><a href="https://www.rollingstone.com/music/music-lists/50-greatest-grunge-albums-798851/" target="_blank" class="page-title">50 GREATEST GRUNGE ALBUMS</a><p class="page-sub">Nirvana, Soundgarden, Pearl Jam, Hole, Mudhoney &#183; de clasicos multiplatino a esenciales del underground — los mejores discos de la generacion que rehizo el rock &#183; Browne, Grow, Greene y otros &#183; RS &#183; Abr 2019</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Nirvana Nevermind"><p class="cover-cap">ROLLING STONE &#183; 50 ALBUMES &#183; GRUNGE</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Los 50 mejores albumes de grunge de todos los tiempos segun Rolling Stone, publicados el 1 de abril de 2019, en honor al 25 aniversario de 1994 — el ano en que Alice in Chains, Soundgarden, Stone Temple Pilots, Nirvana y Pearl Jam tuvieron todos discos #1, y el ano en que Kurt Cobain murio. La lista va de clasicos multiplatino hasta heroes no reconocidos como Paw, the Gits y the U-Men.</p><p class="rtext">Nirvana aparece tres veces (Nevermind #1, In Utero #8, Bleach #13). Pearl Jam tres veces. Soundgarden cuatro veces. Smashing Pumpkins tres veces. La lista incluye padres del grunge como los Stooges (#38), Black Flag (#36), Neil Young y Crazy Horse (#29) y Wipers (#22) — bandas que el genero debia sus mas fuertes caracteristicas. Kurt Cobain habia predicho que el grunge se volveria pasado de moda. Tenia razon — y estaba equivocado.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Los discos que definieron el grunge</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

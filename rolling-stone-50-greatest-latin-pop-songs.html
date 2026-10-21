@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE</span><span class="badge-year">1951&#8211;2018</span></div><a href="https://www.rollingstone.com/music/music-latin-lists/50-greatest-latin-pop-songs-695776/" target="_blank" class="page-title">50 GREATEST LATIN POP SONGS</a><p class="page-sub">Benny More, Ritchie Valens, Santana, Carlos Vives, Daddy Yankee, Shakira &#183; del mambo cubano de los 50s a la viralidad global de Despacito — 67 anos de pop latino influyente &#183; RS &#183; Ago 2018</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Benny More Bonito y Sabroso"><p class="cover-cap">ROLLING STONE &#183; 50 CANCIONES &#183; LATIN POP</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">Las 50 mejores canciones de pop latino de todos los tiempos segun Rolling Stone, publicadas el 7 de agosto de 2018 en orden cronologico. La lista abarca desde el mambo cubano de 1951 hasta el trap latino de 2018 — 67 anos de musica latina que ha sido parte del pop mundial mucho antes de lo que los medios anglofonos han reconocido.</p><p class="rtext">Colombia representada por Carlos Vives (#25, La Gota Fria), Juanes (#33, A Dios le Pido) y Bomba Estereo (#42, Fuego). La lista incluye la unica cancion en idioma no ingles de la lista original RS 500 Mejores Canciones: La Bamba de Ritchie Valens (#2, 1958). Despacito (#47) como el fenomeno mas reciente — 56 semanas en el #1 del Hot Latin Songs y 16 en el Billboard Hot 100.</p></div></section>
 <section class="feat-section"><div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Las canciones mas influyentes (cronologico)</div>
@@ -374,4 +415,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>

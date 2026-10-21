@@ -99,8 +99,49 @@ a{color:inherit;text-decoration:none}
 @media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
 <style>:root{color-scheme:light only}
 html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
 </head>
 <body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
 <header class="page-header"><div class="source-row"><span class="badge">ROLLING STONE COLOMBIA</span><span class="badge-year">1967&#8211;2018</span></div><span class="page-title">50 GRANDES CANCIONES COLOMBIANAS</span><p class="page-sub">Carlos Vives, Ekhymosis, Aterciopelados, Juanes, Shakira &#183; del rock pionero de los 60s al indie de los 2010s — rock, punk, metal, hip hop y mucho mas &#183; Coleccion personal &#183; Ordenadas por impacto</p></header>
 <section class="hero"><div class="cover-wrap"><img id="hero-cover" class="cover-img" src="" alt="Carlos Vives La Tierra del Olvido"><p class="cover-cap">RS COLOMBIA &#183; 50 CANCIONES &#183; COLOMBIA</p></div><div class="hero-text"><div class="sec-label">Sobre esta lista</div><p class="rtext">50 grandes canciones colombianas de Rolling Stone Colombia, ordenadas por impacto cultural e historico. Una seleccion que abarca mas de cinco decadas de musica colombiana alternativa — del rock pionero de The Speakers y The Flippers en los 60s, pasando por el new wave bogotano de los 80s, el auge del rock colombiano en los 90s, hasta el indie y el hip hop de los 2000s y 2010s.</p><p class="rtext">Aterciopelados con cuatro entradas — el maximo de cualquier artista. Ekhymosis con dos (incluido el primer gran hit de Juanes). Kraken y Hora Local con dos cada uno. The Speakers y The Flippers como los pioneros del rock colombiano desde los 60s. Carlos Vives (#1) con La Tierra del Olvido como la cancion que mas ha hecho por la musica colombiana en el mundo.</p></div></section>
 <section class="feat-section">
@@ -376,4 +417,5 @@ function loadFeatTags(){
 }
 setTimeout(loadFeatTags,800);
 
-</script></body></html>
+</script><script src="senal-topbar.js"></script>
+</body></html>
