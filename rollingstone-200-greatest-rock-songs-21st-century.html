@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="light only">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The 200 Greatest Rock Songs of the 21st Century So Far — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+
+
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light only}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0d1117;min-height:100vh}
+a{color:inherit;text-decoration:none}
+
+/* PAGE HEADER — azul marino fullwidth */
+.page-header{background:#1a2f5a;padding:1.5rem 2.5rem 1.4rem}
+.source-row{display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
+.badge{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.08)}
+.badge-year{font-size:10px;letter-spacing:1.5px;color:#6a90b8;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,42px);font-weight:400;letter-spacing:3px;color:#fff;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:13px;color:#8aaad8;font-weight:300;letter-spacing:.3px}
+.back-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#7ab0ff;margin-bottom:.8rem;text-decoration:none;transition:color .15s}
+.back-link:hover{color:#fff}
+.back-link svg{width:12px;height:12px}
+
+/* HERO */
+.hero{padding:1.75rem 2.5rem;display:flex;gap:2rem;align-items:flex-start;border-bottom:1px solid #e8ecf4;background:#fff}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:160px;height:160px;object-fit:cover;border-radius:6px;border:1px solid #e0e4ee;display:block;background:#f0f2f8}
+.cover-cap{font-size:10px;color:#ffffff;letter-spacing:1.5px;text-align:center;margin-top:6px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15)}
+.rtext{font-size:14px;color:#4a5568;line-height:1.85;font-weight:300}
+.rtext+.rtext{margin-top:.8rem}
+
+/* ABOUT */
+.about-sec{padding:1.5rem 2.5rem;border-bottom:1px solid #e8ecf4;background:#fff}
+
+/* FEAT SECTION */
+.feat-section{padding:1.5rem 2.5rem;border-bottom:1px solid #1a3a6a;background:#2a4a7a}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.25);letter-spacing:1px;line-height:1;width:34px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:64px;height:64px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;background:rgba(255,255,255,.05)}
+.feat-info{flex:1;min-width:0}
+.feat-meta{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.feat-pill{display:inline-block;font-size:10px;color:#0d1933;border:1px solid #8aaad8;padding:1px 8px;border-radius:99px;background:#e0eaff;font-weight:600}
+.feat-year{font-size:10px;color:#7ab0ff;font-weight:700;letter-spacing:1.5px;margin-bottom:3px}
+.feat-decade{font-size:10px;color:#7ab0ff;font-weight:500;letter-spacing:1px;margin-bottom:7px}
+.feat-vocalist{font-size:11px;color:#8aaad8;font-weight:400;margin-bottom:7px}
+.feat-title{font-size:14px;font-weight:500;color:#ffffff;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#8aaad8;font-weight:300;margin-bottom:7px}
+.feat-rev{font-size:14px;color:#c8d8f0;line-height:1.8;font-weight:300}
+
+/* TRACK SECTION — con franja lateral */
+.track-section{padding:0 2.5rem 2.5rem;background:#fff}
+.section-stripe{height:4px}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.8rem 0 .65rem;border-bottom:1px solid #e8ecf4;position:sticky;top:0;background:#fff;z-index:10}
+.track-header span{font-size:10px;font-weight:600;letter-spacing:1.5px;color:#9aa3b2;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.45rem 0 .45rem 0;border-bottom:1px solid #f0f2f8;transition:background .1s;border-left:3px solid transparent;padding-left:6px}
+.track-row:hover{background:#f8f9fc;border-left-color:var(--stripe,#1a2f5a)}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1a2f5a;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:4px;border:1px solid #e0e4ee;background:#f0f2f8;display:block}
+.track-name{font-size:13px;font-weight:400;color:#0d1117;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#9aa3b2;font-weight:300}
+.track-year{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right}
+.track-decade{font-size:11px;color:#16604a;font-weight:500;text-align:center}
+.track-genre{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-country{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-sales{font-size:11px;color:#4a5568;font-weight:400;text-align:right;white-space:nowrap}
+.track-vocalist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-bassist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-drummer{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-scrobbles{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right;white-space:nowrap}
+.track-scrobbles.loading,.loading{color:#c0c8d8;font-weight:300}
+.track-scrobbles.zero,.zero{color:#dde2ee}
+
+/* FOOTER */
+.page-footer{border-top:1px solid #e8ecf4;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;background:#f8f9fc}
+.foot-left{font-size:11px;color:#9aa3b2;letter-spacing:1px}
+.foot-note{font-size:10px;color:#b0b8c8;letter-spacing:.3px}
+.foot-link{font-size:11px;color:#1a2f5a}
+.foot-link:hover{color:#0d1117}
+
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.about-sec,.track-section,.page-footer{padding-left:1rem;padding-right:1rem}
+  .hero{flex-direction:column}
+  .cover-img{width:130px;height:130px}
+  .track-header,.track-row{grid-template-columns:34px 42px 1fr 52px}
+}
+.feat-section .sec-label{color:#7ab0ff}
+.feat-section .sec-label::after{background:rgba(255,255,255,.15)}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}
+</style>
+<style>:root{color-scheme:light only}
+html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
+</head>
+<body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#superlistas">Álbumes globales</a>
+        <a href="index.html#superlistas">Canciones globales</a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#latina">Álbumes latinos</a>
+        <a href="index.html#latina">Canciones latinas</a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#epoca">Anuales</a>
+        <a href="index.html#epoca">Décadas</a>
+        <a href="index.html#cronologia">Cronología</a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematico">Temáticas</a>
+        <a href="index.html#tematico">Géneros</a>
+        <a href="index.html#aclamados">Más aclamados</a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">2000–2026</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-rock-songs-of-the-21st-century-1235634033/" target="_blank" class="page-title">THE 200 GREATEST ROCK SONGS OF THE 21ST CENTURY SO FAR</a>
+  <p class="page-sub">De Maps de Yeah Yeah Yeahs a Seven Nation Army y Mr. Brightside — el canon del rock de este siglo según Rolling Stone · Oct 2026</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Maps – Yeah Yeah Yeahs">
+    <p class="cover-cap">ROLLING STONE · 2026</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Las 200 mejores canciones de rock del siglo XXI compiladas por el staff de Rolling Stone, publicada el 27 de octubre de 2026. Al #1: Maps de Yeah Yeah Yeahs (2003) — la carta de amor más desgarradora del indie rock de los 2000s. Al #2: Seven Nation Army de The White Stripes (2003). Al #3: Mr. Brightside de The Killers (2004), el sencillo que nunca llegó al #1 pero que superó a Wonderwall como el más longevo en las listas británicas.</p>
+    <p class="rtext">La lista abarca desde Radiohead y U2 en el año 2000 hasta estrenos de 2025 y 2026 de Noah Kahan, Fiona Apple y Yungblud — el rock del siglo XXI en todas sus ramas: indie, garage rock revival, pop-punk, metal, post-punk y rock alternativo latino, con Maná, Café Tacvba, Natalia Lafourcade y Juanes representando el lado hispanohablante.</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 — Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Maps">
+    <div class="feat-info">
+      <div class="feat-title">Maps</div>
+      <div class="feat-artist">Yeah Yeah Yeahs</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span><span class="feat-pill">Indie Rock / Post-Punk Revival</span></div>
+      <p class="feat-rev">Karen O escribió Maps sobre un momento turbulento con su entonces novio Angus Andrew, líder de Liars — se rumora que el título es acrónimo de "My Angus Please Stay", aunque la banda nunca lo confirmó. En el video, grabado en un gimnasio de secundaria, Andrew debía aparecer pero llegó tres horas tarde: las lágrimas de Karen O, a punto de irse de gira, son reales, no actuadas. De Fever to Tell (2003), la canción que le dio al garage rock revival su momento más vulnerable.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Seven Nation Army">
+    <div class="feat-info">
+      <div class="feat-title">Seven Nation Army</div>
+      <div class="feat-artist">The White Stripes</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span><span class="feat-pill">Garage Rock</span></div>
+      <p class="feat-rev">Jack White la escribió con una guitarra Airline conectada a un pedal Whammy bajado una octava — lo que suena como bajo es en realidad una guitarra procesada. De Elephant, grabado en cinta analógica de 8 pistas en Londres. El riff se convirtió en el canto de estadio más coreado del rock del siglo XXI, adoptado primero por hinchadas de fútbol europeas antes de extenderse a todos los deportes del mundo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="Mr. Brightside">
+    <div class="feat-info">
+      <div class="feat-title">Mr. Brightside</div>
+      <div class="feat-artist">The Killers</div>
+      <div class="feat-meta"><span class="feat-pill">2004</span><span class="feat-pill">Alternative Rock</span></div>
+      <p class="feat-rev">Brandon Flowers la escribió sobre los celos y la sospecha de infidelidad de una expareja. De Hot Fuss, nunca llegó al #1 en el Reino Unido, pero en mayo de 2024 superó a Wonderwall de Oasis como el sencillo más longevo en las listas británicas sin haber alcanzado esa cima — veinte años después de su lanzamiento seguía reingresando al Top 10.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Good 4 U">
+    <div class="feat-info">
+      <div class="feat-title">Good 4 U</div>
+      <div class="feat-artist">Olivia Rodrigo</div>
+      <div class="feat-meta"><span class="feat-pill">2021</span><span class="feat-pill">Pop-Punk</span></div>
+      <p class="feat-rev">El himno pop-punk de ruptura de Sour. Tras su lanzamiento, Paramore recibió crédito de coautoría — Hayley Williams y Josh Farro — por el parecido estructural y melódico con Misery Business (2007); Olivia Rodrigo lo aceptó sin disputa. La prueba de que el pop-punk de los 2000s nunca se fue, solo esperaba a su siguiente generación.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="The National Anthem">
+    <div class="feat-info">
+      <div class="feat-title">The National Anthem</div>
+      <div class="feat-artist">Radiohead</div>
+      <div class="feat-meta"><span class="feat-pill">2000</span><span class="feat-pill">Experimental Rock</span></div>
+      <p class="feat-rev">De Kid A, construida sobre una línea de bajo que Thom Yorke escribió siendo adolescente. La sección de metales — grabada con una banda de jazz neoyorquina sin partitura ni director, solo instrucciones verbales de Yorke — produce el caos orquestal que define la canción y, con ella, buena parte del siglo que empezaba.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="I Know the End">
+    <div class="feat-info">
+      <div class="feat-title">I Know the End</div>
+      <div class="feat-artist">Phoebe Bridgers</div>
+      <div class="feat-meta"><span class="feat-pill">2020</span><span class="feat-pill">Indie Folk / Art Rock</span></div>
+      <p class="feat-rev">El cierre de Punisher, que empieza como un folk casi susurrado y termina en un grito colectivo con banda completa. Bridgers la escribió pensando en el fin del mundo como metáfora de un colapso personal — la grabó meses antes de que la pandemia le diera a la canción un significado que no buscaba.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Last Nite">
+    <div class="feat-info">
+      <div class="feat-title">Last Nite</div>
+      <div class="feat-artist">The Strokes</div>
+      <div class="feat-meta"><span class="feat-pill">2001</span><span class="feat-pill">Garage Rock Revival</span></div>
+      <p class="feat-rev">De Is This It, el riff de apertura y la estructura están construidos sobre American Girl de Tom Petty. En una entrevista con Rolling Stone en 2006, Petty dijo que a los Strokes "no les importó admitirlo" y que a él "no le molesta" — hasta le pareció gracioso. La canción que relanzó el rock de guitarras en Nueva York al inicio del siglo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="'99 Problems">
+    <div class="feat-info">
+      <div class="feat-title">'99 Problems</div>
+      <div class="feat-artist">Jay-Z</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span><span class="feat-pill">Rap Rock</span></div>
+      <p class="feat-rev">Producida por Rick Rubin para The Black Album, construida sobre un sample de Get Me Back on Time, Engine No. 9 de Wilson Pickett. El segundo verso narra una requisa policial sin orden judicial, narrada con la precisión de un guion — años después se usó como caso de estudio en facultades de derecho sobre los límites de la Cuarta Enmienda.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="I Bet You Look Good on the Dancefloor">
+    <div class="feat-info">
+      <div class="feat-title">I Bet You Look Good on the Dancefloor</div>
+      <div class="feat-artist">Arctic Monkeys</div>
+      <div class="feat-meta"><span class="feat-pill">2005</span><span class="feat-pill">Indie Rock / Post-Punk Revival</span></div>
+      <p class="feat-rev">El primer sencillo del álbum debut y el detonante del fenómeno Arctic Monkeys: antes de firmar con ninguna disquera, sus demos ya circulaban gratis entre fans en foros y la naciente MySpace, generando una base que convirtió el sencillo en uno de los de más rápida venta en la historia del Reino Unido hasta ese momento.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Impossible Germany">
+    <div class="feat-info">
+      <div class="feat-title">Impossible Germany</div>
+      <div class="feat-artist">Wilco</div>
+      <div class="feat-meta"><span class="feat-pill">2007</span><span class="feat-pill">Alt-Country / Rock</span></div>
+      <p class="feat-rev">De Sky Blue Sky, el momento instrumental más celebrado del catálogo de Wilco: un solo extendido a tres guitarras entre Nels Cline, Pat Sansone y Jeff Tweedy que dialogan en lugar de competir, construyendo una de las piezas más elegantes del rock alternativo de los 2000s.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">200 canciones · ordenadas por ranking Rolling Stone</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
+    <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 200 ROCK SONGS · 2026</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-rock-songs-of-the-21st-century-1235634033/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>var BAKED_DATA={};
+
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
+
+var SONGS = [
+  [1,'Maps','Yeah Yeah Yeahs',2003],
+  [2,'Seven Nation Army','The White Stripes',2003],
+  [3,'Mr. Brightside','The Killers',2004],
+  [4,'Good 4 U','Olivia Rodrigo',2021],
+  [5,'The National Anthem','Radiohead',2000],
+  [6,'I Know the End','Phoebe Bridgers',2020],
+  [7,'Last Nite','The Strokes',2001],
+  [8,'\'99 Problems','Jay-Z',2003],
+  [9,'I Bet You Look Good on the Dancefloor','Arctic Monkeys',2005],
+  [10,'Impossible Germany','Wilco',2007],
+  [11,'Times Like These','Foo Fighters',2002],
+  [12,'That\'s What You Get','Paramore',2007],
+  [13,'Night Shift','Lucy Dacus',2018],
+  [14,'Portions for Foxes','Rilo Kiley',2004],
+  [15,'Take Me Out','Franz Ferdinand',2003],
+  [16,'Welcome to the Black Parade','My Chemical Romance',2006],
+  [17,'All My Friends','LCD Soundsystem',2007],
+  [18,'Wolf Like Me','TV On the Radio',2006],
+  [19,'Your Best American Girl','Mitski',2016],
+  [20,'Sugar, We\'re Goin Down','Fall Out Boy',2005],
+  [21,'Getting Killed','Geese',2025],
+  [22,'Beautiful Day','U2',2000],
+  [23,'Blackstar','David Bowie',2016],
+  [24,'Yellow','Coldplay',2000],
+  [25,'The Middle','Jimmy Eat World',2001],
+  [26,'Hate to Say I Told You So','The Hives',2000],
+  [27,'The Rising','Bruce Springsteen',2002],
+  [28,'Venice Bitch','Lana Del Rey',2019],
+  [29,'Float On','Modest Mouse',2004],
+  [30,'7/4 (Shoreline)','Broken Social Scene',2005],
+  [31,'Hangover Game','MJ Lenderman',2022],
+  [32,'Entertain','Sleater-Kinney',2005],
+  [33,'All Too Well (10 Minute Version)','Taylor Swift',2021],
+  [34,'Chop Suey!','System of a Down',2001],
+  [35,'Time to Pretend','MGMT',2007],
+  [36,'No One Knows','Queens of the Stone Age',2002],
+  [37,'Rebellion (Lies)','Arcade Fire',2004],
+  [38,'Honest With Me','Bob Dylan',2001],
+  [39,'1901','Phoenix',2009],
+  [40,'Disciple','Slayer',2001],
+  [41,'B.O.B.','OutKast',2000],
+  [42,'A-Punk','Vampire Weekend',2008],
+  [43,'Pedestrian at Best','Courtney Barnett',2015],
+  [44,'House of Jealous Lovers','The Rapture',2003],
+  [45,'Hold On','Alabama Shakes',2012],
+  [46,'Don\'t Hurt Yourself','Beyoncé and Jack White',2016],
+  [47,'Change (In the House of Flies)','Deftones',2000],
+  [48,'Letter From an Occupant','The New Pornographers',2000],
+  [49,'Hash Pipe','Weezer',2001],
+  [50,'By the Way','Red Hot Chili Peppers',2002],
+  [51,'Supermassive Black Hole','Muse',2006],
+  [52,'Wordless Chorus','My Morning Jacket',2005],
+  [53,'Party Police','Alvvays',2014],
+  [54,'This Is Love','PJ Harvey',2000],
+  [55,'Never Been Wrong','Waxahatchee',2017],
+  [56,'I Write Sins Not Tragedies','Panic! at the Disco',2005],
+  [57,'Stoned and Starving','Parquet Courts',2012],
+  [58,'The Rock Show','Blink-182',2001],
+  [59,'The Charade','D\'Angelo and the Vanguard',2015],
+  [60,'Blood and Thunder','Mastodon',2004],
+  [61,'Starburster','Fontaines D.C.',2024],
+  [62,'Banquet','Bloc Party',2004],
+  [63,'Eres','Café Tacvba',2005],
+  [64,'Drunk Drivers/Killer Whales','Car Seat Headrest',2016],
+  [65,'Mexican Wine','Fountains of Wayne',2003],
+  [66,'The Rat','The Walkmen',2004],
+  [67,'Concubine','Converge',2001],
+  [68,'Chosen to Deserve','Wednesday',2023],
+  [69,'Killer Parties','The Hold Steady',2004],
+  [70,'Marrow','St. Vincent',2009],
+  [71,'Since U Been Gone','Kelly Clarkson',2004],
+  [72,'Teenage Dirtbag','Wheatus',2000],
+  [73,'Eatin\' Big Time','Tyler Childers',2025],
+  [74,'Blackout','Turnstile',2021],
+  [75,'The Wire','Haim',2013],
+  [76,'I Predict a Riot','Kaiser Chiefs',2004],
+  [77,'Drunk II','Mannequin Pussy',2019],
+  [78,'Star','Jesu',2006],
+  [79,'Red Eyes','The War on Drugs',2014],
+  [80,'Mariposa Traicionera','Maná',2002],
+  [81,'PDA','Interpol',2002],
+  [82,'Yoü and I','Lady Gaga',2011],
+  [83,'There, There','Radiohead',2005],
+  [84,'Chaise Longue','Wet Leg',2022],
+  [85,'Bring Me to Life','Evanescence',2003],
+  [86,'Lonely Boy','Black Keys',2011],
+  [87,'Jubilee Street','Nick Cave and the Bad Seeds',2013],
+  [88,'R U Mine','Arctic Monkeys',2011],
+  [89,'Real Emotional Trash','Stephen Malkmus',2008],
+  [90,'Transgender Dysphoria Blues','Against Me!',2014],
+  [91,'The Grudge','Tool',2001],
+  [92,'Holiday','Green Day',2004],
+  [93,'Horns of a Bull','Fiona Apple',2026],
+  [94,'Deliverance','Opeth',2002],
+  [95,'Imitation of Life','R.E.M.',2000],
+  [96,'Black and White Town','Doves',2005],
+  [97,'Be Sweet','Japanese Breakfast',2021],
+  [98,'En el 2000','Natalia Lafourcade',2002],
+  [99,'Marry Me','Drive-By Truckers',2003],
+  [100,'I Always Wanna Die (Sometimes)','The 1975',2018],
+  [101,'The Seed (2.0)','The Roots feat. Cody Chesnutt',2003],
+  [102,'Bloodbuzz Ohio','The National',2010],
+  [103,'In the End','Linkin Park',2000],
+  [104,'Ball and Biscuit','White Stripes',2003],
+  [105,'Transatlanticism','Death Cab for Cutie',2003],
+  [106,'Boomer','Bartees Strange',2020],
+  [107,'Stay Down','Boygenius',2018],
+  [108,'Get Free','The Vines',2002],
+  [109,'God Is Dead?','Black Sabbath',2013],
+  [110,'Key West (Philosopher Pirate)','Bob Dylan',2020],
+  [111,'I Believe in a Thing Called Love','The Darkness',2003],
+  [112,'The Story','Brandi Carlile',2007],
+  [113,'L.A.','Elliott Smith',2000],
+  [114,'Got Some','Pearl Jam',2009],
+  [115,'The \'59 Sound','Gaslight Anthem',2008],
+  [116,'Transparent Soul','Willow feat. Travis Barker',2021],
+  [117,'The Hand That Feeds','Nine Inch Nails',2005],
+  [118,'Lazy Eye','Silversun Pickups',2006],
+  [119,'Love Takes Miles','Cameron Winter',2024],
+  [120,'Violent Shiver','Benjamin Booker',2014],
+  [121,'I\'m Not Okay (I Promise)','My Chemical Romance',2004],
+  [122,'Fine Line','Paul McCartney',2005],
+  [123,'You\'re So Last Summer','Taking Back Sunday',2002],
+  [124,'Slow Dancing in a Burning Room','John Mayer',2006],
+  [125,'Flying Whales','Gojira',2005],
+  [126,'The Way We Get By','Spoon',2002],
+  [127,'Like a Stone','Audioslave',2002],
+  [128,'Bright Lights','Gary Clark Jr.',2011],
+  [129,'Incinerate','Sonic Youth',2006],
+  [130,'Kiwi','Harry Styles',2017],
+  [131,'Uprising','Muse',2009],
+  [132,'The Nights of Wine and Roses','Japandroids',2012],
+  [133,'The Bucket','Kings of Leon',2004],
+  [134,'Headlong Flight','Rush',2012],
+  [135,'Read My Mind','The Killers',2006],
+  [136,'Telephone','The Stratford 4',2003],
+  [137,'Not','Big Thief',2019],
+  [138,'Reptilia','The Strokes',2003],
+  [139,'Ramada Inn','Neil Young and Crazy Horse',2012],
+  [140,'We Will Rise','Arch Enemy',2003],
+  [141,'Circle the Drain','Soccer Mommy',2020],
+  [142,'Revolution Rock n Roll','Low Cut Connie',2017],
+  [143,'Heat Wave','Snail Mail',2018],
+  [144,'Joker & the Thief','Wolfmother',2005],
+  [145,'Farewell Transmission','Songs: Ohia',2003],
+  [146,'Big Sky','Lou Reed',2000],
+  [147,'Don\'t Look Back Into the Sun','The Libertines',2003],
+  [148,'Cherry Chapstick','Yo La Tengo',2000],
+  [149,'Bleed','Meshuggah',2008],
+  [150,'Jesus Is Dead','Bleachers',2024],
+  [151,'Pretty Pimpin','Kurt Vile',2015],
+  [152,'Are You Gonna Be My Girl','Jet',2003],
+  [153,'Best of You','Foo Fighters',2005],
+  [154,'Rainbow','Boris with Michio Kurihara',2007],
+  [155,'You\'re Not the One','Sky Ferreira',2013],
+  [156,'Guitar','Prince',2007],
+  [157,'The Knock','Hop Along',2015],
+  [158,'Standing in the Way of Control','Gossip',2006],
+  [159,'Caring Is Creepy','The Shins',2001],
+  [160,'Barley','Water From Your Eyes',2023],
+  [161,'Spit Out the Bone','Metallica',2016],
+  [162,'Beautiful Blue Sky','Ought',2015],
+  [163,'Call to Arms','Sturgill Simpson',2016],
+  [164,'Desire Lines','Deerhunter',2010],
+  [165,'Finding Out True Love Is Blind','Louis XIV',2005],
+  [166,'Arcarsenal','At the Drive-In',2000],
+  [167,'Cumberland Gap','Jason Isbell and the 400 Unit',2017],
+  [168,'Danger! High Voltage','Electric Six',2002],
+  [169,'Whole Wide World','The Rolling Stones',2023],
+  [170,'Fat Lip','Sum 41',2001],
+  [171,'Afrique Victime','Mdou Moctar',2021],
+  [172,'Me and Magdalena','The Monkees',2016],
+  [173,'Salad','Blondshell',2023],
+  [174,'Seasons (Waiting on You)','Future Islands',2014],
+  [175,'Wondering Why','Red Clay Strays',2022],
+  [176,'Rattlesnake','King Gizzard and the Lizard Wizard',2017],
+  [177,'Castanets','Alejandro Escovedo',2001],
+  [178,'Rill Rill','Sleigh Bells',2010],
+  [179,'Virile','Moses Sumney',2019],
+  [180,'Monstro','Downtown Boys',2015],
+  [181,'Hello Heaven, Hello','Yungblud',2025],
+  [182,'My Happy Ending','Avril Lavigne',2004],
+  [183,'Amidinine','Bombino',2013],
+  [184,'Crystal River','Mudcrutch',2008],
+  [185,'Slither','Velvet Revolver',2004],
+  [186,'Elephant','Tame Impala',2012],
+  [187,'People = Shit','Slipknot',2001],
+  [188,'Steady, As She Goes','The Raconteurs',2006],
+  [189,'Isak','Baroness',2007],
+  [190,'After Ur Gone','Alex G',2014],
+  [191,'I\'ll Believe in Anything','Wolf Parade',2005],
+  [192,'Es Por Ti','Juanes',2002],
+  [193,'Speeding 72','Momma',2022],
+  [194,'Rollerskate Skinny','Old 97\'s',2001],
+  [195,'This Year','The Mountain Goats',2005],
+  [196,'Circles','Incubus',2001],
+  [197,'2 Rights Make 1 Wrong','Mogwai',2001],
+  [198,'The Graduates','Speedy Ortiz',2015],
+  [199,'American Cars','Noah Kahan',2026],
+  [200,'Ocean Avenue','Yellowcard',2003],
+];
+
+
+var FEAT = [
+  ["fc-1","Yeah Yeah Yeahs","Maps"],
+  ["fc-2","The White Stripes","Seven Nation Army"],
+  ["fc-3","The Killers","Mr. Brightside"],
+  ["fc-4","Olivia Rodrigo","Good 4 U"],
+  ["fc-5","Radiohead","The National Anthem"],
+  ["fc-6","Phoebe Bridgers","I Know the End"],
+  ["fc-7","The Strokes","Last Nite"],
+  ["fc-8","Jay-Z","99 Problems"],
+  ["fc-9","Arctic Monkeys","I Bet You Look Good on the Dancefloor"],
+  ["fc-10","Wilco","Impossible Germany"],
+];
+
+var LIST_TYPE="canciones";
+var LFM_KEY="b25b959554ed76058ac220b7b2e0a026",LFM_USER="lartzrodriguez";
+function setImg(el,url){el.src=url;el.style.opacity="1";el.onerror=function(){el.style.opacity="0.07";el.onerror=null;};}
+function loadArt(el,artist,track){
+  fetchTO("https://itunes.apple.com/search?term="+encodeURIComponent(track+" "+artist)+"&media=music&entity=song&limit=5&country=us")
+    .then(function(r){return r.json();}).then(function(d){
+      var results=d.results||[],a=artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0],match=null;
+      for(var i=0;i<results.length;i++){if(results[i].artistName&&results[i].artistName.toLowerCase().indexOf(a)>=0){match=results[i];break;}}
+      if(!match&&results.length)match=results[0];
+      if(match&&match.artworkUrl100)setImg(el,match.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(match){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&match.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=match.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }else throw new Error("x");
+    }).catch(function(){
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&autocorrect=1&format=json")
+        .then(function(r){return r.json();}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.track&&d.track.toptags&&d.track.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.track.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
+          var imgs=(d&&d.track&&d.track.album&&d.track.album.image)?d.track.album.image:[],best=null;
+          for(var i=0;i<imgs.length;i++){if(imgs[i].size==="extralarge"){best=imgs[i];break;}}
+          if(!best)for(var j=0;j<imgs.length;j++){if(imgs[j].size==="large"){best=imgs[j];break;}}
+          var u=best?best["#text"]:"";
+          if(u&&u.length>10&&u.indexOf("2a96cbd8b46e442fc41c2b86b821562f")<0)setImg(el,u);
+        }).catch(function(){});
+    });
+}
+loadArt(document.getElementById("hero-cover"),"Yeah Yeah Yeahs","Maps");
+FEAT.forEach(function(fc,i){setTimeout(function(){var el=document.getElementById(fc[0]);if(el)loadArt(el,fc[1],fc[2]);},i*300);});
+var container=document.getElementById("tracklist"),frag=document.createDocumentFragment();
+SONGS.forEach(function(item){
+  var num=item[0],title=item[1],artist=item[2],year=item[3];
+  var row=document.createElement("div");row.className="track-row";
+  row.innerHTML="<div class=\"track-num\">"+num+"</div>"+
+    "<img class=\"track-cover\" data-artist=\""+encodeURIComponent(artist)+"\" data-album=\""+encodeURIComponent(title)+"\" src=\"\" style=\"opacity:0\" alt=\""+title.replace(/"/g,"&quot;")+"\" >"+
+    "<div style=\"min-width:0\"><div class=\"track-name\">"+title+"</div><div class=\"track-artist\">"+artist+"</div></div>"+
+    "<div class=\"track-year\">"+year+"</div>"+
+    "<div class=\"track-genre loading track-extra-trigger\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-title=\""+encodeURIComponent(title)+"\">&#8212;</div>"+
+    "<div class=\"track-listeners loading\">&#8212;</div>"+
+    "<div class=\"track-playcount loading\">&#8212;</div>"+
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\""+encodeURIComponent(artist)+"\" data-lfm-album=\""+encodeURIComponent(title)+"\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
+var artQ=[],artTimer=null;
+function flushArt(){var batch=artQ.splice(0,8);for(var i=0;i<batch.length;i++){loadArt(batch[i],decodeURIComponent(batch[i].dataset.artist),decodeURIComponent(batch[i].dataset.album));}if(artQ.length>0)artTimer=setTimeout(flushArt,500);}
+var artObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;artObs.unobserve(entries[i].target);artQ.push(entries[i].target);}clearTimeout(artTimer);artTimer=setTimeout(flushArt,80);},{rootMargin:"800px"});
+var covers=document.querySelectorAll(".track-cover");for(var i=0;i<covers.length;i++)artObs.observe(covers[i]);
+var lfmCache={},lfmQ=[],lfmBusy=false;
+function processLfmQ(){
+  if(lfmBusy||lfmQ.length===0)return;lfmBusy=true;
+  var el=lfmQ.shift(),artist=decodeURIComponent(el.dataset.lfmArtist||""),track=decodeURIComponent(el.dataset.lfmAlbum||""),key=artist+"|||"+track;
+  if(lfmCache[key]!==undefined){renderScrobble(el,lfmCache[key]);lfmBusy=false;setTimeout(processLfmQ,30);return;}
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="+LFM_KEY+"&artist="+encodeURIComponent(artist)+"&track="+encodeURIComponent(track)+"&username="+LFM_USER+"&autocorrect=1&format=json")
+    .then(function(r){return r.json();}).then(function(d){var count=parseInt((d&&d.track&&d.track.userplaycount)||0,10);lfmCache[key]=count;renderScrobble(el,count);})
+    .catch(function(){el.textContent="—";el.classList.remove("loading");})
+    .finally(function(){lfmBusy=false;setTimeout(processLfmQ,200);});
+}
+function renderScrobble(el,count){el.classList.remove("loading");el.textContent=count>0?count.toLocaleString():"0";if(!count)el.classList.add("zero");}
+var lfmObs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(!entries[i].isIntersecting)continue;lfmObs.unobserve(entries[i].target);lfmQ.push(entries[i].target);processLfmQ();}},{rootMargin:"400px"});
+var scrobbles=document.querySelectorAll(".track-scrobbles");for(var i=0;i<scrobbles.length;i++)lfmObs.observe(scrobbles[i]);
+
+
+// ── Last.fm: genre, listeners, playcount, album ───────────────────────────
+var extraQ=[], extraBusy=false;
+function processExtra(){
+  if(extraBusy||!extraQ.length) return;
+  extraBusy=true;
+  var el=extraQ.shift();
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
+  var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+  var method=isAlb?'album.getinfo':'track.getinfo';
+  var param=isAlb?'&album=':'&track=';
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
+        '&api_key='+LFM_KEY+
+        '&artist='+encodeURIComponent(artist)+
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var obj=d.track||d.album; if(!obj) return;
+      var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
+      // Listeners
+      var lsEl=row.querySelector('.track-listeners');
+      if(lsEl&&obj.listeners){
+        var ls=parseInt(obj.listeners);
+        lsEl.textContent=ls>=1000000?(ls/1000000).toFixed(1)+'M':ls>=1000?(ls/1000).toFixed(0)+'K':ls;
+        lsEl.classList.remove('loading');
+      }
+      // Playcount
+      var pcEl=row.querySelector('.track-playcount');
+      if(pcEl&&obj.playcount){
+        var pc=parseInt(obj.playcount);
+        pcEl.textContent=pc>=1000000?(pc/1000000).toFixed(1)+'M':pc>=1000?(pc/1000).toFixed(0)+'K':pc;
+        pcEl.classList.remove('loading');
+      }
+      // Album title (canciones)
+      if(!isAlb&&obj.album&&obj.album.title){
+        var albEl=row.querySelector('.track-album');
+        if(albEl) albEl.textContent=obj.album.title;
+      }
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='—' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
+      var genEl=row.querySelector('.track-genre');
+      if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
+        }
+      }
+    })
+    .catch(function(){})
+    .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
+}
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='—'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
+var extraObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    extraObs.unobserve(e.target);
+    extraQ.push(e.target);
+    processExtra();
+  });
+},{rootMargin:'600px'});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
+
+// feat pills: género desde Last.fm para items sin genre
+function loadFeatTags(){
+  document.querySelectorAll('.feat-item').forEach(function(item,idx){
+    var titleEl=item.querySelector('.feat-title');
+    var artistEl=item.querySelector('.feat-artist');
+    var metaEl=item.querySelector('.feat-meta');
+    if(!titleEl||!artistEl||!metaEl) return;
+    var pills=metaEl.querySelectorAll('.feat-pill');
+    if(pills.length>1) return;
+  });
+}
+
+</script>
+<script src="senal-topbar.js"></script>
+</body>
+</html>
