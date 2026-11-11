@@ -1,0 +1,36 @@
+name: Recalcular Más aclamados
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'tools/build_aclamados.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aclamados:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recalcular topArtists / topAlbums / topSongs
+        run: python3 tools/build_aclamados.py
+      - name: Validar JS de index.html
+        run: |
+          python3 - <<'PY'
+          import re
+          h = open('index.html', encoding='utf-8').read()
+          open('/tmp/check.js', 'w').write(';\n'.join(re.findall(r'<script>(.*?)</script>', h, re.S)))
+          PY
+          node --check /tmp/check.js
+      - name: Commit si cambió
+        run: |
+          if git diff --quiet index.html; then echo "Sin cambios"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Recalcular Más aclamados (automático)"
+          git push
