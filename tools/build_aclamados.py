@@ -32,8 +32,7 @@ def primary_artist(a):
 def js_str(tok):
     q = tok[0]
     body = tok[1:-1]
-    body = body.replace('\\' + q, q).replace('\\\\', '\\')
-    return body
+    return re.sub(r'\\(.)', r'\1', body)
 
 STR = r'''("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')'''
 
