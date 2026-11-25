@@ -69,9 +69,9 @@ def read_list(path):
             return None
     ti = 3 - ai
     rows = []
-    for r in re.finditer(r'\[\s*\d+\s*,\s*' + STR + r'\s*,\s*' + STR, m.group(2)):
+    for r in re.finditer(r'\[\s*\d+\s*,\s*' + STR + r'\s*,\s*' + STR + r'(?:\s*,\s*(\d{4}))?', m.group(2)):
         cols = {1: js_str(r.group(1)), 2: js_str(r.group(2))}
-        rows.append((cols[ai], cols[ti]))
+        rows.append((cols[ai], cols[ti], int(r.group(3)) if r.group(3) else None))
     return t.group(1), rows
 
 def main():
@@ -89,7 +89,7 @@ def main():
             skipped.append(name); continue
         typ, rows = res
         counted.append(name)
-        for artist, title in rows:
+        for artist, title, _year in rows:
             artist = primary_artist(artist)
             ka = norm(artist)
             if not ka or ka in NOT_ARTISTS:

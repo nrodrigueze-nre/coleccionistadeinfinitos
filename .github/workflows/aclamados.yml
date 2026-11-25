@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '*.html'
-      - 'tools/build_aclamados.py'
+      - 'tools/*.py'
   workflow_dispatch:
 
 permissions:
@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Recalcular topArtists / topAlbums / topSongs
         run: python3 tools/build_aclamados.py
+      - name: Recalcular Top 3 de cada lista
+        run: python3 tools/build_stats.py
       - name: Validar JS de index.html
         run: |
           python3 - <<'PY'
@@ -28,9 +30,9 @@ jobs:
           node --check /tmp/check.js
       - name: Commit si cambió
         run: |
-          if git diff --quiet index.html; then echo "Sin cambios"; exit 0; fi
+          if git diff --quiet; then echo "Sin cambios"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "Recalcular Más aclamados (automático)"
+          git add -A index.html *.html
+          git commit -m "Recalcular Más aclamados y Top 3 (automático)"
           git push
