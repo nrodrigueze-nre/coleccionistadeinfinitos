@@ -3985,6 +3985,10 @@ function loadHomeQuotes(){
   var h=(location.hash||'').replace('#','');
   var valid=h&&(h==='aclamados'||h==='top12'||SEC_FILTERS[h]);
   go(valid?h:'home');
+  window.addEventListener('hashchange',function(){
+    var x=(location.hash||'').replace('#','');
+    if(x&&(x==='aclamados'||x==='top12'||SEC_FILTERS[x])) go(x);
+  });
 })();
 
 </script>
