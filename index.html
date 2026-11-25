@@ -97,6 +97,16 @@ input{font-family:inherit}
 .btn-srch:hover{border-color:var(--card-hover);color:var(--text2)}
 .btn-srch svg{width:14px;height:14px}
 .content{flex:1;overflow-y:auto;padding:24px}
+.all-search{width:calc(100% - 2*var(--all-pad));max-width:420px;margin:0 var(--all-pad) 14px;padding:9px 12px;border-radius:8px;border:1px solid var(--border,rgba(255,255,255,.15));background:rgba(255,255,255,.05);color:inherit;font:inherit;font-size:14px}
+:root{--all-pad:clamp(16px,4vw,48px)}
+.all-list{display:flex;flex-direction:column;padding:0 var(--all-pad) 40px}
+.all-letter{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#22d3ee;margin:18px 0 4px;padding-bottom:4px;border-bottom:1px solid rgba(255,255,255,.1)}
+.all-row{display:flex;gap:12px;align-items:flex-start;padding:9px 6px;border-radius:8px;text-decoration:none;color:inherit}
+.all-row:hover{background:rgba(255,255,255,.06)}
+.all-ico{font-size:20px;line-height:1.3;flex-shrink:0;width:26px;text-align:center}
+.all-txt{display:flex;flex-direction:column;min-width:0}
+.all-name{font-size:14px;font-weight:600}
+.all-desc{font-size:12.5px;opacity:.65;margin-top:2px;line-height:1.45}
 .sec-head{margin-bottom:20px}
 .sec-head h1{font-family:'Bebas Neue',sans-serif;font-size:30px;font-weight:400;letter-spacing:2.5px;color:var(--text);line-height:1;margin-bottom:4px}
 .sec-head p{font-size:13px;color:var(--text3)}
@@ -457,6 +467,7 @@ a{color:inherit;}
         <a onclick="go('aclamados',null,null)">Más aclamados</a>
         <a onclick="go('top12',null,null)">Mi Top 12</a>
         <a onclick="go('cronologia',null,null)">Cronología</a>
+        <a onclick="go('todas',null,null)">Todas las listas</a>
         <a href="music-quotes-page.html" class="si-quotes-link">Music Quotes</a>
       </nav>
       <button class="menu-btn si-catbtn" id="catBtn" onclick="toggleCatMenu()" aria-label="Categorías">
@@ -3651,7 +3662,7 @@ function homeHTML(){
 var LBLS={home:'Inicio',aclamados:'Más aclamados',super:'Superlistas',
   'albumes-globales':'Álbumes Globales','canciones-globales':'Canciones Globales',
   'albumes-latinos':'Álbumes Latinos','canciones-latinas':'Canciones Latinas',
-  tematicas:'Temáticas',anuales:'Listas Anuales',decadas:'Por Décadas',generos:'Por Géneros',cronologia:'Cronología',top12:'Mi Top 12'};
+  tematicas:'Temáticas',anuales:'Listas Anuales',decadas:'Por Décadas',generos:'Por Géneros',cronologia:'Cronología',top12:'Mi Top 12',todas:'Todas las listas'};
 
 var SEC_FILTERS={
   super:              function(l){return SECTIONS[l.file]==='super';},
@@ -3663,7 +3674,8 @@ var SEC_FILTERS={
   anuales:            function(l){return SECTIONS[l.file]==='annual';},
   decadas:            function(l){return SECTIONS[l.file]==='decades';},
   generos:            function(l){return SECTIONS[l.file]==='genres';},
-  cronologia:         function(l){return l.type==='cronologia';}
+  cronologia:         function(l){return l.type==='cronologia';},
+  todas:              function(l){return true;}
 };
 
 function sectionHTML(sec){
@@ -3767,9 +3779,42 @@ function go(sec,sEl,bnEl){
   if(sec==='home') area.innerHTML=homeHTML();
   else if(sec==='aclamados') area.innerHTML=aclamadosHTML();
   else if(sec==='top12') area.innerHTML=top12HTML();
+  else if(sec==='todas') area.innerHTML=todasHTML();
   else area.innerHTML=sectionHTML(sec);
   area.scrollTop=0;
   setTimeout(observeImages,60);
+}
+
+// ══ TODAS LAS LISTAS (A–Z) ══
+function todasKey(t){var k=t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''),p;do{p=k;k=k.replace(/^[^a-z]+/,'').replace(/^(the|los|las|el|la|top)\s+/,'').replace(/^\d[\d\s,.]*/,'');}while(k!==p);return k;}
+function todasIcon(t){return t==='albumes'?'\uD83D\uDCBF':(t==='cronologia'?'\uD83D\uDD70\uFE0F':'\uD83C\uDFB5');}
+function todasHTML(){
+  var items=LISTS.slice().sort(function(a,b){return todasKey(a.title).localeCompare(todasKey(b.title),'es');});
+  var h='<div class="sec-head"><h1>Todas las listas</h1><p>'+items.length+' listas · orden alfabético</p></div>'
+    +'<input class="all-search" type="search" placeholder="Filtrar listas…" oninput="todasFilter(this.value)">'
+    +'<div class="all-list" id="allList">';
+  var cur='';
+  items.forEach(function(l){
+    var k=(todasKey(l.title).charAt(0)||'#').toUpperCase();
+    if(!/[A-Z]/.test(k)) k='#';
+    if(k!==cur){cur=k;h+='<div class="all-letter" data-letter="1">'+k+'</div>';}
+    h+='<a class="all-row" href="'+l.file+'" data-q="'+(l.title+' '+l.source+' '+(l.desc||'')).toLowerCase().replace(/"/g,'')+'">'
+      +'<span class="all-ico">'+todasIcon(l.type)+'</span>'
+      +'<span class="all-txt"><span class="all-name">'+l.title+'</span>'
+      +'<span class="all-desc">'+(l.desc||'')+'</span></span></a>';
+  });
+  return h+'</div>';
+}
+function todasFilter(q){
+  q=(q||'').toLowerCase().trim();
+  var rows=document.querySelectorAll('#allList .all-row'),lastLetter=null,any={};
+  rows.forEach(function(r){r.style.display=(!q||r.dataset.q.indexOf(q)>-1)?'':'none';});
+  var nodes=document.querySelectorAll('#allList > *'),pending=null,shown=false;
+  nodes.forEach(function(n){
+    if(n.classList.contains('all-letter')){ if(pending) pending.style.display=shown?'':'none'; pending=n; shown=false; }
+    else if(n.style.display!=='none') shown=true;
+  });
+  if(pending) pending.style.display=shown?'':'none';
 }
 function tog(bid,aid){var b=document.getElementById(bid),a=document.getElementById(aid);if(b&&a){b.classList.toggle('open');a.classList.toggle('open');}}
 function toggleCatMenu(){
