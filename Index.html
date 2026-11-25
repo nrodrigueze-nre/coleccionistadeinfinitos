@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light only">
@@ -43,7 +44,7 @@
   --bh:60px;
   --r:8px;
 }
-html,body{height:100%;overflow:hidden}
+html,body{height:auto;overflow:visible}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input{font-family:inherit}
@@ -153,6 +154,10 @@ input{font-family:inherit}
 .acl-name{font-size:12px;color:var(--text);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .acl-sub{font-size:11px;color:var(--text3);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .acl-cnt{font-size:11px;color:var(--sb);font-weight:600;white-space:nowrap;flex-shrink:0}
+.acl-item.has-rev{align-items:flex-start;padding:9px 0}
+.acl-item.has-rev .acl-pos{padding-top:2px}
+.acl-rev{font-size:11.5px;color:var(--text2,#4a5568);line-height:1.55;font-weight:300;margin-top:4px;white-space:normal}
+
 
 /* SPOTLIGHT */
 .sp-ov{display:none;position:fixed;inset:0;background:rgba(10,18,36,.55);z-index:100;align-items:flex-start;justify-content:center;padding-top:80px;backdrop-filter:blur(4px)}
@@ -218,160 +223,271 @@ input{font-family:inherit}
 .lfm-name{font-size:12px;font-weight:500;color:var(--text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lfm-plays{font-size:11px;color:var(--text3)}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style id="senal-theme">
+:root{
+  --p:#c04bff; --p2:#ff3fc9; --c:#2ff0d8; --c2:#38b8ff;
+  --bg:#07060d; --bg-white:#100c1c; --bg2:#160f28;
+  --surface:#100c1c; --surface2:#160f28; --line:#262040; --card-border:#262040; --card-hover:#c04bff;
+  --text:#f4f1fb; --text1:#f4f1fb; --text2:#9b93bf; --text3:#6e668f;
+  --sub:#9b93bf; --sub2:#6e668f; --ink:#f4f1fb;
+  --sb:#100c1c; --sb2:#180f2a; --sb3:#0c0815;
+  --sbt:#f4f1fb; --sbt2:#9b93bf; --sbt3:#6e668f;
+  --sbor:rgba(255,255,255,.06); --acc:#c04bff;
+  --cg:#c04bff; --cl:#ff3fc9; --cs:#2ff0d8; --ct:#38b8ff;
+  --cg-bg:rgba(192,75,255,.12); --cl-bg:rgba(255,63,201,.12);
+  --cs-bg:rgba(47,240,216,.12); --ct-bg:rgba(56,184,255,.12);
+}
+html,body{background:var(--bg) !important;color:var(--ink) !important;height:auto!important;overflow:visible!important;overflow-x:hidden!important;}
+.pageContent{min-height:100vh;}
+.content{overflow:visible!important;height:auto!important;flex:none!important;}
+.app,.main{display:block!important;height:auto!important;overflow:visible!important;}
+body{font-family:'Inter',sans-serif !important;}
+a{color:inherit;}
+::selection{background:var(--p);color:#fff;}
+.page-title,.hero-title,.sec-head h1,.bio-label,.acl-lbl,.lfm-label,h1,h2,h3{font-family:'Space Grotesk',sans-serif !important;}
+
+/* -------- topbar (demo style, horizontal dropdown) -------- */
+.topbar{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line);isolation:isolate;overflow:hidden;background:#0a0914;height:auto!important;display:block!important;padding:0!important;}
+.si-genreStrip{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.si-genreStrip .si-bgtrack{position:absolute;inset:0;width:200%;height:100%;display:flex;animation:siGenreScroll 90s linear infinite;}
+.si-genreStrip .si-bgtrack img{height:100%;width:50%;object-fit:cover;object-position:center top;flex:none;display:block;filter:saturate(1.2) contrast(1.05);}
+@keyframes siGenreScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.topbar::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg, rgba(176,94,255,.14), rgba(47,240,216,.1) 50%, rgba(255,63,201,.14));mix-blend-mode:soft-light;}
+.topbar::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(7,6,13,.5), rgba(7,6,13,.68) 60%, rgba(7,6,13,.88)),linear-gradient(90deg, #07060d 0%, transparent 9%, transparent 91%, #07060d 100%);backdrop-filter:blur(.5px) saturate(130%);}
+.si-tb-row,.si-dropdown{position:relative;z-index:2;}
+.si-tb-row{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;}
+.si-brand{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none;}
+.si-mark{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 140deg,var(--p),var(--c2),var(--c),var(--p2),var(--p));flex:none;box-shadow:0 0 18px rgba(192,75,255,.5);}
+.si-brand-txt{font:600 16px 'Space Grotesk';letter-spacing:-.01em;color:var(--ink);line-height:1.25;}
+.si-brand-txt strong{display:block;}
+.tb-right{display:flex;align-items:center;gap:20px;}
+.si-quicknav{display:flex;align-items:center;gap:20px;}
+.si-quicknav a{font:600 13px 'Inter';color:var(--sub);text-decoration:none;cursor:pointer;position:relative;transition:color .15s;}
+.si-quicknav a:hover{color:var(--ink);}
+.si-quotes-link{color:var(--c)!important;display:flex;align-items:center;gap:6px;}
+.si-quotes-link::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--p2);box-shadow:0 0 8px var(--p2);}
+.menu-btn.si-catbtn{display:flex!important;align-items:center;gap:8px;font:600 13px 'Inter';color:var(--ink);background:transparent;border:1px solid var(--line);padding:8px 14px;border-radius:999px;cursor:pointer;width:auto;height:auto;}
+.menu-btn.si-catbtn:hover{border-color:var(--p);box-shadow:0 0 0 3px rgba(192,75,255,.12);}
+.menu-btn.si-catbtn svg{width:14px;height:14px;color:inherit;}
+.btn-srch{background:transparent!important;border:1px solid var(--line)!important;color:var(--ink)!important;border-radius:999px!important;padding:8px 16px!important;}
+.btn-srch:hover{border-color:var(--card-hover)!important;}
+.si-dropdown{max-height:0;overflow:hidden;border-bottom:1px solid var(--line);transition:max-height .32s ease;background:#0a0914;}
+.si-dropdown.open{max-height:460px;}
+.si-dropdown-in{padding:28px 48px 34px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+.si-catgroup b{display:block;font-size:12.5px;color:var(--c);margin:0 0 12px;font-weight:600;font-family:'Space Grotesk';}
+.si-catgroup a{display:block;font-size:14px;color:var(--ink);text-decoration:none;cursor:pointer;padding:6px 0;opacity:.85;transition:opacity .15s,color .15s;}
+.si-catgroup a:hover{opacity:1;color:var(--c);}
+.si-catgroup .si-count{color:var(--sub2);font-size:12px;}
+.bc{display:none!important;}
+@media(max-width:760px){
+  .si-tb-row{padding:13px 18px;}
+  .si-quicknav{display:none;}
+  .si-dropdown-in{padding:22px 18px 26px;grid-template-columns:1fr 1fr;gap:20px;}
+}
+
+/* -------- hero -------- */
+.content{padding:0!important;background:var(--bg);}
+.hero{position:relative;padding:92px 48px 56px;overflow:hidden;background:var(--bg)!important;border-radius:0!important;margin:0!important;}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 60% at 12% -10%, rgba(192,75,255,.38), transparent 60%),
+             radial-gradient(ellipse 50% 55% at 95% 15%, rgba(47,240,216,.28), transparent 60%),
+             radial-gradient(ellipse 40% 40% at 60% 90%, rgba(255,63,201,.18), transparent 60%);}
+.si-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.03em;color:#07060d;background:linear-gradient(95deg,var(--c),var(--c2));padding:6px 13px;border-radius:999px;margin:0 0 22px;font-weight:600;position:relative;z-index:2;}
+.hero-title{position:relative;z-index:2;font-weight:700!important;font-size:clamp(40px,6.2vw,80px)!important;line-height:.97!important;letter-spacing:-.025em!important;margin:0 0 18px!important;max-width:15ch;
+  background:linear-gradient(100deg,var(--ink) 25%, var(--p2) 60%, var(--c));-webkit-background-clip:text;background-clip:text;color:transparent!important;}
+.hero-text{position:relative;z-index:2;font-size:16.5px!important;line-height:1.65!important;color:var(--sub)!important;max-width:52ch;margin:0 0 26px!important;}
+.stats{position:relative;z-index:2;display:flex!important;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;width:fit-content;background:rgba(16,12,28,.5);margin-top:0!important;}
+.stat{padding:14px 24px;border-right:1px solid var(--line);background:none!important;border-radius:0!important;}
+.stat:last-child{border-right:none;}
+.stat-n{font:700 26px 'Space Grotesk'!important;background:linear-gradient(95deg,var(--c),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent!important;}
+.stat-l{font-size:11px!important;color:var(--sub2)!important;letter-spacing:.03em;text-transform:uppercase;}
+.si-mosaic{position:absolute;right:48px;top:70px;height:280px;width:300px;z-index:1;display:none;}
+@media(min-width:1050px){.si-mosaic{display:block;}}
+.si-mosaic .si-tile{position:absolute;border-radius:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);}
+.si-mosaic .t1{width:150px;height:150px;top:0;right:60px;background:linear-gradient(135deg,var(--p),var(--p2));transform:rotate(-6deg);z-index:3;}
+.si-mosaic .t2{width:120px;height:120px;top:60px;right:200px;background:linear-gradient(135deg,var(--c),var(--c2));transform:rotate(5deg);z-index:2;opacity:.9;}
+.si-mosaic .t3{width:110px;height:110px;top:150px;right:40px;background:linear-gradient(135deg,var(--c2),var(--p));transform:rotate(10deg);z-index:1;opacity:.8;}
+.si-mosaic .t4{width:90px;height:90px;top:0;right:220px;background:linear-gradient(135deg,var(--p2),var(--c));transform:rotate(-14deg);z-index:1;opacity:.7;}
+
+/* -------- sec-head -------- */
+.sec-head{padding:14px 48px 6px;margin:0!important;}
+.sec-head h1{font-size:23px!important;font-weight:700!important;letter-spacing:-.01em!important;margin:0 0 4px!important;color:var(--ink)!important;}
+.sec-head p{font-size:13px!important;color:var(--sub2)!important;}
+
+/* -------- bio card -------- */
+.bio-card{position:relative;background:linear-gradient(165deg,var(--surface2),var(--surface))!important;border:1px solid var(--line)!important;border-radius:20px!important;padding:40px 44px!important;overflow:hidden;margin:30px 48px 60px!important;}
+.bio-card::before{content:"";position:absolute;top:-40%;right:-20%;width:60%;height:140%;background:radial-gradient(circle,rgba(192,75,255,.16),transparent 65%);pointer-events:none;}
+.bio-label{display:inline-block;font:600 12.5px 'Space Grotesk'!important;color:var(--c)!important;letter-spacing:.03em;position:relative;z-index:2;margin:0 0 16px!important;}
+.bio-card .si-collapse{position:relative;z-index:2;max-height:120px;overflow:hidden;transition:max-height .4s ease;}
+.bio-card.si-open .si-collapse{max-height:2400px;}
+.bio-card .si-collapse::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(180deg,transparent,var(--surface));transition:opacity .3s;}
+.bio-card.si-open .si-collapse::after{opacity:0;}
+.bio-text{font-size:14.5px!important;line-height:1.75!important;color:#cdc6e8!important;max-width:76ch;margin:0 0 16px!important;}
+.bio-text:last-child{margin-bottom:0;color:var(--ink)!important;}
+
+/* -------- si-toggle (bio + acl + top12) -------- */
+.si-toggle{display:flex;align-items:center;gap:7px;font:600 12.5px 'Inter';color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:7px 13px;border-radius:999px;cursor:pointer;transition:border-color .2s,background .2s;position:relative;z-index:2;margin-top:12px;}
+.si-toggle:hover{border-color:var(--p);background:rgba(192,75,255,.08);}
+.si-chev{display:inline-block;width:8px;height:8px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);transition:transform .25s;margin-top:-2px;}
+.si-open .si-chev,.si-toggle.si-open .si-chev{transform:rotate(225deg);margin-top:2px;}
+
+/* -------- aclamados / top12 -------- */
+.acl-grid{display:grid;grid-template-columns:repeat(3,1fr)!important;gap:20px!important;padding:0 48px 60px!important;margin:0!important;}
+.acl-card{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:16px!important;padding:22px 24px!important;}
+.acl-lbl{font:600 13px 'Space Grotesk'!important;color:var(--c)!important;margin:0 0 16px!important;display:flex;align-items:center;gap:8px;}
+.acl-card .si-collapse{position:relative;max-height:280px;overflow:hidden;transition:max-height .4s ease;}
+.acl-card.si-open .si-collapse{max-height:4000px;}
+.acl-card .si-collapse::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(180deg,transparent,var(--surface));transition:opacity .3s;}
+.acl-card.si-open .si-collapse::after{opacity:0;}
+.acl-item,.mytop-item{display:flex!important;gap:12px!important;align-items:flex-start!important;padding:12px 0!important;border-bottom:1px solid var(--line)!important;background:none!important;}
+.acl-item:last-child,.mytop-item:last-child{border-bottom:none!important;padding-bottom:0!important;}
+.acl-pos{font:700 15px 'Space Grotesk'!important;color:var(--p2)!important;width:20px!important;flex:none;padding-top:1px;}
+.acl-item .card-cover,.mytop-item .card-cover{width:38px!important;height:38px!important;border-radius:9px!important;background:linear-gradient(135deg,var(--p),var(--c))!important;border:none!important;}
+.acl-name{font-size:13.5px!important;color:var(--ink)!important;font-weight:600!important;white-space:normal!important;display:block;}
+.acl-sub{font-size:11.5px!important;color:var(--sub2)!important;margin:1px 0 5px!important;white-space:normal!important;}
+.acl-cnt{font-size:11.5px!important;color:var(--sub2)!important;font-weight:400!important;}
+.acl-rev{font-size:11.8px!important;line-height:1.55!important;color:var(--sub)!important;margin:0!important;white-space:normal!important;}
+
+/* -------- music quotes -------- */
+.quotes-sec{padding:0 48px 70px;position:relative;z-index:2;}
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
+.quote-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 24px 20px;overflow:hidden;transition:border-color .2s,transform .2s;}
+.quote-card:hover{border-color:var(--p);transform:translateY(-3px);}
+.quote-card .qmark{font:800 40px/1 'Space Grotesk';color:var(--p);opacity:.5;margin:0 0 6px;}
+.quote-card .qtext{font:500 16px/1.45 'Space Grotesk';color:var(--ink);margin:0 0 16px;letter-spacing:-.005em;}
+.quote-card .qsrc{display:flex;align-items:center;gap:10px;}
+.quote-card .qsrc .qcov{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--p),var(--c));flex:none;}
+.quote-card .qsrc b{display:block;font-size:12.5px;color:var(--ink);font-weight:600;}
+.quote-card .qsrc span{font-size:11px;color:var(--sub2);}
+.quote-more{border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--sub);font-size:13px;min-height:130px;text-decoration:none;}
+
+/* -------- recent lists grid -------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))!important;gap:16px!important;padding:0 48px 80px!important;margin:0!important;}
+.card{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:14px!important;padding:0!important;position:relative;overflow:hidden!important;transition:border-color .2s,transform .2s;}
+.card::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(180deg,var(--p),var(--c));z-index:2;}
+.card:hover{transform:translateY(-3px);border-color:var(--p)!important;box-shadow:none!important;}
+.card-stripe{display:none!important;}
+.card-top{padding:20px 20px 10px 24px!important;}
+.card-cover{width:40px!important;height:40px!important;border-radius:8px!important;background:var(--bg2)!important;border:1px solid var(--line)!important;}
+.card-src{font-size:11px!important;font-weight:600!important;letter-spacing:.02em;margin-bottom:6px!important;}
+.card-src.cg,.bdg.canciones{color:var(--p2)!important;}
+.card-src.cl,.bdg.albumes{color:var(--c)!important;}
+.card-title{font-size:16px!important;color:var(--ink)!important;margin:0 0 6px!important;}
+.bdg{background:rgba(255,255,255,.06)!important;border:1px solid var(--line)!important;color:var(--sub2)!important;}
+.bdg.superlista{background:var(--cs-bg)!important;color:var(--c)!important;border-color:var(--line)!important;}
+.card-review{color:var(--sub)!important;border-top:1px solid var(--line)!important;padding:10px 20px 14px 24px!important;}
+.card-foot{padding:0 20px 14px 24px!important;}
+.card-count{color:var(--sub2)!important;}
+.card-count strong{color:var(--ink)!important;}
+.card-year{color:var(--sub2)!important;}
+.card-arr{color:var(--sub2)!important;}
+.card:hover .card-arr{color:var(--c)!important;}
+
+/* -------- last.fm / spotlight / bottom nav dark -------- */
+.lfm-section{padding:0 48px 36px;}
+.lfm-label{color:var(--c)!important;font-size:12.5px;}
+.lfm-user{color:var(--sub2)!important;font-weight:400;}
+.lfm-col-label{color:var(--sub2)!important;}
+.lfm-cover{background:var(--surface2)!important;border:1px solid var(--line)!important;}
+.lfm-name{color:var(--ink)!important;}
+.lfm-plays{color:var(--sub2)!important;}
+.sp-ov{background:rgba(7,6,13,.75)!important;}
+.sp-box{background:var(--surface)!important;border:1px solid var(--line)!important;}
+.sp-row{border-bottom:1px solid var(--line)!important;}
+.sp-inp{color:var(--ink)!important;background:none!important;}
+.sp-inp::placeholder{color:var(--sub2)!important;}
+.sp-sect{color:var(--sub2)!important;}
+.sp-item:hover{background:var(--surface2)!important;}
+.sp-ttl{color:var(--ink)!important;}
+.sp-sub{color:var(--sub2)!important;}
+.sp-tag{background:rgba(192,75,255,.12)!important;color:var(--c)!important;}
+.bot-nav{background:rgba(16,12,28,.92)!important;border-top:1px solid var(--line)!important;backdrop-filter:blur(14px);}
+.bn-tab{color:var(--sub)!important;}
+.bn-tab.active{color:var(--ink)!important;}
+.bn-tab svg{color:inherit!important;}
+
+/* -------- mobile (señal) -------- */
+@media(max-width:640px){
+  .si-tb-row{padding:12px 14px!important;gap:10px;}
+  .si-brand{gap:8px;min-width:0;flex:1 1 auto;}
+  .si-mark{width:24px!important;height:24px!important;border-radius:7px;}
+  .si-brand-txt{font-size:12px!important;line-height:1.3!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw;display:block;}
+  .si-brand-txt strong{font-size:12.5px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;max-width:46vw;}
+  .tb-right{gap:8px!important;flex:none;}
+  .si-quicknav{display:none!important;}
+  .menu-btn.si-catbtn{padding:7px 10px!important;font-size:0!important;gap:0!important;}
+  .menu-btn.si-catbtn svg{width:17px!important;height:17px!important;}
+  .menu-btn.si-catbtn .si-chev{display:none!important;}
+  .btn-srch{padding:7px 9px!important;font-size:0!important;}
+  .btn-srch svg{width:17px!important;height:17px!important;margin:0!important;}
+  .si-dropdown-in{grid-template-columns:1fr 1fr!important;gap:16px!important;padding:18px 16px 22px!important;}
+
+  .hero{padding:40px 18px 34px!important;}
+  .si-tag{font-size:11px!important;padding:5px 11px!important;margin-bottom:16px!important;}
+  .hero-title{font-size:clamp(30px,9vw,40px)!important;max-width:100%!important;margin-bottom:12px!important;}
+  .hero-text{font-size:14px!important;margin-bottom:18px!important;}
+  .stats{flex-wrap:wrap!important;width:100%!important;}
+  .stat{flex:1 1 40%;padding:10px 14px!important;}
+
+  .sec-head{padding:10px 18px 4px!important;}
+  .sec-head h1{font-size:19px!important;}
+  .bio-card{margin:20px 18px 36px!important;padding:24px 20px!important;border-radius:16px!important;}
+  .acl-grid{grid-template-columns:1fr!important;gap:14px!important;padding:0 18px 36px!important;}
+  .quotes-sec{padding:0 18px 44px!important;}
+  .quotes-grid{grid-template-columns:1fr!important;gap:14px!important;}
+  .grid{grid-template-columns:1fr!important;padding:0 18px 56px!important;gap:12px!important;}
+  .lfm-section{padding:0 18px 24px!important;}
+}
+</style>
 </head>
 <body>
-<div class="app">
-
-<aside class="sidebar">
-  <div class="sb-logo">
-    <div class="sb-abbr">NRE</div>
-    <div class="sb-txt"><strong>Coleccionista de Infinitos</strong>Nelson Rodríguez Esmeral</div>
-  </div>
-  <button class="sp-btn" onclick="openSp()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    Buscar lista o artista...
-    <span class="kbd">⌘K</span>
-  </button>
-  <div class="nav-scroll">
-    <div class="nav-sep-lbl">General</div>
-    <div class="nav-item active" onclick="go('home',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio
+<div class="pageContent">
+<header class="topbar">
+  <div class="si-genreStrip"><div class="si-bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div></div>
+  <div class="si-tb-row">
+    <div class="si-brand" onclick="go('home',null,null)" role="button">
+      <div class="si-mark"></div>
+      <span class="si-brand-txt"><strong>Coleccionista de Infinitos</strong>Nelson Rodríguez Esmeral</span>
     </div>
-    <div class="nav-item" onclick="go('aclamados',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Más aclamados
-    </div>
-    <div class="nav-item" onclick="go('top12',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Mi Top 12
-    </div>
-    <div class="nav-sep"></div>
-    <div class="nav-sep-lbl">Listas</div>
-
-    <div class="cat-head" onclick="tog('sb1','a1')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Superlistas
-      <span class="nav-cnt">8</span>
-      <svg class="cat-arr" id="a1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="sb1">
-      <div class="cat-sub" onclick="go('super')">Todas (8)</div>
-      <div class="cat-sub" onclick="go('super')">Álbumes (5)</div>
-      <div class="cat-sub" onclick="go('super')">Canciones (3)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('ag1','a2')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>Álbumes Globales
-      <span class="nav-cnt">43</span>
-      <svg class="cat-arr" id="a2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="ag1">
-      <div class="cat-sub" onclick="go('albumes-globales')">Rolling Stone (12)</div>
-      <div class="cat-sub" onclick="go('albumes-globales')">Digital Dream Door (18)</div>
-      <div class="cat-sub" onclick="go('albumes-globales')">Billboard (8)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('cg1','a3')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Canciones Globales
-      <span class="nav-cnt">38</span>
-      <svg class="cat-arr" id="a3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="cg1">
-      <div class="cat-sub" onclick="go('canciones-globales')">VH1 (12)</div>
-      <div class="cat-sub" onclick="go('canciones-globales')">Rolling Stone (15)</div>
-      <div class="cat-sub" onclick="go('canciones-globales')">Digital Dream Door (8)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('al1','a4')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="3"/><path d="M2 12c0 4.418 4.477 8 10 8s10-3.582 10-8"/><path d="M2 12c0-4.418 4.477-8 10-8s10 3.582 10 8"/></svg>Álbumes Latinos
-      <span class="nav-cnt">29</span>
-      <svg class="cat-arr" id="a4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="al1">
-      <div class="cat-sub" onclick="go('albumes-latinos')">RS en Español (14)</div>
-      <div class="cat-sub" onclick="go('albumes-latinos')">MediaMonkey (4)</div>
-      <div class="cat-sub" onclick="go('albumes-latinos')">Canal Viva (3)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('cl1','a5')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>Canciones Latinas
-      <span class="nav-cnt">31</span>
-      <svg class="cat-arr" id="a5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="cl1">
-      <div class="cat-sub" onclick="go('canciones-latinas')">RS en Español (12)</div>
-      <div class="cat-sub" onclick="go('canciones-latinas')">Digital Dream Door (9)</div>
-      <div class="cat-sub" onclick="go('canciones-latinas')">Netflix / Plataformas (4)</div>
-    </div>
-
-    <div class="cat-head" onclick="tog('te1','a6')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Temáticas
-      <span class="nav-cnt">14</span>
-      <svg class="cat-arr" id="a6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="cat-body" id="te1">
-      <div class="cat-sub" onclick="go('tematicas')">Fútbol (2)</div>
-      <div class="cat-sub" onclick="go('tematicas')">Soundtracks (4)</div>
-      <div class="cat-sub" onclick="go('tematicas')">Géneros (8)</div>
-    </div>
-  </div>
-  <div class="sb-foot">262 listas · 145.155 canciones<br>Última: World Cup Songs (RS · 2026)</div>
-</aside>
-
-<div class="main">
-  <header class="topbar">
-    <button class="menu-btn" onclick="openDw()" aria-label="Menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="bc" id="bc"><span class="crumb">Inicio</span></div>
     <div class="tb-right">
+      <nav class="si-quicknav">
+        <a onclick="go('aclamados',null,null)">Más aclamados</a>
+        <a onclick="go('top12',null,null)">Mi Top 12</a>
+        <a onclick="go('cronologia',null,null)">Cronología</a>
+        <a href="music-quotes-page.html" class="si-quotes-link">Music Quotes</a>
+      </nav>
+      <button class="menu-btn si-catbtn" id="catBtn" onclick="toggleCatMenu()" aria-label="Categorías">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Categorías <span class="si-chev" id="catChev"></span>
+      </button>
       <button class="btn-srch" onclick="openSp()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Buscar
       </button>
     </div>
-  </header>
-  <main class="content" id="content"></main>
-  <nav class="bot-nav">
-    <div class="bn">
-      <div class="bn-tab active" id="bn0" onclick="go('home',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inicio
-      </div>
-      <div class="bn-tab" id="bn1" onclick="go('albumes-globales',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>Álbumes
-      </div>
-      <div class="bn-tab" id="bn2" onclick="go('canciones-globales',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/></svg>Canciones
-      </div>
-      <div class="bn-tab" id="bn3" onclick="go('albumes-latinos',null,this)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="3"/><path d="M2 12c0 4.418 4.477 8 10 8s10-3.582 10-8"/></svg>Latinas
-      </div>
-      <div class="bn-tab" id="bn4" onclick="openSp()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Buscar
-      </div>
+  </div>
+  <div class="si-dropdown" id="catDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup" id="catg-1"><b>Superlistas</b></div>
+      <div class="si-catgroup" id="catg-2"><b>Música latina</b></div>
+      <div class="si-catgroup" id="catg-3"><b>Por época</b></div>
+      <div class="si-catgroup" id="catg-4"><b>Por tema / género</b></div>
     </div>
-  </nav>
-</div>
-</div>
+  </div>
+  <div class="bc" id="bc"><span class="crumb">Inicio</span></div>
+</header>
 
-<div class="dw-ov" id="dwo" onclick="closeDw()"></div>
-<div class="drawer" id="dw">
-  <div class="sb-logo" style="padding:16px 16px 12px">
-    <div class="sb-abbr">NRE</div>
-    <div class="sb-txt"><strong>Coleccionista de Infinitos</strong>Nelson Rodríguez Esmeral</div>
-    <button onclick="closeDw()" style="margin-left:auto;color:var(--sbt2);padding:4px" aria-label="Cerrar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-  </div>
-  <div style="padding:8px 0;overflow-y:auto;flex:1">
-    <div class="nav-item" onclick="go('home');closeDw()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inicio</div>
-    <div class="nav-item" onclick="go('aclamados');closeDw()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Más aclamados</div>
-    <div class="nav-sep" style="margin:6px 10px"></div>
-    <div class="nav-sep-lbl" style="padding:8px 16px 4px">Secciones</div>
-    <div class="nav-item" onclick="go('albumes-globales');closeDw()">Álbumes Globales<span class="nav-cnt" style="margin-left:auto">43</span></div>
-    <div class="nav-item" onclick="go('canciones-globales');closeDw()">Canciones Globales<span class="nav-cnt" style="margin-left:auto">38</span></div>
-    <div class="nav-item" onclick="go('albumes-latinos');closeDw()">Álbumes Latinos<span class="nav-cnt" style="margin-left:auto">29</span></div>
-    <div class="nav-item" onclick="go('canciones-latinas');closeDw()">Canciones Latinas<span class="nav-cnt" style="margin-left:auto">31</span></div>
-    <div class="nav-item" onclick="go('super');closeDw()">Superlistas<span class="nav-cnt" style="margin-left:auto">8</span></div>
-    <div class="nav-item" onclick="go('tematicas');closeDw()">Temáticas<span class="nav-cnt" style="margin-left:auto">14</span></div>
-  </div>
-  <div class="sb-foot">262 listas · 145.155 canciones</div>
+<main class="content" id="content"></main>
+
+<nav class="bot-nav bottomNav">
+  <div class="bn-tab active" id="bn0" onclick="go('home',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inicio</div>
+  <div class="bn-tab" id="bn1" onclick="go('aclamados',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Aclamados</div>
+  <div class="bn-tab" id="bn2" onclick="go('top12',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Top 12</div>
+  <div class="bn-tab" id="bn3" onclick="go('cronologia',null,this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cronología</div>
+  <div class="bn-tab" id="bn4" onclick="openSp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Buscar</div>
+</nav>
 </div>
 
 <div class="sp-ov" id="sp" onclick="closeSp(event)">
@@ -388,7 +504,55 @@ input{font-family:inherit}
 <script>
 // ══ DATOS REALES ══
 const LISTS = [
+    {
+    file: "rollingstone-200-best-songs-1990s.html",
+    title: "The 200 Best Songs of the 1990s",
+    source: "Rolling Stone",
+    year: "1990\u20131999",
+    type: "canciones",
+    count: "200",
+    desc: "Smells Like Teen Spirit, No Diggity y Juicy \u2014 la d\u00e9cada de Nirvana, el hip-hop y el R&B de Timbaland seg\u00fan Rob Sheffield \u00b7 Nov 2026.",
+    url: "https://www.rollingstone.com/music/music-lists/best-1990s-songs-1235651872/",
+    _artist: "Nirvana",
+    _title: "Smells Like Teen Spirit"
+  },
   {
+    file: "pitchfork-100-best-indie-rock-albums.html",
+    title: "The 100 Best Indie Rock Albums of All Time",
+    source: "Pitchfork",
+    year: "1980–2024",
+    type: "albumes",
+    count: "100",
+    desc: "Crooked Rain de Pavement, Exile in Guyville de Liz Phair y Daydream Nation de Sonic Youth — el canon indie rock definitivo segun Pitchfork · Nov 2026.",
+    url: "https://pitchfork.com/story/the-100-best-indie-rock-albums-of-all-time/",
+    _artist: "Pavement",
+    _title: "Crooked Rain, Crooked Rain"
+  },
+  {
+    file: "rollingstone-200-greatest-rock-songs-21st-century.html",
+    title: "The 200 Greatest Rock Songs of the 21st Century So Far",
+    source: "Rolling Stone",
+    year: "2000–2026",
+    type: "canciones",
+    count: "200",
+    desc: "Maps de Yeah Yeah Yeahs, Seven Nation Army y Mr. Brightside — el canon del rock del siglo XXI segun Rolling Stone · Oct 2026.",
+    url: "https://www.rollingstone.com/music/music-lists/best-rock-songs-of-the-21st-century-1235634033/",
+    _artist: "Yeah Yeah Yeahs",
+    _title: "Maps"
+  },
+  {
+    file: "billboard-30-best-sorry-songs.html",
+    title: "The 30 Best Songs to Say \u201cSorry\u201d",
+    source: "Billboard",
+    year: "1967\u20132025",
+    type: "canciones",
+    count: "30",
+    desc: "John Lennon, Prince, Adele, Elton John, Nirvana \u2014 las 30 mejores canciones para pedir perdon \u2014 Billboard \u00b7 Sep 2026.",
+    url: "https://www.billboard.com/lists/best-sorry-songs-apology-music/",
+    _artist: "John Lennon",
+    _title: "Jealous Guy"
+  },
+{
     file: "mediamonkey-100-canciones-frikis.html",
     title: "100 Canciones Más Frikis",
     source: "MediaMonkey",
@@ -453,7 +617,7 @@ const LISTS = [
     title: "100 Mejores Discos del Rock Nacional",
     source: "Rolling Stone Argentina",
     year: "1967–2009",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Artaud, Clics Modernos, Oktubre, Canción Animal — el canon del rock argentino según músicos y productores · RS Argentina 2013.",
     url: "https://licricardososa.wordpress.com/2013/12/16/rolling-stone-argentina-2013-los-100-mejores-discos-del-rock-nacional/",
@@ -465,7 +629,7 @@ const LISTS = [
     title: "100 Álbumes Esenciales de la Música Dominicana",
     source: "Acroarte",
     year: "2013",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 álbumes esenciales de la música dominicana según Acroarte.",
     url: "https://elnacional.com.do/acroarte-selecciona-los-100-albumes-esenciales-de-la-musica-dominicana/",
@@ -477,7 +641,7 @@ const LISTS = [
     title: "101 Albums That Changed Popular Music",
     source: "Libro · Chris Smith",
     year: "1952–2003",
-    type: "álbumes",
+    type: "albumes",
     count: "101",
     desc: "De Anthology of American Folk Music a Elephant de White Stripes · Oxford University Press 2009 · impacto cultural, ventas e influencia.",
     url: "https://rateyourmusic.com/list/Alecway_Aldwinbay/101_albums_that_changed_popular_music_by_chris_smith/",
@@ -489,7 +653,7 @@ const LISTS = [
     title: "1001 Discos Que Hay Que Escuchar Antes De Morir",
     source: "Libro · 90 Críticos",
     year: "1950–2007",
-    type: "álbumes",
+    type: "albumes",
     count: "1001",
     desc: "Sgt. Pepper's, Kind of Blue, Dark Side of the Moon, Exile, Nevermind — el canon global de 90 críticos · por impacto.",
     url: "https://os1001discos.wordpress.com/about/",
@@ -537,7 +701,7 @@ const LISTS = [
     title: "100 Greatest Latin American Albums",
     source: "Digital Dream Door",
     year: "1954–2007",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes latinoamericanos de todos los tiempos según Digital Dream Door.",
     url: "https://digitaldreamdoor.com/pages/best_albums-Latin.html",
@@ -546,51 +710,51 @@ const LISTS = [
   },
   {
     file: "rolling-stone-10-best-latin-2015.html",
-    title: "10 Best Latin Albums of 2015",
+    title: "Mejores Canciones Latinas 2015",
     source: "Rolling Stone",
     year: "2015",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2015 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/10-best-latin-albums-of-the-year-38370/",
-    _artist: "Rubén Blades",
-    _title: "Decisiones"
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2015 según Rolling Stone en Español.",
+    url: "",
+    _artist: "J Balvin",
+    _title: "Ay Vamos"
   },
   {
     file: "rolling-stone-10-best-latin-2016.html",
-    title: "10 Best Latin Albums of 2016",
+    title: "Mejores Canciones Latinas 2016",
     source: "Rolling Stone",
     year: "2016",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2016 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/10-best-latin-albums-of-2016-106779/",
-    _artist: "Shakira",
-    _title: "La Bicicleta"
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2016 según Rolling Stone en Español.",
+    url: "",
+    _artist: "Bad Bunny",
+    _title: "Soy Peor"
   },
   {
     file: "rolling-stone-10-best-latin-2017.html",
-    title: "10 Best Latin Albums of 2017",
+    title: "Mejores Canciones Latinas 2017",
     source: "Rolling Stone",
     year: "2017",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2017 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/10-best-latin-albums-of-2017-121987/",
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2017 según Rolling Stone en Español.",
+    url: "",
     _artist: "Luis Fonsi",
     _title: "Despacito"
   },
   {
     file: "rolling-stone-10-best-latin-2018.html",
-    title: "10 Best Latin Albums of 2018",
+    title: "Mejores Canciones Latinas 2018",
     source: "Rolling Stone",
     year: "2018",
-    type: "álbumes",
-    count: "10",
-    desc: "Los 10 mejores álbumes latinos del año 2018 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-latin-lists/best-latin-albums-2018-769413/",
-    _artist: "J Balvin",
-    _title: "Mi Gente"
+    type: "canciones",
+    count: "20",
+    desc: "Las mejores canciones latinas de 2018 según Rolling Stone en Español.",
+    url: "",
+    _artist: "Bad Bunny",
+    _title: "Mia"
   },
   {
     file: "mediamonkey-100-greatest-brazilian-songs.html",
@@ -609,7 +773,7 @@ const LISTS = [
     title: "100 Greatest Brazilian Albums",
     source: "Digital Dream Door",
     year: "2012",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes brasileros de todos los tiempos según Digital Dream Door.",
     url: "https://digitaldreamdoor.com/pages/best_albums-Brazilian.html",
@@ -736,7 +900,6 @@ const LISTS = [
     _artist: "Black Sabbath",
     _title: "Black Sabbath"
   },
-
   {
     file: "digitaldreamdoor-100-songs-1950s.html",
     title: "100 Greatest Rock Songs of the 1950s",
@@ -790,7 +953,7 @@ const LISTS = [
     title: "100 Best Albums of the Eighties",
     source: "Rolling Stone",
     year: "1989",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 80s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-eighties-150477/",
@@ -814,7 +977,7 @@ const LISTS = [
     title: "100 Best Albums of the '90s",
     source: "Rolling Stone",
     year: "2011",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 90s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-90s-152425/",
@@ -1144,30 +1307,6 @@ const LISTS = [
   },
   {
     file: "vh1-100-greatest-dance-songs.html",
-    title: "VH1: 100 Greatest Dance Songs",
-    source: "VH1",
-    year: "1959–1999",
-    type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones de baile según VH1 · Gloria Gaynor, Madonna, Bee Gees, Michael Jackson, Donna Summer · disco, funk, soul, dance · cuatro décadas de pista de baile.",
-    url: "https://cs.uwaterloo.ca/~dtompkin/music/list/Best12.html",
-    feat: [
-      {pos:1,  artist:"Gloria Gaynor",  title:"I Will Survive",           review:"El himno de supervivencia más poderoso de la historia — ganó el único Grammy de Mejor Grabación Disco y lleva cinco décadas en cada pista de baile del mundo."},
-      {pos:2,  artist:"Madonna",        title:"Vogue",                    review:"Madonna apropiando la cultura queer del ballroom de Harlem y llevándola al mainstream global — declaración cultural que hizo visible la comunidad LGBTQ+."},
-      {pos:3,  artist:"Sister Sledge",  title:"We Are Family",            review:"Producida por Nile Rodgers y Bernard Edwards de Chic — uno de los himnos de celebración colectiva más usados de la historia. Sonó en Mundiales, bodas y protestas."},
-      {pos:4,  artist:"Bee Gees",       title:"Stayin' Alive",            review:"El corazón sonoro de Saturday Night Fever — un groove de 103 BPM tan preciso que los médicos lo usan para marcar el ritmo de las compresiones en reanimación cardiopulmonar."},
-      {pos:5,  artist:"Michael Jackson","title":"Billie Jean",            review:"La canción que llegó con el moonwalk. Producida por Quincy Jones con ese bajo imparable — el mayor thriller del pop convirtió una historia de paternidad en obra maestra."},
-      {pos:6,  artist:"Donna Summer",   title:"I Feel Love",              review:"Brian Eno le dijo a Bowie al escucharla: 'Esta canción cambiará la música de baile en los próximos 15 años'. Tenía razón — el primer gran hit de música electrónica pura."},
-      {pos:7,  artist:"Aretha Franklin","title":"Respect",                review:"Aretha invirtió la canción de Otis Redding y la convirtió en el himno feminista y de los derechos civiles más poderoso del siglo XX. R-E-S-P-E-C-T."},
-      {pos:8,  artist:"Chic",           title:"Le Freak",                 review:"Nile Rodgers fue rechazado en Studio 54 una Nochevieja y escribió una canción de venganza — el disco más vendido de Atlantic Records hasta ese momento."},
-      {pos:9,  artist:"Chubby Checker", title:"The Twist",                review:"La única canción en llegar al número 1 dos veces en el Billboard. Creó el primer baile popular sin pareja fija de la era moderna — sin The Twist, la historia del baile es otra."},
-      {pos:10, artist:"Chic",           title:"Good Times",               review:"La línea de bajo sampleada en Rapper's Delight y Another One Bites the Dust — conectando disco, hip hop y rock en una genealogía musical única. Chic en su momento más influyente."}
-    ],
-    _artist:"Gloria Gaynor",
-    _title:"I Will Survive"
-  },
-  {
-    file: "vh1-100-greatest-dance-songs.html",
     title: "VH1 · 100 Greatest Dance Songs",
     source: "VH1",
     year: "1959–1999",
@@ -1219,7 +1358,7 @@ const LISTS = [
     title: "20 Grandes Discos en la Historia de la Salsa",
     source: "Rolling Stone en Español",
     year: "1955–2007",
-    type: "álbumes",
+    type: "albumes",
     count: "20",
     desc: "Selección cronológica de Diego F. Sánchez (La-33) · Siembra, De ti depende, Tapando el hueco, Cheo · Nueva York, Puerto Rico, Colombia · RS en Español Nov 2022.",
     url: "https://es.rollingstone.com/muestrario-20-grandes-discos-en-la-historia-de-la-salsa/",
@@ -1238,7 +1377,7 @@ const LISTS = [
     title: "Rock Colombiano: 100 Discos, 50 Años",
     source: "Pablito Wilson · Ediciones B",
     year: "1960s–2010s",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Libro de Pablito Wilson (Ediciones B) · 100 álbumes fundamentales del rock colombiano · Carlos Vives, La Etnnia, Aterciopelados, Shakira, Bomba Estéreo, Kraken · desde 1962 hasta los 2010s.",
     url: "",
@@ -1281,7 +1420,7 @@ const LISTS = [
     title: "Colección Putumayo World Music",
     source: "Colección Nelson Rodríguez",
     year: "1993–2020s",
-    type: "álbumes",
+    type: "albumes",
     count: "211",
     desc: "211 compilaciones del sello de world music más importante · África, Brasil, Cuba, Colombia, Jazz, Reggae, Flamenco, Celta, Nueva Orleans · catálogo completo en la colección de Nelson.",
     url: "https://www.putumayo.com",
@@ -1381,7 +1520,7 @@ const LISTS = [
     title: "Grandes Discos Mexicanos de los 90",
     source: "Rolling Stone en Español",
     year: "1990–1999",
-    type: "álbumes",
+    type: "albumes",
     count: "20",
     desc: "Los 20 grandes discos mexicanos de los 90 · Café Tacvba, Luis Miguel, Molotov, Maná, Caifanes · rock, bolero, rap, regional · RS en Español Abr 2022.",
     url: "https://es.rollingstone.com/grandes-discos-mexicanos-de-los-90/",
@@ -1396,30 +1535,11 @@ const LISTS = [
     _title:"Re"
   },
   {
-    file: "rolling-stone-50-mejores-discos-espanol-2024.html",
-    title: "Grandes Álbumes en Español de 2024",
-    source: "Rolling Stone en Español",
-    year: "2024",
-    type: "álbumes",
-    count: "53",
-    desc: "Los grandes álbumes en español de 2024 · Álvaro Díaz, Rauw Alejandro, The Marías, Residente, Kali Uchis · 50 álbumes + 3 menciones honoríficas · RS en Español Nov 2024.",
-    url: "https://es.rollingstone.com/grandes-albumes-en-espanol-de-2024/",
-    feat: [
-      {pos:1, artist:"Álvaro Díaz",   title:"SAYONARA",                 review:"Un clásico instantáneo del género urbano — RS lo llama uno de los álbumes urbanos más grandes de todos los tiempos. Valentía sin límites, romanticismo en exceso."},
-      {pos:2, artist:"Rauw Alejandro", title:"Cosa Nuestra",            review:"Un eco profundo de las raíces caribeñas de Rauw — mapa emocional de su trayectoria que fusiona el pasado y el presente del sonido latinoamericano."},
-      {pos:3, artist:"The Marías",    title:"Submarine",                review:"De dream-pop a grunge introspectivo — reinvención creativa total. María Zardoya reafirmada como ícono hispanohablante con el álbum más crudo y ambicioso del dúo."},
-      {pos:4, artist:"Residente",     title:"Las Letras Ya No Importan", review:"Casi siete años de espera para un disco que desafía las normas del rap y las expectativas de la industria. René Pérez reafirmado como ícono latinoamericano irrepetible."},
-      {pos:5, artist:"Kali Uchis",    title:"ORQUÍDEAS",                review:"Kali exaltando sus raíces colombianas y redefiniendo la imagen de la mujer latina — dream pop, R&B, dembow y ritmos latinoamericanos en una atmósfera de ensueño."}
-    ],
-    _artist:"Álvaro Díaz",
-    _title:"SAYONARA"
-  },
-  {
     file: "rolling-stone-25-debuts-mujeres-hispanohablantes.html",
     title: "Grandes Álbumes Debut de Mujeres Hispanohablantes",
     source: "Rolling Stone en Español",
     year: "1995–2025",
-    type: "álbumes",
+    type: "albumes",
     count: "25",
     desc: "Los debuts que marcaron el inicio de carreras brillantes · Shakira, Rosalía, Natalia Lafourcade, Nathy Peluso, Julieta Venegas · México, España, Colombia, Chile · RS en Español Abr 2025.",
     url: "https://es.rollingstone.com/grandes-albumes-debut-de-mujeres-hispanohablantes/",
@@ -1438,7 +1558,7 @@ const LISTS = [
     title: "Los 56 Mejores Discos Iberoamericanos de 2023",
     source: "Rolling Stone en Español",
     year: "2023",
-    type: "álbumes",
+    type: "albumes",
     count: "56",
     desc: "Los discos iberoamericanos que marcaron el 2023 · Tainy, Mon Laferte, Carin León, Fito Páez, Kali Uchis · Argentina, Colombia, México, Puerto Rico, España · RS en Español.",
     url: "https://es.rollingstone.com/los-discos-iberoamericanos-que-marcaron-el-ano-2023/",
@@ -1552,7 +1672,7 @@ const LISTS = [
     title: "Los 99 Mejores Discos de Música Dance de Todos los Tiempos",
     source: "VICE / THUMP",
     year: "1976–2014",
-    type: "álbumes",
+    type: "albumes",
     count: "99",
     desc: "Los 99 LPs que han dejado marca en la pista de baile · de Daft Punk a Kraftwerk · THUMP/VICE 2015 · house, techno, EDM, disco, dubstep.",
     url: "https://www.vice.com/es/article/los-99-mejores-discos-de-musica-dance-de-todos-los-tiempos/",
@@ -1606,11 +1726,11 @@ const LISTS = [
     file: "digitaldreamdoor-100-trance-songs.html",
     title: "100 Greatest Trance Songs",
     source: "Digital Dream Door",
-    year: "1990–2001",
+    year: "1990–2023",
     type: "canciones",
     count: "100",
-    desc: "Age of Love, Café Del Mar, Children — Paul Van Dyk, Energy 52, Robert Miles · el trance desde sus raíces hasta el apogeo · DDD 2007.",
-    url: "https://digitaldreamdoor.com/pages/best_dance-tran.html",
+    desc: "Age of Love, Café Del Mar, Children — Paul Van Dyk, Energy 52, Robert Miles · el trance desde sus raíces hasta hoy · top 100 de la lista de 250 de DDD · 2026.",
+    url: "https://digitaldreamdoor.com/pages/best_dance-trance-songs.html",
     _artist: "Age of Love",
     _title: "The Age of Love"
   },
@@ -2006,73 +2126,73 @@ const LISTS = [
   },
   {
     file: "rolling-stone-100-best-songs-2025.html",
-    title: "The 100 Best Songs of 2025",
+    title: "Best Songs of 2025",
     source: "Rolling Stone",
     year: "2025",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2025 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-2025-1235468614/",
-    _artist: "Kendrick Lamar",
-    _title: "Not Like Us"
+    count: "50",
+    desc: "Las mejores canciones de 2025 según Rolling Stone · selección del staff editorial.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2025/",
+    _artist: "Billie Eilish",
+    _title: "Birds of a Feather"
   },
   {
     file: "rolling-stone-100-best-songs-2024.html",
-    title: "The 100 Best Songs of 2024",
+    title: "Best Songs of 2024",
     source: "Rolling Stone",
     year: "2024",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2024 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-2024-1235163675/",
-    _artist: "Chappell Roan",
-    _title: "Good Luck Babe"
+    count: "50",
+    desc: "Las mejores canciones de 2024 según Rolling Stone · Charli XCX, Chappell Roan, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2024/",
+    _artist: "Charli XCX",
+    _title: "360"
   },
   {
     file: "rolling-stone-100-best-songs-2023.html",
-    title: "The 100 Best Songs of 2023",
+    title: "Best Songs of 2023",
     source: "Rolling Stone",
     year: "2023",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2023 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-2023-1234879541/",
-    _artist: "Miley Cyrus",
-    _title: "Flowers"
+    count: "50",
+    desc: "Las mejores canciones de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Doja Cat.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2023/",
+    _artist: "Olivia Rodrigo",
+    _title: "vampire"
   },
   {
     file: "rolling-stone-100-best-songs-2022.html",
-    title: "The 100 Best Songs of 2022",
+    title: "Best Songs of 2022",
     source: "Rolling Stone",
     year: "2022",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2022 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2022-list-1234632381/",
+    count: "50",
+    desc: "Las mejores canciones de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2022/",
     _artist: "Beyoncé",
     _title: "Break My Soul"
   },
   {
     file: "rolling-stone-100-best-songs-2013.html",
-    title: "100 Best Songs of 2013",
+    title: "Best Songs of 2013",
     source: "Rolling Stone",
     year: "2013",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 2013 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/100-best-songs-of-2013-38994/",
+    count: "25",
+    desc: "Las mejores canciones de 2013 según Rolling Stone · Daft Punk, Lorde, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-2013/",
     _artist: "Daft Punk",
     _title: "Get Lucky"
   },
   {
     file: "rolling-stone-100-best-songs-1982.html",
-    title: "100 Best Songs of 1982",
+    title: "Best Songs of 1982",
     source: "Rolling Stone",
-    year: "2022",
+    year: "1982",
     type: "canciones",
-    count: "100",
-    desc: "Las 100 mejores canciones del año 1982 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-of-1982-1234592830/",
+    count: "25",
+    desc: "Las mejores canciones de 1982 según Rolling Stone · Michael Jackson, The Clash, Prince.",
+    url: "https://www.rollingstone.com/music/music-lists/best-songs-1982/",
     _artist: "Michael Jackson",
     _title: "Billie Jean"
   },
@@ -2138,27 +2258,15 @@ const LISTS = [
   },
   {
     file: "billboard-goat-billboard200-albums-top100.html",
-    title: "Greatest of All Time Billboard 200 Albums — Top 100",
+    title: "Greatest of All Time Billboard 200 Albums",
     source: "Billboard",
-    year: "1956–2015",
-    type: "álbumes",
+    year: "2015",
+    type: "albumes",
     count: "100",
-    desc: "Los 100 álbumes con mayor performance histórico en el Billboard 200 · basado en semanas y posición · 2015.",
-    url: "https://www.billboard.com/charts/greatest-billboard-200-albums/",
+    desc: "Los 100 álbumes con mejor desempeño en el Billboard 200 entre 1963 y 2015: Adele, The Sound of Music y Thriller lideran. Ranking por éxito comercial en el chart, no por calidad artística.",
+    url: "https://www.billboard.com/charts/greatest-billboard-200-albums",
     _artist: "Adele",
     _title: "21"
-  },
-  {
-    file: "billboard-goat-billboard200-albums-top100.html",
-    title: "100 Best Debut Albums of All Time",
-    source: "Rolling Stone",
-    year: "2022",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes debut de todos los tiempos según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/100-best-debut-albums-of-all-time-143608/",
-    _artist: "Television",
-    _title: "Marquee Moon"
   },
   {
     file: "digitaldreamdoor-100-songs-2010s.html",
@@ -2177,7 +2285,7 @@ const LISTS = [
     title: "The 100 Best Albums of the 2010s",
     source: "Rolling Stone",
     year: "2019",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 2010s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/best-albums-2010s-ranked-913997/",
@@ -2201,7 +2309,7 @@ const LISTS = [
     title: "100 Best Albums of the 2000s",
     source: "Rolling Stone",
     year: "2011",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "Los 100 mejores álbumes de los 2000s según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-albums-of-the-2000s-153375/",
@@ -2210,51 +2318,51 @@ const LISTS = [
   },
   {
     file: "rolling-stone-100-best-albums-2025.html",
-    title: "The 100 Best Albums of 2025",
+    title: "Best Albums of 2025",
     source: "Rolling Stone",
     year: "2025",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2025 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-of-2025-1235466292/",
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2025 según Rolling Stone · selección del staff editorial.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2025/",
     _artist: "Kendrick Lamar",
-    _title: "Not Like Us"
+    _title: "GNX"
   },
   {
     file: "rolling-stone-100-best-albums-2024.html",
-    title: "The 100 Best Albums of 2024",
+    title: "Best Albums of 2024",
     source: "Rolling Stone",
     year: "2024",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2024 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2024-1235031987/",
-    _artist: "Sabrina Carpenter",
-    _title: "Espresso"
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2024 según Rolling Stone · Charli XCX, Billie Eilish, Sabrina Carpenter.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2024/",
+    _artist: "Charli XCX",
+    _title: "BRAT"
   },
   {
     file: "rolling-stone-100-best-albums-2023.html",
-    title: "The 100 Best Albums of 2023",
+    title: "Best Albums of 2023",
     source: "Rolling Stone",
     year: "2023",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2023 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2023-1234879538/",
-    _artist: "Taylor Swift",
-    _title: "Anti-Hero"
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Morgan Wallen.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2023/",
+    _artist: "Olivia Rodrigo",
+    _title: "GUTS"
   },
   {
     file: "rolling-stone-100-best-albums-2022.html",
-    title: "The 100 Best Albums of 2022",
+    title: "Best Albums of 2022",
     source: "Rolling Stone",
     year: "2022",
-    type: "álbumes",
-    count: "100",
-    desc: "Los 100 mejores álbumes del año 2022 según Rolling Stone.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2022-list-1234632387/",
+    type: "albumes",
+    count: "50",
+    desc: "Los mejores álbumes de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
+    url: "https://www.rollingstone.com/music/music-lists/best-albums-2022/",
     _artist: "Beyoncé",
-    _title: "Break My Soul"
+    _title: "Renaissance"
   },
   {
     file: "digitaldreamdoor-100-latin-pop-2000s-songs.html",
@@ -2423,7 +2531,8 @@ const LISTS = [
     url: "https://www.rollingstone.com/music/music-lists/50-best-albums-of-2017-123296/",
     _artist: "Kendrick Lamar",
     _title: "DAMN."
-  },  {
+  },
+  {
     file: "rolling-stone-50-best-albums-2016.html",
     title: "50 Best Albums of 2016",
     source: "Rolling Stone",
@@ -2560,7 +2669,7 @@ const LISTS = [
     title: "20 Best Dance Albums of 2021",
     source: "Billboard",
     year: "2021",
-    type: "álbumes",
+    type: "albumes",
     count: "20",
     desc: "Porter Robinson, Bicep, Black Coffee, Arca, ZHU — el equipo de Billboard Dance elige sus favoritos con reseñas completas · orden alfabético.",
     url: "https://www.billboard.com/lists/the-20-best-dance-albums-of-2021-critics-picks/",
@@ -2572,7 +2681,7 @@ const LISTS = [
     title: "15 Best Dance & Electronic Albums of 2023",
     source: "Billboard",
     year: "2023",
-    type: "álbumes",
+    type: "albumes",
     count: "15",
     desc: "Kylie Minogue, Skrillex, Kelela, Chemical Brothers — el mejor año reciente del álbum dance según el staff de Billboard · orden alfabético.",
     url: "https://www.billboard.com/lists/best-dance-music-electronic-albums-2023/",
@@ -2812,60 +2921,12 @@ const LISTS = [
     title: "100 Best Debut Albums of All Time",
     source: "Rolling Stone",
     year: "1956-2021",
-    type: "álbumes",
+    type: "albumes",
     count: "100",
     desc: "The Clash, Jimi Hendrix, Led Zeppelin, Beyoncé — los mejores álbumes debut de la historia según Rolling Stone.",
     url: "https://www.rollingstone.com/music/music-lists/100-best-debut-albums-of-all-time-143608/",
     _artist: "Ramones",
     _title: "Ramones"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2022.html",
-    title: "Best Songs of 2022",
-    source: "Rolling Stone",
-    year: "2022",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2022/",
-    _artist: "Beyoncé",
-    _title: "Break My Soul"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2023.html",
-    title: "Best Songs of 2023",
-    source: "Rolling Stone",
-    year: "2023",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Doja Cat.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2023/",
-    _artist: "Olivia Rodrigo",
-    _title: "vampire"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2024.html",
-    title: "Best Songs of 2024",
-    source: "Rolling Stone",
-    year: "2024",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2024 según Rolling Stone · Charli XCX, Chappell Roan, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2024/",
-    _artist: "Charli XCX",
-    _title: "360"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2025.html",
-    title: "Best Songs of 2025",
-    source: "Rolling Stone",
-    year: "2025",
-    type: "canciones",
-    count: "50",
-    desc: "Las mejores canciones de 2025 según Rolling Stone · selección del staff editorial.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2025/",
-    _artist: "Billie Eilish",
-    _title: "Birds of a Feather"
   },
   {
     file: "billboard-25-best-latin-albums-2020.html",
@@ -3024,90 +3085,6 @@ const LISTS = [
     _title: "El Madrileño"
   },
   {
-    file: "rolling-stone-100-best-albums-2022.html",
-    title: "Best Albums of 2022",
-    source: "Rolling Stone",
-    year: "2022",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2022 según Rolling Stone · Beyoncé, Bad Bunny, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2022/",
-    _artist: "Beyoncé",
-    _title: "Renaissance"
-  },
-  {
-    file: "rolling-stone-100-best-albums-2023.html",
-    title: "Best Albums of 2023",
-    source: "Rolling Stone",
-    year: "2023",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2023 según Rolling Stone · Olivia Rodrigo, SZA, Morgan Wallen.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2023/",
-    _artist: "Olivia Rodrigo",
-    _title: "GUTS"
-  },
-  {
-    file: "rolling-stone-100-best-albums-2024.html",
-    title: "Best Albums of 2024",
-    source: "Rolling Stone",
-    year: "2024",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2024 según Rolling Stone · Charli XCX, Billie Eilish, Sabrina Carpenter.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2024/",
-    _artist: "Charli XCX",
-    _title: "BRAT"
-  },
-  {
-    file: "rolling-stone-100-best-albums-2025.html",
-    title: "Best Albums of 2025",
-    source: "Rolling Stone",
-    year: "2025",
-    type: "álbumes",
-    count: "50",
-    desc: "Los mejores álbumes de 2025 según Rolling Stone · selección del staff editorial.",
-    url: "https://www.rollingstone.com/music/music-lists/best-albums-2025/",
-    _artist: "Kendrick Lamar",
-    _title: "GNX"
-  },
-  {
-    file: "rolling-stone-100-best-songs-1982.html",
-    title: "Best Songs of 1982",
-    source: "Rolling Stone",
-    year: "1982",
-    type: "canciones",
-    count: "25",
-    desc: "Las mejores canciones de 1982 según Rolling Stone · Michael Jackson, The Clash, Prince.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-1982/",
-    _artist: "Michael Jackson",
-    _title: "Billie Jean"
-  },
-  {
-    file: "rolling-stone-100-best-songs-2013.html",
-    title: "Best Songs of 2013",
-    source: "Rolling Stone",
-    year: "2013",
-    type: "canciones",
-    count: "25",
-    desc: "Las mejores canciones de 2013 según Rolling Stone · Daft Punk, Lorde, Kendrick Lamar.",
-    url: "https://www.rollingstone.com/music/music-lists/best-songs-2013/",
-    _artist: "Daft Punk",
-    _title: "Get Lucky"
-  },
-  {
-    file: "rolling-stone-col-50-grandes-canciones-colombianas.html",
-    title: "50 Grandes Canciones Colombianas",
-    source: "Rolling Stone Colombia",
-    year: "1967-2023",
-    type: "canciones",
-    count: "50",
-    desc: "Carlos Vives, Ekhymosis, Aterciopelados, Juanes, Bomba Estereo — del rock psicodelico de los 60s al vallenato electrico y la cumbia electronica · Ordenadas por impacto · RS Colombia.",
-    url: "",
-    _artist: "Carlos Vives",
-    _title: "La Tierra del Olvido"
-  },
-  {
     file: "rolling-stone-col-50-grandes-canciones-colombianas.html",
     title: "50 Grandes Canciones Colombianas",
     source: "Rolling Stone Colombia",
@@ -3180,30 +3157,6 @@ const LISTS = [
     _title: "Gimme tha Power"
   },
   {
-    file: "rolling-stone-10-best-latin-2015.html",
-    title: "Mejores Canciones Latinas 2015",
-    source: "Rolling Stone",
-    year: "2015",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2015 según Rolling Stone en Español.",
-    url: "",
-    _artist: "J Balvin",
-    _title: "Ay Vamos"
-  },
-  {
-    file: "rolling-stone-10-best-latin-2016.html",
-    title: "Mejores Canciones Latinas 2016",
-    source: "Rolling Stone",
-    year: "2016",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2016 según Rolling Stone en Español.",
-    url: "",
-    _artist: "Bad Bunny",
-    _title: "Soy Peor"
-  },
-  {
     file: "billboard-20-best-latin-songs-2018.html",
     title: "20 Best Latin Songs of 2018",
     source: "Billboard",
@@ -3226,35 +3179,11 @@ const LISTS = [
     _title: "Despacito"
   },
   {
-    file: "rolling-stone-10-best-latin-2017.html",
-    title: "Mejores Canciones Latinas 2017",
-    source: "Rolling Stone",
-    year: "2017",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2017 según Rolling Stone en Español.",
-    url: "",
-    _artist: "Luis Fonsi",
-    _title: "Despacito"
-  },
-  {
-    file: "rolling-stone-10-best-latin-2018.html",
-    title: "Mejores Canciones Latinas 2018",
-    source: "Rolling Stone",
-    year: "2018",
-    type: "canciones",
-    count: "20",
-    desc: "Las mejores canciones latinas de 2018 según Rolling Stone en Español.",
-    url: "",
-    _artist: "Bad Bunny",
-    _title: "Mia"
-  },
-  {
     file: "rrhof-200-definitive-albums.html",
     title: "200 Definitive Albums — Rock and Roll Hall of Fame",
     source: "Rock and Roll Hall of Fame",
     year: "1955-2004",
-    type: "álbumes",
+    type: "albumes",
     count: "200",
     desc: "Sgt. Pepper's #1, Dark Side #2, Thriller #3 — 200 álbumes por ventas masivas y popularidad duradera · RRHOF & NARM 2007.",
     url: "https://en.wikipedia.org/wiki/List_of_200_Definitive_Albums_in_the_Rock_and_Roll_Hall_of_Fame",
@@ -3266,16 +3195,108 @@ const LISTS = [
     title: "25 Discos Mas Vendidos de la Historia",
     source: "Infolaso",
     year: "1971-2011",
-    type: "álbumes",
+    type: "albumes",
     count: "25",
     desc: "Thriller, Back in Black, Dark Side, The Bodyguard, Eagles — por ventas certificadas · ChartMasters, RIAA, BPI · Infolaso 2025.",
     url: "https://www.infolaso.com/discos-mas-vendidos.html",
     _artist: "Michael Jackson",
     _title: "Thriller"
-  }
+  },
+  {
+    file: "timeline-1877-1959.html",
+    title: "Cronología del Rock: 1877-1959",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "25",
+    desc: "Los orígenes del rock and roll, del fonógrafo de Edison a Elvis Presley.",
+    url: "#",
+    _artist: "Historia", _title: "1877-1959"
+  },
+  {
+    file: "timeline-1960s.html",
+    title: "Cronología del Rock: 1960s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "The Beatles, Woodstock, la invasión británica y el nacimiento del rock psicodélico.",
+    url: "#",
+    _artist: "Historia", _title: "1960s"
+  },
+  {
+    file: "timeline-1970s.html",
+    title: "Cronología del Rock: 1970s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Metal, Punk, Glam, Disco y el nacimiento del Rap.",
+    url: "#",
+    _artist: "Historia", _title: "1970s"
+  },
+  {
+    file: "timeline-1980s.html",
+    title: "Cronología del Rock: 1980s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "New Wave, Synth Pop, Glam Metal y el debut de MTV.",
+    url: "#",
+    _artist: "Historia", _title: "1980s"
+  },
+  {
+    file: "timeline-1990s.html",
+    title: "Cronología del Rock: 1990s",
+    source: "DigitalDreamDoor",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Lollapalooza, el Salón de la Fama del Rock, Napster, Grunge y Alternativo.",
+    url: "#",
+    _artist: "Historia", _title: "1990s"
+  },
+  {
+    file: "timeline-2000s.html",
+    title: "Cronología del Rock: 2000s",
+    source: "Coleccionista de Infinitos",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Napster, iTunes y el iPod, YouTube, el reguetón y el fin de la era del CD.",
+    url: "#",
+    _artist: "Historia", _title: "2000s"
+  },
+  {
+    file: "timeline-2010s.html",
+    title: "Cronología del Rock: 2010s",
+    source: "Coleccionista de Infinitos",
+    year: "Cronología",
+    type: "cronologia",
+    count: "10",
+    desc: "Spotify, Beyoncé y Taylor Swift, el K-pop y la música latina global.",
+    url: "#",
+    _artist: "Historia", _title: "2010s"
+  },
+  {
+    file: "timeline-2020s.html",
+    title: "Cronología del Rock: 2020s",
+    source: "Coleccionista de Infinitos",
+    year: "Cronología",
+    type: "cronologia",
+    count: "7",
+    desc: "Pandemia, TikTok, Bad Bunny, BTS, reuniones legendarias y la llegada de la IA.",
+    url: "#",
+    _artist: "Historia", _title: "2020s"
+  },
 ];
 
 const SECTIONS = {
+  "rollingstone-200-best-songs-1990s.html": "super",
+  "pitchfork-100-best-indie-rock-albums.html": "genres",
+  "rollingstone-200-greatest-rock-songs-21st-century.html": "super",
+  "billboard-30-best-sorry-songs.html": "thematic",
   "libro-101-albums-changed-popular-music.html": "super",
   "libro-1001-discos-ouvir-antes-morrer.html": "super",
   "libro-1001-songs-must-hear.html": "super",
@@ -3440,7 +3461,6 @@ const SECTIONS = {
   "digitaldreamdoor-60-greatest-latin-urban-songs.html": "songs-latin",
   "rolling-stone-59-hits-pop-espanol-siglo-xxi.html": "songs-global",
   "rolling-stone-20-grandes-discos-mexicanos-90s.html": "albums-latin",
-  "rolling-stone-50-mejores-discos-espanol-2024.html": "albums-latin",
   "rolling-stone-25-debuts-mujeres-hispanohablantes.html": "albums-latin",
   "rolling-stone-56-mejores-discos-iberoamerica-2023.html": "albums-latin",
   "colombia-cancion-mas-escuchada-por-ano.html": "songs-latin",
@@ -3467,7 +3487,7 @@ const SECTIONS = {
   "rolling-stone-esp-20-mejores-albumes-heavy-metal.html": "genres",
   "rolling-stone-esp-200-mejores-canciones-pop-rock-espanol.html": "super",
   "rolling-stone-200-greatest-dance-songs.html": "super",
-  "rolling-stone-esp-20-sencillos-debut-mas-grandes.html": "albums-global",
+  "rolling-stone-esp-20-sencillos-debut-mas-grandes.html": "songs-global",
   "rolling-stone-esp-20-mejores-discos-postpunk.html": "genres",
   "rolling-stone-esp-20-discos-synth-pop.html": "genres",
   "digitaldreamdoor-100-sophisti-pop-songs.html": "genres",
@@ -3484,16 +3504,18 @@ const SECTIONS = {
 };
 
 var LAST5 = [
-  "rolling-stone-20-best-world-cup-songs.html",
-  "vh1-40-greatest-one-hit-wonders-90s.html",
-  "vh1-100-greatest-love-songs.html",
-  "vh1-40-greatest-metal-songs.html",
-  "vh1-100-greatest-songs-00s.html"
+  "rollingstone-200-best-songs-1990s.html",
+  "pitchfork-100-best-indie-rock-albums.html",
+  "rollingstone-200-greatest-rock-songs-21st-century.html",
+  "timeline-2020s.html",
+  "timeline-2010s.html"
 ];
 
-var topArtists=[{"name":"Taylor Swift","sub":"36 listas"},{"name":"Drake","sub":"34 listas"},{"name":"Beyoncé","sub":"31 listas"},{"name":"Shakira","sub":"28 listas"},{"name":"Kendrick Lamar","sub":"26 listas"}];
-var topAlbums=[{"name":"Thriller","sub":"Michael Jackson · 11 listas"},{"name":"Back in Black","sub":"AC/DC · 11 listas"},{"name":"What's Going On","sub":"Marvin Gaye · 10 listas"},{"name":"Born in the U.S.A.","sub":"Bruce Springsteen · 10 listas"},{"name":"London Calling","sub":"The Clash · 10 listas"}];
-var topSongs=[{"name":"Thriller","sub":"Michael Jackson · 11 listas"},{"name":"Back in Black","sub":"AC/DC · 11 listas"},{"name":"What's Going On","sub":"Marvin Gaye · 10 listas"},{"name":"Purple Rain","sub":"Prince · 10 listas"},{"name":"London Calling","sub":"The Clash · 10 listas"}];
+var topArtists=[{"name":"Taylor Swift","sub":"40 listas"},{"name":"Drake","sub":"36 listas"},{"name":"Beyonc\u00e9","sub":"34 listas"},{"name":"Metallica","sub":"31 listas"},{"name":"Shakira","sub":"31 listas"},{"name":"Bruce Springsteen","sub":"30 listas"},{"name":"Madonna","sub":"30 listas"},{"name":"The Beatles","sub":"29 listas"},{"name":"David Bowie","sub":"29 listas"},{"name":"Michael Jackson","sub":"28 listas"}];
+var topAlbums=[{"name":"The Dark Side of the Moon","artist":"Pink Floyd","sub":"Pink Floyd \u00b7 10 listas"},{"name":"American Idiot","artist":"Green Day","sub":"Green Day \u00b7 9 listas"},{"name":"Thriller","artist":"Michael Jackson","sub":"Michael Jackson \u00b7 9 listas"},{"name":"Sgt. Pepper's Lonely Hearts Club Band","artist":"The Beatles","sub":"The Beatles \u00b7 8 listas"},{"name":"Appetite for Destruction","artist":"Guns N' Roses","sub":"Guns N' Roses \u00b7 8 listas"},{"name":"Exile in Guyville","artist":"Liz Phair","sub":"Liz Phair \u00b7 8 listas"},{"name":"Nevermind","artist":"Nirvana","sub":"Nirvana \u00b7 8 listas"},{"name":"Ten","artist":"Pearl Jam","sub":"Pearl Jam \u00b7 8 listas"},{"name":"El Mal Querer","artist":"Rosal\u00eda","sub":"Rosal\u00eda \u00b7 8 listas"},{"name":"Abraxas","artist":"Santana","sub":"Santana \u00b7 8 listas"}];
+var topSongs=[{"name":"Back in Black","artist":"AC/DC","sub":"AC/DC \u00b7 9 listas"},{"name":"Relax","artist":"Frankie Goes to Hollywood","sub":"Frankie Goes to Hollywood \u00b7 9 listas"},{"name":"Whole Lotta Love","artist":"Led Zeppelin","sub":"Led Zeppelin \u00b7 9 listas"},{"name":"Enter Sandman","artist":"Metallica","sub":"Metallica \u00b7 9 listas"},{"name":"Seven Nation Army","artist":"The White Stripes","sub":"The White Stripes \u00b7 9 listas"},{"name":"Won't Get Fooled Again","artist":"The Who","sub":"The Who \u00b7 9 listas"},{"name":"Crazy in Love","artist":"Beyonc\u00e9","sub":"Beyonc\u00e9 \u00b7 8 listas"},{"name":"Sweet Child O' Mine","artist":"Guns N' Roses","sub":"Guns N' Roses \u00b7 8 listas"},{"name":"Welcome to the Jungle","artist":"Guns N\u2019 Roses","sub":"Guns N\u2019 Roses \u00b7 8 listas"},{"name":"Don't You Want Me?","artist":"Human League","sub":"Human League \u00b7 8 listas"}];
+
+var ACL_REVIEWS={"Taylor Swift": "La gran narradora del pop del siglo XXI: de la balada country adolescente a «Midnights», se reinventa disco tras disco, regraba su catálogo para recuperar sus másters y convierte cada lanzamiento en récord.", "Drake": "El artista que mejor entendió la era del streaming: su mezcla de rap melódico y R&B lo volvió referencia de la década de 2010 y dueño de las listas de reproducciones.", "Bruce Springsteen": "El cronista del sueño americano y de la clase trabajadora: «Born to Run», «The River» y «Born in the U.S.A.», siempre con la E Street Band, lo hicieron leyenda del rock de estadios.", "David Bowie": "El camaleón del rock: de Ziggy Stardust al Thin White Duke y a «Blackstar», se reinventó una y otra vez; su último disco salió dos días antes de su muerte, en enero de 2016.", "The Beatles": "La banda que cambió la música popular: de la Beatlemanía a «Sgt. Pepper's» y «Abbey Road», convirtieron el álbum en obra de arte y siguen siendo la influencia más citada del rock.", "The Dark Side of the Moon": "El disco conceptual de Pink Floyd (1973) sobre el tiempo, el dinero y la locura: estuvo 741 semanas (no consecutivas) en la lista de álbumes de Billboard y es una cumbre del rock progresivo.", "American Idiot": "La ópera rock punk de Green Day (2004) contra la era Bush: devolvió a la banda a la cima, ganó el Grammy al Mejor Álbum de Rock y terminó convertida en musical de Broadway.", "Abraxas": "La fusión de rock, blues, jazz y ritmos afrolatinos de Santana (1970): «Black Magic Woman» y «Oye Como Va» llevaron la percusión latina al corazón del rock y el disco llegó al #1 en Estados Unidos.", "Thriller": "El disco de Michael Jackson (1982) que redefinió el pop: pasó 37 semanas en el #1 del Billboard 200 y convirtió el videoclip en arte con «Thriller» y «Billie Jean».", "Marquee Moon": "El debut de Television (1977), joya del rock neoyorquino: las guitarras entrelazadas de Tom Verlaine y Richard Lloyd lo volvieron un clásico de culto de enorme influencia.", "Welcome to the Jungle": "El himno de presentación de Guns N' Roses, de «Appetite for Destruction» (1987): su riff de apertura y el grito de Axl Rose abrieron la era del sleaze rock.", "Seven Nation Army": "El riff más coreado en los estadios del mundo: The White Stripes lo grabaron para «Elephant» (2003) con una guitarra procesada para sonar como un bajo.", "Relax": "Prohibida por la BBC en 1984 por su letra sugerente y, aun así, #1 en el Reino Unido: el sencillo de Frankie Goes to Hollywood es un símbolo del synth-pop provocador de los 80.", "Smells Like Teen Spirit": "El himno del grunge y de la Generación X: de «Nevermind» (septiembre de 1991), llevó el rock alternativo al mainstream y cambió el rumbo de los años 90.", "I Will Survive": "El himno de la resiliencia y de la pista de baile: Gloria Gaynor la convirtió en el gran clásico del disco, #1 en Estados Unidos en 1979.", "Beyoncé": "De Destiny's Child a la artista con más Grammys de la historia: Lemonade, Renaissance y Cowboy Carter convirtieron cada disco en un acontecimiento cultural, y su directo es medida de excelencia para el pop.", "Metallica": "Cuatro décadas llevando el thrash a los estadios: Master of Puppets (1986) y el Black Album (1991) cambiaron el metal para siempre, y siguen llenando recintos en todo el mundo.", "Sgt. Pepper's Lonely Hearts Club Band": "El disco de 1967 en que The Beatles dejaron de ser una banda de giras para volverse estudio puro: álbum conceptual, primer disco de rock en ganar el Grammy a Álbum del Año y número 1 en la lista de 500 de Rolling Stone de 2003.", "Appetite for Destruction": "El debut de 1987 de Guns N' Roses, de los discos debut más vendidos de la historia: Welcome to the Jungle y Sweet Child o' Mine devolvieron al hard rock su peligro y su swing. Nelson los vio en Bogotá en el 92.", "Whole Lotta Love": "El riff de Jimmy Page que abre Led Zeppelin II (1969) y el gemido de Robert Plant en una pista que se volvió bandera del hard rock; tras una demanda, Willie Dixon quedó acreditado como coautor por la influencia de «You Need Love».", "Won't Get Fooled Again": "El cierre de Who's Next (1971): sintetizador pulsante, el grito de Roger Daltrey y la desconfianza de Pete Townshend hacia cualquier revolución, en ocho minutos que son himno del rock de estadio.", "Back in Black": "AC/DC en 1980, con Brian Johnson como nuevo cantante tras la muerte de Bon Scott: el riff de Angus Young de la canción titular abrió uno de los discos más vendidos de todos los tiempos.", "Enter Sandman": "Primer sencillo del álbum homónimo de Metallica (el «Black Album»), publicado el 29 de julio de 1991. El riff principal es de Kirk Hammett y la producción fue de Bob Rock con James Hetfield y Lars Ulrich; llegó al #16 del Hot 100 y fue nominada al Grammy a Mejor Canción de Rock de 1992. Es la puerta de entrada de millones de oyentes al metal."};
 
 // ══ HELPERS ══
 function isAlbum(t){return t==='albumes'||t==='álbumes';}
@@ -3531,11 +3553,26 @@ function card(l){
     +'</div>';
 }
 
-function aclRow(a,i,cnt){
-  return '<div class="acl-item"><span class="acl-pos">'+(i+1)+'</span>'
+function siToggle(btn){
+  var card=btn.closest('.bio-card,.acl-card'); if(!card) return;
+  var open=card.classList.toggle('si-open');
+  var closedLbl=btn.getAttribute('data-closed')||'Ver más';
+  var openLbl=btn.getAttribute('data-open')||'Ver menos';
+  btn.innerHTML=(open?openLbl:closedLbl)+' <span class="si-chev"></span>';
+}
+
+function aclRow(a,i,cnt,withRev){
+  var rev=(withRev&&ACL_REVIEWS[a.name])?ACL_REVIEWS[a.name]:'';
+  var artistSearch = a.artist || a.name; // artist column: name itself; album/song column: real artist
+  var albumSearch  = a.artist ? a.name : a.name; // si tiene .artist, este item ES un album/cancion
+  return '<div class="acl-item'+(rev?' has-rev':'')+'">'
+    +'<span class="acl-pos">'+(i+1)+'</span>'
+    +'<div class="card-cover" style="width:36px;height:36px;flex-shrink:0;border-radius:4px;overflow:hidden;background:var(--bg2,#f0f2f8)">'
+    +'<img src="" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s" '
+    +'data-artist="'+encodeURIComponent(artistSearch)+'" data-album="'+encodeURIComponent(albumSearch)+'" data-track="'+encodeURIComponent(a.name)+'">'
+    +'</div>'
     +'<div style="flex:1;min-width:0"><div class="acl-name">'+a.name+'</div>'
-    +(!cnt&&a.sub?'<div class="acl-sub">'+a.sub+'</div>':'')+'</div>'
-    +(cnt?'<span class="acl-cnt">'+a.sub+'</span>':'')
+    +(a.sub?'<div class="acl-sub">'+a.sub+'</div>':'')+(rev?'<div class="acl-rev">'+rev+'</div>':'')+'</div>'
     +'</div>';
 }
 
@@ -3572,19 +3609,23 @@ function loadLfm(){
 // ══ HOME ══
 function homeHTML(){
   var recentLists=LAST5.map(function(f){return LISTS.find(function(l){return l.file===f;})}).filter(Boolean);
-  var h='<div class="hero"><div class="hero-title">Coleccionista de Infinitos</div>'
+  var h='<div class="hero"><span class="si-tag">'+LISTS.length+' LISTAS · '+CAT_ORDER.length+' CATEGORÍAS</span><div class="hero-title">Coleccionista de Infinitos</div>'
     +'<div class="hero-text">145.000+ canciones · '+LISTS.length+' listas · álbumes y canciones globales y latinas, superlistas y temáticas — el archivo musical más personal de Colombia.</div>'
     +'<div class="stats"><div class="stat"><div class="stat-n">'+LISTS.length+'</div><div class="stat-l">Listas</div></div>'
     +'<div class="stat"><div class="stat-n">145K</div><div class="stat-l">Canciones</div></div>'
     +'<div class="stat"><div class="stat-n">22K</div><div class="stat-l">Artistas</div></div>'
-    +'<div class="stat"><div class="stat-n">8.8K</div><div class="stat-l">Álbumes</div></div></div></div>';
+    +'<div class="stat"><div class="stat-n">8.8K</div><div class="stat-l">Álbumes</div></div></div>'
+    +'<div class="si-mosaic"><div class="si-tile t4"></div><div class="si-tile t2"></div><div class="si-tile t3"></div><div class="si-tile t1"></div></div></div>';
   h+='<div class="bio-card"><div class="bio-label">El coleccionista</div>'
+    +'<div class="si-collapse">'
     +'<div class="bio-text">Todo comenzó con el roce de la cinta: Hysteria y Live After Death, unos originales y otros copiados de amigos. Mi educación en vivo arrancó por lo alto: mi primer concierto fue Miguel Mateos en el 89. Al mismo tiempo, vivía el rock desde adentro: Juanes estudiaba en mi colegio, así que disfrutaba de Ekhymosis en cada fiesta escolar. Crecí entre los conciertos de Raphael de mi mamá y la salsa de mi papá. En el colegio, el ritual con Francisco era Losing My Religion, y los viernes recorría El Poblado con Nicolas al ritmo de Bohemian Rhapsody. Un hito imborrable fue Kraken en La Macarena (1990), con la voz insuperable de Elkin Ramírez.</div>'
     +'<div class="bio-text">A finales del 92, los Guns N\' Roses en Bogotá cerraron mi etapa en Medellín (Puesto 1 del Top 3). En el 93, al mudarme a Barranquilla, mi oído se expandió. Mientras me sumergía en la melancolía de The Cure y el grunge de Seattle, abracé el ritmo del Caribe sin prejuicios. Siempre he amado el merengue, el merengue house, el reggaetón y la champeta; mi ADN se nutrió tanto de Nirvana como de los ritmos tropicales. Esa fluidez se reflejó en el concierto de Maná, Carlos Vives y Diomedes en Cartagena (1996). Mi lugar favorito era Oh Curramba, bailando al ritmo de Proyecto Uno, Sergio Vargas y el Joe Arroyo.</div>'
     +'<div class="bio-text">Al llegar a Bogotá, mandé mi ropa por correo para que mi música cupiera en el avión. Asistí a Metallica en el 99 (Puesto 2 del Top 3). El clímax era Full 80s, logrando una abstracción absoluta con el house de How I Need You. El 2010 fue perfecto: Depeche Mode, Maroon 5 y Calamaro. Pero el cierre del Top 3 de mi vida fue Sting: 1.000 personas y una versión perfecta de Fragile.</div>'
     +'<div class="bio-text">En 2013 llegó Dayana, la erudita de la alegría. Ella no solo conoce la salsa, la habita. Lo que más me inspira es su conexión con lo luminoso: es casi imposible ver a Dayana refugiada en una canción triste. Ella elige la autenticidad que vibra. Nuestra historia se selló tras un empate de la Selección bailando La Invite a Bailar; y aunque hoy ya no frecuentamos Melodía para Dos, ese oasis de la plancha sigue siendo un hito esencial.</div>'
     +'<div class="bio-text">En 2016 llegó Simón. La Bicicleta, To My Love y Despacito fueron la banda sonora de su baño diario, marcando sus mañanas desde el principio. Hoy, su lista supera las 150 canciones, desde phonks brasileras hasta sus propios hallazgos.</div>'
     +'<div class="bio-text">Hoy, mi biblioteca supera las 145.000 canciones. Disfruto este viaje infinito donde conviven Elkin Ramírez, Technotronic y Diomedes, la luz de Dayana y la lista de Simón. Expandan su universo musical. No se queden con el algoritmo; hay un océano esperando. Es bellísimo ver cómo creamos arte con el solo hecho de sentir. La música es la prueba de que nuestras emociones pueden convertirse en belleza eterna. ¡Vayan y encuentren su propia banda sonora!</div>'
+    +'</div>'
+    +'<button class="si-toggle" data-closed="Leer reseña completa" data-open="Mostrar menos" onclick="siToggle(this)">Leer reseña completa <span class="si-chev"></span></button>'
     +'</div>';
   h+='<div class="lfm-section"><div class="lfm-label">♪ Más escuchado · últimos 30 días <span class="lfm-user">lartzrodriguez en Last.fm</span></div>'
     +'<div class="lfm-row">'
@@ -3594,10 +3635,13 @@ function homeHTML(){
     +'</div></div>';
   setTimeout(loadLfm,200);
   h+='<div class="acl-grid">'
-    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+topArtists.map(function(a,i){return aclRow(a,i,true)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+topAlbums.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+topSongs.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div><div class="si-collapse">'+topArtists.map(function(a,i){return aclRow(a,i,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div><div class="si-collapse">'+topAlbums.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div><div class="si-collapse">'+topSongs.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
     +'</div>';
+  h+='<div class="sec-head"><h1>Music Quotes</h1><p>Frases de canciones que se quedaron grabadas</p></div>'
+    +'<div class="quotes-sec"><div class="quotes-grid" id="homeQuotesGrid"><div class="quote-card quote-more">Cargando frases…</div></div></div>';
+  setTimeout(loadHomeQuotes, 50);
   h+='<div class="sec-head"><h1>Listas recientes</h1><p>Las últimas 5 listas agregadas</p></div>'
     +'<div class="grid">'+recentLists.map(card).join('')+'</div>';
   return h;
@@ -3607,15 +3651,19 @@ function homeHTML(){
 var LBLS={home:'Inicio',aclamados:'Más aclamados',super:'Superlistas',
   'albumes-globales':'Álbumes Globales','canciones-globales':'Canciones Globales',
   'albumes-latinos':'Álbumes Latinos','canciones-latinas':'Canciones Latinas',
-  tematicas:'Temáticas'};
+  tematicas:'Temáticas',anuales:'Listas Anuales',decadas:'Por Décadas',generos:'Por Géneros',cronologia:'Cronología',top12:'Mi Top 12'};
 
 var SEC_FILTERS={
-  super:             function(l){return SECTIONS[l.file]==='super';},
-  'albumes-globales':function(l){var s=SECTIONS[l.file];return (s==='global'||s==='albums-global')&&l.type==='albumes';},
+  super:              function(l){return SECTIONS[l.file]==='super';},
+  'albumes-globales': function(l){var s=SECTIONS[l.file];return (s==='global'||s==='albums-global')&&l.type==='albumes';},
   'canciones-globales':function(l){var s=SECTIONS[l.file];return (s==='global'||s==='songs-global')&&l.type==='canciones';},
-  'albumes-latinos': function(l){var s=SECTIONS[l.file];return (s==='latinas'||s==='albums-latin')&&l.type==='albumes';},
-  'canciones-latinas':function(l){var s=SECTIONS[l.file];return (s==='latinas'||s==='songs-latin')&&l.type==='canciones';},
-  tematicas:         function(l){var s=SECTIONS[l.file];return s==='tematica'||s==='thematic';}
+  'albumes-latinos':  function(l){var s=SECTIONS[l.file];return (s==='latin'||s==='latinas'||s==='albums-latin')&&l.type==='albumes';},
+  'canciones-latinas':function(l){var s=SECTIONS[l.file];return (s==='latin'||s==='latinas'||s==='songs-latin')&&l.type==='canciones';},
+  tematicas:          function(l){var s=SECTIONS[l.file];return s==='tematica'||s==='thematic';},
+  anuales:            function(l){return SECTIONS[l.file]==='annual';},
+  decadas:            function(l){return SECTIONS[l.file]==='decades';},
+  generos:            function(l){return SECTIONS[l.file]==='genres';},
+  cronologia:         function(l){return l.type==='cronologia';}
 };
 
 function sectionHTML(sec){
@@ -3626,12 +3674,84 @@ function sectionHTML(sec){
   return h+(items.length?'<div class="grid">'+items.map(card).join('')+'</div>':'<p style="color:var(--text3);font-size:14px;margin-top:16px">No hay listas en esta sección.</p>');
 }
 
+
+
+// ── Mi Top 12 Personal — datos originales de Nelson (recuperados) ─────────
+var TOP12_SONGS = [
+  ["mts-1","Bohemian Rhapsody","Queen · 1975","Rock / Operístico","Seis minutos de música donde Queen inventó un género que no tenía nombre. La suite operística en el centro — el cambio de balada al heavy metal al music hall — sigue siendo el momento de mayor ambición del pop del siglo XX.","Queen","Bohemian Rhapsody"],
+  ["mts-2","Little Wing","Jimi Hendrix · 1967","Blues / Psicodelia","Tres minutos de guitarra que contienen más emoción que la mayoría de los álbumes completos. Hendrix se inspiró en lo que vio en el Festival de Monterey para escribirla, y la grabó meses después en Londres; la tocó como si la hubiera llevado dentro toda la vida.","Jimi Hendrix","Little Wing"],
+  ["mts-3","En la Ciudad de la Furia","Soda Stereo · 1988","Rock en Español","Cerati describiendo Buenos Aires de noche como una ciudad apocalíptica. La producción de Doble Vida fue la primera vez que Soda incorporó texturas electrónicas al rock en español de manera masiva.","Soda Stereo","En la Ciudad de la Furia"],
+  ["mts-4","How I Need You","Bad Boys Blue","Italo Disco / Synth-pop","El eurodance antes de que existiera el eurodance. Bad Boys Blue construyeron sobre un groove sintetizado y tres voces masculinas en armonía algo que sonaba completamente nuevo en 1987 y que hoy suena exactamente a lo que era: un momento perfecto de pop europeo de los 80s.","Bad Boys Blue","How I Need You"],
+  ["mts-5","Rostros Ocultos","Kraken","Heavy Metal / Colombia","El heavy metal colombiano en su momento más épico. Kraken — la banda de Medellín liderada por Elkin Ramírez — grabó esta canción con una ambición orquestal que pocas bandas latinoamericanas de metal han igualado. Un clásico del rock colombiano que merece más reconocimiento internacional.","Kraken","Rostros Ocultos"],
+  ["mts-6","Lagrimas Negras","Diego El Cigala","Flamenco / Bolero","El cantaor flamenco Diego El Cigala y el pianista cubano Bebo Valdés grabaron este disco en estudios de Madrid, Nueva York y Miami. La versión de Lágrimas Negras — la bolero de Miguel Matamoros — es una fusión de flamenco y son cubano que suena como si siempre hubiera existido así.","Diego El Cigala","Lagrimas Negras"],
+  ["mts-7","El Jardinero","Wilfrido Vargas","Merengue","Wilfrido Vargas en estado de gracia: merengue rápido, letra de doble sentido perfecto, y ese ritmo que no da tregua. La canción del jardinero que \'poda los jardines\' fue polémica en su momento por exactamente las razones correctas — y sigue siendo imposible no bailarla.","Wilfrido Vargas","El Jardinero"],
+  ["mts-8","Jeremy","Pearl Jam","Grunge","Eddie Vedder tomó dos historias reales de adolescentes que llevaron armas a sus escuelas y las fusionó en una canción sobre los invisibles — los que están pero nadie ve. Cuatro MTV VMAs, el video más visto de 1993, y una canción que sigue siendo urgente treinta años después.","Pearl Jam","Jeremy"],
+  ["mts-9","Noche de Arreboles","Joe Arroyo","Salsa / Afrocaribe","Joe Arroyo en su momento más romántico: el atardecer caribeño como escenario para una entrega total al amor y a la pasión, con todo y sus noches de miedo y desengaño, narrado con el groove de alguien que hace bailar sin esfuerzo. La voz de Joe Arroyo era un instrumento que no tenía equivalente en la salsa colombiana.","Joe Arroyo","Noche de Arreboles"],
+  ["mts-10","Dog Days Are Over","Florence and the Machine · 2008","Indie Pop / Art Rock","Florence Welch construyendo el himno más catártico del indie pop de los 2000s. La percusión de harp y la voz de Florence escalando hacia el clímax — la canción que le dio a la colección su artista femenina favorita.","Florence and the Machine","Dog Days Are Over"],
+  ["mts-11","Atrevete-te-te","Calle 13 · 2005","Reggaetón / Electrónica","René y Visitante llegaron al mundo con una canción imposible de clasificar: reggaetón con actitud punk, crítica social en pista de baile, humor absurdo mezclado con política. El sonido que nadie esperaba del reggaetón y que Calle 13 nunca repitió exactamente igual.","Calle 13","Residente o Visitante"],
+  ["mts-12","Stairway to Heaven","Led Zeppelin · 1971","Rock / Hard Rock","Ocho minutos que definen el rock: del arpeggio acústico de Jimmy Page al solo de guitarra más estudiado de la historia. La canción que demuestra que el rock puede ser al mismo tiempo íntimo, épico y trascendente.","Led Zeppelin","Led Zeppelin IV"]
+];
+
+var TOP12_ALBUMS = [
+  ["mta-al-1","Canción Animal","Soda Stereo · 1990","Rock en Español","El pico absoluto de Soda Stereo. Cerati condensó diez años de exploración sonora en once canciones perfectas — de la fiereza de En la Ciudad de la Furia a la ternura de Canción Animal.","Soda Stereo","Cancion Animal"],
+  ["mta-al-2","Ten","Pearl Jam · 1991","Grunge / Rock Alternativo","El debut más poderoso del grunge después de Nevermind. Eddie Vedder llegó al mundo con Alive, Black y Jeremy en el mismo disco — tres canciones que habrían hecho la carrera entera de cualquier otra banda.","Pearl Jam","Ten"],
+  ["mta-al-3","Doolittle","Pixies · 1989","Alternative / Indie Rock","El álbum que Nirvana declaró como su modelo. Black Francis construyendo canciones con la lógica del surrealismo — Debaser, Here Comes Your Man, Gouge Away — y Kim Deal como el contrapeso perfecto.","Pixies","Doolittle"],
+  ["mta-al-4","Clásicos de la Provincia","Carlos Vives · 1993","Vallenato / Pop","El disco que reinventó el vallenato para el mundo. Vives tomó los clásicos de Escalona y los electrificó sin perder la magia — La Gota Fría se convirtió en el himno de Colombia en el exterior.","Carlos Vives","Clasicos de la Provincia"],
+  ["mta-al-5","Siembra","Willie Colón & Rubén Blades · 1978","Salsa / Latin","El álbum de salsa más vendido de todos los tiempos. Pedro Navaja, Plástico y Buscando Guayaba en el mismo disco — Rubén Blades escribiendo el alma de América Latina con la trompeta de Willie Colón.","Willie Colon Ruben Blades","Siembra"],
+  ["mta-al-6","(What\'s the Story) Morning Glory?","Oasis · 1995","Britpop / Rock","Wonderwall, Don\'t Look Back in Anger y Champagne Supernova en el mismo disco. Los Gallagher en su pico creativo, antes de que el ego los separara — el britpop en su momento más luminoso.","Oasis","Whats the Story Morning Glory"],
+  ["mta-al-7","Achtung Baby","U2 · 1991","Alternative / Rock","El disco en que U2 destruyó su propia fórmula y salió mejor. One, The Fly, Mysterious Ways — Bono y The Edge absorbiendo el industrial de Berlín y el dance y volviendo con el álbum más arriesgado de su carrera.","U2","Achtung Baby"],
+  ["mta-al-8","Appetite for Destruction","Guns N\' Roses · 1987","Hard Rock","30 millones de copias — el álbum de hard rock más vendido de la historia. Welcome to the Jungle, Paradise City y Sweet Child O\' Mine en el mismo debut. Nelson los vio en Bogotá en 1992.","Guns N Roses","Appetite for Destruction"],
+  ["mta-al-9","Supernatural","Santana · 1999","Latin Rock / Pop","La resurrección más improbable del rock. Santana convocando a Rob Thomas, Everlast y Lauryn Hill — nueve Grammys, Smooth como hit planetario y la guitarra de Carlos Santana sonando más relevante que nunca.","Santana","Supernatural"],
+  ["mta-al-10","Bunkka","Paul Oakenfold · 2002","Trance / Electronic","El álbum debut del DJ más influyente del trance británico. Ready Steady Go y Starry Eyed Surprise mezclando el éxtasis del club con la producción cinematográfica — el trance mainstream en su cima.","Paul Oakenfold","Bunkka"],
+  ["mta-al-11","Kraken I","Kraken · 1990","Heavy Metal / Colombia","El álbum que puso al metal colombiano en el mapa. Elkin Ramírez con la voz más poderosa del rock latinoamericano — verlo en La Macarena en 1990 fue el primer gran hito de la vida musical de Nelson. Un disco de heavy metal grabado en Colombia que no tenía nada que envidiarle a sus equivalentes anglosajones.","Kraken","Kraken"],
+  ["mta-al-12","Jagged Little Pill","Alanis Morissette · 1995","Alternative Rock / Pop Rock","33 millones de copias — el álbum de debut más vendido de una artista femenina en la historia. Ironic, You Oughta Know y Hand in My Pocket en el mismo disco: la rabia, la ironía y la vulnerabilidad del rock alternativo de los 90s en su forma más directa y sin filtros.","Alanis Morissette","Jagged Little Pill"]
+];
+
+var TOP12_ARTISTS = [
+  ["mta-1","Queen","Londres · 1970–hoy","Rock / Glam / Arena Rock","Freddie Mercury como el performer más completo de la historia del rock. De Sheer Heart Attack a Innuendo, el catálogo más ecléctico del rock clásico — y Bohemian Rhapsody como la cumbre de todos ellos.","Queen","Greatest Hits"],
+  ["mta-2","Guns N\' Roses","Los Ángeles · 1985–hoy","Hard Rock / Heavy Metal","Axl Rose, Slash y el sonido más peligroso de los 80s. Appetite for Destruction es el debut más fulminante del hard rock — Nelson los vio en vivo en Bogotá en el 92, el concierto #1 en importancia de su vida.","Guns N Roses","Appetite for Destruction"],
+  ["mta-3","Joe Arroyo","Cartagena · 1955–2011","Salsa / Afrocaribe","El cantante costeño más importante de Colombia. Joe inventó un sonido que mezclaba la salsa con el porro, la cumbia y ritmos africanos — Noche de Arreboles es el sonido exacto de Barranquilla.","Joe Arroyo","Lo Mejor de Joe Arroyo"],
+  ["mta-4","Metallica","San Francisco · 1981–hoy","Heavy Metal / Thrash","La banda de metal más exitosa de la historia. Master of Puppets como el álbum definitivo del thrash, el Black Album como el crossover perfecto — Nelson los vio en Bogotá en 1999.","Metallica","Metallica"],
+  ["mta-5","Pet Shop Boys","Londres · 1981–hoy","Synth-pop / Electropop","Neil Tennant y Chris Lowe redefinieron el pop electrónico cuatro décadas seguidas. West End Girls, It\'s a Sin, Always on My Mind — la ironía británica y la producción perfecta como filosofía.","Pet Shop Boys","Actually"],
+  ["mta-6","Pearl Jam","Seattle · 1990–hoy","Grunge / Rock Alternativo","La banda más consistente del grunge — 30 años sin un disco vergonzoso. Ten, Vs. y Vitalogy como trilogía perfecta. Eddie Vedder con la voz más honesta del rock americano.","Pearl Jam","Ten"],
+  ["mta-7","Carlos Vives","Santa Marta · 1961–hoy","Vallenato / Pop Tropical","El músico que le enseñó al mundo a escuchar vallenato. Clásicos de la Provincia puso a Colombia en el mapa mundial — La Gota Fría es el himno de la identidad costeña.","Carlos Vives","Clasicos de la Provincia"],
+  ["mta-8","The Cure","Crawley · 1976–hoy","Post-punk / Gothic Rock","Robert Smith construyendo una catedral de melancolía y pop perfectamente equilibrados. Disintegration como el álbum de la desesperación más hermosa — la banda de los 80s que envejeció mejor que todas.","The Cure","Disintegration"],
+  ["mta-9","Florence and the Machine","Londres · 2007–hoy","Art Rock / Indie Pop","Florence Welch con la voz más épica del indie de los 2000s. Dog Days Are Over y Shake It Out como himnos catárticos — la única artista de la lista que conecta el indie con la teatralidad del art rock clásico.","Florence and the Machine","Lungs"],
+  ["mta-10","Proyecto Uno","Nueva York · 1989–hoy","Merengue Rap / Dance","El grupo dominicoamericano del Lower East Side de Nueva York que fusionó el merengue con el hip-hop y el house neoyorquinos. El Party fue uno de sus himnos de pista en los 90s — el sonido de las discotecas latinas de la época.","Proyecto Uno","El Boom"],
+  ["mta-11","El Gran Combo de Puerto Rico","San Juan · 1962–hoy","Salsa / Afrocaribe","La Universidad de la Salsa — más de 60 años de salsa puertorriqueña de primer nivel, sin interrupciones. Un placer de dios, No Hay Cama Pa\' Tanta Gente y Ojos Chinos como himnos eternos. La banda que demuestra que la salsa no envejece — solo mejora.","El Gran Combo de Puerto Rico","Un Verano en Nueva York"],
+  ["mta-12","Michael Jackson","Gary, Indiana · 1958–2009","Pop / R&B / Funk","El artista más completo de la historia del pop. Thriller como el álbum más vendido de todos los tiempos, Off the Wall y Bad como obras perfectas de producción. Bailarín, cantante y compositor en un nivel que nadie ha igualado — el estándar absoluto del entretenimiento popular del siglo XX.","Michael Jackson","Thriller"]
+];
+
+function top12Card(item,i){
+  var id=item[0],title=item[1],sub=item[2],genre=item[3],bio=item[4],sartist=item[5],stitle=item[6];
+  var subLine=sub+(genre?' · '+genre:'');
+  return '<div class="acl-item">'
+    +'<span class="acl-pos">'+((i||0)+1)+'</span>'
+    +'<div class="card-cover" style="overflow:hidden">'
+    +'<img class="mytop-art" id="'+id+'" src="" alt="'+title.replace(/"/g,"&quot;")+'" style="width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s" '
+    +'data-artist="'+encodeURIComponent(sartist)+'" data-album="'+encodeURIComponent(stitle)+'" data-track="'+encodeURIComponent(stitle)+'">'
+    +'</div>'
+    +'<div style="flex:1;min-width:0"><div class="acl-name">'+title+'</div>'
+    +'<div class="acl-sub">'+subLine+'</div>'
+    +(bio?'<p class="acl-rev">'+bio+'</p>':'')
+    +'</div></div>';
+}
+
+function top12HTML(){
+  return '<div class="sec-head"><h1>Mi Top 12</h1><p>Selección personal de Nelson Rodríguez Esmeral</p></div>'
+    +'<div class="acl-grid">'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div><div class="si-collapse">'+TOP12_ARTISTS.map(top12Card).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div><div class="si-collapse">'+TOP12_SONGS.map(top12Card).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div><div class="si-collapse">'+TOP12_ALBUMS.map(top12Card).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'</div>';
+}
+
 function aclamadosHTML(){
   return '<div class="sec-head"><h1>Más aclamados</h1><p>Artistas, álbumes y canciones con más apariciones en las '+LISTS.length+' listas</p></div>'
     +'<div class="acl-grid">'
-    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div>'+topArtists.map(function(a,i){return aclRow(a,i,true)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div>'+topAlbums.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
-    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div>'+topSongs.map(function(a,i){return aclRow(a,i,false)}).join('')+'</div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎤 Artistas</div><div class="si-collapse">'+topArtists.map(function(a,i){return aclRow(a,i,true,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">💿 Álbumes</div><div class="si-collapse">'+topAlbums.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
+    +'<div class="acl-card"><div class="acl-lbl">🎵 Canciones</div><div class="si-collapse">'+topSongs.map(function(a,i){return aclRow(a,i,false,true)}).join('')+'</div><button class="si-toggle" data-closed="Ver todos" data-open="Ver menos" onclick="siToggle(this)">Ver todos <span class="si-chev"></span></button></div>'
     +'</div>';
 }
 
@@ -3646,13 +3766,19 @@ function go(sec,sEl,bnEl){
   bc.innerHTML=sec==='home'?'<span class="crumb">Inicio</span>':'<span>Colección</span><span class="sep">›</span><span class="crumb">'+lbl+'</span>';
   if(sec==='home') area.innerHTML=homeHTML();
   else if(sec==='aclamados') area.innerHTML=aclamadosHTML();
+  else if(sec==='top12') area.innerHTML=top12HTML();
   else area.innerHTML=sectionHTML(sec);
   area.scrollTop=0;
   setTimeout(observeImages,60);
 }
 function tog(bid,aid){var b=document.getElementById(bid),a=document.getElementById(aid);if(b&&a){b.classList.toggle('open');a.classList.toggle('open');}}
-function openDw(){document.getElementById('dw').classList.add('open');document.getElementById('dwo').classList.add('open');}
-function closeDw(){document.getElementById('dw').classList.remove('open');document.getElementById('dwo').classList.remove('open');}
+function toggleCatMenu(){
+  var dd=document.getElementById('catDropdown'), btn=document.getElementById('catBtn');
+  var open=dd.classList.toggle('open');
+  btn.classList.toggle('open',open);
+}
+function openDw(){toggleCatMenu();}
+function closeDw(){document.getElementById('catDropdown').classList.remove('open');document.getElementById('catBtn').classList.remove('open');}
 
 // ══ SPOTLIGHT ══
 var SNAMES={super:'Superlistas',global:'Globales','albums-global':'Globales','songs-global':'Globales',
@@ -3757,7 +3883,109 @@ function observeImages(){
   });
 }
 
-go('home');
+
+// Calcular badges reales de la sidebar desde los datos verdaderos
+(function(){
+  var badgeMap = {
+    'super':'cnt-super',
+    'albumes-globales':'cnt-ag',
+    'canciones-globales':'cnt-cg',
+    'albumes-latinos':'cnt-al',
+    'canciones-latinas':'cnt-cl',
+    'tematicas':'cnt-te'
+  };
+  Object.keys(badgeMap).forEach(function(key){
+    var fn = SEC_FILTERS[key];
+    if(!fn) return;
+    var n = LISTS.filter(fn).length;
+    var el = document.getElementById(badgeMap[key]);
+    if(el) el.textContent = n;
+  });
+  // Total real en el footer del sidebar
+  var footEl = document.querySelector('.sb-foot');
+  if(footEl){
+    var totalSongs = LISTS.reduce(function(acc,l){
+      var n = parseInt((l.count||'0').replace(/\D/g,''),10);
+      return acc + (isNaN(n)?0:n);
+    },0);
+    footEl.innerHTML = LISTS.length + ' listas · ' + totalSongs.toLocaleString('es') + ' entradas<br>Última: ' + ((LISTS.find(function(l){return l.file===LAST5[0];})||{}).title||'');
+  }
+})();
+
+
+// ── Generador dinámico del sidebar de categorías ──────────────────────────
+var CAT_ICONS = {
+  super:'<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+  'albumes-globales':'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>',
+  'canciones-globales':'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  'albumes-latinos':'<ellipse cx="12" cy="12" rx="10" ry="3"/><path d="M2 12c0 4.418 4.477 8 10 8s10-3.582 10-8"/><path d="M2 5c0 4.418 4.477 8 10 8s10-3.582 10-8"/>',
+  'canciones-latinas':'<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>',
+  tematicas:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>',
+  anuales:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+  decadas:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  generos:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  cronologia:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'
+};
+var CAT_ORDER = ['super','albumes-globales','canciones-globales','albumes-latinos',
+                  'canciones-latinas','tematicas','anuales','decadas','generos'];
+
+function catLink(key){
+  var fn = SEC_FILTERS[key];
+  var count = fn ? LISTS.filter(fn).length : 0;
+  var lbl = LBLS[key] || key;
+  return '<a onclick="go(\'' + key + '\',null,null);closeDw();">' + lbl + ' <span class="si-count">· ' + count + '</span></a>';
+}
+function renderDropdownCategories(){
+  var map = {
+    'catg-1': ['super','albumes-globales','canciones-globales'],
+    'catg-2': ['albumes-latinos','canciones-latinas'],
+    'catg-3': ['anuales','decadas','cronologia'],
+    'catg-4': ['tematicas','generos']
+  };
+  Object.keys(map).forEach(function(gid){
+    var el = document.getElementById(gid);
+    if(!el) return;
+    var label = el.querySelector('b').outerHTML;
+    el.innerHTML = label + map[gid].map(catLink).join('');
+  });
+  var qg = document.getElementById('catg-4');
+  if(qg) qg.innerHTML += '<a href="music-quotes-page.html">Music Quotes <span class="si-count">nuevo</span></a>';
+}
+renderDropdownCategories();
+
+
+
+
+// ══ MUSIC QUOTES (home preview, datos reales vía Google Sheets) ══
+var QUOTES_API_URL_HOME = "https://script.google.com/macros/s/AKfycbwF5yVj30lCSi_BLBWND1KjTtsJdPJ1v1AEaGTLQpRVnM1JC64a8n8VxNfEsdGnWohG/exec";
+var HOME_QUOTES_FALLBACK = [
+  {text:"Hoping the best, but expecting the worst", song:"Forever Young", artist:"Alphaville"},
+  {text:"Nothing prepared me for your smile", song:"Thursday's Child", artist:"David Bowie"},
+  {text:"If you want to kiss the sky / Better learn how to kneel", song:"Mysterious Ways", artist:"U2"}
+];
+function renderHomeQuotes(list){
+  var grid=document.getElementById('homeQuotesGrid');
+  if(!grid) return;
+  var shown=list.slice();
+  for(var i=shown.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=shown[i];shown[i]=shown[j];shown[j]=t;}
+  shown=shown.slice(0,6);
+  grid.innerHTML=shown.map(function(q){
+    return '<div class="quote-card"><div class="qmark">&ldquo;</div><p class="qtext">'+q.text+'</p>'
+      +'<div class="qsrc"><div class="qcov"></div><div><b>'+q.song+'</b><span>'+q.artist+'</span></div></div></div>';
+  }).join('')+'<a class="quote-card quote-more" href="music-quotes-page.html">Ver todas las frases →</a>';
+}
+function loadHomeQuotes(){
+  fetch(QUOTES_API_URL_HOME).then(function(r){return r.json();}).then(function(data){
+    if(Array.isArray(data)&&data.length) renderHomeQuotes(data);
+    else renderHomeQuotes(HOME_QUOTES_FALLBACK);
+  }).catch(function(){renderHomeQuotes(HOME_QUOTES_FALLBACK);});
+}
+
+(function(){
+  var h=(location.hash||'').replace('#','');
+  var valid=h&&(h==='aclamados'||h==='top12'||SEC_FILTERS[h]);
+  go(valid?h:'home');
+})();
 
 </script>
 </body>
