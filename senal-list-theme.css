@@ -147,7 +147,7 @@ a{color:inherit;}
 
 /* ---------- Top 3 de la lista (bloque previo a las reseñas) ---------- */
 .stats3{padding:1.5rem 2.5rem 1.2rem;border-bottom:1px solid var(--line);background:transparent;}
-.stats3-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px;}
+.stats3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px;}
 .stats3-col{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;}
 .stats3-col h4{margin:0 0 10px;font:600 11px 'Space Grotesk',sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--c);}
 .stats3-col ol{list-style:none;margin:0;padding:0;counter-reset:s3;}

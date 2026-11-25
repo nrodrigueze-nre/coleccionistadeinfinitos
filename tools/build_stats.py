@@ -44,7 +44,6 @@ def main():
         unit = 'álbumes' if isalb else 'canciones'
         art = collections.Counter(); art_rank = {}; disp = {}
         yrs = collections.Counter(); yr_rank = {}
-        dec = collections.Counter(); dec_rank = {}
         alb = {}; alb_rank = {}
         for i, (artist, title, year) in enumerate(rows):
             pa = b.primary_artist(artist); k = b.norm(pa)
@@ -52,23 +51,31 @@ def main():
             art[k] += 1; art_rank.setdefault(k, i); disp.setdefault(k, pa)
             if year:
                 yrs[year] += 1; yr_rank.setdefault(year, i)
-                d = '%ds' % (year // 10 * 10); dec[d] += 1; dec_rank.setdefault(d, i)
             ak = (k, b.norm(title)); n = len((album_lists if isalb else song_lists).get(ak, ()))
             if n >= 2:
                 alb[title + ' — ' + pa] = n; alb_rank.setdefault(title + ' — ' + pa, i)
-        c1 = col('Artistas con más %s' % unit, [(disp[k], c) for k, c in top(art, art_rank)], lambda c: '%d' % c)
-        c2 = col('Años con más %s' % unit, top(yrs, yr_rank), lambda c: '%d' % c)
-        alb_items = sorted(alb.items(), key=lambda x: (-x[1], alb_rank[x[0]]))[:3]
-        if isalb:
-            c3 = col('Álbumes con más menciones', alb_items, lambda c: '%d listas' % c)
-        elif dec and max(dec.values()) <= 0.8 * len(rows):
-            c3 = col('Décadas con más canciones', top(dec, dec_rank), lambda c: '%d' % c)
-        else:   # lista de una sola época: las décadas no informan, usamos menciones en otras listas
-            c3 = col('Canciones con más menciones', alb_items, lambda c: '%d listas' % c)
-        if all('s3-empty' in c for c in (c1, c2, c3)):
-            block = ''
+        n = len(rows)
+        # Artistas: si ninguno se repite (o uno solo cubre casi toda la lista), se muestran los 3 primeros
+        art_top = [(disp[k], c) for k, c in top(art, art_rank)]
+        if not art_top or art_top[0][1] >= 0.9 * n:
+            first3 = [(t + ' — ' + a, str(y) if y else '') for a, t, y in rows[:3]]
+            c1 = col('Los 3 primeros de la lista', first3, lambda c: c)
         else:
-            block = START + '<section class="stats3"><div class="sec-label">Top 3 de la lista</div><div class="stats3-grid">' + c1 + c2 + c3 + '</div></section>' + END + '\n'
+            c1 = col('Artistas con más %s' % unit, art_top, lambda c: '%d' % c)
+        cols = [c1]
+        # Años: solo si la lista trae años y no es de un único año
+        with_year = sum(yrs.values())
+        yr_top = top(yrs, yr_rank)
+        if yr_top and with_year >= 0.5 * n and yr_top[0][1] < 0.9 * n:
+            cols.append(col('Años con más %s' % unit, yr_top, lambda c: '%d' % c))
+        # Menciones en otras listas del sitio (álbumes en listas de álbumes, canciones en listas de canciones)
+        alb_items = sorted(alb.items(), key=lambda x: (-x[1], alb_rank[x[0]]))[:3]
+        if alb_items:
+            cols.append(col('Álbumes con más menciones' if isalb else 'Canciones con más menciones', alb_items, lambda c: '%d listas' % c))
+        if len(cols) == 1 and 'Los 3 primeros' in c1:
+            block = START + '<section class="stats3"><div class="sec-label">Top 3 de la lista</div><div class="stats3-grid">' + c1 + '</div></section>' + END + '\n'
+        else:
+            block = START + '<section class="stats3"><div class="sec-label">Top 3 de la lista</div><div class="stats3-grid">' + ''.join(cols) + '</div></section>' + END + '\n'
         p = os.path.join(b.ROOT, name)
         h = open(p, encoding='utf-8').read()
         if START in h:
