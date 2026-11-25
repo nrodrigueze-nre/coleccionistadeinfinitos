@@ -3786,17 +3786,24 @@ function go(sec,sEl,bnEl){
 }
 
 // ══ TODAS LAS LISTAS (A–Z) ══
-function todasKey(t){var k=t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''),p;do{p=k;k=k.replace(/^[^a-z]+/,'').replace(/^(the|los|las|el|la|top)\s+/,'').replace(/^\d[\d\s,.]*/,'');}while(k!==p);return k;}
+function todasBase(t){var k=t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/^[^a-z0-9]+/,'');return k.replace(/^(the|los|las|el|la|top)\s+(?=\d)/,'');}
+function todasNum(t){var m=todasBase(t).match(/^(\d+)/);return m?parseInt(m[1],10):null;}
+function todasCmp(a,b){
+  var na=todasNum(a.title),nb=todasNum(b.title);
+  if(na!==null&&nb!==null) return na!==nb?na-nb:todasBase(a.title).localeCompare(todasBase(b.title),'es');
+  if(na!==null) return -1; if(nb!==null) return 1;
+  return todasBase(a.title).localeCompare(todasBase(b.title),'es');
+}
+function todasGroup(t){var n=todasNum(t);if(n!==null) return String(n);var c=todasBase(t).charAt(0).toUpperCase();return /[A-Z]/.test(c)?c:'#';}
 function todasIcon(t){return t==='albumes'?'\uD83D\uDCBF':(t==='cronologia'?'\uD83D\uDD70\uFE0F':'\uD83C\uDFB5');}
 function todasHTML(){
-  var items=LISTS.slice().sort(function(a,b){return todasKey(a.title).localeCompare(todasKey(b.title),'es');});
-  var h='<div class="sec-head"><h1>Todas las listas</h1><p>'+items.length+' listas · orden alfabético</p></div>'
+  var items=LISTS.slice().sort(todasCmp);
+  var h='<div class="sec-head"><h1>Todas las listas</h1><p>'+items.length+' listas · primero por número (10, 15, 20…) y luego A–Z</p></div>'
     +'<input class="all-search" type="search" placeholder="Filtrar listas…" oninput="todasFilter(this.value)">'
     +'<div class="all-list" id="allList">';
   var cur='';
   items.forEach(function(l){
-    var k=(todasKey(l.title).charAt(0)||'#').toUpperCase();
-    if(!/[A-Z]/.test(k)) k='#';
+    var k=todasGroup(l.title);
     if(k!==cur){cur=k;h+='<div class="all-letter" data-letter="1">'+k+'</div>';}
     h+='<a class="all-row" href="'+l.file+'" data-q="'+(l.title+' '+l.source+' '+(l.desc||'')).toLowerCase().replace(/"/g,'')+'">'
       +'<span class="all-ico">'+todasIcon(l.type)+'</span>'
