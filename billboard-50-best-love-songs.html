@@ -156,7 +156,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
 <header class="page-header">
   <div class="source-row">
     <span class="badge">BILLBOARD</span>
-    <span class="badge-year">1958&#8211;2019</span>
+    <span class="badge-year">1958–2018</span>
   </div>
   <a href="https://www.billboard.com/lists/top-love-songs-all-time/" target="_blank" class="page-title">TOP 50 LOVE SONGS OF ALL TIME</a>
   <p class="page-sub">Diana Ross &amp; Lionel Richie, Boyz II Men, Rihanna, Whitney Houston, Wings &#183; basado en el rendimiento real del Hot 100 &#183; solo canciones con "love" en el titulo &#183; Billboard &#183; Feb 2026</p>
@@ -174,7 +174,7 @@ html,body{background:#fff!important;color:#0d1117!important}</style>
   </div>
 </section>
 
-<!--STATS3--><section class="stats3"><div class="sec-label">Top 3 de la lista</div><div class="stats3-grid"><div class="stats3-col"><h4>Artistas con más canciones</h4><ol><li><span class="s3-n">Whitney Houston</span><span class="s3-c">3</span></li><li><span class="s3-n">Mariah Carey</span><span class="s3-c">3</span></li><li><span class="s3-n">Celine Dion</span><span class="s3-c">2</span></li></ol></div><div class="stats3-col"><h4>Años con más canciones</h4><ol><li><span class="s3-n">1976</span><span class="s3-c">4</span></li><li><span class="s3-n">1990</span><span class="s3-c">4</span></li><li><span class="s3-n">1968</span><span class="s3-c">3</span></li></ol></div><div class="stats3-col"><h4>Canciones con más menciones</h4><ol><li><span class="s3-n">We Found Love — Rihanna</span><span class="s3-c">8 listas</span></li><li><span class="s3-n">Crazy in Love — Beyonce</span><span class="s3-c">7 listas</span></li><li><span class="s3-n">Best of My Love — The Emotions</span><span class="s3-c">5 listas</span></li></ol></div></div></section><!--/STATS3-->
+<!--STATS3--><section class="stats3"><div class="sec-label">Top 3 de la lista</div><div class="stats3-grid"><div class="stats3-col"><h4>Artistas con más canciones</h4><ol><li><span class="s3-n">Whitney Houston</span><span class="s3-c">3</span></li><li><span class="s3-n">Mariah Carey</span><span class="s3-c">3</span></li><li><span class="s3-n">Celine Dion</span><span class="s3-c">2</span></li></ol></div><div class="stats3-col"><h4>Años con más canciones</h4><ol><li><span class="s3-n">1990</span><span class="s3-c">5</span></li><li><span class="s3-n">1993</span><span class="s3-c">4</span></li><li><span class="s3-n">1977</span><span class="s3-c">3</span></li></ol></div><div class="stats3-col"><h4>Canciones con más menciones</h4><ol><li><span class="s3-n">We Found Love — Rihanna</span><span class="s3-c">8 listas</span></li><li><span class="s3-n">Crazy in Love — Beyoncé</span><span class="s3-c">7 listas</span></li><li><span class="s3-n">Best of My Love — The Emotions</span><span class="s3-c">5 listas</span></li></ol></div></div></section><!--/STATS3-->
 <section class="feat-section">
   <div class="sec-label" style="margin-bottom:1rem">Top 5 &#183; Ordenados por impacto</div>
 
@@ -265,58 +265,7 @@ function fetchTO(url, ms){
   ]);
 }
 
-var SONGS = [
-  [1,  "Diana Ross and Lionel Richie",   "Endless Love",                        1981],
-  [2,  "Boyz II Men",                    "I'll Make Love to You",               1994],
-  [3,  "Rihanna feat. Calvin Harris",    "We Found Love",                       2011],
-  [4,  "Wings",                          "Silly Love Songs",                    1976],
-  [5,  "Whitney Houston",                "I Will Always Love You",              1992],
-  [6,  "Leona Lewis",                    "Bleeding Love",                       2008],
-  [7,  "Mario",                          "Let Me Love You",                     2005],
-  [8,  "Stevie B",                       "Because I Love You",                  1990],
-  [9,  "The Emotions",                   "Best of My Love",                     1977],
-  [10, "Ray Charles",                    "I Can't Stop Loving You",             1962],
-  [11, "Paul McCartney and Wings",       "My Love",                             1973],
-  [12, "Queen",                          "Crazy Little Thing Called Love",      1980],
-  [13, "Celine Dion",                    "Because You Loved Me",                1996],
-  [14, "The Teddy Bears",                "To Know Him Is to Love Him",          1958],
-  [15, "Paul Mauriat",                   "Love Is Blue",                        1968],
-  [16, "Lewis Capaldi",                  "Someone You Loved",                   2019],
-  [17, "Barbra Streisand",               "Woman in Love",                       1980],
-  [18, "Mariah Carey",                   "Love Takes Time",                     1990],
-  [19, "Mariah Carey",                   "Vision of Love",                      1990],
-  [20, "Roxette",                        "It Must Have Been Love",              1990],
-  [21, "Mariah Carey",                   "Dreamlover",                          1993],
-  [22, "Eminem feat. Rihanna",           "Love the Way You Lie",                2010],
-  [23, "Beyonce feat. Jay-Z",            "Crazy in Love",                       2003],
-  [24, "Bobby Vinton",                   "Roses Are Red (My Love)",             1962],
-  [25, "Captain and Tennille",           "Love Will Keep Us Together",          1975],
-  [26, "Whitney Houston",                "I Wanna Dance With Somebody",         1987],
-  [27, "Ohio Players",                   "Love Rollercoaster",                  1976],
-  [28, "The Partridge Family",           "I Think I Love You",                  1970],
-  [29, "Andy Gibb",                      "Love Is Thicker Than Water",          1978],
-  [30, "Diana Ross and The Supremes",    "Love Child",                          1968],
-  [31, "The Beatles",                    "She Loves You",                       1964],
-  [32, "Tina Turner",                    "What's Love Got to Do With It",       1984],
-  [33, "Foreigner",                      "I Want to Know What Love Is",         1985],
-  [34, "Savage Garden",                  "I Knew I Loved You",                  2000],
-  [35, "England Dan and John Ford Coley","I'd Really Love to See You Tonight",  1976],
-  [36, "UB40",                           "Can't Help Falling in Love",          1993],
-  [37, "Diana Ross",                     "Love Hangover",                       1976],
-  [38, "Mariah Carey",                   "Dreamlover",                          1993],
-  [39, "Stevie Wonder",                  "I Just Called to Say I Love You",     1984],
-  [40, "Huey Lewis and The News",        "The Power of Love",                   1985],
-  [41, "Whitney Houston",                "Greatest Love of All",                1986],
-  [42, "Stevie Wonder",                  "I Just Called to Say I Love You",     1984],
-  [43, "Donna Lewis",                    "I Love You Always Forever",           1996],
-  [44, "Celine Dion",                    "The Power of Love",                   1994],
-  [45, "Janet Jackson",                  "That's The Way Love Goes",            1993],
-  [46, "Madonna",                        "Justify My Love",                     1991],
-  [47, "En Vogue",                       "Don't Let Go (Love)",                 1997],
-  [48, "Herb Alpert",                    "This Guy's In Love With You",         1968],
-  [49, "The Righteous Brothers",         "You've Lost That Lovin' Feelin'",     1965],
-  [50, "Minnie Riperton",                "Lovin' You",                          1975]
-];
+var SONGS = [[1, "Diana Ross & Lionel Richie", "Endless Love", 1981], [2, "Boyz II Men", "I'll Make Love to You", 1994], [3, "Bee Gees", "How Deep Is Your Love", 1977], [4, "Rihanna feat. Calvin Harris", "We Found Love", 2011], [5, "Wings", "Silly Love Songs", 1976], [6, "Whitney Houston", "I Will Always Love You", 1992], [7, "Mario", "Let Me Love You", 2004], [8, "Stevie B", "Because I Love You (The Postman Song)", 1990], [9, "The Emotions", "Best of My Love", 1977], [10, "Ray Charles", "I Can't Stop Loving You", 1962], [11, "Leona Lewis", "Bleeding Love", 2007], [12, "Paul McCartney and Wings", "My Love", 1973], [13, "Celine Dion", "Because You Loved Me", 1996], [14, "Queen", "Crazy Little Thing Called Love", 1979], [15, "The Teddy Bears", "To Know Him Is to Love Him", 1958], [16, "Paul Mauriat", "Love Is Blue", 1967], [17, "Lewis Capaldi", "Someone You Loved", 2018], [18, "Barbra Streisand", "Woman in Love", 1980], [19, "Mariah Carey", "Love Takes Time", 1990], [20, "Roxette", "It Must Have Been Love", 1990], [21, "Mariah Carey", "Vision of Love", 1990], [22, "Lulu", "To Sir With Love", 1967], [23, "Eminem feat. Rihanna", "Love the Way You Lie", 2010], [24, "Beyoncé featuring Jay-Z", "Crazy in Love", 2003], [25, "Bobby Vinton", "Roses Are Red (My Love)", 1962], [26, "Captain and Tennille", "Love Will Keep Us Together", 1975], [27, "Whitney Houston", "I Wanna Dance With Somebody (Who Loves Me)", 1987], [28, "Ohio Players", "Love Rollercoaster", 1975], [29, "The Partridge Family", "I Think I Love You", 1970], [30, "Andy Gibb", "(Love Is) Thicker Than Water", 1977], [31, "Diana Ross & the Supremes", "Love Child", 1968], [32, "The Beatles", "She Loves You", 1963], [33, "Tina Turner", "What's Love Got to Do With It", 1984], [34, "Foreigner", "I Want to Know What Love Is", 1984], [35, "Savage Garden", "I Knew I Loved You", 1999], [36, "England Dan and John Ford Coley", "I'd Really Love to See You Tonight", 1976], [37, "UB40", "Can't Help Falling in Love", 1993], [38, "Diana Ross", "Love Hangover", 1976], [39, "Mariah Carey", "Dreamlover", 1993], [40, "Huey Lewis & the News", "The Power of Love", 1985], [41, "Whitney Houston", "Greatest Love of All", 1986], [42, "Stevie Wonder", "I Just Called to Say I Love You", 1984], [43, "Donna Lewis", "I Love You Always Forever", 1996], [44, "Celine Dion", "The Power of Love", 1993], [45, "Janet Jackson", "That's The Way Love Goes", 1993], [46, "Madonna", "Justify My Love", 1990], [47, "En Vogue", "Don't Let Go (Love)", 1996], [48, "Herb Alpert", "This Guy's In Love With You", 1968], [49, "The Righteous Brothers", "You've Lost That Lovin' Feelin'", 1964], [50, "Minnie Riperton", "Lovin' You", 1975]];
 
 var FEAT = [
   ["fc-1", "Diana Ross",    "Endless Love"],
