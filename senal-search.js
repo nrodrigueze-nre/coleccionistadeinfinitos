@@ -62,8 +62,16 @@
       html += '<div class="sp-sect">Artistas</div>' + arts.slice(0, 5).map(function (a) {
         var nA = 0, nS = 0; a.items.forEach(function (ix) { if (DATA.i[ix][2]) nA++; else nS++; });
         var parts = []; if (nA) parts.push(nA + (nA === 1 ? ' álbum' : ' álbumes')); if (nS) parts.push(nS + (nS === 1 ? ' canción' : ' canciones'));
-        return '<div class="sp-item" data-artist="' + esc(a.name) + '"><div class="sp-ico">🎤</div><div style="min-width:0"><div class="sp-ttl">' + esc(a.name) +
-          '</div><div class="sp-sub">' + parts.join(' · ') + ' · en ' + a.nl + (a.nl === 1 ? ' lista' : ' listas') + '</div></div></div>';
+        var per = {}; a.items.forEach(function (ix) { DATA.i[ix][3].forEach(function (p) { var o = per[p[0]] || (per[p[0]] = { n: 0, best: 1e9 }); o.n++; if (p[1] < o.best) o.best = p[1]; }); });
+        var ks = Object.keys(per).sort(function (x, y) { return per[y].n - per[x].n || per[x].best - per[y].best; });
+        var lk = ks.slice(0, 20).map(function (k) {
+          var f = DATA.f[k], o = per[k];
+          return '<a class="sp-lk" href="' + esc(f[0]) + '">' + esc(f[1]) + ' · ' + o.n + (o.n === 1 ? ' entrada' : ' entradas') + ' · mejor #' + o.best + '</a>';
+        }).join('');
+        if (ks.length > 20) lk += '<span class="sp-more">y ' + (ks.length - 20) + ' listas más</span>';
+        lk += '<span class="sp-lk sp-filter" data-artist="' + esc(a.name) + '">Ver solo sus álbumes y canciones →</span>';
+        return '<div class="sp-item sp-exp"><div class="sp-ico">🎤</div><div style="min-width:0;flex:1"><div class="sp-ttl">' + esc(a.name) +
+          '</div><div class="sp-sub">' + parts.join(' · ') + ' · en ' + a.nl + (a.nl === 1 ? ' lista' : ' listas') + '</div><div class="sp-lists">' + lk + '</div></div></div>';
       }).join('');
     }
     // Álbumes y canciones
@@ -100,7 +108,7 @@
     '.sp-ico{width:34px;height:34px;border-radius:7px;border:1px solid #2a2840;background:#1d1b2e;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}' +
     '.sp-ttl{font-size:14px;color:#f2f1fa}.sp-sub{font-size:12px;color:#8a88a0}.sp-empty{padding:36px 18px;text-align:center;color:#8a88a0;font-size:14px}';
   var CSS2 = '.sp-lists{display:none;margin-top:6px;flex-direction:column;gap:3px}.sp-exp.open .sp-lists{display:flex}' +
-    '.sp-lk{font-size:12px;color:#7ab0ff;text-decoration:none}.sp-lk:hover{text-decoration:underline}.sp-more{font-size:11px;color:#8a88a0}' +
+    '.sp-lk{font-size:12px;color:#7ab0ff;text-decoration:none}.sp-filter{cursor:pointer;margin-top:4px;font-weight:600}.sp-lk:hover{text-decoration:underline}.sp-more{font-size:11px;color:#8a88a0}' +
     '.sp-ttl{overflow:hidden;text-overflow:ellipsis}.sp-link .sp-ttl{color:inherit}.sp-srchbtn{cursor:pointer}';
 
   function ensureOverlay() {
