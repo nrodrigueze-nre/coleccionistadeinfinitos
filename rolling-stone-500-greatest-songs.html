@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="color-scheme" content="light only">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The 500 Greatest Songs of All Time — Rolling Stone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+
+
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light only}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0d1117;min-height:100vh}
+a{color:inherit;text-decoration:none}
+
+/* PAGE HEADER — azul marino fullwidth */
+.page-header{background:#1a2f5a;padding:1.5rem 2.5rem 1.4rem}
+.source-row{display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
+.badge{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.08)}
+.badge-year{font-size:10px;letter-spacing:1.5px;color:#6a90b8;border:1px solid #2a4a7a;padding:3px 10px;border-radius:99px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,42px);font-weight:400;letter-spacing:3px;color:#fff;line-height:1;display:block;margin-bottom:.4rem}
+.page-sub{font-size:13px;color:#8aaad8;font-weight:300;letter-spacing:.3px}
+.back-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#7ab0ff;margin-bottom:.8rem;text-decoration:none;transition:color .15s}
+.back-link:hover{color:#fff}
+.back-link svg{width:12px;height:12px}
+
+/* HERO */
+.hero{padding:1.75rem 2.5rem;display:flex;gap:2rem;align-items:flex-start;border-bottom:1px solid #e8ecf4;background:#fff}
+.cover-wrap{flex-shrink:0}
+.cover-img{width:160px;height:160px;object-fit:cover;border-radius:6px;border:1px solid #e0e4ee;display:block;background:#f0f2f8}
+.cover-cap{font-size:10px;color:#ffffff;letter-spacing:1.5px;text-align:center;margin-top:6px}
+.hero-text{flex:1}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:2px;color:#7ab0ff;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15)}
+.rtext{font-size:14px;color:#4a5568;line-height:1.85;font-weight:300}
+.rtext+.rtext{margin-top:.8rem}
+
+/* ABOUT */
+.about-sec{padding:1.5rem 2.5rem;border-bottom:1px solid #e8ecf4;background:#fff}
+
+/* FEAT SECTION */
+.feat-section{padding:1.5rem 2.5rem;border-bottom:1px solid #1a3a6a;background:#2a4a7a}
+.feat-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.feat-item:last-child{border-bottom:none}
+.feat-pos{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.25);letter-spacing:1px;line-height:1;width:34px;text-align:right;flex-shrink:0;padding-top:4px}
+.feat-cover{width:64px;height:64px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;background:rgba(255,255,255,.05)}
+.feat-info{flex:1;min-width:0}
+.feat-meta{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.feat-pill{display:inline-block;font-size:10px;color:#0d1933;border:1px solid #8aaad8;padding:1px 8px;border-radius:99px;background:#e0eaff;font-weight:600}
+.feat-year{font-size:10px;color:#7ab0ff;font-weight:700;letter-spacing:1.5px;margin-bottom:3px}
+.feat-decade{font-size:10px;color:#7ab0ff;font-weight:500;letter-spacing:1px;margin-bottom:7px}
+.feat-vocalist{font-size:11px;color:#8aaad8;font-weight:400;margin-bottom:7px}
+.feat-title{font-size:14px;font-weight:500;color:#ffffff;margin-bottom:1px}
+.feat-artist{font-size:12px;color:#8aaad8;font-weight:300;margin-bottom:7px}
+.feat-rev{font-size:14px;color:#c8d8f0;line-height:1.8;font-weight:300}
+
+/* TRACK SECTION — con franja lateral */
+.track-section{padding:0 2.5rem 2.5rem;background:#fff}
+.section-stripe{height:4px}
+.track-header{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.8rem 0 .65rem;border-bottom:1px solid #e8ecf4;position:sticky;top:0;background:#fff;z-index:10}
+.track-header span{font-size:10px;font-weight:600;letter-spacing:1.5px;color:#9aa3b2;text-transform:uppercase}
+.track-row{display:grid;grid-template-columns:46px 54px 1fr 52px 100px 80px 80px 80px;gap:1rem;align-items:center;padding:.45rem 0 .45rem 0;border-bottom:1px solid #f0f2f8;transition:background .1s;border-left:3px solid transparent;padding-left:6px}
+.track-row:hover{background:#f8f9fc;border-left-color:var(--stripe,#1a2f5a)}
+.track-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1a2f5a;text-align:right;letter-spacing:1px;line-height:1}
+.track-cover{width:46px;height:46px;object-fit:cover;border-radius:4px;border:1px solid #e0e4ee;background:#f0f2f8;display:block}
+.track-name{font-size:13px;font-weight:400;color:#0d1117;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-artist{font-size:11px;color:#9aa3b2;font-weight:300}
+.track-year{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right}
+.track-decade{font-size:11px;color:#16604a;font-weight:500;text-align:center}
+.track-genre{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-country{font-size:10px;color:#9aa3b2;font-weight:400;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-sales{font-size:11px;color:#4a5568;font-weight:400;text-align:right;white-space:nowrap}
+.track-vocalist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-bassist{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-drummer{font-size:11px;color:#16604a;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-scrobbles{font-size:11px;color:#1a2f5a;font-weight:600;text-align:right;white-space:nowrap}
+.track-scrobbles.loading,.loading{color:#c0c8d8;font-weight:300}
+.track-scrobbles.zero,.zero{color:#dde2ee}
+
+/* FOOTER */
+.page-footer{border-top:1px solid #e8ecf4;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;background:#f8f9fc}
+.foot-left{font-size:11px;color:#9aa3b2;letter-spacing:1px}
+.foot-note{font-size:10px;color:#b0b8c8;letter-spacing:.3px}
+.foot-link{font-size:11px;color:#1a2f5a}
+.foot-link:hover{color:#0d1117}
+
+@media(max-width:640px){
+  .page-header,.hero,.feat-section,.about-sec,.track-section,.page-footer{padding-left:1rem;padding-right:1rem}
+  .hero{flex-direction:column}
+  .cover-img{width:130px;height:130px}
+  .track-header,.track-row{grid-template-columns:34px 42px 1fr 52px}
+}
+.feat-section .sec-label{color:#7ab0ff}
+.feat-section .sec-label::after{background:rgba(255,255,255,.15)}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}
+
+
+.track-listeners{font-size:11px;color:#16604a;font-weight:600;text-align:right;white-space:nowrap}
+.track-listeners.loading{color:#c0c8d8;font-weight:300}
+.track-playcount{font-size:11px;color:#7a1a6a;font-weight:600;text-align:right;white-space:nowrap}
+.track-playcount.loading{color:#c0c8d8;font-weight:300}
+.track-album{font-size:10px;color:#9aa3b2;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+@media(max-width:640px){.track-listeners,.track-genre,.track-playcount{display:none}}</style>
+<style>:root{color-scheme:light only}
+html,body{background:#fff!important;color:#0d1117!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="senal-list-theme.css">
+</head>
+<body>
+<div class="si-topbar">
+  <div class="genreStrip">
+    <div class="bgtrack"><img src="menu-bg-strip.jpg" alt=""><img src="menu-bg-strip.jpg" alt=""></div>
+  </div>
+  <div class="si-topbar-row">
+    <a class="si-brand" href="index.html"><div class="si-mark"></div><span class="si-name">Coleccionista de Infinitos</span></a>
+    <div class="si-navRight">
+      <nav class="si-quickNav">
+        <a href="index.html#aclamados">Más aclamados</a>
+        <a href="index.html#top12">Mi Top 12</a>
+        <a href="index.html#cronologia">Cronología</a>
+        <a href="index.html#todas">Todas las listas</a>
+        <a href="music-quotes-page.html">Music Quotes</a>
+      </nav>
+      <button class="si-menuBtn" id="siMenuBtn">Categorías <span class="si-chev"></span></button>
+    </div>
+  </div>
+  <div class="si-dropdown" id="siDropdown">
+    <div class="si-dropdown-in">
+      <div class="si-catgroup"><b>Superlistas</b>
+        <a href="index.html#super">Superlistas <span class="si-count">· 21</span></a>
+        <a href="index.html#albumes-globales">Álbumes Globales <span class="si-count">· 4</span></a>
+        <a href="index.html#canciones-globales">Canciones Globales <span class="si-count">· 9</span></a></div>
+      <div class="si-catgroup"><b>Música latina</b>
+        <a href="index.html#albumes-latinos">Álbumes Latinos <span class="si-count">· 19</span></a>
+        <a href="index.html#canciones-latinas">Canciones Latinas <span class="si-count">· 17</span></a></div>
+      <div class="si-catgroup"><b>Por época</b>
+        <a href="index.html#anuales">Listas Anuales <span class="si-count">· 49</span></a>
+        <a href="index.html#decadas">Por Décadas <span class="si-count">· 22</span></a>
+        <a href="index.html#cronologia">Cronología <span class="si-count">· 8</span></a></div>
+      <div class="si-catgroup"><b>Por tema / género</b>
+        <a href="index.html#tematicas">Temáticas <span class="si-count">· 23</span></a>
+        <a href="index.html#generos">Por Géneros <span class="si-count">· 44</span></a>
+        <a href="music-quotes-page.html">Music Quotes <span class="si-count">nuevo</span></a></div>
+    </div>
+  </div>
+</div>
+<a class="si-back" href="index.html">&larr; Volver al Coleccionista de Infinitos</a>
+
+
+<header class="page-header">
+  <div class="source-row">
+    <span class="badge">ROLLING STONE</span>
+    <span class="badge-year">1937&#8211;2023</span>
+  </div>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-all-time-1224767/" target="_blank" class="page-title">THE 500 GREATEST SONGS OF ALL TIME</a>
+  <p class="page-sub">Aretha Franklin, Public Enemy, Sam Cooke, Bob Dylan, Nirvana &#183; encuesta a más de 250 artistas, productores y críticos &#183; 500 canciones</p>
+</header>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <img id="hero-cover" class="cover-img" src="" alt="Respect – Aretha Franklin">
+    <p class="cover-cap">ROLLING STONE · 500 CANCIONES</p>
+  </div>
+  <div class="hero-text">
+    <div class="sec-label">Reseña de la lista</div>
+    <p class="rtext">Las 500 mejores canciones de todos los tiempos según Rolling Stone, en su versión renovada: para armarla la revista consultó a más de 250 artistas, músicos y productores, además de figuras de la industria, críticos y periodistas. Cada votante envió una lista ordenada con sus 50 canciones favoritas y la revista tabuló los resultados; cerca de 4.000 canciones recibieron votos. Frente a la versión de 2004, dominada por el rock y el soul tempranos, esta edición suma más hip-hop, country moderno, indie rock, pop latino, reggae y R&amp;B: más de la mitad de las canciones no estaba en la lista anterior, incluida una tercera parte del Top 100.</p>
+    <p class="rtext">Al #1, «Respect» de Aretha Franklin (1967); al #2, «Fight the Power» de Public Enemy (1989); al #3, «A Change Is Gonna Come» de Sam Cooke (1964). Los artistas con más canciones: The Beatles (11), Bob Dylan (7), The Rolling Stones (7), David Bowie (5), Bruce Springsteen (5). Por década: 1950s 24, 1960s 106, 1970s 141, 1980s 78, 1990s 70, 2000s 36, 2010s 31. Los años con más canciones: 1971 (21), 1965 (20), 1972 (20).</p>
+    <p class="rtext">La columna de scrobbles muestra tus reproducciones de Last.fm por canción (vía track.getInfo).</p>
+  </div>
+</section>
+
+<!--STATS3--><section class="stats3"><div class="sec-label">Top 3 de la lista</div><div class="stats3-grid"><div class="stats3-col"><h4>Artistas con más canciones</h4><ol><li><span class="s3-n">The Beatles</span><span class="s3-c">11</span></li><li><span class="s3-n">Bob Dylan</span><span class="s3-c">7</span></li><li><span class="s3-n">The Rolling Stones</span><span class="s3-c">7</span></li></ol></div><div class="stats3-col"><h4>Años con más canciones</h4><ol><li><span class="s3-n">1971</span><span class="s3-c">21</span></li><li><span class="s3-n">1965</span><span class="s3-c">20</span></li><li><span class="s3-n">1972</span><span class="s3-c">20</span></li></ol></div><div class="stats3-col"><h4>Canciones con más menciones</h4><ol><li><span class="s3-n">Seven Nation Army — The White Stripes</span><span class="s3-c">11 listas</span></li><li><span class="s3-n">Enter Sandman — Metallica</span><span class="s3-c">11 listas</span></li><li><span class="s3-n">Killing in the Name — Rage Against the Machine</span><span class="s3-c">10 listas</span></li></ol></div></div></section><!--/STATS3-->
+<section class="feat-section">
+  <div class="sec-label" style="margin-bottom:1rem">Top 10 &mdash; Reseñas destacadas</div>
+
+  <div class="feat-item">
+    <div class="feat-pos">1</div>
+    <img class="feat-cover" id="fc-1" src="" alt="Respect">
+    <div class="feat-info">
+      <div class="feat-title">Respect</div>
+      <div class="feat-artist">Aretha Franklin</div>
+      <div class="feat-meta"><span class="feat-pill">1967</span><span class="feat-pill">SOUL / R&amp;B</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">Escrita y grabada primero por Otis Redding, en 1965, Aretha Franklin la convirtió en otra canción en 1967: deletreó R-E-S-P-E-C-T, añadió el «sock it to me» y llegó al #1 del Hot 100. Se volvió himno del movimiento por los derechos civiles y del feminismo, y es la canción con la que la revista decidió abrir su lista.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">2</div>
+    <img class="feat-cover" id="fc-2" src="" alt="Fight the Power">
+    <div class="feat-info">
+      <div class="feat-title">Fight the Power</div>
+      <div class="feat-artist">Public Enemy</div>
+      <div class="feat-meta"><span class="feat-pill">1989</span><span class="feat-pill">HIP HOP</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">Public Enemy la hizo por encargo de Spike Lee para «Do the Right Thing» (1989). Chuck D y Flavor Flav, sobre el muro de samples del equipo de producción The Bomb Squad, convirtieron la protesta en rap de estadio, con versos que cuestionaban a héroes como Elvis y John Wayne.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">3</div>
+    <img class="feat-cover" id="fc-3" src="" alt="A Change Is Gonna Come">
+    <div class="feat-info">
+      <div class="feat-title">A Change Is Gonna Come</div>
+      <div class="feat-artist">Sam Cooke</div>
+      <div class="feat-meta"><span class="feat-pill">1964</span><span class="feat-pill">SOUL</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">Sam Cooke la escribió inspirado por «Blowin' in the Wind» de Bob Dylan y por haberle negado una habitación en un hotel por ser negro. Con arreglo orquestal de René Hall, es una de las grandes canciones de la lucha por los derechos civiles; salió a fines de 1964, poco después de su muerte.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">4</div>
+    <img class="feat-cover" id="fc-4" src="" alt="Like a Rolling Stone">
+    <div class="feat-info">
+      <div class="feat-title">Like a Rolling Stone</div>
+      <div class="feat-artist">Bob Dylan</div>
+      <div class="feat-meta"><span class="feat-pill">1965</span><span class="feat-pill">FOLK ROCK</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">Más de seis minutos de rabia y desdén que rompieron la regla del sencillo de tres minutos. Bob Dylan la sacó de «Highway 61 Revisited» (1965); el órgano de Al Kooper, improvisado en la sesión, es parte de su identidad. Llegó al #2 del Hot 100 y cambió lo que una canción pop podía decir.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">5</div>
+    <img class="feat-cover" id="fc-5" src="" alt="Smells Like Teen Spirit">
+    <div class="feat-info">
+      <div class="feat-title">Smells Like Teen Spirit</div>
+      <div class="feat-artist">Nirvana</div>
+      <div class="feat-meta"><span class="feat-pill">1991</span><span class="feat-pill">GRUNGE / ROCK</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">El himno de la Generación X, de «Nevermind» (1991), producido por Butch Vig. El título nace de una pintada con el nombre de un desodorante. El riff de Kurt Cobain, la estrofa susurrada y el estribillo a gritos llevaron al rock alternativo al mainstream.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">6</div>
+    <img class="feat-cover" id="fc-6" src="" alt="What&#x27;s Going On">
+    <div class="feat-info">
+      <div class="feat-title">What's Going On</div>
+      <div class="feat-artist">Marvin Gaye</div>
+      <div class="feat-meta"><span class="feat-pill">1971</span><span class="feat-pill">SOUL</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">Marvin Gaye le dio forma a una idea de Obie Benson, de los Four Tops, tras ver la violencia policial contra manifestantes antibélicos. Berry Gordy se resistió a publicarla, pero se volvió el mayor éxito de Gaye. Un álbum conceptual entero salió de aquí.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">7</div>
+    <img class="feat-cover" id="fc-7" src="" alt="Strawberry Fields Forever">
+    <div class="feat-info">
+      <div class="feat-title">Strawberry Fields Forever</div>
+      <div class="feat-artist">The Beatles</div>
+      <div class="feat-meta"><span class="feat-pill">1967</span><span class="feat-pill">PSICODELIA / ROCK</span><span class="feat-pill">REINO UNIDO</span></div>
+      <p class="feat-rev">John Lennon evocó su infancia cerca de un hogar del Ejército de Salvación en Liverpool. George Martin unió dos tomas distintas, en tonalidad y tempo diferentes, para lograr el sonido final. Salió en doble cara A con «Penny Lane» y no alcanzó el #1 en el Reino Unido.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">8</div>
+    <img class="feat-cover" id="fc-8" src="" alt="Get Ur Freak On">
+    <div class="feat-info">
+      <div class="feat-title">Get Ur Freak On</div>
+      <div class="feat-artist">Missy Elliott</div>
+      <div class="feat-meta"><span class="feat-pill">2001</span><span class="feat-pill">HIP HOP / R&amp;B</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">Missy Elliott y Timbaland, en su punto más inventivo: un ritmo seco y un riff inspirado en la música punyabí sostienen el rap de Missy. Pocas canciones del cambio de siglo suenan tan futuristas y tan a pista de baile al mismo tiempo.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">9</div>
+    <img class="feat-cover" id="fc-9" src="" alt="Dreams">
+    <div class="feat-info">
+      <div class="feat-title">Dreams</div>
+      <div class="feat-artist">Fleetwood Mac</div>
+      <div class="feat-meta"><span class="feat-pill">1977</span><span class="feat-pill">SOFT ROCK / POP</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">Stevie Nicks la escribió en unos minutos para «Rumours» (1977), y es el único #1 del Hot 100 de Fleetwood Mac. En 2020 un video viral de TikTok con la canción sonando la devolvió a las listas más de cuarenta años después.</p>
+    </div>
+  </div>
+
+  <div class="feat-item">
+    <div class="feat-pos">10</div>
+    <img class="feat-cover" id="fc-10" src="" alt="Hey Ya!">
+    <div class="feat-info">
+      <div class="feat-title">Hey Ya!</div>
+      <div class="feat-artist">Outkast</div>
+      <div class="feat-meta"><span class="feat-pill">2003</span><span class="feat-pill">FUNK / POP</span><span class="feat-pill">USA</span></div>
+      <p class="feat-rev">André 3000 la grabó para «The Love Below», su mitad del doble álbum «Speakerboxxx/The Love Below» de Outkast. Con su ritmo imparable y el «shake it like a Polaroid picture», llegó al #1 del Hot 100 y se volvió uno de los grandes éxitos de la primera década de los 2000.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track-section">
+  <div class="sec-label" style="padding-top:1.5rem">Las 500 canciones</div>
+  <div class="track-header">
+    <span style="text-align:right">#</span>
+    <span></span>
+    <span>Álbum / Artista</span>
+    <span style="text-align:right">Año</span>
+    <span style="text-align:right">Género</span>
+    <span style="text-align:right">Oyentes</span>
+    <span style="text-align:right">Plays</span>
+    <span style="text-align:right">Mis plays</span>
+  </div>
+  <div id="tracklist"></div>
+</section>
+
+<footer class="page-footer">
+  <span class="foot-left">ROLLING STONE · 500 CANCIONES · 1937–2023</span>
+  <a href="https://www.rollingstone.com/music/music-lists/best-songs-of-all-time-1224767/" target="_blank" class="foot-link">Ver lista original ↗</a>
+</footer>
+
+<script>var BAKED_DATA={"Aretha Franklin|||Respect":{"y":"1967","g":""},"Public Enemy|||Fight the Power":{"y":"1989","g":""},"Sam Cooke|||A Change Is Gonna Come":{"y":"1964","g":""},"Bob Dylan|||Like a Rolling Stone":{"y":"1965","g":""},"Nirvana|||Smells Like Teen Spirit":{"y":"1991","g":""},"Marvin Gaye|||What's Going On":{"y":"1971","g":""},"The Beatles|||Strawberry Fields Forever":{"y":"1967","g":""},"Missy Elliott|||Get Ur Freak On":{"y":"2001","g":""},"Fleetwood Mac|||Dreams":{"y":"1977","g":""},"Outkast|||Hey Ya!":{"y":"2003","g":""},"The Beach Boys|||God Only Knows":{"y":"1966","g":""},"Stevie Wonder|||Superstition":{"y":"1972","g":""},"The Rolling Stones|||Gimme Shelter":{"y":"1969","g":""},"The Kinks|||Waterloo Sunset":{"y":"1967","g":""},"The Beatles|||I Want to Hold Your Hand":{"y":"1963","g":""},"Beyoncé feat. Jay-Z|||Crazy in Love":{"y":"2003","g":""},"Queen|||Bohemian Rhapsody":{"y":"1975","g":""},"Prince and the Revolution|||Purple Rain":{"y":"1984","g":""},"John Lennon|||Imagine":{"y":"1971","g":""},"Robyn|||Dancing on My Own":{"y":"2010","g":""},"Billie Holiday|||Strange Fruit":{"y":"1939","g":""},"The Ronettes|||Be My Baby":{"y":"1963","g":""},"David Bowie|||Heroes":{"y":"1977","g":""},"The Beatles|||A Day in the Life":{"y":"1967","g":""},"Kanye West feat. Pusha T|||Runaway":{"y":"2010","g":""},"Joni Mitchell|||A Case of You":{"y":"1971","g":""},"Bruce Springsteen|||Born to Run":{"y":"1975","g":""},"Talking Heads|||Once in a Lifetime":{"y":"1980","g":""},"Dr. Dre feat. Snoop Doggy Dogg|||Nuthin' but a 'G' Thang":{"y":"1992","g":""},"Lorde|||Royals":{"y":"2011","g":""},"The Rolling Stones|||(I Can't Get No) Satisfaction":{"y":"1965","g":""},"Notorious B.I.G.|||Juicy":{"y":"1994","g":""},"Chuck Berry|||Johnny B. Goode":{"y":"1958","g":""},"James Brown|||Papa's Got a Brand New Bag":{"y":"1966","g":""},"Little Richard|||Tutti-Frutti":{"y":"1955","g":""},"The White Stripes|||Seven Nation Army":{"y":"2003","g":""},"Prince and the Revolution|||When Doves Cry":{"y":"1984","g":""},"Otis Redding|||(Sittin' On) the Dock of the Bay":{"y":"1967","g":""},"Outkast|||B.O.B.":{"y":"2000","g":""},"The Jimi Hendrix Experience|||All Along the Watchtower":{"y":"1968","g":""},"Joy Division|||Love Will Tear Us Apart":{"y":"1980","g":""},"Bob Marley and the Wailers|||Redemption Song":{"y":"1980","g":""},"The Temptations|||My Girl":{"y":"1965","g":""},"Michael Jackson|||Billie Jean":{"y":"1982","g":""},"Kendrick Lamar|||Alright":{"y":"2015","g":""},"M.I.A.|||Paper Planes":{"y":"2008","g":""},"Elton John|||Tiny Dancer":{"y":"1972","g":""},"Radiohead|||Idioteque":{"y":"2000","g":""},"Lauryn Hill|||Doo Wop (That Thing)":{"y":"1998","g":""},"Daddy Yankee|||Gasolina":{"y":"2010","g":""},"Dionne Warwick|||Walk on By":{"y":"1964","g":""},"Donna Summer|||I Feel Love":{"y":"1977","g":""},"The Beach Boys|||Good Vibrations":{"y":"1966","g":""},"Smokey Robinson and the Miracles|||The Tracks of My Tears":{"y":"1965","g":""},"Madonna|||Like a Prayer":{"y":"1989","g":""},"Missy Elliott|||Work It":{"y":"2000","g":""},"Sly and the Family Stone|||Family Affair":{"y":"1971","g":""},"The Band|||The Weight":{"y":"1968","g":""},"Grandmaster Flash and the Furious Five|||The Message":{"y":"1982","g":""},"Kate Bush|||Running Up That Hill":{"y":"1985","g":""},"Led Zeppelin|||Stairway to Heaven":{"y":"1971","g":""},"U2|||One":{"y":"1992","g":""},"Dolly Parton|||Jolene":{"y":"1974","g":""},"Ramones|||Blitzkrieg Bop":{"y":"1976","g":""},"Earth, Wind, and Fire|||September":{"y":"1978","g":""},"Simon and Garfunkel|||Bridge Over Troubled Water":{"y":"1970","g":""},"Bob Dylan|||Tangled Up in Blue":{"y":"1975","g":""},"Chic|||Good Times":{"y":"1979","g":""},"Taylor Swift|||All Too Well":{"y":"2012","g":""},"Elvis Presley|||Suspicious Minds":{"y":"1969","g":""},"Tracy Chapman|||Fast Car":{"y":"1988","g":""},"The Beatles|||Yesterday":{"y":"1965","g":""},"Beyoncé|||Formation":{"y":"2016","g":""},"Leonard Cohen|||Hallelujah":{"y":"1984","g":""},"Pulp|||Common People":{"y":"1996","g":""},"Johnny Cash|||I Walk the Line":{"y":"1956","g":""},"The Modern Lovers|||Roadrunner":{"y":"1976","g":""},"The Four Tops|||Reach Out (I'll Be There)":{"y":"1967","g":""},"Amy Winehouse|||Back to Black":{"y":"2006","g":""},"Ray Charles|||What'd I Say":{"y":"1957","g":""},"The Velvet Underground|||I'm Waiting for the Man":{"y":"1967","g":""},"Adele|||Rolling in the Deep":{"y":"2011","g":""},"Bob Dylan|||Desolation Row":{"y":"1965","g":""},"Al Green|||Let's Stay Together":{"y":"1971","g":""},"Prince|||Kiss":{"y":"1986","g":""},"The Rolling Stones|||Tumbling Dice":{"y":"1972","g":""},"LCD Soundsystem|||All My Friends":{"y":"2007","g":""},"Guns N' Roses|||Sweet Child O' Mine":{"y":"1987","g":""},"The Beatles|||Hey Jude":{"y":"1968","g":""},"Aretha Franklin|||(You Make Me Feel Like) A Natural Woman":{"y":"1967","g":""},"UGK feat. Outkast|||Int'l Players Anthem (I Choose You)":{"y":"2007","g":""},"Little Richard|||Good Golly, Miss Molly":{"y":"1958","g":""},"Kelly Clarkson|||Since U Been Gone":{"y":"2004","g":""},"Whitney Houston|||I Will Always Love You":{"y":"1992","g":""},"Oasis|||Wonderwall":{"y":"1995","g":""},"Jay-Z|||99 Problems":{"y":"2003","g":""},"Patti Smith|||Gloria":{"y":"1975","g":""},"The Beatles|||In My Life":{"y":"1965","g":""},"Bee Gees|||Stayin' Alive":{"y":"1977","g":""},"Bob Dylan|||Blowin' in the Wind":{"y":"1963","g":""},"Yeah Yeah Yeahs|||Maps":{"y":"2003","g":""},"Chuck Berry|||Maybelline":{"y":"1955","g":""},"Alanis Morissette|||You Oughta Know":{"y":"1995","g":""},"The Jackson 5|||I Want You Back":{"y":"1969","g":""},"David Bowie|||Life on Mars?":{"y":"1971","g":""},"The Rolling Stones|||Sympathy for the Devil":{"y":"1968","g":""},"Wu-Tang Clan|||C.R.E.A.M.":{"y":"1994","g":""},"The Cure|||Just Like Heaven":{"y":"1987","g":""},"Sly and the Family Stone|||Everyday People":{"y":"1968","g":""},"The Beatles|||Something":{"y":"1969","g":""},"Bruce Springsteen|||Thunder Road":{"y":"1975","g":""},"R.E.M.|||Losing My Religion":{"y":"1991","g":""},"Stevie Wonder|||Higher Ground":{"y":"1973","g":""},"Britney Spears|||Toxic":{"y":"2003","g":""},"Etta James|||At Last":{"y":"1960","g":""},"Rob Base and DJ E-Z Rock|||It Takes Two":{"y":"1988","g":""},"Aretha Franklin|||I Say a Little Prayer":{"y":"1968","g":""},"Radiohead|||Creep":{"y":"1992","g":""},"Marvin Gaye|||I Heard It Through the Grapevine":{"y":"1968","g":""},"X-Ray Spex|||Oh Bondage! Up Yours!":{"y":"1977","g":""},"The Beatles|||Let It Be":{"y":"1970","g":""},"The Impressions|||People Get Ready":{"y":"1965","g":""},"Talking Heads|||This Must Be the Place (Naive Melody)":{"y":"1983","g":""},"Buddy Holly|||That'll Be the Day":{"y":"1957","g":""},"Sex Pistols|||Anarchy in the U.K.":{"y":"1977","g":""},"George Michael|||Freedom! '90":{"y":"1990","g":""},"TLC|||Waterfalls":{"y":"1995","g":""},"Led Zeppelin|||Whole Lotta Love":{"y":"1969","g":""},"Drake feat. Majid Jordan|||Hold On, We're Going Home":{"y":"2013","g":""},"Martha and the Vandellas|||Dancing in the Street":{"y":"1964","g":""},"Ben E. King|||Stand by Me":{"y":"1961","g":""},"Eric B. and Rakim|||Paid in Full":{"y":"1987","g":""},"Journey|||Don't Stop Believin'":{"y":"1981","g":""},"Tina Turner|||What's Love Got to Do With It":{"y":"1984","g":""},"The Beatles|||She Loves You":{"y":"1964","g":""},"Otis Redding|||Try a Little Tenderness":{"y":"1966","g":""},"Ariana Grande|||Thank U, Next":{"y":"2019","g":""},"Blondie|||Heart of Glass":{"y":"1979","g":""},"Madonna|||Vogue":{"y":"1990","g":""},"Bob Marley and the Wailers|||No Woman No Cry":{"y":"1975","g":""},"Rod Stewart|||Maggie May":{"y":"1971","g":""},"George Jones|||He Stopped Loving Her Today":{"y":"1980","g":""},"The Clash|||London Calling":{"y":"1980","g":""},"The Rolling Stones|||Jumpin' Jack Flash":{"y":"1968","g":""},"Outkast|||Ms. Jackson":{"y":"2000","g":""},"James Taylor|||Fire and Rain":{"y":"1970","g":""},"Fats Domino|||Blueberry Hill":{"y":"1956","g":""},"Led Zeppelin|||Kashmir":{"y":"1975","g":""},"Elton John|||Rocket Man":{"y":"1972","g":""},"Green Day|||Basket Case":{"y":"1994","g":""},"The Shirelles|||Will You Love Me Tomorrow":{"y":"1960","g":""},"Creedence Clearwater Revival|||Proud Mary":{"y":"1969","g":""},"Rick James|||Super Freak":{"y":"1981","g":""},"Howlin' Wolf|||Spoonful":{"y":"1960","g":""},"The Strokes|||Last Nite":{"y":"2001","g":""},"The Kingsmen|||Louie Louie":{"y":"1963","g":""},"Sonic Youth|||Teenage Riot":{"y":"1988","g":""},"The Meters|||Cissy Strut":{"y":"1969","g":""},"The Who|||Baba O'Riley":{"y":"1971","g":""},"R.E.M.|||Nightswimming":{"y":"1992","g":""},"Madonna|||Into the Groove":{"y":"1985","g":""},"Nick Drake|||Pink Moon":{"y":"1972","g":""},"Fleetwood Mac|||Landslide":{"y":"1975","g":""},"Bob Dylan|||Mr. Tambourine Man":{"y":"1965","g":""},"Hank Williams|||I'm So Lonesome I Could Cry":{"y":"1949","g":""},"Mott the Hoople|||All the Young Dudes":{"y":"1972","g":""},"Eminem|||Lose Yourself":{"y":"2002","g":""},"Dusty Springfield|||Son of a Preacher Man":{"y":"1968","g":""},"Tom Petty and the Heartbreakers|||American Girl":{"y":"1976","g":""},"The Five Satins|||In the Still of the Night":{"y":"1956","g":""},"Louis Armstrong|||What a Wonderful World":{"y":"1967","g":""},"Nina Simone|||Mississippi Goddam":{"y":"1964","g":""},"Television|||Marquee Moon":{"y":"1977","g":""},"R.E.M.|||Radio Free Europe":{"y":"1983","g":""},"The Flamingos|||I Only Have Eyes for You":{"y":"1959","g":""},"The Kinks|||You Really Got Me":{"y":"1964","g":""},"Van Halen|||Jump":{"y":"1983","g":""},"Billie Eilish|||Bad Guy":{"y":"2019","g":""},"Pink Floyd|||Comfortably Numb":{"y":"1979","g":""},"Lou Reed|||Walk on the Wild Side":{"y":"1972","g":""},"The Byrds|||Eight Miles High":{"y":"1966","g":""},"Simon and Garfunkel|||The Sounds of Silence":{"y":"1964","g":""},"Stevie Wonder|||You Are the Sunshine of My Life":{"y":"1972","g":""},"Sinéad O'Connor|||Nothing Compares 2 U":{"y":"1990","g":""},"Michael Jackson|||Beat It":{"y":"1982","g":""},"The Staple Singers|||I'll Take You There":{"y":"1972","g":""},"Bob Dylan|||Subterranean Homesick Blues":{"y":"1965","g":""},"The Jimi Hendrix Experience|||Little Wing":{"y":"1967","g":""},"David Bowie|||Space Oddity":{"y":"1969","g":""},"N.W.A|||Fuck tha Police":{"y":"1988","g":""},"Bobbie Gentry|||Ode to Billie Joe":{"y":"1967","g":""},"Geto Boys|||Mind Playing Tricks on Me":{"y":"1991","g":""},"The Rolling Stones|||Wild Horses":{"y":"1971","g":""},"PJ Harvey|||Rid of Me":{"y":"1993","g":""},"Patsy Cline|||Crazy":{"y":"1961","g":""},"James Brown|||Get Up (I Feel Like Being A) Sex Machine":{"y":"1970","g":""},"Ann Peebles|||I Can't Stand the Rain":{"y":"1973","g":""},"Marvin Gaye|||Sexual Healing":{"y":"1982","g":""},"Aerosmith|||Dream On":{"y":"1973","g":""},"David Bowie|||Changes":{"y":"1971","g":""},"Johnny Cash|||Ring of Fire":{"y":"1963","g":""},"Elton John|||Your Song":{"y":"1970","g":""},"Stevie Wonder|||Signed, Sealed, Delivered I'm Yours":{"y":"1970","g":""},"David Bowie|||Young Americans":{"y":"1975","g":""},"Britney Spears|||...Baby One More Time":{"y":"1998","g":""},"Glen Campbell|||Wichita Lineman":{"y":"1968","g":""},"Rage Against the Machine|||Killing in the Name":{"y":"1992","g":""},"Hole|||Doll Parts":{"y":"1994","g":""},"Don Henley|||Boys of Summer":{"y":"1984","g":""},"Funkadelic|||One Nation Under a Groove":{"y":"1978","g":""},"U2|||With or Without You":{"y":"1987","g":""},"Boston|||More Than a Feeling":{"y":"1976","g":""},"The Rolling Stones|||Paint It, Black":{"y":"1966","g":""},"Steely Dan|||Deacon Blues":{"y":"1977","g":""},"Mobb Deep|||Shook Ones, Pt. II":{"y":"1995","g":""},"Elvis Presley|||Jailhouse Rock":{"y":"1957","g":""},"Stevie Nicks|||Edge of Seventeen":{"y":"1981","g":""},"Wilson Pickett|||In the Midnight Hour":{"y":"1965","g":""},"Tom Petty|||Free Fallin'":{"y":"1989","g":""},"New Order|||Bizarre Love Triangle":{"y":"1986","g":""},"Ike and Tina Turner|||River Deep, Mountain High":{"y":"1966","g":""},"Crosby, Stills, and Nash|||Suite: Judy Blue Eyes":{"y":"1969","g":""},"Eminem feat. Dido|||Stan":{"y":"2000","g":""},"Derek and the Dominos|||Layla":{"y":"1970","g":""},"Joni Mitchell|||Both Sides Now":{"y":"1969","g":""},"The Smiths|||There Is a Light That Never Goes Out":{"y":"1986","g":""},"Creedence Clearwater Revival|||Fortunate Son":{"y":"1969","g":""},"Beyoncé|||Single Ladies (Put a Ring On It)":{"y":"2008","g":""},"Woody Guthrie|||This Land Is Your Land":{"y":"1951","g":""},"The Byrds|||Mr. Tambourine Man":{"y":"1965","g":""},"Whitney Houston|||I Wanna Dance With Somebody (Who Loves Me)":{"y":"1987","g":""},"The Who|||My Generation":{"y":"1965","g":""},"Deee-Lite|||Groove Is in the Heart":{"y":"1990","g":""},"The Supremes|||You Keep Me Hangin' On":{"y":"1966","g":""},"New Order|||Blue Monday":{"y":"1983","g":""},"Bill Withers|||Lean on Me":{"y":"1972","g":""},"Hank Williams|||Your Cheatin' Heart":{"y":"1953","g":""},"Aaliyah|||Are You That Somebody?":{"y":"1998","g":""},"Big Star|||September Gurls":{"y":"1974","g":""},"Backstreet Boys|||I Want It That Way":{"y":"1999","g":""},"Digital Underground|||The Humpty Dance":{"y":"1990","g":""},"Jerry Lee Lewis|||Great Balls of Fire":{"y":"1957","g":""},"The Beatles|||Eleanor Rigby":{"y":"1966","g":""},"Pavement|||Summer Babe (Winter Version)":{"y":"1992","g":""},"Beastie Boys|||Sabotage":{"y":"1994","g":""},"Faces|||Ooh La La":{"y":"1973","g":""},"Joni Mitchell|||River":{"y":"1971","g":""},"N.W.A|||Straight Outta Compton":{"y":"1988","g":""},"Joan Jett|||Bad Reputation":{"y":"1980","g":""},"The Jimi Hendrix Experience|||Purple Haze":{"y":"1967","g":""},"Gloria Gaynor|||I Will Survive":{"y":"1978","g":""},"Parliament|||Flash Light":{"y":"1977","g":""},"Willie Nelson|||Blue Eyes Crying in the Rain":{"y":"1975","g":""},"The Supremes|||Stop! In the Name of Love":{"y":"1965","g":""},"Loretta Lynn|||Coal Miner's Daughter":{"y":"1970","g":""},"Metallica|||Master of Puppets":{"y":"1986","g":""},"Martha Reeves and the Vandellas|||Heat Wave":{"y":"1963","g":""},"Gil-Scott Heron|||The Revolution Will Not Be Televised":{"y":"1971","g":""},"Neil Young|||Heart of Gold":{"y":"1972","g":""},"The Wailers|||Get Up, Stand Up":{"y":"1973","g":""},"Curtis Mayfield|||Pusherman":{"y":"1972","g":""},"Paul Simon|||American Tune":{"y":"1973","g":""},"Dolly Parton|||Coat of Many Colors":{"y":"1971","g":""},"Marvin Gaye|||Let's Get It On":{"y":"1973","g":""},"The Replacements|||Left of the Dial":{"y":"1985","g":""},"Augustus Pablo|||King Tubby Meets the Rockers Uptown":{"y":"1974","g":""},"SZA|||Kill Bill":{"y":"2022","g":""},"The Isley Brothers|||Shout (Parts 1 and 2)":{"y":"1959","g":""},"The Righteous Brothers|||Unchained Melody":{"y":"1965","g":""},"Nine Inch Nails|||Closer":{"y":"1994","g":""},"Procol Harum|||A Whiter Shade of Pale":{"y":"1967","g":""},"Thin Lizzy|||The Boys Are Back in Town":{"y":"1976","g":""},"Roberta Flack|||Killing Me Softly With His Song":{"y":"1973","g":""},"Al Green|||Love and Happiness":{"y":"1972","g":""},"Randy Newman|||Sail Away":{"y":"1972","g":""},"Buzzcocks|||Ever Fallen in Love (With Someone You Shouldn't've)":{"y":"1978","g":""},"Bo Diddley|||Bo Diddley":{"y":"1955","g":""},"Toots and the Maytals|||Pressure Drop":{"y":"1973","g":""},"Radiohead|||Karma Police":{"y":"1997","g":""},"BTS|||Spring Day":{"y":"2017","g":""},"Clipse|||Grindin'":{"y":"2002","g":""},"INXS|||Never Tear Us Apart":{"y":"1988","g":""},"Ray Charles|||Georgia on My Mind":{"y":"1960","g":""},"Leonard Cohen|||Suzanne":{"y":"1967","g":""},"Destiny's Child|||Say My Name":{"y":"1999","g":""},"ABBA|||Dancing Queen":{"y":"1976","g":""},"AC/DC|||You Shook Me All Night Long":{"y":"1980","g":""},"The Funky 4 + 1|||That's the Joint":{"y":"1980","g":""},"Bruce Springsteen|||Atlantic City":{"y":"1982","g":""},"Usher feat. Lil Jon and Ludacris|||Yeah!":{"y":"2004","g":""},"Phil Collins|||In the Air Tonight":{"y":"1981","g":""},"A Tribe Called Quest|||Can I Kick It?":{"y":"1990","g":""},"Alice Cooper|||School's Out":{"y":"1972","g":""},"The Velvet Underground|||Sweet Jane":{"y":"1970","g":""},"The Who|||Won't Get Fooled Again":{"y":"1971","g":""},"Bikini Kill|||Rebel Girl":{"y":"1993","g":""},"Beach Boys|||Wouldn't It Be Nice":{"y":"1966","g":""},"Bruce Springsteen|||Jungleland":{"y":"1975","g":""},"Screamin' Jay Hawkins|||I Put a Spell on You":{"y":"1956","g":""},"The B-52's|||Rock Lobster":{"y":"1978","g":""},"Bob Seger|||Night Moves":{"y":"1976","g":""},"Pink Floyd|||Wish You Were Here":{"y":"1975","g":""},"TLC|||No Scrubs":{"y":"1999","g":""},"Kraftwerk|||Trans-Europe Express":{"y":"1977","g":""},"The Police|||Every Breath You Take":{"y":"1983","g":""},"Aretha Franklin|||Chain of Fools":{"y":"1967","g":""},"Gnarls Barkley|||Crazy":{"y":"2006","g":""},"Liz Phair|||Divorce Song":{"y":"1993","g":""},"Bill Withers|||Ain't No Sunshine":{"y":"1971","g":""},"The Doors|||Light My Fire":{"y":"1967","g":""},"The Eagles|||Hotel California":{"y":"1976","g":""},"Isaac Hayes|||Walk on By":{"y":"1969","g":""},"Smokey Robinson and the Miracles|||The Tears of a Clown":{"y":"1967","g":""},"The Stooges|||I Wanna Be Your Dog":{"y":"1969","g":""},"John Coltrane|||Pt. 1-Acknowledgement":{"y":"1965","g":""},"The Shangri-Las|||Leader of the Pack":{"y":"1964","g":""},"Bob Dylan|||Visions of Johanna":{"y":"1966","g":""},"Big Mama Thornton|||Hound Dog":{"y":"1953","g":""},"Tears for Fears|||Everybody Wants to Rule the World":{"y":"1985","g":""},"Taylor Swift|||Blank Space":{"y":"2014","g":""},"2Pac|||California Love":{"y":"1995","g":""},"U2|||I Still Haven't Found What I'm Looking For":{"y":"1987","g":""},"Neil Young|||After the Gold Rush":{"y":"1970","g":""},"Everly Brothers|||All I Have to Do Is Dream":{"y":"1958","g":""},"Billy Joel|||Scenes From an Italian Restaurant":{"y":"1977","g":""},"Iggy Pop|||Lust for Life":{"y":"1977","g":""},"Rilo Kiley|||Portions for Foxes":{"y":"2004","g":""},"Mary J. Blige|||Real Love":{"y":"1992","g":""},"Red Hot Chili Peppers|||Under the Bridge":{"y":"1991","g":""},"Bad Bunny|||Safaera":{"y":"2020","g":""},"The Notorious B.I.G.|||Big Poppa":{"y":"1994","g":""},"The Marvelettes|||Please Mr. Postman":{"y":"1961","g":""},"Rihanna feat. Jay-Z|||Umbrella":{"y":"2007","g":""},"The Temptations|||Papa Was a Rollin' Stone":{"y":"1972","g":""},"The Grateful Dead|||Ripple":{"y":"1970","g":""},"Marshall Jefferson|||Move Your Body (The House Music Anthem)":{"y":"1986","g":""},"Hall and Oates|||She's Gone":{"y":"1973","g":""},"Cher|||Believe":{"y":"1998","g":""},"Black Sabbath|||Paranoid":{"y":"1970","g":""},"Prince|||1999":{"y":"1982","g":""},"The Clash|||(White Man) in Hammersmith Palais":{"y":"1978","g":""},"The Monkees|||I'm a Believer":{"y":"1966","g":""},"Chuck Berry|||Promised Land":{"y":"1964","g":""},"The Doobie Brothers|||What a Fool Believes":{"y":"1979","g":""},"Black Sabbath|||Iron Man":{"y":"1971","g":""},"Carole King|||It's Too Late":{"y":"1971","g":""},"BTS|||Dynamite":{"y":"2020","g":""},"Elvis Presley|||Heartbreak Hotel":{"y":"1958","g":""},"Roxy Music|||Virginia Plain":{"y":"1972","g":""},"The Zombies|||Time of the Season":{"y":"1968","g":""},"John Prine|||Angel From Montgomery":{"y":"1971","g":""},"Jorge Ben|||Ponta de Lança Africano (Umbabarauma)":{"y":"1976","g":""},"Ice Cube|||It Was a Good Day":{"y":"1992","g":""},"Eurythmics|||Sweet Dreams (Are Made of This)":{"y":"1983","g":""},"Michael Jackson|||Rock With You":{"y":"1979","g":""},"Thelma Houston|||Don't Leave Me This Way":{"y":"1976","g":""},"Cheap Trick|||Surrender":{"y":"1978","g":""},"Patti Smith|||Because the Night":{"y":"1978","g":""},"Fugees|||Killing Me Softly With His Song":{"y":"1996","g":""},"Prince|||Little Red Corvette":{"y":"1982","g":""},"Jimmy Cliff|||The Harder They Come":{"y":"1972","g":""},"Kacey Musgraves|||Merry Go 'Round":{"y":"2013","g":""},"Bob Marley and the Wailers|||Could You Be Loved":{"y":"1980","g":""},"The Grateful Dead|||Box of Rain":{"y":"1970","g":""},"Sex Pistols|||God Save the Queen":{"y":"1977","g":""},"The Crystals|||Da Doo Ron Ron":{"y":"1963","g":""},"Frank Ocean|||Thinkin Bout You":{"y":"2012","g":""},"Soundgarden|||Black Hole Sun":{"y":"1994","g":""},"The Cars|||Just What I Needed":{"y":"1978","g":""},"Buddy Holly|||Peggy Sue":{"y":"1958","g":""},"Elton John|||Bennie and the Jets":{"y":"1973","g":""},"Bonnie Raitt|||I Can't Make You Love Me":{"y":"1991","g":""},"Drake|||Hotline Bling":{"y":"2015","g":""},"William DeVaughn|||Be Thankful for What You Got":{"y":"1974","g":""},"The Drifters|||Up on the Roof":{"y":"1964","g":""},"Merle Haggard|||Mama Tried":{"y":"1968","g":""},"Olivia Rodrigo|||Driver's License":{"y":"2021","g":""},"The Killers|||Mr. Brightside":{"y":"2003","g":""},"D'Angelo|||Untitled (How Does It Feel)":{"y":"2000","g":""},"Fountains of Wayne|||Radiation Vibe":{"y":"1996","g":""},"The Slits|||Typical Girls":{"y":"1979","g":""},"Fiona Apple|||Paper Bag":{"y":"1999","g":""},"Childish Gambino|||Redbone":{"y":"2016","g":""},"Cardi B, J Balvin, and Bad Bunny|||I Like It":{"y":"2018","g":""},"Diana Ross|||I'm Coming Out":{"y":"1980","g":""},"The Kinks|||Lola":{"y":"1970","g":""},"New York Dolls|||Personality Crisis":{"y":"1973","g":""},"DMX|||Party Up (Up in Here)":{"y":"1999","g":""},"Pretenders|||Brass in Pocket":{"y":"1979","g":""},"Metallica|||Enter Sandman":{"y":"1991","g":""},"Eric Church|||Springsteen":{"y":"2011","g":""},"Coldplay|||Fix You":{"y":"2005","g":""},"James Brown|||Say It Loud (I'm Black and I'm Proud)":{"y":"1968","g":""},"Jeff Buckley|||Grace":{"y":"1994","g":""},"Afrika Bambaataa and the Soulsonic Force|||Planet Rock":{"y":"1982","g":""},"Elvis Costello|||Alison":{"y":"1977","g":""},"Public Enemy|||Bring the Noise":{"y":"1987","g":""},"Duran Duran|||Hungry Like the Wolf":{"y":"1982","g":""},"Sylvester|||You Make Me Feel (Mighty Real)":{"y":"1978","g":""},"Taylor Swift|||Cruel Summer":{"y":"2019","g":""},"Fleetwood Mac|||Go Your Own Way":{"y":"1977","g":""},"Eslabon Armado and Peso Pluma|||Ella Baila Sola":{"y":"2023","g":""},"Rufus and Chaka Khan|||Ain't Nobody":{"y":"1983","g":""},"Kiss|||Rock and Roll All Nite":{"y":"1975","g":""},"Selena|||Amor Prohibido":{"y":"1994","g":""},"Run-DMC|||Sucker MC's":{"y":"1984","g":""},"Lynyrd Skynyrd|||Free Bird":{"y":"1973","g":""},"Cat Stevens/Yusuf|||Father and Son":{"y":"1970","g":""},"Foo Fighters|||Everlong":{"y":"1997","g":""},"Allman Brothers Band|||Whipping Post":{"y":"1969","g":""},"Wilco|||Heavy Metal Drummer":{"y":"2002","g":""},"Neneh Cherry|||Buffalo Stance":{"y":"1988","g":""},"Them|||Gloria":{"y":"1965","g":""},"Wizkid feat. Tems|||Essence":{"y":"2021","g":""},"Depeche Mode|||Enjoy the Silence":{"y":"1990","g":""},"Pearl Jam|||Alive":{"y":"1991","g":""},"Mark Ronson feat. Bruno Mars|||Uptown Funk":{"y":"2015","g":""},"Booker T. and the MGs|||Green Onions":{"y":"1962","g":""},"Mariah Carey|||Fantasy":{"y":"1995","g":""},"The Mamas and the Papas|||California Dreamin'":{"y":"1965","g":""},"The Smiths|||How Soon Is Now?":{"y":"1984","g":""},"Craig Mack feat. Notorious B.I.G., LL Cool J, Busta Rhymes, Rampage|||Flava in Ya Ear (Remix)":{"y":"1994","g":""},"Fiona Apple|||Criminal":{"y":"1996","g":""},"Blackstreet feat. Dr. Dre and Queen Pen|||No Diggity":{"y":"1996","g":""},"Muddy Waters|||Mannish Boy":{"y":"1955","g":""},"Nicki Minaj|||Super Bass":{"y":"2010","g":""},"Sugar Hill Gang|||Rapper's Delight":{"y":"1979","g":""},"Beyonce|||Break My Soul":{"y":"2022","g":""},"Queen and David Bowie|||Under Pressure":{"y":"1981","g":""},"Pete Rock and CL Smooth|||They Reminisce Over You":{"y":"1992","g":""},"Prince|||Adore":{"y":"1987","g":""},"Eddie Cochran|||Summertime Blues":{"y":"1958","g":""},"Pet Shop Boys|||West End Girls":{"y":"1984","g":""},"Ramones|||Sheena Is a Punk Rocker":{"y":"1977","g":""},"Rush|||Limelight":{"y":"1981","g":""},"Carly Rae Jepsen|||Call Me Maybe":{"y":"2012","g":""},"Lucinda Williams|||Passionate Kisses":{"y":"1988","g":""},"Megan Thee Stallion feat. Beyoncé|||Savage (Remix)":{"y":"2020","g":""},"Celia Cruz|||La Vida Es un Carnaval":{"y":"1998","g":""},"Alicia Keys|||If I Ain't Got You":{"y":"2003","g":""},"Miranda Lambert|||The House That Built Me":{"y":"2010","g":""},"Motörhead|||Ace of Spades":{"y":"1980","g":""},"Fall Out Boy|||Sugar, We're Goin Down":{"y":"2005","g":""},"50 Cent|||In Da Club":{"y":"2003","g":""},"T. Rex|||Cosmic Dancer":{"y":"1971","g":""},"Bruce Springsteen|||Rosalita (Come Out Tonight)":{"y":"1973","g":""},"The Beatles|||Help!":{"y":"1965","g":""},"Erykah Badu|||Tyrone":{"y":"1997","g":""},"Blue Öyster Cult|||(Don't Fear) The Reaper":{"y":"1976","g":""},"Neil Young|||Powderfinger":{"y":"1979","g":""},"Migos feat. Lil Uzi Vert|||Bad and Boujee":{"y":"2016","g":""},"Toto|||Africa":{"y":"1982","g":""},"Missy Elliot|||The Rain (Supa Dupa Fly)":{"y":"1997","g":""},"Sister Nancy|||Bam Bam":{"y":"1982","g":""},"Jefferson Airplane|||White Rabbit":{"y":"1967","g":""},"Lana Del Rey|||A&W":{"y":"2023","g":""},"Bon Jovi|||Livin' on a Prayer":{"y":"1986","g":""},"Beck|||Loser":{"y":"1993","g":""},"Sade|||No Ordinary Love":{"y":"1992","g":""},"Steel Pulse|||Ku Klux Klan":{"y":"1978","g":""},"Roy Orbison|||Crying":{"y":"1962","g":""},"Van Morrison|||Into the Mystic":{"y":"1970","g":""},"John Lee Hooker|||Boom Boom":{"y":"1962","g":""},"Joni Mitchell|||Help Me":{"y":"1974","g":""},"Daft Punk feat. Pharrell Williams|||Get Lucky":{"y":"2013","g":""},"Luther Vandross|||Never Too Much":{"y":"1981","g":""},"Nirvana|||Come as You Are":{"y":"1991","g":""},"Mazzy Star|||Fade Into You":{"y":"1993","g":""},"Dixie Chicks|||Goodbye Earl":{"y":"2000","g":""},"Gladys Knight and the Pips|||Midnight Train to Georgia":{"y":"1973","g":""},"The Animals|||The House of the Rising Sun":{"y":"1964","g":""},"Peter Gabriel|||Solsbury Hill":{"y":"1977","g":""},"Tammy Wynette|||Stand by Your Man":{"y":"1968","g":""},"Curtis Mayfield|||Move On Up":{"y":"1970","g":""},"Janet Jackson|||Rhythm Nation":{"y":"1989","g":""},"Kris Kristofferson|||Sunday Mornin' Comin' Down":{"y":"1970","g":""},"The Go-Gos|||Our Lips Are Sealed":{"y":"1981","g":""},"Juvenile feat. Lil Wayne and Mannie Fresh|||Back That Azz Up":{"y":"1998","g":""},"Santana|||Oye Como Va":{"y":"1970","g":""},"Biz Markie|||Just a Friend":{"y":"1989","g":""},"Robert Johnson|||Cross Road Blues":{"y":"1937","g":""},"Lady Gaga|||Bad Romance":{"y":"2009","g":""},"The Four Tops|||I Can't Help Myself (Sugar Pie, Honey Bunch)":{"y":"1965","g":""},"Weezer|||Buddy Holly":{"y":"1994","g":""},"Azealia Banks|||212":{"y":"2011","g":""},"Lil Wayne|||A Milli":{"y":"2009","g":""},"Solange|||Cranes in the Sky":{"y":"2016","g":""},"The Weeknd|||House of Balloons":{"y":"2011","g":""},"The Breeders|||Cannonball":{"y":"1993","g":""},"Lil Nas X|||Old Town Road":{"y":"2019","g":""},"Bad Bunny|||Titi Me Pregunto":{"y":"2022","g":""},"Miles Davis|||So What":{"y":"1959","g":""},"Kanye West|||Stronger":{"y":"2007","g":""},"The Pixies|||Where Is My Mind?":{"y":"1988","g":""},"Cyndi Lauper|||Time After Time":{"y":"1983","g":""},"Carly Simon|||You're So Vain":{"y":"1972","g":""},"Harry Nilsson|||Without You":{"y":"1971","g":""},"Lizzo|||Truth Hurts":{"y":"2017","g":""},"Townes Van Zandt|||Pancho and Lefty":{"y":"1972","g":""},"Harry Styles|||As It Was":{"y":"2022","g":""}};
+
+function fetchTO(url, ms){
+  ms = ms || 8000;
+  return Promise.race([
+    fetch(url),
+    new Promise(function(_, reject){ setTimeout(function(){ reject(new Error('timeout')); }, ms); })
+  ]);
+}
+
+
+var SONGS = [[1, "Respect", "Aretha Franklin", 1967], [2, "Fight the Power", "Public Enemy", 1989], [3, "A Change Is Gonna Come", "Sam Cooke", 1964], [4, "Like a Rolling Stone", "Bob Dylan", 1965], [5, "Smells Like Teen Spirit", "Nirvana", 1991], [6, "What's Going On", "Marvin Gaye", 1971], [7, "Strawberry Fields Forever", "The Beatles", 1967], [8, "Get Ur Freak On", "Missy Elliott", 2001], [9, "Dreams", "Fleetwood Mac", 1977], [10, "Hey Ya!", "Outkast", 2003], [11, "God Only Knows", "The Beach Boys", 1966], [12, "Superstition", "Stevie Wonder", 1972], [13, "Gimme Shelter", "The Rolling Stones", 1969], [14, "Waterloo Sunset", "The Kinks", 1967], [15, "I Want to Hold Your Hand", "The Beatles", 1963], [16, "Crazy in Love", "Beyoncé feat. Jay-Z", 2003], [17, "Bohemian Rhapsody", "Queen", 1975], [18, "Purple Rain", "Prince and the Revolution", 1984], [19, "Imagine", "John Lennon", 1971], [20, "Dancing on My Own", "Robyn", 2010], [21, "Strange Fruit", "Billie Holiday", 1939], [22, "Be My Baby", "The Ronettes", 1963], [23, "Heroes", "David Bowie", 1977], [24, "A Day in the Life", "The Beatles", 1967], [25, "Runaway", "Kanye West feat. Pusha T", 2010], [26, "A Case of You", "Joni Mitchell", 1971], [27, "Born to Run", "Bruce Springsteen", 1975], [28, "Once in a Lifetime", "Talking Heads", 1980], [29, "Nuthin' but a 'G' Thang", "Dr. Dre feat. Snoop Doggy Dogg", 1992], [30, "Royals", "Lorde", 2011], [31, "(I Can't Get No) Satisfaction", "The Rolling Stones", 1965], [32, "Juicy", "Notorious B.I.G.", 1994], [33, "Johnny B. Goode", "Chuck Berry", 1958], [34, "Papa's Got a Brand New Bag", "James Brown", 1966], [35, "Tutti-Frutti", "Little Richard", 1955], [36, "Seven Nation Army", "The White Stripes", 2003], [37, "When Doves Cry", "Prince and the Revolution", 1984], [38, "(Sittin' On) the Dock of the Bay", "Otis Redding", 1967], [39, "B.O.B.", "Outkast", 2000], [40, "All Along the Watchtower", "The Jimi Hendrix Experience", 1968], [41, "Love Will Tear Us Apart", "Joy Division", 1980], [42, "Redemption Song", "Bob Marley and the Wailers", 1980], [43, "My Girl", "The Temptations", 1965], [44, "Billie Jean", "Michael Jackson", 1982], [45, "Alright", "Kendrick Lamar", 2015], [46, "Paper Planes", "M.I.A.", 2008], [47, "Tiny Dancer", "Elton John", 1972], [48, "Idioteque", "Radiohead", 2000], [49, "Doo Wop (That Thing)", "Lauryn Hill", 1998], [50, "Gasolina", "Daddy Yankee", 2010], [51, "Walk on By", "Dionne Warwick", 1964], [52, "I Feel Love", "Donna Summer", 1977], [53, "Good Vibrations", "The Beach Boys", 1966], [54, "The Tracks of My Tears", "Smokey Robinson and the Miracles", 1965], [55, "Like a Prayer", "Madonna", 1989], [56, "Work It", "Missy Elliott", 2000], [57, "Family Affair", "Sly and the Family Stone", 1971], [58, "The Weight", "The Band", 1968], [59, "The Message", "Grandmaster Flash and the Furious Five", 1982], [60, "Running Up That Hill", "Kate Bush", 1985], [61, "Stairway to Heaven", "Led Zeppelin", 1971], [62, "One", "U2", 1992], [63, "Jolene", "Dolly Parton", 1974], [64, "Blitzkrieg Bop", "Ramones", 1976], [65, "September", "Earth, Wind, and Fire", 1978], [66, "Bridge Over Troubled Water", "Simon and Garfunkel", 1970], [67, "Tangled Up in Blue", "Bob Dylan", 1975], [68, "Good Times", "Chic", 1979], [69, "All Too Well", "Taylor Swift", 2012], [70, "Suspicious Minds", "Elvis Presley", 1969], [71, "Fast Car", "Tracy Chapman", 1988], [72, "Yesterday", "The Beatles", 1965], [73, "Formation", "Beyoncé", 2016], [74, "Hallelujah", "Leonard Cohen", 1984], [75, "Common People", "Pulp", 1996], [76, "I Walk the Line", "Johnny Cash", 1956], [77, "Roadrunner", "The Modern Lovers", 1976], [78, "Reach Out (I'll Be There)", "The Four Tops", 1967], [79, "Back to Black", "Amy Winehouse", 2006], [80, "What'd I Say", "Ray Charles", 1957], [81, "I'm Waiting for the Man", "The Velvet Underground", 1967], [82, "Rolling in the Deep", "Adele", 2011], [83, "Desolation Row", "Bob Dylan", 1965], [84, "Let's Stay Together", "Al Green", 1971], [85, "Kiss", "Prince", 1986], [86, "Tumbling Dice", "The Rolling Stones", 1972], [87, "All My Friends", "LCD Soundsystem", 2007], [88, "Sweet Child O' Mine", "Guns N' Roses", 1987], [89, "Hey Jude", "The Beatles", 1968], [90, "(You Make Me Feel Like) A Natural Woman", "Aretha Franklin", 1967], [91, "Int'l Players Anthem (I Choose You)", "UGK feat. Outkast", 2007], [92, "Good Golly, Miss Molly", "Little Richard", 1958], [93, "Since U Been Gone", "Kelly Clarkson", 2004], [94, "I Will Always Love You", "Whitney Houston", 1992], [95, "Wonderwall", "Oasis", 1995], [96, "99 Problems", "Jay-Z", 2003], [97, "Gloria", "Patti Smith", 1975], [98, "In My Life", "The Beatles", 1965], [99, "Stayin' Alive", "Bee Gees", 1977], [100, "Blowin' in the Wind", "Bob Dylan", 1963], [101, "Maps", "Yeah Yeah Yeahs", 2003], [102, "Maybelline", "Chuck Berry", 1955], [103, "You Oughta Know", "Alanis Morissette", 1995], [104, "I Want You Back", "The Jackson 5", 1969], [105, "Life on Mars?", "David Bowie", 1971], [106, "Sympathy for the Devil", "The Rolling Stones", 1968], [107, "C.R.E.A.M.", "Wu-Tang Clan", 1994], [108, "Just Like Heaven", "The Cure", 1987], [109, "Everyday People", "Sly and the Family Stone", 1968], [110, "Something", "The Beatles", 1969], [111, "Thunder Road", "Bruce Springsteen", 1975], [112, "Losing My Religion", "R.E.M.", 1991], [113, "Higher Ground", "Stevie Wonder", 1973], [114, "Toxic", "Britney Spears", 2003], [115, "At Last", "Etta James", 1960], [116, "It Takes Two", "Rob Base and DJ E-Z Rock", 1988], [117, "I Say a Little Prayer", "Aretha Franklin", 1968], [118, "Creep", "Radiohead", 1992], [119, "I Heard It Through the Grapevine", "Marvin Gaye", 1968], [120, "Oh Bondage! Up Yours!", "X-Ray Spex", 1977], [121, "Let It Be", "The Beatles", 1970], [122, "People Get Ready", "The Impressions", 1965], [123, "This Must Be the Place (Naive Melody)", "Talking Heads", 1983], [124, "That'll Be the Day", "Buddy Holly", 1957], [125, "Anarchy in the U.K.", "Sex Pistols", 1977], [126, "Freedom! '90", "George Michael", 1990], [127, "Waterfalls", "TLC", 1995], [128, "Whole Lotta Love", "Led Zeppelin", 1969], [129, "Hold On, We're Going Home", "Drake feat. Majid Jordan", 2013], [130, "Dancing in the Street", "Martha and the Vandellas", 1964], [131, "Stand by Me", "Ben E. King", 1961], [132, "Paid in Full", "Eric B. and Rakim", 1987], [133, "Don't Stop Believin'", "Journey", 1981], [134, "What's Love Got to Do With It", "Tina Turner", 1984], [135, "She Loves You", "The Beatles", 1964], [136, "Try a Little Tenderness", "Otis Redding", 1966], [137, "Thank U, Next", "Ariana Grande", 2019], [138, "Heart of Glass", "Blondie", 1979], [139, "Vogue", "Madonna", 1990], [140, "No Woman No Cry", "Bob Marley and the Wailers", 1975], [141, "Maggie May", "Rod Stewart", 1971], [142, "He Stopped Loving Her Today", "George Jones", 1980], [143, "London Calling", "The Clash", 1980], [144, "Jumpin' Jack Flash", "The Rolling Stones", 1968], [145, "Ms. Jackson", "Outkast", 2000], [146, "Fire and Rain", "James Taylor", 1970], [147, "Blueberry Hill", "Fats Domino", 1956], [148, "Kashmir", "Led Zeppelin", 1975], [149, "Rocket Man", "Elton John", 1972], [150, "Basket Case", "Green Day", 1994], [151, "Will You Love Me Tomorrow", "The Shirelles", 1960], [152, "Proud Mary", "Creedence Clearwater Revival", 1969], [153, "Super Freak", "Rick James", 1981], [154, "Spoonful", "Howlin' Wolf", 1960], [155, "Last Nite", "The Strokes", 2001], [156, "Louie Louie", "The Kingsmen", 1963], [157, "Teenage Riot", "Sonic Youth", 1988], [158, "Cissy Strut", "The Meters", 1969], [159, "Baba O'Riley", "The Who", 1971], [160, "Nightswimming", "R.E.M.", 1992], [161, "Into the Groove", "Madonna", 1985], [162, "Pink Moon", "Nick Drake", 1972], [163, "Landslide", "Fleetwood Mac", 1975], [164, "Mr. Tambourine Man", "Bob Dylan", 1965], [165, "I'm So Lonesome I Could Cry", "Hank Williams", 1949], [166, "All the Young Dudes", "Mott the Hoople", 1972], [167, "Lose Yourself", "Eminem", 2002], [168, "Son of a Preacher Man", "Dusty Springfield", 1968], [169, "American Girl", "Tom Petty and the Heartbreakers", 1976], [170, "In the Still of the Night", "The Five Satins", 1956], [171, "What a Wonderful World", "Louis Armstrong", 1967], [172, "Mississippi Goddam", "Nina Simone", 1964], [173, "Marquee Moon", "Television", 1977], [174, "Radio Free Europe", "R.E.M.", 1983], [175, "I Only Have Eyes for You", "The Flamingos", 1959], [176, "You Really Got Me", "The Kinks", 1964], [177, "Jump", "Van Halen", 1983], [178, "Bad Guy", "Billie Eilish", 2019], [179, "Comfortably Numb", "Pink Floyd", 1979], [180, "Walk on the Wild Side", "Lou Reed", 1972], [181, "Eight Miles High", "The Byrds", 1966], [182, "The Sounds of Silence", "Simon and Garfunkel", 1964], [183, "You Are the Sunshine of My Life", "Stevie Wonder", 1972], [184, "Nothing Compares 2 U", "Sinéad O'Connor", 1990], [185, "Beat It", "Michael Jackson", 1982], [186, "I'll Take You There", "The Staple Singers", 1972], [187, "Subterranean Homesick Blues", "Bob Dylan", 1965], [188, "Little Wing", "The Jimi Hendrix Experience", 1967], [189, "Space Oddity", "David Bowie", 1969], [190, "Fuck tha Police", "N.W.A", 1988], [191, "Ode to Billie Joe", "Bobbie Gentry", 1967], [192, "Mind Playing Tricks on Me", "Geto Boys", 1991], [193, "Wild Horses", "The Rolling Stones", 1971], [194, "Rid of Me", "PJ Harvey", 1993], [195, "Crazy", "Patsy Cline", 1961], [196, "Get Up (I Feel Like Being A) Sex Machine", "James Brown", 1970], [197, "I Can't Stand the Rain", "Ann Peebles", 1973], [198, "Sexual Healing", "Marvin Gaye", 1982], [199, "Dream On", "Aerosmith", 1973], [200, "Changes", "David Bowie", 1971], [201, "Ring of Fire", "Johnny Cash", 1963], [202, "Your Song", "Elton John", 1970], [203, "Signed, Sealed, Delivered I'm Yours", "Stevie Wonder", 1970], [204, "Young Americans", "David Bowie", 1975], [205, "...Baby One More Time", "Britney Spears", 1998], [206, "Wichita Lineman", "Glen Campbell", 1968], [207, "Killing in the Name", "Rage Against the Machine", 1992], [208, "Doll Parts", "Hole", 1994], [209, "Boys of Summer", "Don Henley", 1984], [210, "One Nation Under a Groove", "Funkadelic", 1978], [211, "With or Without You", "U2", 1987], [212, "More Than a Feeling", "Boston", 1976], [213, "Paint It, Black", "The Rolling Stones", 1966], [214, "Deacon Blues", "Steely Dan", 1977], [215, "Shook Ones, Pt. II", "Mobb Deep", 1995], [216, "Jailhouse Rock", "Elvis Presley", 1957], [217, "Edge of Seventeen", "Stevie Nicks", 1981], [218, "In the Midnight Hour", "Wilson Pickett", 1965], [219, "Free Fallin'", "Tom Petty", 1989], [220, "Bizarre Love Triangle", "New Order", 1986], [221, "River Deep, Mountain High", "Ike and Tina Turner", 1966], [222, "Suite: Judy Blue Eyes", "Crosby, Stills, and Nash", 1969], [223, "Stan", "Eminem feat. Dido", 2000], [224, "Layla", "Derek and the Dominos", 1970], [225, "Both Sides Now", "Joni Mitchell", 1969], [226, "There Is a Light That Never Goes Out", "The Smiths", 1986], [227, "Fortunate Son", "Creedence Clearwater Revival", 1969], [228, "Single Ladies (Put a Ring On It)", "Beyoncé", 2008], [229, "This Land Is Your Land", "Woody Guthrie", 1951], [230, "Mr. Tambourine Man", "The Byrds", 1965], [231, "I Wanna Dance With Somebody (Who Loves Me)", "Whitney Houston", 1987], [232, "My Generation", "The Who", 1965], [233, "Groove Is in the Heart", "Deee-Lite", 1990], [234, "You Keep Me Hangin' On", "The Supremes", 1966], [235, "Blue Monday", "New Order", 1983], [236, "Lean on Me", "Bill Withers", 1972], [237, "Your Cheatin' Heart", "Hank Williams", 1953], [238, "Are You That Somebody?", "Aaliyah", 1998], [239, "September Gurls", "Big Star", 1974], [240, "I Want It That Way", "Backstreet Boys", 1999], [241, "The Humpty Dance", "Digital Underground", 1990], [242, "Great Balls of Fire", "Jerry Lee Lewis", 1957], [243, "Eleanor Rigby", "The Beatles", 1966], [244, "Summer Babe (Winter Version)", "Pavement", 1992], [245, "Sabotage", "Beastie Boys", 1994], [246, "Ooh La La", "Faces", 1973], [247, "River", "Joni Mitchell", 1971], [248, "Straight Outta Compton", "N.W.A", 1988], [249, "Bad Reputation", "Joan Jett", 1980], [250, "Purple Haze", "The Jimi Hendrix Experience", 1967], [251, "I Will Survive", "Gloria Gaynor", 1978], [252, "Flash Light", "Parliament", 1977], [253, "Blue Eyes Crying in the Rain", "Willie Nelson", 1975], [254, "Stop! In the Name of Love", "The Supremes", 1965], [255, "Coal Miner's Daughter", "Loretta Lynn", 1970], [256, "Master of Puppets", "Metallica", 1986], [257, "Heat Wave", "Martha Reeves and the Vandellas", 1963], [258, "The Revolution Will Not Be Televised", "Gil-Scott Heron", 1971], [259, "Heart of Gold", "Neil Young", 1972], [260, "Get Up, Stand Up", "The Wailers", 1973], [261, "Pusherman", "Curtis Mayfield", 1972], [262, "American Tune", "Paul Simon", 1973], [263, "Coat of Many Colors", "Dolly Parton", 1971], [264, "Let's Get It On", "Marvin Gaye", 1973], [265, "Left of the Dial", "The Replacements", 1985], [266, "King Tubby Meets the Rockers Uptown", "Augustus Pablo", 1974], [267, "Kill Bill", "SZA", 2022], [268, "Shout (Parts 1 and 2)", "The Isley Brothers", 1959], [269, "Unchained Melody", "The Righteous Brothers", 1965], [270, "Closer", "Nine Inch Nails", 1994], [271, "A Whiter Shade of Pale", "Procol Harum", 1967], [272, "The Boys Are Back in Town", "Thin Lizzy", 1976], [273, "Killing Me Softly With His Song", "Roberta Flack", 1973], [274, "Love and Happiness", "Al Green", 1972], [275, "Sail Away", "Randy Newman", 1972], [276, "Ever Fallen in Love (With Someone You Shouldn't've)", "Buzzcocks", 1978], [277, "Bo Diddley", "Bo Diddley", 1955], [278, "Pressure Drop", "Toots and the Maytals", 1973], [279, "Karma Police", "Radiohead", 1997], [280, "Spring Day", "BTS", 2017], [281, "Grindin'", "Clipse", 2002], [282, "Never Tear Us Apart", "INXS", 1988], [283, "Georgia on My Mind", "Ray Charles", 1960], [284, "Suzanne", "Leonard Cohen", 1967], [285, "Say My Name", "Destiny's Child", 1999], [286, "Dancing Queen", "ABBA", 1976], [287, "You Shook Me All Night Long", "AC/DC", 1980], [288, "That's the Joint", "The Funky 4 + 1", 1980], [289, "Atlantic City", "Bruce Springsteen", 1982], [290, "Yeah!", "Usher feat. Lil Jon and Ludacris", 2004], [291, "In the Air Tonight", "Phil Collins", 1981], [292, "Can I Kick It?", "A Tribe Called Quest", 1990], [293, "School's Out", "Alice Cooper", 1972], [294, "Sweet Jane", "The Velvet Underground", 1970], [295, "Won't Get Fooled Again", "The Who", 1971], [296, "Rebel Girl", "Bikini Kill", 1993], [297, "Wouldn't It Be Nice", "Beach Boys", 1966], [298, "Jungleland", "Bruce Springsteen", 1975], [299, "I Put a Spell on You", "Screamin' Jay Hawkins", 1956], [300, "Rock Lobster", "The B-52's", 1978], [301, "Night Moves", "Bob Seger", 1976], [302, "Wish You Were Here", "Pink Floyd", 1975], [303, "No Scrubs", "TLC", 1999], [304, "Trans-Europe Express", "Kraftwerk", 1977], [305, "Every Breath You Take", "The Police", 1983], [306, "Chain of Fools", "Aretha Franklin", 1967], [307, "Crazy", "Gnarls Barkley", 2006], [308, "Divorce Song", "Liz Phair", 1993], [309, "Ain't No Sunshine", "Bill Withers", 1971], [310, "Light My Fire", "The Doors", 1967], [311, "Hotel California", "The Eagles", 1976], [312, "Walk on By", "Isaac Hayes", 1969], [313, "The Tears of a Clown", "Smokey Robinson and the Miracles", 1967], [314, "I Wanna Be Your Dog", "The Stooges", 1969], [315, "Pt. 1-Acknowledgement", "John Coltrane", 1965], [316, "Leader of the Pack", "The Shangri-Las", 1964], [317, "Visions of Johanna", "Bob Dylan", 1966], [318, "Hound Dog", "Big Mama Thornton", 1953], [319, "Everybody Wants to Rule the World", "Tears for Fears", 1985], [320, "Blank Space", "Taylor Swift", 2014], [321, "California Love", "2Pac", 1995], [322, "I Still Haven't Found What I'm Looking For", "U2", 1987], [323, "After the Gold Rush", "Neil Young", 1970], [324, "All I Have to Do Is Dream", "Everly Brothers", 1958], [325, "Scenes From an Italian Restaurant", "Billy Joel", 1977], [326, "Lust for Life", "Iggy Pop", 1977], [327, "Portions for Foxes", "Rilo Kiley", 2004], [328, "Real Love", "Mary J. Blige", 1992], [329, "Under the Bridge", "Red Hot Chili Peppers", 1991], [330, "Safaera", "Bad Bunny", 2020], [331, "Big Poppa", "The Notorious B.I.G.", 1994], [332, "Please Mr. Postman", "The Marvelettes", 1961], [333, "Umbrella", "Rihanna feat. Jay-Z", 2007], [334, "Papa Was a Rollin' Stone", "The Temptations", 1972], [335, "Ripple", "The Grateful Dead", 1970], [336, "Move Your Body (The House Music Anthem)", "Marshall Jefferson", 1986], [337, "She's Gone", "Hall and Oates", 1973], [338, "Believe", "Cher", 1998], [339, "Paranoid", "Black Sabbath", 1970], [340, "1999", "Prince", 1982], [341, "(White Man) in Hammersmith Palais", "The Clash", 1978], [342, "I'm a Believer", "The Monkees", 1966], [343, "Promised Land", "Chuck Berry", 1964], [344, "What a Fool Believes", "The Doobie Brothers", 1979], [345, "Iron Man", "Black Sabbath", 1971], [346, "It's Too Late", "Carole King", 1971], [347, "Dynamite", "BTS", 2020], [348, "Heartbreak Hotel", "Elvis Presley", 1958], [349, "Virginia Plain", "Roxy Music", 1972], [350, "Time of the Season", "The Zombies", 1968], [351, "Angel From Montgomery", "John Prine", 1971], [352, "Ponta de Lança Africano (Umbabarauma)", "Jorge Ben", 1976], [353, "It Was a Good Day", "Ice Cube", 1992], [354, "Sweet Dreams (Are Made of This)", "Eurythmics", 1983], [355, "Rock With You", "Michael Jackson", 1979], [356, "Don't Leave Me This Way", "Thelma Houston", 1976], [357, "Surrender", "Cheap Trick", 1978], [358, "Because the Night", "Patti Smith", 1978], [359, "Killing Me Softly With His Song", "Fugees", 1996], [360, "Little Red Corvette", "Prince", 1982], [361, "The Harder They Come", "Jimmy Cliff", 1972], [362, "Merry Go 'Round", "Kacey Musgraves", 2013], [363, "Could You Be Loved", "Bob Marley and the Wailers", 1980], [364, "Box of Rain", "The Grateful Dead", 1970], [365, "God Save the Queen", "Sex Pistols", 1977], [366, "Da Doo Ron Ron", "The Crystals", 1963], [367, "Thinkin Bout You", "Frank Ocean", 2012], [368, "Black Hole Sun", "Soundgarden", 1994], [369, "Just What I Needed", "The Cars", 1978], [370, "Peggy Sue", "Buddy Holly", 1958], [371, "Bennie and the Jets", "Elton John", 1973], [372, "I Can't Make You Love Me", "Bonnie Raitt", 1991], [373, "Hotline Bling", "Drake", 2015], [374, "Be Thankful for What You Got", "William DeVaughn", 1974], [375, "Up on the Roof", "The Drifters", 1964], [376, "Mama Tried", "Merle Haggard", 1968], [377, "Driver's License", "Olivia Rodrigo", 2021], [378, "Mr. Brightside", "The Killers", 2003], [379, "Untitled (How Does It Feel)", "D'Angelo", 2000], [380, "Radiation Vibe", "Fountains of Wayne", 1996], [381, "Typical Girls", "The Slits", 1979], [382, "Paper Bag", "Fiona Apple", 1999], [383, "Redbone", "Childish Gambino", 2016], [384, "I Like It", "Cardi B, J Balvin, and Bad Bunny", 2018], [385, "I'm Coming Out", "Diana Ross", 1980], [386, "Lola", "The Kinks", 1970], [387, "Personality Crisis", "New York Dolls", 1973], [388, "Party Up (Up in Here)", "DMX", 1999], [389, "Brass in Pocket", "Pretenders", 1979], [390, "Enter Sandman", "Metallica", 1991], [391, "Springsteen", "Eric Church", 2011], [392, "Fix You", "Coldplay", 2005], [393, "Say It Loud (I'm Black and I'm Proud)", "James Brown", 1968], [394, "Grace", "Jeff Buckley", 1994], [395, "Planet Rock", "Afrika Bambaataa and the Soulsonic Force", 1982], [396, "Alison", "Elvis Costello", 1977], [397, "Bring the Noise", "Public Enemy", 1987], [398, "Hungry Like the Wolf", "Duran Duran", 1982], [399, "You Make Me Feel (Mighty Real)", "Sylvester", 1978], [400, "Cruel Summer", "Taylor Swift", 2019], [401, "Go Your Own Way", "Fleetwood Mac", 1977], [402, "Ella Baila Sola", "Eslabon Armado and Peso Pluma", 2023], [403, "Ain't Nobody", "Rufus and Chaka Khan", 1983], [404, "Rock and Roll All Nite", "Kiss", 1975], [405, "Amor Prohibido", "Selena", 1994], [406, "Sucker MC's", "Run-DMC", 1984], [407, "Free Bird", "Lynyrd Skynyrd", 1973], [408, "Father and Son", "Cat Stevens/Yusuf", 1970], [409, "Everlong", "Foo Fighters", 1997], [410, "Whipping Post", "Allman Brothers Band", 1969], [411, "Heavy Metal Drummer", "Wilco", 2002], [412, "Buffalo Stance", "Neneh Cherry", 1988], [413, "Gloria", "Them", 1965], [414, "Essence", "Wizkid feat. Tems", 2021], [415, "Enjoy the Silence", "Depeche Mode", 1990], [416, "Alive", "Pearl Jam", 1991], [417, "Uptown Funk", "Mark Ronson feat. Bruno Mars", 2015], [418, "Green Onions", "Booker T. and the MGs", 1962], [419, "Fantasy", "Mariah Carey", 1995], [420, "California Dreamin'", "The Mamas and the Papas", 1965], [421, "How Soon Is Now?", "The Smiths", 1984], [422, "Flava in Ya Ear (Remix)", "Craig Mack feat. Notorious B.I.G., LL Cool J, Busta Rhymes, Rampage", 1994], [423, "Criminal", "Fiona Apple", 1996], [424, "No Diggity", "Blackstreet feat. Dr. Dre and Queen Pen", 1996], [425, "Mannish Boy", "Muddy Waters", 1955], [426, "Super Bass", "Nicki Minaj", 2010], [427, "Rapper's Delight", "Sugar Hill Gang", 1979], [428, "Break My Soul", "Beyonce", 2022], [429, "Under Pressure", "Queen and David Bowie", 1981], [430, "They Reminisce Over You", "Pete Rock and CL Smooth", 1992], [431, "Adore", "Prince", 1987], [432, "Summertime Blues", "Eddie Cochran", 1958], [433, "West End Girls", "Pet Shop Boys", 1984], [434, "Sheena Is a Punk Rocker", "Ramones", 1977], [435, "Limelight", "Rush", 1981], [436, "Call Me Maybe", "Carly Rae Jepsen", 2012], [437, "Passionate Kisses", "Lucinda Williams", 1988], [438, "Savage (Remix)", "Megan Thee Stallion feat. Beyoncé", 2020], [439, "La Vida Es un Carnaval", "Celia Cruz", 1998], [440, "If I Ain't Got You", "Alicia Keys", 2003], [441, "The House That Built Me", "Miranda Lambert", 2010], [442, "Ace of Spades", "Motörhead", 1980], [443, "Sugar, We're Goin Down", "Fall Out Boy", 2005], [444, "In Da Club", "50 Cent", 2003], [445, "Cosmic Dancer", "T. Rex", 1971], [446, "Rosalita (Come Out Tonight)", "Bruce Springsteen", 1973], [447, "Help!", "The Beatles", 1965], [448, "Tyrone", "Erykah Badu", 1997], [449, "(Don't Fear) The Reaper", "Blue Öyster Cult", 1976], [450, "Powderfinger", "Neil Young", 1979], [451, "Bad and Boujee", "Migos feat. Lil Uzi Vert", 2016], [452, "Africa", "Toto", 1982], [453, "The Rain (Supa Dupa Fly)", "Missy Elliot", 1997], [454, "Bam Bam", "Sister Nancy", 1982], [455, "White Rabbit", "Jefferson Airplane", 1967], [456, "A&W", "Lana Del Rey", 2023], [457, "Livin' on a Prayer", "Bon Jovi", 1986], [458, "Loser", "Beck", 1993], [459, "No Ordinary Love", "Sade", 1992], [460, "Ku Klux Klan", "Steel Pulse", 1978], [461, "Crying", "Roy Orbison", 1962], [462, "Into the Mystic", "Van Morrison", 1970], [463, "Boom Boom", "John Lee Hooker", 1962], [464, "Help Me", "Joni Mitchell", 1974], [465, "Get Lucky", "Daft Punk feat. Pharrell Williams", 2013], [466, "Never Too Much", "Luther Vandross", 1981], [467, "Come as You Are", "Nirvana", 1991], [468, "Fade Into You", "Mazzy Star", 1993], [469, "Goodbye Earl", "Dixie Chicks", 2000], [470, "Midnight Train to Georgia", "Gladys Knight and the Pips", 1973], [471, "The House of the Rising Sun", "The Animals", 1964], [472, "Solsbury Hill", "Peter Gabriel", 1977], [473, "Stand by Your Man", "Tammy Wynette", 1968], [474, "Move On Up", "Curtis Mayfield", 1970], [475, "Rhythm Nation", "Janet Jackson", 1989], [476, "Sunday Mornin' Comin' Down", "Kris Kristofferson", 1970], [477, "Our Lips Are Sealed", "The Go-Gos", 1981], [478, "Back That Azz Up", "Juvenile feat. Lil Wayne and Mannie Fresh", 1998], [479, "Oye Como Va", "Santana", 1970], [480, "Just a Friend", "Biz Markie", 1989], [481, "Cross Road Blues", "Robert Johnson", 1937], [482, "Bad Romance", "Lady Gaga", 2009], [483, "I Can't Help Myself (Sugar Pie, Honey Bunch)", "The Four Tops", 1965], [484, "Buddy Holly", "Weezer", 1994], [485, "212", "Azealia Banks", 2011], [486, "A Milli", "Lil Wayne", 2009], [487, "Cranes in the Sky", "Solange", 2016], [488, "House of Balloons", "The Weeknd", 2011], [489, "Cannonball", "The Breeders", 1993], [490, "Old Town Road", "Lil Nas X", 2019], [491, "Titi Me Pregunto", "Bad Bunny", 2022], [492, "So What", "Miles Davis", 1959], [493, "Stronger", "Kanye West", 2007], [494, "Where Is My Mind?", "The Pixies", 1988], [495, "Time After Time", "Cyndi Lauper", 1983], [496, "You're So Vain", "Carly Simon", 1972], [497, "Without You", "Harry Nilsson", 1971], [498, "Truth Hurts", "Lizzo", 2017], [499, "Pancho and Lefty", "Townes Van Zandt", 1972], [500, "As It Was", "Harry Styles", 2022]];
+
+var FEAT = [["fc-1", "Aretha Franklin", "Respect"], ["fc-2", "Public Enemy", "Fight the Power"], ["fc-3", "Sam Cooke", "A Change Is Gonna Come"], ["fc-4", "Bob Dylan", "Like a Rolling Stone"], ["fc-5", "Nirvana", "Smells Like Teen Spirit"], ["fc-6", "Marvin Gaye", "What's Going On"], ["fc-7", "The Beatles", "Strawberry Fields Forever"], ["fc-8", "Missy Elliott", "Get Ur Freak On"], ["fc-9", "Fleetwood Mac", "Dreams"], ["fc-10", "Outkast", "Hey Ya!"]];
+
+var LIST_TYPE="canciones";
+var LFM_KEY  = "b25b959554ed76058ac220b7b2e0a026";
+var LFM_USER = "lartzrodriguez";
+
+function setImg(el, url) {
+  el.src = url; el.style.opacity = "1";
+  el.onerror = function() { el.style.opacity = "0.07"; el.onerror = null; };
+}
+function loadArt(el, artist, track) {
+  fetchTO("https://itunes.apple.com/search?term=" + encodeURIComponent(track + " " + artist) + "&media=music&entity=song&limit=5&country=us")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var results = d.results || [];
+      var a = artist.toLowerCase().replace(/[^a-z0-9]/g," ").trim().split(" ")[0];
+      var match = null;
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].artistName && results[i].artistName.toLowerCase().indexOf(a) >= 0) { match = results[i]; break; }
+      }
+      if (!match && results.length) match = results[0];
+      if (match && match.artworkUrl100) setImg(el, match.artworkUrl100.replace("100x100bb","600x600bb"));
+      if(match){
+        var rowG=el.closest?el.closest(".track-row"):null;
+        if(rowG&&match.primaryGenreName){
+          var genElG=rowG.querySelector(".track-genre");
+          if(genElG&&genElG.classList.contains("loading")){
+            genElG.textContent=match.primaryGenreName;
+            genElG.classList.remove("loading");
+          }
+        }
+      }
+      else throw new Error("no artwork");
+    })
+    .catch(function() {
+      fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&autocorrect=1&format=json")
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var imgs = (d && d.track && d.track.album && d.track.album.image) ? d.track.album.image : [];
+          var best = null;
+          for (var i = 0; i < imgs.length; i++) { if (imgs[i].size === "extralarge") { best = imgs[i]; break; } }
+          if (!best) for (var j = 0; j < imgs.length; j++) { if (imgs[j].size === "large") { best = imgs[j]; break; } }
+          var u = best ? best["#text"] : "";
+          if (u && u.length > 10 && u.indexOf("2a96cbd8b46e442fc41c2b86b821562f") < 0) setImg(el, u);
+        }).catch(function() {});
+    });
+}
+loadArt(document.getElementById("hero-cover"), "Lady Gaga", "Abracadabra");
+FEAT.forEach(function(fc, i) {
+  setTimeout(function() { var el = document.getElementById(fc[0]); if (el) loadArt(el, fc[1], fc[2]); }, i * 300);
+});
+var container = document.getElementById("tracklist");
+var frag = document.createDocumentFragment();
+SONGS.forEach(function(item) {
+  var num = item[0], title = item[1], artist = item[2], year = item[3];
+  var row = document.createElement("div");
+  row.className = "track-row";
+  row.innerHTML =
+    "<div class=\"track-num\">" + num + "</div>" +
+    "<img class=\"track-cover\" data-artist=\"" + encodeURIComponent(artist) + "\" data-album=\"" + encodeURIComponent(title) + "\" src=\"\" style=\"opacity:0\" alt=\"" + title.replace(/"/g,"&quot;") + "\">" +
+    "<div style=\"min-width:0\"><div class=\"track-name\">" + title + "</div><div class=\"track-artist\">" + artist + "</div></div>" +
+    "<div class=\"track-year\">" + year + "</div>" +
+    "<div class=\"track-genre loading track-extra-trigger\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-title=\"" + encodeURIComponent(title) + "\">&#8212;</div>" + 
+    "<div class=\"track-listeners loading\">&#8212;</div>" + 
+    "<div class=\"track-playcount loading\">&#8212;</div>" + 
+    "<div class=\"track-scrobbles loading\" data-lfm-artist=\"" + encodeURIComponent(artist) + "\" data-lfm-album=\"" + encodeURIComponent(title) + "\">—</div>";
+  frag.appendChild(row);
+});
+container.appendChild(frag);
+  if(typeof extraObs!=="undefined"&&typeof observeExtras==="function") observeExtras();
+var artQ = [], artTimer = null;
+function flushArt() {
+  var batch = artQ.splice(0, 8);
+  for (var i = 0; i < batch.length; i++) { loadArt(batch[i], decodeURIComponent(batch[i].dataset.artist), decodeURIComponent(batch[i].dataset.album)); }
+  if (artQ.length > 0) artTimer = setTimeout(flushArt, 500);
+}
+var artObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; artObs.unobserve(entries[i].target); artQ.push(entries[i].target); }
+  clearTimeout(artTimer); artTimer = setTimeout(flushArt, 80);
+}, { rootMargin: "800px" });
+var covers = document.querySelectorAll(".track-cover");
+for (var i = 0; i < covers.length; i++) artObs.observe(covers[i]);
+var lfmCache = {}, lfmQ = [], lfmBusy = false;
+function processLfmQ() {
+  if (lfmBusy || lfmQ.length === 0) return;
+  lfmBusy = true;
+  var el = lfmQ.shift();
+  var artist = decodeURIComponent(el.dataset.lfmArtist || "");
+  var track  = decodeURIComponent(el.dataset.lfmAlbum  || "");
+  var key = artist + "|||" + track;
+  if (lfmCache[key] !== undefined) { renderScrobble(el, lfmCache[key]); lfmBusy = false; setTimeout(processLfmQ, 30); return; }
+  fetchTO("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + LFM_KEY + "&artist=" + encodeURIComponent(artist) + "&track=" + encodeURIComponent(track) + "&username=" + LFM_USER + "&autocorrect=1&format=json")
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var count = parseInt((d && d.track && d.track.userplaycount) || 0, 10);
+      lfmCache[key] = count; renderScrobble(el, count);
+    })
+    .catch(function() { el.textContent = "—"; el.classList.remove("loading"); })
+    .finally(function() { lfmBusy = false; setTimeout(processLfmQ, 200); });
+}
+function renderScrobble(el, count) {
+  el.classList.remove("loading");
+  el.textContent = count > 0 ? count.toLocaleString() : "0";
+  if (!count) el.classList.add("zero");
+}
+var lfmObs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) { if (!entries[i].isIntersecting) continue; lfmObs.unobserve(entries[i].target); lfmQ.push(entries[i].target); processLfmQ(); }
+}, { rootMargin: "400px" });
+var scrobbles = document.querySelectorAll(".track-scrobbles");
+for (var i = 0; i < scrobbles.length; i++) lfmObs.observe(scrobbles[i]);
+
+
+// ── Last.fm: genre, listeners, playcount, album ───────────────────────────
+var extraQ=[], extraBusy=false;
+function processExtra(){
+  if(extraBusy||!extraQ.length) return;
+  extraBusy=true;
+  var el=extraQ.shift();
+  var artist=decodeURIComponent(el.dataset.lfmArtist||'');
+  var title=decodeURIComponent(el.dataset.lfmTitle||'');
+  var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+  var method=isAlb?'album.getinfo':'track.getinfo';
+  var param=isAlb?'&album=':'&track=';
+  fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+
+        '&api_key='+LFM_KEY+
+        '&artist='+encodeURIComponent(artist)+
+        param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var obj=d.track||d.album; if(!obj) return;
+      var row=el.closest('.track-row'); if(!row) return;
+      /* año automático deshabilitado: wiki.published es fecha del artículo, no del álbum */
+
+      // Listeners
+      var lsEl=row.querySelector('.track-listeners');
+      if(lsEl&&obj.listeners){
+        var ls=parseInt(obj.listeners);
+        lsEl.textContent=ls>=1000000?(ls/1000000).toFixed(1)+'M':ls>=1000?(ls/1000).toFixed(0)+'K':ls;
+        lsEl.classList.remove('loading');
+      }
+      // Playcount
+      var pcEl=row.querySelector('.track-playcount');
+      if(pcEl&&obj.playcount){
+        var pc=parseInt(obj.playcount);
+        pcEl.textContent=pc>=1000000?(pc/1000000).toFixed(1)+'M':pc>=1000?(pc/1000).toFixed(0)+'K':pc;
+        pcEl.classList.remove('loading');
+      }
+      // Album title (canciones)
+      if(!isAlb&&obj.album&&obj.album.title){
+        var albEl=row.querySelector('.track-album');
+        if(albEl) albEl.textContent=obj.album.title;
+      }
+      // Año real — MusicBrainz release-group first-release-date (fecha original, no reedición)
+      var yrEl=row.querySelector('.track-year');
+      if(yrEl && (!yrEl.textContent || yrEl.textContent==='\u2014' || yrEl.textContent==='' || /^\d0s$/i.test(yrEl.textContent))){
+        mbYearQueue.push({el:yrEl, artist:artist, title:title});
+        processMbYear();
+      }
+
+      // Genre — mirar primero datos horneados, luego getTopTags si falta
+      var genEl=row.querySelector('.track-genre');
+      if(genEl&&genEl.classList.contains('loading')){
+        var bakedKey=artist+'|||'+title;
+        var baked=(typeof BAKED_DATA!=='undefined')?BAKED_DATA[bakedKey]:null;
+        if(baked&&baked.g){
+          genEl.textContent=baked.g;
+          genEl.classList.remove('loading');
+        } else {
+        var topMethod=isAlb?'album.gettoptags':'track.gettoptags';
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+topMethod+
+              '&api_key='+LFM_KEY+
+              '&artist='+encodeURIComponent(artist)+
+              param+encodeURIComponent(title)+'&autocorrect=1&format=json')
+          .then(function(r2){return r2.json();})
+          .then(function(td){
+            var tt=td&&td.toptags&&td.toptags.tag;
+            if(!tt) return;
+            if(!Array.isArray(tt)) tt=[tt];
+            var skipT=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            var validT=tt.filter(function(t){return t.name&&skipT.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+            if(validT.length&&genEl.classList.contains('loading')){
+              genEl.textContent=validT[0].name.charAt(0).toUpperCase()+validT[0].name.slice(1);
+              genEl.classList.remove('loading');
+            }
+          })
+          .catch(function(){});
+        }
+      }
+    })
+    .catch(function(){})
+    .finally(function(){extraBusy=false;setTimeout(processExtra,280);});
+}
+
+// ── MusicBrainz: año real de lanzamiento (first-release-date) ─────────────
+var mbYearQueue=[], mbYearBusy=false, mbYearLastCall=0;
+function processMbYear(){
+  if(mbYearBusy||!mbYearQueue.length) return;
+  var now=Date.now();
+  var since=now-mbYearLastCall;
+  var wait=since<1100?1100-since:0;
+  mbYearBusy=true;
+  setTimeout(function(){
+    mbYearLastCall=Date.now();
+    var item=mbYearQueue.shift();
+    var q='artist:"'+item.artist.replace(/"/g,'')+'" AND release:"'+item.title.replace(/"/g,'')+'"';
+    fetchTO('https://musicbrainz.org/ws/2/release-group/?query='+encodeURIComponent(q)+'&fmt=json&limit=1', 9000)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var rg=d&&d['release-groups']&&d['release-groups'][0];
+        if(rg&&rg['first-release-date']){
+          var yr=rg['first-release-date'].substring(0,4);
+          if(/^(19|20)\d{2}$/.test(yr)&&item.el.classList.contains('loading')||( /^(19|20)\d{2}$/.test(yr)&&(!item.el.textContent||item.el.textContent==='\u2014'||item.el.textContent===''||/^\d0s$/i.test(item.el.textContent)))){
+            item.el.textContent=yr;
+            item.el.classList.remove('loading');
+          }
+        }
+      })
+      .catch(function(){})
+      .finally(function(){mbYearBusy=false;processMbYear();});
+  }, wait);
+}
+
+var extraObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    extraObs.unobserve(e.target);
+    extraQ.push(e.target);
+    processExtra();
+  });
+},{rootMargin:'600px'});
+function observeExtras(){
+  document.querySelectorAll('.track-extra-trigger').forEach(function(g){
+    if(!g.dataset.obs){g.dataset.obs='1';extraObs.observe(g);}
+  });
+}
+setTimeout(observeExtras, 200);
+
+// feat pills: género desde Last.fm para items sin genre
+function loadFeatTags(){
+  document.querySelectorAll('.feat-item').forEach(function(item,idx){
+    var titleEl=item.querySelector('.feat-title');
+    var artistEl=item.querySelector('.feat-artist');
+    var metaEl=item.querySelector('.feat-meta');
+    if(!titleEl||!artistEl||!metaEl) return;
+    var pills=metaEl.querySelectorAll('.feat-pill');
+    if(pills.length>1) return;
+    var artist=artistEl.textContent.trim();
+    var title=titleEl.textContent.trim();
+    var isAlb=(typeof LIST_TYPE!=='undefined')&&LIST_TYPE==='albumes';
+    var method=isAlb?'album.getinfo':'track.getinfo';
+    var param=isAlb?'&album=':'&track=';
+    (function(m,a,ti){
+      setTimeout(function(){
+        fetchTO('https://ws.audioscrobbler.com/2.0/?method='+method+'&api_key='+LFM_KEY+'&artist='+encodeURIComponent(a)+param+encodeURIComponent(ti)+'&autocorrect=1&format=json')
+          .then(function(r){return r.json()}).then(function(d){
+          var rowC=el.closest?el.closest(".track-row"):null;
+          if(rowC&&d.track&&d.track.toptags&&d.track.toptags.tag){
+            var genElC=rowC.querySelector(".track-genre");
+            if(genElC&&genElC.classList.contains("loading")){
+              var tagsC=d.track.toptags.tag;
+              if(!Array.isArray(tagsC)) tagsC=[tagsC];
+              var skipC=['seen live','favorites','favourite','love','awesome','great','good','music'];
+              var validC=tagsC.filter(function(t){return t.name&&skipC.indexOf(t.name.toLowerCase())<0&&!/^(19|20)\d{2}$/.test(t.name)&&!/^\d0s$/i.test(t.name)&&t.name.length<=25&&t.name.trim().split(/\s+/).length<=3;});
+              if(validC.length){genElC.textContent=validC[0].name.charAt(0).toUpperCase()+validC[0].name.slice(1);genElC.classList.remove("loading");}
+            }
+          }
+            var obj=d.track||d.album; if(!obj) return;
+            var skip=['seen live','favorites','favourite','love','awesome','great','good','music'];
+            if(obj.toptags&&obj.toptags.tag){
+              var tags=obj.toptags.tag;
+              if(!Array.isArray(tags)) tags=[tags];
+              var valid=tags.filter(function(t){return t.name&&skip.indexOf(t.name.toLowerCase())<0;});
+              valid.slice(0,2).forEach(function(t){
+                var pill=document.createElement('span');
+                pill.className='feat-pill';
+                pill.textContent=t.name.charAt(0).toUpperCase()+t.name.slice(1);
+                m.appendChild(pill);
+              });
+            }
+          }).catch(function(){});
+      },idx*300);
+    })(metaEl,artist,title);
+  });
+}
+setTimeout(loadFeatTags,800);
+
+</script>
+<script src="senal-topbar.js"></script>
+<script src="senal-search.js"></script>
+</body>
+</html>
