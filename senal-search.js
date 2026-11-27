@@ -15,7 +15,7 @@
   function load() {
     if (DATA) return Promise.resolve(DATA);
     if (LOADING) return LOADING;
-    LOADING = fetch('search-index.json').then(function (r) { return r.json(); }).then(function (d) {
+    LOADING = fetch('search-index.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
       d.i.forEach(function (it) { it.n = norm(it[0] + ' ' + it[1]); it.na = norm(it[0]); it.nt = norm(it[1]); });
       d.f.forEach(function (f) { f.n = norm(f[1] + ' ' + f[2] + ' ' + f[5]); });
       var map = {};
