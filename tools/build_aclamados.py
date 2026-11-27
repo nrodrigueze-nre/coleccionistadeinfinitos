@@ -66,6 +66,57 @@ def read_html_rows(h):
         rows.append((_h.unescape(r.group(2)).strip(), _h.unescape(r.group(1)).strip(), int(r.group(3)) if r.group(3) else None))
     return rows
 
+# ── Artistas acreditados (colaboraciones) ─────────────────────────────────────
+# "Zayn & Taylor Swift" cuenta para Zayn y para Taylor Swift.  Reglas:
+#  · marcadores explícitos (feat., ft., with, vs.) separan siempre: primer artista + invitados;
+#    los invitados se parten también por & , and.
+#  · separadores ambiguos (& , / + and x) separan solo si al menos una parte aparece como artista único
+#    en alguna lista ("y" exige que todas lo sean);
+#  · nunca se parten bandas del tipo "X and the Y" / "X & His Y" ni las de NEVER_SPLIT.
+SEP_STRONG = re.compile(r'\s+(?:feat\.?|featuring|ft\.?|with|vs\.?)\s+', re.I)
+SEP_WEAK = re.compile(r'\s*(?:,|;|/|&|\band\b)\s*|\s+[xX]\s+', re.I)
+SEP_Y = re.compile(r'\s+y\s+')
+BANDISH = re.compile(r'^(?:the|his|her|its|su|sus|los|las|el|la)\b', re.I)
+NEVER_SPLIT = {'earthwindandfire', 'crosbystillsandnash', 'crosbystillsnashandyoung', 'hallandoates', 'simonandgarfunkel',
+               'teganandsara', 'zionandlennox', 'wisinandyandel', 'wisinyandel', 'danshay', 'mars', 'mandsprestheigirlnextdoor'}
+_SEP_ANY = re.compile(r'\s+(?:feat\.?|featuring|ft\.?|with|vs\.?)\s+|,|;|/|&|\band\b|\s+[xX]\s+|\s+y\s+', re.I)
+
+def known_artists(all_artist_strings):
+    """Conjunto (normalizado) de nombres que aparecen como artista único (sin separadores) en alguna lista."""
+    return {norm(a) for a in all_artist_strings if a and not _SEP_ANY.search(a)}
+
+def _weak(part, known):
+    part = part.strip()
+    if norm(part) in NEVER_SPLIT: return [part]
+    sub = [x.strip() for x in SEP_WEAK.split(part) if x.strip()]
+    if len(sub) > 1:
+        if any(len(norm(x)) <= 1 for x in sub) or any(BANDISH.match(x) for x in sub[1:]): return [part]
+        if any(norm(x) in known for x in sub): return sub
+        return [part]
+    sub = [x.strip() for x in SEP_Y.split(part) if x.strip()]
+    if len(sub) > 1 and all(norm(x) in known for x in sub): return sub
+    return [part]
+
+def credited(artist, known):
+    """Lista de artistas acreditados (únicos, en orden) para un campo de artista."""
+    artist = (artist or '').strip()
+    if not artist: return []
+    parts = SEP_STRONG.split(artist)
+    out = []
+    for i, part in enumerate(parts):
+        part = part.strip()
+        if not part: continue
+        if i == 0: out += _weak(part, known)
+        else:
+            sub = [x.strip() for x in SEP_WEAK.split(part) if x.strip()] if norm(part) not in NEVER_SPLIT else [part]
+            out += sub if len(sub) > 1 and not any(BANDISH.match(x) for x in sub[1:]) else [part]
+    seen, res = set(), []
+    for x in out:
+        k = norm(x)
+        if k and k not in seen:
+            seen.add(k); res.append(x)
+    return res
+
 def dedupe(rows):
     seen, out = set(), []
     for r in rows:
@@ -106,6 +157,7 @@ def main():
     disp = {}
     variants = collections.defaultdict(collections.Counter)
     counted, skipped = [], []
+    loaded = []
     for f in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
         name = os.path.basename(f)
         if name in SKIP_FILES:
@@ -113,14 +165,19 @@ def main():
         res = read_list(f)
         if not res or not res[1]:
             skipped.append(name); continue
-        typ, rows = res
+        loaded.append((name, res[0], res[1]))
+    known = known_artists([r[0] for _n, _t, rows in loaded for r in rows])
+    for name, typ, rows in loaded:
         counted.append(name)
         for artist, title, _year in rows:
-            artist = primary_artist(artist)
-            ka = norm(artist)
-            if not ka or ka in NOT_ARTISTS:
+            cr = [c for c in credited(artist, known) if norm(c) and norm(c) not in NOT_ARTISTS]
+            if not cr:
                 continue
-            art[ka].add(name); variants[('a', ka)][artist] += 1
+            for c in cr:                      # cada artista acreditado suma una vez por lista
+                kc = norm(c)
+                art[kc].add(name); variants[('a', kc)][c] += 1
+            artist = cr[0]                     # la canción/álbum se identifica con el artista principal
+            ka = norm(artist)
             kt = (ka, norm(title))
             (alb if typ == 'albumes' else sng)[kt].add(name)
             variants[('t', kt)][(title, artist)] += 1

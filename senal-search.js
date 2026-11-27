@@ -20,9 +20,12 @@
       d.f.forEach(function (f) { f.n = norm(f[1] + ' ' + f[2] + ' ' + f[5]); });
       var map = {};
       d.i.forEach(function (it, idx) {
-        var m = map[it.na] || (map[it.na] = { name: it[0], items: [], lists: {} });
-        m.items.push(idx);
-        it[3].forEach(function (p) { m.lists[p[0]] = 1; });
+        (it[4] || [it[0]]).forEach(function (nm) {
+          var kk = norm(nm); if (!kk) return;
+          var m = map[kk] || (map[kk] = { name: nm, items: [], lists: {} });
+          m.items.push(idx);
+          it[3].forEach(function (p) { m.lists[p[0]] = 1; });
+        });
       });
       ART = Object.keys(map).map(function (k) { var m = map[k]; m.key = k; m.nl = Object.keys(m.lists).length; return m; })
         .sort(function (a, b) { return b.nl - a.nl; });

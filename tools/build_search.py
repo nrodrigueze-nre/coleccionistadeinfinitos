@@ -24,6 +24,12 @@ def lists_meta():
 def main():
     meta = lists_meta()
     items = {}
+    loaded = []
+    for mt in meta:
+        pp = os.path.join(B.ROOT, mt[0])
+        r0 = B.read_list(pp) if os.path.exists(pp) else None
+        loaded.append(r0 if r0 and r0[1] else None)
+    known = B.known_artists([r[0] for r0 in loaded if r0 for r in r0[1]])
     for fi, mt in enumerate(meta):
         p = os.path.join(B.ROOT, mt[0])
         if not os.path.exists(p): continue
@@ -35,6 +41,9 @@ def main():
             k = (B.norm(artist), B.norm(title), 1 if typ == 'albumes' else 0)
             if not k[0] and not k[1]: continue
             it = items.setdefault(k, [artist, title, k[2], []])
+            if len(it) == 4:
+                cr = [c for c in B.credited(artist, known) if B.norm(c) and B.norm(c) not in B.NOT_ARTISTS]
+                if len(cr) > 1 or (cr and B.norm(cr[0]) != B.norm(artist)): it.append(cr)
             it[3].append([fi, pos])
     out = {'f': meta, 'i': sorted(items.values(), key=lambda x: (-len(x[3]), x[0].lower(), x[1].lower()))}
     path = os.path.join(B.ROOT, 'search-index.json')
